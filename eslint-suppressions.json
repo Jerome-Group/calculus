@@ -1,0 +1,42 @@
+{
+  "components/atlas/atlas.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    },
+    "react-hooks/refs": {
+      "count": 1
+    }
+  },
+  "components/atlas/viewport.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
+    "prefer-const": {
+      "count": 1
+    },
+    "react-hooks/refs": {
+      "count": 1
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 2
+    }
+  },
+  "components/atlas/webmcp.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "lib/atlas/geometry.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "lib/atlas/math.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 14
+    }
+  }
+}

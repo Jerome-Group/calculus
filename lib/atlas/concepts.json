@@ -1319,12 +1319,7 @@
     "pitfall": "The formula gives a negative number for clockwise traversal. That negative value is signed area, not a negative geometric area. The planimeter application relies on this distinction.",
     "task": "Compute the ellipse result without integrating its upper and lower graph functions. Identify exactly where the product $ab$ enters.",
     "insight": "An appropriate differential expression packages the interior area into the motion of a point around its boundary.",
-    "topics": [
-      "area formula",
-      "ellipse area",
-      "signed area",
-      "planimeter"
-    ]
+    "topics": ["area formula", "ellipse area", "signed area", "planimeter"]
   },
   {
     "id": "surface-charts",

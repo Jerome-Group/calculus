@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "MH2100 · Calculus Atlas",
-  description: "Explore multivariable calculus through interactive 3D geometry, rigorous definitions, and mathematical experiments.",
+  description:
+    "Explore multivariable calculus through interactive 3D geometry, rigorous definitions, and mathematical experiments.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
