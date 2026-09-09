@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MH2100 · Calculus Atlas",
+  title: "Calculus · Explore the mathematics of change",
   description:
-    "Explore multivariable calculus through interactive 3D geometry, rigorous definitions, and mathematical experiments.",
+    "A visual calculus library for MH1100, MH1101 and MH2100. Interactive experiments, precise mathematics, and page-specific course references.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

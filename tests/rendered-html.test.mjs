@@ -27,7 +27,10 @@ test("renders the calculus production page", async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
-  assert.match(html, /<title>MH2100 · Calculus Atlas<\/title>/);
-  assert.match(html, /Graph machine/);
+  assert.match(
+    html,
+    /<title>Calculus · Explore the mathematics of change<\/title>/,
+  );
+  assert.match(html, /Graph studio/);
   assert.doesNotMatch(html, developmentPreviewMeta);
 });

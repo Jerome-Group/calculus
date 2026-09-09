@@ -34,7 +34,7 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "r(t)=(cos t, sin t, t)",
       readout: (p) =>
         `r(t) = (${f(Math.cos(p))}, ${f(Math.sin(p))}, ${f(p)}) · speed = √2`,
-      legend: ["Curve r(t)", "Tangent r′(t)", "Current point"],
+      legend: ["Curve $r(t)$", "Tangent $r\\prime(t)$", "Current point"],
     },
     arc: {
       label: "Upper limit t",
@@ -53,7 +53,7 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "z = x² + y²",
       readout: (p) =>
         `Level z = ${f(p)} · circle radius = √c = ${f(Math.sqrt(p))}`,
-      legend: ["Graph z=f(x,y)", "Level curve", "Projection to domain"],
+      legend: ["Graph $z=f(x,y)$", "Level curve", "Projection to domain"],
     },
     limits: {
       ...angle,
@@ -73,7 +73,7 @@ function rawSceneInfo(id: string): SceneInfo {
       initial: 1,
       formula: "f(x,y) = x²y / (x⁴+y²)",
       readout: (p) => `Along y=kx²: f = k/(1+k²) = ${f(p / (1 + p * p))}`,
-      legend: ["Graph (origin excluded)", "Curved approach y=kx²"],
+      legend: ["Graph (origin excluded)", "Curved approach $y=kx^2$"],
     },
     partial: {
       label: "Slice y=b",
@@ -107,7 +107,11 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "f=x³/(x²+y²), f(0,0)=0",
       readout: (p) =>
         `Dᵤf(0)=cos³θ=${f(Math.cos(p) ** 3)} · candidate Df·u=cosθ=${f(Math.cos(p))}`,
-      legend: ["Continuous graph", "Directional slice", "Candidate plane z=x"],
+      legend: [
+        "Continuous graph",
+        "Directional slice",
+        "Candidate plane $z=x$",
+      ],
     },
     extrema: {
       label: "Curvature coefficient a",
@@ -121,14 +125,19 @@ function rawSceneInfo(id: string): SceneInfo {
           : p < 0
             ? `a=${f(p)}: saddle · det H = ${f(4 * p)}`
             : "a=0: degenerate · non-strict minima along x=0",
-      legend: ["Quadratic surface", "x-section", "y-section"],
+      legend: ["Quadratic surface", "$x$-section", "$y$-section"],
     },
     gradient: {
       ...angle,
       formula: "f=x²+y² at p=(1,1)",
       readout: (p) =>
         `Dᵤf(p)=2cosθ+2sinθ=${f(2 * Math.cos(p) + 2 * Math.sin(p))}`,
-      legend: ["Surface", "Direction u", "Gradient ∇f", "Directional tangent"],
+      legend: [
+        "Surface",
+        "Direction $u$",
+        "Gradient $\\nabla f$",
+        "Directional tangent",
+      ],
     },
     chain: {
       ...angle,
@@ -141,7 +150,12 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "f=x+y, x²+y²=1",
       readout: (p) =>
         `f = cosθ+sinθ = ${f(Math.cos(p) + Math.sin(p))} · range [−√2,√2]`,
-      legend: ["Constraint circle", "Objective height x+y", "∇f", "∇g"],
+      legend: [
+        "Constraint circle",
+        "Objective height $x+y$",
+        "$\\nabla f$",
+        "$\\nabla g$",
+      ],
     },
     constraintSphere: {
       ...angle,
@@ -155,7 +169,12 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "f=x+y, x²+y²+z²=1, z=0",
       readout: (p) =>
         `f = ${f(Math.cos(p) + Math.sin(p))} · ∇g and ∇h are independent on the circle`,
-      legend: ["Sphere", "Plane z=0", "Feasible circle", "Objective direction"],
+      legend: [
+        "Sphere",
+        "Plane $z=0$",
+        "Feasible circle",
+        "Objective direction",
+      ],
     },
     riemann: {
       label: "Subdivisions per axis n",
@@ -338,7 +357,7 @@ export function sceneInfo(id: string): SceneInfo {
       formula: "",
       readout: (p) =>
         `u·v = cos θ = ${f(Math.cos(p))} · ‖u+v‖ = ${f(Math.sqrt(2 + 2 * Math.cos(p)))}`,
-      legend: ["Sum u+v", "Vector v", "Vector u", "Angle"],
+      legend: ["Sum $u+v$", "Vector $v$", "Vector $u$", "Angle"],
     },
     elementarycurves: {
       label: "Parameter t",
@@ -402,7 +421,11 @@ export function sceneInfo(id: string): SceneInfo {
       initial: 1,
       readout: (p) =>
         `Choose δ=√ε=${f(Math.sqrt(p))}; 0<‖(x,y)‖<δ implies |f(x,y)|<ε`,
-      legend: ["Paraboloid", "Height ε", "Input disk radius δ"],
+      legend: [
+        "Paraboloid",
+        "Height $\\varepsilon$",
+        "Input disk radius $\\delta$",
+      ],
     },
     squeeze: {
       label: "Approach radius r",
@@ -411,7 +434,11 @@ export function sceneInfo(id: string): SceneInfo {
       initial: 0.6,
       readout: (p) =>
         `On the radius-r circle, |f|≤3r=${f(3 * p)}. This bound tends to zero.`,
-      legend: ["Rational surface", "Values on circle", "Bounding planes ±3r"],
+      legend: [
+        "Rational surface",
+        "Values on circle",
+        "Bounding planes $\\pm3r$",
+      ],
     },
     infinity: {
       label: "Exclusion radius N",
@@ -420,7 +447,7 @@ export function sceneInfo(id: string): SceneInfo {
       initial: 1,
       readout: (p) =>
         `Outside r>N, |f|≤1/r<1/N=${f(1 / p)}. Finite window ends at r=5.`,
-      legend: ["Exterior graph", "Exclusion circle", "Tail envelope ±1/N"],
+      legend: ["Exterior graph", "Exclusion circle", "Tail envelope $\\pm1/N$"],
     },
     cross: {
       label: "Normal orientation",
@@ -434,9 +461,9 @@ export function sceneInfo(id: string): SceneInfo {
           : "a×b=(−2,−2,1); perpendicular to both tangent directions",
       legend: [
         "Paraboloid",
-        "First tangent a",
+        "First tangent $a$",
         "Normal / tangent plane",
-        "Second tangent b",
+        "Second tangent $b$",
       ],
     },
     implicit: {
@@ -454,7 +481,7 @@ export function sceneInfo(id: string): SceneInfo {
       max: 1.2,
       initial: 0.6,
       readout: (p) => `At x=1: f_x=2b=${f(2 * p)}; its y-derivative is f_xy=2`,
-      legend: ["Surface x²y", "x-slice", "Slope tangent"],
+      legend: ["Surface $x^2y$", "$x$-slice", "Slope tangent"],
     },
     global: {
       label: "Boundary traversal t",
@@ -501,27 +528,27 @@ export function sceneInfo(id: string): SceneInfo {
 }
 export function legendColors(id: string) {
   const maps: Record<string, string[]> = {
-    curves: ["#547cf2", "#f28743", "#f28743"],
-    tangent: ["#547cf2", "#8a74cd", "#f28743"],
-    taylor: ["#547cf2", "#8a74cd", "#f28743"],
-    partial: ["#547cf2", "#f28743", "#d64e79"],
-    gradient: ["#547cf2", "#f28743", "#d64e79", "#f28743"],
-    directional: ["#547cf2", "#f28743", "#d64e79", "#f28743"],
-    parametric: ["#547cf2", "#f28743", "#d64e79", "#8a74cd"],
-    divergence: ["#547cf2", "#8a74cd", "#8a74cd"],
-    flux: ["#547cf2", "#8a74cd", "#f28743"],
-    double: ["#547cf2", "#8a74cd", "#f28743"],
-    triple: ["#547cf2", "#f28743"],
-    field: ["#8a74cd", "#547cf2"],
-    lineintegral: ["#8a74cd", "#547cf2", "#f28743"],
-    conservative: ["#8a74cd", "#547cf2", "#d64e79"],
-    green: ["#547cf2", "#8a74cd", "#f28743"],
-    lagrange: ["#f28743", "#547cf2", "#d64e79", "#8a74cd"],
-    jacobian: ["#8a74cd", "#547cf2", "#f28743"],
-    lineScalar: ["#8a74cd", "#547cf2", "#f28743"],
-    mixed: ["#547cf2", "#f28743", "#d64e79"],
+    curves: ["#9bdfff", "#f28743", "#f28743"],
+    tangent: ["#9bdfff", "#8a74cd", "#f28743"],
+    taylor: ["#9bdfff", "#8a74cd", "#f28743"],
+    partial: ["#9bdfff", "#f28743", "#ffbad4"],
+    gradient: ["#9bdfff", "#f28743", "#ffbad4", "#f28743"],
+    directional: ["#9bdfff", "#f28743", "#ffbad4", "#f28743"],
+    parametric: ["#9bdfff", "#f28743", "#ffbad4", "#8a74cd"],
+    divergence: ["#9bdfff", "#8a74cd", "#8a74cd"],
+    flux: ["#9bdfff", "#8a74cd", "#f28743"],
+    double: ["#9bdfff", "#8a74cd", "#f28743"],
+    triple: ["#9bdfff", "#f28743"],
+    field: ["#8a74cd", "#9bdfff"],
+    lineintegral: ["#8a74cd", "#9bdfff", "#f28743"],
+    conservative: ["#8a74cd", "#9bdfff", "#ffbad4"],
+    green: ["#9bdfff", "#8a74cd", "#f28743"],
+    lagrange: ["#f28743", "#9bdfff", "#ffbad4", "#8a74cd"],
+    jacobian: ["#8a74cd", "#9bdfff", "#f28743"],
+    lineScalar: ["#8a74cd", "#9bdfff", "#f28743"],
+    mixed: ["#9bdfff", "#f28743", "#ffbad4"],
   };
-  return maps[id] || ["#547cf2", "#f28743", "#8a74cd", "#d64e79"];
+  return maps[id] || ["#9bdfff", "#f28743", "#8a74cd", "#ffbad4"];
 }
 export function sceneTex(id: string) {
   const m: Record<string, string> = {
