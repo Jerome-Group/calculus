@@ -1,10 +1,10 @@
 import * as T from "three";
 import { type Vec, type GraphSpec, validateGraph } from "./math";
 export const C = {
-  surface: 0x547cf2,
+  surface: 0x9bdfff,
   accent: 0xf28743,
   blue: 0x8a74cd,
-  pink: 0xd64e79,
+  pink: 0xffbad4,
   muted: 0x8e9eb9,
 };
 export function builder(group: T.Group) {
@@ -42,22 +42,29 @@ export function builder(group: T.Group) {
       }),
     );
     m.position.set(...p);
+    m.renderOrder = 10;
+    m.material.depthTest = false;
     group.add(m);
   };
   const arrow = (p: Vec, v: Vec, color = C.accent) => {
     const d = new T.Vector3(...v);
     const len = d.length();
     if (len < 1e-8) return;
-    group.add(
-      new T.ArrowHelper(
-        d.normalize(),
-        new T.Vector3(...p),
-        len,
-        color,
-        Math.min(0.16, len * 0.3),
-        Math.min(0.085, len * 0.15),
-      ),
+    const helper = new T.ArrowHelper(
+      d.normalize(),
+      new T.Vector3(...p),
+      len,
+      color,
+      Math.min(0.16, len * 0.3),
+      Math.min(0.085, len * 0.15),
     );
+    helper.traverse((object) => {
+      object.renderOrder = 10;
+      const material = (object as T.Mesh).material;
+      for (const item of Array.isArray(material) ? material : [material])
+        if (item) item.depthTest = false;
+    });
+    group.add(helper);
   };
   const mesh = (
     fn: (u: number, v: number) => Vec,
@@ -116,8 +123,22 @@ export function builder(group: T.Group) {
     const geo = new T.BufferGeometry();
     geo.setAttribute("position", new T.Float32BufferAttribute(compact, 3));
     geo.computeVertexNormals();
+    const heightShading = color === C.surface && compact.length > 0;
+    if (heightShading) {
+      const heights = compact.filter((_, i) => i % 3 === 2);
+      const low = Math.min(...heights),
+        high = Math.max(...heights);
+      const colors: number[] = [];
+      for (const z of heights) {
+        const t = (z - low) / (high - low || 1);
+        const shade = new T.Color(0x3057df).lerp(new T.Color(0x9ff5de), t);
+        colors.push(shade.r, shade.g, shade.b);
+      }
+      geo.setAttribute("color", new T.Float32BufferAttribute(colors, 3));
+    }
     const mat = new T.MeshStandardMaterial({
-      color,
+      color: heightShading ? 0xffffff : color,
+      vertexColors: heightShading,
       transparent: opacity < 1,
       opacity,
       side: T.DoubleSide,
@@ -129,7 +150,11 @@ export function builder(group: T.Group) {
     group.add(s);
     const wire = new T.LineSegments(
       new T.WireframeGeometry(geo),
-      new T.LineBasicMaterial({ color, transparent: true, opacity: 0.15 }),
+      new T.LineBasicMaterial({
+        color: 0xc2e8ff,
+        transparent: true,
+        opacity: 0.22,
+      }),
     );
     group.add(wire);
     return {
@@ -222,7 +247,16 @@ export function buildScene(id: string, p: number, g: T.Group) {
     builder(g);
   const pi = Math.PI;
   const bowl = () =>
-    mesh((x, y) => [x, y, x * x + y * y], -2.2, 2.2, -2.2, 2.2);
+    mesh(
+      (x, y) => [x, y, x * x + y * y],
+      -1.65,
+      1.65,
+      -1.65,
+      1.65,
+      C.surface,
+      0.56,
+      32,
+    );
   const circle = (r = 1, z = 0, color = C.accent, end = 2 * pi) =>
     curve((t) => [r * Math.cos(t), r * Math.sin(t), z], 0, end, color);
   const cap = (R: number, a: number) => sphere(R, C.surface, 0.5, a);
@@ -366,7 +400,17 @@ export function buildScene(id: string, p: number, g: T.Group) {
     case "gradient":
       bowl();
       circle(Math.SQRT2, 2, C.accent);
-      arrow([1, 1, 2], [-0.6, -0.6, 0.3], C.blue);
+      mesh(
+        (t, z) => [1 + t * Math.cos(p), 1 + t * Math.sin(p), z],
+        -1.2,
+        0.7,
+        0,
+        4,
+        C.blue,
+        0.16,
+        2,
+        2,
+      );
       dot([1, 1, 2]);
       arrow(
         [1, 1, 2],

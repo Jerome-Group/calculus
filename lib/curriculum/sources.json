@@ -1,0 +1,472 @@
+{
+  "MH1100_Lecture_12": {
+    "id": "MH1100_Lecture_12",
+    "file": "MH1100_Lecture_12.pdf",
+    "title": "MH1100 Lecture 12",
+    "url": "https://drive.google.com/file/d/1WTrnexXy7JEqDEZK0vvN6on4I2HhxW5z/view",
+    "pages": 42,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d"
+  },
+  "MH1100_Lecture_08": {
+    "id": "MH1100_Lecture_08",
+    "file": "MH1100_Lecture_08.pdf",
+    "title": "MH1100 Lecture 08",
+    "url": "https://drive.google.com/file/d/1pCU9mgHrKBBmL7ezeukDiiHIzYTEp2qt/view",
+    "pages": 56,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "f81f07e967c22465bfe847444c2f0921aa36ce2a0aa0452a4fdbb1f2ebc5c8e1"
+  },
+  "MH1100_Lecture_11": {
+    "id": "MH1100_Lecture_11",
+    "file": "MH1100_Lecture_11.pdf",
+    "title": "MH1100 Lecture 11",
+    "url": "https://drive.google.com/file/d/1fBY_XFdJ_2yW8Feq1WLKsk9znj7GATkD/view",
+    "pages": 39,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5"
+  },
+  "MH1100_Lecture_02": {
+    "id": "MH1100_Lecture_02",
+    "file": "MH1100_Lecture_02.pdf",
+    "title": "MH1100 Lecture 02",
+    "url": "https://drive.google.com/file/d/1NO3VTiMPDyZPQIEtNrcy-ASYfJ5ll4-R/view",
+    "pages": 49,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "51596ea3552043f85920455918babb094a950b98efcb1513abb3fe7f036c2e7b"
+  },
+  "MH1100_Lecture_10": {
+    "id": "MH1100_Lecture_10",
+    "file": "MH1100_Lecture_10.pdf",
+    "title": "MH1100 Lecture 10",
+    "url": "https://drive.google.com/file/d/1Jdh6j_EVokUvq3-RJaOXRBj69-qzsUbo/view",
+    "pages": 51,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e"
+  },
+  "MH1100_Lecture_04": {
+    "id": "MH1100_Lecture_04",
+    "file": "MH1100_Lecture_04.pdf",
+    "title": "MH1100 Lecture 04",
+    "url": "https://drive.google.com/file/d/1suPMCaqn3rAgyEiNjoz84dms224yzHCC/view",
+    "pages": 38,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "302f899ef913f98fc4bca65ef3304a41118ec5dded4cb51b6d17b3950e9b4dbf"
+  },
+  "MH1100_Lecture_01": {
+    "id": "MH1100_Lecture_01",
+    "file": "MH1100_Lecture_01.pdf",
+    "title": "MH1100 Lecture 01",
+    "url": "https://drive.google.com/file/d/1SapBHpyzlKRkGaSiAuVV5sW8zNJHo3JS/view",
+    "pages": 63,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856"
+  },
+  "MH1100_Lecture_13": {
+    "id": "MH1100_Lecture_13",
+    "file": "MH1100_Lecture_13.pdf",
+    "title": "MH1100 Lecture 13",
+    "url": "https://drive.google.com/file/d/12ryqCLuReh_SMRW3GILv75veE9MsvAyb/view",
+    "pages": 15,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693"
+  },
+  "MH1100_Lecture_09": {
+    "id": "MH1100_Lecture_09",
+    "file": "MH1100_Lecture_09.pdf",
+    "title": "MH1100 Lecture 09",
+    "url": "https://drive.google.com/file/d/1aDUqNWZ36XLh3_B2UIBeUEpg-MPeX5Vl/view",
+    "pages": 31,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "a1d14b5a5528b49dc3775dd0963ea215a0945ee97ff9015b999f6ff97b6ad05b"
+  },
+  "MH1100_Lecture_07": {
+    "id": "MH1100_Lecture_07",
+    "file": "MH1100_Lecture_07.pdf",
+    "title": "MH1100 Lecture 07",
+    "url": "https://drive.google.com/file/d/19UmesT2j-_OJOGqmd-GLi5_wJsIubGbD/view",
+    "pages": 31,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "1bf8c6d88189eb46c2eb80c47f7a33aec51a32a50d368e4b45f0244a80ac8193"
+  },
+  "MH1100_Lecture_06": {
+    "id": "MH1100_Lecture_06",
+    "file": "MH1100_Lecture_06.pdf",
+    "title": "MH1100 Lecture 06",
+    "url": "https://drive.google.com/file/d/1IkiHWe5EN0NzDMXjIQQjIY9R8jhxatlG/view",
+    "pages": 27,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "cbb414d5ed6bcbe9e8959ce14833766e735cbdbfa3a3f00a1f3a4598bd5e3870"
+  },
+  "MH1100_Lecture_05": {
+    "id": "MH1100_Lecture_05",
+    "file": "MH1100_Lecture_05.pdf",
+    "title": "MH1100 Lecture 05",
+    "url": "https://drive.google.com/file/d/16h1qNHrplxumjGnZoRCgYR3Hul8ESsAT/view",
+    "pages": 37,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "584447ad02d8d78a25a89ee89bf5d6d42e11629d92838a6e441f460793481781"
+  },
+  "MH1100_Lecture_03": {
+    "id": "MH1100_Lecture_03",
+    "file": "MH1100_Lecture_03.pdf",
+    "title": "MH1100 Lecture 03",
+    "url": "https://drive.google.com/file/d/1QL2AivkuJQ6B41V6zJeymTko_pFiABcY/view",
+    "pages": 41,
+    "course": "MH1100",
+    "kind": "lecture",
+    "sha256": "c8b2cbf316640a4c9837d4556bf2310ddf5d3a02780f9ef78ec8f66653d09dda"
+  },
+  "MH1101_Chapter_02_Notes": {
+    "id": "MH1101_Chapter_02_Notes",
+    "file": "MH1101_Chapter_02_Notes.pdf",
+    "title": "MH1101 Chapter 02 Notes",
+    "url": "https://drive.google.com/file/d/1a1Yt2PUw9nzJvBrxKyjDV_W8LX-wPhzl/view",
+    "pages": 19,
+    "course": "MH1101",
+    "kind": "lecture",
+    "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998"
+  },
+  "MH1101_Chapter_01_Notes": {
+    "id": "MH1101_Chapter_01_Notes",
+    "file": "MH1101_Chapter_01_Notes.pdf",
+    "title": "MH1101 Chapter 01 Notes",
+    "url": "https://drive.google.com/file/d/1q1-zTvc7-O72lmHvOrgQhOTxkfJF4_iv/view",
+    "pages": 33,
+    "course": "MH1101",
+    "kind": "lecture",
+    "sha256": "db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7"
+  },
+  "MH1101_Chapter_06_Notes": {
+    "id": "MH1101_Chapter_06_Notes",
+    "file": "MH1101_Chapter_06_Notes.pdf",
+    "title": "MH1101 Chapter 06 Notes",
+    "url": "https://drive.google.com/file/d/1bJENGCezSXxkZXB9RjCLbpDR-QBoQ_Js/view",
+    "pages": 28,
+    "course": "MH1101",
+    "kind": "lecture",
+    "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f"
+  },
+  "MH1101_Chapter_05_Notes": {
+    "id": "MH1101_Chapter_05_Notes",
+    "file": "MH1101_Chapter_05_Notes.pdf",
+    "title": "MH1101 Chapter 05 Notes",
+    "url": "https://drive.google.com/file/d/1IJ2nRCPAFo3X-PtspDL0Aoi-XTGtCtz_/view",
+    "pages": 24,
+    "course": "MH1101",
+    "kind": "lecture",
+    "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385"
+  },
+  "MH1101_Chapter_04_Notes": {
+    "id": "MH1101_Chapter_04_Notes",
+    "file": "MH1101_Chapter_04_Notes.pdf",
+    "title": "MH1101 Chapter 04 Notes",
+    "url": "https://drive.google.com/file/d/1BrtdwpReOVKuSs64SKNuBCiJUqYFSmej/view",
+    "pages": 32,
+    "course": "MH1101",
+    "kind": "lecture",
+    "sha256": "8436a45c67c64106e9c79ba5d61babdf31421d22729c0470febefc49aed3f3de"
+  },
+  "MH1101_Stewart_Chapter_11_Sequence_Series_Power": {
+    "id": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
+    "file": "MH1101_Stewart_Chapter_11_Sequence_Series_Power.pdf",
+    "title": "MH1101 Stewart Chapter 11 Sequence Series Power",
+    "url": "https://drive.google.com/file/d/1F-OXcCbySV3LhVUH-UKVLFaSGhUVz_nP/view",
+    "pages": 106,
+    "course": "MH1101",
+    "kind": "textbook",
+    "sha256": "0499c986179b3dd58f6e59a67bdea8576b4dfc66ceeab87d4b036f2cb40712a1"
+  },
+  "MH1101_Stewart_Chapter_07_Integration_Techniques": {
+    "id": "MH1101_Stewart_Chapter_07_Integration_Techniques",
+    "file": "MH1101_Stewart_Chapter_07_Integration_Techniques.pdf",
+    "title": "MH1101 Stewart Chapter 07 Integration Techniques",
+    "url": "https://drive.google.com/file/d/1UxusymEe8HQnEzC_Yl3SZX4HD6zzbSUF/view",
+    "pages": 74,
+    "course": "MH1101",
+    "kind": "textbook",
+    "sha256": "b1ad3c1a150af5d95b7d2c1ad1452c534950bd44e2de384f1ab585cd9d8aacf0"
+  },
+  "MH1101_Stewart_Chapter_05_Integration_Applications": {
+    "id": "MH1101_Stewart_Chapter_05_Integration_Applications",
+    "file": "MH1101_Stewart_Chapter_05_Integration_Applications.pdf",
+    "title": "MH1101 Stewart Chapter 05 Integration Applications",
+    "url": "https://drive.google.com/file/d/1tVOC-hjfyEhDqzh4C1KPeIaFNMyXC7UP/view",
+    "pages": 48,
+    "course": "MH1101",
+    "kind": "textbook",
+    "sha256": "ad36ca9437f32e6325d3a08e81be506beae390a685054d2009ae1f4a87312e34"
+  },
+  "MH1101_Stewart_Chapter_03_Differentiation_Applications": {
+    "id": "MH1101_Stewart_Chapter_03_Differentiation_Applications",
+    "file": "MH1101_Stewart_Chapter_03_Differentiation_Applications.pdf",
+    "title": "MH1101 Stewart Chapter 03 Differentiation Applications",
+    "url": "https://drive.google.com/file/d/1TBHtdVIfvCjfNGXPrXA0KX15YouRn4Xm/view",
+    "pages": 92,
+    "course": "MH1101",
+    "kind": "textbook",
+    "sha256": "dfa5564f3edbdcff8b68c51c8e12decb161044d34d38630d20bb316c8c959581"
+  },
+  "MH1101_Stewart_Chapter_04_Integrals": {
+    "id": "MH1101_Stewart_Chapter_04_Integrals",
+    "file": "MH1101_Stewart_Chapter_04_Integrals.pdf",
+    "title": "MH1101 Stewart Chapter 04 Integrals",
+    "url": "https://drive.google.com/file/d/1A5_KYAo9JaZJXcwjDLbP2swp7DFNQ_EB/view",
+    "pages": 62,
+    "course": "MH1101",
+    "kind": "textbook",
+    "sha256": "a3a70b46953ea6caad96bbdef92981c189795e027fa78a3b3080053110d326ad"
+  },
+  "MH1101_Chapter_03_Notes": {
+    "id": "MH1101_Chapter_03_Notes",
+    "file": "MH1101_Chapter_03_Notes.pdf",
+    "title": "MH1101 Chapter 03 Notes",
+    "url": "https://drive.google.com/file/d/1uyd0BHKm3bcDZQJCU9sIuEzFe6GUsSp5/view",
+    "pages": 35,
+    "course": "MH1101",
+    "kind": "lecture",
+    "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505"
+  },
+  "MH2100_Lecture_04": {
+    "id": "MH2100_Lecture_04",
+    "file": "MH2100_Lecture_04.pdf",
+    "title": "MH2100 Lecture 04",
+    "url": "https://drive.google.com/file/d/1jeTL7ZXFaCvs80AmHCxYeSl1R-r-1R3i/view",
+    "pages": 40,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced"
+  },
+  "MH2100_Lecture_02": {
+    "id": "MH2100_Lecture_02",
+    "file": "MH2100_Lecture_02.pdf",
+    "title": "MH2100 Lecture 02",
+    "url": "https://drive.google.com/file/d/1TZSOZObM6kxfU4NKe-RZ-AghG691h537/view",
+    "pages": 49,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "a35fceaafaabcfb672f816bcd0e553034bbbdd41cf6437b3df56af9268490097"
+  },
+  "MH2100_Lecture_01": {
+    "id": "MH2100_Lecture_01",
+    "file": "MH2100_Lecture_01.pdf",
+    "title": "MH2100 Lecture 01",
+    "url": "https://drive.google.com/file/d/1bZEqdU00uyk8YDvJQTK8vSCmWVpq51ZA/view",
+    "pages": 41,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "eca98d020c44d4d42fb9bcbb4c624da6c150e7e88ec5b4d48951e358fa84cb83"
+  },
+  "MH2100_Lecture_12_Final_Exam_Review": {
+    "id": "MH2100_Lecture_12_Final_Exam_Review",
+    "file": "MH2100_Lecture_12_Final_Exam_Review.pdf",
+    "title": "MH2100 Lecture 12 Final Exam Review",
+    "url": "https://drive.google.com/file/d/10zC5vlK8Muh2OE8LEkAprYheJvQW-efX/view",
+    "pages": 27,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07"
+  },
+  "MH2100_Lecture_11": {
+    "id": "MH2100_Lecture_11",
+    "file": "MH2100_Lecture_11.pdf",
+    "title": "MH2100 Lecture 11",
+    "url": "https://drive.google.com/file/d/1UwnNmPDpeJj33xM9JdE9CEtRuX8o8Q5B/view",
+    "pages": 33,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519"
+  },
+  "MH2100_Lecture_10": {
+    "id": "MH2100_Lecture_10",
+    "file": "MH2100_Lecture_10.pdf",
+    "title": "MH2100 Lecture 10",
+    "url": "https://drive.google.com/file/d/1kQYpUg1P4dFPxEpwlKp9hufqedM0EhQV/view",
+    "pages": 40,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e"
+  },
+  "MH2100_Lecture_09": {
+    "id": "MH2100_Lecture_09",
+    "file": "MH2100_Lecture_09.pdf",
+    "title": "MH2100 Lecture 09",
+    "url": "https://drive.google.com/file/d/1-4Gz31Pj86vWlc3SFzor0HZExY9XOycM/view",
+    "pages": 52,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "e71806081bf3eb4d4989a0bb578c711181a2a47e7346e14ccb264d9632a72992"
+  },
+  "MH2100_Lecture_08": {
+    "id": "MH2100_Lecture_08",
+    "file": "MH2100_Lecture_08.pdf",
+    "title": "MH2100 Lecture 08",
+    "url": "https://drive.google.com/file/d/1s-YzlHuVArAG8gw8jwIJF92XxhVX_Dnk/view",
+    "pages": 51,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8"
+  },
+  "MH2100_Lecture_07": {
+    "id": "MH2100_Lecture_07",
+    "file": "MH2100_Lecture_07.pdf",
+    "title": "MH2100 Lecture 07",
+    "url": "https://drive.google.com/file/d/1gRzVmri9Hbc1uaZXmK3KPiaNt6mS_2mw/view",
+    "pages": 52,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "7749dd614cf6b912a05676c4be9594ce13c71eb60373d8721fe6c273245a8478"
+  },
+  "MH2100_Lecture_06": {
+    "id": "MH2100_Lecture_06",
+    "file": "MH2100_Lecture_06.pdf",
+    "title": "MH2100 Lecture 06",
+    "url": "https://drive.google.com/file/d/1G0gF6HAaKPbmssGHZsjEIhLaiZhY4YxD/view",
+    "pages": 23,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec"
+  },
+  "MH2100_Lecture_05": {
+    "id": "MH2100_Lecture_05",
+    "file": "MH2100_Lecture_05.pdf",
+    "title": "MH2100 Lecture 05",
+    "url": "https://drive.google.com/file/d/1vlUmaphnoY1lu1prslvBdsZ7h2Fm3a0c/view",
+    "pages": 61,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd"
+  },
+  "MH2100_Lecture_03": {
+    "id": "MH2100_Lecture_03",
+    "file": "MH2100_Lecture_03.pdf",
+    "title": "MH2100 Lecture 03",
+    "url": "https://drive.google.com/file/d/1c_4tlRG_-SkVQWefBRlkb_hnyAsCplyC/view",
+    "pages": 54,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb"
+  },
+  "MH1100_Stewart_Chapter_01_Functions_And_Limits": {
+    "id": "MH1100_Stewart_Chapter_01_Functions_And_Limits",
+    "file": "MH1100_Stewart_Chapter_01_Functions_And_Limits.pdf",
+    "title": "MH1100 Stewart Chapter 01 Functions And Limits",
+    "url": "https://drive.google.com/file/d/1BLKzXJuqATtA-HG4EHkGAD7MN9NZnj4N/view",
+    "pages": 100,
+    "course": "MH1100",
+    "kind": "textbook",
+    "sha256": "ba7522ef58fd38d96f1c30897cbf5beb718aeeaebf6f184219e551f376f4d38e"
+  },
+  "MH1100_Stewart_Chapter_02_Derivatives": {
+    "id": "MH1100_Stewart_Chapter_02_Derivatives",
+    "file": "MH1100_Stewart_Chapter_02_Derivatives.pdf",
+    "title": "MH1100 Stewart Chapter 02 Derivatives",
+    "url": "https://drive.google.com/file/d/1OQWL30C8lcFanSeHq53KceWWpKXqL8xS/view",
+    "pages": 102,
+    "course": "MH1100",
+    "kind": "textbook",
+    "sha256": "b24d0733755ce190b16cad5b5f9c734ae8d3373481d9258ec0063176547bf512"
+  },
+  "MH1100_Stewart_Chapter_06_Inverse_Functions": {
+    "id": "MH1100_Stewart_Chapter_06_Inverse_Functions",
+    "file": "MH1100_Stewart_Chapter_06_Inverse_Functions.pdf",
+    "title": "MH1100 Stewart Chapter 06 Inverse Functions",
+    "url": "https://drive.google.com/file/d/1uGXcm1a9RA-9R2bteUVEGdROjhu8GD1f/view",
+    "pages": 112,
+    "course": "MH1100",
+    "kind": "textbook",
+    "sha256": "c354b5575c610d30d5f7392dc0cb9152185b1ef5be0188d17e9ea9f669186139"
+  },
+  "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation": {
+    "id": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",
+    "file": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation.pdf",
+    "title": "MH1100 Stewart Chapter 03 Applications Of Differentiation",
+    "url": "https://drive.google.com/file/d/1oXB6vvaJ3LsLRrWzYuAtVRf19g2y7NED/view",
+    "pages": 92,
+    "course": "MH1100",
+    "kind": "textbook",
+    "sha256": "dfa5564f3edbdcff8b68c51c8e12decb161044d34d38630d20bb316c8c959581"
+  },
+  "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus": {
+    "id": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
+    "file": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus.pdf",
+    "title": "MH2100 Stewart Calculus Chapter 16 Vector Calculus",
+    "url": "https://drive.google.com/file/d/1MtJh4AljZ25jJ2FiQoCLCx3Xp2pDU5Da/view",
+    "pages": 92,
+    "course": "MH2100",
+    "kind": "textbook",
+    "sha256": "f5cf0d5451bb789a7ba3f48b5beaaeb1966e804c654722a86171d84364dee2af"
+  },
+  "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals": {
+    "id": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
+    "file": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals.pdf",
+    "title": "MH2100 Stewart Calculus Chapter 15 Multiple Integrals",
+    "url": "https://drive.google.com/file/d/1wc8AjUlQ71D1083M66G-y2CpqgNv_1jh/view",
+    "pages": 86,
+    "course": "MH2100",
+    "kind": "textbook",
+    "sha256": "41b87e4f09acdfcbdba02c7feb3a0b512b62f32f8b5dfa9c85c3700037e13535"
+  },
+  "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives": {
+    "id": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives",
+    "file": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives.pdf",
+    "title": "MH2100 Stewart Calculus Chapter 14 Partial Derivatives",
+    "url": "https://drive.google.com/file/d/10fyiojo5OWNjY2k9RQFa_eRaWArNWb5K/view",
+    "pages": 104,
+    "course": "MH2100",
+    "kind": "textbook",
+    "sha256": "a24712cbbc59d20290ce2814f10c226646f8612298927bc54cbef5cbd0fc0e70"
+  },
+  "MH2100_Stewart_Calculus_Chapter_13_Vector_Functions": {
+    "id": "MH2100_Stewart_Calculus_Chapter_13_Vector_Functions",
+    "file": "MH2100_Stewart_Calculus_Chapter_13_Vector_Functions.pdf",
+    "title": "MH2100 Stewart Calculus Chapter 13 Vector Functions",
+    "url": "https://drive.google.com/file/d/1ug7WmAIEfxSewKUbqPVmSNjZmLkNcb9G/view",
+    "pages": 44,
+    "course": "MH2100",
+    "kind": "textbook",
+    "sha256": "711f21b9a78aa425e1dc5c4be0d905d462c5dc3d29ea13137d6e9378bed66f74"
+  },
+  "MH2100_Stewart_Calculus_Chapter_12_Vectors_And_The_Geometry_Of_Space": {
+    "id": "MH2100_Stewart_Calculus_Chapter_12_Vectors_And_The_Geometry_Of_Space",
+    "file": "MH2100_Stewart_Calculus_Chapter_12_Vectors_And_The_Geometry_Of_Space.pdf",
+    "title": "MH2100 Stewart Calculus Chapter 12 Vectors And The Geometry Of Space",
+    "url": "https://drive.google.com/file/d/195uR1GsaLdovaTVpnH-m7U0AVGuC5weO/view",
+    "pages": 60,
+    "course": "MH2100",
+    "kind": "textbook",
+    "sha256": "6867fcbbf32f3bf3ae002ac8656f59e79abfd0b619c0f9688629ed64741dfd2a"
+  },
+  "MH2100_Stewart_Calculus_Chapter_10_Parametric_Equations_And_Polar_Coordinates": {
+    "id": "MH2100_Stewart_Calculus_Chapter_10_Parametric_Equations_And_Polar_Coordinates",
+    "file": "MH2100_Stewart_Calculus_Chapter_10_Parametric_Equations_And_Polar_Coordinates.pdf",
+    "title": "MH2100 Stewart Calculus Chapter 10 Parametric Equations And Polar Coordinates",
+    "url": "https://drive.google.com/file/d/1t0jxMdfbdclCOxUaTZp8f-F9XEgHitZW/view",
+    "pages": 62,
+    "course": "MH2100",
+    "kind": "textbook",
+    "sha256": "79e163976c514cae3e4816c3a16e690d645352c7534dce455b933c08c5f6c794"
+  },
+  "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability": {
+    "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+    "file": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability.pdf",
+    "title": "MH2100 Supplement: Partial Derivatives and Total Differentiability",
+    "url": "https://drive.google.com/file/d/1s-K8ci2kb0P0dbRgkwbHLHSEaqlvFcBw/view",
+    "pages": 1,
+    "course": "MH2100",
+    "kind": "lecture",
+    "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc"
+  }
+}

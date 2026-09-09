@@ -1,12 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import * as T from "three";
-import {
-  SVGRenderer,
-  SVGObject,
-} from "three/examples/jsm/renderers/SVGRenderer.js";
+import { SVGRenderer } from "three/examples/jsm/renderers/SVGRenderer.js";
+import katex from "katex";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { buildScene, buildGraph, C, builder } from "@/lib/atlas/geometry";
+import { buildScene, buildGraph, builder } from "@/lib/atlas/geometry";
 import type { GraphSpec } from "@/lib/atlas/math";
 import { RotateCcw, Maximize, Minimize, Move3D } from "lucide-react";
 function dispose(g: T.Object3D) {
@@ -30,7 +28,7 @@ export function Viewport({
   parameter: number;
   graph?: GraphSpec;
   resetKey?: number;
-  onStatus?: (s: string) => void;
+  onStatus?: (s: string, fingerprint?: string) => void;
 }) {
   const host = useRef<HTMLDivElement>(null),
     api = useRef<any>(null);
@@ -57,8 +55,8 @@ export function Viewport({
       setFallback(true);
     }
     renderer.setPixelRatio?.(Math.min(window.devicePixelRatio, 2));
-    if (cpu) renderer.setClearColor(new T.Color(0xeef3ff));
-    else renderer.setClearColor(0xeef3ff, 0);
+    if (cpu) renderer.setClearColor(new T.Color(0x073cba));
+    else renderer.setClearColor(0x073cba, 0);
     renderer.outputColorSpace = T.SRGBColorSpace;
     el.appendChild(renderer.domElement);
     renderer.domElement.setAttribute(
@@ -98,13 +96,17 @@ export function Viewport({
       controls.target.copy(center);
       camera.position
         .copy(center)
-        .add(new T.Vector3(1, -1.35, 1).normalize().multiplyScalar(span * 2.1));
+        .add(
+          new T.Vector3(1.5, -1, 1.5).normalize().multiplyScalar(span * 2.1),
+        );
       camera.near = Math.max(0.001, span / 1000);
       camera.far = Math.max(1000, span * 100);
       camera.updateProjectionMatrix();
       controls.update();
     };
+    const axisLabels: { element: HTMLSpanElement; position: T.Vector3 }[] = [];
     const drawAxes = () => {
+      axisLabels.splice(0).forEach(({ element }) => element.remove());
       dispose(axes);
       axes.clear();
       const box = new T.Box3().setFromObject(content);
@@ -124,53 +126,34 @@ export function Viewport({
             [-s, v, 0],
             [s, v, 0],
           ],
-          0xcbd6ea,
+          0x3562be,
         );
         line(
           [
             [v, -s, 0],
             [v, s, 0],
           ],
-          0xcbd6ea,
+          0x3562be,
         );
       }
-      arrow([0, 0, 0], [s, 0, 0], 0xc97884);
-      arrow([0, 0, 0], [0, s, 0], 0x83cfc2);
-      arrow([0, 0, 0], [0, 0, zs], 0x90b0ee);
+      arrow([0, 0, 0], [s, 0, 0], 0xe0edff);
+      arrow([0, 0, 0], [0, s, 0], 0xe0edff);
+      arrow([0, 0, 0], [0, 0, zs], 0xe0edff);
       for (const [name, pos, color] of [
-        ["x", [s + 0.14, 0, 0], "#bf4d59"],
-        ["y", [0, s + 0.14, 0], "#237966"],
-        ["z", [0, 0, zs + 0.14], "#345ab8"],
+        ["x", [s + 0.14, 0, 0], "#ffffff"],
+        ["y", [0, s + 0.14, 0], "#ffffff"],
+        ["z", [0, 0, zs + 0.14], "#ffffff"],
       ] as const) {
-        if (cpu) {
-          const text = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "text",
-          );
-          text.textContent = name;
-          text.setAttribute("fill", color);
-          text.setAttribute("font-size", "17");
-          text.setAttribute("font-style", "italic");
-          const label = new SVGObject(text);
-          label.position.set(pos[0], pos[1], pos[2]);
-          axes.add(label);
-          continue;
-        }
-        const c = document.createElement("canvas");
-        c.width = 64;
-        c.height = 64;
-        const ctx = c.getContext("2d")!;
-        ctx.font = "italic 40px Georgia";
-        ctx.fillStyle = color;
-        ctx.textAlign = "center";
-        ctx.fillText(name, 32, 46);
-        const tex = new T.CanvasTexture(c);
-        const sprite = new T.Sprite(
-          new T.SpriteMaterial({ map: tex, depthTest: false }),
-        );
-        sprite.position.set(pos[0], pos[1], pos[2]);
-        sprite.scale.set(s * 0.12, s * 0.12, 1);
-        axes.add(sprite);
+        const element = document.createElement("span");
+        element.className = "axis-label";
+        element.style.color = color;
+        element.innerHTML = katex.renderToString(name, {
+          throwOnError: true,
+          output: "htmlAndMathml",
+          trust: false,
+        });
+        el.appendChild(element);
+        axisLabels.push({ element, position: new T.Vector3(...pos) });
       }
     };
     api.current = {
@@ -202,6 +185,12 @@ export function Viewport({
       controls.update();
       if (dirty) {
         renderer.render(world, camera);
+        for (const { element, position } of axisLabels) {
+          const q = position.clone().project(camera);
+          element.style.left = `${((q.x + 1) * el.clientWidth) / 2}px`;
+          element.style.top = `${((1 - q.y) * el.clientHeight) / 2}px`;
+          element.hidden = q.z < -1 || q.z > 1;
+        }
         dirty = false;
         const done = api.current?.afterFrame;
         if (done) {
@@ -240,6 +229,7 @@ export function Viewport({
       dispose(world);
       renderer.dispose?.();
       renderer.domElement.remove();
+      axisLabels.forEach(({ element }) => element.remove());
       api.current = null;
     };
   }, []);
@@ -253,7 +243,11 @@ export function Viewport({
         ? buildGraph(graph, a.content)
         : buildScene(scene, parameter, a.content);
       setError("");
-      a.afterFrame = () => status.current?.(report || "Scene rendered");
+      a.afterFrame = () =>
+        status.current?.(
+          report || "Scene rendered",
+          graph ? JSON.stringify(graph) : undefined,
+        );
       const key = scene + (graph ? JSON.stringify({ ...graph, a: 0 }) : "");
       if (a.lastScene !== key) {
         a.drawAxes();
@@ -263,7 +257,10 @@ export function Viewport({
       a.markDirty();
     } catch (e) {
       setError((e as Error).message);
-      status.current?.("Error: " + (e as Error).message);
+      status.current?.(
+        "Error: " + (e as Error).message,
+        graph ? JSON.stringify(graph) : undefined,
+      );
     }
   }, [scene, parameter, graph]);
   useEffect(() => {
