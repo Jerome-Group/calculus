@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import {
   ArrowRight,
   ChevronDown,
@@ -43,6 +44,14 @@ export function CourseSidebar({ study }: { study: StudyController }) {
           }}
           className="brand-link"
         >
+          <Image
+            src="/calculus-logo.png"
+            alt=""
+            width={36}
+            height={36}
+            className="brand-mark"
+            unoptimized
+          />
           <span className="atlas-wordmark">Calculus</span>
         </a>
         <button

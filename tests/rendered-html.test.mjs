@@ -32,5 +32,14 @@ test("renders the calculus production page", async () => {
     /<title>Calculus · Explore the mathematics of change<\/title>/,
   );
   assert.match(html, /Graph studio/);
+  assert.match(
+    html,
+    /<meta property="og:image" content="https:\/\/calculus\.jeromegroup\.org\/calculus-social\.jpg"/,
+  );
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image"/);
+  assert.match(
+    html,
+    /<meta name="twitter:image" content="https:\/\/calculus\.jeromegroup\.org\/calculus-social\.jpg"/,
+  );
   assert.doesNotMatch(html, developmentPreviewMeta);
 });
