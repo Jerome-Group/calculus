@@ -1,10 +1,12 @@
 export type { Point, Trace, PlanarModel } from "./planar/types";
 export { decimal } from "./planar/drawing";
+import { auditModel } from "./planar/audit";
 import { functionsModel } from "./planar/functions";
 import { integrationModel } from "./planar/integration";
 import { seriesModel } from "./planar/series";
 export function planarModel(id: string, value?: number) {
   const model =
+    auditModel(id, value) ??
     functionsModel(id, value) ??
     integrationModel(id, value) ??
     seriesModel(id, value);

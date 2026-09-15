@@ -23,12 +23,14 @@ export function Viewport({
   graph,
   resetKey = 0,
   onStatus,
+  description,
 }: {
   scene: string;
   parameter: number;
   graph?: GraphSpec;
   resetKey?: number;
   onStatus?: (s: string, fingerprint?: string) => void;
+  description?: string;
 }) {
   const host = useRef<HTMLDivElement>(null),
     api = useRef<any>(null);
@@ -233,6 +235,14 @@ export function Viewport({
       api.current = null;
     };
   }, []);
+  useEffect(() => {
+    const canvas = host.current?.querySelector("canvas, svg");
+    canvas?.setAttribute(
+      "aria-label",
+      `${description || (graph ? `Graph of ${graph.expressions.join("; ")}` : scene)}. Sampled 3D illustration. Drag to orbit; arrow keys rotate; plus and minus zoom. Formulas and current values follow the graph.`,
+    );
+  }, [description, scene, graph]);
+
   useEffect(() => {
     const a = api.current;
     if (!a) return;

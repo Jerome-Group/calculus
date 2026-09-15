@@ -1,0 +1,93 @@
+import type { GraphSpec } from "@/lib/atlas/math";
+export const experimentPresets: Record<
+  string,
+  (GraphSpec & { title: string })[]
+> = {
+  "review-critical-points": [
+    {
+      title: "Plot the exact six-point surface",
+      mode: "surface",
+      expressions: ["x^4-2*x^2+y^3-3*y"],
+      min: -1.7,
+      max: 1.7,
+      vmin: -1.7,
+      vmax: 1.7,
+      clip: 8,
+      a: 0,
+    },
+  ],
+  "review-lagrange-box": [
+    {
+      title: "Plot the exact ellipsoid",
+      mode: "parametric",
+      expressions: ["12*sin(u)*cos(v)", "2*sin(u)*sin(v)", "4*cos(u)"],
+      min: 0,
+      max: Math.PI,
+      vmin: 0,
+      vmax: 2 * Math.PI,
+      clip: 5,
+      a: 0,
+    },
+  ],
+  "review-total-differentiability": [
+    {
+      title: "Plot the differentiable review function",
+      mode: "surface",
+      expressions: ["x^2+y^2 == 0 ? 0 : (x^4+y^4)/sqrt(x^2+y^2)"],
+      min: -1,
+      max: 1,
+      vmin: -1,
+      vmax: 1,
+      clip: 3,
+      a: 0,
+    },
+    {
+      title: "Plot the continuous counterexample",
+      mode: "surface",
+      expressions: ["x^2+y^2 == 0 ? 0 : (x^3-x*y^2)/(x^2+y^2)"],
+      min: -1,
+      max: 1,
+      vmin: -1,
+      vmax: 1,
+      clip: 2,
+      a: 0,
+    },
+  ],
+  "multivariable-chain-rule": [
+    {
+      title: "Plot the nonconstant lifted path",
+      mode: "curve",
+      expressions: ["t", "t^2", "t^2+t^4"],
+      min: -1,
+      max: 1,
+      vmin: -1,
+      vmax: 1,
+      clip: 3,
+      a: 0,
+    },
+  ],
+  "hessian-classification": [
+    {
+      title: "Plot a mixed-term saddle",
+      mode: "surface",
+      expressions: ["x^2+4*x*y+y^2"],
+      min: -1.5,
+      max: 1.5,
+      vmin: -1.5,
+      vmax: 1.5,
+      clip: 7,
+      a: 0,
+    },
+    {
+      title: "Plot a strict maximum",
+      mode: "surface",
+      expressions: ["-x^2-y^2"],
+      min: -1.5,
+      max: 1.5,
+      vmin: -1.5,
+      vmax: 1.5,
+      clip: 5,
+      a: 0,
+    },
+  ],
+};

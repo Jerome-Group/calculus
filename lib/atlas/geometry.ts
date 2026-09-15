@@ -39,6 +39,8 @@ export function builder(group: T.Group) {
         color,
         emissive: color,
         emissiveIntensity: 0.25,
+        transparent: true,
+        depthWrite: false,
       }),
     );
     m.position.set(...p);
@@ -62,7 +64,11 @@ export function builder(group: T.Group) {
       object.renderOrder = 10;
       const material = (object as T.Mesh).material;
       for (const item of Array.isArray(material) ? material : [material])
-        if (item) item.depthTest = false;
+        if (item) {
+          item.depthTest = false;
+          item.depthWrite = false;
+          item.transparent = true;
+        }
     });
     group.add(helper);
   };
@@ -261,6 +267,107 @@ export function buildScene(id: string, p: number, g: T.Group) {
     curve((t) => [r * Math.cos(t), r * Math.sin(t), z], 0, end, color);
   const cap = (R: number, a: number) => sphere(R, C.surface, 0.5, a);
   switch (id) {
+    case "reviewBox": {
+      mesh(
+        (u, v) => [
+          12 * Math.sin(u) * Math.cos(v),
+          2 * Math.sin(u) * Math.sin(v),
+          4 * Math.cos(u),
+        ],
+        0,
+        pi,
+        0,
+        2 * pi,
+        C.surface,
+        0.18,
+        36,
+        48,
+        20,
+      );
+      const x = 12 * p,
+        q = Math.sqrt((1 - p * p) / 2),
+        y = 2 * q,
+        z = 4 * q;
+      for (const a of [-1, 1])
+        for (const b of [-1, 1]) {
+          line(
+            [
+              [-x, a * y, b * z],
+              [x, a * y, b * z],
+            ],
+            C.accent,
+          );
+          line(
+            [
+              [a * x, -y, b * z],
+              [a * x, y, b * z],
+            ],
+            C.accent,
+          );
+          line(
+            [
+              [a * x, b * y, -z],
+              [a * x, b * y, z],
+            ],
+            C.accent,
+          );
+        }
+      break;
+    }
+    case "reviewCritical": {
+      const f = (x: number, y: number) => x ** 4 - 2 * x * x + y ** 3 - 3 * y;
+      mesh(
+        (x, y) => [x, y, f(x, y)],
+        -1.6,
+        1.6,
+        -1.6,
+        1.6,
+        C.surface,
+        0.6,
+        64,
+        64,
+        8,
+      );
+      const points: Vec[] = [
+        [-1, 1, -3],
+        [1, 1, -3],
+        [0, -1, 2],
+        [-1, -1, 1],
+        [1, -1, 1],
+        [0, 1, -2],
+      ];
+      points.forEach((q) => dot(q, C.blue));
+      dot(points[Math.round(p)], C.accent, 0.11);
+      break;
+    }
+    case "chainNonconstant": {
+      bowl();
+      const path = curve((t) => [t, t * t, t * t + t ** 4], -1, 1, C.accent);
+      path.renderOrder = 10;
+      path.material.transparent = true;
+      path.material.depthTest = false;
+      path.material.depthWrite = false;
+      dot([p, p * p, p * p + p ** 4]);
+      arrow(
+        [p, p * p, p * p + p ** 4],
+        [0.25, 0.5 * p, 0.25 * (2 * p + 4 * p ** 3)],
+        C.blue,
+      );
+      break;
+    }
+    case "fluxOblique":
+      sphere(1, C.surface, 0.3);
+      for (const y of [-0.6, 0, 0.6])
+        for (const z of [-0.6, 0, 0.6])
+          arrow([-1.5, y, z], [0.7, 0, 0], C.blue);
+      dot([Math.cos(p), Math.sin(p), 0]);
+      arrow(
+        [Math.cos(p), Math.sin(p), 0],
+        [0.5 * Math.cos(p), 0.5 * Math.sin(p), 0],
+        C.accent,
+      );
+      break;
+
     case "curves":
     case "arc": {
       const start = id === "arc" ? 0 : -pi,
@@ -1063,7 +1170,7 @@ export function buildScene(id: string, p: number, g: T.Group) {
 }
 export function buildGraph(spec: GraphSpec, g: T.Group) {
   const fs = validateGraph(spec),
-    { mesh, curve } = builder(g);
+    { mesh } = builder(g);
   const base = { a: spec.a, x: 0, y: 0, z: 0, u: 0, v: 0, t: 0 };
   if (spec.mode === "surface") {
     const r = mesh(
@@ -1096,21 +1203,52 @@ export function buildGraph(spec: GraphSpec, g: T.Group) {
     return `${r.valid}/${r.total} finite parameter samples · ${r.triangles} triangles`;
   }
   if (spec.mode === "curve") {
-    let pts: Vec[] = [];
-    let valid = 0;
-    for (let i = 0; i <= 600; i++) {
-      const t = spec.min + ((spec.max - spec.min) * i) / 600;
-      const p = fs.map((fn) => fn({ ...base, t })) as Vec;
-      if (p.every(Number.isFinite) && Math.abs(p[2]) <= spec.clip) {
-        pts.push(p);
-        valid++;
-      } else {
-        if (pts.length > 1) builder(g).line(pts, C.surface);
-        pts = [];
-      }
+    const segments: Vec[][] = [];
+    let current: Vec[] = [];
+    let sampled = 0;
+    let excluded = 0;
+    const evaluate = (t: number): Vec => {
+      sampled++;
+      return fs.map((fn) => fn({ ...base, t })) as Vec;
+    };
+    const visible = (p: Vec) =>
+      p.every((v) => Number.isFinite(v) && Math.abs(v) <= spec.clip);
+    const distance = (a: Vec, b: Vec) =>
+      Math.hypot(...a.map((v, i) => v - b[i]));
+    const split = () => {
+      if (current.length > 1) segments.push(current);
+      current = [];
+      excluded++;
+    };
+    const visit = (a: number, pa: Vec, b: number, pb: Vec, depth: number) => {
+      const m = (a + b) / 2;
+      const pm = evaluate(m);
+      const midpoint = pa.map((v, i) => (v + pb[i]) / 2) as Vec;
+      const safe = visible(pa) && visible(pm) && visible(pb);
+      const smooth =
+        safe &&
+        distance(pm, midpoint) < spec.clip / 1000 &&
+        distance(pa, pb) < spec.clip / 4;
+      if (!smooth && depth < 8 && (visible(pa) || visible(pm) || visible(pb))) {
+        visit(a, pa, m, pm, depth + 1);
+        visit(m, pm, b, pb, depth + 1);
+      } else if (smooth) {
+        if (!current.length) current.push(pa);
+        current.push(pm, pb);
+      } else split();
+    };
+    let a = spec.min;
+    let pa = evaluate(a);
+    for (let i = 1; i <= 600; i++) {
+      const b = spec.min + ((spec.max - spec.min) * i) / 600;
+      const pb = evaluate(b);
+      visit(a, pa, b, pb, 0);
+      a = b;
+      pa = pb;
     }
-    if (pts.length > 1) builder(g).line(pts, C.surface);
-    return `${valid}/601 finite curve samples in the clipping range`;
+    if (current.length > 1) segments.push(current);
+    for (const points of segments) builder(g).line(points, C.surface);
+    return `${segments.length} sampled curve segments · ${sampled} evaluations · ${excluded} intervals excluded by clipping or discontinuity checks. All coordinates clipped; continuity detection is heuristic.`;
   }
   // Marching tetrahedra on a bounded cubic grid. Zero crossings are linearly interpolated.
   const n = 24,
@@ -1221,5 +1359,7 @@ export function buildGraph(spec: GraphSpec, g: T.Group) {
       }),
     ),
   );
+  if (!pos.length)
+    return "No sign-changing surface was detected at this resolution. Non-sign-changing zero sets, such as z² = 0, and small features may be missed.";
   return `${pos.length / 9} approximate zero-set triangles · ${finite}/${values.length} finite grid samples`;
 }

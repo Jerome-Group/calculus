@@ -1,0 +1,3034 @@
+{
+  "sets-functions-domains": {
+    "prerequisites": [],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Sets before formulas",
+        "text": "The intersection A∩B contains inputs allowed by both restrictions; the union A∪B allows either. The interval [a,b) includes a and excludes b. A function assigns exactly one output to every member of its domain. Its codomain is the declared target set; its range consists of outputs actually attained."
+      },
+      {
+        "title": "Derive the domain",
+        "text": "For f(x)=√(x−1)/(x−2), the root requires x≥1 and the denominator requires x≠2. Intersecting gives [1,2)∪(2,∞). Declaring only [3,4] as the domain defines a different, restricted function. A circle as a relation fails the function test where one input has two output heights."
+      }
+    ],
+    "exercise": {
+      "prompt": "Let $f:[-2,2]\\to\\mathbb R$ be $f(x)=x^2$. Identify domain, codomain and range. Can the same rule define a function into $[1,4]$?",
+      "hint": "Check the output at x=0; then show that every value in your proposed range is attained.",
+      "solution": "The domain is [−2,2], codomain ℝ, and range [0,4]. Every y in [0,4] is attained at x=√y. The proposed codomain [1,4] fails because f(0)=0 lies outside it.",
+      "rubric": [
+        "Separate declared inputs from allowed outputs.",
+        "Prove both inclusion and attainment for the range.",
+        "Use an explicit input to refute the proposed codomain."
+      ],
+      "solutionTex": "D=[-2,2],\\quad C=\\mathbb R,\\quad f(D)=[0,4]"
+    }
+  },
+  "function-shapes": {
+    "prerequisites": ["sets-functions-domains"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Classify with the domain",
+        "text": "Even means f(−x)=f(x), odd means f(−x)=−f(x), and either requires a domain symmetric about zero. Restricting x² to [0,2] removes evenness under this convention. Increasing means x₁<x₂ implies f(x₁)≤f(x₂); strict increase replaces ≤ with <. The function x³ is strictly increasing although its derivative vanishes at zero."
+      },
+      {
+        "title": "Families and junctions",
+        "text": "Polynomials have real natural domains; rational functions exclude denominator zeros. Exponentials are positive, logarithms require positive inputs, and trigonometric domains depend on the function: tan excludes π/2+kπ. For a piecewise function, inspect each formula on its assigned interval and compare both limiting heights with the actual junction value. The identity |x|=−x for x<0 and x for x≥0 makes its corner explicit."
+      }
+    ],
+    "exercise": {
+      "prompt": "Is $f(x)=x^3$ on $[-1,2]$ odd, strictly increasing, both, or neither?",
+      "hint": "Test domain symmetry independently of the algebraic identity.",
+      "solution": "It is strictly increasing, since x₁³<x₂³ whenever x₁<x₂. It is not odd under the symmetric-domain convention: 2 belongs to the domain but −2 does not.",
+      "rubric": [
+        "State the domain convention.",
+        "Distinguish strict monotonicity from a derivative being everywhere positive."
+      ],
+      "solutionTex": "x_1<x_2\\implies x_1^3<x_2^3;\\quad 2\\in D,\\ -2\\notin D"
+    }
+  },
+  "transform-compose": {
+    "prerequisites": ["sets-functions-domains", "function-shapes"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Track a point",
+        "text": "For g(x)=a f(b(x−h))+k with b≠0, a point (u,f(u)) maps to (h+u/b,k+a f(u)). A negative b reflects the input direction; a negative a reflects output heights. If b=0 and f(0) exists, g is constant a f(0)+k; the inverse point mapping is unavailable."
+      },
+      {
+        "title": "Order changes the domain",
+        "text": "For f(x)=√x and g(x)=x−1, f∘g has domain [1,∞) and value √(x−1). The reverse composition g∘f has domain [0,∞) and value √x−1. In each case require the inner input to exist and the inner output to belong to the outer domain."
+      }
+    ],
+    "exercise": {
+      "prompt": "If $(2,3)$ lies on f, where does it move under $g(x)=-2 f(-3(x-1))+4$?",
+      "hint": "Solve −3(x−1)=2 before changing the output.",
+      "solution": "The input is x=1−2/3=1/3; the output is −2·3+4=−2. The new point is (1/3,−2).",
+      "rubric": [
+        "Invert the input transformation.",
+        "Apply output scaling and translation in order."
+      ],
+      "solutionTex": "x=1-\\frac23=\\frac13,\\quad y=-2(3)+4=-2"
+    }
+  },
+  "limits-one-sided": {
+    "prerequisites": ["sets-functions-domains"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Four different failures",
+        "text": "A removable hole has equal finite one-sided limits but no matching point value. A jump has unequal one-sided limits. The function 1/x² tends to +∞ at zero, which is not a finite limit. The bounded function sin(1/x) oscillates: inputs approaching zero can give outputs 1 or −1."
+      },
+      {
+        "title": "A rate with units",
+        "text": "If position is s(t)=t² metres with t in seconds, average velocity over [2,2+h] is ((2+h)²−4)/h=4+h metres per second. As h tends to zero from either side, velocity tends to 4 m/s. The h=0 quotient is undefined; its limit supplies the instantaneous rate."
+      }
+    ],
+    "exercise": {
+      "prompt": "For $f(x)=x+1$ when $x\\ne 1$ and $f(1)=7$, find the limit at 1. Which point value makes f continuous?",
+      "hint": "The punctured neighborhood contains no information about f(1).",
+      "solution": "Both one-sided limits are 2. Setting f(1)=2 restores continuity. Changing only f(1) cannot repair a jump with unequal one-sided limits.",
+      "rubric": [
+        "Distinguish the limit from f(1).",
+        "Explain why one-point repair needs a pre-existing finite limit."
+      ],
+      "solutionTex": "\\lim_{x\\to1}f(x)=2;\\quad f(1)=2\\text{ restores continuity}"
+    }
+  },
+  "infinite-limits": {
+    "prerequisites": ["limits-one-sided"],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "Quantifiers and signs",
+        "text": "A right-hand limit of +∞ at a means: for each M>0 there exists δ>0 such that 0<x−a<δ implies f(x)>M. Replace f(x)>M by f(x)<−M for −∞. For 1/x, the right limit at zero is +∞ and the left limit is −∞; for 1/x² both are +∞."
+      },
+      {
+        "title": "Unbounded is weaker",
+        "text": "A denominator zero can be removable: (x²−1)/(x−1) has limit 2 at 1. The function sin(1/x)/x is unbounded near zero but does not tend to either infinity: along x=1/(nπ) its value is zero. A graph clipped at a finite height cannot certify an infinite limit."
+      }
+    ],
+    "exercise": {
+      "prompt": "Prove that $1/x^2$ tends to $+\\infty$ as $x\\to 0$.",
+      "hint": "Given M, choose δ so that δ²=1/M.",
+      "solution": "For M>0 choose δ=1/√M. If 0<|x|<δ, then x²<1/M, hence 1/x²>M. This works on both sides.",
+      "rubric": [
+        "Choose δ after M.",
+        "Keep the puncture 0<|x|.",
+        "Reverse the reciprocal inequality correctly."
+      ],
+      "solutionTex": "\\delta=M^{-1/2},\\quad 0<|x|<\\delta\\implies x^{-2}>M"
+    }
+  },
+  "limit-laws-squeeze": {
+    "prerequisites": ["limits-one-sided"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Eligibility before arithmetic",
+        "text": "The sum and product laws require the component finite limits to exist; the quotient law additionally requires a nonzero denominator limit. A quotient 0/0 calls for another argument. Cancellation is valid in a punctured neighborhood even if the original expression is undefined at the target."
+      },
+      {
+        "title": "Build an estimate",
+        "text": "Since |sin(1/x)|≤1, |x sin(1/x)|≤|x|. Given ε>0, taking δ=ε bounds the output error for every nonzero |x|<δ. This establishes a limit without requiring the oscillating factor to have one."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\lim_{x\\to0}x^2\\cos(1/x)$, justifying the estimate.",
+      "hint": "Bound the absolute value by a non-oscillating function.",
+      "solution": "The absolute value is at most x². For ε>0 use δ=√ε. Then 0<|x|<δ implies |x²cos(1/x)|<ε, so the limit is zero.",
+      "rubric": [
+        "Use a bound valid for every nearby input.",
+        "Do not assign a limit to cos(1/x)."
+      ],
+      "solutionTex": "\\left|x^2\\cos(1/x)\\right|\\le x^2\\longrightarrow0"
+    }
+  },
+  "epsilon-delta-one-variable": {
+    "prerequisites": ["limit-laws-squeeze"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "The order matters",
+        "text": "The statement is: for every ε>0 there exists δ>0 such that every allowed x with 0<|x−a|<δ satisfies |f(x)−L|<ε. The chosen δ may depend on ε and a, but not on the particular x. Its negation has some ε₀>0 for which every δ>0 admits a violating input."
+      },
+      {
+        "title": "A nonlinear estimate",
+        "text": "To prove x²→4 as x→2, factor |x²−4|=|x−2||x+2|. First require |x−2|<1, giving |x+2|<5. Then choose δ=min(1,ε/5). The same δ enforces both the local bound and the requested output tolerance."
+      }
+    ],
+    "exercise": {
+      "prompt": "Give a valid $\\delta$ for proving $3x+2\\to 5$ as $x\\to 1$, and explain why it works.",
+      "hint": "Express output error as a multiple of input error.",
+      "solution": "Since |(3x+2)−5|=3|x−1|, choose δ=ε/3. Every 0<|x−1|<δ gives output error less than ε.",
+      "rubric": [
+        "State that ε is arbitrary and positive.",
+        "Choose δ independently of x.",
+        "Use strict inequalities consistently."
+      ],
+      "solutionTex": "\\delta=\\varepsilon/3,\\quad |3x+2-5|=3|x-1|<\\varepsilon"
+    }
+  },
+  "continuity-ivt": {
+    "prerequisites": ["epsilon-delta-one-variable"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Continuity depends on the domain",
+        "text": "At an endpoint of an interval, continuity is tested through the domain, so only the available side matters. At an interior point, existence of the finite limit and equality to the point value are both required."
+      },
+      {
+        "title": "Existence is not uniqueness",
+        "text": "For f(x)=x³−x−1, f(1)=−1 and f(2)=5. Polynomial continuity and the intermediate value theorem give a zero in (1,2). This theorem alone does not count zeros. Bisection repeatedly retains an interval whose endpoint values bracket zero; discontinuity would invalidate its existence guarantee."
+      }
+    ],
+    "exercise": {
+      "prompt": "Why does a sign change in $f(x)=1/x$ between −1 and 1 not guarantee a zero?",
+      "hint": "Which hypothesis fails on the closed interval?",
+      "solution": "The function is not defined or continuous at zero, so IVT cannot be applied on [−1,1]. Indeed 1/x is never zero on its domain.",
+      "rubric": [
+        "Check the entire interval, not just its endpoints.",
+        "Separate a failed theorem application from the truth of its conclusion."
+      ],
+      "solutionTex": "f(x)=1/x\\ne0\\quad(x\\ne0),\\qquad 0\\notin\\operatorname{dom}f"
+    }
+  },
+  "derivative-definition": {
+    "prerequisites": ["limits-one-sided", "limit-laws-squeeze"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Derive before substituting",
+        "text": "For f(x)=x², the secant quotient at a is ((a+h)²−a²)/h=2a+h for h≠0. The derivative is the limit 2a. On the graph, the secant line uses two distinct points; the tangent is the limiting line, not a zero-length secant."
+      },
+      {
+        "title": "Two derivative functions",
+        "text": "A derivative at a is a number. The derivative function f′ assigns that number to every point where the limit exists. If f measures metres and x seconds, f′ measures metres per second; a second derivative measures metres per second squared."
+      }
+    ],
+    "exercise": {
+      "prompt": "Use the definition to differentiate $f(x)=1/x$ at $a\\ne 0$.",
+      "hint": "Combine the fractions before cancelling h; keep a+h nonzero.",
+      "solution": "The quotient is (1/(a+h)−1/a)/h=−1/(a(a+h)). As h→0 this tends to −1/a². Choose a neighborhood with |h|<|a|/2 to keep denominators nonzero.",
+      "rubric": [
+        "Show the algebraic cancellation only for h≠0.",
+        "State a≠0 and control nearby denominators."
+      ],
+      "solutionTex": "\\frac{1/(a+h)-1/a}{h}=-\\frac1{a(a+h)}\\longrightarrow-\\frac1{a^2}"
+    }
+  },
+  "differentiability-corners": {
+    "prerequisites": ["derivative-definition", "continuity-ivt"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Three obstructions",
+        "text": "For |x| at zero, the difference quotient is −1 from the left and 1 from the right: a corner. For x^(1/3), its quotient at zero is |h|^(−2/3), which has no finite limit: a vertical tangent does not supply a finite derivative. A discontinuity also prevents differentiability."
+      },
+      {
+        "title": "Why differentiability implies continuity",
+        "text": "Write f(a+h)−f(a)=h·((f(a+h)−f(a))/h). If the quotient has a finite limit, multiplying by h→0 gives an increment tending to zero. The converse fails, as |x| demonstrates."
+      }
+    ],
+    "exercise": {
+      "prompt": "Is $f(x)=|x-2|$ differentiable at 2? State the one-sided quotients.",
+      "hint": "Set x=2+h.",
+      "solution": "The quotient |h|/h equals −1 for h<0 and 1 for h>0. It has no two-sided limit, although f is continuous at 2.",
+      "rubric": [
+        "Compute the two signs.",
+        "Distinguish continuity from differentiability."
+      ],
+      "solutionTex": "\\frac{|h|}{h}=\\begin{cases}-1&h<0\\\\1&h>0\\end{cases}"
+    }
+  },
+  "differentiation-rules": {
+    "prerequisites": ["derivative-definition"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Choose the outer operation",
+        "text": "A product differentiates as f′g+fg′; a quotient as (f′g−fg′)/g² where g≠0. In radians, (sin x)′=cos x and (cos x)′=−sin x. The expression x sin x is a product, so its derivative is sin x+x cos x."
+      },
+      {
+        "title": "A quotient worked through",
+        "text": "For q(x)=sin x/x on x≠0, numerator derivative is cos x and denominator derivative is 1. Thus q′(x)=(x cos x−sin x)/x². The derivative formula has the same excluded zero; any extension at zero must be defined and differentiated separately."
+      }
+    ],
+    "exercise": {
+      "prompt": "Differentiate $(x^2+1)/(x-1)$ and state its domain.",
+      "hint": "Use the quotient rule with the numerator derivative 2x.",
+      "solution": "For x≠1, the derivative is [2x(x−1)−(x²+1)]/(x−1)²=(x²−2x−1)/(x−1)².",
+      "rubric": [
+        "Preserve the minus sign before the entire numerator.",
+        "Square the denominator.",
+        "State x≠1."
+      ],
+      "solutionTex": "q'(x)=\\frac{2x(x-1)-(x^2+1)}{(x-1)^2}=\\frac{x^2-2x-1}{(x-1)^2}"
+    }
+  },
+  "chain-rule-single": {
+    "prerequisites": ["differentiation-rules", "linearization-differentials"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Make little-o explicit",
+        "text": "The notation r(h)=o(h) means r(h)/h→0. Differentiability of g at a says g(a+h)=g(a)+g′(a)h+o(h). Differentiability of f at g(a) lets its output increment be f′(g(a)) times the inner increment plus a smaller error. Combining gives derivative f′(g(a))g′(a); the argument also covers g′(a)=0."
+      },
+      {
+        "title": "Layers and domains",
+        "text": "For y=sin(x²), the outer function is sin and the inner is x², giving y′=cos(x²)·2x. For ln(1+x²), divide the inner derivative 2x by the positive inner value 1+x². Naming layers prevents replacing cos(x²) by cos x."
+      }
+    ],
+    "exercise": {
+      "prompt": "Differentiate $(1+\\sin x)^3$.",
+      "hint": "Differentiate the cube with respect to its input, then multiply by the derivative of that input.",
+      "solution": "The derivative is 3(1+sin x)² cos x, for every real x.",
+      "rubric": [
+        "Keep the full inner expression in the squared factor.",
+        "Include the inner derivative."
+      ],
+      "solutionTex": "\\frac{d}{dx}(1+\\sin x)^3=3(1+\\sin x)^2\\cos x"
+    }
+  },
+  "implicit-related-rates": {
+    "prerequisites": ["chain-rule-single"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Differentiate an identity on a branch",
+        "text": "From x²+y²=25, assuming a differentiable local branch y(x), differentiate to get 2x+2yy′=0. Where y≠0, y′=−x/y. At (3,4) the tangent slope is −3/4. At y=0 this formula cannot solve for y′; a different local graph may be needed."
+      },
+      {
+        "title": "Rates carry units",
+        "text": "For a spherical balloon V=(4π/3)r³, differentiation in time gives dV/dt=4πr² dr/dt. If dV/dt=12π cm³/s at r=3 cm, then dr/dt=1/3 cm/s. Substitute the instantaneous radius after differentiating, since it varies in time."
+      }
+    ],
+    "exercise": {
+      "prompt": "A 5 m ladder has foot distance x and height y with $x^2+y^2=25$. At $x=3$ m its foot moves outward at 2 m/s. Find $dy/dt$.",
+      "hint": "Use y=4 and differentiate with respect to time.",
+      "solution": "2x dx/dt+2y dy/dt=0, so dy/dt=−(3/4)·2=−3/2 m/s. The negative sign means the top descends.",
+      "rubric": [
+        "Differentiate both changing quantities.",
+        "Use the positive height.",
+        "Interpret sign and units."
+      ],
+      "solutionTex": "\\dot y=-\\frac{x}{y}\\dot x=-\\frac34(2)=-\\frac32\\ \\mathrm{m/s}"
+    }
+  },
+  "linearization-differentials": {
+    "prerequisites": ["derivative-definition"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Linear versus affine",
+        "text": "The derivative is the linear map h↦f′(a)h. The approximating graph x↦f(a)+f′(a)(x−a) is affine because it includes an offset. Differentiability guarantees error o(|x−a|), not a chosen finite error bound for arbitrary steps."
+      },
+      {
+        "title": "Approximate with an error bound",
+        "text": "For √x near a=4, L(x)=2+(x−4)/4, so L(4.1)=2.025. Taylor’s theorem gives error at most M(0.1)²/2 if |f″|≤M between 4 and 4.1. Here |f″|=1/(4x^(3/2))≤1/32, so the error is at most 0.00015625. This finite bound is stronger than a bare little-o statement."
+      }
+    ],
+    "exercise": {
+      "prompt": "Use linearization at 0 to approximate $\\sin(0.02)$. What extra information would certify an error bound?",
+      "hint": "Use sin 0=0 and cos 0=1; a remainder estimate needs derivative control.",
+      "solution": "The linear estimate is 0.02. Taylor’s theorem and |sin″x|≤1 give error at most (0.02)²/2=0.0002. A sharper cubic bound is possible using additional vanishing terms.",
+      "rubric": [
+        "Identify the base point.",
+        "Separate approximation from equality.",
+        "State the theorem and derivative bound for the error."
+      ],
+      "solutionTex": "\\sin(0.02)\\approx0.02,\\quad |R|\\le\\frac{(0.02)^2}{2}=0.0002"
+    }
+  },
+  "extrema-fermat": {
+    "prerequisites": ["differentiability-corners"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "A convention for candidates",
+        "text": "Here a critical point is an interior domain point where f′=0 or f′ does not exist; a stationary point has f′=0. Endpoints are checked separately. Fermat’s theorem says that a differentiable interior local extremum is stationary, not that every stationary point is an extremum."
+      },
+      {
+        "title": "List, then compare",
+        "text": "For f(x)=x³−3x on [−2,2], f′=3x²−3 vanishes at ±1. Evaluate endpoints and stationary points: f(−2)=−2, f(−1)=2, f(1)=−2, f(2)=2. The global minimum is −2 at −2 and 1; the maximum is 2 at −1 and 2. Compactness and continuity ensure attainment."
+      }
+    ],
+    "exercise": {
+      "prompt": "Why does $f(x)=x$ on $[0,1]$ have a maximum even though $f'$ never vanishes?",
+      "hint": "Is the maximum an interior point?",
+      "solution": "The maximum is f(1)=1 at an endpoint. Fermat’s necessary condition applies only to differentiable interior extrema, so there is no contradiction.",
+      "rubric": [
+        "State endpoint eligibility.",
+        "Do not infer no extrema from no stationary points."
+      ],
+      "solutionTex": "\\max_{x\\in[0,1]}x=1,\\qquad f'(x)=1\\quad(0<x<1)"
+    }
+  },
+  "rolle-mean-value": {
+    "prerequisites": ["extrema-fermat", "continuity-ivt"],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "Rolle’s theorem supplies the bridge",
+        "text": "If f is continuous on [a,b], differentiable on (a,b), and f(a)=f(b), extrema are attained. If f is constant, any interior point has derivative zero. Otherwise a value differs from the common endpoint value, so a maximum or minimum occurs inside; Fermat gives derivative zero there."
+      },
+      {
+        "title": "Subtract the secant",
+        "text": "Set g(x)=f(x)−f(a)−m(x−a), where m=(f(b)−f(a))/(b−a). Then g(a)=g(b)=0. Rolle provides c with g′(c)=0, hence f′(c)=m. For f(x)=x² on [1,3], m=4 and c=2."
+      }
+    ],
+    "exercise": {
+      "prompt": "Why can the mean value theorem not be used for $|x|$ on $[-1,1]$?",
+      "hint": "Check differentiability at the interior junction.",
+      "solution": "The endpoint slope is zero, but |x| is not differentiable at zero and its derivative elsewhere is ±1. The missing differentiability hypothesis prevents the claimed conclusion.",
+      "rubric": [
+        "Name the failed hypothesis and its location.",
+        "Compute the secant and available derivatives."
+      ],
+      "solutionTex": "\\frac{f(1)-f(-1)}{2}=0,\\quad f'(x)\\in\\{-1,1\\}\\ (x\\ne0)"
+    }
+  },
+  "derivative-tests": {
+    "prerequisites": ["rolle-mean-value", "extrema-fermat"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Continuity is indispensable",
+        "text": "The derivative signs constrain nearby motion but do not fix a separately assigned point height. The example f(x)=−|x| for x≠0 with f(0)=−1 has the positive-to-negative derivative pattern and nevertheless a strict local minimum at zero."
+      },
+      {
+        "title": "Zero second derivative gives no verdict",
+        "text": "At zero, x⁴ has a strict minimum, −x⁴ a strict maximum, and x³ neither, although all three have first and second derivatives zero there. Check derivative signs or the original value comparison. An inflection point requires a change of concavity, not merely f″=0."
+      }
+    ],
+    "exercise": {
+      "prompt": "Classify $x^4$ at zero without using an inconclusive second-derivative test.",
+      "hint": "Compare f(x) with f(0) for nonzero x.",
+      "solution": "For x≠0, x⁴>0=f(0), so zero is a strict global and local minimum. Equivalently f′=4x³ changes from negative to positive.",
+      "rubric": [
+        "Identify why the second-derivative test is inconclusive.",
+        "Supply a direct inequality or valid sign test."
+      ],
+      "solutionTex": "x\\ne0\\implies x^4>0=f(0)"
+    }
+  },
+  "infinity-curve-sketching": {
+    "prerequisites": ["derivative-tests", "infinite-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Separate the two tails",
+        "text": "For rational functions, divide by the highest denominator power separately as x→+∞ and x→−∞. For √(x²+1)/x, factoring produces |x|/x times √(1+1/x²), giving limits 1 and −1. Replacing √(x²) by x would lose the negative tail."
+      },
+      {
+        "title": "A sketch is an assembled argument",
+        "text": "For f(x)=x+1/x, domain excludes zero. Its slant asymptote is y=x because f(x)−x→0 at both infinities. Derivative 1−1/x² is positive for |x|>1 and negative for 0<|x|<1; stationary points are −1 and 1. Add the separate vertical behavior at zero before drawing connected pieces."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the slant asymptote of $(x^2+1)/(x-1)$.",
+      "hint": "Perform polynomial division.",
+      "solution": "(x²+1)/(x−1)=x+1+2/(x−1). The remainder tends to zero at either infinity, so y=x+1 is the slant asymptote; x=1 remains excluded.",
+      "rubric": [
+        "Show the vanishing difference.",
+        "Keep the finite-domain restriction separate."
+      ],
+      "solutionTex": "\\frac{x^2+1}{x-1}=x+1+\\frac2{x-1},\\quad y=x+1"
+    }
+  },
+  "optimization-single": {
+    "prerequisites": ["extrema-fermat", "derivative-tests"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Model the feasible set",
+        "text": "A rectangle with perimeter 20 has y=10−x and area A=x(10−x). Positive side lengths require 0<x<10; including degenerate rectangles closes the set to [0,10]. Differentiate A to get 10−2x, whose zero is x=5. Then y=5 and A=25."
+      },
+      {
+        "title": "Justify a global answer",
+        "text": "The identity A=25−(x−5)² proves A≤25 throughout the feasible set. This proves global optimality directly, whereas a positive-to-negative sign change by itself describes local behavior. Check units: perimeter in metres gives area in square metres."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the largest area rectangle with perimeter $P>0$.",
+      "hint": "Eliminate one side and complete the square.",
+      "solution": "With y=P/2−x, A=x(P/2−x)=P²/16−(x−P/4)². Its maximum P²/16 occurs at x=y=P/4, within the positive feasible interval.",
+      "rubric": [
+        "State positivity and the feasible interval.",
+        "Prove global optimality.",
+        "Retain units and parameter dependence."
+      ],
+      "solutionTex": "A=\\frac{P^2}{16}-\\left(x-\\frac P4\\right)^2\\le\\frac{P^2}{16}"
+    }
+  },
+  "newton-method": {
+    "prerequisites": ["linearization-differentials"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Derive the update",
+        "text": "The tangent at xₙ has equation y=f(xₙ)+f′(xₙ)(x−xₙ). Setting y=0 gives xₙ₊₁=xₙ−f(xₙ)/f′(xₙ), provided the derivative is nonzero. It finds a tangent intercept, not an exact root of the original curve."
+      },
+      {
+        "title": "Failure deserves an example",
+        "text": "For f(x)=x³−2x+2, starting at 0 gives 1 and starting at 1 gives 0, so Newton cycles. For x²−2, starting at zero is undefined because f′(0)=0. A small step alone is not proof of a root; check the residual and the domain, and use a bracket when available."
+      }
+    ],
+    "exercise": {
+      "prompt": "Perform two Newton steps for $x^2-2$ from $x_0=1$.",
+      "hint": "Use xₙ₊₁=(xₙ+2/xₙ)/2.",
+      "solution": "x₁=3/2 and x₂=17/12. The residual at the second iterate is (17/12)²−2=1/144; it is an approximation, not an exact root.",
+      "rubric": [
+        "Calculate both steps.",
+        "Check the residual.",
+        "Avoid claiming universal convergence."
+      ],
+      "solutionTex": "x_1=\\frac32,\\quad x_2=\\frac{17}{12},\\quad x_2^2-2=\\frac1{144}"
+    }
+  },
+  "antiderivatives-single": {
+    "prerequisites": ["rolle-mean-value", "differentiation-rules"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Why the constant is the only freedom",
+        "text": "If F′=G′ on an interval, then (F−G)′=0. Applying MVT between any two points gives equal values of F−G. Thus F−G is constant on that interval. On a disconnected domain the constants may differ between components."
+      },
+      {
+        "title": "Use initial data",
+        "text": "If velocity is v(t)=3t²−2 and s(0)=5, integrating gives s(t)=t³−2t+C. The initial value sets C=5. Differentiation recovers the velocity and checks the answer; the constant carries position units."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find every antiderivative of $1/x$ on $\\mathbb R$ excluding zero.",
+      "hint": "Treat the negative and positive intervals separately.",
+      "solution": "The answer is ln|x|+C₋ for x<0 and ln|x|+C₊ for x>0, with independent constants. No interval in this domain connects the two sides.",
+      "rubric": [
+        "Use ln|x|, not ln x on negative inputs.",
+        "Allow separate constants on disconnected components."
+      ],
+      "solutionTex": "F(x)=\\begin{cases}\\ln|x|+C_-&x<0\\\\\\ln|x|+C_+&x>0\\end{cases}"
+    }
+  },
+  "inverse-functions": {
+    "prerequisites": ["chain-rule-single", "continuity-ivt"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Existence precedes the derivative",
+        "text": "A continuous strictly monotone function on an interval has an inverse on its range. A sufficient local differentiability theorem assumes f is continuously differentiable near a and f′(a)≠0; then its local inverse is differentiable near f(a). Only after this theorem may differentiating f(f⁻¹(y))=y establish (f⁻¹)′(y)=1/f′(f⁻¹(y))."
+      },
+      {
+        "title": "Zero derivative is a warning",
+        "text": "The inverse of x³ is the cube root. Although x³ is one-to-one, its derivative at zero vanishes and the inverse has no finite derivative there. For x², choose a branch such as [0,∞) before naming √x as its inverse."
+      }
+    ],
+    "exercise": {
+      "prompt": "For $f(x)=x^3+x$, find the derivative of its inverse at $y=2$.",
+      "hint": "Find the input mapped to 2, then evaluate f′ there.",
+      "solution": "f(1)=2 and f′(1)=3+1=4, so (f⁻¹)′(2)=1/4. Since f′=3x²+1>0, the inverse is well-defined and differentiable.",
+      "rubric": [
+        "Evaluate at the inverse input, not at y directly.",
+        "Check the derivative is nonzero."
+      ],
+      "solutionTex": "(f^{-1})'(2)=\\frac1{f'(1)}=\\frac14"
+    }
+  },
+  "exponential-logarithmic": {
+    "prerequisites": ["inverse-functions", "chain-rule-single"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "A definition must have a foundation",
+        "text": "One rigorous route defines ln x as the integral from 1 to x of 1/t for x>0, then uses the fundamental theorem to obtain derivative 1/x. Its inverse is exp; the inverse derivative theorem yields exp′=exp. If integration has not been developed yet, these facts are imported theorems."
+      },
+      {
+        "title": "Logarithmic differentiation",
+        "text": "For y=xˣ on x>0, take ln y=x ln x. Differentiate to obtain y′/y=ln x+1, hence y′=xˣ(ln x+1). The positive domain permits logarithms; this argument does not define a real differentiable xˣ on all negative inputs."
+      }
+    ],
+    "exercise": {
+      "prompt": "Differentiate $\\ln(x^2-1)$ over its real domain.",
+      "hint": "First require x²−1>0.",
+      "solution": "The domain is (−∞,−1)∪(1,∞). The derivative is 2x/(x²−1) on that domain.",
+      "rubric": [
+        "Solve the strict domain inequality.",
+        "Include the inner derivative."
+      ],
+      "solutionTex": "\\frac d{dx}\\ln(x^2-1)=\\frac{2x}{x^2-1},\\quad |x|>1"
+    }
+  },
+  "lhopital": {
+    "prerequisites": ["rolle-mean-value", "exponential-logarithmic"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "State a usable version",
+        "text": "For a 0/0 quotient near a, assume f,g are differentiable on a punctured one-sided interval, g and g′ are nonzero there, both f and g tend to zero, and f′/g′ tends to L (finite or infinite). Then f/g tends to L. An infinity/infinity version has its own hypotheses. The justification imports Cauchy’s mean value theorem, a two-function extension of MVT."
+      },
+      {
+        "title": "Normalize before applying",
+        "text": "A product x ln x as x→0+ is not itself a quotient. Rewrite it as ln x/(1/x), an infinity/infinity form. Differentiating numerator and denominator gives (1/x)/(−1/x²)=−x→0. By contrast, differentiating numerator and denominator of (x+1)/x near zero without checking form would incorrectly discard its infinite behavior."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\lim_{x\\to0}(e^x-1-x)/x^2$, checking the form at each step.",
+      "hint": "The first derivative quotient is (eˣ−1)/(2x).",
+      "solution": "Initially both numerator and denominator tend to zero. After one application they still do. The second derivative quotient is eˣ/2→1/2. Derivatives of the denominators are nonzero on each punctured side, so the limit is 1/2.",
+      "rubric": [
+        "Verify 0/0 at both applications.",
+        "Use the rule on each side and match the results."
+      ],
+      "solutionTex": "\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}=\\lim_{x\\to0}\\frac{e^x-1}{2x}=\\frac12"
+    }
+  },
+  "integral-antiderivatives": {
+    "prerequisites": ["antiderivatives-single"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "An indefinite integral is a family",
+        "text": "The notation ∫f(x)dx denotes antiderivatives F(x)+C on an interval. It is not a signed area with unspecified endpoints. Differentiate a candidate to verify it, and handle disconnected domains separately."
+      },
+      {
+        "title": "Reverse a chain rule carefully",
+        "text": "For ∫2x cos(x²)dx, notice that 2x is the derivative of the inner x². The answer is sin(x²)+C. Omitting 2x would produce a different problem; there is no general rule integrating a composition by simply integrating the outer function."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\int(3x^2-4x+2)\\,dx$ and verify it.",
+      "hint": "Integrate each power, then differentiate.",
+      "solution": "x³−2x²+2x+C differentiates to 3x²−4x+2. Every antiderivative on ℝ differs by one constant.",
+      "rubric": [
+        "Include the constant.",
+        "Use differentiation as an independent check."
+      ],
+      "solutionTex": "\\int(3x^2-4x+2)\\,dx=x^3-2x^2+2x+C"
+    }
+  },
+  "riemann-integral": {
+    "prerequisites": ["sequence-limits", "continuity-ivt"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "A partition is more than equal bars",
+        "text": "Partition [a,b] into subintervals, choose a tag in each, and sum f(tag) times width. Riemann integrability means all such sums approach one number as the largest width tends to zero, independently of tags. Continuous functions on a closed interval are integrable; this result uses uniform continuity."
+      },
+      {
+        "title": "Signed accumulation",
+        "text": "For f(x)=x on [−1,1], negative left-hand contributions cancel positive right-hand contributions, giving integral zero. The geometric area is instead ∫|x|dx=1. Increasing equal bars supplies evidence but is not the definition’s all-partition proof."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute right-endpoint sums for x on $[0,1]$ and their limit.",
+      "hint": "Use width 1/n and Σk=n(n+1)/2.",
+      "solution": "The sum is Σ(k/n)(1/n)=(n+1)/(2n), tending to 1/2. Continuity independently ensures this limit equals the Riemann integral.",
+      "rubric": [
+        "Include the subinterval width.",
+        "Distinguish one sequence of sums from the full integrability theorem."
+      ],
+      "solutionTex": "S_n=\\frac1{n^2}\\sum_{k=1}^n k=\\frac{n+1}{2n}\\longrightarrow\\frac12"
+    }
+  },
+  "integral-average": {
+    "prerequisites": ["riemann-integral"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Average height",
+        "text": "On [a,b] with a<b, the integral average is (b−a)⁻¹∫f. It is the constant height producing the same signed accumulation. For a continuous function, an integral mean-value theorem ensures some c has f(c) equal to that average."
+      },
+      {
+        "title": "Attainment needs care",
+        "text": "For f=x² on [0,2], the integral is 8/3 and average 4/3, attained at c=2/√3. A discontinuous function taking only values 0 and 1 can have average 1/2 without ever taking that value."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the average of $2x+1$ on $[1,3]$ and where it is attained.",
+      "hint": "Divide the integral by interval length 2.",
+      "solution": "The integral [x²+x]₁³ is 10, so the average is 5. Solve 2c+1=5 to get c=2.",
+      "rubric": [
+        "Divide by length, not the upper endpoint.",
+        "Separate the average from the point attaining it."
+      ],
+      "solutionTex": "f_{\\rm avg}=\\frac12\\int_1^3(2x+1)\\,dx=5,\\quad c=2"
+    }
+  },
+  "fundamental-theorem": {
+    "prerequisites": ["riemann-integral", "derivative-definition"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Two directions, two jobs",
+        "text": "If f is continuous and A(x)=$\\int_a^x f(t)\\,dt$, then A′(x)=f(x). If F′=f and f is continuous on [a,b], then $\\int_a^b f$=F(b)−F(a). The first constructs an antiderivative; the second evaluates accumulation using one."
+      },
+      {
+        "title": "Moving bounds",
+        "text": "For H(x)=$\\int_x^{x^2}\\sin t\\,dt$, write A(x²)−A(x). Chain rule gives H′(x)=2x sin(x²)−sin x. The symbol t is a dummy variable; the moving endpoint x² creates its own derivative factor."
+      }
+    ],
+    "exercise": {
+      "prompt": "Differentiate $\\int_0^{x^3}e^{t^2}\\,dt$.",
+      "hint": "Use FTC at the endpoint, then multiply by its derivative.",
+      "solution": "The derivative is 3x² e^(x⁶). No elementary antiderivative of e^(t²) is needed.",
+      "rubric": [
+        "Substitute the endpoint into the integrand.",
+        "Multiply by 3x²."
+      ],
+      "solutionTex": "\\frac d{dx}\\int_0^{x^3}e^{t^2}\\,dt=3x^2e^{x^6}"
+    }
+  },
+  "substitution-integral": {
+    "prerequisites": ["fundamental-theorem", "chain-rule-single"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Transform the whole integral",
+        "text": "For $\\int_0^1 2xe^{x^2}\\,dx$, choose u=x² and du=2x dx. Bounds become 0 and 1, yielding $\\int_0^1e^u\\,du$=e−1. In an indefinite integral substitute back; in a definite integral either transform bounds or return to the original variable before evaluating."
+      },
+      {
+        "title": "Why the rule holds",
+        "text": "If F′=f, then (F(g(x)))′=f(g(x))g′(x). FTC therefore gives the substitution formula when the differentiability and continuity assumptions hold. Monotonicity simplifies interpretation of transformed regions, but the signed one-variable identity with g′ can also cover paths that reverse direction."
+      }
+    ],
+    "exercise": {
+      "prompt": "Evaluate $\\int_0^2x\\sqrt{1+x^2}\\,dx$.",
+      "hint": "Use u=1+x²; the extra factor is du/2.",
+      "solution": "The bounds become 1 and 5. The integral is (1/2)$\\int_1^5u^{1/2}\\,du$=(5√5−1)/3.",
+      "rubric": ["Transform both endpoints.", "Keep the factor 1/2."],
+      "solutionTex": "\\int_0^2x\\sqrt{1+x^2}\\,dx=\\frac12\\int_1^5u^{1/2}\\,du=\\frac{5\\sqrt5-1}{3}"
+    }
+  },
+  "improper-integrals": {
+    "prerequisites": ["fundamental-theorem", "limits-one-sided"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Every bad endpoint gets a limit",
+        "text": "For $\\int_1^\\infty x^{-2}\\,dx$, define lim R→∞ $\\int_1^R x^{-2}\\,dx$=lim(1−1/R)=1. For an interior singularity c, split the interval at c and require both one-sided integrals to converge separately."
+      },
+      {
+        "title": "Cancellation cannot rescue divergence",
+        "text": "The symmetric integrals of 1/x on [−1,−ε] and [ε,1] cancel, but the negative and positive parts diverge separately. Their symmetric principal value zero is a different notion, not convergence of the improper integral."
+      }
+    ],
+    "exercise": {
+      "prompt": "Does $\\int_0^1x^{-3/2}\\,dx$ converge?",
+      "hint": "Replace the lower endpoint by ε>0.",
+      "solution": "The integral from ε to 1 is 2/√ε−2, tending to +∞. It diverges.",
+      "rubric": [
+        "Write the limiting definition.",
+        "Check the sign of the antiderivative.",
+        "Distinguish divergence from a finite numerical cutoff."
+      ],
+      "solutionTex": "\\int_\\varepsilon^1x^{-3/2}\\,dx=\\frac2{\\sqrt\\varepsilon}-2\\longrightarrow+\\infty"
+    }
+  },
+  "area-between-curves": {
+    "prerequisites": ["riemann-integral"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Decide the order on each piece",
+        "text": "Area between f and g over [a,b] is ∫|f−g|. Solve their intersections and split wherever their order changes. For x and x² on [0,1], x≥x² and the area is $\\int_0^1(x-x^2)\\,dx$=1/6."
+      },
+      {
+        "title": "Horizontal slices are an alternative",
+        "text": "A horizontal slice contributes right boundary minus left boundary times dy. For x=y² and x=2−y², intersections occur at y=±1; the area is $\\int_{-1}^1(2-2y^2)\\,dy$=8/3. Choose an order that avoids unnecessary inverses and splitting."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the area between $y=x$ and $y=-x$ on $[-1,1]$.",
+      "hint": "Their order switches at zero.",
+      "solution": "Area is $\\int_{-1}^0(-2x)\\,dx$+$\\int_0^1 2x\\,dx$=2. The unsplit signed integral of 2x is zero and is not the area.",
+      "rubric": ["Locate the order change.", "Use nonnegative slice heights."],
+      "solutionTex": "A=\\int_{-1}^0(-2x)\\,dx+\\int_0^1 2x\\,dx=2"
+    }
+  },
+  "disk-washer-volumes": {
+    "prerequisites": ["area-between-curves"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "A washer removes an inner disk",
+        "text": "Rotating y=x and y=x² for 0≤x≤1 about the x-axis gives R=x and r=x², so V=$\\pi\\int_0^1(x^2-x^4)\\,dx$=2π/15. The slice area is π(R²−r²), not π(R−r)²."
+      },
+      {
+        "title": "Measure from the actual axis",
+        "text": "About y=−1 the same region has radii 1+x and 1+x². The volume becomes $\\pi\\int_0^1[(1+x)^2-(1+x^2)^2]\\,dx$=7π/15. Both radii are distances from the axis, not graph heights above zero."
+      }
+    ],
+    "exercise": {
+      "prompt": "A region has $1\\le y\\le 2$ on $0\\le x\\le 3$. Rotate it about $y=0$; find the volume.",
+      "hint": "Every slice is the same washer.",
+      "solution": "V=$\\int_0^3\\pi(2^2-1^2)\\,dx$=9π. Squaring the thickness would give only 3π and incorrectly discard part of the annulus.",
+      "rubric": ["Subtract squared radii.", "Use the axial interval length."],
+      "solutionTex": "V=\\int_0^3\\pi(2^2-1^2)\\,dx=9\\pi"
+    }
+  },
+  "cylindrical-shells": {
+    "prerequisites": ["disk-washer-volumes"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Unroll a thin shell",
+        "text": "A shell at radius r, height h and thickness dr has volume approximately circumference times height times thickness, 2πrh dr. Integrating gives the limit. For the region under y=x on [0,1] about the y-axis, V=$2\\pi\\int_0^1x^2\\,dx$=2π/3."
+      },
+      {
+        "title": "Choose slices relative to the axis",
+        "text": "Shell slices are parallel to the rotation axis; washer slices are perpendicular. Radii are nonnegative distances. If the region crosses the axis, naive shells from both sides may sweep the same volume twice; first describe the actual solid or split without overlap."
+      }
+    ],
+    "exercise": {
+      "prompt": "Rotate $0\\le y\\le 1-x$, $0\\le x\\le 1$, about the y-axis.",
+      "hint": "Shell radius is x and height is 1−x.",
+      "solution": "V=$2\\pi\\int_0^1x(1-x)\\,dx$=π/3, agreeing with a cone of radius 1 and height 1.",
+      "rubric": [
+        "Identify radius and height separately.",
+        "Check against the known solid."
+      ],
+      "solutionTex": "V=2\\pi\\int_0^1x(1-x)\\,dx=\\frac\\pi3"
+    }
+  },
+  "integration-by-parts": {
+    "prerequisites": ["fundamental-theorem", "differentiation-rules"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Repeated and cyclic parts",
+        "text": "From (uv)′=u′v+uv′, ∫u dv=uv−∫v du. Repeated parts gives ∫x²eˣdx=eˣ(x²−2x+2)+C. For I=∫eˣcos x dx, two rounds give I=eˣcos x+eˣsin x−I; solving yields I=eˣ(sin x+cos x)/2+C."
+      },
+      {
+        "title": "Definite terms and choice",
+        "text": "For $\\int_0^1xe^x\\,dx$, choose u=x, dv=eˣdx. The boundary term [xeˣ]₀¹=e and the remaining integral is e−1, so the answer is 1. Choosing u=eˣ and dv=x dx creates an x²eˣ integral, increasing the polynomial degree instead of reducing it."
+      }
+    ],
+    "exercise": {
+      "prompt": "Evaluate $\\int_0^1x^2e^x\\,dx$.",
+      "hint": "Use the repeated-parts antiderivative and both endpoints.",
+      "solution": "The antiderivative is eˣ(x²−2x+2). Its endpoint values are e and 2, so the integral is e−2.",
+      "rubric": [
+        "Reduce the polynomial degree twice.",
+        "Retain the lower boundary term."
+      ],
+      "solutionTex": "\\int_0^1x^2e^x\\,dx=[e^x(x^2-2x+2)]_0^1=e-2"
+    }
+  },
+  "trigonometric-integrals": {
+    "prerequisites": ["substitution-integral"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Use parity to choose a substitution",
+        "text": "For sinᵐx cosⁿx with a positive odd sine power, reserve sin x dx and replace sin²x by 1−cos²x; then use u=cos x. With an odd cosine power, reverse the roles. If both powers are even, use half-angle identities."
+      },
+      {
+        "title": "Work both branches",
+        "text": "∫sin³x cos²x dx becomes −∫(1−u²)u²du=−u³/3+u⁵/5+C. For ∫cos²x dx, use cos²x=(1+cos 2x)/2, giving x/2+sin 2x/4+C."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\int\\sin x\\cos^3x\\,dx$.",
+      "hint": "Reserve sin x dx and use u=cos x.",
+      "solution": "The integral is −∫u³du=−cos⁴x/4+C. Differentiating restores sin x cos³x.",
+      "rubric": ["Carry the minus sign in du.", "Verify by differentiating."],
+      "solutionTex": "\\int\\sin x\\cos^3x\\,dx=-\\frac14\\cos^4x+C"
+    }
+  },
+  "trigonometric-substitution": {
+    "prerequisites": ["substitution-integral", "trigonometric-integrals"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Fix a branch before simplifying",
+        "text": "For √(a²−x²) with a>0, choose x=a sin θ and θ∈[−π/2,π/2], so cos θ≥0 and √(a²−x²)=a cos θ. Without the range restriction the root is a|cos θ|. For √(a²+x²), x=a tan θ on the same open angle interval gives a sec θ."
+      },
+      {
+        "title": "Include the differential",
+        "text": "For ∫√(1−x²)dx, x=sin θ and dx=cos θ dθ give ∫cos²θ dθ. Substituting back gives (arcsin x+x√(1−x²))/2+C on the interior of [−1,1]. A diagram helps recover the factors but does not replace the branch choice."
+      }
+    ],
+    "exercise": {
+      "prompt": "Evaluate $\\int_0^1\\frac{dx}{\\sqrt{4-x^2}}$.",
+      "hint": "Use x=2 sin θ with θ from 0 to π/6.",
+      "solution": "The differential and square root both contribute 2cos θ and cancel, leaving $\\int_0^{\\pi/6}d\\theta$=π/6.",
+      "rubric": ["Transform the endpoints.", "Justify cos θ≥0."],
+      "solutionTex": "\\int_0^1\\frac{dx}{\\sqrt{4-x^2}}=\\int_0^{\\pi/6}d\\theta=\\frac\\pi6"
+    }
+  },
+  "partial-fractions": {
+    "prerequisites": ["integral-antiderivatives"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "The denominator determines the template",
+        "text": "First divide if numerator degree is at least denominator degree. For each repeated linear factor (x−a)ᵏ include A₁/(x−a)+…+Aₖ/(x−a)ᵏ. For an irreducible quadratic q, use a linear numerator (Bx+C)/q; repeat terms for powers of q."
+      },
+      {
+        "title": "Solve coefficients explicitly",
+        "text": "For (x²+1)/(x(x−1)²), write A/x+B/(x−1)+C/(x−1)². Multiplying through gives x²+1=A(x−1)²+Bx(x−1)+Cx. Setting x=0 gives A=1, x=1 gives C=2, and the x² coefficient gives B=0. Integrating yields ln|x|−2/(x−1)+C₀ on each component. For (x+1)/(x²+1), split into a logarithmic derivative and an arctangent: (1/2)ln(x²+1)+arctan x."
+      }
+    ],
+    "exercise": {
+      "prompt": "Integrate $x^2/(x-1)$.",
+      "hint": "Perform polynomial division before partial fractions.",
+      "solution": "x²/(x−1)=x+1+1/(x−1). The integral is x²/2+x+ln|x−1|+C on either side of 1.",
+      "rubric": [
+        "Make the rational remainder proper.",
+        "Keep the excluded point and absolute value."
+      ],
+      "solutionTex": "\\int\\frac{x^2}{x-1}\\,dx=\\frac{x^2}{2}+x+\\ln|x-1|+C"
+    }
+  },
+  "quadrature-midpoint-trapezoid": {
+    "prerequisites": ["riemann-integral"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Signed errors reveal geometry",
+        "text": "For a convex function, chords lie above the graph, so the trapezoidal rule overestimates; midpoint underestimates when convexity holds on each panel. Error signs require hypotheses, not just a visual impression."
+      },
+      {
+        "title": "Choose n from a bound",
+        "text": "For a twice continuously differentiable function with |f″|≤M, composite midpoint error is at most M(b−a)³/(24n²), and trapezoidal error at most M(b−a)³/(12n²). Solve the inequality for n and round up; these are certified bounds, unlike agreement between two numerical estimates."
+      }
+    ],
+    "exercise": {
+      "prompt": "How many trapezoids guarantee error at most 0.001 for $\\int_0^1x^2\\,dx$?",
+      "hint": "Here M=2; require 2/(12n²)≤0.001.",
+      "solution": "n²≥500/3, so n≥13 is sufficient. The bound is 1/(6·169), below 0.001.",
+      "rubric": [
+        "Use an upper derivative bound on the whole interval.",
+        "Round n upward."
+      ],
+      "solutionTex": "\\frac1{6n^2}\\le0.001\\implies n\\ge13"
+    }
+  },
+  "simpson-rule": {
+    "prerequisites": ["quadrature-midpoint-trapezoid"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Pairs of panels",
+        "text": "Composite Simpson requires an even number n of equal subintervals with width h. Its weights are 1,4,2,4,…,2,4,1 and overall factor h/3. It integrates every polynomial of degree at most three exactly, although each local interpolant is quadratic."
+      },
+      {
+        "title": "A fourth-derivative guarantee",
+        "text": "If f has a continuous fourth derivative bounded in magnitude by M, the error is at most M(b−a)⁵/(180n⁴). More panels do not make this bound applicable at a singularity; check smoothness first."
+      }
+    ],
+    "exercise": {
+      "prompt": "Apply Simpson with $n=2$ to $x^3$ on $[0,1]$.",
+      "hint": "Use values at 0, 1/2 and 1.",
+      "solution": "With h=1/2, the result is (1/6)[0+4(1/8)+1]=1/4, exactly the integral.",
+      "rubric": ["Use the h/3 factor.", "Explain exactness for a cubic."],
+      "solutionTex": "S_2=\\frac16\\left[0+4\\left(\\frac18\\right)+1\\right]=\\frac14"
+    }
+  },
+  "sequence-limits": {
+    "prerequisites": ["epsilon-delta-one-variable"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "The input is an index",
+        "text": "A sequence converges to L if for every ε>0 some integer N makes |aₙ−L|<ε for every n≥N. The tail matters: changing finitely many terms cannot change the limit. An infinite sequence does not automatically converge."
+      },
+      {
+        "title": "A quantitative tail",
+        "text": "For aₙ=1+1/n, |aₙ−1|=1/n. Choose an integer N>1/ε; then all n≥N satisfy the required inequality. A plot of the first hundred values cannot alone establish an assertion about every later term."
+      }
+    ],
+    "exercise": {
+      "prompt": "Give an N ensuring $|(2+3/n)-2|<0.01$ for every $n\\ge N$.",
+      "hint": "Solve 3/n<0.01 with a strict inequality.",
+      "solution": "Any integer N≥301 works. N=300 fails at its first term because the error equals 0.01.",
+      "rubric": [
+        "Respect strict inequality.",
+        "Make a statement about all later indices."
+      ],
+      "solutionTex": "n\\ge301\\implies\\left|2+\\frac3n-2\\right|=\\frac3n<0.01"
+    }
+  },
+  "subsequences-bounded": {
+    "prerequisites": ["sequence-limits"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Subsequences inherit a genuine limit",
+        "text": "A subsequence selects indices n₁<n₂<… tending to infinity. If aₙ→L, every subsequence tends to L. Hence two subsequences with distinct limits refute convergence. For (−1)ⁿ, the even and odd subsequences tend to 1 and −1."
+      },
+      {
+        "title": "Bounded does not mean convergent",
+        "text": "Every convergent real sequence is bounded, but (−1)ⁿ is a bounded counterexample to the converse. Bolzano–Weierstrass states that every bounded real sequence has a convergent subsequence. It does not say the whole sequence converges."
+      }
+    ],
+    "exercise": {
+      "prompt": "Does $a_n=(-1)^n+1/n$ converge?",
+      "hint": "Separate even and odd indices.",
+      "solution": "The even subsequence tends to 1 and the odd subsequence to −1. Therefore the sequence diverges while remaining bounded.",
+      "rubric": [
+        "Use subsequences whose indices tend to infinity.",
+        "Distinguish boundedness from convergence."
+      ],
+      "solutionTex": "a_{2n}\\longrightarrow1,\\quad a_{2n+1}\\longrightarrow-1"
+    }
+  },
+  "sequence-limit-laws": {
+    "prerequisites": ["sequence-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Normalize polynomial growth",
+        "text": "For (3n²+n)/(2n²−1), divide by n² to obtain (3+1/n)/(2−1/n²), whose limit is 3/2. The denominator limit 2 is nonzero, allowing the quotient law."
+      },
+      {
+        "title": "A zero denominator gives no automatic result",
+        "text": "The sequences 1/n and 1/n² both tend to zero, but their quotient is n and diverges. Reversing them gives 1/n→0. Equal component limits therefore do not settle an indeterminate quotient."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\lim_{n\\to\\infty}(\\sqrt{n^2+n}-n)$.",
+      "hint": "Rationalize before taking limits.",
+      "solution": "The expression equals n/(√(n²+n)+n)=1/(√(1+1/n)+1), tending to 1/2.",
+      "rubric": [
+        "Avoid subtracting two divergent limits.",
+        "Use a valid algebraic identity for positive n."
+      ],
+      "solutionTex": "\\sqrt{n^2+n}-n=\\frac1{\\sqrt{1+1/n}+1}\\longrightarrow\\frac12"
+    }
+  },
+  "monotone-sequences": {
+    "prerequisites": ["sequence-limits", "subsequences-bounded"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Prove bounds for a recurrence",
+        "text": "Let a₁=1 and aₙ₊₁=√(2+aₙ). If 1≤aₙ≤2, then 1≤aₙ₊₁≤2; induction bounds every term. On [1,2], √(2+x)≥x because 2+x−x²=(2−x)(x+1)≥0, so the sequence is increasing."
+      },
+      {
+        "title": "Only now solve the fixed point",
+        "text": "An increasing bounded real sequence converges by completeness. Taking limits gives L=√(2+L), hence L=2 or −1 after squaring. The proven bounds force L=2. Solving the equation before proving convergence would produce candidates without showing that the sequence approaches any of them."
+      }
+    ],
+    "exercise": {
+      "prompt": "Let $b_1=3$ and $b_{n+1}=(b_n+2)/2$. Prove convergence and find the limit.",
+      "hint": "Show bₙ≥2 and bₙ₊₁≤bₙ by induction.",
+      "solution": "The recurrence preserves bₙ≥2, and bₙ₊₁−bₙ=(2−bₙ)/2≤0. Thus it converges. Its limit satisfies L=(L+2)/2, giving L=2; explicitly bₙ=2+2^(1−n).",
+      "rubric": [
+        "Prove both boundedness and monotonicity.",
+        "Invoke convergence before passing the limit through the recurrence."
+      ],
+      "solutionTex": "b_n=2+2^{1-n}\\searrow2"
+    }
+  },
+  "series-geometric-telescoping": {
+    "prerequisites": ["sequence-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Sum means a limit of partial sums",
+        "text": "For a series Σaₙ, define S_N as its first N terms. Convergence means S_N approaches a finite number, not merely aₙ→0. For Σ from n=0 of rⁿ, S_N=(1−r^(N+1))/(1−r) when r≠1; its infinite sum is 1/(1−r) only for |r|<1."
+      },
+      {
+        "title": "Keep the surviving boundary terms",
+        "text": "For Σ from n=1 of 1/[n(n+1)], split each term into 1/n−1/(n+1). The Nth partial sum is 1−1/(N+1), tending to 1. Writing the finite cancellation first prevents informal infinity-minus-infinity errors."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\sum_{n=2}^{\\infty}(1/3)^n$.",
+      "hint": "Identify the first term, not just the ratio.",
+      "solution": "The first term is 1/9 and ratio 1/3, so the sum is (1/9)/(1−1/3)=1/6.",
+      "rubric": [
+        "Use the correct starting index.",
+        "Check the ratio magnitude."
+      ],
+      "solutionTex": "\\sum_{n=2}^{\\infty}3^{-n}=\\frac{1/9}{1-1/3}=\\frac16"
+    }
+  },
+  "series-divergence-test": {
+    "prerequisites": ["series-geometric-telescoping"],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "Necessary is not sufficient",
+        "text": "If partial sums converge, then aₙ=Sₙ−Sₙ₋₁→0. Thus failure of aₙ→0 proves divergence. A zero term limit is inconclusive: Σ1/n diverges, whereas Σ1/n² converges."
+      },
+      {
+        "title": "A harmonic-series proof",
+        "text": "Group terms from 2^(k−1)+1 to 2ᵏ. There are 2^(k−1) terms, each at least 1/2ᵏ, so each group contributes at least 1/2. Arbitrarily many groups force partial sums to grow without bound, despite individual terms tending to zero."
+      }
+    ],
+    "exercise": {
+      "prompt": "What does the term test say about $\\sum_{n=1}^{\\infty} n/(n+1)$ and $\\sum_{n=1}^{\\infty}1/n^2$?",
+      "hint": "Compute the term limits and distinguish a verdict from inconclusiveness.",
+      "solution": "The first term limit is 1, so its series diverges. The second term limit is zero, so this test alone gives no verdict; a p-series or integral argument proves convergence.",
+      "rubric": [
+        "Use the test only to rule out convergence.",
+        "Do not call the second result a proof of convergence."
+      ],
+      "solutionTex": "\\lim_{n\\to\\infty}\\frac n{n+1}=1\\ne0;\\quad\\lim_{n\\to\\infty}n^{-2}=0"
+    }
+  },
+  "integral-test": {
+    "prerequisites": ["improper-integrals", "series-geometric-telescoping"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "A comparison of positive tails",
+        "text": "If f is positive, continuous and decreasing eventually, with aₙ=f(n), then Σaₙ and ∫f share convergence behavior. Finite initial exceptions do not affect convergence. This is not an equality between sum and integral."
+      },
+      {
+        "title": "Bound the remainder",
+        "text": "For a convergent positive decreasing series, ∫ from N+1 to ∞ of f ≤ Σ from N+1 to ∞ of aₙ ≤ ∫ from N to ∞ of f. For aₙ=1/n² this gives 1/(N+1)≤R_N≤1/N, a usable accuracy guarantee."
+      }
+    ],
+    "exercise": {
+      "prompt": "How large must $N$ be to guarantee remainder at most $0.001$ for $\\sum_{n=1}^{\\infty}1/n^2$?",
+      "hint": "Use the upper integral bound 1/N.",
+      "solution": "N≥1000 suffices, since R_N≤1/N≤0.001. The bound is conservative and does not claim equality.",
+      "rubric": [
+        "Use the upper bound for a guarantee.",
+        "State the positive decreasing hypothesis."
+      ],
+      "solutionTex": "0\\le R_N\\le\\int_N^\\infty x^{-2}\\,dx=\\frac1N\\le0.001\\quad(N\\ge1000)"
+    }
+  },
+  "comparison-tests": {
+    "prerequisites": ["integral-test"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Match the inequality to the conclusion",
+        "text": "For nonnegative terms, aₙ≤bₙ and convergence of Σbₙ imply convergence of Σaₙ. If aₙ≥bₙ and Σbₙ diverges, Σaₙ diverges. Reversing these directions gives no conclusion."
+      },
+      {
+        "title": "Limit comparison",
+        "text": "For positive aₙ,bₙ, if aₙ/bₙ→L with 0<L<∞, the series share behavior. For aₙ=1/(n²+n), use bₙ=1/n²: their ratio n/(n+1)→1, so the series converges. Ratio zero or infinity requires a one-sided argument rather than the same equivalence."
+      }
+    ],
+    "exercise": {
+      "prompt": "Decide whether $\\sum_{n=1}^{\\infty}1/\\sqrt{n^2+1}$ converges.",
+      "hint": "Compare to 1/n and compute the ratio.",
+      "solution": "The ratio n/√(n²+1)=1/√(1+1/n²) tends to 1. The harmonic series diverges, so this positive series diverges.",
+      "rubric": [
+        "Choose the dominant-power comparison.",
+        "Verify a finite strictly positive ratio."
+      ],
+      "solutionTex": "\\lim_{n\\to\\infty}\\frac{1/\\sqrt{n^2+1}}{1/n}=1"
+    }
+  },
+  "absolute-conditional-alternating": {
+    "prerequisites": ["comparison-tests", "monotone-sequences"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Separate two convergence questions",
+        "text": "Absolute convergence means Σ|aₙ| converges and implies convergence of Σaₙ. Conditional convergence means Σaₙ converges but Σ|aₙ| diverges. The alternating harmonic series is conditional: its magnitudes decrease to zero, but their harmonic sum diverges."
+      },
+      {
+        "title": "Alternating remainder",
+        "text": "If positive magnitudes decrease to zero, the error after N alternating terms has magnitude at most the next term and its sign matches the next term. For Σ from n=1 of (−1)^(n+1)/n, the error is at most 1/(N+1). Without eventual decrease, this bound needs another justification."
+      }
+    ],
+    "exercise": {
+      "prompt": "Classify $\\sum_{n=1}^{\\infty}(-1)^n/n^2$.",
+      "hint": "Test the absolute-value series first.",
+      "solution": "Its absolute-value series Σ1/n² converges, so the original series converges absolutely. Calling it conditional merely because signs alternate is incorrect.",
+      "rubric": [
+        "Test magnitudes independently.",
+        "Use the definition of conditional convergence."
+      ],
+      "solutionTex": "\\sum_{n=1}^{\\infty}\\left|\\frac{(-1)^n}{n^2}\\right|=\\sum_{n=1}^{\\infty}\\frac1{n^2}<\\infty"
+    }
+  },
+  "ratio-root-tests": {
+    "prerequisites": ["absolute-conditional-alternating"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Different tests suit different forms",
+        "text": "For aₙ=xⁿ/n!, the absolute ratio is |x|/(n+1)→0, so the series converges for every fixed x. For aₙ=(n/(2n+1))ⁿ, the nth-root magnitude tends to 1/2, giving absolute convergence without expanding a complicated neighboring-term ratio."
+      },
+      {
+        "title": "A limit of one is inconclusive",
+        "text": "Both 1/n and 1/n² have ratio and nth-root limits equal to 1, yet one series diverges and the other converges. For ratio or root limit below 1, conclude absolute convergence; above 1, terms fail to tend to zero. More general limsup forms need their own statement."
+      }
+    ],
+    "exercise": {
+      "prompt": "Classify $\\sum_{n=1}^{\\infty}((3n+1)/(4n+2))^n$.",
+      "hint": "The nth root removes the outer nth power.",
+      "solution": "The root limit is 3/4<1, so the positive series converges absolutely.",
+      "rubric": [
+        "Take the absolute nth root.",
+        "Compare the limit with 1, not zero."
+      ],
+      "solutionTex": "\\lim_{n\\to\\infty}\\sqrt[n]{\\left(\\frac{3n+1}{4n+2}\\right)^n}=\\frac34<1"
+    }
+  },
+  "power-series-radius": {
+    "prerequisites": ["ratio-root-tests"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Endpoints are separate series",
+        "text": "For Σ from n=1 of xⁿ/n, the ratio test gives convergence for |x|<1 and divergence for |x|>1. At x=1 it is harmonic and diverges; at x=−1 it is alternating harmonic and converges conditionally. The interval is [−1,1), not an automatically closed radius interval."
+      },
+      {
+        "title": "The center shifts everything",
+        "text": "For Σaₙ(x−c)ⁿ, the radius measures distance from c. A radius can be zero or infinite. Partial sums are polynomials; their limit is defined only on the convergence set, and may behave differently at its boundary."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the interval of convergence of $\\sum_{n=1}^{\\infty}(x-2)^n/(n\\,3^n)$.",
+      "hint": "Use |x−2|<3, then inspect both endpoints.",
+      "solution": "The radius is 3 about 2. At x=−1 the series is alternating harmonic and converges; at x=5 it is harmonic and diverges. The interval is [−1,5).",
+      "rubric": [
+        "Shift the radius interval around the correct center.",
+        "Test each endpoint independently."
+      ],
+      "solutionTex": "R=3,\\quad I=[-1,5)"
+    }
+  },
+  "power-series-operations": {
+    "prerequisites": ["power-series-radius", "fundamental-theorem"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Operate inside the radius",
+        "text": "A power series may be differentiated or integrated term by term inside its radius, and the new series has the same radius. Endpoint convergence can change. The theorem relies on uniform control on each smaller closed interval and is imported here, rather than proved by formal symbol manipulation."
+      },
+      {
+        "title": "Derive a logarithmic series",
+        "text": "Integrating Σ from n=0 of xⁿ=1/(1−x) from 0 to x gives Σ from n=1 of xⁿ/n=−ln(1−x) for |x|<1. The integration constant is fixed by the zero value at x=0. At x=−1 an additional endpoint argument is needed; interior validity alone does not prove it."
+      }
+    ],
+    "exercise": {
+      "prompt": "Differentiate $\\sum_{n=1}^{\\infty}x^n/n$ inside its radius. What happens at $x=-1$?",
+      "hint": "The differentiated coefficients lose the factor 1/n.",
+      "solution": "The derivative series is Σ from n=1 of x^(n−1)=1/(1−x) for |x|<1. At x=−1 its terms alternate ±1 and do not tend to zero, so it diverges although the original series converges there.",
+      "rubric": [
+        "State the open interval of termwise validity.",
+        "Recheck endpoints after differentiation."
+      ],
+      "solutionTex": "\\frac d{dx}\\sum_{n=1}^{\\infty}\\frac{x^n}{n}=\\sum_{n=1}^{\\infty}x^{n-1}=\\frac1{1-x}\\quad(|x|<1)"
+    }
+  },
+  "taylor-series": {
+    "prerequisites": ["linearization-differentials", "power-series-radius"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "A polynomial is not automatically an infinite expansion",
+        "text": "Taylor’s polynomial uses derivatives at one center. Taylor’s theorem supplies a finite remainder under sufficient differentiability; equality with the infinite Taylor series additionally requires that remainder to tend to zero. Smoothness alone does not ensure that."
+      },
+      {
+        "title": "A smooth counterexample",
+        "text": "Define f(0)=0 and f(x)=exp(−1/x²) for x≠0. Every derivative at zero vanishes (exponential decay dominates each inverse power), so its Taylor series is zero, yet f(x)>0 away from zero. For eˣ on a bounded interval, by contrast, the factorial remainder bound tends to zero."
+      }
+    ],
+    "exercise": {
+      "prompt": "Approximate $e^{0.1}$ by $1+0.1+0.1^2/2$ and bound the error.",
+      "hint": "Use a third-order remainder bounded by e^0.1(0.1)³/6; e^0.1<2 suffices.",
+      "solution": "The estimate is 1.105. The error is less than 2·0.001/6=1/3000. This bound certifies the finite approximation.",
+      "rubric": [
+        "Distinguish the polynomial from the exact value.",
+        "Bound the derivative over the interval."
+      ],
+      "solutionTex": "e^{0.1}\\approx1.105,\\quad |R_2|<\\frac1{3000}"
+    }
+  },
+  "binomial-series": {
+    "prerequisites": ["taylor-series"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Coefficients and termination",
+        "text": "The coefficient of xⁿ in (1+x)^α is α(α−1)…(α−n+1)/n!, with constant term 1. For nonnegative integer α the series terminates as a polynomial. Otherwise its expansion is valid for |x|<1 and endpoints need separate analysis."
+      },
+      {
+        "title": "A concrete expansion",
+        "text": "For α=1/2 the first terms are 1+x/2−x²/8+x³/16. This approximates √(1+x) near zero. For α=−1 the coefficients alternate and recover 1/(1+x)=1−x+x²−… inside the radius."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the quadratic Taylor approximation of $(1+x)^{-2}$ at zero.",
+      "hint": "Use α=−2 in the coefficient formula.",
+      "solution": "The first terms are 1−2x+3x², with remainder of order x³ near zero. The infinite nonterminating series has radius 1.",
+      "rubric": [
+        "Divide the second falling product by 2!.",
+        "Do not treat the approximation as exact."
+      ],
+      "solutionTex": "(1+x)^{-2}=1-2x+3x^2+O(x^3)\\quad(x\\to0)"
+    }
+  },
+  "limits-with-series": {
+    "prerequisites": ["taylor-series", "limit-laws-squeeze"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Expand far enough to survive cancellation",
+        "text": "For (sin x−x)/x³, use sin x=x−x³/6+O(x⁵). After cancellation and division, the expression is −1/6+O(x²), so the limit is −1/6. Stopping at sin x≈x would discard the decisive term."
+      },
+      {
+        "title": "Meaning of error symbols",
+        "text": "R(x)=O(xᵏ) means |R(x)|≤C|x|ᵏ in a sufficiently small neighborhood for some fixed C. R(x)=o(xᵏ) means its ratio to xᵏ tends to zero. Dividing an expansion by xᵐ also divides its error; retain enough orders to make the resulting error vanish."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\lim_{x\\to0}(e^x-1-x-x^2/2)/x^3$.",
+      "hint": "Keep the cubic term and a controlled higher-order remainder.",
+      "solution": "Taylor gives numerator x³/6+O(x⁴), so the quotient is 1/6+O(x) and tends to 1/6.",
+      "rubric": [
+        "Retain the first uncancelled term.",
+        "Track the remainder after division."
+      ],
+      "solutionTex": "\\frac{e^x-1-x-x^2/2}{x^3}=\\frac16+O(x)\\longrightarrow\\frac16"
+    }
+  },
+  "vectors-and-coordinates": {
+    "prerequisites": ["sets-functions-domains"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Separate points and displacements",
+        "text": "Points describe locations; their difference is a displacement vector. For A=(1,−1,2), B=(3,2,2), B−A=(2,3,0) has length √13. The dot product u·v=|u||v|cos θ measures alignment; normalization v/|v| requires v≠0."
+      },
+      {
+        "title": "Projection is a signed component",
+        "text": "The scalar component of v along a unit vector e is v·e, and the vector projection is (v·e)e. Cauchy–Schwarz gives |u·v|≤|u||v|, the estimate later used for gradient bounds. Orthogonal vectors have dot product zero; the zero vector has no direction."
+      }
+    ],
+    "exercise": {
+      "prompt": "Project $v=(3,4,0)$ onto the direction $(1,1,0)$.",
+      "hint": "Normalize the direction first.",
+      "solution": "The unit direction is e=(1,1,0)/√2. The scalar component is 7/√2 and vector projection is (7/2,7/2,0). The residual (−1/2,1/2,0) is perpendicular to e.",
+      "rubric": [
+        "Normalize a nonzero vector.",
+        "Distinguish scalar component from vector projection.",
+        "Check the residual dot product."
+      ],
+      "solutionTex": "\\operatorname{proj}_{(1,1,0)}(3,4,0)=\\left(\\frac72,\\frac72,0\\right)"
+    }
+  },
+  "curves-and-parametrizations": {
+    "prerequisites": ["vectors-and-coordinates", "derivative-definition"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "One trace, several clocks",
+        "text": "The circle r(t)=(cos t,sin t) traces once for 0≤t≤2π and twice for 0≤t≤4π. The image set is unchanged, but traversal-sensitive integrals count both passes. Reversing t reverses orientation; a positive increasing change of clock preserves it."
+      },
+      {
+        "title": "Speed enters length",
+        "text": "For r(t)=(cos 2t,sin 2t), speed is 2. On [0,π] the length is $\\int_0^\\pi2\\,dt$=2π, one traversal. The unit-speed parameter is arc length, not every parameter called t."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compare the lengths of $r(t)=(\\cos t,\\sin t)$ on $[0,2\\pi]$ and $[0,4\\pi]$.",
+      "hint": "Length integrates speed over the actual parameter interval.",
+      "solution": "The lengths are 2π and 4π. The geometric image is the same circle, but the second curve traverses it twice.",
+      "rubric": [
+        "Use the interval as part of the parametrized curve.",
+        "Do not confuse image length with traversal length."
+      ],
+      "solutionTex": "L_{[0,2\\pi]}=2\\pi,\\qquad L_{[0,4\\pi]}=4\\pi"
+    }
+  },
+  "constructing-curves": {
+    "prerequisites": ["curves-and-parametrizations"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Use the defining constraint",
+        "text": "A line from A to B is A+t(B−A), 0≤t≤1. An ellipse x²/a²+y²/b²=1 is (a cos t,b sin t). For an intersection with z=x²+y², substitute a planar parametrization into z to satisfy both equations."
+      },
+      {
+        "title": "Check coverage and orientation",
+        "text": "The intersection x²+y²=1 and z=x+y can be written (cos t,sin t,cos t+sin t), 0≤t≤2π. It traverses once counterclockwise in xy projection. Substitution verifies membership; the full parameter interval verifies coverage."
+      }
+    ],
+    "exercise": {
+      "prompt": "Parametrize the line segment from $(1,0,2)$ to $(0,3,1)$.",
+      "hint": "Add t times the endpoint difference.",
+      "solution": "r(t)=(1−t,3t,2−t), 0≤t≤1. At 0 and 1 it gives the assigned endpoints, with orientation from the first to the second.",
+      "rubric": [
+        "Supply the parameter interval.",
+        "Check both endpoints and direction."
+      ],
+      "solutionTex": "\\mathbf r(t)=(1-t,3t,2-t),\\quad0\\le t\\le1"
+    }
+  },
+  "tangents-velocity-and-singularities": {
+    "prerequisites": ["curves-and-parametrizations"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Regularity belongs to the parametrization",
+        "text": "A regular curve has nonzero velocity. The map r(t)=(t³,0) stops at zero but its image is a straight line, so a singular parameter need not mean singular geometry. The cusp (t²,t³) has zero velocity at zero and requires a separate local analysis."
+      },
+      {
+        "title": "Length and reparametrization",
+        "text": "For a piecewise continuously differentiable curve, length is ∫|r′(t)|dt over its pieces. A regular change of parameter preserves length after the speed factor and bounds are transformed. Unit tangent r′/|r′| is defined only where speed is nonzero."
+      }
+    ],
+    "exercise": {
+      "prompt": "For $r(t)=(t,t^2)$, find speed and unit tangent at $t=1$.",
+      "hint": "Differentiate components before taking the norm.",
+      "solution": "r′(1)=(1,2), speed √5, and unit tangent (1,2)/√5. The tangent line is (1,1)+s(1,2).",
+      "rubric": [
+        "Keep the selected point distinct from its velocity.",
+        "Normalize by speed."
+      ],
+      "solutionTex": "\\mathbf r'(1)=(1,2),\\quad v=\\sqrt5,\\quad\\mathbf T=(1,2)/\\sqrt5"
+    }
+  },
+  "surfaces-and-level-sets": {
+    "prerequisites": ["vectors-and-coordinates", "function-shapes"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Graph, level set, parametrization",
+        "text": "A graph z=f(x,y) has one height for each allowed planar input. A level set F(x,y,z)=c may fail to be a graph in a chosen direction. A sphere has two z values over most of its disk projection and needs upper/lower branches or surface charts."
+      },
+      {
+        "title": "Read slices deliberately",
+        "text": "For z=x²−y², fixing y gives upward parabolas and fixing x gives downward parabolas. Level zero is the pair y=±x; positive and negative levels give differently oriented hyperbolas. Distinguish a horizontal contour from a vertical slice."
+      }
+    ],
+    "exercise": {
+      "prompt": "Why is $x^2+y^2+z^2=1$ not globally a graph $z=f(x,y)$?",
+      "hint": "Inspect the two points above (0,0).",
+      "solution": "Both (0,0,1) and (0,0,−1) lie on the sphere. A single-valued graph cannot assign both heights; separate hemisphere graphs are possible over appropriate domains.",
+      "rubric": [
+        "Use an explicit repeated planar input.",
+        "Distinguish local representation from global representation."
+      ],
+      "solutionTex": "(0,0,1),(0,0,-1)\\in S\\implies S\\text{ is not a single }z\\text{-graph}"
+    }
+  },
+  "distance-and-neighborhoods": {
+    "prerequisites": ["vectors-and-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Open balls encode all directions",
+        "text": "A ball B(a,r) consists of points with distance less than r; its boundary sphere is excluded. A set is open when each member has some ball contained in it, and closed when it contains its limit points. A set can be neither open nor closed."
+      },
+      {
+        "title": "Boundary depends on ambient space",
+        "text": "The disk x²+y²<1 is open in the plane, but the same disk embedded in ℝ³ has no three-dimensional interior. For limits on a restricted domain, only points belonging to that domain are admissible approaches."
+      }
+    ],
+    "exercise": {
+      "prompt": "Classify the annulus $1<\\sqrt{x^2+y^2}\\le 2$ as open, closed, or neither in $\\mathbb R^2$.",
+      "hint": "Test the included outer boundary and excluded inner boundary.",
+      "solution": "It is neither: at an outer-circle point every ball leaves the set, while a sequence approaching the inner circle has a limit outside the set.",
+      "rubric": [
+        "Name a witness against openness.",
+        "Name a missing limit point against closedness."
+      ],
+      "solutionTex": "D=\\{1<\\sqrt{x^2+y^2}\\le2\\}\\quad\\text{is neither open nor closed}"
+    }
+  },
+  "epsilon-delta-limits": {
+    "prerequisites": [
+      "distance-and-neighborhoods",
+      "epsilon-delta-one-variable"
+    ],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "One radius must cover every approach",
+        "text": "For a multivariable limit, every domain point with 0<|x−a|<δ must meet the output tolerance. A separate δ for each ray is insufficient unless one common positive radius works uniformly."
+      },
+      {
+        "title": "Use norm inequalities",
+        "text": "For f(x,y)=2x−3y at zero, |2x−3y|≤√13√(x²+y²) by Cauchy–Schwarz. Choosing δ=ε/√13 proves the limit zero over every approach, including curved paths."
+      }
+    ],
+    "exercise": {
+      "prompt": "Prove $x^2+y^2$ tends to zero at the origin with an explicit $\\delta$.",
+      "hint": "Write the function in terms of the Euclidean radius r.",
+      "solution": "The output is r². Given ε>0, choose δ=√ε; then 0<r<δ gives |f|<ε.",
+      "rubric": [
+        "Quantify over all domain points.",
+        "Use a radius independent of direction."
+      ],
+      "solutionTex": "\\delta=\\sqrt\\varepsilon,\\quad 0<\\sqrt{x^2+y^2}<\\delta\\implies x^2+y^2<\\varepsilon"
+    }
+  },
+  "different-paths-different-limits": {
+    "prerequisites": ["epsilon-delta-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Two paths can disprove",
+        "text": "For f(x,y)=xy/(x²+y²), the x-axis gives zero, while y=x gives 1/2 away from the origin. If a common limit existed, both admissible path restrictions would share it. Their difference proves nonexistence."
+      },
+      {
+        "title": "Agreement cannot prove",
+        "text": "A finite or even infinite collection of selected paths can miss another obstruction. After path tests suggest a candidate, look for an estimate involving the full norm. The puncture and domain restrictions must hold along every path used."
+      }
+    ],
+    "exercise": {
+      "prompt": "For $x^2/(x^2+y^2)$, compare the two coordinate-axis limits at zero.",
+      "hint": "Set y=0 and then x=0, excluding the origin.",
+      "solution": "The x-axis gives 1 and the y-axis gives 0, so no limit exists.",
+      "rubric": [
+        "Use two admissible paths approaching the same point.",
+        "State why distinct path limits contradict a common limit."
+      ],
+      "solutionTex": "f(t,0)=1,\\quad f(0,t)=0\\quad(t\\ne0)"
+    }
+  },
+  "curved-paths-hide-obstructions": {
+    "prerequisites": ["different-paths-different-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Every line can agree",
+        "text": "For f(x,y)=x²y/(x⁴+y²), along y=mx with m≠0 the expression is mx/(x²+m²)→0; along y=0 it is zero, and the vertical axis is zero. Thus every line through the origin suggests zero."
+      },
+      {
+        "title": "A curve reveals the obstruction",
+        "text": "Along y=x² the same expression is 1/2 for x≠0. The limit therefore fails. The denominator hints at the path: balance x⁴ with y² by choosing y proportional to x². Polar coordinates do not justify a limit unless the angular estimate is uniform."
+      }
+    ],
+    "exercise": {
+      "prompt": "What values occur along $y=kx^2$ for this function?",
+      "hint": "Substitute and cancel x⁴ for x≠0.",
+      "solution": "The value is k/(1+k²), independent of nonzero x. Different k give different path limits and exhibit the hidden family of obstructions.",
+      "rubric": [
+        "Balance denominator terms.",
+        "Cancel only away from the puncture."
+      ],
+      "solutionTex": "f(x,kx^2)=\\frac{k}{1+k^2}\\quad(x\\ne0)"
+    }
+  },
+  "squeeze-and-continuity": {
+    "prerequisites": ["epsilon-delta-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Squeeze with the full radius",
+        "text": "For x²y/(x²+y²), use |y|≤r and x²/(x²+y²)≤1 to obtain |f|≤r. Defining the value zero at the origin makes it continuous. This uniform estimate handles all paths at once."
+      },
+      {
+        "title": "Composition has a target condition",
+        "text": "If g tends to b and f is continuous at b through the relevant domain, then f∘g tends to f(b). Check that g’s nearby values lie in f’s domain; continuity of a formal expression outside its domain is not a usable theorem."
+      }
+    ],
+    "exercise": {
+      "prompt": "Does $xy/\\sqrt{x^2+y^2}$, extended by zero, become continuous at zero?",
+      "hint": "Use 2|xy|≤x²+y².",
+      "solution": "Its absolute value is at most r/2 and therefore tends to zero. The extension is continuous.",
+      "rubric": [
+        "Bound the absolute error by a quantity tending to zero.",
+        "Match the extension value to the limit."
+      ],
+      "solutionTex": "\\frac{|xy|}{\\sqrt{x^2+y^2}}\\le\\frac{\\sqrt{x^2+y^2}}2\\longrightarrow0"
+    }
+  },
+  "limits-at-infinity": {
+    "prerequisites": ["epsilon-delta-limits"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Every escape route counts",
+        "text": "A limit at infinity means for each ε>0 some R makes the output error smaller than ε whenever the input norm exceeds R within the domain. Either coordinate can diverge; one cannot test only x=y→∞."
+      },
+      {
+        "title": "A uniform decay estimate",
+        "text": "For f(x,y)=1/(1+x²+y²), if r>R then f<1/(1+R²). Choosing R>1/√ε suffices to prove limit zero. The function x²/(x²+y²), by contrast, retains values 1 or 0 on the coordinate axes even arbitrarily far away."
+      }
+    ],
+    "exercise": {
+      "prompt": "Does $x/(1+x^2+y^2)$ tend to zero at infinity?",
+      "hint": "Bound |x| by r.",
+      "solution": "For r>0, its absolute value is at most r/(1+r²)≤1/r. Taking R>1/ε proves the limit zero.",
+      "rubric": [
+        "Use the full norm.",
+        "Give a single R for every escape route."
+      ],
+      "solutionTex": "\\frac{|x|}{1+x^2+y^2}\\le\\frac r{1+r^2}\\le\\frac1r\\longrightarrow0"
+    }
+  },
+  "partial-derivatives-as-slices": {
+    "prerequisites": ["derivative-definition", "surfaces-and-level-sets"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Hold the other input fixed",
+        "text": "For f(x,y)=x²y+sin y, fₓ=2xy and fᵧ=x²+cos y. The constant-held-fixed operation defines a coordinate slice derivative; it does not describe arbitrary combined input changes by itself."
+      },
+      {
+        "title": "At a special point use the definition",
+        "text": "For a function defined by one formula away from zero and another at zero, differentiate the actual one-variable slice through zero. An off-origin derivative expression need not extend correctly by substitution at the missing point."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find both partial derivatives of $f(x,y)=xe^y$ at $(2,0)$.",
+      "hint": "In the x derivative eʸ is constant; in the y derivative x is constant.",
+      "solution": "fₓ=eʸ gives 1 and fᵧ=xeʸ gives 2. These are the slopes of different coordinate slices at the same point.",
+      "rubric": [
+        "Name which variable stays fixed.",
+        "Evaluate after differentiating."
+      ],
+      "solutionTex": "f_x(2,0)=1,\\qquad f_y(2,0)=2"
+    }
+  },
+  "cross-products-and-planes": {
+    "prerequisites": ["vectors-and-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Cross product and rank",
+        "text": "For u,v in ℝ³, u×v is perpendicular to both and has magnitude equal to their parallelogram area. If the vectors are dependent the product is zero, so it supplies no normal direction. Swapping the order reverses the normal."
+      },
+      {
+        "title": "Write a plane from its normal",
+        "text": "For point p and nonzero normal n, the plane is n·(x−p)=0. With u=(1,0,1), v=(0,1,1), u×v=(−1,−1,1). Through p=(0,0,2), the plane is z=x+y+2."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find a normal and plane through the origin spanned by $(1,1,0)$ and $(0,1,1)$.",
+      "hint": "Compute the ordered cross product.",
+      "solution": "A normal is (1,−1,1), giving x−y+z=0. Its dot product with each spanning vector is zero.",
+      "rubric": [
+        "Check both orthogonality conditions.",
+        "Avoid confusing plane coefficients with a point on the plane."
+      ],
+      "solutionTex": "\\mathbf n=(1,-1,1),\\quad x-y+z=0"
+    }
+  },
+  "total-differentiability": {
+    "prerequisites": [
+      "partial-derivatives-as-slices",
+      "linearization-differentials"
+    ],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "One linear map for all increments",
+        "text": "At a, differentiability means f(a+h)=f(a)+Lh+r(h) with r(h)/|h|→0. For scalar f with existing partials, the only candidate is Lh=∇f(a)·h. The candidate still needs an all-direction remainder check."
+      },
+      {
+        "title": "Work a polynomial remainder",
+        "text": "For f(x,y)=x²+y² at (a,b), the exact increment is 2ah+2bk+h²+k². Dividing the remainder by √(h²+k²) gives √(h²+k²)→0, proving differentiability. The affine tangent plane includes the base value a²+b²."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find and justify the derivative of $f(x,y)=xy$ at $(a,b)$.",
+      "hint": "Expand (a+h)(b+k) and bound |hk|.",
+      "solution": "The linear map is L(h,k)=bh+ak. The remainder is hk, with |hk|/√(h²+k²)≤√(h²+k²)/2→0.",
+      "rubric": [
+        "Identify a linear map, not just two numbers.",
+        "Prove a uniform remainder bound."
+      ],
+      "solutionTex": "L(h,k)=bh+ak,\\quad\\frac{|hk|}{\\sqrt{h^2+k^2}}\\le\\frac{\\sqrt{h^2+k^2}}2\\longrightarrow0"
+    }
+  },
+  "partials-do-not-make-a-plane": {
+    "prerequisites": [
+      "total-differentiability",
+      "curved-paths-hide-obstructions"
+    ],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Directional existence is weaker",
+        "text": "For g(x,y)=(x³−xy²)/(x²+y²), extended by zero, every directional derivative along v=(a,b) exists and equals (a³−ab²)/(a²+b²). This dependence on v is not linear, so it cannot be a total derivative."
+      },
+      {
+        "title": "Test the only possible map",
+        "text": "Coordinate partials give L(x,y)=x. Along (t,t), g=0 while L=t, so |g−L|/√(2t²)=1/√2. The normalized error does not vanish. Yet |g|≤r, so g is continuous: continuity is another distinct property."
+      }
+    ],
+    "exercise": {
+      "prompt": "For this g, compare directional derivatives in $e_1$, $e_2$ and $e_1+e_2$.",
+      "hint": "A linear derivative must preserve addition.",
+      "solution": "They are 1, 0 and 0 respectively. Since 0≠1+0, the directional-derivative map is not additive, ruling out total differentiability.",
+      "rubric": [
+        "Use directional vectors consistently without silently normalizing.",
+        "Test linearity explicitly."
+      ],
+      "solutionTex": "D_{e_1}g=1,\\quad D_{e_2}g=0,\\quad D_{e_1+e_2}g=0\\ne1+0"
+    }
+  },
+  "certifying-differentiability-and-errors": {
+    "prerequisites": ["total-differentiability"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "A useful sufficient theorem",
+        "text": "If all first partial derivatives exist on a neighborhood and are continuous at a, then f is differentiable at a. This C¹ criterion is sufficient, not necessary. Partial derivatives existing only at a do not satisfy it."
+      },
+      {
+        "title": "Finite versus asymptotic error",
+        "text": "If a twice continuously differentiable f has Hessian operator norm at most M along the segment from a to a+h, Taylor gives |f(a+h)−f(a)−∇f(a)·h|≤M|h|²/2. This finite bound needs an actual M; little-o alone does not provide one."
+      }
+    ],
+    "exercise": {
+      "prompt": "Bound the tangent-plane error for $f=x^2+y^2$ at any base point when $|h|\\le 0.01$.",
+      "hint": "The Hessian is twice the identity.",
+      "solution": "M=2, so the error is at most |h|²≤0.0001. Here the remainder equals |h|² exactly.",
+      "rubric": [
+        "Control the Hessian along the whole segment.",
+        "Distinguish a guaranteed bound from a sampled error."
+      ],
+      "solutionTex": "\\left|f(a+h)-f(a)-Df(a)h\\right|=\\|h\\|^2\\le10^{-4}"
+    }
+  },
+  "multivariable-chain-rule": {
+    "prerequisites": ["total-differentiability", "vectors-and-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Do not hide cancellation",
+        "text": "For f(x,y)=x²+y² and r(t)=(cos t,sin t), the output is constant and its derivative zero. To see nonzero contributions, take r(t)=(t,t²): f(r(t))=t²+t⁴ and derivative 2t+4t³."
+      },
+      {
+        "title": "Multiply derivative maps",
+        "text": "Along that path, ∇f(r(t))=(2t,2t²) and r′(t)=(1,2t), whose dot product is 2t+4t³. More generally D(f∘g)=Df(g)Dg, with matrix dimensions determined by the input and output spaces. Differentiability of both maps is a sufficient hypothesis."
+      }
+    ],
+    "exercise": {
+      "prompt": "For $f(x,y)=xe^y$ and $r(t)=(t,t^2)$, find $d(f\\circ r)/dt$.",
+      "hint": "Compute the two partial contributions separately.",
+      "solution": "The derivative is e^(t²)·1 + t e^(t²)·2t = e^(t²)(1+2t²), agreeing with direct differentiation of t e^(t²).",
+      "rubric": [
+        "Evaluate partials on the path.",
+        "Include both coordinate rates.",
+        "Check using the composed formula."
+      ],
+      "solutionTex": "\\frac d{dt}(te^{t^2})=e^{t^2}+2t^2e^{t^2}=e^{t^2}(1+2t^2)"
+    }
+  },
+  "implicit-functions-and-tangents": {
+    "prerequisites": ["multivariable-chain-rule", "cross-products-and-planes"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Which variable can be solved for?",
+        "text": "For a C¹ equation F(x,y,z)=0, if F_z(p)≠0 then a local C¹ graph z=g(x,y) exists near p. Its derivatives are gₓ=−Fₓ/F_z and gᵧ=−Fᵧ/F_z. This existence theorem is imported; differentiating a presumed graph alone does not prove its existence."
+      },
+      {
+        "title": "Choose another chart when needed",
+        "text": "On the unit sphere at (0,0,1), F_z=2 and a local z graph exists. At (1,0,0), F_z=0 but F_x=2, so x can instead be expressed locally as a function of y,z. The surface remains smooth even though a chosen graph direction fails."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the tangent plane to $x^2+y^2+z^2=9$ at $(1,2,2)$.",
+      "hint": "Use the nonzero gradient as normal.",
+      "solution": "The gradient is (2,4,4). Thus 2(x−1)+4(y−2)+4(z−2)=0, or x+2y+2z=9.",
+      "rubric": [
+        "Verify the point is on the surface.",
+        "Use a nonzero gradient."
+      ],
+      "solutionTex": "2(x-1)+4(y-2)+4(z-2)=0\\iff x+2y+2z=9"
+    }
+  },
+  "directional-derivatives-and-gradient": {
+    "prerequisites": ["total-differentiability", "vectors-and-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Normalize when measuring slope per distance",
+        "text": "For a differentiable scalar field, Dᵤf=∇f·u. A unit u measures change per unit distance; an arbitrary velocity v includes its speed. For f=x²+3y² at (1,1), the gradient is (2,6), so direction (1,1)/√2 gives slope 4√2."
+      },
+      {
+        "title": "Existence of the gradient is not the whole hypothesis",
+        "text": "Coordinate partials define a vector when they exist, but the dot-product formula for all directions is guaranteed by total differentiability. At singular examples, compute the directional derivative from its limit rather than assuming the formula."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the directional derivative of $f=x^2+y^2$ at $(1,2)$ in direction $(3,4)$.",
+      "hint": "Normalize (3,4) to length one.",
+      "solution": "The gradient is (2,4), so the unit-direction derivative is (2,4)·(3/5,4/5)=22/5. Using velocity (3,4) instead would give 22 per unit time.",
+      "rubric": [
+        "Declare whether the vector is a direction or a velocity.",
+        "Evaluate the gradient at the requested point."
+      ],
+      "solutionTex": "D_uf(1,2)=(2,4)\\cdot(3/5,4/5)=22/5"
+    }
+  },
+  "gradient-normals-and-steepest-ascent": {
+    "prerequisites": [
+      "directional-derivatives-and-gradient",
+      "implicit-functions-and-tangents"
+    ],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "The maximum slope is a norm",
+        "text": "Cauchy–Schwarz gives ∇f·u≤|∇f| for unit u, with equality for u=∇f/|∇f| when ∇f≠0. At a stationary point all first-order slopes vanish, so the gradient picks no unique steepest direction."
+      },
+      {
+        "title": "Contours and tangency",
+        "text": "If a differentiable curve lies in f=c, chain rule gives ∇f·r′=0. A nonzero gradient is normal to the level set. A zero gradient does not establish a smooth contour or a normal direction; inspect the geometry separately."
+      }
+    ],
+    "exercise": {
+      "prompt": "At $(1,1)$, find the steepest ascent direction for $f=x^2+2y^2$ and the maximum slope.",
+      "hint": "Use gradient (2,4).",
+      "solution": "Its norm is 2√5, and the unit direction is (1,2)/√5. The opposite direction gives steepest descent.",
+      "rubric": [
+        "Normalize the direction.",
+        "Distinguish maximum slope from the direction vector."
+      ],
+      "solutionTex": "u=\\frac{(1,2)}{\\sqrt5},\\qquad\\max_{\\|v\\|=1}D_vf=2\\sqrt5"
+    }
+  },
+  "local-extrema-and-saddles": {
+    "prerequisites": ["total-differentiability", "extrema-fermat"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Use the domain in the definition",
+        "text": "A local minimum compares values in some neighborhood intersected with the domain. Interior differentiable extrema require zero gradient; boundary extrema do not. A saddle has nearby values on both sides of the point’s value."
+      },
+      {
+        "title": "Stationarity admits every outcome",
+        "text": "At the origin, x²+y² has a strict minimum, −x²−y² a strict maximum, and x²−y² a saddle. The zero function has non-strict maxima and minima everywhere. All have zero gradient at the origin."
+      }
+    ],
+    "exercise": {
+      "prompt": "Classify $f(x,y)=x^2-y^2$ at zero directly.",
+      "hint": "Compare its coordinate axes.",
+      "solution": "Along (t,0), f=t²>0; along (0,t), f=−t²<0 for nonzero t. Arbitrarily close values lie above and below f(0,0)=0, so the point is a saddle.",
+      "rubric": [
+        "Produce both signs arbitrarily close.",
+        "Do not identify a saddle from stationarity alone."
+      ],
+      "solutionTex": "f(t,0)=t^2>0,\\quad f(0,t)=-t^2<0\\quad(t\\ne0)"
+    }
+  },
+  "mixed-and-higher-partials": {
+    "prerequisites": ["partial-derivatives-as-slices"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Order and notation",
+        "text": "Here fₓᵧ means differentiate first in x and then in y. For f=x²y³, fₓᵧ=6xy²=fᵧₓ. State the convention because subscript and operator notation are sometimes read in different orders."
+      },
+      {
+        "title": "When swapping is justified",
+        "text": "Continuity of the second partials on a neighborhood is a sufficient condition for equality of mixed partials. Merely existing at one point is insufficient. Higher-order cancellation identities likewise need appropriate smoothness rather than formal rearrangement alone."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute both mixed partials of $f=xe^y+y \\sin x$.",
+      "hint": "Differentiate in the stated order each time.",
+      "solution": "fₓ=eʸ+y cos x, so fₓᵧ=eʸ+cos x. Also fᵧ=xeʸ+sin x, so fᵧₓ=eʸ+cos x. Smoothness justifies equality.",
+      "rubric": [
+        "Show both orders.",
+        "Name a sufficient regularity condition."
+      ],
+      "solutionTex": "f_{xy}=e^y+\\cos x=f_{yx}"
+    }
+  },
+  "hessian-classification": {
+    "prerequisites": ["mixed-and-higher-partials", "local-extrema-and-saddles"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Quadratic forms decide second-order shape",
+        "text": "For a C² scalar field at a stationary point, the quadratic Taylor term is hᵀHh/2. A positive-definite Hessian gives a strict minimum, a negative-definite one a strict maximum, and an indefinite one a saddle. In two dimensions, determinant positive plus fₓₓ positive/negative distinguishes the two definite cases."
+      },
+      {
+        "title": "Mixed terms can rotate the shape",
+        "text": "For f=x²+4xy+y², H=[[2,4],[4,2]] has eigenvalues 6 and −2. Coordinate-axis slices both rise, yet along y=−x the value is −2x², so it is a saddle. A zero determinant is inconclusive; compare x⁴+y⁴ with x⁴−y⁴."
+      }
+    ],
+    "exercise": {
+      "prompt": "Classify $f=-2x^2-2xy-2y^2$ at zero.",
+      "hint": "Compute the Hessian determinant and one diagonal entry.",
+      "solution": "H=[[-4,−2],[−2,−4]], determinant 12>0 and fₓₓ<0, so it is negative definite and zero is a strict local maximum. Completing squares also shows global maximality.",
+      "rubric": [
+        "Retain the mixed-term contribution.",
+        "State local classification and justify any global claim separately."
+      ],
+      "solutionTex": "H=\\begin{pmatrix}-4&-2\\\\-2&-4\\end{pmatrix},\\quad\\det H=12>0,\\quad f_{xx}<0"
+    }
+  },
+  "global-extrema-and-boundaries": {
+    "prerequisites": ["hessian-classification", "extrema-fermat"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Existence then candidate search",
+        "text": "A continuous function on a nonempty compact set attains maximum and minimum. Search interior stationary points, smooth boundary stationary points, corners, and singular locations. A local Hessian test does not compare all candidates."
+      },
+      {
+        "title": "A disk example",
+        "text": "For f=x²+y²−2x on the closed unit disk, the unconstrained stationary point is (1,0), on the boundary. On the boundary f=1−2x, so its values range from −1 at (1,0) to 3 at (−1,0). Completing the square f=(x−1)²+y²−1 confirms the minimum."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find extrema of $f=x+y$ on the square $[0,1]^2$.",
+      "hint": "There are no interior stationary points; inspect the boundary and corners.",
+      "solution": "The minimum is 0 at (0,0), maximum 2 at (1,1). Monotonicity in each coordinate proves these global bounds.",
+      "rubric": [
+        "Include boundary candidates.",
+        "Explain attainment on the closed bounded set."
+      ],
+      "solutionTex": "0\\le x+y\\le2\\quad((x,y)\\in[0,1]^2)"
+    }
+  },
+  "lagrange-circle": {
+    "prerequisites": [
+      "gradient-normals-and-steepest-ascent",
+      "global-extrema-and-boundaries"
+    ],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Tangency is a necessary condition",
+        "text": "For a smooth constraint g=c with ∇g≠0, a constrained extremum has ∇f=λ∇g. Both gradients are normal to the same tangent directions. Solve the multiplier equations together with the original constraint."
+      },
+      {
+        "title": "A singular constraint can hide candidates",
+        "text": "For g(x,y)=x³−y²=0 at zero, ∇g=0. The usual regular multiplier condition cannot be assumed there. Keep such feasible singular points as separate candidates instead of dividing by a gradient component."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the extrema of $x+y$ on $x^2+y^2=1$.",
+      "hint": "The equations 1=2λx and 1=2λy force x=y.",
+      "solution": "The candidates are (±1/√2,±1/√2) with matching signs, giving ±√2. Compactness ensures extrema, and Cauchy–Schwarz independently bounds |x+y|≤√2.",
+      "rubric": [
+        "Keep the constraint equation.",
+        "Compare all candidates and justify globality."
+      ],
+      "solutionTex": "\\min f=-\\sqrt2,\\quad\\max f=\\sqrt2,\\quad (x,y)=\\pm(1,1)/\\sqrt2"
+    }
+  },
+  "lagrange-sphere": {
+    "prerequisites": ["lagrange-circle"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "One constraint leaves a tangent plane",
+        "text": "On a regular level surface in ℝ³, tangent vectors are perpendicular to ∇g. At a constrained extremum the derivative of f vanishes along that entire plane, making ∇f a multiple of ∇g."
+      },
+      {
+        "title": "Linear objective on a sphere",
+        "text": "For f=x+2y+2z on the unit sphere, ∇f=(1,2,2) and ∇g=2(x,y,z). The candidates are ±(1,2,2)/3, giving values ±3. Norm comparison proves these are global extrema."
+      }
+    ],
+    "exercise": {
+      "prompt": "Maximize $2x-y+2z$ on $x^2+y^2+z^2=4$.",
+      "hint": "Use Cauchy–Schwarz or solve the multiplier equations.",
+      "solution": "The coefficient vector has norm 3 and the sphere radius is 2, so the maximum is 6 at (4/3,−2/3,4/3).",
+      "rubric": [
+        "Scale the maximizing unit vector by the radius.",
+        "Check the point satisfies the constraint."
+      ],
+      "solutionTex": "\\max f=6,\\quad (x,y,z)=(4/3,-2/3,4/3)"
+    }
+  },
+  "lagrange-two-constraints": {
+    "prerequisites": ["lagrange-sphere", "cross-products-and-planes"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Independence matters",
+        "text": "For two constraints g=c and h=d in ℝ³, independent gradients give a tangent direction ∇g×∇h. At a constrained extremum, ∇f lies in their span: ∇f=λ∇g+μ∇h. Dependent gradients invalidate this regular argument."
+      },
+      {
+        "title": "Reduce when possible",
+        "text": "On x²+y²+z²=1 and z=0, maximizing x+y reduces to the unit circle in the xy-plane. The two gradients (2x,2y,0) and (0,0,1) are independent everywhere on the feasible circle, so the multiplier method is legitimate."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find extrema of x on $x^2+y^2+z^2=1$ with $y=z$.",
+      "hint": "Either use two multipliers or observe the feasible circle contains (±1,0,0).",
+      "solution": "Since |x|≤1 on the sphere and both (±1,0,0) satisfy y=z, extrema are ±1 at those points. The constraint gradients are independent throughout the intersection.",
+      "rubric": [
+        "Check feasibility of equality cases.",
+        "Identify the regularity assumption when using multipliers."
+      ],
+      "solutionTex": "-1\\le x\\le1,\\quad(\\pm1,0,0)\\text{ are feasible}"
+    }
+  },
+  "double-riemann-sums": {
+    "prerequisites": ["riemann-integral"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Cells contribute value times area",
+        "text": "Over a rectangle, a double Riemann sum adds f(sample)ΔxΔy. Both widths are essential. Integrability requires independence of increasingly fine tagged partitions; a single sampled mesh is a numerical approximation."
+      },
+      {
+        "title": "Signed volume versus physical volume",
+        "text": "If f≥0, the integral is volume under its graph. If f takes both signs, it is signed accumulation. For f=x on [−1,1]×[0,1], the integral is zero while the volume between graph and plane is ∫|x|=1."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute the double integral of constant 3 over $[0,2]\\times [0,4]$.",
+      "hint": "Every cell contributes three times its area.",
+      "solution": "The rectangle area is 8, so the integral is 24. With density units kg/m² and coordinates in metres, the result is kilograms.",
+      "rubric": [
+        "Include both dimensions of area.",
+        "Interpret the units of the integrand."
+      ],
+      "solutionTex": "\\iint_{[0,2]\\times[0,4]}3\\,dA=3(2)(4)=24"
+    }
+  },
+  "general-double-integrals": {
+    "prerequisites": ["double-riemann-sums"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "A sufficient computational framework",
+        "text": "For a bounded region with a boundary of area zero and a function continuous on its closure, the double integral can be defined by extending the function by zero to a containing rectangle. The extension may jump at the region boundary but remains Riemann integrable under these sufficient assumptions."
+      },
+      {
+        "title": "Name the stronger theorem",
+        "text": "The criterion that a bounded function on a rectangle is Riemann integrable when its discontinuity set has area zero is imported here. Lebesgue integration extends beyond Jordan regions and is an optional advanced framework, not a prerequisite silently hidden inside the elementary continuous-rectangle theorem."
+      }
+    ],
+    "exercise": {
+      "prompt": "Why can a continuous density on a disk be extended by zero for integration on a containing square?",
+      "hint": "Where can new discontinuities occur?",
+      "solution": "Only the circular boundary can acquire jumps. That boundary has area zero, so the bounded zero extension is Riemann integrable by the stated criterion. Its integral equals the disk integral.",
+      "rubric": [
+        "Identify the possible discontinuity set.",
+        "Invoke the appropriate extension theorem."
+      ],
+      "solutionTex": "\\widetilde f(x,y)=\\begin{cases}f(x,y)&(x,y)\\in D\\\\0&(x,y)\\notin D\\end{cases}"
+    }
+  },
+  "fubini-double": {
+    "prerequisites": ["general-double-integrals"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "Order is a theorem, not typography",
+        "text": "A continuous function on a closed rectangle has equal double and iterated integrals. For zero extensions over ordinary piecewise smooth regions, a stronger integrability version is required because the extension may have boundary jumps."
+      },
+      {
+        "title": "A sufficient extension for calculations",
+        "text": "For a bounded Riemann-integrable function whose slices are integrable apart from finitely many exceptional outer values, the iterated integrals agree with the double integral; changing bounded values on those exceptional slices does not affect it. In the Lebesgue setting, absolute integrability permits Fubini and nonnegativity permits Tonelli, but those are separate imported results."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute $\\int_0^1\\int_0^2(x+y)\\,dy\\,dx$ in both orders.",
+      "hint": "The rectangle and continuous polynomial satisfy the elementary theorem.",
+      "solution": "Integrating in y gives 2x+2, then total 3. Reversing gives $\\int_0^2(1/2+y)\\,dy$=3. The domain remains the same rectangle.",
+      "rubric": [
+        "State why the swap is valid.",
+        "Keep each variable’s interval attached to it."
+      ],
+      "solutionTex": "\\int_0^1\\int_0^2(x+y)\\,dy\\,dx=\\int_0^2\\int_0^1(x+y)\\,dx\\,dy=3"
+    }
+  },
+  "type-one-two-regions": {
+    "prerequisites": ["fubini-double", "area-between-curves"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Bounds describe a set",
+        "text": "The region 0≤x≤1, x²≤y≤x lies between a parabola and a line. For horizontal slices, 0≤y≤1 and y≤x≤√y. Derive these inequalities before changing the integration order."
+      },
+      {
+        "title": "Split when one slice formula fails",
+        "text": "A region may need several Type I or Type II pieces. Splitting along an internal boundary does not duplicate area if pieces overlap only on boundaries of area zero. Draw or solve each boundary intersection and determine which curve actually limits a slice."
+      }
+    ],
+    "exercise": {
+      "prompt": "Reverse $\\int_0^1\\int_{x^2}^x f(x,y)\\,dy\\,dx$.",
+      "hint": "Solve y≥x² and y≤x in the nonnegative quadrant.",
+      "solution": "The reversed integral is $\\int_0^1\\int_y^{\\sqrt y}f(x,y)\\,dx\\,dy$. The conditions give x≤√y and x≥y.",
+      "rubric": [
+        "Derive both horizontal bounds.",
+        "Preserve the region and integrand."
+      ],
+      "solutionTex": "\\int_0^1\\int_{x^2}^{x}f\\,dy\\,dx=\\int_0^1\\int_y^{\\sqrt y}f\\,dx\\,dy"
+    }
+  },
+  "linearity-additivity": {
+    "prerequisites": ["general-double-integrals"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Linearity concerns values",
+        "text": "For integrable f,g, ∫(af+bg)=a∫f+b∫g. It does not assert that ∫fg=(∫f)(∫g). A product separates only under additional structure, such as independent factors on a product rectangle."
+      },
+      {
+        "title": "Additivity concerns regions",
+        "text": "If a region is split into pieces overlapping only on negligible boundaries, add their integrals. For signed accumulation, negative contributions remain negative. Overlapping pieces with positive area require subtracting the overlap to avoid double counting."
+      }
+    ],
+    "exercise": {
+      "prompt": "If $\\iint_D f\\,dA=2$ and $\\iint_D g\\,dA=-1$, find $\\iint_D(3f-2g)\\,dA$. Can you infer $\\iint_D fg\\,dA$?",
+      "hint": "Apply linearity only to the linear combination.",
+      "solution": "The first integral is 3·2−2·(−1)=8. The product integral cannot be determined from these two numbers alone.",
+      "rubric": [
+        "Handle the negative coefficient.",
+        "Do not invent multiplicativity."
+      ],
+      "solutionTex": "\\iint_D(3f-2g)\\,dA=3(2)-2(-1)=8"
+    }
+  },
+  "polar-rectangles": {
+    "prerequisites": ["double-riemann-sums", "vectors-and-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Derive the factor geometrically",
+        "text": "A polar cell has radial thickness dr and transverse length approximately r dθ, so area is approximately r dr dθ. The derivative columns of (r cos θ,r sin θ) have determinant r, confirming the local scale for r≥0."
+      },
+      {
+        "title": "A coordinate singularity is not a hole",
+        "text": "At r=0 all angles describe one point and the determinant vanishes. For standard disk integrals this point has area zero and can be handled by a limiting argument. Angular endpoints also represent the same ray when using a full 2π interval."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute the area of the annular sector $1\\le r\\le 2$, $0\\le \\theta\\le \\pi/3$.",
+      "hint": "Integrate the Jacobian r, not 1.",
+      "solution": "The area is $\\int_0^{\\pi/3}\\int_1^2r\\,dr\\,d\\theta$=(π/3)(3/2)=π/2.",
+      "rubric": [
+        "Include the radial factor.",
+        "Distinguish parameter-rectangle area from physical area."
+      ],
+      "solutionTex": "A=\\int_0^{\\pi/3}\\int_1^2r\\,dr\\,d\\theta=\\pi/2"
+    }
+  },
+  "polar-regions": {
+    "prerequisites": ["polar-rectangles", "type-one-two-regions"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Derive the shifted disk",
+        "text": "For (x−1)²+y²≤1, substitute polar coordinates to get r²−2r cos θ≤0. With r≥0 and r>0 this gives 0<r≤2cos θ, so cos θ≥0. Choose −π/2≤θ≤π/2, with r=0 included separately."
+      },
+      {
+        "title": "Verify the area",
+        "text": "The integral is ∫ from −π/2 to π/2 of $\\int_0^{2\\cos\\theta}r\\,dr\\,d\\theta$=∫2cos²θ dθ=π. This matches a disk of radius one. A centered fixed-radius sector would represent a different region."
+      }
+    ],
+    "exercise": {
+      "prompt": "Write polar bounds for $(x-2)^2+y^2\\le 4$.",
+      "hint": "Repeat the algebra with center and radius 2.",
+      "solution": "The bounds are −π/2≤θ≤π/2 and 0≤r≤4cos θ. The area is 4π, matching the disk radius 2.",
+      "rubric": [
+        "Derive the angular range from nonnegative radius.",
+        "Handle the origin without dividing by zero."
+      ],
+      "solutionTex": "-\\pi/2\\le\\theta\\le\\pi/2,\\quad0\\le r\\le4\\cos\\theta,\\quad A=4\\pi"
+    }
+  },
+  "triple-riemann-sums": {
+    "prerequisites": ["double-riemann-sums"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Volume cells need three widths",
+        "text": "A triple sum adds f(sample)ΔxΔyΔz. For f=1 it approximates volume; for mass density it approximates mass. A display containing only a few columns is a schematic, not a complete three-dimensional partition."
+      },
+      {
+        "title": "Check a separable box",
+        "text": "For f=xyz on [0,1]×[0,2]×[0,3], continuity allows repeated integration and the product structure separates the result into (1/2)·2·(9/2)=9. This separation depends on both the factorized integrand and rectangular domain."
+      }
+    ],
+    "exercise": {
+      "prompt": "Integrate constant density 5 on a box with side lengths 2,3,4.",
+      "hint": "Multiply density by the volume.",
+      "solution": "The integral is 5·2·3·4=120. If density is kg/m³, this is mass in kg.",
+      "rubric": [
+        "Include all three dimensions.",
+        "Interpret the measure and units."
+      ],
+      "solutionTex": "\\iiint_V5\\,dV=5(2)(3)(4)=120"
+    }
+  },
+  "simple-solid-bounds": {
+    "prerequisites": ["triple-riemann-sums", "type-one-two-regions"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Project before setting height bounds",
+        "text": "The tetrahedron x,y,z≥0 with x+y+z≤1 projects onto x,y≥0, x+y≤1. Thus 0≤x≤1, 0≤y≤1−x, 0≤z≤1−x−y. The inner bounds depend only on outer variables."
+      },
+      {
+        "title": "Each order describes the same solid",
+        "text": "A different outer coordinate requires a different projection. Writing all upper limits as 1 would replace the tetrahedron by a cube. Integrating 1 over the correct bounds gives volume 1/6."
+      }
+    ],
+    "exercise": {
+      "prompt": "Write bounds with x innermost for the same tetrahedron.",
+      "hint": "Project onto the yz-plane.",
+      "solution": "Use 0≤z≤1, 0≤y≤1−z, 0≤x≤1−y−z. Integrating 1 again yields 1/6.",
+      "rubric": [
+        "Derive the outer projection.",
+        "Keep an inner bound free of its own integration variable."
+      ],
+      "solutionTex": "\\int_0^1\\int_0^{1-z}\\int_0^{1-y-z}1\\,dx\\,dy\\,dz=\\frac16"
+    }
+  },
+  "cylindrical-coordinates": {
+    "prerequisites": ["polar-rectangles"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "A planar polar map plus height",
+        "text": "Cylindrical coordinates are x=r cos θ, y=r sin θ, z=z with r≥0. The volume Jacobian is r. The angle is measured around the z-axis; it does not tilt toward that axis."
+      },
+      {
+        "title": "Identify surfaces by equations",
+        "text": "r=2 is a cylinder, z=2 a horizontal plane, and z=r a cone above the plane. The z-axis has r=0 and nonunique θ; this coordinate singularity does not remove the axis from a solid."
+      }
+    ],
+    "exercise": {
+      "prompt": "Convert $x^2+y^2\\le 4$ and $1\\le z\\le 3$ into cylindrical bounds.",
+      "hint": "The planar projection is a full disk.",
+      "solution": "0≤r≤2, 0≤θ≤2π, 1≤z≤3, with volume element r dr dθ dz in a compatible chosen order.",
+      "rubric": [
+        "Include the full angular range.",
+        "Use the factor r for volume."
+      ],
+      "solutionTex": "0\\le r\\le2,\\quad0\\le\\theta\\le2\\pi,\\quad1\\le z\\le3"
+    }
+  },
+  "cylindrical-integration": {
+    "prerequisites": ["cylindrical-coordinates", "simple-solid-bounds"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Transform bounds and integrand",
+        "text": "Between z=r² and z=4, the surfaces meet at r=2. Volume is $\\int_0^{2\\pi}\\int_0^2\\int_{r^2}^4 r\\,dz\\,dr\\,d\\theta$=8π. An integrand x²+y² becomes r², creating r³ after multiplication by the Jacobian."
+      },
+      {
+        "title": "Do not count the Jacobian twice",
+        "text": "The measure r dr dθ dz already accounts for geometric stretching. If the physical density is itself r, the total factor r² has two different origins: density and volume measure. Label them separately."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the integral of $x^2+y^2$ over the cylinder of radius 1 and height 2.",
+      "hint": "Use density r² and measure r.",
+      "solution": "The result is $\\int_0^{2\\pi}\\int_0^1\\int_0^2r^3\\,dz\\,dr\\,d\\theta$=π.",
+      "rubric": [
+        "Transform the scalar field.",
+        "Multiply by one volume Jacobian."
+      ],
+      "solutionTex": "\\int_0^{2\\pi}\\int_0^1\\int_0^2r^3\\,dz\\,dr\\,d\\theta=\\pi"
+    }
+  },
+  "spherical-coordinates": {
+    "prerequisites": ["cylindrical-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Fix the angle convention",
+        "text": "Use ρ≥0, azimuth θ around the z-axis, and polar angle φ down from the positive z-axis: x=ρ sin φ cos θ, y=ρ sin φ sin θ, z=ρ cos φ. Standard ranges are 0≤θ<2π and 0≤φ≤π."
+      },
+      {
+        "title": "Distinguish coordinate singularities",
+        "text": "At ρ=0 every angle pair represents the origin. At φ=0 or π the azimuth is nonunique. These failures of coordinates do not imply the sphere or solid is geometrically singular."
+      }
+    ],
+    "exercise": {
+      "prompt": "What spherical coordinates describe $(0,0,-2)$?",
+      "hint": "The point lies on the negative polar axis.",
+      "solution": "ρ=2 and φ=π; any θ represents the same point. The nonunique azimuth is expected.",
+      "rubric": [
+        "State the polar-angle convention.",
+        "Allow nonunique coordinates on the axis."
+      ],
+      "solutionTex": "\\rho=2,\\quad\\varphi=\\pi,\\quad\\theta\\text{ arbitrary}"
+    }
+  },
+  "spherical-integration": {
+    "prerequisites": ["spherical-coordinates", "triple-riemann-sums"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Three scale factors",
+        "text": "A small spherical cell has lengths approximately dρ, ρ dφ and ρ sin φ dθ. Its volume factor is ρ² sin φ. The signed determinant depends on coordinate order; scalar volume uses its absolute value."
+      },
+      {
+        "title": "Cone and sphere bounds",
+        "text": "Inside a sphere of radius R and above the cone φ=π/4, use 0≤ρ≤R, 0≤φ≤π/4, 0≤θ≤2π. Volume is (2πR³/3)(1−1/√2), not a cylinder sector."
+      }
+    ],
+    "exercise": {
+      "prompt": "Integrate $x^2+y^2+z^2$ over the ball of radius R.",
+      "hint": "The integrand is ρ² and the measure adds another ρ² sin φ.",
+      "solution": "The integral is (R⁵/5)·2·2π=4πR⁵/5. For R=1 it is 4π/5.",
+      "rubric": [
+        "Use the full polar range.",
+        "Separate the integrand from the Jacobian."
+      ],
+      "solutionTex": "\\int_0^{2\\pi}\\int_0^\\pi\\int_0^R\\rho^4\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta=\\frac{4\\pi R^5}{5}"
+    }
+  },
+  "linear-area-change": {
+    "prerequisites": ["cross-products-and-planes"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Columns are transformed edges",
+        "text": "For A=[[2,1],[0,3]], the unit square edges map to (2,0) and (1,3). Their parallelogram area is |det A|=6. Every cell has the same area scale because the map is linear."
+      },
+      {
+        "title": "Orientation and collapse",
+        "text": "A negative determinant reverses orientation while keeping positive area scale. A zero determinant collapses the plane into a line or point, so a two-dimensional inverse does not exist. The determinant is a number; the derivative matrix is a different object."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find signed and unsigned area factors for $T(u,v)=(u,-2v)$.",
+      "hint": "Use the diagonal derivative matrix.",
+      "solution": "The signed determinant is −2 and area scale is 2. The map reverses orientation.",
+      "rubric": [
+        "Keep sign for orientation.",
+        "Use absolute value for scalar area."
+      ],
+      "solutionTex": "\\det DT=-2,\\quad |\\det DT|=2"
+    }
+  },
+  "plane-jacobian": {
+    "prerequisites": ["linear-area-change", "partial-derivatives-as-slices"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "A nonlinear map with variable scale",
+        "text": "Let T(u,v)=(u,(1+u)v), 0≤u,v≤1. Its derivative columns are (1,v) and (0,1+u), so det DT=1+u. The image is 0≤x≤1, 0≤y≤1+x: a trapezoid with area 3/2."
+      },
+      {
+        "title": "Finite cells versus infinitesimal cells",
+        "text": "For [u,u+h]×[v,v+k], exact image area is hk(1+u+h/2). Dividing by hk gives finite scale 1+u+h/2, approaching the derivative factor 1+u as h→0. Location u and cell size h play different roles. The inverse v=y/(1+x) exists near this domain."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute $\\iint_R y\\,dA$ over that trapezoid using $T$.",
+      "hint": "Replace y by (1+u)v and also include the Jacobian.",
+      "solution": "The transformed integrand is (1+u)²v. Integrating v from 0 to 1 gives (1+u)²/2, and integrating u gives 7/6.",
+      "rubric": [
+        "Transform the field as well as the measure.",
+        "Distinguish finite-cell scale from the derivative."
+      ],
+      "solutionTex": "\\iint_R y\\,dA=\\int_0^1\\int_0^1(1+u)^2v\\,dv\\,du=\\frac76"
+    }
+  },
+  "space-jacobians": {
+    "prerequisites": ["plane-jacobian", "spherical-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Volume is a triple product",
+        "text": "For T(u,v,w), the signed determinant of its three derivative columns measures oriented volume scale. Scalar volume uses its absolute value. Swapping two parameter columns reverses the sign without changing the physical volume."
+      },
+      {
+        "title": "Order in spherical coordinates",
+        "text": "With columns ordered (ρ,φ,θ) for x=ρ sin φ cos θ, y=ρ sin φ sin θ, z=ρ cos φ, the determinant is ρ²sin φ. The order (ρ,θ,φ) has its negative. Both give the same positive volume factor on the standard interior range."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the volume scale for $T(u,v,w)=(2u,-3v,4w)$.",
+      "hint": "Multiply the diagonal entries.",
+      "solution": "The signed determinant is −24 and the volume scale is 24. The negative sign records orientation reversal.",
+      "rubric": [
+        "State the coordinate order.",
+        "Use absolute value for volume."
+      ],
+      "solutionTex": "\\det DT=2(-3)(4)=-24,\\quad|\\det DT|=24"
+    }
+  },
+  "change-of-variables": {
+    "prerequisites": ["plane-jacobian", "space-jacobians"],
+    "reasoning": "Theorem used without proof",
+    "sections": [
+      {
+        "title": "State the map’s scope",
+        "text": "A sufficient change-of-variables setting is a one-to-one C¹ map on a neighborhood of a region with nonzero determinant, plus an integrable transformed field and ordinary negligible boundaries. The transformed integral uses f(T(u))|det DT(u)|."
+      },
+      {
+        "title": "Local invertibility is not global injectivity",
+        "text": "The map (u,v)↦(eᵘcos v,eᵘsin v) has nonzero determinant e^(2u), but repeats whenever v increases by 2π. Integrating over two full angle turns counts the image twice. Restrict the parameter range or explicitly account for multiplicity."
+      }
+    ],
+    "exercise": {
+      "prompt": "Why does a polar integral over $\\theta\\in [0,4\\pi]$ double-count a disk?",
+      "hint": "Compare points at θ and θ+2π.",
+      "solution": "They have identical physical coordinates for each positive r, so almost every disk point is covered twice. Using the usual r Jacobian over that interval computes twice the disk integral.",
+      "rubric": [
+        "Check global coverage, not only the determinant.",
+        "Explain multiplicity away from negligible seams."
+      ],
+      "solutionTex": "T(r,\\theta+2\\pi)=T(r,\\theta),\\quad\\int_0^{4\\pi}\\int_0^Rr\\,dr\\,d\\theta=2\\pi R^2"
+    }
+  },
+  "inverse-jacobian": {
+    "prerequisites": ["change-of-variables"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Invert at corresponding points",
+        "text": "For an invertible differentiable map S=T⁻¹, DS(T(u))DT(u)=I. Thus det DS(T(u))=1/det DT(u). The locations matter: reciprocal determinants are evaluated at points related by the map."
+      },
+      {
+        "title": "A nonlinear example",
+        "text": "For u=x and v=y/(1+x), with x>−1, the forward determinant is 1/(1+x). The inverse is x=u,y=(1+u)v and its determinant is 1+u. When integrating in u,v, use the latter absolute factor."
+      }
+    ],
+    "exercise": {
+      "prompt": "For $u=2x$ and $v=3y$, what factor converts $du dv$ to $dx dy$?",
+      "hint": "Compute the inverse map, or reciprocate the nonzero determinant.",
+      "solution": "The inverse is x=u/2,y=v/3, so dx dy=(1/6)du dv.",
+      "rubric": [
+        "Identify the direction of substitution.",
+        "Do not insert the forward determinant 6."
+      ],
+      "solutionTex": "dx\\,dy=\\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|du\\,dv=\\frac16du\\,dv"
+    }
+  },
+  "scalar-line-integrals": {
+    "prerequisites": [
+      "tangents-velocity-and-singularities",
+      "integral-antiderivatives"
+    ],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Density accumulates with length",
+        "text": "For a parametrized curve r(t), ∫_C f ds=∫f(r(t))|r′(t)|dt. Reversing orientation preserves the value because speed is nonnegative. Repeated traversal repeats the accumulation."
+      },
+      {
+        "title": "Non-unit speed is visible",
+        "text": "For r(t)=(2cos t,2sin t), speed is 2. With density f=3, one traversal has integral $\\int_0^{2\\pi}6\\,dt$=12π. Using dt alone would underestimate by a factor of two."
+      }
+    ],
+    "exercise": {
+      "prompt": "Integrate density $f(x,y)=x$ along $r(t)=(t,2t)$, $0\\le t\\le 1$.",
+      "hint": "The speed is constant √5.",
+      "solution": "The integral is √5$\\int_0^1t\\,dt$=√5/2. Reversing the traversal leaves the scalar line integral unchanged.",
+      "rubric": [
+        "Evaluate density along the curve.",
+        "Include the speed factor."
+      ],
+      "solutionTex": "\\int_Cx\\,ds=\\sqrt5\\int_0^1t\\,dt=\\frac{\\sqrt5}{2}"
+    }
+  },
+  "vector-fields": {
+    "prerequisites": ["vectors-and-coordinates"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Components depend on position",
+        "text": "A vector field F assigns a vector to each point of its domain. For F=(−y,x), arrows are tangential to circles about zero; for F=(x,y), arrows are radial. Arrow normalization improves legibility but hides magnitude unless a scale or readout supplies it."
+      },
+      {
+        "title": "Domain is part of the field",
+        "text": "The field (−y/(x²+y²),x/(x²+y²)) excludes the origin. A plot that omits one arrow does not repair the missing domain point; theorem hypotheses must respect that puncture."
+      }
+    ],
+    "exercise": {
+      "prompt": "At $(1,0)$, compare radial $F=(x,y)$ and rotational $G=(-y,x)$.",
+      "hint": "Substitute the point into each component.",
+      "solution": "F=(1,0) points outward and G=(0,1) is tangent counterclockwise. Their dot product is zero.",
+      "rubric": [
+        "Evaluate the field at the point.",
+        "Distinguish field vector from position vector when they differ."
+      ],
+      "solutionTex": "F(1,0)=(1,0),\\quad G(1,0)=(0,1),\\quad F\\cdot G=0"
+    }
+  },
+  "vector-line-integrals": {
+    "prerequisites": ["scalar-line-integrals", "vector-fields"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Work uses a signed component",
+        "text": "Work is ∫F(r(t))·r′(t)dt. Parallel force and velocity contribute positively, opposed ones negatively, and perpendicular components contribute zero. Unlike a scalar length integral, reversing traversal reverses the sign."
+      },
+      {
+        "title": "A transverse component contributes nothing",
+        "text": "On r(t)=(t,0), 0≤t≤1, F=(1,5) has dot product 1 with r′=(1,0). Work is 1 despite the large vertical force component. For F=(−1,5), work is −1."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the work of $F=(2,3)$ along the segment from $(0,0)$ to $(1,2)$.",
+      "hint": "Use r(t)=(t,2t).",
+      "solution": "The dot product (2,3)·(1,2)=8 is constant, so work is 8. The reverse path gives −8.",
+      "rubric": [
+        "Use velocity rather than unit tangent alone.",
+        "Retain orientation and sign."
+      ],
+      "solutionTex": "W=\\int_0^1(2,3)\\cdot(1,2)\\,dt=8"
+    }
+  },
+  "coordinate-line-integrals": {
+    "prerequisites": ["vector-line-integrals"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Three differentials are one dot product",
+        "text": "The expression P dx+Q dy+R dz becomes [P(r)x′+Q(r)y′+R(r)z′]dt. Each differential follows the same parameter interval; none is an independent integration variable."
+      },
+      {
+        "title": "Check terms individually",
+        "text": "Along r(t)=(t,t²), 0≤t≤1, ∫y dx+x dy becomes ∫(t²+2t²)dt=1. The form is d(xy), so endpoints independently give 1−0=1."
+      }
+    ],
+    "exercise": {
+      "prompt": "Evaluate $\\oint(x\\,dy-y\\,dx)$ around the unit circle counterclockwise.",
+      "hint": "Use x=cos t, y=sin t and differentiate both.",
+      "solution": "The integrand becomes cos²t+sin²t=1, giving 2π over [0,2π]. Reversing orientation gives −2π.",
+      "rubric": [
+        "Differentiate both coordinates.",
+        "Carry the minus sign in dx."
+      ],
+      "solutionTex": "\\oint_Cx\\,dy-y\\,dx=\\int_0^{2\\pi}(\\cos^2t+\\sin^2t)\\,dt=2\\pi"
+    }
+  },
+  "piecewise-paths": {
+    "prerequisites": ["coordinate-line-integrals"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Each piece gets its own parameter",
+        "text": "For a path from A to B to C, parametrize both oriented segments and add their integrals. Shared endpoints contribute no interval length. Reversing a piece changes its vector line integral sign but not a scalar length integral."
+      },
+      {
+        "title": "Compare different paths",
+        "text": "For F=(y,0), from (0,0) to (1,1), traveling horizontally then vertically gives work 0. Traveling vertically then horizontally gives work 1. The same endpoints do not imply the same work without conservativeness."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute $\\int y\\,dx$ along $(0,0)\\to(1,0)\\to(1,1)$.",
+      "hint": "On the first segment y=0; on the second dx=0.",
+      "solution": "Both pieces contribute zero, so the integral is zero. The alternative path through (0,1) gives 1.",
+      "rubric": [
+        "Respect the order and direction of pieces.",
+        "Avoid inferring endpoint-only dependence."
+      ],
+      "solutionTex": "\\int_{C_1}y\\,dx=0,\\quad\\int_{C_2}y\\,dx=0"
+    }
+  },
+  "work-and-circulation": {
+    "prerequisites": ["vector-line-integrals", "piecewise-paths"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Circulation is work on a closed traversal",
+        "text": "For F=(−y,x) and the unit circle counterclockwise, F(r)=r′ and the dot product is 1, giving circulation 2π. For the radial field (x,y), it is zero because field and velocity are perpendicular."
+      },
+      {
+        "title": "A field can change the sign around a path",
+        "text": "For constant F=(1,0) on a circle, local work density is −sin t. Some arcs contribute positively and others negatively, with total zero. Zero net work does not mean every local contribution vanishes."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find circulation of $F=(-2y,2x)$ around a radius-R circle counterclockwise.",
+      "hint": "Both field and velocity scale with R.",
+      "solution": "The dot product is 2R², giving circulation 4πR². Clockwise traversal changes the sign.",
+      "rubric": ["Track both radius factors.", "State the orientation."],
+      "solutionTex": "\\oint_C F\\cdot d\\mathbf r=\\int_0^{2\\pi}2R^2\\,dt=4\\pi R^2"
+    }
+  },
+  "fundamental-line-theorem": {
+    "prerequisites": ["multivariable-chain-rule", "vector-line-integrals"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Apply chain rule along the curve",
+        "text": "If F=∇φ on a domain containing the entire piecewise smooth path, then F(r)·r′=(φ∘r)′. Integrating gives φ(end)−φ(start). A closed path then has zero work."
+      },
+      {
+        "title": "Construct a potential with a missing function",
+        "text": "For F=(2xy,x²+2y), integrate the first component in x to get φ=x²y+C(y). Differentiating in y and matching the second component gives C′=2y, hence φ=x²y+y²+constant."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find work of that field from $(0,0)$ to $(1,2)$.",
+      "hint": "Evaluate the potential at endpoints.",
+      "solution": "φ(1,2)=2+4=6 and φ(0,0)=0, so work is 6 along every admissible path in ℝ².",
+      "rubric": [
+        "Verify both partials of the potential.",
+        "Subtract in endpoint order."
+      ],
+      "solutionTex": "W=\\phi(1,2)-\\phi(0,0)=6"
+    }
+  },
+  "conservative-domains": {
+    "prerequisites": ["fundamental-line-theorem", "mixed-and-higher-partials"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Curl-free needs a domain theorem",
+        "text": "A C¹ field on a simply connected open domain with zero curl is conservative. On an arbitrary domain, zero curl is only a local condition. A potential always forces zero curl when mixed derivatives may be interchanged."
+      },
+      {
+        "title": "The punctured-plane counterexample",
+        "text": "F=(−y/r²,x/r²) has zero scalar curl away from zero, yet its circulation around the unit circle is 2π. The loop surrounds an excluded point, so no global single-valued potential exists on the punctured plane. On a suitable cut domain an angle potential is possible."
+      }
+    ],
+    "exercise": {
+      "prompt": "Can Green’s theorem on the full disk justify zero circulation for this vortex?",
+      "hint": "Is the field defined on a neighborhood of the whole disk?",
+      "solution": "No. It is undefined at the center, violating the theorem’s domain hypothesis. Direct circulation is 2π; an annulus would have both outer and inner boundaries.",
+      "rubric": [
+        "Check the interior as well as the curve.",
+        "Account for an inner boundary when using an annulus."
+      ],
+      "solutionTex": "\\nabla\\times F=0\\ (r>0),\\quad\\oint_{|r|=1}F\\cdot d\\mathbf r=2\\pi\\ne0"
+    }
+  },
+  "greens-theorem": {
+    "prerequisites": [
+      "coordinate-line-integrals",
+      "fubini-double",
+      "conservative-domains"
+    ],
+    "reasoning": "Geometric motivation",
+    "sections": [
+      {
+        "title": "Orient the whole boundary",
+        "text": "For a positively oriented simple closed piecewise smooth curve bounding a suitable planar region, with P,Q continuously differentiable on a neighborhood, ∮P dx+Q dy=∫∫(Qₓ−Pᵧ)dA. Positive orientation keeps the region on the left; inner boundaries of holes therefore run clockwise."
+      },
+      {
+        "title": "Why internal edges disappear",
+        "text": "Partitioning a region into smaller pieces gives two traversals of every shared edge with opposite directions. Their line integrals cancel, leaving the outer and hole boundaries. This motivates the theorem; a full proof requires controlling the partition and regularity."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find $\\oint(-y\\,dx+x\\,dy)$ around the unit circle counterclockwise using Green.",
+      "hint": "Compute Qₓ−Pᵧ.",
+      "solution": "The scalar curl is 1−(−1)=2. The disk area is π, so circulation is 2π.",
+      "rubric": [
+        "Check the field on the entire disk.",
+        "Use the assigned boundary orientation."
+      ],
+      "solutionTex": "\\oint_C(-y\\,dx+x\\,dy)=\\iint_D2\\,dA=2\\pi"
+    }
+  },
+  "area-from-boundary": {
+    "prerequisites": ["greens-theorem"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Choose a field whose curl is one",
+        "text": "The forms x dy, −y dx, and (x dy−y dx)/2 all integrate to area on a positively oriented simple boundary because each corresponding scalar curl equals 1. Reverse orientation and the signed result changes sign."
+      },
+      {
+        "title": "A polygon reduces to endpoint data",
+        "text": "On a straight edge from (xᵢ,yᵢ) to (xⱼ,yⱼ), the symmetric form contributes (xᵢyⱼ−xⱼyᵢ)/2. Summing edges gives the shoelace formula. Self-intersecting traversals produce signed multiplicity-weighted area rather than automatically the union’s geometric area."
+      }
+    ],
+    "exercise": {
+      "prompt": "Use boundary data to find the area of triangle $(0,0)$, $(3,0)$, $(0,2)$ in that order.",
+      "hint": "Sum the three cross-products and divide by two.",
+      "solution": "Only the edge (3,0)→(0,2) contributes 6 before halving. The area is 3 and the ordering is counterclockwise.",
+      "rubric": ["Close the polygon.", "Check sign and orientation."],
+      "solutionTex": "A=\\tfrac12(0+3\\cdot2+0)=3"
+    }
+  },
+  "surface-charts": {
+    "prerequisites": [
+      "curves-and-parametrizations",
+      "cross-products-and-planes"
+    ],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Two parameters trace a surface",
+        "text": "A chart r(u,v) maps a planar parameter region into space. Regularity requires rᵤ×rᵥ≠0. To integrate without multiplicity, also check coverage: a regular map can cover the same physical patch more than once."
+      },
+      {
+        "title": "Seams are coordinate artifacts",
+        "text": "A sphere chart r(φ,θ)=(sin φ cos θ,sin φ sin θ,cos φ) repeats at the angular seam and degenerates at the poles. Multiple charts or exclusion of negligible boundary sets can handle these defects; they do not make the sphere itself nonsmooth."
+      }
+    ],
+    "exercise": {
+      "prompt": "Parametrize the cylinder $x^2+y^2=4$ for $0\\le z\\le 3$.",
+      "hint": "Use angle and height as independent parameters.",
+      "solution": "r(θ,z)=(2cos θ,2sin θ,z), 0≤θ≤2π,0≤z≤3. It covers the side once apart from the repeated seam.",
+      "rubric": [
+        "Specify the parameter rectangle.",
+        "Explain seam duplication and distinguish the cylinder caps."
+      ],
+      "solutionTex": "\\mathbf r(\\theta,z)=(2\\cos\\theta,2\\sin\\theta,z),\\quad0\\le\\theta\\le2\\pi,\\ 0\\le z\\le3"
+    }
+  },
+  "surface-tangent-vectors": {
+    "prerequisites": ["surface-charts"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Differentiate one parameter at a time",
+        "text": "For r(u,v)=(u,v,u²+v²), the tangent vectors are rᵤ=(1,0,2u) and rᵥ=(0,1,2v). Their cross product is (−2u,−2v,1), a nonzero upward normal."
+      },
+      {
+        "title": "Tangent plane versus the curved patch",
+        "text": "At (u,v)=(1,1), the surface point is (1,1,2) and normal (−2,−2,1), yielding z=2x+2y−2. The plane is the affine first-order approximation, not the whole surface."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find tangent vectors and a normal for $r(u,v)=(u,v,uv)$ at $(1,2)$.",
+      "hint": "Evaluate derivatives at the parameter pair, not at the 3D point.",
+      "solution": "rᵤ=(1,0,2), rᵥ=(0,1,1), and rᵤ×rᵥ=(−2,−1,1). The surface point is (1,2,2).",
+      "rubric": [
+        "Distinguish parameter pair from physical point.",
+        "Verify the normal is perpendicular to both tangents."
+      ],
+      "solutionTex": "\\mathbf r_u=(1,0,2),\\quad\\mathbf r_v=(0,1,1),\\quad\\mathbf r_u\\times\\mathbf r_v=(-2,-1,1)"
+    }
+  },
+  "surface-area-element": {
+    "prerequisites": ["surface-tangent-vectors", "linear-area-change"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "A local parallelogram supplies area",
+        "text": "The parameter cell du dv maps approximately to edges rᵤdu and rᵥdv, giving dS=|rᵤ×rᵥ|du dv. The norm removes orientation but retains stretch; using a unit normal here would lose the area factor."
+      },
+      {
+        "title": "Graphs are a special case",
+        "text": "For z=f(x,y), r=(x,y,f) gives dS=√(1+fₓ²+fᵧ²)dx dy. On the plane z=x+2y over a unit square, the factor is √6 and the area is √6."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find the area of $z=3x$ over $0\\le x\\le 2$, $0\\le y\\le 1$.",
+      "hint": "The graph area factor is constant.",
+      "solution": "The factor is √(1+9)=√10. Multiplying by projected area 2 gives 2√10.",
+      "rubric": [
+        "Use surface area rather than projected area.",
+        "Keep the factor under the square root."
+      ],
+      "solutionTex": "A=\\int_0^2\\int_0^1\\sqrt{10}\\,dy\\,dx=2\\sqrt{10}"
+    }
+  },
+  "scalar-surface-integrals": {
+    "prerequisites": ["surface-area-element", "scalar-line-integrals"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Density times area",
+        "text": "The scalar surface integral is ∫∫f(r(u,v))|rᵤ×rᵥ|du dv. It is unaffected by reversing orientation, although repeating coverage repeats the integral."
+      },
+      {
+        "title": "A plane with variable density",
+        "text": "On z=x+y over the unit square, density f=z becomes u+v and area factor √3. The integral is √3$\\int_0^1\\int_0^1(u+v)\\,du\\,dv$=√3. Using only the projected measure would miss the slope factor."
+      }
+    ],
+    "exercise": {
+      "prompt": "Integrate constant density 2 over a sphere of radius R.",
+      "hint": "Multiply density by surface area.",
+      "solution": "The result is 8πR². It does not change if inward rather than outward orientation is named, because this is a scalar area integral.",
+      "rubric": [
+        "Distinguish scalar integration from flux.",
+        "Use area, not enclosed volume."
+      ],
+      "solutionTex": "\\iint_S2\\,dS=2(4\\pi R^2)=8\\pi R^2"
+    }
+  },
+  "surface-orientation": {
+    "prerequisites": ["surface-tangent-vectors"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Orientation is a continuous choice",
+        "text": "An orientation chooses one of the two unit normal directions continuously across a regular surface. Reversing parameter order reverses rᵤ×rᵥ. A closed bounding surface usually uses outward normals; open surfaces need an explicit convention."
+      },
+      {
+        "title": "A Möbius strip has no global side",
+        "text": "Following a local normal around a Möbius strip returns it reversed. Thus one global continuous normal cannot be chosen. Local charts and scalar area still make sense; a globally oriented flux or ordinary oriented Stokes surface requires more care."
+      }
+    ],
+    "exercise": {
+      "prompt": "For the graph $z=x^2+y^2$, which cross-product sign gives downward orientation?",
+      "hint": "The standard (x,y) order produces a positive z component.",
+      "solution": "The upward area vector is (−2x,−2y,1)dx dy. Downward uses its negative, (2x,2y,−1)dx dy.",
+      "rubric": [
+        "Choose sign from the requested direction.",
+        "Do not discard the area magnitude when integrating flux."
+      ],
+      "solutionTex": "\\mathbf n\\,dS=(2x,2y,-1)\\,dx\\,dy\\quad\\text{(downward)}"
+    }
+  },
+  "flux-through-surfaces": {
+    "prerequisites": ["surface-area-element", "vector-fields"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Flux retains the normal sign",
+        "text": "Flux is ∫∫F·n dS, or ∫∫F(r)·(rᵤ×rᵥ)du dv with a compatible parameter orientation. The dot product measures only the normal component; reversing the normal reverses flux."
+      },
+      {
+        "title": "Oblique fields and cancellation",
+        "text": "For constant F=(1,0,0) on an outward unit sphere, local flux is positive on the right hemisphere and negative on the left, giving total zero. This differs from the radial field F=(x,y,z), which is outward everywhere and has flux 4π."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find upward flux of $F=(1,2,3)$ through the unit square in $z=0$.",
+      "hint": "The upward unit normal is (0,0,1).",
+      "solution": "The dot product is 3, so flux is 3. Horizontal components contribute zero. Downward orientation gives −3.",
+      "rubric": ["Choose the normal.", "Multiply normal component by area."],
+      "solutionTex": "\\iint_S(1,2,3)\\cdot(0,0,1)\\,dS=3"
+    }
+  },
+  "curl-and-local-rotation": {
+    "prerequisites": ["greens-theorem", "vector-fields"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Curl measures oriented circulation density",
+        "text": "In three dimensions curl F has components (Rᵧ−Q_z,P_z−Rₓ,Qₓ−Pᵧ). Its dot product with a chosen unit normal measures infinitesimal circulation per area in that plane, under smoothness hypotheses."
+      },
+      {
+        "title": "Curved arrows alone are misleading",
+        "text": "The field (−y,x,0) has curl (0,0,2), while (−y/r²,x/r²,0) has zero curl away from the z-axis despite circular arrows. The latter has an excluded singular axis, so its global circulation behavior needs the domain."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find curl of $F=(0,0,xy)$.",
+      "hint": "Only derivatives of the third component are nonzero.",
+      "solution": "Curl F=(x,−y,0). At (1,2,0) it is (1,−2,0), describing oriented circulation in corresponding coordinate planes.",
+      "rubric": [
+        "Use the correct component order.",
+        "Distinguish curl from the field itself."
+      ],
+      "solutionTex": "\\nabla\\times(0,0,xy)=(x,-y,0)"
+    }
+  },
+  "divergence-and-local-flow": {
+    "prerequisites": ["flux-through-surfaces", "partial-derivatives-as-slices"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Divergence is a signed scalar",
+        "text": "For F=(P,Q,R), divergence is Pₓ+Qᵧ+R_z. Positive divergence means local net outward flux density, not necessarily arrows pointing directly away from the origin."
+      },
+      {
+        "title": "A non-radial example",
+        "text": "For F=(x,−y,0), divergence is zero: expansion in the x direction balances contraction in y. For F=(x,y,z), divergence is 3. Arrow length and direction alone do not supply the derivative balance."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute divergence of $F=(x^2,yz,z^2)$. Where is it zero?",
+      "hint": "Differentiate each component in its matching coordinate.",
+      "solution": "Divergence is 2x+z+2z=2x+3z, zero on the plane 2x+3z=0.",
+      "rubric": [
+        "Use matching partial derivatives.",
+        "Do not add the components without differentiating."
+      ],
+      "solutionTex": "\\nabla\\cdot(x^2,yz,z^2)=2x+3z"
+    }
+  },
+  "gradient-curl-divergence": {
+    "prerequisites": [
+      "mixed-and-higher-partials",
+      "curl-and-local-rotation",
+      "divergence-and-local-flow"
+    ],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "Write the cancellations",
+        "text": "For a C² scalar φ, curl(∇φ)=0 because each component is a difference of equal mixed partials. For a C² vector field, div(curl F)=0 by the same pairwise cancellations."
+      },
+      {
+        "title": "Converse statements need separate conditions",
+        "text": "Curl-free does not always mean a global gradient on a punctured domain. Divergence-free does not automatically provide a globally defined vector potential on every domain. These identities are necessary structural checks, not universal converse theorems."
+      }
+    ],
+    "exercise": {
+      "prompt": "Could $F=(x,y,z)$ be the curl of a $C^2$ vector field on an open ball?",
+      "hint": "Compute its divergence.",
+      "solution": "No: div F=3, whereas the divergence of the curl of a C² field must be zero.",
+      "rubric": [
+        "State the smoothness setting.",
+        "Use the identity as a necessary condition."
+      ],
+      "solutionTex": "\\nabla\\cdot(x,y,z)=3\\ne0=\\nabla\\cdot(\\nabla\\times A)"
+    }
+  },
+  "stokes-theorem": {
+    "prerequisites": [
+      "curl-and-local-rotation",
+      "surface-orientation",
+      "vector-line-integrals"
+    ],
+    "reasoning": "Geometric motivation",
+    "sections": [
+      {
+        "title": "Boundary and normal are paired",
+        "text": "Stokes relates ∮∂S F·dr to ∫∫S(curl F)·n dS for a suitable oriented piecewise smooth surface and C¹ field on a neighborhood. Viewed along the chosen positive normal, the positive boundary runs counterclockwise. Across glued patches, shared edges cancel."
+      },
+      {
+        "title": "Choose the easier surface lawfully",
+        "text": "For F=(−y/2,x/2,0), curl is (0,0,1). Around a unit horizontal circle counterclockwise, the flat disk gives flux π. Another admissible spanning surface with the same induced boundary has the same curl flux, provided the field remains smooth near it."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find circulation of $F=(-y,x,0)$ around the unit circle viewed clockwise from above.",
+      "hint": "Use a downward-oriented disk.",
+      "solution": "Curl F=(0,0,2). With downward normal, flux is −2 times the disk area, giving −2π.",
+      "rubric": [
+        "Match the boundary to the surface normal.",
+        "Check the field on a neighborhood of the spanning surface."
+      ],
+      "solutionTex": "\\oint_C F\\cdot d\\mathbf r=\\iint_D(0,0,2)\\cdot(0,0,-1)\\,dA=-2\\pi"
+    }
+  },
+  "divergence-theorem": {
+    "prerequisites": [
+      "divergence-and-local-flow",
+      "surface-orientation",
+      "triple-riemann-sums"
+    ],
+    "reasoning": "Geometric motivation",
+    "sections": [
+      {
+        "title": "The surface must close the region",
+        "text": "For a suitable bounded solid V with outward-oriented boundary and C¹ field near its closure, total flux equals ∫∫∫V div F dV. An open cap or side surface needs its missing pieces included and then subtracted."
+      },
+      {
+        "title": "Singularities and holes",
+        "text": "The field r/|r|³ is singular at zero, so the theorem cannot be applied to a ball containing zero despite vanishing divergence away from it. On a shell the inner boundary points toward the center as an outward normal from the shell, and its flux cancels the outer contribution."
+      }
+    ],
+    "exercise": {
+      "prompt": "Find outward flux of $F=(x,y,z)$ through a sphere of radius R.",
+      "hint": "Use divergence 3 and the enclosed volume.",
+      "solution": "The flux is 3·(4πR³/3)=4πR³. Directly, F·n=R and surface area is 4πR², giving the same answer.",
+      "rubric": [
+        "Use outward orientation on a closed surface.",
+        "Check with the direct area calculation."
+      ],
+      "solutionTex": "\\iint_{\\partial B_R}F\\cdot n\\,dS=3\\operatorname{Vol}(B_R)=4\\pi R^3"
+    }
+  },
+  "review-integral-methods": {
+    "prerequisites": [
+      "stokes-theorem",
+      "divergence-theorem",
+      "greens-theorem",
+      "fundamental-line-theorem"
+    ],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Four fully specified practice problems",
+        "text": "These are self-contained replacements preserving the review’s methods and results, not a transcription of missing source statements. (1) Compute outward curl flux for F=(y,−x,z) on the cone z=√(x²+y²), 0≤z≤1, joined to the cylinder x²+y²=1,1≤z≤4. (2) Compute upward curl flux for F=(x+y²,y+z²,z+x²) on the first-octant triangle x+y+z=3. (3) Compute clockwise circulation of F=(0,xy) on the triangle (0,0),(0,12),(3,0). (4) For φ=x²y+$\\int_0^xe^{-s^2}\\,ds$+sin(πy²/2)/π, compute ∫∇φ·dr on r(t)=(0,1−t),0≤t≤1."
+      },
+      {
+        "title": "Strategy and independent checks",
+        "text": "For (1), the top boundary is clockwise under the outward side orientation; r=(cos t,−sin t,4) gives integrand 1 and answer 2π. Excluding a tiny cone-tip cap and taking its limit handles the apex. For (2), curl=(−2z,−2x,−2y); its dot product with (1,1,1) is −6, so flux is −27. For (3), Qₓ−Pᵧ=y and clockwise orientation gives −72. For (4), endpoint potential gives φ(0,0)−φ(0,1)=−1/π. The field is (2xy+e^(−x²),x²+y cos(πy²/2))."
+      }
+    ],
+    "exercise": {
+      "prompt": "For problem (3), reverse the triangle direction and compute the new circulation by both Green and a boundary parametrization.",
+      "hint": "Only the diagonal edge contributes for the field (0,xy).",
+      "solution": "Counterclockwise circulation is 72. On the diagonal from (3,0) to (0,12), use x=3−3t,y=12t: Qdy=(3−3t)(12t)12dt, whose integral is 72; the other edges contribute zero.",
+      "rubric": [
+        "Specify the field and all path data.",
+        "Match orientation before integrating.",
+        "Check by a second method."
+      ],
+      "solutionTex": "\\int_0^1(3-3t)(12t)(12)\\,dt=72"
+    }
+  },
+  "review-change-of-variables": {
+    "prerequisites": ["inverse-jacobian", "plane-jacobian"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Map every boundary",
+        "text": "For the first-quadrant region bounded by y=x³,y=2x³,xy=1,xy=3, take u=y/x³ and v=xy. The new rectangle is 1≤u≤2,1≤v≤3. The inverse x=(v/u)^(1/4), y=u^(1/4)v^(3/4) maps its four edges to the actual curved boundaries."
+      },
+      {
+        "title": "Check sign, scale, and bounds",
+        "text": "The inverse determinant is −1/(4u), so scalar area uses 1/(4u). Integrating gives (ln2)/2. Since the factor lies between 1/8 and 1/4 on a rectangle of area 2, the result must lie between 1/4 and 1/2; this catches a mistaken forward determinant."
+      }
+    ],
+    "exercise": {
+      "prompt": "Compute $\\iint_D xy\\,dA$ over the same region.",
+      "hint": "The integrand xy becomes v.",
+      "solution": "The integral is $\\int_1^2\\int_1^3\\frac{v}{4u}\\,dv\\,du$=(ln2)/4·4=ln2.",
+      "rubric": [
+        "Transform both region and field.",
+        "Use the absolute inverse determinant.",
+        "Compare with the area-scaled bounds."
+      ],
+      "solutionTex": "\\int_1^2\\int_1^3\\frac{v}{4u}\\,dv\\,du=\\ln2"
+    }
+  },
+  "review-lagrange-box": {
+    "prerequisites": ["lagrange-sphere", "global-extrema-and-boundaries"],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "Why the box is centered",
+        "text": "For an axis-aligned box whose eight vertices lie on 2x²+72y²+18z²=288, compare vertices differing in only one coordinate. Their squared endpoints must agree, so a nondegenerate box has opposite coordinate pairs. Its positive half-lengths x,y,z give volume 8xyz."
+      },
+      {
+        "title": "Global bound without multipliers",
+        "text": "Set X=x/12,Y=y/2,Z=z/4. The constraint becomes X²+Y²+Z²=1. AM–GM gives X²Y²Z²≤1/27, so XYZ≤1/(3√3). Since 8xyz=768XYZ, maximum volume is 256/√3, attained at X=Y=Z=1/√3. Boundary boxes have zero volume."
+      }
+    ],
+    "exercise": {
+      "prompt": "For an ellipsoid $x^2/a^2+y^2/b^2+z^2/c^2=1$ with $a,b,c>0$, find the largest axis-aligned inscribed box.",
+      "hint": "Normalize coordinates and maximize the product.",
+      "solution": "The half-lengths are a/√3,b/√3,c/√3, so volume is 8abc/(3√3). Positivity and AM–GM establish the global maximum, while degenerate boundary volumes vanish.",
+      "rubric": [
+        "Distinguish half-lengths from side lengths.",
+        "State positive semiaxes.",
+        "Prove a global bound and its equality case."
+      ],
+      "solutionTex": "V_{\\max}=\\frac{8abc}{3\\sqrt3},\\quad(x,y,z)=\\frac{(a,b,c)}{\\sqrt3}"
+    }
+  },
+  "review-critical-points": {
+    "prerequisites": ["hessian-classification"],
+    "reasoning": "Proof sketch",
+    "sections": [
+      {
+        "title": "Enumerate rather than sample",
+        "text": "For f=x⁴−2x²+y³−3y, stationarity gives x∈{−1,0,1} and y∈{−1,1}, producing six points. The Hessian is diagonal with entries 12x²−4 and 6y, so its signs classify every candidate."
+      },
+      {
+        "title": "Keep all values and types",
+        "text": "At (±1,1), both entries are positive: strict local minima of value −3. At (0,−1), both are negative: strict local maximum of value 2. At (±1,−1) the signs differ: saddles of value 1; (0,1) is a saddle of value −2. The cubic y term makes the full surface unbounded in both directions, so none is a global extremum."
+      }
+    ],
+    "exercise": {
+      "prompt": "At $(0,1)$, show directly that the value $-2$ is neither a local minimum nor a local maximum.",
+      "hint": "Compare small displacements along x and along y.",
+      "solution": "Along (h,1), f+2=h⁴−2h²<0 for small nonzero h. Along (0,1+k), f+2=3k²+k³>0 for small nonzero k. Both signs occur arbitrarily close.",
+      "rubric": [
+        "Keep the base value in the comparison.",
+        "Use sufficiently small nonzero displacements."
+      ],
+      "solutionTex": "f(h,1)+2=h^4-2h^2<0,\\quad f(0,1+k)+2=3k^2+k^3>0"
+    }
+  },
+  "review-total-differentiability": {
+    "prerequisites": [
+      "total-differentiability",
+      "partials-do-not-make-a-plane"
+    ],
+    "reasoning": "Complete proof",
+    "sections": [
+      {
+        "title": "A successful all-direction estimate",
+        "text": "For f=(x⁴+y⁴)/r away from zero and f(0)=0, both coordinate partials are zero. Since x⁴+y⁴≤r⁴, |f|/r≤r²→0. Thus the derivative is the zero map, with δ=√ε supplying an explicit normalized-error guarantee."
+      },
+      {
+        "title": "A continuous failure",
+        "text": "For g=(x³−xy²)/(x²+y²) with g(0)=0, the candidate derivative is L(x,y)=x. The remainder is −2xy²/(x²+y²). Along (t,t), its normalized magnitude is 1/√2, so differentiability fails. Nevertheless |g|≤r proves continuity. A graph of a canonical bowl cannot establish either result."
+      }
+    ],
+    "exercise": {
+      "prompt": "Explain why testing just the two coordinate axes would wrongly suggest differentiability of g.",
+      "hint": "Evaluate g−L on each axis.",
+      "solution": "On both coordinate axes the remainder is zero, so those tests see no error. Along the diagonal the normalized error stays 1/√2. Total differentiability needs one estimate for all small vectors, not only coordinate directions.",
+      "rubric": [
+        "Identify the unique candidate map from the partials.",
+        "Exhibit an admissible path violating the normalized-error limit."
+      ],
+      "solutionTex": "\\frac{|g(t,t)-L(t,t)|}{\\sqrt{2t^2}}=\\frac1{\\sqrt2}\\not\\longrightarrow0"
+    }
+  }
+}

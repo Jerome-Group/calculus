@@ -269,7 +269,9 @@ export function GraphStudio({ study }: { study: StudyController }) {
                 <label key={key}>
                   {key === "clip" ? (
                     <>
-                      Height clip <Formula>{String.raw`\pm z`}</Formula>
+                      {draft.mode === "curve"
+                        ? "Coordinate clip (x, y, z)"
+                        : "Height clip ±z"}
                     </>
                   ) : (
                     <>
@@ -331,9 +333,10 @@ export function GraphStudio({ study }: { study: StudyController }) {
             <p>
               Real-valued expressions are sampled on a finite mesh over the
               selected domain. Undefined, nonreal, and out-of-range heights are
-              omitted. Features smaller than the mesh can be missed. Large jumps
-              are filtered heuristically; a connected triangle is not a
-              continuity proof.
+              omitted. Curves clip all three coordinates and use adaptive
+              midpoint and jump checks; these remain heuristic. Features smaller
+              than the mesh can be missed. Large jumps are filtered
+              heuristically; a connected triangle is not a continuity proof.
             </p>
             <p>
               Implicit surfaces use sign changes and bounded root refinement

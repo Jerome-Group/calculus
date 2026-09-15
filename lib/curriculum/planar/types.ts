@@ -8,6 +8,8 @@ export type Trace = {
   dots?: boolean;
 };
 export type PlanarModel = {
+  comparison?: PlanarModel;
+  equalAspect?: boolean;
   label: string;
   symbol: string;
   min: number;

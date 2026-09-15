@@ -164,7 +164,7 @@ export function studyTools(
       name: "get_study_state",
       title: "Read current study state",
       description:
-        "Read the visible course, lesson, notes tab, experiment and graph configuration.",
+        "Read the visible course, lesson, notes section, experiment and graph configuration.",
       inputSchema: schema({}),
       annotations: { readOnlyHint: true },
       execute: snapshot,
@@ -209,7 +209,7 @@ export function studyTools(
       name: "set_notes_tab",
       title: "Read a notes section",
       description:
-        "Show the derivation, worked example or subtleties tab of the current visible lesson.",
+        "Show and focus the reasoning, worked example or distinction section of the current visible lesson.",
       inputSchema: schema(
         {
           tab: { type: "string", enum: ["intuition", "example", "pitfall"] },
@@ -220,7 +220,7 @@ export function studyTools(
         if (current().route !== "lesson")
           throw new Error("Open a concept first.");
         if (!["intuition", "example", "pitfall"].includes(String(a.tab)))
-          throw new Error("Unknown notes tab.");
+          throw new Error("Unknown notes section.");
         current().setNoteTab(String(a.tab));
         await afterRender();
         return snapshot();

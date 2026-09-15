@@ -1,0 +1,89 @@
+{
+  "scope": "Algebra and source-algorithm checks; not live browser execution",
+  "review_inverse_jacobian": "-1/(4*u)",
+  "review_area": "log(2)/2",
+  "review_stationary_points": [
+    {
+      "point": [
+        -1,
+        -1
+      ],
+      "value": "1",
+      "hessian_diagonal": [
+        8,
+        -6
+      ]
+    },
+    {
+      "point": [
+        -1,
+        1
+      ],
+      "value": "-3",
+      "hessian_diagonal": [
+        8,
+        6
+      ]
+    },
+    {
+      "point": [
+        0,
+        -1
+      ],
+      "value": "2",
+      "hessian_diagonal": [
+        -4,
+        -6
+      ]
+    },
+    {
+      "point": [
+        0,
+        1
+      ],
+      "value": "-2",
+      "hessian_diagonal": [
+        -4,
+        6
+      ]
+    },
+    {
+      "point": [
+        1,
+        -1
+      ],
+      "value": "1",
+      "hessian_diagonal": [
+        8,
+        -6
+      ]
+    },
+    {
+      "point": [
+        1,
+        1
+      ],
+      "value": "-3",
+      "hessian_diagonal": [
+        8,
+        6
+      ]
+    }
+  ],
+  "implicit_z_squared_negative_samples": 0,
+  "implicit_z_squared_conclusion": "No tetrahedron can have an inside (negative) vertex; source skips every tetrahedron.",
+  "curve_pole": 0.001,
+  "curve_finite_samples": 601,
+  "curve_segment_straddling_pole": [
+    [
+      0.0,
+      -1000.0,
+      0
+    ],
+    [
+      0.0033333333333334103,
+      428.57142857141446,
+      0
+    ]
+  ]
+}

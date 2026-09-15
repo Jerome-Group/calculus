@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { MathText } from "./math-text";
+import { learningGuide } from "@/lib/curriculum/learning";
 import { sources, type Concept, type Citation } from "@/lib/curriculum";
 export function SourceReferences({ concept }: { concept: Concept }) {
   const groups = new Map<string, Citation[]>();
@@ -8,23 +9,7 @@ export function SourceReferences({ concept }: { concept: Concept }) {
       ...(groups.get(citation.sourceId) ?? []),
       citation,
     ]);
-  const extra =
-    concept.course !== "MH2100"
-      ? {
-          url: "https://www.3blue1brown.com/lessons/essence-of-calculus/",
-          label: "3Blue1Brown · calculus visual series",
-        }
-      : [
-            "double-riemann-sums",
-            "fubini-double",
-            "general-double-integrals",
-            "type-one-two-regions",
-          ].includes(concept.id)
-        ? {
-            url: "https://mathinsight.org/double_integral_volume",
-            label: "Math Insight · double-integral geometry",
-          }
-        : null;
+  const extra = publicReading(concept.id);
   return (
     <section className="source-references" aria-label="Sources">
       <h2>Read the source</h2>
@@ -76,10 +61,16 @@ export function SourceReferences({ concept }: { concept: Concept }) {
         );
       })}
       <details>
-        <summary>A little further</summary>
+        <summary>How to use these references</summary>
         <p>
-          <MathText text={concept.enrichment} />
+          Read the cited course pages first. Compare their assumptions with the
+          hypotheses above, then return to this question without looking at the
+          worked answer:
         </p>
+        <p>
+          <MathText text={learningGuide(concept).exercise.prompt} />
+        </p>
+        {extra && <p>{extra.purpose}</p>}
         {extra && (
           <a href={extra.url} target="_blank" rel="noreferrer">
             {extra.label}
@@ -87,10 +78,52 @@ export function SourceReferences({ concept }: { concept: Concept }) {
           </a>
         )}
         <p className="source-caption">
-          Optional visual perspective. These interactive models are original
-          examples.
+          Public reading is optional and uses its own notation and examples. The
+          course references determine course scope; the interactive models and
+          practice questions here are original learning aids.
         </p>
       </details>
     </section>
   );
+}
+
+function publicReading(id: string) {
+  if (
+    [
+      "limits-one-sided",
+      "infinite-limits",
+      "epsilon-delta-one-variable",
+    ].includes(id)
+  )
+    return {
+      url: "https://openstax.org/books/calculus-volume-1/pages/2-5-the-precise-definition-of-a-limit",
+      label: "OpenStax · The precise definition of a limit",
+      purpose:
+        "For a public second explanation, compare the order of the epsilon and delta choices. Check how the definition changes for a one-sided or infinite limit before applying the same argument.",
+    };
+  if (id === "partial-fractions")
+    return {
+      url: "https://openstax.org/books/calculus-volume-2/pages/3-4-partial-fractions",
+      label: "OpenStax · Partial fractions",
+      purpose:
+        "Compare the decompositions for repeated linear factors and irreducible quadratic factors. Write the required numerator degrees before solving for coefficients.",
+    };
+  if (
+    [
+      "plane-jacobian",
+      "space-jacobians",
+      "change-of-variables",
+      "inverse-jacobian",
+      "review-change-of-variables",
+      "polar-regions",
+      "linear-area-change",
+    ].includes(id)
+  )
+    return {
+      url: "https://openstax.org/books/calculus-volume-3/pages/5-7-change-of-variables-in-multiple-integrals",
+      label: "OpenStax · Change of variables in multiple integrals",
+      purpose:
+        "Compare the source region, mapped region and absolute Jacobian separately. Identify where the map is one-to-one and where its determinant vanishes before changing the integral bounds.",
+    };
+  return null;
 }
