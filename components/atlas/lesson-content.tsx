@@ -1,0 +1,108 @@
+"use client";
+import { concepts } from "@/lib/curriculum";
+import { learningGuide } from "@/lib/curriculum/learning";
+import { experimentPresets } from "@/lib/curriculum/experiment-presets";
+import { LessonPractice } from "./lesson-practice";
+import { SourceReferences } from "./source-references";
+import { Formula, MathText } from "./math-text";
+import type { StudyController } from "./use-study-controller";
+export function LessonContent({
+  study,
+}: {
+  study: Pick<StudyController, "concept" | "open" | "plot">;
+}) {
+  const { concept, open } = study;
+  const guide = learningGuide(concept);
+  return (
+    <section className="rigor-panel" aria-label="Mathematical explanation">
+      <span className="label">MATHEMATICAL NOTES</span>
+      {guide && (
+        <nav className="prerequisites" aria-label="Lesson prerequisites">
+          <span>Builds on</span>
+          {guide.prerequisites.map((id) => (
+            <button key={id} onClick={() => open(id)}>
+              {concepts.find((c) => c.id === id)?.title}
+            </button>
+          ))}
+        </nav>
+      )}
+      <Formula block>{concept.formula}</Formula>
+      <h2>Definition & meaning</h2>
+      <p>
+        <MathText text={concept.definition} />
+      </p>
+      <div className="hypotheses">
+        <span className="label">PRECISE HYPOTHESES</span>
+        <p>
+          <MathText text={concept.conditions} />
+        </p>
+      </div>
+      <section className="lesson-narrative">
+        <h2 id="notes-intuition" tabIndex={-1}>
+          Reasoning
+        </h2>
+        <p className="reasoning-status">
+          {guide?.reasoning || "Proof sketch"} · consult the hypotheses before
+          applying the result.
+        </p>
+        <p>
+          <MathText text={concept.proof} />
+        </p>
+        <h2 id="notes-example" tabIndex={-1}>
+          Worked application
+        </h2>
+        <p>
+          <MathText text={concept.example} />
+        </p>
+        <h2 id="notes-pitfall" tabIndex={-1}>
+          Check the distinction
+        </h2>
+        <p>
+          <MathText text={concept.pitfall} />
+        </p>
+      </section>
+      {guide?.sections.map((section) => (
+        <section className="lesson-extension" key={section.title}>
+          <h2>{section.title}</h2>
+          <p>
+            <MathText text={section.text} />
+          </p>
+        </section>
+      ))}
+      {guide && (
+        <LessonPractice
+          key={concept.id}
+          id={concept.id}
+          exercise={guide.exercise}
+        />
+      )}
+      <details className="covered-topics">
+        <summary>
+          Concepts in this exploration <span>{concept.topics.length}</span>
+        </summary>
+        <ul>
+          {concept.topics.map((t) => (
+            <li key={t}>
+              <MathText text={t} />
+            </li>
+          ))}
+        </ul>
+      </details>
+      {experimentPresets[concept.id] && (
+        <section className="exact-presets">
+          <h2>Inspect the actual example</h2>
+          <p>
+            Open the stated formula with its display bounds. The mesh is
+            sampled; the calculations above give the exact claims.
+          </p>
+          {experimentPresets[concept.id].map(({ title, ...graph }) => (
+            <button key={title} onClick={() => study.plot(graph)}>
+              {title}
+            </button>
+          ))}
+        </section>
+      )}
+      <SourceReferences concept={concept} />
+    </section>
+  );
+}

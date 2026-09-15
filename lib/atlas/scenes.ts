@@ -26,6 +26,47 @@ const base: SceneInfo = {
 };
 function rawSceneInfo(id: string): SceneInfo {
   const configs: Record<string, Partial<SceneInfo>> = {
+    reviewBox: {
+      label: "Normalized half-length X",
+      min: 0.05,
+      max: 0.98,
+      step: 0.01,
+      initial: 1 / Math.sqrt(3),
+      formula: "2x²+72y²+18z²=288",
+      readout: (p) => `V=${f(384 * p * (1 - p * p))}`,
+      legend: ["Exact ellipsoid", "Inscribed box"],
+      note: "Exact ellipsoid and a family of inscribed boxes with equal normalized Y and Z. The proof compares all boxes; this one-parameter family alone does not prove optimality.",
+    },
+    reviewCritical: {
+      label: "Stationary point index",
+      min: 0,
+      max: 5,
+      step: 1,
+      initial: 0,
+      formula: "f=x⁴−2x²+y³−3y",
+      readout: (p) => `Selected point ${p + 1} of 6`,
+      legend: ["Exact review surface", "Stationary points", "Selected point"],
+      note: "Exact polynomial, sampled and height-clipped to ±8. All six stationary points are marked; their exact classification is stated in the lesson.",
+    },
+    chainNonconstant: {
+      label: "Parameter t",
+      min: -1,
+      max: 1,
+      step: 0.01,
+      initial: 0.5,
+      formula: "r(t)=(t,t²), f=x²+y²",
+      readout: (p) => `output derivative=${f(2 * p + 4 * p ** 3)}`,
+      legend: ["Bowl", "Nonconstant lifted path", "Velocity"],
+      note: "The path has varying height. Its two partial-derivative contributions add to the displayed rate.",
+    },
+    fluxOblique: {
+      ...angle,
+      formula: "F=(1,0,0), sphere of radius 1",
+      readout: (p) => `F·n=${f(Math.cos(p))}`,
+      legend: ["Sphere", "Constant field", "Selected normal"],
+      note: "Constant horizontal flow enters one hemisphere and leaves the other. The total outward flux is zero although local flux changes sign.",
+    },
+
     curves: {
       label: "Parameter t",
       min: -Math.PI,
@@ -528,6 +569,9 @@ export function sceneInfo(id: string): SceneInfo {
 }
 export function legendColors(id: string) {
   const maps: Record<string, string[]> = {
+    reviewBox: ["#9bdfff", "#f28743"],
+    reviewCritical: ["#9bdfff", "#8a74cd", "#f28743"],
+    fluxOblique: ["#9bdfff", "#8a74cd", "#f28743"],
     curves: ["#9bdfff", "#f28743", "#f28743"],
     tangent: ["#9bdfff", "#8a74cd", "#f28743"],
     taylor: ["#9bdfff", "#8a74cd", "#f28743"],
@@ -552,6 +596,10 @@ export function legendColors(id: string) {
 }
 export function sceneTex(id: string) {
   const m: Record<string, string> = {
+    reviewBox: String.raw`x^2/144+y^2/4+z^2/16=1,\quad V=8xyz`,
+    reviewCritical: String.raw`f=x^4-2x^2+y^3-3y`,
+    chainNonconstant: String.raw`f(r(t))=t^2+t^4,\quad (f\circ r)'=2t+4t^3`,
+    fluxOblique: String.raw`\mathbf F=(1,0,0),\quad\mathbf F\cdot\mathbf n=\cos t`,
     vectors: String.raw`u=(1,0,0),\quad v=(\cos\theta,\sin\theta,0)`,
     curves: String.raw`r(t)=(\cos t,\sin t,t)`,
     arc: String.raw`L(t)=\int_0^t\|r'(s)\|\,ds=\sqrt2\,t`,

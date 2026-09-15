@@ -13,6 +13,25 @@ export function parameterTex(label: string) {
 }
 export function readoutTex(id: string, p: number): string {
   switch (id) {
+    case "reviewBox":
+      return tex`X=${f(p)},\quad V=${f(384 * p * (1 - p * p))},\quad V_{\max}=256/\sqrt3`;
+    case "reviewCritical": {
+      const points = [
+        [-1, 1, -3],
+        [1, 1, -3],
+        [0, -1, 2],
+        [-1, -1, 1],
+        [1, -1, 1],
+        [0, 1, -2],
+      ];
+      const q = points[Math.round(p)];
+      return tex`(x,y)=(${q[0]},${q[1]}),\quad f=${q[2]},\quad H=\operatorname{diag}(${12 * q[0] ** 2 - 4},${6 * q[1]})`;
+    }
+    case "chainNonconstant":
+      return tex`\begin{gathered}f_x\,x'=${f(2 * p)},\quad f_y\,y'=${f(4 * p ** 3)}\\\frac{df}{dt}=${f(2 * p + 4 * p ** 3)}\end{gathered}`;
+    case "fluxOblique":
+      return tex`\mathbf F\cdot\mathbf n=${f(Math.cos(p))},\quad\iint_S\mathbf F\cdot\mathbf n\,dS=0`;
+
     case "curves":
       return tex`\mathbf r(t)\approx(${f(Math.cos(p))},${f(Math.sin(p))},${f(p)}),\quad\|\mathbf r\prime(t)\|=\sqrt2`;
     case "arc":

@@ -19,6 +19,8 @@ import {
   concepts,
   courses,
 } from "@/lib/curriculum";
+import { saveResume } from "@/lib/curriculum/progress-store";
+import { matchesConcept } from "@/lib/curriculum/search";
 import { planarModel } from "@/lib/curriculum/planar";
 import { useWebMCP, type StudyState } from "./webmcp";
 const experimentInfo = (id: string) =>
@@ -37,6 +39,9 @@ export function useStudyController() {
     [search, setSearch] = useState("");
   const [course, setCourse] = useState<CourseId>("MH1100");
   const [noteTab, setNoteTab] = useState("intuition");
+  const [readingMode, setReadingMode] = useState("learn");
+  const [notesRequest, setNotesRequest] = useState(0);
+  const pendingNotes = useRef(false);
   const [visualLayout, setVisualLayout] = useState<
     "split" | "wide" | "minimised"
   >("split");
@@ -63,6 +68,7 @@ export function useStudyController() {
     const c = concepts.find((c) => c.id === id);
     if (!c) return;
     setSelected(id);
+    saveResume(id);
     setSearch("");
     setCourse(c.course);
     setNoteTab("intuition");
@@ -78,6 +84,24 @@ export function useStudyController() {
         : history.pushState
       ).call(history, null, "", "#" + id);
   }
+  useEffect(() => {
+    if (route !== "lesson") return;
+    document.getElementById("lesson-title")?.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [selected, route]);
+  function showNotes(section: string) {
+    pendingNotes.current = true;
+    setNoteTab(section);
+    setReadingMode("learn");
+    setNotesRequest((value) => value + 1);
+  }
+  useLayoutEffect(() => {
+    if (!pendingNotes.current) return;
+    pendingNotes.current = false;
+    const heading = document.getElementById(`notes-${noteTab}`);
+    heading?.focus({ preventScroll: true });
+    heading?.scrollIntoView({ block: "start" });
+  }, [noteTab, readingMode, notesRequest]);
   function show(r: string) {
     setRoute(r);
     setPlaying(false);
@@ -213,7 +237,7 @@ export function useStudyController() {
     noteTab,
     playing,
     activeScene,
-    setNoteTab,
+    setNoteTab: showNotes,
     setSearch,
     chooseCourse: (id: CourseId) => {
       setCourse(id);
@@ -241,13 +265,11 @@ export function useStudyController() {
     setPlaying(false);
   }
   const webmcp = useWebMCP(concepts, state);
-  const filtered = (c: Concept) =>
-    !search ||
-    (c.title + " " + c.topics.join(" "))
-      .toLowerCase()
-      .includes(search.toLowerCase());
+  const filtered = (c: Concept) => matchesConcept(c, search);
 
   return {
+    readingMode,
+    setReadingMode,
     planar,
     chooseModel,
     selected,
@@ -287,7 +309,7 @@ export function useStudyController() {
     setCourse,
     setExpanded,
     setSearch,
-    setNoteTab,
+    setNoteTab: showNotes,
   };
 }
 export type StudyController = ReturnType<typeof useStudyController>;

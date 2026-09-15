@@ -1,5 +1,7 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { concepts, courses, courseIds, type CourseId } from "@/lib/curriculum";
+import { matchesConcept } from "@/lib/curriculum/search";
+import { StudyProgress } from "./study-progress";
 import { Formula } from "./math-text";
 export function CourseLibrary({
   course,
@@ -14,12 +16,7 @@ export function CourseLibrary({
 }) {
   const selected = courses[course];
   const matches = concepts.filter(
-    (c) =>
-      c.course === course &&
-      (!query ||
-        `${c.title} ${c.topics.join(" ")}`
-          .toLowerCase()
-          .includes(query.toLowerCase())),
+    (c) => c.course === course && matchesConcept(c, query),
   );
   return (
     <div className="library">
@@ -46,6 +43,7 @@ export function CourseLibrary({
           >{String.raw`\underbrace{\frac{d}{dx}}_{\text{local change}}\;\underbrace{\int_a^x f(t)\,dt}_{\text{accumulation}}=f(x)`}</Formula>
         </div>
       </header>
+      <StudyProgress open={open} />
       <div className="course-paths">
         {courseIds.map((id, i) => (
           <button

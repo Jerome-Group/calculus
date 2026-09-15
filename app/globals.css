@@ -2019,3 +2019,168 @@ body {
   flex-shrink: 0;
   border-radius: 7px;
 }
+
+/* Keep the question and essential mathematics ahead of the experiment. */
+.study-grid > .lesson-heading h1 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+}
+.lesson-question {
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #cecabe;
+}
+.lesson-question p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.lesson-narrative h2 {
+  margin-top: 2rem;
+}
+.reasoning-status {
+  font:
+    0.875rem/1.5 Arial,
+    sans-serif;
+  color: #555850;
+}
+.model-status {
+  padding: 0.75rem 1rem;
+  margin: 0;
+  color: #e1edff;
+  font:
+    0.875rem/1.5 Arial,
+    sans-serif;
+}
+.lesson-heading .formula.display {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.experience-heading button {
+  font-size: 0.875rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+.prerequisites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font:
+    0.875rem/1.5 Arial,
+    sans-serif;
+}
+.prerequisites button {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-align: left;
+}
+.lesson-practice {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px solid #aba99d;
+}
+.lesson-practice label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-size: 0.875rem;
+}
+.lesson-practice textarea {
+  min-height: 8rem;
+  font-size: 1rem;
+  background: white;
+}
+.lesson-practice details {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc9bd;
+}
+.lesson-practice summary {
+  cursor: pointer;
+  font:
+    1rem/1.5 Arial,
+    sans-serif;
+}
+.lesson-practice ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.practice-actions button {
+  white-space: normal;
+  height: auto;
+  min-height: 2.75rem;
+}
+.comparison-panel h3 {
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font:
+    1rem/1.4 Arial,
+    sans-serif;
+}
+.exact-presets {
+  margin: 1.5rem 0;
+}
+.exact-presets button {
+  display: block;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #97998c;
+  text-align: left;
+  font:
+    1rem/1.5 Arial,
+    sans-serif;
+}
+.reading-modes {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.reading-modes button {
+  border: 1px solid #8a8b80;
+  padding: 0.5rem 1rem;
+  font:
+    0.875rem/1.5 Arial,
+    sans-serif;
+}
+.reading-modes button[aria-pressed="true"] {
+  background: #171a17;
+  color: white;
+}
+.reading-revise .lesson-narrative,
+.reading-revise .lesson-extension {
+  display: none;
+}
+.study-progress {
+  padding: 1.5rem;
+  border-bottom: 1px solid #cacabc;
+}
+.study-progress h2 {
+  font-size: 1.25rem;
+}
+.study-progress p {
+  font-size: 1rem;
+  margin: 0.75rem 0;
+}
+.study-progress button {
+  display: block;
+  text-align: left;
+  text-decoration: underline;
+  padding: 0.5rem 0;
+}
+#lesson-title:focus {
+  outline: none;
+}
+
+[id^="notes-"] {
+  scroll-margin-top: 90px;
+}

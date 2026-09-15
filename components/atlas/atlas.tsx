@@ -44,13 +44,13 @@ function AtlasInner() {
               className={route !== "graph" ? "selected" : ""}
               onClick={() => open(selected)}
             >
-              <BookOpen size={15} /> Explore
+              <BookOpen size={15} /> Learn
             </button>
             <button
               className={route === "graph" ? "selected" : ""}
               onClick={() => show("graph")}
             >
-              <FunctionSquare size={15} /> Graph
+              <FunctionSquare size={15} /> Explore
             </button>
           </div>
         </header>
