@@ -5,6 +5,7 @@ import { experimentPresets } from "@/lib/curriculum/experiment-presets";
 import { LessonPractice } from "./lesson-practice";
 import { SourceReferences } from "./source-references";
 import { Formula, MathText } from "./math-text";
+import { IntegrationFramework } from "./integration-framework";
 import type { StudyController } from "./use-study-controller";
 export function LessonContent({
   study,
@@ -69,6 +70,13 @@ export function LessonContent({
           </p>
         </section>
       ))}
+      {[
+        "double-riemann-sums",
+        "general-double-integrals",
+        "fubini-double",
+        "type-one-two-regions",
+        "linearity-additivity",
+      ].includes(concept.id) && <IntegrationFramework open={open} />}
       {guide && (
         <LessonPractice
           key={concept.id}

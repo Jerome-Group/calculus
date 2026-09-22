@@ -22,6 +22,7 @@ import {
 import { saveResume } from "@/lib/curriculum/progress-store";
 import { matchesConcept } from "@/lib/curriculum/search";
 import { planarModel } from "@/lib/curriculum/planar";
+import type { LessonMode } from "@/lib/curriculum/learning-modes";
 import { useWebMCP, type StudyState } from "./webmcp";
 const experimentInfo = (id: string) =>
   id.startsWith("plane-")
@@ -39,7 +40,7 @@ export function useStudyController() {
     [search, setSearch] = useState("");
   const [course, setCourse] = useState<CourseId>("MH1100");
   const [noteTab, setNoteTab] = useState("intuition");
-  const [readingMode, setReadingMode] = useState("learn");
+  const [readingMode, setReadingMode] = useState<LessonMode>("learn");
   const [notesRequest, setNotesRequest] = useState(0);
   const pendingNotes = useRef(false);
   const [visualLayout, setVisualLayout] = useState<
@@ -72,6 +73,7 @@ export function useStudyController() {
     setSearch("");
     setCourse(c.course);
     setNoteTab("intuition");
+    setReadingMode("learn");
     setVariant("");
     setExpanded(c.lecture);
     setRoute("lesson");

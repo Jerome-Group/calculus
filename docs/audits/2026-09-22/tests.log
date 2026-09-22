@@ -1,0 +1,35 @@
+✔ classified sources match the canonical ledger and observed Drive files (0.976041ms)
+✔ changed or new instructional sources fail; changed personal references do not block (1.055958ms)
+✔ synchronizing metadata cannot bypass a pending source review (0.517375ms)
+✔ all 125 lessons retain a mode path, and pilot math parses strictly (141.835375ms)
+✔ legacy confidence is migrated without correctness or mastery (15.422042ms)
+✔ linear delta certification rejects even a slightly oversized proposal (1.95175ms)
+✔ public client output contains no private course file or local path (8.141292ms)
+WebSocket server error: Port 24678 is already in use
+6:29:16 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+✔ an unsampled pole never bridges its two branches (4.404917ms)
+✔ a continuous circle remains a connected closed curve (1.623416ms)
+✔ a non-sign-changing zero set is reported as undetected, not empty (24.608417ms)
+✔ learning guides have real prerequisites and parseable exercise mathematics (51.139125ms)
+✔ practice records discard corrupt and unsupported self-assessments (20.4225ms)
+WebSocket server error: Port 24678 is already in use
+✔ each course unit has concepts with resolvable source pages and parseable mathematics (80.815708ms)
+✔ every scene renders finite geometry and complete LaTex readouts throughout its parameter range (69.239875ms)
+✔ known calculus values and parameter symbols remain correct (0.201125ms)
+✔ all spatial scene variants construct finite geometry at range endpoints (902.010333ms)
+✔ workspace tools validate the whole layout request before changing state (44.205583ms)
+✔ a stale graph frame cannot settle a superseding graph request (1.810959ms)
+✔ renders the calculus production page (180.912084ms)
+WebSocket server error: Port 24678 is already in use
+✔ emits the catalog's animation and scrolling utilities (5.824875ms)
+✔ forwards progress semantics to the primitive (232.473291ms)
+✔ emits chart themes for the starter's media dark mode (172.363875ms)
+✔ renders sidebar skeletons deterministically (72.851792ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1480.37425

@@ -2000,7 +2000,7 @@
     }
   },
   "fubini-double": {
-    "prerequisites": ["general-double-integrals"],
+    "prerequisites": ["double-riemann-sums"],
     "reasoning": "Theorem used without proof",
     "sections": [
       {
@@ -2024,7 +2024,11 @@
     }
   },
   "type-one-two-regions": {
-    "prerequisites": ["fubini-double", "area-between-curves"],
+    "prerequisites": [
+      "fubini-double",
+      "general-double-integrals",
+      "area-between-curves"
+    ],
     "reasoning": "Proof sketch",
     "sections": [
       {

@@ -2184,3 +2184,175 @@ body {
 [id^="notes-"] {
   scroll-margin-top: 90px;
 }
+
+.study-grid.pilot-mode > .lesson-heading,
+.study-grid.pilot-mode .pilot-content,
+.study-grid.pilot-mode .pilot-prediction,
+.study-grid.pilot-mode .pilot-representations,
+.study-grid.pilot-mode .pilot-controls,
+.study-grid.pilot-mode .experience,
+.study-grid.pilot-mode .pilot-bounds,
+.study-grid.pilot-mode .pilot-explanation,
+.study-grid.pilot-mode .pilot-practice {
+  grid-column: 1 / -1;
+  grid-row: auto;
+}
+.study-grid.pilot-mode .experience {
+  position: static;
+}
+.pilot-mode .pilot-prediction {
+  padding: 1rem 1.4rem;
+  border: 1px solid #a4aa9d;
+  background: #f2f3ed;
+}
+.pilot-mode .pilot-prediction h2,
+.pilot-mode .pilot-bounds h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+}
+.pilot-mode .pilot-representations,
+.pilot-mode .pilot-controls > div,
+.pilot-confidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pilot-mode button,
+.pilot-task button {
+  min-height: 2.75rem;
+}
+.pilot-mode .pilot-representations button,
+.pilot-mode .pilot-bounds button,
+.pilot-mode .pilot-controls button,
+.pilot-confidence button,
+.pilot-task button,
+.pilot-content > button {
+  border: 1px solid #777e72;
+  padding: 0.45rem 0.8rem;
+  text-align: left;
+}
+.pilot-mode button[aria-pressed="true"] {
+  background: #174d45;
+  color: white;
+}
+.pilot-mode .pilot-bounds {
+  padding: 1rem;
+}
+.pilot-mode .pilot-bounds svg {
+  width: min(100%, 28rem);
+  display: block;
+  margin: 0.75rem auto;
+}
+.pilot-mode .pilot-controls label,
+.pilot-mode .pilot-controls input[type="range"] {
+  display: block;
+  width: 100%;
+}
+.pilot-mode .pilot-controls {
+  padding: 0.75rem 1rem;
+  border: 1px solid #a4aa9d;
+}
+.pilot-mode .pilot-explanation table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.study-grid.pilot-mode .pilot-explanation.values-only {
+  grid-column: 1 / -1;
+}
+.pilot-mode .pilot-delta-challenge {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #9ba496;
+}
+.pilot-mode .pilot-delta-challenge label,
+.pilot-mode .pilot-delta-challenge input {
+  display: block;
+  margin: 0.5rem 0;
+}
+.pilot-mode .pilot-delta-challenge input {
+  width: min(100%, 12rem);
+  border: 1px solid #777e72;
+  padding: 0.5rem;
+}
+.pilot-mode .pilot-delta-challenge button {
+  border: 1px solid #777e72;
+  padding: 0.5rem 0.8rem;
+}
+.pilot-mode .pilot-explanation th,
+.pilot-mode .pilot-explanation td {
+  border: 1px solid #9ba496;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+}
+.pilot-mode .pilot-explanation caption {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.pilot-mode .pilot-task {
+  border: 1px solid #a4aa9d;
+  margin: 1.25rem 0;
+  padding: 1rem;
+}
+.pilot-mode .pilot-task legend {
+  font-weight: bold;
+  padding: 0 0.4rem;
+}
+.pilot-mode .pilot-task label {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin: 0.75rem 0;
+}
+.pilot-mode .pilot-task input[type="radio"] {
+  margin-top: 0.35rem;
+  flex: none;
+}
+.pilot-mode .pilot-task textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #9ba496;
+  padding: 0.65rem;
+  font: inherit;
+}
+.pilot-mode .pilot-task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.pilot-mode .pilot-content li,
+.pilot-mode .integration-chain li {
+  margin: 0.5rem 0;
+}
+.pilot-mode .integration-chain {
+  border-top: 1px solid #a4aa9d;
+  margin: 1.5rem 0;
+  padding-top: 1rem;
+}
+.pilot-mode .integration-chain li {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+}
+.pilot-mode .integration-chain button {
+  text-decoration: underline;
+}
+.study-grid:not(.pilot-mode).reading-explore .experience,
+.study-grid:not(.pilot-mode).reading-practice .lesson-practice {
+  grid-column: 1 / -1;
+}
+.study-grid:not(.pilot-mode).reading-practice .lesson-practice {
+  padding: 1.5rem;
+}
+@media (max-width: 700px) {
+  .pilot-mode .pilot-explanation,
+  .pilot-mode .experience {
+    grid-column: 1 / -1;
+  }
+  .reading-modes {
+    flex-wrap: wrap;
+  }
+}

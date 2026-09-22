@@ -1,0 +1,5 @@
+
+> site-creator-vinext-starter@0.1.0 sources:check
+> node scripts/check-source-manifest.mjs
+
+Source sync passed: 97 classified sources, observation 2026-09-22

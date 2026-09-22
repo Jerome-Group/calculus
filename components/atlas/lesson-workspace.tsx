@@ -4,6 +4,12 @@ import { concepts } from "@/lib/curriculum";
 import { Formula, MathText } from "./math-text";
 import { LessonContent } from "./lesson-content";
 import { LessonExperiment } from "./lesson-experiment";
+import { PilotLessonView } from "./pilot-lesson";
+import { LessonPractice } from "./lesson-practice";
+import {
+  learningModesFor,
+  type LessonMode,
+} from "@/lib/curriculum/learning-modes";
 import type { StudyController } from "./use-study-controller";
 export function LessonWorkspace({ study }: { study: StudyController }) {
   const {
@@ -15,11 +21,16 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
     index,
     open,
   } = study;
+  const lesson = learningModesFor(concept);
   return (
     <>
       <div
         className={
-          "study-grid layout-" + visualLayout + " reading-" + readingMode
+          "study-grid layout-" +
+          visualLayout +
+          " reading-" +
+          readingMode +
+          (lesson.version === "pilot-v2" ? " pilot-mode" : "")
         }
       >
         <div className="lesson-heading">
@@ -34,19 +45,18 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
             {concept.title}
           </h1>
           <p>{concept.subtitle}</p>
-          <div className="reading-modes" role="group" aria-label="Reading mode">
-            <button
-              aria-pressed={readingMode === "learn"}
-              onClick={() => setReadingMode("learn")}
-            >
-              Learn
-            </button>
-            <button
-              aria-pressed={readingMode === "revise"}
-              onClick={() => setReadingMode("revise")}
-            >
-              Revise
-            </button>
+          <div className="reading-modes" role="group" aria-label="Lesson mode">
+            {(["learn", "explore", "practice", "revise"] as LessonMode[]).map(
+              (mode) => (
+                <button
+                  key={mode}
+                  aria-pressed={readingMode === mode}
+                  onClick={() => setReadingMode(mode)}
+                >
+                  {mode[0].toUpperCase() + mode.slice(1)}
+                </button>
+              ),
+            )}
           </div>
           <div className="lesson-question">
             <span className="label">INVESTIGATE</span>
@@ -56,8 +66,26 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
             <Formula block>{concept.formula}</Formula>
           </div>
         </div>
-        <LessonExperiment study={study} />
-        <LessonContent study={study} />
+        {lesson.version === "pilot-v2" ? (
+          <PilotLessonView
+            lesson={lesson.lesson}
+            mode={readingMode}
+            study={study}
+          />
+        ) : readingMode === "explore" ? (
+          <LessonExperiment study={study} />
+        ) : readingMode === "practice" ? (
+          <LessonPractice
+            key={concept.id}
+            id={concept.id}
+            exercise={lesson.guide.exercise}
+          />
+        ) : (
+          <>
+            <LessonExperiment study={study} />
+            <LessonContent study={study} />
+          </>
+        )}
       </div>
       <footer className="lesson-pagination">
         <button
