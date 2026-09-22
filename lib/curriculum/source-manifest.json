@@ -1,0 +1,1315 @@
+[
+  {
+    "sourceId": "MH1100_Lecture_01",
+    "course": "MH1100",
+    "driveFileId": "1SapBHpyzlKRkGaSiAuVV5sW8zNJHo3JS",
+    "title": "MH1100 Lecture 01",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:14.680Z",
+    "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+    "affectedConcepts": [
+      "sets-functions-domains",
+      "function-shapes",
+      "transform-compose"
+    ]
+  },
+  {
+    "sourceId": "MH1100_Lecture_02",
+    "course": "MH1100",
+    "driveFileId": "1NO3VTiMPDyZPQIEtNrcy-ASYfJ5ll4-R",
+    "title": "MH1100 Lecture 02",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:16.613Z",
+    "sha256": "51596ea3552043f85920455918babb094a950b98efcb1513abb3fe7f036c2e7b",
+    "affectedConcepts": ["limits-one-sided", "infinite-limits"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_03",
+    "course": "MH1100",
+    "driveFileId": "1QL2AivkuJQ6B41V6zJeymTko_pFiABcY",
+    "title": "MH1100 Lecture 03",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:18.312Z",
+    "sha256": "c8b2cbf316640a4c9837d4556bf2310ddf5d3a02780f9ef78ec8f66653d09dda",
+    "affectedConcepts": ["limit-laws-squeeze"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_04",
+    "course": "MH1100",
+    "driveFileId": "1suPMCaqn3rAgyEiNjoz84dms224yzHCC",
+    "title": "MH1100 Lecture 04",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:20.019Z",
+    "sha256": "302f899ef913f98fc4bca65ef3304a41118ec5dded4cb51b6d17b3950e9b4dbf",
+    "affectedConcepts": ["epsilon-delta-one-variable"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_05",
+    "course": "MH1100",
+    "driveFileId": "16h1qNHrplxumjGnZoRCgYR3Hul8ESsAT",
+    "title": "MH1100 Lecture 05",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:22.615Z",
+    "sha256": "584447ad02d8d78a25a89ee89bf5d6d42e11629d92838a6e441f460793481781",
+    "affectedConcepts": ["continuity-ivt"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_06",
+    "course": "MH1100",
+    "driveFileId": "1IkiHWe5EN0NzDMXjIQQjIY9R8jhxatlG",
+    "title": "MH1100 Lecture 06",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:24.374Z",
+    "sha256": "cbb414d5ed6bcbe9e8959ce14833766e735cbdbfa3a3f00a1f3a4598bd5e3870",
+    "affectedConcepts": ["derivative-definition", "differentiability-corners"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_07",
+    "course": "MH1100",
+    "driveFileId": "19UmesT2j-_OJOGqmd-GLi5_wJsIubGbD",
+    "title": "MH1100 Lecture 07",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:26.043Z",
+    "sha256": "1bf8c6d88189eb46c2eb80c47f7a33aec51a32a50d368e4b45f0244a80ac8193",
+    "affectedConcepts": ["differentiation-rules"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_08",
+    "course": "MH1100",
+    "driveFileId": "1pCU9mgHrKBBmL7ezeukDiiHIzYTEp2qt",
+    "title": "MH1100 Lecture 08",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:27.721Z",
+    "sha256": "f81f07e967c22465bfe847444c2f0921aa36ce2a0aa0452a4fdbb1f2ebc5c8e1",
+    "affectedConcepts": [
+      "chain-rule-single",
+      "implicit-related-rates",
+      "linearization-differentials"
+    ]
+  },
+  {
+    "sourceId": "MH1100_Lecture_09",
+    "course": "MH1100",
+    "driveFileId": "1aDUqNWZ36XLh3_B2UIBeUEpg-MPeX5Vl",
+    "title": "MH1100 Lecture 09",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:29.511Z",
+    "sha256": "a1d14b5a5528b49dc3775dd0963ea215a0945ee97ff9015b999f6ff97b6ad05b",
+    "affectedConcepts": ["extrema-fermat", "rolle-mean-value"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_10",
+    "course": "MH1100",
+    "driveFileId": "1Jdh6j_EVokUvq3-RJaOXRBj69-qzsUbo",
+    "title": "MH1100 Lecture 10",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:31.087Z",
+    "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+    "affectedConcepts": ["derivative-tests", "infinity-curve-sketching"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_11",
+    "course": "MH1100",
+    "driveFileId": "1fBY_XFdJ_2yW8Feq1WLKsk9znj7GATkD",
+    "title": "MH1100 Lecture 11",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:32.751Z",
+    "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+    "affectedConcepts": [
+      "optimization-single",
+      "newton-method",
+      "antiderivatives-single"
+    ]
+  },
+  {
+    "sourceId": "MH1100_Lecture_12",
+    "course": "MH1100",
+    "driveFileId": "1WTrnexXy7JEqDEZK0vvN6on4I2HhxW5z",
+    "title": "MH1100 Lecture 12",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:34.401Z",
+    "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+    "affectedConcepts": ["inverse-functions", "exponential-logarithmic"]
+  },
+  {
+    "sourceId": "MH1100_Lecture_13",
+    "course": "MH1100",
+    "driveFileId": "12ryqCLuReh_SMRW3GILv75veE9MsvAyb",
+    "title": "MH1100 Lecture 13",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:36.019Z",
+    "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+    "affectedConcepts": ["lhopital"]
+  },
+  {
+    "sourceId": "MH1100_Note_00_Summary_Notes_PDF",
+    "course": "MH1100",
+    "driveFileId": "1ZaJnPGpN4T6iAxaesvgquZqiCOpCvktL",
+    "title": "MH1100_Note_00_Summary_Notes",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:16.577Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_00_Summary_Notes_TeX",
+    "course": "MH1100",
+    "driveFileId": "1U9fu9tFDmVnF8YXqx2uB9Whc8UHH6n0s",
+    "title": "MH1100_Note_00_Summary_Notes",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:45.932Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_01_Functions_PDF",
+    "course": "MH1100",
+    "driveFileId": "1vvxiJERsvu9GOmI2dcgqFX-WTqwNEzMQ",
+    "title": "MH1100_Note_01_Functions",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:25.349Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_01_Functions_TeX",
+    "course": "MH1100",
+    "driveFileId": "1yt_W9CSWDlN48tkdOUjjNzj7eay7BZt3",
+    "title": "MH1100_Note_01_Functions",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:47.808Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_02_Limits_I_PDF",
+    "course": "MH1100",
+    "driveFileId": "1gBXRkmOqatvsmIURVsXV0zB3fWuay77I",
+    "title": "MH1100_Note_02_Limits_I",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:25:17.825Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_02_Limits_I_TeX",
+    "course": "MH1100",
+    "driveFileId": "1a9iEAxlVgJHaSIdBYvVRoG8_f0K-twQl",
+    "title": "MH1100_Note_02_Limits_I",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:57.717Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_03_Limits_II_PDF",
+    "course": "MH1100",
+    "driveFileId": "1cEFHo11rumyltFdn_ltqovYudrT3Tlnm",
+    "title": "MH1100_Note_03_Limits_II",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:25:28.335Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_03_Limits_II_TeX",
+    "course": "MH1100",
+    "driveFileId": "16B2guOOvjfMflS-0paGeqWAaivE85rsK",
+    "title": "MH1100_Note_03_Limits_II",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:59.375Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_04_Limits_III_PDF",
+    "course": "MH1100",
+    "driveFileId": "10x0j6oW3krwHwod_hlIUwbEMAjU6P8P4",
+    "title": "MH1100_Note_04_Limits_III",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:25:38.554Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_04_Limits_III_TeX",
+    "course": "MH1100",
+    "driveFileId": "1N5i78AWCQ9s7tuRXNyr8kmRlQmCPXgwC",
+    "title": "MH1100_Note_04_Limits_III",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:01.144Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_05_Continuity_PDF",
+    "course": "MH1100",
+    "driveFileId": "123iiDJ-gASx6GU-6TCfXPsFde8Vlmjch",
+    "title": "MH1100_Note_05_Continuity",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:25:49.087Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_05_Continuity_TeX",
+    "course": "MH1100",
+    "driveFileId": "19tMUdxzjlUjAnNZZWxqDu5t62pr56ZLv",
+    "title": "MH1100_Note_05_Continuity",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:02.639Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_06_Derivatives_I_PDF",
+    "course": "MH1100",
+    "driveFileId": "1IURY5ZNmsELU2BzaftyPQcbrzVsxm0Ie",
+    "title": "MH1100_Note_06_Derivatives_I",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:26:00.742Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_06_Derivatives_I_TeX",
+    "course": "MH1100",
+    "driveFileId": "1mCPEoBvmcSeo37nsvm0c15k67W7YzoIf",
+    "title": "MH1100_Note_06_Derivatives_I",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:04.259Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_07_Derivatives_II_PDF",
+    "course": "MH1100",
+    "driveFileId": "1AnRiF2_cQ_lD3ibMrPljSKMbzu8ajBXV",
+    "title": "MH1100_Note_07_Derivatives_II",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:26:11.262Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_07_Derivatives_II_TeX",
+    "course": "MH1100",
+    "driveFileId": "1P154uqb5qh8NbNTm_WTSN7m0q9lLV5Ei",
+    "title": "MH1100_Note_07_Derivatives_II",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:05.804Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_08_Derivatives_III_And_IV_PDF",
+    "course": "MH1100",
+    "driveFileId": "1ATwcL_iNZpintxuJfqQYfjO8AigapaOa",
+    "title": "MH1100_Note_08_Derivatives_III_And_IV",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:26:21.467Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_08_Derivatives_III_And_IV_TeX",
+    "course": "MH1100",
+    "driveFileId": "1IfZOdiZEu3Rj4pJRhoqB7spr4RwQLXeD",
+    "title": "MH1100_Note_08_Derivatives_III_And_IV",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:07.642Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_09_Applications_Of_Differentiation_I_PDF",
+    "course": "MH1100",
+    "driveFileId": "1Ns9hoS3Pu_8WONRJZ-8VG5lI13TsAptZ",
+    "title": "MH1100_Note_09_Applications_Of_Differentiation_I",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:26:31.537Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_09_Applications_Of_Differentiation_I_TeX",
+    "course": "MH1100",
+    "driveFileId": "118Df0yohSsIcin7cEg4iFykZ3LMYd2-1",
+    "title": "MH1100_Note_09_Applications_Of_Differentiation_I",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:09.095Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_10_Applications_Of_Differentiation_II_PDF",
+    "course": "MH1100",
+    "driveFileId": "17FwaJ71YzZtLQWeS-SUSng-9DQi678a1",
+    "title": "MH1100_Note_10_Applications_Of_Differentiation_II",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:35.578Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_10_Applications_Of_Differentiation_II_TeX",
+    "course": "MH1100",
+    "driveFileId": "11cXIxWjIQxQlUDHBI0gKoeVvd1BH0aFy",
+    "title": "MH1100_Note_10_Applications_Of_Differentiation_II",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:49.508Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_11_Applications_Of_Differentiation_III_PDF",
+    "course": "MH1100",
+    "driveFileId": "1piZkm1MRwscphtX87CnSQph3QbACbJWj",
+    "title": "MH1100_Note_11_Applications_Of_Differentiation_III",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:46.014Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_11_Applications_Of_Differentiation_III_TeX",
+    "course": "MH1100",
+    "driveFileId": "1YAknAO3YuzVecQb5qUk_URnrvbBPzF18",
+    "title": "MH1100_Note_11_Applications_Of_Differentiation_III",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:52.961Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_12_Inverse_Function_PDF",
+    "course": "MH1100",
+    "driveFileId": "1Tc8jYEDsWMfYnEi7KY1NNSs3PjBVmhvq",
+    "title": "MH1100_Note_12_Inverse_Function",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:24:56.496Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_12_Inverse_Function_TeX",
+    "course": "MH1100",
+    "driveFileId": "1jbZwbCHapANj7pDkW8YAcZnlR4n-9zfH",
+    "title": "MH1100_Note_12_Inverse_Function",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:54.680Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_13_Indeterminate_Forms_And_Lhopitals_Rule_PDF",
+    "course": "MH1100",
+    "driveFileId": "1nfIzywt4Yz_ImWbPnLOeWA39c3UrBAPG",
+    "title": "MH1100_Note_13_Indeterminate_Forms_And_Lhopitals_Rule",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:25:07.308Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Note_13_Indeterminate_Forms_And_Lhopitals_Rule_TeX",
+    "course": "MH1100",
+    "driveFileId": "1QIClLebon4J78XfmEh_NgxEP-oARAw0w",
+    "title": "MH1100_Note_13_Indeterminate_Forms_And_Lhopitals_Rule",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T06:23:56.131Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1100_Stewart_Chapter_01_Functions_And_Limits",
+    "course": "MH1100",
+    "driveFileId": "1BLKzXJuqATtA-HG4EHkGAD7MN9NZnj4N",
+    "title": "MH1100 Stewart Chapter 01 Functions And Limits",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:37.749Z",
+    "sha256": "ba7522ef58fd38d96f1c30897cbf5beb718aeeaebf6f184219e551f376f4d38e",
+    "affectedConcepts": [
+      "sets-functions-domains",
+      "function-shapes",
+      "transform-compose",
+      "limits-one-sided",
+      "infinite-limits",
+      "limit-laws-squeeze",
+      "epsilon-delta-one-variable",
+      "continuity-ivt"
+    ]
+  },
+  {
+    "sourceId": "MH1100_Stewart_Chapter_02_Derivatives",
+    "course": "MH1100",
+    "driveFileId": "1OQWL30C8lcFanSeHq53KceWWpKXqL8xS",
+    "title": "MH1100 Stewart Chapter 02 Derivatives",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:40.111Z",
+    "sha256": "b24d0733755ce190b16cad5b5f9c734ae8d3373481d9258ec0063176547bf512",
+    "affectedConcepts": [
+      "derivative-definition",
+      "differentiability-corners",
+      "differentiation-rules",
+      "chain-rule-single",
+      "implicit-related-rates",
+      "linearization-differentials"
+    ]
+  },
+  {
+    "sourceId": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",
+    "course": "MH1100",
+    "driveFileId": "1oXB6vvaJ3LsLRrWzYuAtVRf19g2y7NED",
+    "title": "MH1100 Stewart Chapter 03 Applications Of Differentiation",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:41.860Z",
+    "sha256": "dfa5564f3edbdcff8b68c51c8e12decb161044d34d38630d20bb316c8c959581",
+    "affectedConcepts": [
+      "extrema-fermat",
+      "rolle-mean-value",
+      "derivative-tests",
+      "infinity-curve-sketching",
+      "optimization-single",
+      "newton-method",
+      "antiderivatives-single"
+    ]
+  },
+  {
+    "sourceId": "MH1100_Stewart_Chapter_06_Inverse_Functions",
+    "course": "MH1100",
+    "driveFileId": "1uGXcm1a9RA-9R2bteUVEGdROjhu8GD1f",
+    "title": "MH1100 Stewart Chapter 06 Inverse Functions",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T06:23:44.108Z",
+    "sha256": "c354b5575c610d30d5f7392dc0cb9152185b1ef5be0188d17e9ea9f669186139",
+    "affectedConcepts": [
+      "inverse-functions",
+      "exponential-logarithmic",
+      "lhopital"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_01_Notes",
+    "course": "MH1101",
+    "driveFileId": "1q1-zTvc7-O72lmHvOrgQhOTxkfJF4_iv",
+    "title": "MH1101 Chapter 01 Notes",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:52:39.283Z",
+    "sha256": "db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7",
+    "affectedConcepts": [
+      "integral-antiderivatives",
+      "riemann-integral",
+      "integral-average",
+      "fundamental-theorem",
+      "substitution-integral",
+      "improper-integrals"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_01_Slides_Annotated_PDF",
+    "course": "MH1101",
+    "driveFileId": "1MKb54q2grykbJupmoddTD1eSOV1b24KW",
+    "title": "MH1101_Chapter_01_Slides_Annotated",
+    "kind": "annotated_slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:41.161Z",
+    "canonicalParent": "MH1101_Chapter_01_Slides_PDF",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_01_Slides_PDF",
+    "course": "MH1101",
+    "driveFileId": "1iR2LrwiwrpZ_YvCTgCVABgAox55LXX-5",
+    "title": "MH1101_Chapter_01_Slides",
+    "kind": "slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:42.777Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_02_Notes",
+    "course": "MH1101",
+    "driveFileId": "1a1Yt2PUw9nzJvBrxKyjDV_W8LX-wPhzl",
+    "title": "MH1101 Chapter 02 Notes",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:52:44.404Z",
+    "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+    "affectedConcepts": [
+      "area-between-curves",
+      "disk-washer-volumes",
+      "cylindrical-shells"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_02_Slides_Annotated_PDF",
+    "course": "MH1101",
+    "driveFileId": "1MlvtprONOqCZ2Rk6MLhBTiTf4BQD1Xc5",
+    "title": "MH1101_Chapter_02_Slides_Annotated",
+    "kind": "annotated_slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:45.950Z",
+    "canonicalParent": "MH1101_Chapter_02_Slides_PDF",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_02_Slides_PDF",
+    "course": "MH1101",
+    "driveFileId": "1IEp0sWRCyTog8IdGapG87zo_AfIN3eSq",
+    "title": "MH1101_Chapter_02_Slides",
+    "kind": "slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:47.724Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_03_Notes",
+    "course": "MH1101",
+    "driveFileId": "1uyd0BHKm3bcDZQJCU9sIuEzFe6GUsSp5",
+    "title": "MH1101 Chapter 03 Notes",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:52:49.481Z",
+    "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+    "affectedConcepts": [
+      "integration-by-parts",
+      "trigonometric-integrals",
+      "trigonometric-substitution",
+      "partial-fractions",
+      "quadrature-midpoint-trapezoid",
+      "simpson-rule"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_03_Slides_Annotated_PDF",
+    "course": "MH1101",
+    "driveFileId": "1_kWFz7J4enOkQTocDFZrzHHWc6XtTYeI",
+    "title": "MH1101_Chapter_03_Slides_Annotated",
+    "kind": "annotated_slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:51.249Z",
+    "canonicalParent": "MH1101_Chapter_03_Slides_PDF",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_03_Slides_PDF",
+    "course": "MH1101",
+    "driveFileId": "1ArQnStYcBoPzplGx-VbTzSxjhMdDOiCk",
+    "title": "MH1101_Chapter_03_Slides",
+    "kind": "slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:52.972Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_04_Notes",
+    "course": "MH1101",
+    "driveFileId": "1BrtdwpReOVKuSs64SKNuBCiJUqYFSmej",
+    "title": "MH1101 Chapter 04 Notes",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:52:54.883Z",
+    "sha256": "8436a45c67c64106e9c79ba5d61babdf31421d22729c0470febefc49aed3f3de",
+    "affectedConcepts": [
+      "sequence-limits",
+      "subsequences-bounded",
+      "sequence-limit-laws",
+      "monotone-sequences",
+      "series-geometric-telescoping",
+      "series-divergence-test"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_04_Slides_Annotated_PDF",
+    "course": "MH1101",
+    "driveFileId": "1_4xWIE0uCYJmGxwrWGr11Mb3NQ7DDGR7",
+    "title": "MH1101_Chapter_04_Slides_Annotated",
+    "kind": "annotated_slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:56.519Z",
+    "canonicalParent": "MH1101_Chapter_04_Slides_PDF",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_04_Slides_PDF",
+    "course": "MH1101",
+    "driveFileId": "1uicBfDYfCokQu1crPzx2AYCFmJs_x49o",
+    "title": "MH1101_Chapter_04_Slides",
+    "kind": "slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:52:58.188Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_05_Notes",
+    "course": "MH1101",
+    "driveFileId": "1IJ2nRCPAFo3X-PtspDL0Aoi-XTGtCtz_",
+    "title": "MH1101 Chapter 05 Notes",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:53:00.030Z",
+    "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+    "affectedConcepts": [
+      "integral-test",
+      "comparison-tests",
+      "absolute-conditional-alternating",
+      "ratio-root-tests"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_05_Slides_Annotated_PDF",
+    "course": "MH1101",
+    "driveFileId": "19n35rbfmy1GYpHFA4WMSqODCA08r1_hj",
+    "title": "MH1101_Chapter_05_Slides_Annotated",
+    "kind": "annotated_slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:53:01.661Z",
+    "canonicalParent": "MH1101_Chapter_05_Slides_PDF",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_05_Slides_PDF",
+    "course": "MH1101",
+    "driveFileId": "19cIGm8eZv-n--e0njzWjLY4iKS4nsZFD",
+    "title": "MH1101_Chapter_05_Slides",
+    "kind": "slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:53:03.248Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_06_Notes",
+    "course": "MH1101",
+    "driveFileId": "1bJENGCezSXxkZXB9RjCLbpDR-QBoQ_Js",
+    "title": "MH1101 Chapter 06 Notes",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:53:04.910Z",
+    "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+    "affectedConcepts": [
+      "power-series-radius",
+      "power-series-operations",
+      "taylor-series",
+      "binomial-series",
+      "limits-with-series"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Chapter_06_Slides_Annotated_PDF",
+    "course": "MH1101",
+    "driveFileId": "1tXGDlAc5ZJzuMQGxknzcxBbeVn1ZMpVF",
+    "title": "MH1101_Chapter_06_Slides_Annotated",
+    "kind": "annotated_slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:53:06.654Z",
+    "canonicalParent": "MH1101_Chapter_06_Slides_PDF",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Chapter_06_Slides_PDF",
+    "course": "MH1101",
+    "driveFileId": "1jAXufzp4267lyCPsamLnKZiy0Gt4g-nx",
+    "title": "MH1101_Chapter_06_Slides",
+    "kind": "slide",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-12T16:53:08.202Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Cheatsheet_Template_Production_TeX",
+    "course": "MH1101",
+    "driveFileId": "1Dwe-XqPyF-3VZmGB1b8gAV-VH8_7pDuC",
+    "title": "MH1101_Cheatsheet_Template_Production",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T16:53:19.492Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Final_Cheatsheet_PDF",
+    "course": "MH1101",
+    "driveFileId": "1IVDuUQR-MDdjviuptmY71AbFZ6Y4Xgk9",
+    "title": "MH1101_Final_Cheatsheet",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T16:53:21.210Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Final_Cheatsheet_TeX",
+    "course": "MH1101",
+    "driveFileId": "18JUd-9k6xRej9eO_nxznE296bhulqIa5",
+    "title": "MH1101_Final_Cheatsheet",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T16:53:22.842Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Midterm_Cheatsheet_PDF",
+    "course": "MH1101",
+    "driveFileId": "1QnB7YwCbNFJtKflD5ML3bDQa1YV5VMiF",
+    "title": "MH1101_Midterm_Cheatsheet",
+    "kind": "personal_reference",
+    "status": "personal_reference",
+    "modifiedAt": "2026-08-12T16:53:24.536Z",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH1101_Stewart_Chapter_03_Differentiation_Applications",
+    "course": "MH1101",
+    "driveFileId": "1TBHtdVIfvCjfNGXPrXA0KX15YouRn4Xm",
+    "title": "MH1101 Stewart Chapter 03 Differentiation Applications",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T17:10:31.194Z",
+    "sha256": "dfa5564f3edbdcff8b68c51c8e12decb161044d34d38630d20bb316c8c959581",
+    "affectedConcepts": ["integral-antiderivatives"]
+  },
+  {
+    "sourceId": "MH1101_Stewart_Chapter_04_Integrals",
+    "course": "MH1101",
+    "driveFileId": "1A5_KYAo9JaZJXcwjDLbP2swp7DFNQ_EB",
+    "title": "MH1101 Stewart Chapter 04 Integrals",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T16:53:13.950Z",
+    "sha256": "a3a70b46953ea6caad96bbdef92981c189795e027fa78a3b3080053110d326ad",
+    "affectedConcepts": [
+      "riemann-integral",
+      "fundamental-theorem",
+      "substitution-integral"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Stewart_Chapter_05_Integration_Applications",
+    "course": "MH1101",
+    "driveFileId": "1tVOC-hjfyEhDqzh4C1KPeIaFNMyXC7UP",
+    "title": "MH1101 Stewart Chapter 05 Integration Applications",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T17:10:32.955Z",
+    "sha256": "ad36ca9437f32e6325d3a08e81be506beae390a685054d2009ae1f4a87312e34",
+    "affectedConcepts": [
+      "integral-average",
+      "area-between-curves",
+      "disk-washer-volumes",
+      "cylindrical-shells"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
+    "course": "MH1101",
+    "driveFileId": "1UxusymEe8HQnEzC_Yl3SZX4HD6zzbSUF",
+    "title": "MH1101 Stewart Chapter 07 Integration Techniques",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T17:10:34.530Z",
+    "sha256": "b1ad3c1a150af5d95b7d2c1ad1452c534950bd44e2de384f1ab585cd9d8aacf0",
+    "affectedConcepts": [
+      "improper-integrals",
+      "integration-by-parts",
+      "trigonometric-integrals",
+      "trigonometric-substitution",
+      "partial-fractions",
+      "quadrature-midpoint-trapezoid",
+      "simpson-rule"
+    ]
+  },
+  {
+    "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
+    "course": "MH1101",
+    "driveFileId": "1F-OXcCbySV3LhVUH-UKVLFaSGhUVz_nP",
+    "title": "MH1101 Stewart Chapter 11 Sequence Series Power",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-12T17:10:36.319Z",
+    "sha256": "0499c986179b3dd58f6e59a67bdea8576b4dfc66ceeab87d4b036f2cb40712a1",
+    "affectedConcepts": [
+      "sequence-limits",
+      "subsequences-bounded",
+      "sequence-limit-laws",
+      "monotone-sequences",
+      "series-geometric-telescoping",
+      "series-divergence-test",
+      "integral-test",
+      "comparison-tests",
+      "absolute-conditional-alternating",
+      "ratio-root-tests",
+      "power-series-radius",
+      "power-series-operations",
+      "taylor-series",
+      "binomial-series",
+      "limits-with-series"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_01",
+    "course": "MH2100",
+    "driveFileId": "1bZEqdU00uyk8YDvJQTK8vSCmWVpq51ZA",
+    "title": "MH2100 Lecture 01",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-20T00:14:01.800Z",
+    "sha256": "eca98d020c44d4d42fb9bcbb4c624da6c150e7e88ec5b4d48951e358fa84cb83",
+    "affectedConcepts": [
+      "vectors-and-coordinates",
+      "curves-and-parametrizations",
+      "constructing-curves",
+      "tangents-velocity-and-singularities",
+      "surfaces-and-level-sets"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_01_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1XmY_hoDlUt7VvPdi9bzRwbxp63Abfpmy",
+    "title": "MH2100_Lecture_01_Annotated",
+    "kind": "annotated_lecture",
+    "status": "unreviewed",
+    "modifiedAt": "2026-08-20T00:14:01.803Z",
+    "canonicalParent": "MH2100_Lecture_01",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH2100_Lecture_02",
+    "course": "MH2100",
+    "driveFileId": "1TZSOZObM6kxfU4NKe-RZ-AghG691h537",
+    "title": "MH2100 Lecture 02",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-26T21:00:21.435Z",
+    "sha256": "a35fceaafaabcfb672f816bcd0e553034bbbdd41cf6437b3df56af9268490097",
+    "affectedConcepts": [
+      "distance-and-neighborhoods",
+      "epsilon-delta-limits",
+      "different-paths-different-limits",
+      "curved-paths-hide-obstructions",
+      "squeeze-and-continuity",
+      "limits-at-infinity",
+      "partial-derivatives-as-slices"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_02_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1RsFB5jv-t4Z0Ja7m895oIArz3zxK_asa",
+    "title": "MH2100_Lecture_02_Annotated",
+    "kind": "annotated_lecture",
+    "status": "unreviewed",
+    "modifiedAt": "2026-09-08T22:07:14.926Z",
+    "canonicalParent": "MH2100_Lecture_02",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH2100_Lecture_03",
+    "course": "MH2100",
+    "driveFileId": "1c_4tlRG_-SkVQWefBRlkb_hnyAsCplyC",
+    "title": "MH2100 Lecture 03",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:03.545Z",
+    "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+    "affectedConcepts": [
+      "cross-products-and-planes",
+      "total-differentiability",
+      "partials-do-not-make-a-plane",
+      "certifying-differentiability-and-errors",
+      "multivariable-chain-rule",
+      "implicit-functions-and-tangents",
+      "directional-derivatives-and-gradient"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_03_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1hWI46iZE42nw3mLh2JiB_C3uhShUcTpO",
+    "title": "MH2100_Lecture_03_Annotated",
+    "kind": "annotated_lecture",
+    "status": "unreviewed",
+    "modifiedAt": "2026-09-08T22:07:14.903Z",
+    "canonicalParent": "MH2100_Lecture_03",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH2100_Lecture_04",
+    "course": "MH2100",
+    "driveFileId": "1jeTL7ZXFaCvs80AmHCxYeSl1R-r-1R3i",
+    "title": "MH2100 Lecture 04",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-09-09T22:07:30.350Z",
+    "sha256": "6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced",
+    "affectedConcepts": [
+      "gradient-normals-and-steepest-ascent",
+      "local-extrema-and-saddles",
+      "mixed-and-higher-partials",
+      "hessian-classification",
+      "global-extrema-and-boundaries"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_04_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1KO44VEnB6_MsZOyQ4Bp8Bn6MNl7tv7_I",
+    "title": "MH2100_Lecture_04_Annotated",
+    "kind": "annotated_lecture",
+    "status": "unreviewed",
+    "modifiedAt": "2026-09-09T22:07:30.385Z",
+    "canonicalParent": "MH2100_Lecture_04",
+    "affectedConcepts": []
+  },
+  {
+    "sourceId": "MH2100_Lecture_05",
+    "course": "MH2100",
+    "driveFileId": "1vlUmaphnoY1lu1prslvBdsZ7h2Fm3a0c",
+    "title": "MH2100 Lecture 05",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:06.428Z",
+    "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+    "affectedConcepts": [
+      "lagrange-circle",
+      "lagrange-sphere",
+      "lagrange-two-constraints",
+      "double-riemann-sums",
+      "general-double-integrals",
+      "fubini-double",
+      "type-one-two-regions"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_05_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1kg31OPCTEkkKd0Mas86kSS511N-LmHhb",
+    "title": "MH2100_Lecture_05_Annotated",
+    "kind": "annotated_lecture",
+    "status": "annotated_variant",
+    "modifiedAt": "2026-09-18T22:06:58.536Z",
+    "canonicalParent": "MH2100_Lecture_05",
+    "reviewedAt": "2026-09-22",
+    "reviewer": "Codex",
+    "coverageDiff": "adopted",
+    "affectedConcepts": [
+      "lagrange-circle",
+      "lagrange-sphere",
+      "lagrange-two-constraints",
+      "double-riemann-sums",
+      "general-double-integrals",
+      "fubini-double",
+      "type-one-two-regions"
+    ],
+    "note": "Review: candidate/existence distinction, rectangle Riemann sums, continuity-scoped Fubini, zero extension, area criterion and Type I/II bounds; theorem chain updated."
+  },
+  {
+    "sourceId": "MH2100_Lecture_06",
+    "course": "MH2100",
+    "driveFileId": "1G0gF6HAaKPbmssGHZsjEIhLaiZhY4YxD",
+    "title": "MH2100 Lecture 06",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:07.887Z",
+    "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+    "affectedConcepts": [
+      "linearity-additivity",
+      "polar-rectangles",
+      "polar-regions"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_06_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1HvfWCfiAaYfa0rr_jGelMQVpPhO1mKzo",
+    "title": "MH2100_Lecture_06_Annotated",
+    "kind": "annotated_lecture",
+    "status": "annotated_variant",
+    "modifiedAt": "2026-09-18T22:06:58.582Z",
+    "canonicalParent": "MH2100_Lecture_06",
+    "reviewedAt": "2026-09-22",
+    "reviewer": "Codex",
+    "coverageDiff": "adopted",
+    "affectedConcepts": [
+      "linearity-additivity",
+      "polar-rectangles",
+      "polar-regions"
+    ],
+    "note": "Review: linearity, restricted domains, zero-area-overlap additivity, non-simple splitting, polar rectangles and variable radial bounds; existing polar disk kept."
+  },
+  {
+    "sourceId": "MH2100_Lecture_07",
+    "course": "MH2100",
+    "driveFileId": "1gRzVmri9Hbc1uaZXmK3KPiaNt6mS_2mw",
+    "title": "MH2100 Lecture 07",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:09.284Z",
+    "sha256": "7749dd614cf6b912a05676c4be9594ce13c71eb60373d8721fe6c273245a8478",
+    "affectedConcepts": [
+      "triple-riemann-sums",
+      "simple-solid-bounds",
+      "cylindrical-coordinates",
+      "cylindrical-integration",
+      "spherical-coordinates",
+      "spherical-integration"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_08",
+    "course": "MH2100",
+    "driveFileId": "1s-YzlHuVArAG8gw8jwIJF92XxhVX_Dnk",
+    "title": "MH2100 Lecture 08",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:10.549Z",
+    "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+    "affectedConcepts": [
+      "linear-area-change",
+      "plane-jacobian",
+      "space-jacobians",
+      "change-of-variables",
+      "inverse-jacobian",
+      "scalar-line-integrals",
+      "vector-fields",
+      "vector-line-integrals"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_09",
+    "course": "MH2100",
+    "driveFileId": "1-4Gz31Pj86vWlc3SFzor0HZExY9XOycM",
+    "title": "MH2100 Lecture 09",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:11.901Z",
+    "sha256": "e71806081bf3eb4d4989a0bb578c711181a2a47e7346e14ccb264d9632a72992",
+    "affectedConcepts": [
+      "coordinate-line-integrals",
+      "piecewise-paths",
+      "work-and-circulation",
+      "fundamental-line-theorem",
+      "conservative-domains",
+      "greens-theorem",
+      "area-from-boundary"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_10",
+    "course": "MH2100",
+    "driveFileId": "1kQYpUg1P4dFPxEpwlKp9hufqedM0EhQV",
+    "title": "MH2100 Lecture 10",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:13.511Z",
+    "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+    "affectedConcepts": [
+      "surface-charts",
+      "surface-tangent-vectors",
+      "surface-area-element",
+      "scalar-surface-integrals",
+      "surface-orientation",
+      "flux-through-surfaces"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_11",
+    "course": "MH2100",
+    "driveFileId": "1UwnNmPDpeJj33xM9JdE9CEtRuX8o8Q5B",
+    "title": "MH2100 Lecture 11",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:15.171Z",
+    "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+    "affectedConcepts": [
+      "curl-and-local-rotation",
+      "divergence-and-local-flow",
+      "gradient-curl-divergence",
+      "stokes-theorem",
+      "divergence-theorem"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_12_Final_Exam_Review",
+    "course": "MH2100",
+    "driveFileId": "10zC5vlK8Muh2OE8LEkAprYheJvQW-efX",
+    "title": "MH2100 Lecture 12 Final Exam Review",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:06:16.478Z",
+    "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+    "affectedConcepts": [
+      "review-integral-methods",
+      "review-change-of-variables",
+      "review-lagrange-box",
+      "review-critical-points",
+      "review-total-differentiability"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Stewart_Calculus_Chapter_10_Parametric_Equations_And_Polar_Coordinates",
+    "course": "MH2100",
+    "driveFileId": "1t0jxMdfbdclCOxUaTZp8f-F9XEgHitZW",
+    "title": "MH2100 Stewart Calculus Chapter 10 Parametric Equations And Polar Coordinates",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-19T16:14:55.747Z",
+    "sha256": "79e163976c514cae3e4816c3a16e690d645352c7534dce455b933c08c5f6c794",
+    "affectedConcepts": ["constructing-curves"]
+  },
+  {
+    "sourceId": "MH2100_Stewart_Calculus_Chapter_12_Vectors_And_The_Geometry_Of_Space",
+    "course": "MH2100",
+    "driveFileId": "195uR1GsaLdovaTVpnH-m7U0AVGuC5weO",
+    "title": "MH2100 Stewart Calculus Chapter 12 Vectors And The Geometry Of Space",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-19T16:14:56.249Z",
+    "sha256": "6867fcbbf32f3bf3ae002ac8656f59e79abfd0b619c0f9688629ed64741dfd2a",
+    "affectedConcepts": ["vectors-and-coordinates", "cross-products-and-planes"]
+  },
+  {
+    "sourceId": "MH2100_Stewart_Calculus_Chapter_13_Vector_Functions",
+    "course": "MH2100",
+    "driveFileId": "1ug7WmAIEfxSewKUbqPVmSNjZmLkNcb9G",
+    "title": "MH2100 Stewart Calculus Chapter 13 Vector Functions",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-19T16:14:56.698Z",
+    "sha256": "711f21b9a78aa425e1dc5c4be0d905d462c5dc3d29ea13137d6e9378bed66f74",
+    "affectedConcepts": [
+      "curves-and-parametrizations",
+      "tangents-velocity-and-singularities",
+      "surfaces-and-level-sets"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives",
+    "course": "MH2100",
+    "driveFileId": "10fyiojo5OWNjY2k9RQFa_eRaWArNWb5K",
+    "title": "MH2100 Stewart Calculus Chapter 14 Partial Derivatives",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-19T16:14:57.227Z",
+    "sha256": "a24712cbbc59d20290ce2814f10c226646f8612298927bc54cbef5cbd0fc0e70",
+    "affectedConcepts": [
+      "distance-and-neighborhoods",
+      "epsilon-delta-limits",
+      "different-paths-different-limits",
+      "curved-paths-hide-obstructions",
+      "squeeze-and-continuity",
+      "limits-at-infinity",
+      "partial-derivatives-as-slices",
+      "total-differentiability",
+      "partials-do-not-make-a-plane",
+      "certifying-differentiability-and-errors",
+      "multivariable-chain-rule",
+      "implicit-functions-and-tangents",
+      "directional-derivatives-and-gradient",
+      "gradient-normals-and-steepest-ascent",
+      "local-extrema-and-saddles",
+      "mixed-and-higher-partials",
+      "hessian-classification",
+      "global-extrema-and-boundaries",
+      "lagrange-circle",
+      "lagrange-sphere",
+      "lagrange-two-constraints",
+      "review-lagrange-box",
+      "review-critical-points",
+      "review-total-differentiability"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
+    "course": "MH2100",
+    "driveFileId": "1wc8AjUlQ71D1083M66G-y2CpqgNv_1jh",
+    "title": "MH2100 Stewart Calculus Chapter 15 Multiple Integrals",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-19T16:14:57.896Z",
+    "sha256": "41b87e4f09acdfcbdba02c7feb3a0b512b62f32f8b5dfa9c85c3700037e13535",
+    "affectedConcepts": [
+      "double-riemann-sums",
+      "general-double-integrals",
+      "fubini-double",
+      "type-one-two-regions",
+      "linearity-additivity",
+      "polar-rectangles",
+      "polar-regions",
+      "triple-riemann-sums",
+      "simple-solid-bounds",
+      "cylindrical-coordinates",
+      "cylindrical-integration",
+      "spherical-coordinates",
+      "spherical-integration",
+      "linear-area-change",
+      "plane-jacobian",
+      "space-jacobians",
+      "change-of-variables",
+      "inverse-jacobian",
+      "review-change-of-variables"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
+    "course": "MH2100",
+    "driveFileId": "1MtJh4AljZ25jJ2FiQoCLCx3Xp2pDU5Da",
+    "title": "MH2100 Stewart Calculus Chapter 16 Vector Calculus",
+    "kind": "textbook",
+    "status": "canonical",
+    "modifiedAt": "2026-08-19T16:14:58.489Z",
+    "sha256": "f5cf0d5451bb789a7ba3f48b5beaaeb1966e804c654722a86171d84364dee2af",
+    "affectedConcepts": [
+      "scalar-line-integrals",
+      "vector-fields",
+      "vector-line-integrals",
+      "coordinate-line-integrals",
+      "piecewise-paths",
+      "work-and-circulation",
+      "fundamental-line-theorem",
+      "conservative-domains",
+      "greens-theorem",
+      "area-from-boundary",
+      "surface-charts",
+      "surface-tangent-vectors",
+      "surface-area-element",
+      "scalar-surface-integrals",
+      "surface-orientation",
+      "flux-through-surfaces",
+      "curl-and-local-rotation",
+      "divergence-and-local-flow",
+      "gradient-curl-divergence",
+      "stokes-theorem",
+      "divergence-theorem",
+      "review-integral-methods"
+    ]
+  },
+  {
+    "sourceId": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+    "course": "MH2100",
+    "driveFileId": "1s-K8ci2kb0P0dbRgkwbHLHSEaqlvFcBw",
+    "title": "MH2100 Supplement: Partial Derivatives and Total Differentiability",
+    "kind": "lecture",
+    "status": "canonical",
+    "modifiedAt": "2026-08-13T05:07:31.170Z",
+    "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+    "affectedConcepts": ["partials-do-not-make-a-plane"]
+  }
+]
