@@ -24,7 +24,12 @@ const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
  */
 
 /** @param {SourceManifestEntry[]} entries */
-export function validateSourceManifest(entries, canonicalSources, current) {
+export function validateSourceManifest(
+  entries,
+  canonicalSources,
+  current,
+  baseline,
+) {
   const errors = [];
   const kinds = new Set([
     "lecture",
@@ -112,23 +117,38 @@ export function validateSourceManifest(entries, canonicalSources, current) {
     if (!driveIds.has(file.driveFileId))
       errors.push(`New Drive source: ${file.driveFileId}`);
   }
+  const baselineById = new Map();
+  for (const file of baseline.files || []) {
+    if (baselineById.has(file.driveFileId))
+      errors.push(`Duplicate baseline source: ${file.driveFileId}`);
+    baselineById.set(file.driveFileId, file);
+    if (!driveIds.has(file.driveFileId))
+      errors.push(`Baseline source removed from manifest: ${file.driveFileId}`);
+  }
   for (const entry of entries) {
     const file = observed.get(entry.driveFileId);
     if (!file) {
       errors.push(`Source missing from observation: ${entry.sourceId}`);
       continue;
     }
-    const changed =
+    const metadataOutOfSync =
       file.modifiedAt !== entry.modifiedAt ||
-      (file.sha256 && entry.sha256 && file.sha256 !== entry.sha256);
+      (file.sha256 && file.sha256 !== entry.sha256);
+    const previous = baselineById.get(entry.driveFileId);
+    const changedSinceBaseline =
+      !previous ||
+      previous.modifiedAt !== entry.modifiedAt ||
+      (previous.sha256 && previous.sha256 !== entry.sha256);
+    if (metadataOutOfSync && entry.kind !== "personal_reference")
+      errors.push(`Manifest metadata out of sync: ${entry.sourceId}`);
     if (
-      changed &&
+      (changedSinceBaseline || metadataOutOfSync) &&
       entry.kind !== "personal_reference" &&
       (!entry.coverageDiff ||
         entry.coverageDiff === "needs_review" ||
         !entry.reviewedAt ||
-        new Date(entry.reviewedAt).getTime() <
-          new Date(file.modifiedAt).getTime())
+        Date.parse(entry.reviewedAt) <
+          Math.max(Date.parse(file.modifiedAt), Date.parse(entry.modifiedAt)))
     ) {
       errors.push(`Changed source lacks current review: ${entry.sourceId}`);
     }
@@ -151,7 +171,13 @@ if (
   const observation = readJson(
     process.argv[2] || `${root}lib/curriculum/source-observation.json`,
   );
-  const errors = validateSourceManifest(manifest, sources, observation);
+  const baseline = readJson(`${root}lib/curriculum/source-baseline.json`);
+  const errors = validateSourceManifest(
+    manifest,
+    sources,
+    observation,
+    baseline,
+  );
   if (errors.length) {
     for (const error of errors) console.error(error);
     process.exitCode = 1;

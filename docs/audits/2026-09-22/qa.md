@@ -9,7 +9,7 @@ Issue #25. Tested the production build locally from `codex/calculus-audit-pilot`
 | `npm ci` | Pass; 693 packages installed | [npm-ci.log](npm-ci.log) |
 | `npx vite --host 127.0.0.1 --port 5174` | Pass; dev server returned HTTP 200 | [vite.log](vite.log) |
 | `npx vinext build` | Pass; five build phases | [build.log](build.log) |
-| `node --test tests/*.test.mjs` | Pass; 22/22 tests | [tests.log](tests.log) |
+| `node --test tests/*.test.mjs` | Pass; 23/23 tests | [tests.log](tests.log) |
 | `npm run format:check` | Pass | [format.log](format.log) |
 | `npm run lint` | Pass | [lint.log](lint.log) |
 | `npm run sources:check` | Pass; 97 classified sources | [sources.log](sources.log) |

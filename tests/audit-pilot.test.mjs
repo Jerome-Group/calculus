@@ -11,6 +11,7 @@ const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url)));
 const manifest = read("../lib/curriculum/source-manifest.json");
 const sources = read("../lib/curriculum/sources.json");
 const observed = read("../lib/curriculum/source-observation.json");
+const baseline = read("../lib/curriculum/source-baseline.json");
 const vite = await createServer({
   appType: "custom",
   configFile: false,
@@ -22,7 +23,10 @@ after(() => vite.close());
 
 test("classified sources match the canonical ledger and observed Drive files", () => {
   assert.equal(manifest.length, 97);
-  assert.deepEqual(validateSourceManifest(manifest, sources, observed), []);
+  assert.deepEqual(
+    validateSourceManifest(manifest, sources, observed, baseline),
+    [],
+  );
   assert.equal(
     manifest.filter((entry) => entry.status === "canonical").length,
     47,
@@ -46,7 +50,7 @@ test("changed or new instructional sources fail; changed personal references do 
     (file) => file.driveFileId === annotated.driveFileId,
   ).modifiedAt = "2026-09-23T00:00:00Z";
   assert.match(
-    validateSourceManifest(manifest, sources, changed).join("\n"),
+    validateSourceManifest(manifest, sources, changed, baseline).join("\n"),
     /Changed source lacks current review/,
   );
   const pending = structuredClone(manifest);
@@ -57,7 +61,7 @@ test("changed or new instructional sources fail; changed personal references do 
   item.reviewedAt = "2026-09-24";
   item.reviewer = "reviewer";
   assert.match(
-    validateSourceManifest(pending, sources, changed).join("\n"),
+    validateSourceManifest(pending, sources, changed, baseline).join("\n"),
     /Changed source lacks current review/,
   );
   changed.files.push({
@@ -65,15 +69,67 @@ test("changed or new instructional sources fail; changed personal references do 
     modifiedAt: "2026-09-22T00:00:00Z",
   });
   assert.match(
-    validateSourceManifest(manifest, sources, changed).join("\n"),
+    validateSourceManifest(manifest, sources, changed, baseline).join("\n"),
     /New Drive source/,
+  );
+  const added = structuredClone(manifest);
+  added.push({
+    sourceId: "MH2100_Extra_Annotated_PDF",
+    course: "MH2100",
+    driveFileId: "new-drive-file",
+    title: "New annotated lecture",
+    kind: "annotated_lecture",
+    status: "unreviewed",
+    modifiedAt: "2026-09-22T00:00:00Z",
+    affectedConcepts: [],
+  });
+  assert.match(
+    validateSourceManifest(added, sources, changed, baseline).join("\n"),
+    /Changed source lacks current review: MH2100_Extra_Annotated_PDF/,
   );
   const personal = structuredClone(observed);
   const note = manifest.find((entry) => entry.kind === "personal_reference");
   personal.files.find(
     (file) => file.driveFileId === note.driveFileId,
   ).modifiedAt = "2026-09-23T00:00:00Z";
-  assert.deepEqual(validateSourceManifest(manifest, sources, personal), []);
+  assert.deepEqual(
+    validateSourceManifest(manifest, sources, personal, baseline),
+    [],
+  );
+});
+
+test("synchronizing metadata cannot bypass a pending source review", () => {
+  const synchronized = structuredClone(manifest);
+  const observation = structuredClone(observed);
+  const entry = synchronized.find(
+    (item) => item.sourceId === "MH2100_Lecture_04_Annotated_PDF",
+  );
+  const newer = "2026-09-23T00:00:00Z";
+  entry.modifiedAt = newer;
+  observation.files.find(
+    (file) => file.driveFileId === entry.driveFileId,
+  ).modifiedAt = newer;
+  assert.match(
+    validateSourceManifest(synchronized, sources, observation, baseline).join(
+      "\n",
+    ),
+    /Changed source lacks current review/,
+  );
+  entry.status = "annotated_variant";
+  entry.coverageDiff = "needs_review";
+  entry.reviewedAt = "2026-09-24T00:00:00Z";
+  entry.reviewer = "reviewer";
+  assert.match(
+    validateSourceManifest(synchronized, sources, observation, baseline).join(
+      "\n",
+    ),
+    /Changed source lacks current review/,
+  );
+  entry.coverageDiff = "adopted";
+  assert.deepEqual(
+    validateSourceManifest(synchronized, sources, observation, baseline),
+    [],
+  );
 });
 
 test("all 125 lessons retain a mode path, and pilot math parses strictly", async () => {
