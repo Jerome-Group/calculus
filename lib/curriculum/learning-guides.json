@@ -346,7 +346,7 @@
     "sections": [
       {
         "title": "Three obstructions",
-        "text": "For |x| at zero, the difference quotient is −1 from the left and 1 from the right: a corner. For x^(1/3), its quotient at zero is |h|^(−2/3), which has no finite limit: a vertical tangent does not supply a finite derivative. A discontinuity also prevents differentiability."
+        "text": "For |x| at zero, the difference quotient is −1 from the left and 1 from the right: a corner. For $x^{1/3}$, its quotient at zero is $|h|^{-2/3}$, which has no finite limit: a vertical tangent does not supply a finite derivative. A discontinuity also prevents differentiability."
       },
       {
         "title": "Why differentiability implies continuity",
@@ -595,7 +595,7 @@
         "kind": "conceptual",
         "prompt": "For $R(h)=|h|^{3/2}$, decide whether $R(h)=o(|h|)$ and whether $R(h)=O(h^2)$ as $h\\to0$. Justify each answer from a ratio or bound.",
         "hint": "Compare $R(h)/|h|$ and $R(h)/h^2$ separately.",
-        "solution": "R(h)/|h|=|h|^(1/2)→0, so R=o(|h|). But R(h)/h²=1/√|h| is unbounded near zero, so no fixed C gives R≤C h² on a deleted neighborhood; R is not O(h²).",
+        "solution": "$R(h)/|h|=|h|^{1/2}$→0, so R=o(|h|). But R(h)/h²=1/√|h| is unbounded near zero, so no fixed C gives R≤C h² on a deleted neighborhood; R is not O(h²).",
         "solutionTex": "\\frac{|h|^{3/2}}{|h|}=|h|^{1/2}\\to0,\\qquad\\frac{|h|^{3/2}}{h^2}=|h|^{-1/2}\\to\\infty",
         "rubric": [
           "Check each notation by its own definition.",
@@ -611,7 +611,7 @@
       },
       {
         "title": "Approximate with an error bound",
-        "text": "For √x near a=4, L(x)=2+(x−4)/4, so L(4.1)=2.025. Taylor’s theorem gives error at most M(0.1)²/2 if |f″|≤M between 4 and 4.1. Here |f″|=1/(4x^(3/2))≤1/32, so the error is at most 0.00015625. This finite bound is stronger than a bare little-o statement."
+        "text": "For √x near a=4, L(x)=2+(x−4)/4, so L(4.1)=2.025. Taylor’s theorem gives error at most M(0.1)²/2 if |f″|≤M between 4 and 4.1. Here |f″|=$1/(4x^{3/2})$≤1/32, so the error is at most 0.00015625. This finite bound is stronger than a bare little-o statement."
       }
     ],
     "exercise": {
@@ -749,7 +749,10 @@
             "text": "The average slope is $b$.",
             "equation": "\\frac{f(b)-f(0)}{b-0}=\\frac{b^2}{b}=b"
           },
-          { "label": "Tangent", "text": "Solve $2c=b$, giving $c=b/2$." }
+          {
+            "label": "Tangent",
+            "text": "Solve $2c=b$, giving $c=b/2$."
+          }
         ],
         "result": "$c=b/2$.",
         "verification": "$0<b/2<b$ and $f'(b/2)=b$."
@@ -977,7 +980,10 @@
         "strategy": "Find the input first, check the theorem’s conditions, then take the reciprocal slope.",
         "setup": "$f(x)=x^3+x$; find $(f^{-1})'(2)$.",
         "steps": [
-          { "label": "Input", "text": "$f(1)=2$, so $f^{-1}(2)=1$." },
+          {
+            "label": "Input",
+            "text": "$f(1)=2$, so $f^{-1}(2)=1$."
+          },
           {
             "label": "Eligibility",
             "text": "$f'(x)=3x^2+1>0$ everywhere, so $f$ is strictly increasing and the derivative is nonzero."
@@ -1157,7 +1163,7 @@
         "kind": "method-choice",
         "prompt": "As $x\\to0^+$, classify $(e^x-1)/x$, $x^x$, and $(x+1)/x$ as directly eligible, convertible, or ineligible for L’Hôpital. Evaluate $x^x$ using a justified conversion.",
         "hint": "Take a logarithm of the positive power, then rewrite $x\\ln x$ as a quotient.",
-        "solution": "(e^x−1)/x is direct 0/0. The positive power x^x is 0^0 and first requires ln(x^x)=x ln x=ln x/(1/x), an ∞/∞ quotient. Its derivative ratio is −x→0, so ln(x^x)→0 and x^x→1. (x+1)/x has numerator→1 and denominator→0, so neither rule applies; it diverges to +∞ from the right.",
+        "solution": "$(e^x-1)/x$ is direct $0/0$. The positive power $x^x$ is $0^0$ and first requires $\\ln(x^x)=x\\ln x=\\ln x/(1/x)$, an $\\infty/\\infty$ quotient. Its derivative ratio is $-x\\to0$, so $\\ln(x^x)\\to0$ and $x^x\\to1$. $(x+1)/x$ has numerator approaching 1 and denominator approaching 0, so neither rule applies; it diverges to $+\\infty$ from the right.",
         "solutionTex": "\\ln(x^x)=\\frac{\\ln x}{1/x}\\xrightarrow{\\mathrm{L'H}}0,\\quad x^x\\to1",
         "rubric": [
           "Check the form of each original expression.",
@@ -1276,7 +1282,7 @@
     "exercise": {
       "prompt": "Differentiate $\\int_0^{x^3}e^{t^2}\\,dt$.",
       "hint": "Use FTC at the endpoint, then multiply by its derivative.",
-      "solution": "The derivative is 3x² e^(x⁶). No elementary antiderivative of e^(t²) is needed.",
+      "solution": "The derivative is 3x² $e^{x^6}$. No elementary antiderivative of $e^{t^2}$ is needed.",
       "rubric": [
         "Substitute the endpoint into the integrand.",
         "Multiply by 3x²."
@@ -1477,13 +1483,13 @@
       },
       {
         "title": "The tangent branch keeps secant positive",
-        "text": "For √(x²+4), x=2tan θ with −π/2<θ<π/2 gives sec θ>0, so √(x²+4)=2sec θ. In ∫dx/(x²+4)^(3/2), dx=2sec²θ dθ reduces the integrand to cos θ/4. The result is x/[4√(x²+4)]+C. Without the angle range, replacing √(sec²θ) by sec θ could have the wrong sign."
+        "text": "For √(x²+4), x=2tan θ with −π/2<θ<π/2 gives sec θ>0, so √(x²+4)=2sec θ. In ∫dx/$(x^2+4)^{3/2}$, dx=2sec²θ dθ reduces the integrand to cos θ/4. The result is x/[4√(x²+4)]+C. Without the angle range, replacing √(sec²θ) by sec θ could have the wrong sign."
       }
     ],
     "exercise": {
       "prompt": "Evaluate A=$\\int_2^4 dx/\\sqrt{x^2-4}$ and B=$\\int_0^3 dx/(x^2+9)^{3/2}$ by trigonometric substitutions. Choose secant or tangent for each, state the branches, and transform the bounds.",
       "hint": "For A use x=2sec θ, 0≤θ≤π/3. For B use x=3tan θ, 0≤θ≤π/4. Check the sign of each square root on its chosen branch.",
-      "solution": "A: x=2sec θ gives √(x²−4)=2tan θ and dx=2sec θ tan θ dθ on 0≤θ≤π/3, so A=∫₀^{π/3}sec θ dθ=ln(2+√3). B: x=3tan θ gives √(x²+9)=3sec θ>0 and dx=3sec² θ dθ on 0≤θ≤π/4, so B=(1/9)∫₀^{π/4}cos θ dθ=√2/18. Both signs follow from the declared branches.",
+      "solution": "A: $x=2\\sec\\theta$ gives $\\sqrt{x^2-4}=2\\tan\\theta$ and $dx=2\\sec\\theta\\tan\\theta\\,d\\theta$ on $0\\le\\theta\\le\\pi/3$, so $A=\\int_0^{\\pi/3}\\sec\\theta\\,d\\theta=\\ln(2+\\sqrt3)$. B: $x=3\\tan\\theta$ gives $\\sqrt{x^2+9}=3\\sec\\theta>0$ and $dx=3\\sec^2\\theta\\,d\\theta$ on $0\\le\\theta\\le\\pi/4$, so $B=(1/9)\\int_0^{\\pi/4}\\cos\\theta\\,d\\theta=\\sqrt2/18$. Both signs follow from the declared branches.",
       "rubric": [
         "Choose secant for the difference and tangent for the sum, with explicit branches.",
         "Transform bounds, differentials, and square-root signs for both.",
@@ -1654,7 +1660,7 @@
     "exercise": {
       "prompt": "Let $b_1=3$ and $b_{n+1}=(b_n+2)/2$. Prove convergence and find the limit.",
       "hint": "Show bₙ≥2 and bₙ₊₁≤bₙ by induction.",
-      "solution": "The recurrence preserves bₙ≥2, and bₙ₊₁−bₙ=(2−bₙ)/2≤0. Thus it converges. Its limit satisfies L=(L+2)/2, giving L=2; explicitly bₙ=2+2^(1−n).",
+      "solution": "The recurrence preserves bₙ≥2, and bₙ₊₁−bₙ=(2−bₙ)/2≤0. Thus it converges. Its limit satisfies L=(L+2)/2, giving L=2; explicitly bₙ=$2+2^{1-n}$.",
       "rubric": [
         "Prove both boundedness and monotonicity.",
         "Invoke convergence before passing the limit through the recurrence."
@@ -1668,7 +1674,7 @@
     "sections": [
       {
         "title": "Sum means a limit of partial sums",
-        "text": "For a series starting at n=0, define S_N as its first N terms, from n=0 through n=N−1. Convergence means S_N approaches a finite number, not merely aₙ→0. For the geometric series, S_N=1+r+⋯+r^(N−1)=(1−r^N)/(1−r) when r≠1; at N=1 this is just 1. Its infinite sum is 1/(1−r) only for |r|<1. Some books instead use S_N for the sum through index N; that has N+1 terms and numerator 1−r^(N+1)."
+        "text": "For a series starting at n=0, define S_N as its first N terms, from n=0 through n=N−1. Convergence means S_N approaches a finite number, not merely aₙ→0. For the geometric series, $S_N=1+r+\\cdots+r^{N-1}=(1-r^N)/(1-r)$ when r≠1; at N=1 this is just 1. Its infinite sum is 1/(1−r) only for |r|<1. Some books instead use S_N for the sum through index N; that has N+1 terms and numerator $1-r^{N+1}$."
       },
       {
         "title": "Keep the surviving boundary terms",
@@ -1696,7 +1702,7 @@
       },
       {
         "title": "A harmonic-series proof",
-        "text": "Group terms from 2^(k−1)+1 to 2ᵏ. There are 2^(k−1) terms, each at least 1/2ᵏ, so each group contributes at least 1/2. Arbitrarily many groups force partial sums to grow without bound, despite individual terms tending to zero."
+        "text": "Group terms from $2^{k-1}$+1 to 2ᵏ. There are $2^{k-1}$ terms, each at least 1/2ᵏ, so each group contributes at least 1/2. Arbitrarily many groups force partial sums to grow without bound, despite individual terms tending to zero."
       }
     ],
     "exercise": {
@@ -1720,7 +1726,7 @@
       },
       {
         "title": "A logarithmic benchmark",
-        "text": "For n≥2, compare Σ1/[n(log n)^p] with ∫₂^∞ dx/[x(log x)^p]. Positivity and eventual decrease hold for every fixed real p. Substituting u=log x gives ∫ from log 2 to ∞ of u^(−p) du: it converges exactly when p>1. The boundary p=1 diverges, despite the extra logarithm. This benchmark is useful when a plain p-series comparison loses the decisive log factor."
+        "text": "For n≥2, compare $\\sum 1/[n(\\log n)^p]$ with $\\int_2^\\infty dx/[x(\\log x)^p]$. Positivity and eventual decrease hold for every fixed real p. Substituting u=log x gives ∫ from log 2 to ∞ of $u^{-p}$ du: it converges exactly when p>1. The boundary p=1 diverges, despite the extra logarithm. This benchmark is useful when a plain p-series comparison loses the decisive log factor."
       },
       {
         "title": "Bound the remainder",
@@ -1772,7 +1778,7 @@
       },
       {
         "title": "Alternating remainder",
-        "text": "If positive magnitudes decrease to zero, the error after N alternating terms has magnitude at most the next term and its sign matches the next term. For Σ from n=1 of (−1)^(n+1)/n, the error is at most 1/(N+1). Without eventual decrease, this bound needs another justification."
+        "text": "If positive magnitudes decrease to zero, the error after N alternating terms has magnitude at most the next term and its sign matches the next term. For Σ from n=1 of $(-1)^{n+1}$/n, the error is at most 1/(N+1). Without eventual decrease, this bound needs another justification."
       }
     ],
     "exercise": {
@@ -1800,7 +1806,7 @@
       },
       {
         "title": "Choose the test from the term's structure",
-        "text": "Before calculating a limit, ask what conclusion is needed. If terms do not approach zero, stop: the series diverges. For nonnegative terms resembling 1/[n(log n)^p], justify the integral test and check its positivity/decrease hypotheses. A factorial often favors the ratio test; a whole expression raised to n favors the root test. An alternating sign calls for separate absolute and signed convergence checks. If a ratio/root limit is 1, switch to a comparison or integral benchmark. For a power series, the ratio/root calculation only finds the open radius; test both endpoints as separate numerical series."
+        "text": "Before calculating a limit, ask what conclusion is needed. If terms do not approach zero, stop: the series diverges. For nonnegative terms resembling $1/[n(\\log n)^p]$, justify the integral test and check its positivity/decrease hypotheses. A factorial often favors the ratio test; a whole expression raised to n favors the root test. An alternating sign calls for separate absolute and signed convergence checks. If a ratio/root limit is 1, switch to a comparison or integral benchmark. For a power series, the ratio/root calculation only finds the open radius; test both endpoints as separate numerical series."
       }
     ],
     "exercise": {
@@ -1855,7 +1861,7 @@
     "exercise": {
       "prompt": "Differentiate $\\sum_{n=1}^{\\infty}x^n/n$ inside its radius. What happens at $x=-1$?",
       "hint": "The differentiated coefficients lose the factor 1/n.",
-      "solution": "The derivative series is Σ from n=1 of x^(n−1)=1/(1−x) for |x|<1. At x=−1 its terms alternate ±1 and do not tend to zero, so it diverges although the original series converges there.",
+      "solution": "The derivative series is $\\sum_{n=1}^\\infty x^{n-1}$=1/(1−x) for |x|<1. At x=−1 its terms alternate ±1 and do not tend to zero, so it diverges although the original series converges there.",
       "rubric": [
         "State the open interval of termwise validity.",
         "Recheck endpoints after differentiation."
@@ -1890,12 +1896,12 @@
       },
       {
         "title": "Choose a nonzero center and certify a degree",
-        "text": "Center log x at a=1: Pₙ(x)=Σ from k=1 to n of (−1)^(k+1)(x−1)^k/k. For x=1.2, |f^(n+1)(t)|≤n! on [1,1.2], so Taylor's finite remainder obeys |Rₙ|≤0.2^(n+1)/(n+1). Degree 2 gives only a 0.00267 guarantee; degree 3 gives 0.0004<0.001 and P₃(1.2)=0.182666…. This finite accuracy claim follows from the derivative bound. Equality with an infinite series is a separate limit claim requiring Rₙ→0."
+        "text": "Center log x at a=1: Pₙ(x)=Σ from k=1 to n of $(-1)^{k+1}(x-1)^k/k$. For x=1.2, |$f^{(n+1)}(t)$|≤n! on [1,1.2], so Taylor's finite remainder obeys |Rₙ|≤$0.2^{n+1}/(n+1)$. Degree 2 gives only a 0.00267 guarantee; degree 3 gives 0.0004<0.001 and P₃(1.2)=0.182666…. This finite accuracy claim follows from the derivative bound. Equality with an infinite series is a separate limit claim requiring Rₙ→0."
       }
     ],
     "exercise": {
       "prompt": "Use a Taylor polynomial centered at $a=1$ to approximate $\\log(1.2)$ with certified error below $0.001$. Choose a degree from a remainder bound; state separately what would justify equality with the infinite Taylor series.",
-      "hint": "On [1,1.2], |(d^{n+1}/dx^{n+1}) log x|≤n!, hence |Rₙ|≤0.2^{n+1}/(n+1). Compare degrees 2 and 3.",
+      "hint": "On [1,1.2], |$\\frac{d^{n+1}}{dx^{n+1}}\\log x$|≤n!, hence |Rₙ|≤$0.2^{n+1}/(n+1)$. Compare degrees 2 and 3.",
       "solution": "Degree 3 suffices: P₃(1.2)=0.2−0.2²/2+0.2³/3≈0.182667 and |R₃|≤0.2⁴/4=0.0004. The degree-2 bound is 0.2³/3≈0.00267, so it does not certify the target. The infinite representation additionally needs proof that Rₙ→0 (which this bound provides at x=1.2).",
       "rubric": [
         "Center at 1 and compute the degree-3 polynomial.",
@@ -1911,7 +1917,7 @@
     "sections": [
       {
         "title": "Coefficients and termination",
-        "text": "The coefficient of xⁿ in (1+x)^α is α(α−1)…(α−n+1)/n!, with constant term 1. For nonnegative integer α the series terminates as a polynomial. Otherwise its expansion is valid for |x|<1 and endpoints need separate analysis."
+        "text": "The coefficient of xⁿ in $(1+x)^\\alpha$ is α(α−1)…(α−n+1)/n!, with constant term 1. For nonnegative integer α the series terminates as a polynomial. Otherwise its expansion is valid for |x|<1 and endpoints need separate analysis."
       },
       {
         "title": "A concrete expansion",
@@ -2240,7 +2246,10 @@
             "label": "Horizontal slice",
             "text": "$q(h,0)=h$ for nonzero $h$, so $q_x(0,0)=1$."
           },
-          { "label": "Vertical slice", "text": "$q(0,k)=0$, so $q_y(0,0)=0$." },
+          {
+            "label": "Vertical slice",
+            "text": "$q(0,k)=0$, so $q_y(0,0)=0$."
+          },
           {
             "label": "Candidate",
             "text": "If a total derivative exists, it must send $(h,k)$ to $h$. This conclusion names the only possible map; it has not established a uniform remainder estimate."
@@ -2630,7 +2639,7 @@
     "exercise": {
       "prompt": "For $f(x,y)=xe^y$ and $r(t)=(t,t^2)$, find $d(f\\circ r)/dt$.",
       "hint": "Compute the two partial contributions separately.",
-      "solution": "The derivative is e^(t²)·1 + t e^(t²)·2t = e^(t²)(1+2t²), agreeing with direct differentiation of t e^(t²).",
+      "solution": "The derivative is $e^{t^2}$·1 + t $e^{t^2}$·2t = $e^{t^2}$(1+2t²), agreeing with direct differentiation of t $e^{t^2}$.",
       "rubric": [
         "Evaluate partials on the path.",
         "Include both coordinate rates.",
@@ -3398,7 +3407,7 @@
       },
       {
         "title": "Local invertibility is not global injectivity",
-        "text": "The map (u,v)↦(eᵘcos v,eᵘsin v) has nonzero determinant e^(2u), but repeats whenever v increases by 2π. Integrating over two full angle turns counts the image twice. Restrict the parameter range or explicitly account for multiplicity."
+        "text": "The map (u,v)↦(eᵘcos v,eᵘsin v) has nonzero determinant $e^{2u}$, but repeats whenever v increases by 2π. Integrating over two full angle turns counts the image twice. Restrict the parameter range or explicitly account for multiplicity."
       }
     ],
     "exercise": {
@@ -3964,7 +3973,7 @@
     "sections": [
       {
         "title": "Keep the original review data",
-        "text": "The two Stokes tasks use outward curl flux for F=(y,−x,z) on the cone z=√(x²+y²), 0≤z≤1, joined to the cylinder x²+y²=1, 1≤z≤4; and upward curl flux for F=(x+y²,y+z²,z+x²) on the first-octant triangle x+y+z=3. The original Green task from Lecture 12, physical page 7, asks for clockwise circulation of P dx+Q dy around the triangle (0,0),(0,12),(3,0), where P=y cos x−xy sin x and Q=xy+x cos x. The original potential task on physical page 10 gives (2xy+e^(−x²)) dx+(x²+y cos(πy²/2)) dy along the oriented curve whose parametrization r(t)=(e^(t²−t)−cos(2πt), 2 sin(πt²/2)−t⁹), 0≤t≤1, runs opposite to the requested orientation. These original tasks are distinct from the simplified scaffolds below."
+        "text": "The two Stokes tasks use outward curl flux for F=(y,−x,z) on the cone z=√(x²+y²), 0≤z≤1, joined to the cylinder x²+y²=1, 1≤z≤4; and upward curl flux for F=(x+y²,y+z²,z+x²) on the first-octant triangle x+y+z=3. The original Green task from Lecture 12, physical page 7, asks for clockwise circulation of P dx+Q dy around the triangle (0,0),(0,12),(3,0), where P=y cos x−xy sin x and Q=xy+x cos x. The original potential task on physical page 10 gives (2xy+$e^{-x^2}$) dx+(x²+y cos(πy²/2)) dy along the oriented curve whose parametrization r(t)=($e^{t^2-t}$−cos(2πt), 2 sin(πt²/2)−t⁹), 0≤t≤1, runs opposite to the requested orientation. These original tasks are distinct from the simplified scaffolds below."
       },
       {
         "title": "Work the Stokes setups",
@@ -3972,17 +3981,17 @@
       },
       {
         "title": "Original Green task: cancellation before integration",
-        "text": "Differentiate both components of the original field: Qₓ=y+cos x−x sin x, while Pᵧ=cos x−x sin x. Thus Qₓ−Pᵧ=y; the trigonometric terms cancel only after the full source field has been used. The triangle has 0≤x≤3 and 0≤y≤12−4x. Green’s theorem with clockwise orientation gives −∫₀³∫₀^(12−4x)y dy dx=−72. As a simpler, separately labelled scaffold, F=(0,xy) on the same triangle has the same curl and answer but does not teach that derivative cancellation."
+        "text": "Differentiate both components of the original field: Qₓ=y+cos x−x sin x, while Pᵧ=cos x−x sin x. Thus Qₓ−Pᵧ=y; the trigonometric terms cancel only after the full source field has been used. The triangle has 0≤x≤3 and 0≤y≤12−4x. Green’s theorem with clockwise orientation gives −$\\int_0^3\\int_0^{12-4x}y\\,dy\\,dx$=−72. As a simpler, separately labelled scaffold, F=(0,xy) on the same triangle has the same curl and answer but does not teach that derivative cancellation."
       },
       {
         "title": "Original potential task: endpoints and reversed orientation",
-        "text": "The original field has potential φ(x,y)=x²y+$\\int_0^xe^{-s^2}\\,ds$+sin(πy²/2)/π. Its derivatives reproduce both field components. The supplied complicated parametrization has r(0)=(0,0) and r(1)=(0,1), opposite to the requested curve orientation. Hence the requested integral is φ(0,0)−φ(0,1)=−1/π; no elementary antiderivative of e^(−x²) or direct path integration is needed. The straight segment r(t)=(0,1−t), 0≤t≤1, is a separately labelled scaffold with the desired direction, not the original parametrization."
+        "text": "The original field has potential φ(x,y)=x²y+$\\int_0^xe^{-s^2}\\,ds$+sin(πy²/2)/π. Its derivatives reproduce both field components. The supplied complicated parametrization has r(0)=(0,0) and r(1)=(0,1), opposite to the requested curve orientation. Hence the requested integral is φ(0,0)−φ(0,1)=−1/π; no elementary antiderivative of $e^{-x^2}$ or direct path integration is needed. The straight segment r(t)=(0,1−t), 0≤t≤1, is a separately labelled scaffold with the desired direction, not the original parametrization."
       }
     ],
     "exercise": {
       "prompt": "For the original Green field P=y cos x−xy sin x, Q=xy+x cos x, reverse the triangle direction and compute the new circulation by Green’s theorem.",
       "hint": "Differentiate the full P and Q before cancelling terms; reversing clockwise orientation changes the sign.",
-      "solution": "Qₓ=y+cos x−x sin x and Pᵧ=cos x−x sin x, so Qₓ−Pᵧ=y. Counterclockwise circulation is ∫₀³∫₀^(12−4x)y dy dx=72. The simplified scaffold F=(0,xy) gives the same result, but skips the cancellation in the original field.",
+      "solution": "Qₓ=y+cos x−x sin x and Pᵧ=cos x−x sin x, so Qₓ−Pᵧ=y. Counterclockwise circulation is $\\int_0^3\\int_0^{12-4x}y\\,dy\\,dx$=72. The simplified scaffold F=(0,xy) gives the same result, but skips the cancellation in the original field.",
       "rubric": [
         "Use both components of the original source field.",
         "Match orientation before integrating.",
@@ -3997,7 +4006,7 @@
     "sections": [
       {
         "title": "Map every boundary",
-        "text": "For the first-quadrant region bounded by y=x³,y=2x³,xy=1,xy=3, take u=y/x³ and v=xy. The new rectangle is 1≤u≤2,1≤v≤3. The inverse x=(v/u)^(1/4), y=u^(1/4)v^(3/4) maps its four edges to the actual curved boundaries."
+        "text": "For the first-quadrant region bounded by y=x³,y=2x³,xy=1,xy=3, take u=y/x³ and v=xy. The new rectangle is 1≤u≤2,1≤v≤3. The inverse $x=(v/u)^{1/4}$, $y=u^{1/4}v^{3/4}$ maps its four edges to the actual curved boundaries."
       },
       {
         "title": "Check sign, scale, and bounds",

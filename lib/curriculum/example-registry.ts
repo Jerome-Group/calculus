@@ -80,7 +80,7 @@ export const exampleRegistry: readonly ExampleIdentity[] = [
     domain: "0≤t≤1; parametrization runs (0,0) to (0,1).",
     orientation:
       "Requested traversal is (0,1) to (0,0), opposite increasing t; integral −1/π.",
-    annotation: "Use the potential x²y+∫₀ˣe^(−s²)ds+(1/π)sin(πy²/2).",
+    annotation: String.raw`Use the potential $\phi(x,y)=x^2y+\int_0^x e^{-s^2}\,ds+\sin(\pi y^2/2)/\pi$.`,
     graph: noGraph(
       "No exact plot is provided for the original parametrized curve.",
     ),

@@ -18,7 +18,7 @@ test("first N geometric terms use indices 0 through N−1", () => {
     (item) => item.id === "series-geometric-telescoping",
   );
   assert.match(guide, /first N terms, from n=0 through n=N−1/);
-  assert.match(guide, /S_N=1\+r\+⋯\+r\^\(N−1\)=\(1−r\^N\)\/\(1−r\)/);
+  assert.ok(guide.includes("$S_N=1+r+\\cdots+r^{N-1}=(1-r^N)/(1-r)$"));
   assert.match(guide, /through index N; that has N\+1 terms/);
   assert.match(concept.proof, /r\^N/);
   const firstTerms = (n, r) =>
@@ -57,8 +57,8 @@ test("original Green review field retains its derivative cancellation and orient
 test("original potential problem keeps the complicated reverse parametrization", () => {
   const guide = guides["review-integral-methods"];
   const text = guide.sections.map((section) => section.text).join(" ");
-  assert.match(text, /r\(t\)=\(e\^\(t²−t\)−cos\(2πt\), 2 sin\(πt²\/2\)−t⁹\)/);
-  assert.match(text, /\(2xy\+e\^\(−x²\)\) dx\+\(x²\+y cos\(πy²\/2\)\) dy/);
+  assert.ok(text.includes("r(t)=($e^{t^2-t}$−cos(2πt), 2 sin(πt²/2)−t⁹)"));
+  assert.ok(text.includes("(2xy+$e^{-x^2}$) dx+(x²+y cos(πy²/2)) dy"));
   assert.match(text, /opposite to the requested curve orientation/);
   assert.match(text, /straight segment .*separately labelled scaffold/);
   const potentialY = derivative("x^2*y+sin(pi*y^2/2)/pi", "y");

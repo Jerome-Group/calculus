@@ -20,8 +20,16 @@ const { readoutTex, parameterTex } = await vite.ssrLoadModule(
 const { sceneInfo, sceneTex } = await vite.ssrLoadModule(
   "/lib/atlas/scenes.ts",
 );
+const { exampleRegistry } = await vite.ssrLoadModule(
+  "/lib/curriculum/example-registry.ts",
+);
 const concepts = JSON.parse(
   await readFile(new URL("../lib/curriculum/concepts.json", import.meta.url)),
+);
+const guides = JSON.parse(
+  await readFile(
+    new URL("../lib/curriculum/learning-guides.json", import.meta.url),
+  ),
 );
 const sources = JSON.parse(
   await readFile(new URL("../lib/curriculum/sources.json", import.meta.url)),
@@ -35,6 +43,14 @@ const render = (s) =>
 const prose = (s) => {
   for (const match of s.matchAll(/\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g))
     render(match[1] ?? match[2]);
+};
+const assertNoRawMathSyntax = (value, context) => {
+  const plainText = value.replace(/\$\$[\s\S]+?\$\$|\$[^$]+?\$/g, "");
+  assert.doesNotMatch(
+    plainText,
+    /\^|\\(?:frac|sqrt|int|sum|theta|pi)\b/,
+    context,
+  );
 };
 test("each course unit has concepts with resolvable source pages and parseable mathematics", () => {
   assert.equal(new Set(concepts.map((c) => c.id)).size, concepts.length);
@@ -62,7 +78,10 @@ test("each course unit has concepts with resolvable source pages and parseable m
       "insight",
       "enrichment",
     ])
-      if (c[field]) prose(c[field]);
+      if (c[field]) {
+        assertNoRawMathSyntax(c[field], `${c.id}: ${field}`);
+        prose(c[field]);
+      }
     for (const ref of c.sources) {
       const source = sources[ref.sourceId];
       assert.ok(source, `${c.id} ${ref.sourceId}`);
@@ -76,6 +95,25 @@ test("each course unit has concepts with resolvable source pages and parseable m
         );
     }
   }
+});
+test("learning guide prose keeps equation syntax inside math spans", () => {
+  for (const [id, guide] of Object.entries(guides))
+    for (const [label, value] of [
+      ...guide.sections.map((section, i) => [`section ${i}`, section.text]),
+      ...["prompt", "hint", "solution"].map((field) => [
+        field,
+        guide.exercise[field],
+      ]),
+      ...guide.exercise.rubric.map((value, i) => [`rubric ${i}`, value]),
+    ])
+      assertNoRawMathSyntax(value, `${id}: ${label}`);
+});
+test("example annotations render mathematical notation", () => {
+  for (const example of exampleRegistry)
+    for (const field of ["domain", "orientation", "annotation"]) {
+      assertNoRawMathSyntax(example[field], `${example.id}: ${field}`);
+      prose(example[field]);
+    }
 });
 test("every scene renders finite geometry and complete LaTex readouts throughout its parameter range", () => {
   const ids = new Set([

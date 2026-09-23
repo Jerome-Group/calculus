@@ -1,5 +1,5 @@
 import { examplesForConcept } from "@/lib/curriculum/example-registry";
-import { Formula } from "./math-text";
+import { Formula, MathText } from "./math-text";
 
 export function ReviewExampleIdentities() {
   const examples = examplesForConcept("review-integral-methods");
@@ -24,7 +24,9 @@ export function ReviewExampleIdentities() {
           <p>
             {example.domain} {example.orientation}
           </p>
-          <p>{example.annotation}</p>
+          <p>
+            <MathText text={example.annotation} />
+          </p>
           <p>
             {example.graph.kind === "none"
               ? example.graph.reason
