@@ -37,7 +37,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
     );
     assert.ok(sections.length > 0, source.id);
     for (const section of sections) {
-      const lecture08 = /^MH1100_Lecture_08:0[12]$/.test(section.id);
+      const lecture08 = /^MH1100_Lecture_08:0[1-4]$/.test(section.id);
       const mappedLecture =
         /^MH1100_Lecture_0[356]:/.test(section.id) || lecture08;
       const pageVerified =

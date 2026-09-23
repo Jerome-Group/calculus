@@ -32,6 +32,20 @@
         "correction": "The finite-slope derivation requires $y_0\\ne0$; at $(\\pm a,0)$ the tangent is vertical. The final normal-form tangent equation remains valid there.",
         "justification": "At $y_0=0$, the equation $2x_0/a^2+2y_0y\\prime/b^2=0$ cannot be solved for a finite $y\\prime$; the ellipse has $x_0=\\pm a$.",
         "provenance": "Direct visual inspection and algebraic check; the original file is unchanged."
+      },
+      {
+        "page": 50,
+        "printed": "The cosine worked example says to evaluate $f(99.8)$, carried over from the previous square-root problem.",
+        "correction": "The displayed calculation evaluates $f(29^\\circ)$, with $29^\\circ=29\\pi/180$ radians.",
+        "justification": "The example statement and subsequent cosine substitution both use $29^\\circ$.",
+        "provenance": "Direct visual inspection of the canonical PDF; original unchanged."
+      },
+      {
+        "page": 55,
+        "printed": "The differential $dV\\approx277\\,\\mathrm{cm^3}$ is called the maximum volume error.",
+        "correction": "This is a first-order error estimate, not a strict maximum. The larger finite endpoint error is $\\frac43\\pi[(21.05)^3-21^3]\\approx277.75\\,\\mathrm{cm^3}$.",
+        "justification": "The positive radius endpoint has a cubic remainder beyond $4\\pi r^2dr$.",
+        "provenance": "Direct visual inspection and algebraic check; original unchanged."
       }
     ]
   },

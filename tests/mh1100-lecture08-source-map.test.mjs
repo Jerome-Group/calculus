@@ -143,7 +143,7 @@ test("Lecture 08 source identity, physical spans, and outcome evidence", () => {
   );
   assert.deepEqual(
     sources.MH1100_Lecture_08.errata.map((item) => item.page),
-    [10, 25],
+    [10, 25, 50, 55],
   );
   assert.match(sources.MH1100_Lecture_08.errata[0].correction, /\$x\$/);
   assert.match(sources.MH1100_Lecture_08.errata[1].correction, /y_0\\ne0/);

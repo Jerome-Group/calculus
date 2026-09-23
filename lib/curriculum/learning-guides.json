@@ -5058,13 +5058,13 @@
       },
       {
         "title": "Rates carry units",
-        "text": "For a spherical balloon $V=(4\\pi /3)r^{3}$, differentiation in time gives $dV/dt=4\\pi r^{2} dr/dt$. If $dV/dt=12\\pi cm^{3}/s$ at $r=3$ cm, then $dr/dt=1/3 cm/s$. Substitute the instantaneous radius after differentiating, since it varies in time."
+        "text": "For a spherical balloon $V=\\frac{4\\pi}{3}r^3$, differentiation in time gives $\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}$. If $\\frac{dV}{dt}=12\\pi\\,\\mathrm{cm^3/s}$ at $r=3\\,\\mathrm{cm}$, then $\\frac{dr}{dt}=\\frac13\\,\\mathrm{cm/s}$. Substitute the instantaneous radius after differentiating, since it varies in time."
       }
     ],
     "exercise": {
-      "prompt": "A 5 $m$ ladder has foot distance $x$ and height $y$ with $x^2+y^2=25$. At $x=3$ $m$ its foot moves outward at 2 $m/s$. Find $dy/dt$.",
+      "prompt": "A $5\\,\\mathrm m$ ladder has foot distance $x$ and height $y$ with $x^2+y^2=25$. At $x=3\\,\\mathrm m$ its foot moves outward at $2\\,\\mathrm{m/s}$. Find $\\frac{dy}{dt}$.",
       "hint": "Use $y=4$ and differentiate with respect to time.",
-      "solution": "2x $dx/dt+2y dy/dt=0$, so $dy/dt=-(3/4)\\cdot 2=-3/2 m/s$. The negative sign means the top descends.",
+      "solution": "$2x\\frac{dx}{dt}+2y\\frac{dy}{dt}=0$, so $\\frac{dy}{dt}=-\\frac34\\cdot2=-\\frac32\\,\\mathrm{m/s}$. The negative sign means the top descends.",
       "rubric": [
         "Differentiate both changing quantities.",
         "Use the positive height.",
@@ -5227,6 +5227,194 @@
         ],
         "result": "The tangent equation is $x_0x/a^2+y_0y/b^2=1$ for every point of the ellipse.",
         "verification": "The source divides by $y_0$ while deriving the line; that step is valid only for $y_0\\ne0$. The final line formula extends to the two vertical endpoints by direct geometric or normal-vector reasoning."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-motion-direction",
+        "title": "Read signed velocity",
+        "statement": "For position $s(t)$, velocity is $v(t)=s\\prime(t)$; rest means $v=0$, while $v>0$ and $v<0$ indicate opposite directions. Speed is $|v|$, not signed velocity.",
+        "hypotheses": [
+          "The position $s$ is differentiable on the time intervals being classified; use $t\\ge0$ for the source motion."
+        ],
+        "prerequisites": ["signed velocity and derivatives"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-motion-direction",
+        "title": "Read the source motion intervals",
+        "strategy": "Differentiate position, factor velocity, and test signs between its zeros.",
+        "setup": "Pages 28–30 use $s(t)=t^3-6t^2+9t$ for $t\\ge0$, measured in metres.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$v=3(t-1)(t-3)$; the particle rests at $t=1,3$ s."
+          },
+          {
+            "label": "Step 2",
+            "text": "The sign is positive on $0\\le t<1$ and $t>3$, negative on $1<t<3$."
+          }
+        ],
+        "result": "The particle moves forward, backward, then forward.",
+        "verification": "A zero velocity separates direction intervals; it does not alone tell the direction on either side."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-motion-distance",
+        "title": "Distance versus displacement",
+        "statement": "When velocity changes sign, total distance is the sum of absolute position changes on each monotone interval; net displacement is only $s(b)-s(a)$.",
+        "hypotheses": [
+          "Position is continuous and monotone between the selected turning times."
+        ],
+        "prerequisites": ["signed velocity and derivatives"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-motion-distance",
+        "title": "Separate the source journey",
+        "strategy": "Partition at direction changes, then sum absolute changes on each trip.",
+        "setup": "Pages 30–31 use $s(0)=0$, $s(1)=4$, $s(3)=0$, and $s(5)=20$ m.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "Turning times $1,3$ split $[0,5]$ into three monotone trips."
+          },
+          {
+            "label": "Step 2",
+            "text": "$|4-0|+|0-4|+|20-0|=28$ m, while displacement is $20$ m."
+          }
+        ],
+        "result": "Total distance is $28$ m; net displacement is $20$ m.",
+        "verification": "Absolute values are applied to each trip, not once to the final displacement."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-speeding-signs",
+        "title": "Acceleration and changing speed",
+        "statement": "$a(t)=v\\prime(t)=s\\prime\\prime(t)$. Away from rest, speed increases when $v$ and $a$ have the same sign and decreases when they have opposite signs.",
+        "hypotheses": [
+          "Position is twice differentiable away from rest; classify open intervals where velocity has a fixed nonzero sign."
+        ],
+        "prerequisites": ["signed velocity and derivatives"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-speeding-signs",
+        "title": "Check both source signs",
+        "strategy": "Find zeros of velocity and acceleration, then compare signs on each open interval.",
+        "setup": "Pages 32–34 give $v=3(t-1)(t-3)$ and $a=6t-12$.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$a=0$ at $t=2$ and $a(4)=12\\,\\mathrm{m/s^2}$."
+          },
+          {
+            "label": "Step 2",
+            "text": "On $1<t<2$, $v<0,a<0$; on $t>3$, $v>0,a>0$. The other open intervals slow down."
+          }
+        ],
+        "result": "The source particle speeds up on $(1,2)$ and $(3,\\infty)$ s.",
+        "verification": "Negative acceleration need not mean slowing down; compare its sign with velocity."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-sphere-rate",
+        "title": "Connect changing sphere quantities",
+        "statement": "If $V=\\frac43\\pi r^3$ and $r=r(t)$, then $\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}$. Convert diameter to radius before evaluating the rate.",
+        "hypotheses": [
+          "Radius is positive and differentiable in time; volume follows the sphere formula at each instant."
+        ],
+        "prerequisites": ["differentiation and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-sphere-rate",
+        "title": "Rework the source balloon",
+        "strategy": "Express diameter as radius, differentiate volume in time, then insert the instantaneous data.",
+        "setup": "Pages 36–38 give $\\frac{dV}{dt}=100\\,\\mathrm{cm^3/s}$ at diameter $50$ cm.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$r=25$ cm; differentiate before inserting this instantaneous value."
+          },
+          {
+            "label": "Step 2",
+            "text": "$\\frac{dr}{dt}=100/[4\\pi(25)^2]=1/(25\\pi)\\,\\mathrm{cm/s}$."
+          }
+        ],
+        "result": "The balloon radius grows at about $0.0127\\,\\mathrm{cm/s}$.",
+        "verification": "Substituting $r=25$ before time differentiation would erase the changing radius."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-cone-rate",
+        "title": "Reduce the cone to one variable",
+        "statement": "For the fixed cone of radius $2$ m and height $4$ m, similar triangles give $r/h=1/2$. Thus $V=\\frac13\\pi r^2h=\\frac\\pi{12}h^3$ and $\\frac{dV}{dt}=(\\pi/4)h^2\\frac{dh}{dt}$.",
+        "hypotheses": [
+          "The tank is a fixed cone, water forms a similar cone, and water height $h>0$ varies differentiably."
+        ],
+        "prerequisites": ["similar triangles and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-cone-rate",
+        "title": "Rework the source tank",
+        "strategy": "Label both cone cross-sections; eliminate the variable surface radius by similarity before time differentiation.",
+        "setup": "Pages 39–41 pump water at $2\\,\\mathrm{m^3/min}$ when $h=3$ m.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "The full cone has radius $2$ m and height $4$ m; the water surface has radius $r(t)$ at height $h(t)$, so the two axial triangles are similar."
+          },
+          {
+            "label": "Step 2",
+            "text": "The water radius changes with height: $r=h/2$; substitute this relation into volume."
+          },
+          {
+            "label": "Step 3",
+            "text": "$\\frac{dh}{dt}=4(2)/(\\pi 3^2)=8/(9\\pi)\\,\\mathrm{m/min}$."
+          }
+        ],
+        "result": "The water level rises at about $0.283\\,\\mathrm{m/min}$.",
+        "verification": "The tank radius $2$ m is not the water-surface radius except when full."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-ladder-rate",
+        "title": "Differentiate the ladder constraint",
+        "statement": "For horizontal foot distance $x(t)$ and positive wall height $y(t)$, $x^2+y^2=L^2$ implies $\\frac{dy}{dt}=-(x/y)\\frac{dx}{dt}$ when $y>0$. The sign describes ascent or descent.",
+        "hypotheses": [
+          "The ladder length $L$ is fixed, $x(t),y(t)$ are differentiable, and the physical height $y>0$."
+        ],
+        "prerequisites": ["differentiation and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-ladder-rate",
+        "title": "Rework the source ladder",
+        "strategy": "Label the right triangle, differentiate its constant-length constraint, and retain the sign of the vertical rate.",
+        "setup": "Pages 42–43 use $L=5$ m, $\\frac{dx}{dt}=1\\,\\mathrm{m/s}$, and $x=3$ m.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "The wall and floor meet at a right angle: $x$ is the horizontal foot distance, $y$ the vertical top height, and the fixed $5$ m ladder is the hypotenuse."
+          },
+          {
+            "label": "Step 2",
+            "text": "The physical height is $y=\\sqrt{25-9}=4$ m."
+          },
+          {
+            "label": "Step 3",
+            "text": "$\\frac{dy}{dt}=-(3/4)(1)=-0.75\\,\\mathrm{m/s}$."
+          }
+        ],
+        "result": "The top descends at $0.75\\,\\mathrm{m/s}$.",
+        "verification": "Taking $y=-4$ is unphysical; reporting positive $\\frac{dy}{dt}$ loses the direction."
       }
     ],
     "exercises": [
@@ -5299,6 +5487,90 @@
           "Identify the horizontal and vertical lines.",
           "Do not divide by zero at the vertical endpoint."
         ]
+      },
+      {
+        "id": "lecture08-motion-direction-transfer",
+        "outcome": "Determine rest and direction from signed velocity.",
+        "kind": "proof",
+        "prompt": "For $s(t)=t^3-3t^2$ on $t\\ge0$, find rest times and direction intervals.",
+        "hint": "Factor $s\\prime(t)$, then make a sign chart.",
+        "solution": "$v=3t(t-2)$: rest at $0,2$ s; backward for $0<t<2$ and forward for $t>2$.",
+        "solutionTex": "v=3t(t-2),\\quad v<0\\ (0<t<2),\\quad v>0\\ (t>2)",
+        "rubric": [
+          "Find every nonnegative zero of velocity.",
+          "Test the sign of velocity on each interval.",
+          "Distinguish rest from forward or backward motion."
+        ]
+      },
+      {
+        "id": "lecture08-motion-distance-transfer",
+        "outcome": "Sum absolute displacements between turning times to obtain total distance.",
+        "kind": "proof",
+        "prompt": "If $s(t)=t^2-4t$ metres on $[0,5]$, find distance and displacement.",
+        "hint": "The turning time is where $s\\prime(t)=0$.",
+        "solution": "$s(0)=0$, $s(2)=-4$, $s(5)=5$; distance $|{-4}|+|5-(-4)|=13$ m and displacement $5$ m.",
+        "solutionTex": "D=|s(2)-s(0)|+|s(5)-s(2)|=13\\,\\mathrm m",
+        "rubric": [
+          "Find turning times inside the stated interval.",
+          "Sum absolute displacements on every monotone trip.",
+          "Report distance separately from net displacement."
+        ]
+      },
+      {
+        "id": "lecture08-speeding-signs-transfer",
+        "outcome": "Use velocity and acceleration signs to classify speeding up or slowing down.",
+        "kind": "proof",
+        "prompt": "For $s(t)=t^3-3t^2$ on $t>0$, locate speeding-up intervals.",
+        "hint": "Use $v=3t(t-2)$ and $a=6(t-1)$.",
+        "solution": "On $(0,1)$ both $v,a$ are negative; on $(2,\\infty)$ both are positive. It speeds up on those intervals.",
+        "solutionTex": "va>0\\quad\\text{on }(0,1)\\cup(2,\\infty)",
+        "rubric": [
+          "Compute both velocity and acceleration.",
+          "Partition at their zeros and compare signs.",
+          "Exclude isolated rest times from speeding intervals."
+        ]
+      },
+      {
+        "id": "lecture08-sphere-rate-transfer",
+        "outcome": "Differentiate sphere volume in time and substitute the instantaneous radius afterward.",
+        "kind": "proof",
+        "prompt": "A sphere gains volume at $36\\pi\\,\\mathrm{cm^3/s}$ when its radius is $3$ cm. Find $\\frac{dr}{dt}$.",
+        "hint": "Solve $\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}$.",
+        "solution": "$\\frac{dr}{dt}=36\\pi/[4\\pi(3)^2]=1\\,\\mathrm{cm/s}$, positive because volume rises.",
+        "solutionTex": "\\frac{dr}{dt}=\\frac{36\\pi}{4\\pi(3)^2}=1\\,\\mathrm{cm/s}",
+        "rubric": [
+          "Convert diameter to radius when needed.",
+          "Apply the chain rule before substitution.",
+          "Solve for a signed rate with length per time units."
+        ]
+      },
+      {
+        "id": "lecture08-cone-rate-transfer",
+        "outcome": "Eliminate a changing cone radius by similar triangles before differentiating.",
+        "kind": "proof",
+        "prompt": "A cone tank has top radius $3$ m and height $6$ m. At water depth $2$ m, $\\frac{dV}{dt}=\\pi\\,\\mathrm{m^3/min}$. Find $\\frac{dh}{dt}$.",
+        "hint": "Use $r/h=3/6$ before differentiating.",
+        "solution": "$V=\\pi h^3/12$, so $\\frac{dV}{dt}=(\\pi/4)h^2\\frac{dh}{dt}$ and $\\frac{dh}{dt}=1\\,\\mathrm{m/min}$ at $h=2$ m.",
+        "solutionTex": "\\frac{dh}{dt}=\\frac{4\\pi}{\\pi(2)^2}=1\\,\\mathrm{m/min}",
+        "rubric": [
+          "Use the ratio of water radius to water height.",
+          "Eliminate radius before differentiating volume.",
+          "Substitute the specified depth and state length per time units."
+        ]
+      },
+      {
+        "id": "lecture08-ladder-rate-transfer",
+        "outcome": "Use a fixed ladder length to infer a signed vertical rate.",
+        "kind": "proof",
+        "prompt": "A $10$ m ladder has its foot $6$ m from the wall, moving outward at $2\\,\\mathrm{m/s}$. Find the top rate.",
+        "hint": "Find the positive height before substituting.",
+        "solution": "$y=8$ m and $\\frac{dy}{dt}=-(6/8)(2)=-1.5\\,\\mathrm{m/s}$; the top descends.",
+        "solutionTex": "\\frac{dy}{dt}=-\\frac68(2)=-\\frac32\\,\\mathrm{m/s}",
+        "rubric": [
+          "Use the positive height from the right triangle.",
+          "Differentiate both changing legs in time.",
+          "Interpret the negative top rate and its units."
+        ]
       }
     ]
   },
@@ -5355,6 +5627,62 @@
           "Use a deleted neighborhood.",
           "Do not infer a quadratic bound from little-o of first order."
         ]
+      },
+      {
+        "id": "lecture08-source-skill-1-transfer",
+        "outcome": "Use the tangent line at a base point to approximate a nearby function value.",
+        "kind": "proof",
+        "prompt": "Use the tangent at $x=9$ to estimate $\\sqrt{9.2}$.",
+        "hint": "For $f(x)=\\sqrt x$, find $f(9)$ and $f\\prime(9)$.",
+        "solution": "$L(x)=3+(x-9)/6$, hence $\\sqrt{9.2}\\approx3+0.2/6=3.033\\overline3$.",
+        "solutionTex": "\\sqrt{9.2}\\approx3+\\frac{0.2}{6}=3.033\\overline3",
+        "rubric": [
+          "Choose the anchor and compute its derivative.",
+          "Evaluate the tangent at the requested input.",
+          "Use an approximation symbol for the estimated value."
+        ]
+      },
+      {
+        "id": "lecture08-anchor-and-bias-transfer",
+        "outcome": "Choose a convenient anchor and determine tangent estimate direction from curvature.",
+        "kind": "proof",
+        "prompt": "Estimate $\\sqrt{15.9}$ at anchor $16$ and state whether the tangent estimate is above or below the true value.",
+        "hint": "Square root is concave down on positive inputs.",
+        "solution": "$L(15.9)=4-0.1/8=3.9875$, an overestimate because $f\\prime\\prime<0$.",
+        "solutionTex": "\\sqrt{15.9}\\approx4-\\frac{0.1}{8}=3.9875",
+        "rubric": [
+          "Choose an anchor with known value and slope.",
+          "Compute the tangent estimate in consistent units.",
+          "Use concavity to justify overestimate or underestimate."
+        ]
+      },
+      {
+        "id": "lecture08-differential-change-transfer",
+        "outcome": "Distinguish tangent differential from the actual change and compare their errors.",
+        "kind": "proof",
+        "prompt": "For $f(x)=x^2$ at $x=3$ with $dx=0.02$, compute $dy$, $\\Delta y$, and their difference.",
+        "hint": "Expand $(3+0.02)^2-9$ after finding $f\\prime(3)$.",
+        "solution": "$dy=6(0.02)=0.12$, $\\Delta y=0.1204$, and $\\Delta y-dy=0.0004$.",
+        "solutionTex": "dy=0.12,\\quad\\Delta y=0.1204,\\quad\\Delta y-dy=0.0004",
+        "rubric": [
+          "Use the derivative for $dy$.",
+          "Evaluate the finite difference for $\\Delta y$.",
+          "Calculate and interpret their discrepancy."
+        ]
+      },
+      {
+        "id": "lecture08-measurement-error-transfer",
+        "outcome": "Estimate absolute and relative propagated error while distinguishing an estimate from a strict bound.",
+        "kind": "proof",
+        "prompt": "A sphere radius is measured as $10$ cm with possible error $0.1$ cm. Estimate absolute and relative volume error.",
+        "hint": "Use $|dV|=4\\pi r^2|dr|$ and divide by $V$.",
+        "solution": "The differential estimates $40\\pi\\,\\mathrm{cm^3}$ and $3\\%$; these are first-order estimates, not strict maxima.",
+        "solutionTex": "|dV|\\approx40\\pi\\,\\mathrm{cm^3},\\quad\\frac{|dV|}{V}\\approx0.03",
+        "rubric": [
+          "Compute absolute differential error with volume units.",
+          "Divide by volume for relative or percentage error.",
+          "Do not call a differential estimate a strict maximum."
+        ]
       }
     ],
     "sections": [
@@ -5377,7 +5705,129 @@
         "State the theorem and derivative bound for the error."
       ],
       "solutionTex": "\\sin(0.02)\\approx0.02,\\quad |R|\\le\\frac{(0.02)^2}{2}=0.0002"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "lecture08-source-skill-1",
+        "title": "Build the tangent approximation",
+        "statement": "For differentiable $f$ at $a$, $L(x)=f(a)+f\\prime(a)(x-a)$ approximates $f(x)$ near $a$. The value $L(x)$ is an estimate, not an equality claim.",
+        "hypotheses": [
+          "The function is differentiable at the chosen anchor $a$ and the target input is near $a$."
+        ],
+        "prerequisites": ["differentiation and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-source-skill-1",
+        "title": "Rework the source square root",
+        "strategy": "Compute the anchor value and slope, then evaluate the tangent at the nearby input.",
+        "setup": "Pages 46–47 use $f(x)=\\sqrt{x+3}$ at $a=1$.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$f(1)=2$, $f\\prime(1)=1/4$, so $L(x)=2+(x-1)/4$."
+          },
+          {
+            "label": "Step 2",
+            "text": "$\\sqrt{3.98}\\approx L(0.98)=1.995$ and $\\sqrt{4.05}\\approx L(1.05)=2.0125$."
+          }
+        ],
+        "result": "The tangent supplies nearby values from one base point and slope.",
+        "verification": "The same formula applies near other convenient anchors, but error grows with distance from the anchor."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-anchor-and-bias",
+        "title": "Choose anchor and read curvature",
+        "statement": "Choose $a$ where $f(a)$ and $f\\prime(a)$ are easy, and measure the input change in the same units as differentiation. For a concave-down function the tangent lies above the curve locally; for concave-up it lies below.",
+        "hypotheses": [
+          "Use radians for the trigonometric derivative; a known sign of $f\\prime\\prime$ on the intervening interval determines tangent bias."
+        ],
+        "prerequisites": ["differentiation and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-anchor-and-bias",
+        "title": "Contrast the source estimates",
+        "strategy": "Select a convenient anchor, convert angle units if needed, then use curvature to classify the estimate.",
+        "setup": "Pages 46–50 use concave-down square roots and a cosine estimate at $29^\\circ$.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$f(x)=\\sqrt{x+3}$ has $f\\prime\\prime(x)<0$; its estimates on page 47 are overestimates."
+          },
+          {
+            "label": "Step 2",
+            "text": "For cosine, convert $29^\\circ=29\\pi/180$ radians and anchor at $\\pi/6$. Then $\\cos29^\\circ\\approx\\sqrt3/2+\\pi/360$."
+          }
+        ],
+        "result": "Unit conversion precedes the cosine derivative; concavity explains the square-root bias.",
+        "verification": "Page 50 says “evaluate $f(99.8)$” in the cosine working; its displayed calculation evaluates $f(29^\\circ)$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-differential-change",
+        "title": "Separate $dy$ from $\\Delta y$",
+        "statement": "For $dx=\\Delta x$, the differential is $dy=f\\prime(x)dx$, the tangent change. The actual curve change is $\\Delta y=f(x+\\Delta x)-f(x)$. They approach each other to first order as $dx\\to0$.",
+        "hypotheses": [
+          "The function is differentiable at the base input and $dx=\\Delta x$ for this comparison."
+        ],
+        "prerequisites": ["differentiation and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-differential-change",
+        "title": "Compare the two source steps",
+        "strategy": "Compute the tangent change $dy$ and the exact function change $\\Delta y$ separately.",
+        "setup": "Pages 53–54 use $f(x)=x^3+x^2-2x+1$ at $x=2$.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$f\\prime(2)=14$. For $dx=0.05$, $dy=0.7$ and $\\Delta y=0.717625$."
+          },
+          {
+            "label": "Step 2",
+            "text": "For $dx=0.01$, $dy=0.14$ and $\\Delta y=0.140701$; the gap shrinks."
+          }
+        ],
+        "result": "The differential predicts the change but does not equal it for these finite steps.",
+        "verification": "The exact gaps are $0.017625$ and $0.000701$, respectively."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-measurement-error",
+        "title": "Propagate measurement uncertainty",
+        "statement": "For sphere volume $V=\\frac43\\pi r^3$, the differential estimate is $|dV|=4\\pi r^2|dr|$, with relative estimate $|dV|/V=3|dr|/r$. A finite maximum requires evaluating the actual endpoint changes.",
+        "hypotheses": [
+          "Measured radius is positive and $|dr|$ is small; differential propagation is a first-order estimate."
+        ],
+        "prerequisites": ["differentiation and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-measurement-error",
+        "title": "Check the source measurement",
+        "strategy": "Differentiate volume for an error estimate; use endpoint volumes when a strict finite bound is required.",
+        "setup": "Pages 55–56 take measured $r=21$ cm and possible $|dr|\\le0.05$ cm.",
+        "steps": [
+          {
+            "label": "Step 1",
+            "text": "$|dV|\\le4\\pi(21)^2(0.05)=88.2\\pi\\approx277.1\\,\\mathrm{cm^3}$ as a first-order estimate."
+          },
+          {
+            "label": "Step 2",
+            "text": "The relative first-order estimate is $3(0.05)/21\\approx0.00714$, or $0.714\\%$."
+          }
+        ],
+        "result": "First-order absolute and relative error estimates are about $277\\,\\mathrm{cm^3}$ and $0.7\\%$.",
+        "verification": "The source calls $277\\,\\mathrm{cm^3}$ a “maximum error”; it is an approximation. The true larger endpoint error is $\\frac43\\pi[(21.05)^3-21^3]\\approx277.75\\,\\mathrm{cm^3}$."
+      }
+    ]
   },
   "extrema-fermat": {
     "prerequisites": ["differentiability-corners"],
