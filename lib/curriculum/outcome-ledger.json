@@ -2023,7 +2023,7 @@
         "transform-compose"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Sets' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Eight source-page set skills are now mapped to lesson blocks and tasks. The full lesson route, visual fit, and independent learner performance are not certified; other Lecture 01 sections remain separate gaps.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2034,8 +2034,17 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "sets-functions-domains:set-notation",
+        "sets-functions-domains:set-membership",
+        "sets-functions-domains:subset-disjointness",
+        "sets-functions-domains:union-intersection",
+        "sets-functions-domains:relative-complement",
+        "sets-functions-domains:distributive-law",
+        "sets-functions-domains:commutative-laws",
+        "sets-functions-domains:associative-laws"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_01:02",
@@ -6148,6 +6157,599 @@
     }
   ],
   "atomic_outcomes": [
+    {
+      "id": "sets-functions-domains:set-notation",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Convert a finite set from description to roster notation.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 15,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "pdftotext -layout with PDF page boundaries; relevant pages visually rendered and inspected where notation matters.",
+          "claim_observed": "Pages 15–16 introduce enumeration and description notation for sets."
+        },
+        "page_heading": "Set and Element"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[sets-notation-and-universe]",
+            "claim": "The lesson states roster and description notation for sets.",
+            "method": "Compared the cited block with Lecture 01 physical pages 15–16."
+          }
+        ],
+        "worked": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[set-notation-transfer]",
+            "claim": "An independent prompt requires a description-to-roster conversion and provides a justified solution.",
+            "method": "Compared the task and solution with the exact outcome; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "No worked roster conversion, learner performance check, or verified visual is claimed.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[sets-notation-and-universe]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[set-notation-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of the cited PDF pages, structured lesson block, and independent task solution.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "No worked description-to-roster conversion claimed.",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:set-membership",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Decide whether a given object belongs to a stated set.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 16,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "pdftotext -layout with PDF page boundaries; relevant pages visually rendered and inspected where notation matters.",
+          "claim_observed": "Page 16 introduces element membership notation for sets."
+        },
+        "page_heading": "Set and Element"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[sets-notation-and-universe]",
+            "claim": "The lesson states that membership is a claim about one object and one set.",
+            "method": "Compared the cited block with Lecture 01 physical page 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "claim": "The finite-universe example checks whether specific elements belong to stated sets.",
+            "method": "Checked element membership, subset direction, and complement against the stated finite sets."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[set-notation-transfer]",
+            "claim": "An independent prompt requires this skill and provides a justified solution.",
+            "method": "Compared the task and solution with the exact outcome; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement and cited lesson/practice were inspected. This atomic skill has no learner performance check or verified visual; completeness of the section and other course sources is not claimed.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[sets-notation-and-universe]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[set-notation-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of the cited PDF page, structured lesson block, finite-set calculation or proof, and independent task solution.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "finite example matches",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:subset-disjointness",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Decide subset and disjointness by checking members or giving a counterexample.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 17,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [17, 18],
+          "method": "pdftotext -layout with PDF page boundaries; relevant pages visually rendered and inspected where notation matters.",
+          "claim_observed": "Pages 17–18 define equality, subset, empty set, and disjointness."
+        },
+        "page_heading": "Relationships between Sets"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[sets-notation-and-universe]",
+            "claim": "The lesson states the page-checked set skill: Decide subset and disjointness by checking members or giving a counterexample.",
+            "method": "Compared the cited block with Lecture 01 physical pages 17–18."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "claim": "The finite-universe example computes and explains this set decision.",
+            "method": "Checked element membership, subset direction, and complement against the stated finite sets."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[finite-set-transfer]",
+            "claim": "An independent prompt requires this skill and provides a justified solution.",
+            "method": "Compared the task and solution with the exact outcome; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement and cited lesson/practice were inspected. This atomic skill has no learner performance check or verified visual; completeness of the section and other course sources is not claimed.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[sets-notation-and-universe]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[finite-set-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of the cited PDF page, structured lesson block, finite-set calculation or proof, and independent task solution.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "finite example matches",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:union-intersection",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Compute union and intersection using inclusive or and and.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 19,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19],
+          "method": "pdftotext -layout with PDF page boundaries; relevant pages visually rendered and inspected where notation matters.",
+          "claim_observed": "Page 19 states the membership conditions for union and intersection."
+        },
+        "page_heading": "Operations on Sets"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[set-operations]",
+            "claim": "The lesson states the page-checked set skill: Compute union and intersection using inclusive or and and.",
+            "method": "Compared the cited block with Lecture 01 physical page 19."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "claim": "The finite-universe example computes and explains this set decision.",
+            "method": "Checked element membership, subset direction, and complement against the stated finite sets."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[finite-set-transfer]",
+            "claim": "An independent prompt requires this skill and provides a justified solution.",
+            "method": "Compared the task and solution with the exact outcome; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement and cited lesson/practice were inspected. This atomic skill has no learner performance check or verified visual; completeness of the section and other course sources is not claimed.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[set-operations]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[finite-set-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of the cited PDF page, structured lesson block, finite-set calculation or proof, and independent task solution.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "finite example matches",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:relative-complement",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Take a complement relative to a specified universal set.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 20,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20],
+          "method": "pdftotext -layout with PDF page boundaries; relevant pages visually rendered and inspected where notation matters.",
+          "claim_observed": "Page 20 defines the universal set and complement relative to it."
+        },
+        "page_heading": "Operations on Sets (Continued)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[set-operations]",
+            "claim": "The lesson states the page-checked set skill: Take a complement relative to a specified universal set.",
+            "method": "Compared the cited block with Lecture 01 physical page 20."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "claim": "The finite-universe example computes and explains this set decision.",
+            "method": "Checked element membership, subset direction, and complement against the stated finite sets."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[finite-set-transfer]",
+            "claim": "An independent prompt requires this skill and provides a justified solution.",
+            "method": "Compared the task and solution with the exact outcome; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement and cited lesson/practice were inspected. This atomic skill has no learner performance check or verified visual; completeness of the section and other course sources is not claimed.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[set-operations]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[finite-set-operations]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[finite-set-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of the cited PDF page, structured lesson block, finite-set calculation or proof, and independent task solution.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "finite example matches",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:distributive-law",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Apply a distributive set law and justify it by element membership in the lesson.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 21,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21],
+          "method": "pdftotext -layout with PDF page boundaries; relevant pages visually rendered and inspected where notation matters.",
+          "claim_observed": "Page 21 states the commutative, associative, and distributive laws."
+        },
+        "page_heading": "Laws of Set Operations"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[set-distributive-law]",
+            "claim": "The source states the distributive identities on page 21; the lesson adds a valid element-membership justification.",
+            "method": "Compared the identity with Lecture 01 physical page 21 and checked the guide's separate proof."
+          }
+        ],
+        "worked": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[distributive-transfer]",
+            "claim": "An independent prompt requires this skill and provides a justified solution.",
+            "method": "Compared the task and solution with the exact outcome; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement and cited lesson/practice were inspected. This atomic skill has no learner performance check or verified visual; completeness of the section and other course sources is not claimed.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[set-distributive-law]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[distributive-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of the cited PDF page, structured lesson block, finite-set calculation or proof, and independent task solution.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "source identity matches; membership proof is a lesson extension",
+        "worked": "derivation stated; separate worked example not claimed",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:commutative-laws",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Use the commutative laws to swap operands of union or intersection without changing members.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 21,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21],
+          "method": "pdftotext -layout and rendered page inspection.",
+          "claim_observed": "Page 21 states both commutative and associative laws for union and intersection."
+        },
+        "page_heading": "Laws of Set Operations"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.sections[Set laws preserve membership]",
+            "claim": "The section states the page-checked commutative or associative law.",
+            "method": "Compared the cited law with Lecture 01 physical page 21."
+          }
+        ],
+        "worked": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[commutative-associative-transfer]",
+            "claim": "An independent rearrangement task requires this law and gives a justified solution.",
+            "method": "Checked the set identity and the named law; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The law is stated and independently practiced in the cited lesson. No set-specific visual or learner performance check has been established.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.sections[Set laws preserve membership]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[commutative-associative-transfer]",
+            "basis": "current exercise inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared Lecture 01 physical page 21 with the cited lesson law and transfer task.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "No worked set rearrangement claimed.",
+        "practiced": "exercise directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:associative-laws",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Use the associative laws to regroup a union or intersection without changing members.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 21,
+        "inspection": "Local canonical PDF text and rendered page inspected for this claim.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21],
+          "method": "pdftotext -layout and rendered page inspection.",
+          "claim_observed": "Page 21 states both commutative and associative laws for union and intersection."
+        },
+        "page_heading": "Laws of Set Operations"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.sections[Set laws preserve membership]",
+            "claim": "The section states the page-checked commutative or associative law.",
+            "method": "Compared the cited law with Lecture 01 physical page 21."
+          }
+        ],
+        "worked": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[commutative-associative-transfer]",
+            "claim": "An independent rearrangement task requires this law and gives a justified solution.",
+            "method": "Checked the set identity and the named law; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-domain",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The law is stated and independently practiced in the cited lesson. No set-specific visual or learner performance check has been established.",
+      "source_section_id": "MH1100_Lecture_01:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.sections[Set laws preserve membership]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[commutative-associative-transfer]",
+            "basis": "current exercise inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared Lecture 01 physical page 21 with the cited lesson law and transfer task.",
+        "named": "No matching set-skill title in current catalog; named evidence not claimed.",
+        "stated": "match",
+        "worked": "No worked set rearrangement claimed.",
+        "practiced": "exercise directly applies outcome; learner performance unverified",
+        "visualized": "No set-specific visual verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
     {
       "id": "sets-functions-domains:source-skill-1",
       "concept_id": "sets-functions-domains",

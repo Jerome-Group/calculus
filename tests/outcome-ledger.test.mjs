@@ -71,11 +71,26 @@ test("optional textbook inventory cannot count as core outcomes", () => {
 });
 
 test("inspected atomic outcomes retain core locators and separate evidence states", () => {
-  assert.equal(ledger.atomic_outcomes.length, 28);
+  assert.ok(ledger.atomic_outcomes.length >= 36);
   assert.equal(
     new Set(ledger.atomic_outcomes.map((entry) => entry.id)).size,
-    28,
+    ledger.atomic_outcomes.length,
   );
+  for (const skill of [
+    "set-notation",
+    "set-membership",
+    "subset-disjointness",
+    "union-intersection",
+    "relative-complement",
+    "distributive-law",
+    "commutative-laws",
+    "associative-laws",
+  ])
+    assert.ok(
+      ledger.atomic_outcomes.some(
+        (entry) => entry.id === `sets-functions-domains:${skill}`,
+      ),
+    );
   for (const entry of ledger.atomic_outcomes) {
     const source = sources[entry.core_source.id];
     assert.ok(source, entry.id);
