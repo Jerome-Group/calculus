@@ -3575,6 +3575,34 @@
   "spherical-integration": {
     "prerequisites": ["spherical-coordinates", "triple-riemann-sums"],
     "reasoning": "Proof sketch",
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "cone-shifted-sphere-volume",
+        "title": "A sphere centered away from the origin",
+        "strategy": "Convert each surface separately, then intersect the allowed angle and radial intervals before integrating.",
+        "setup": "Let $E$ lie above $z=\\sqrt{x^2+y^2}$ and inside $x^2+y^2+z^2=z$, as posed in MH2100 Lecture 07, physical page 50. Derive its bounds before evaluating the volume.",
+        "steps": [
+          {
+            "label": "Cone selects directions",
+            "text": "For $\\rho\\ge0$, the cone inequality becomes $\\rho\\cos\\varphi\\ge\\rho\\sin\\varphi$. Except at the origin this gives $0\\le\\varphi\\le\\pi/4$; rotational symmetry gives $0\\le\\theta\\le2\\pi$.",
+            "equation": "0\\le\\varphi\\le\\frac\\pi4,\\qquad0\\le\\theta\\le2\\pi"
+          },
+          {
+            "label": "Sphere sets a variable radial ceiling",
+            "text": "The sphere inequality is $\\rho^2\\le\\rho\\cos\\varphi$. The origin is included, and for positive radius the upper bound is $\\cos\\varphi$, not a constant.",
+            "equation": "0\\le\\rho\\le\\cos\\varphi"
+          },
+          {
+            "label": "Integrate the actual solid",
+            "text": "Use density $1$ and exactly one spherical volume factor $\\rho^2\\sin\\varphi$. Integrating first in radius gives $\\cos^3\\varphi/3$.",
+            "equation": "\\operatorname{Vol}(E)=\\int_0^{2\\pi}\\int_0^{\\pi/4}\\int_0^{\\cos\\varphi}\\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta=\\frac\\pi8"
+          }
+        ],
+        "result": "The exact volume is $\\pi/8$; replacing $\\cos\\varphi$ by a fixed sphere radius changes the region.",
+        "verification": "At $\\varphi=0$ the radial ceiling is $1$; at $\\varphi=\\pi/4$ it is $1/\\sqrt2$. The sphere is centered at $(0,0,1/2)$ with radius $1/2$, so a constant radial ceiling about the origin cannot describe it."
+      }
+    ],
     "sections": [
       {
         "title": "Three scale factors",
@@ -3583,6 +3611,10 @@
       {
         "title": "Cone and sphere bounds",
         "text": "Inside a sphere of radius $R$ and above the cone $\\varphi =\\pi /4$, use $0\\leq \\rho \\leq R$, $0\\leq \\varphi \\leq \\pi /4$, $0\\leq \\theta \\leq 2\\pi$. Volume is $(2\\pi R^{3}/3)(1-1/\\sqrt{2})$, not a cylinder sector."
+      },
+      {
+        "title": "Shifted spheres need variable radial bounds",
+        "text": "For a sphere $x^2+y^2+z^2=cz$ with $c>0$, the interior is $0\\leq\\rho\\leq c\\cos\\varphi$ where $\\cos\\varphi\\ge0$. An intersecting cone $z\\geq\\sqrt{x^2+y^2}$ restricts directions to $0\\leq\\varphi\\leq\\pi/4$. These inequalities specify the same physical solid before any Jacobian is applied."
       }
     ],
     "exercise": {
@@ -3594,7 +3626,23 @@
         "Separate the integrand from the Jacobian."
       ],
       "solutionTex": "\\int_0^{2\\pi}\\int_0^\\pi\\int_0^R\\rho^4\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta=\\frac{4\\pi R^5}{5}"
-    }
+    },
+    "exercises": [
+      {
+        "id": "shifted-sphere-density-transfer",
+        "outcome": "Derive a variable spherical radial bound and transform a nonconstant density independently of the Jacobian.",
+        "kind": "computational",
+        "prompt": "Let $D$ lie above $z=\\sqrt{x^2+y^2}$ and inside $x^2+y^2+z^2=2z$. Set spherical bounds and compute $\\iiint_D z\\,dV$.",
+        "hint": "The cone still limits $\\varphi$ to $[0,\\pi/4]$. Divide the sphere inequality by positive $\\rho$, then keep the density $z=\\rho\\cos\\varphi$ separate from $dV$.",
+        "solution": "The sphere gives $0\\le\\rho\\le2\\cos\\varphi$, while $0\\le\\varphi\\le\\pi/4$ and $0\\le\\theta\\le2\\pi$. The density times the volume factor is $\\rho^3\\cos\\varphi\\sin\\varphi$. Radial integration gives $4\\cos^5\\varphi\\sin\\varphi$, so the integral is $8\\pi(1-(1/\\sqrt2)^6)/6=7\\pi/6$.",
+        "rubric": [
+          "Derive the radial bound from the shifted sphere, not a constant-radius ball.",
+          "Use the cone for the polar angle and all azimuths.",
+          "Transform the density and include the volume factor once."
+        ],
+        "solutionTex": "\\int_0^{2\\pi}\\int_0^{\\pi/4}\\int_0^{2\\cos\\varphi}\\rho^3\\cos\\varphi\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta=\\frac{7\\pi}{6}"
+      }
+    ]
   },
   "linear-area-change": {
     "prerequisites": ["cross-products-and-planes"],

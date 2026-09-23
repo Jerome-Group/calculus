@@ -4462,7 +4462,7 @@
         "spherical-integration"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'cylindrical and spherical coordinates, conversions and variable wedges'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "gap": "Two source-specific atomic outcomes are mapped for coordinates and variable wedges. Other cylindrical and spherical subskills remain unreviewed; the canonical PDF's Lecture 07 example solution pages 51–52 render blank.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4473,7 +4473,10 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": ["spherical-coordinates:source-skill-1"],
+      "atomic_outcome_ids": [
+        "spherical-coordinates:source-skill-1",
+        "spherical-integration:variable-radial-bounds"
+      ],
       "coverage_decision": "partial_atomic_mapping"
     },
     {
@@ -8746,6 +8749,98 @@
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
         "checked": "No independent outcome-level validation or learner performance check."
+      }
+    },
+    {
+      "id": "spherical-integration:variable-radial-bounds",
+      "concept_id": "spherical-integration",
+      "outcome": "Derive the angle and variable radial intervals for a cone intersected with a sphere centered away from the origin.",
+      "core_source": {
+        "id": "MH2100_Lecture_07",
+        "physical_page": 47,
+        "inspection": "Canonical local PDF text and rendered pages inspected. The stated example is on page 50; its solution pages 51–52 render blank.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [47, 50, 51, 52],
+          "method": "pdftotext -layout by physical page and rendered page inspection for notation and the missing solution.",
+          "claim_observed": "Page 47 states the Type II spherical wedge with radial bounds depending on angles; page 50 poses the cone and shifted-sphere volume problem. No source solution is claimed."
+        },
+        "page_heading": "Triple Integrals in Spherical Coordinates — Type-II Spherical Wedges; Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#spherical-integration.title",
+            "claim": "The current catalog names spherical radial bounds.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#spherical-integration.sections[Shifted spheres need variable radial bounds]",
+            "claim": "The lesson states the shifted-sphere and cone bounding method.",
+            "method": "Compared the problem and inequalities with physical pages 47 and 50."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#spherical-integration.contentBlocks[cone-shifted-sphere-volume]",
+            "claim": "The guide derives both intervals and computes the resulting volume.",
+            "method": "Checked the cone and sphere inequalities and exact integral independently; source solution is not claimed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#spherical-integration.exercises[shifted-sphere-density-transfer]",
+            "claim": "An independent prompt changes the sphere and density, requiring fresh bounds and a justified integral.",
+            "method": "Compared prompt, hint, solution, and exact value with the outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "spherical",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source's solution pages render blank, so the guide supplies original reasoning. The canonical spherical scene shows a constant-radius sector, not this shifted sphere; visual and learner checks are unverified.",
+      "source_section_id": "MH2100_Lecture_07:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#spherical-integration.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#spherical-integration.sections[Shifted spheres need variable radial bounds]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#spherical-integration.contentBlocks[cone-shifted-sphere-volume]",
+            "basis": "original derivation checked against source problem"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#spherical-integration.exercises[shifted-sphere-density-transfer]",
+            "basis": "independent task and solution inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of rendered source pages, the original worked bounds and integral, and independent transfer solution.",
+        "named": "match",
+        "stated": "match",
+        "worked": "original guide derivation checked; no source solution claimed",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "Scene is a constant-radius sector; shifted sphere not verified visually.",
+        "checked": "No independent learner outcome check."
       }
     },
     {

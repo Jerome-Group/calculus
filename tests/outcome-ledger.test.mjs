@@ -71,7 +71,7 @@ test("optional textbook inventory cannot count as core outcomes", () => {
 });
 
 test("inspected atomic outcomes retain core locators and separate evidence states", () => {
-  assert.ok(ledger.atomic_outcomes.length >= 36);
+  assert.ok(ledger.atomic_outcomes.length >= 37);
   assert.equal(
     new Set(ledger.atomic_outcomes.map((entry) => entry.id)).size,
     ledger.atomic_outcomes.length,
@@ -91,6 +91,11 @@ test("inspected atomic outcomes retain core locators and separate evidence state
         (entry) => entry.id === `sets-functions-domains:${skill}`,
       ),
     );
+  assert.ok(
+    ledger.atomic_outcomes.some(
+      (entry) => entry.id === "spherical-integration:variable-radial-bounds",
+    ),
+  );
   for (const entry of ledger.atomic_outcomes) {
     const source = sources[entry.core_source.id];
     assert.ok(source, entry.id);
