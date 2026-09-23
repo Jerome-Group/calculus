@@ -22004,6 +22004,102 @@
         ],
         "result": "The guide-derived outward flux is zero; the opposing patch contributions cancel.",
         "verification": "The field has zero divergence, consistent with the direct cancellation, but the calculation above uses only the source surface integral formula."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-hemisphere-strategy",
+        "title": "Close the cap with a zero-flux base",
+        "text": "Lecture 11 opens with the radius-6 upper hemisphere and $\\mathbf F=(0,0,z)$. Close it with the disk $z=0$: the field vanishes on the disk, while $\\operatorname{div}\\mathbf F=1$ in the half-ball. The divergence theorem therefore gives the hemisphere flux as the half-ball volume."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-hemisphere-worked",
+        "title": "Lecture 11 Example 4: radius-6 hemisphere",
+        "strategy": "Close the hemisphere by its equatorial disk, whose flux is zero, then use the divergence theorem on the half-ball.",
+        "setup": "The source asks for upward flux of $\\mathbf F=(0,0,z)$ through the top hemisphere of radius $6$.",
+        "steps": [
+          {
+            "label": "Check the closure",
+            "text": "The equatorial disk has $z=0$, so $\\mathbf F=\\mathbf 0$ there. The hemisphere plus this disk is the closed half-ball, oriented outward.",
+            "equation": "\\mathbf F\\cdot(0,0,-1)=0\\quad\\text{on }z=0"
+          },
+          {
+            "label": "Integrate the divergence",
+            "text": "The field is smooth on a neighborhood of the half-ball, and its divergence is $1$.",
+            "equation": "\\operatorname{div}\\mathbf F=\\partial_x0+\\partial_y0+\\partial_z z=1"
+          },
+          {
+            "label": "Evaluate the volume",
+            "text": "The requested hemisphere flux equals the half-ball volume because the base contributes zero.",
+            "equation": "\\iint_S\\mathbf F\\cdot\\mathbf n\\,dS=\\iiint_{B_6^+}1\\,dV=\\frac12\\cdot\\frac43\\pi 6^3=144\\pi"
+          }
+        ],
+        "result": "The upward flux through the hemisphere is $144\\pi$.",
+        "verification": "Directly, $\\mathbf F\\cdot\\mathbf n=6\\cos^2\\theta$ and $dS=36\\sin\\theta\\,d\\theta\\,d\\phi$ on $0\\leq\\theta\\leq\\pi/2$, giving $144\\pi$."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-cone-strategy",
+        "title": "Use zero divergence on a closed cone-and-cap boundary",
+        "text": "The source’s Example 5 already gives a closed boundary: the upper sphere and lower cone meet at their common circle. Since $\\mathbf F=(y,0,2)$ has zero divergence and is smooth throughout the solid, its outward flux is zero."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-cone-worked",
+        "title": "Lecture 11 Example 5: sphere cap above a cone",
+        "strategy": "Check that the two surfaces close the region, then integrate the zero divergence over its volume.",
+        "setup": "The upper surface is $z=\\sqrt{8-x^2-y^2}$, the lower surface is $z=\\sqrt{x^2+y^2}$, and $\\mathbf F=(y,0,2)$.",
+        "steps": [
+          {
+            "label": "Locate the common edge",
+            "text": "Writing $r=\\sqrt{x^2+y^2}$, the surfaces meet when $\\sqrt{8-r^2}=r$, so $r=2$. Together they form the complete boundary of a bounded solid.",
+            "equation": "\\sqrt{8-r^2}=r\\Longrightarrow r=2"
+          },
+          {
+            "label": "Check the field and divergence",
+            "text": "The field is smooth on all of $\\mathbb R^3$ and has zero divergence.",
+            "equation": "\\operatorname{div}(y,0,2)=0"
+          },
+          {
+            "label": "Apply the theorem",
+            "text": "The entire boundary is oriented outward, so the total flux is the integral of zero over the enclosed solid.",
+            "equation": "\\iint_{\\partial E}\\mathbf F\\cdot\\mathbf n\\,dS=\\iiint_E0\\,dV=0"
+          }
+        ],
+        "result": "The outward flux is $0$.",
+        "verification": "The source specifies the full boundary, not an open cap; no missing side patch has to be added."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-semicylinder-strategy",
+        "title": "Read the solid before setting up a flux integral",
+        "text": "The source’s Example 6 is a half-cylinder in the $yz$-plane extruded over $0\\leq x\\leq2$. For $\\mathbf F=(x^2,y^2,z^2)$, integrate $2x+2y+2z$ over that solid; the $2y$ term cancels by symmetry."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-semicylinder-worked",
+        "title": "Lecture 11 Example 6: half-cylinder boundary",
+        "strategy": "Use the divergence theorem with bounds copied from the source solid; preserve the symmetric $y$-interval.",
+        "setup": "The solid is $0\\leq x\\leq2$, $-1\\leq y\\leq1$, $0\\leq z\\leq\\sqrt{1-y^2}$, and $\\mathbf F=(x^2,y^2,z^2)$.",
+        "steps": [
+          {
+            "label": "Differentiate matching components",
+            "text": "The boundary is closed and piecewise smooth, and the polynomial field is smooth on a neighborhood of the solid.",
+            "equation": "\\operatorname{div}\\mathbf F=2x+2y+2z"
+          },
+          {
+            "label": "Integrate each term",
+            "text": "The odd term vanishes; the $x$ and $z$ terms separate over the stated bounds.",
+            "equation": "\\iiint_E(2x+2y+2z)\\,dV=\\frac{\\pi}{2}\\cdot 2^2+0+2\\int_{-1}^1(1-y^2)\\,dy"
+          },
+          {
+            "label": "Simplify",
+            "text": "The semicircle cross-section has area $\\pi/2$ and the last integral is $8/3$.",
+            "equation": "\\iint_{\\partial E}\\mathbf F\\cdot\\mathbf n\\,dS=2\\pi+\\frac83"
+          }
+        ],
+        "result": "The outward flux is $2\\pi+\\frac83$.",
+        "verification": "The setup retains the full boundary, including both end caps at $x=0$ and $x=2$."
       }
     ],
     "exercises": [
@@ -22071,6 +22167,45 @@
           "Find the cap/cone intersection and choose outward orientations.",
           "Evaluate both patch fluxes and add with their signs."
         ]
+      },
+      {
+        "id": "mh2100-l11-hemisphere-transfer",
+        "outcome": "Use a zero-flux closure to evaluate hemisphere flux.",
+        "kind": "computational",
+        "prompt": "For the upper hemisphere of radius $R>0$, oriented upward, find the flux of $\\mathbf F=(0,0,z)$.",
+        "hint": "Close with the equatorial disk and use $\\operatorname{div}\\mathbf F=1$.",
+        "solution": "The base flux is zero, so the flux is the upper half-ball volume, $\\frac23\\pi R^3$.",
+        "rubric": [
+          "Close the hemisphere and state the base flux.",
+          "Use the divergence theorem with the outward orientation."
+        ],
+        "solutionTex": "\\iint_S\\mathbf F\\cdot\\mathbf n\\,dS=\\iiint_{B_R^+}1\\,dV=\\frac23\\pi R^3"
+      },
+      {
+        "id": "mh2100-l11-cone-transfer",
+        "outcome": "Evaluate flux through a closed sphere-and-cone boundary.",
+        "kind": "computational",
+        "prompt": "Keep the source’s cone and sphere, but use $\\mathbf G=(y,0,1+z)$. Find the outward flux.",
+        "hint": "Their edge is at $r=2$. The solid is $r\\leq2$ and $r\\leq z\\leq\\sqrt{8-r^2}$.",
+        "solution": "$\\operatorname{div}\\mathbf G=1$. The enclosed volume is $2\\pi\\int_0^2r(\\sqrt{8-r^2}-r)\\,dr=\\frac{32\\pi}{3}(\\sqrt2-1)$, so the flux has the same value.",
+        "rubric": [
+          "Check that the cone and cap form the complete boundary.",
+          "Use the correct intersection radius and integrate the divergence."
+        ],
+        "solutionTex": "\\iint_{\\partial E}\\mathbf G\\cdot\\mathbf n\\,dS=2\\pi\\int_0^2r(\\sqrt{8-r^2}-r)\\,dr=\\frac{32\\pi}{3}(\\sqrt2-1)"
+      },
+      {
+        "id": "mh2100-l11-semicylinder-transfer",
+        "outcome": "Set up the divergence integral from a semicylindrical solid.",
+        "kind": "computational",
+        "prompt": "Change the source bounds to $0\\leq x\\leq1$, $-2\\leq y\\leq2$, $0\\leq z\\leq\\sqrt{4-y^2}$, keeping $\\mathbf F=(x^2,y^2,z^2)$. Find the outward flux.",
+        "hint": "Integrate $2x+2y+2z$; the $y$ term cancels.",
+        "solution": "The $2x$ term contributes $2\\pi$, the odd term contributes zero, and the $2z$ term contributes $\\frac{32}{3}$. The flux is $2\\pi+\\frac{32}{3}$.",
+        "rubric": [
+          "Use the new interval lengths and semicircle area.",
+          "Show why the odd term vanishes."
+        ],
+        "solutionTex": "\\iiint_E(2x+2y+2z)\\,dV=2\\pi+\\frac{32}{3}"
       }
     ]
   },
@@ -22096,7 +22231,141 @@
         "Distinguish curl from the field itself."
       ],
       "solutionTex": "\\nabla\\times(0,0,xy)=(x,-y,0)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-curl-components-strategy",
+        "title": "Differentiate across components in order",
+        "text": "For $\\mathbf F=(P,Q,R)$ in three dimensions, the ordered components are $(R_y-Q_z,\\,P_z-R_x,\\,Q_x-P_y)$. Curl is a three-dimensional operation; it is not the field’s magnitude or a list of matching-coordinate derivatives."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-curl-components-worked",
+        "title": "Lecture 11 curl Example 1",
+        "strategy": "Name $P,Q,R$ first, then use the component order from the determinant.",
+        "setup": "The source field is $\\mathbf F=(x^2z,\\,e^y+xz,\\,xyz)$.",
+        "steps": [
+          {
+            "label": "First component",
+            "text": "Differentiate the third component in $y$ and subtract the second component’s $z$ derivative.",
+            "equation": "R_y-Q_z=xz-x"
+          },
+          {
+            "label": "Second component",
+            "text": "Differentiate the first component in $z$ and subtract the third component’s $x$ derivative.",
+            "equation": "P_z-R_x=x^2-yz"
+          },
+          {
+            "label": "Third component",
+            "text": "Differentiate the second component in $x$ and subtract the first component’s $y$ derivative.",
+            "equation": "Q_x-P_y=z"
+          }
+        ],
+        "result": "The curl is $\\nabla\\times\\mathbf F=(xz-x,\\,x^2-yz,\\,z)$.",
+        "verification": "The exponential term $e^y$ contributes no partial derivative to curl because none of the required derivatives differentiates it in $y$."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-curl-axis-strategy",
+        "title": "Read curl direction with the loop orientation",
+        "text": "The Lecture 11 paddlewheel picture aligns its axis with curl. The component along a chosen unit normal gives oriented circulation density for small loops whose direction is fixed by the right-hand rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-curl-axis-worked",
+        "title": "A curl direction and a reversed normal",
+        "strategy": "Differentiate the field, then project curl onto the loop’s chosen normal.",
+        "setup": "Use $\\mathbf F=(-2y,3x,0)$ and compare small loops oriented by $\\mathbf n=\\mathbf k$ and $\\mathbf n=-\\mathbf k$.",
+        "steps": [
+          {
+            "label": "Compute the curl",
+            "text": "Only its vertical component is nonzero.",
+            "equation": "\\nabla\\times\\mathbf F=(0,0,3-(-2))=5\\mathbf k"
+          },
+          {
+            "label": "Project onto each normal",
+            "text": "Reversing the loop orientation changes the signed circulation density, not the curl vector.",
+            "equation": "(\\nabla\\times\\mathbf F)\\cdot\\mathbf k=5,\\qquad(\\nabla\\times\\mathbf F)\\cdot(-\\mathbf k)=-5"
+          }
+        ],
+        "result": "The upward orientation is positive for counterclockwise travel viewed from above; the downward orientation reverses the sign.",
+        "verification": "A circle of radius $a$ has circulation $5\\pi a^2$ counterclockwise and $-5\\pi a^2$ clockwise."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-conservative-strategy",
+        "title": "Use the curl test only with its domain hypothesis",
+        "text": "On an open simply connected domain, a smooth three-dimensional field is conservative exactly when its curl vanishes throughout the domain. The open simply connected condition cannot be dropped."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-conservative-worked",
+        "title": "Zero curl on a domain with a hole",
+        "strategy": "Test the hypothesis before using the converse from curl-free to conservative.",
+        "setup": "On $U=\\mathbb R^3\\setminus\\{(0,0,z):z\\in\\mathbb R\\}$, let $\\mathbf F=(-y/(x^2+y^2),\\,x/(x^2+y^2),0)$.",
+        "steps": [
+          {
+            "label": "Check the local test",
+            "text": "The field is smooth on $U$, and direct differentiation gives zero curl there.",
+            "equation": "\\nabla\\times\\mathbf F=\\mathbf 0\\quad\\text{on }U"
+          },
+          {
+            "label": "Check the missing hypothesis",
+            "text": "The $z$-axis is removed, so $U$ is not simply connected.",
+            "equation": "\\gamma(t)=(\\cos t,\\sin t,0),\\quad0\\leq t\\leq2\\pi"
+          },
+          {
+            "label": "Measure circulation",
+            "text": "The unit circle has nonzero circulation, so the field is not conservative on this punctured domain.",
+            "equation": "\\oint_\\gamma\\mathbf F\\cdot d\\mathbf r=2\\pi"
+          }
+        ],
+        "result": "Zero curl alone does not imply a global potential when the domain hypothesis fails.",
+        "verification": "The loop winds once around the excluded axis; it cannot contract to a point within $U$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-l11-curl-transfer",
+        "outcome": "Compute curl with the ordered three-dimensional component formula.",
+        "kind": "computational",
+        "prompt": "Find curl of $\\mathbf G=(xy,\\,x^2z,\\,y^2z)$.",
+        "hint": "Use $(R_y-Q_z,\\,P_z-R_x,\\,Q_x-P_y)$.",
+        "solution": "The components are $2yz-x^2$, $0$, and $2xz-x$.",
+        "rubric": [
+          "Keep the three curl components in order.",
+          "Show each cross-component derivative."
+        ],
+        "solutionTex": "\\nabla\\times\\mathbf G=(2yz-x^2,\\,0,\\,2xz-x)"
+      },
+      {
+        "id": "mh2100-l11-curl-orientation-transfer",
+        "outcome": "Relate the signed curl component to an oriented loop.",
+        "kind": "conceptual",
+        "prompt": "For $\\mathbf F=(-4y,x,0)$, which direction around a small horizontal loop has positive circulation density? What changes when its normal is downward?",
+        "hint": "Compute the $z$ component of curl and dot it with the chosen normal.",
+        "solution": "$\\nabla\\times\\mathbf F=(0,0,5)$. The upward normal gives positive density for counterclockwise travel viewed from above; the downward normal gives density $-5$ and reverses travel.",
+        "rubric": [
+          "Compute curl rather than inspect arrow magnitude.",
+          "Pair the normal with the right-hand-rule direction."
+        ],
+        "solutionTex": "(\\nabla\\times\\mathbf F)\\cdot(0,0,-1)=-5"
+      },
+      {
+        "id": "mh2100-l11-conservative-transfer",
+        "outcome": "Check simple connectedness before using the curl criterion.",
+        "kind": "method-choice",
+        "prompt": "On $U=\\mathbb R^3\\setminus\\{z\\text{-axis}\\}$, let $\\mathbf F=(-y/(x^2+y^2),x/(x^2+y^2),0)$. Is $\\mathbf F$ conservative?",
+        "hint": "Its curl vanishes on $U$, but test its integral around the unit circle.",
+        "solution": "No. The domain is not simply connected and the unit circle has circulation $2\\pi$.",
+        "rubric": [
+          "State whether the domain is open and simply connected.",
+          "Use the nonzero loop integral to reject a global potential."
+        ],
+        "solutionTex": "\\nabla\\times\\mathbf F=\\mathbf0\\text{ on }U,\\qquad\\oint_{x^2+y^2=1}\\mathbf F\\cdot d\\mathbf r=2\\pi"
+      }
+    ]
   },
   "divergence-and-local-flow": {
     "prerequisites": ["flux-through-surfaces", "partial-derivatives-as-slices"],
@@ -22120,7 +22389,96 @@
         "Do not add the components without differentiating."
       ],
       "solutionTex": "\\nabla\\cdot(x^2,yz,z^2)=2x+3z"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-divergence-strategy",
+        "title": "Differentiate each component in its matching coordinate",
+        "text": "In $n$ dimensions, divergence is $\\sum_{j=1}^n\\partial F_j/\\partial x_j$. It is a scalar. In three dimensions this becomes $P_x+Q_y+R_z$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-divergence-worked",
+        "title": "Lecture 11 divergence Example 2",
+        "strategy": "Differentiate each component only with respect to its corresponding input, then substitute the point.",
+        "setup": "The source field is $\\mathbf F=(e^x,yz,-yz^2)$; evaluate divergence at $(0,2,-1)$.",
+        "steps": [
+          {
+            "label": "Compute the derivative sum",
+            "text": "The matching derivatives are $e^x$, $z$, and $-2yz$.",
+            "equation": "\\operatorname{div}\\mathbf F=e^x+z-2yz"
+          },
+          {
+            "label": "Substitute the point",
+            "text": "At $(0,2,-1)$ the contributions are $1$, $-1$, and $4$.",
+            "equation": "\\operatorname{div}\\mathbf F(0,2,-1)=1-1+4=4"
+          }
+        ],
+        "result": "The divergence at the source point is $4$.",
+        "verification": "Only matching-coordinate derivatives enter the divergence."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-divergence-sign-strategy",
+        "title": "Use the derivative sign, not arrow length",
+        "text": "The source compares $\\mathbf F=(x,y)$, $\\mathbf G=(y-2x,x-2y)$, and $\\mathbf H=(x,-y)$. Their divergences are $2$, $-4$, and $0$, respectively, giving local net outflow, inflow, and zero first-order net flow."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-divergence-sign-worked",
+        "title": "Lecture 11 sign and flow figures",
+        "strategy": "Differentiate the vector field components before interpreting the arrow picture.",
+        "setup": "Compare the three planar fields shown on Lecture 11 pages 16–18.",
+        "steps": [
+          {
+            "label": "Positive divergence",
+            "text": "Both coordinate components expand away from the origin.",
+            "equation": "\\operatorname{div}(x,y)=1+1=2>0"
+          },
+          {
+            "label": "Negative divergence",
+            "text": "Both matching derivatives are negative, so a small circle has net inward flow.",
+            "equation": "\\operatorname{div}(y-2x,x-2y)=-2-2=-4<0"
+          },
+          {
+            "label": "Zero divergence",
+            "text": "Stretching in the $x$ direction balances compression in $y$.",
+            "equation": "\\operatorname{div}(x,-y)=1-1=0"
+          }
+        ],
+        "result": "The sign gives the local first-order net flow; zero does not mean the field itself is zero.",
+        "verification": "These signs agree with the source’s outward, inward, and zero-net-flow captions."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-l11-divergence-transfer",
+        "outcome": "Evaluate the n-dimensional divergence at a point.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf G=(e^x,yz^2,-yz^3)$, find $\\operatorname{div}\\mathbf G$ at $(0,2,-1)$.",
+        "hint": "Use $\\partial_xG_1+\\partial_yG_2+\\partial_zG_3$.",
+        "solution": "The divergence is $e^x+z^2-3yz^2$, so its value is $1+1-6=-4$.",
+        "rubric": [
+          "Differentiate matching components.",
+          "Substitute only after forming the derivative sum."
+        ],
+        "solutionTex": "\\operatorname{div}\\mathbf G(0,2,-1)=1+1-6=-4"
+      },
+      {
+        "id": "mh2100-l11-divergence-sign-transfer",
+        "outcome": "Interpret positive, negative, and zero divergence as local net flow.",
+        "kind": "conceptual",
+        "prompt": "For the planar field $\\mathbf G=(2x,-3y)$, determine whether a small circle has net outward or inward flow.",
+        "hint": "Compute the two matching partial derivatives.",
+        "solution": "$\\operatorname{div}\\mathbf G=2-3=-1$, so there is local net inflow. The field need not point inward at every point of the circle.",
+        "rubric": [
+          "Compute divergence, not the vector magnitude.",
+          "Interpret the sign as local net flow."
+        ],
+        "solutionTex": "\\operatorname{div}(2x,-3y)=-1<0"
+      }
+    ]
   },
   "gradient-curl-divergence": {
     "prerequisites": [
@@ -22148,7 +22506,51 @@
         "Use the identity as a necessary condition."
       ],
       "solutionTex": "\\nabla\\cdot(x,y,z)=3\\ne0=\\nabla\\cdot(\\nabla\\times A)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-div-curl-strategy",
+        "title": "Pair mixed partials in the divergence of curl",
+        "text": "Lecture 11 page 21 states that $\\operatorname{div}(\\nabla\\times\\mathbf F)=0$ when the component functions have continuous second partial derivatives on an open $U\\subseteq\\mathbb R^3$. The identity makes every curl divergence-free."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-div-curl-worked",
+        "title": "Expand the source differential identity",
+        "strategy": "Expand the component formula and pair equal mixed partial derivatives.",
+        "setup": "Let $\\mathbf F=(P,Q,R)$ have continuous second-order partial derivatives on open $U\\subseteq\\mathbb R^3$.",
+        "steps": [
+          {
+            "label": "Expand divergence of curl",
+            "text": "Apply divergence to the three ordered curl components.",
+            "equation": "\\operatorname{div}(\\nabla\\times\\mathbf F)=R_{yx}-Q_{zx}+P_{zy}-R_{xy}+Q_{xz}-P_{yz}"
+          },
+          {
+            "label": "Cancel by mixed-partial equality",
+            "text": "Continuous second partials let us exchange the order in each pair.",
+            "equation": "R_{yx}-R_{xy}=0,\\quad Q_{xz}-Q_{zx}=0,\\quad P_{zy}-P_{yz}=0"
+          }
+        ],
+        "result": "The divergence of curl is zero, so every such curl field is divergence-free.",
+        "verification": "The source places this identity in the gradient–curl–divergence sequence of linear maps."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-l11-div-curl-transfer",
+        "outcome": "Verify divergence of curl by pairwise cancellation.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(xyz,x^2z,y^2z)$, calculate its curl and then its divergence.",
+        "hint": "Find the curl components first; differentiate each in its matching coordinate.",
+        "solution": "$\\nabla\\times\\mathbf F=(2yz-x^2,xy,xz)$, and $\\operatorname{div}(\\nabla\\times\\mathbf F)=-2x+x+x=0$.",
+        "rubric": [
+          "Use the source curl component order.",
+          "Differentiate the result and show the cancellation."
+        ],
+        "solutionTex": "\\operatorname{div}(\\nabla\\times\\mathbf F)=\\partial_x(2yz-x^2)+\\partial_y(xy)+\\partial_z(xz)=0"
+      }
+    ]
   },
   "stokes-theorem": {
     "prerequisites": [
@@ -22207,6 +22609,55 @@
         ],
         "result": "The circulation is $\\pi$. A tilted boundary need not use a horizontal disk: the disk must actually have edge $C$.",
         "verification": "Directly, $\\mathbf r(t)=(\\cos t,\\sin t,2-\\sin t)$ for $0\\le t\\le2\\pi$ gives $F\\cdot\\mathbf r'(t)=\\sin^3 t+\\cos^2 t-(2-\\sin t)^2\\cos t$; only $\\cos^2 t$ has nonzero integral, again $\\pi$."
+      },
+      {
+        "kind": "theorem",
+        "id": "mh2100-l11-stokes-hypotheses",
+        "title": "Stokes’ Theorem: hypotheses and induced edge",
+        "status": "Theorem used without proof",
+        "statement": "$\\oint_C\\mathbf F\\cdot d\\mathbf r=\\iint_S(\\nabla\\times\\mathbf F)\\cdot\\mathbf n\\,dS$",
+        "hypotheses": [
+          "The compact oriented surface $S$ is piecewise smooth, with finitely many compatible smooth patches; its net boundary is a simple piecewise-smooth loop $C$.",
+          "The field $\\mathbf F$ is $C^1$ on an open neighborhood of all of $S$.",
+          "The direction on $C$ is induced by the chosen normal: point the right thumb along $\\mathbf n$ and curl the fingers along $C$."
+        ],
+        "prerequisites": [
+          "curl-and-local-rotation",
+          "surface-orientation",
+          "vector-line-integrals"
+        ]
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-stokes-boundary-strategy",
+        "title": "Match the boundary before changing surfaces",
+        "text": "Stokes compares curl fluxes only on surfaces with the same oriented boundary. Reversing the normal reverses the induced loop. The field must be smooth on a neighborhood of every candidate surface, not merely on the boundary curve."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-stokes-cap-worked",
+        "title": "Lecture 11 Stokes Example 2: spherical cap",
+        "strategy": "Compute curl flux using the cap’s upward vector area; symmetry over the circular projection removes the integrand.",
+        "setup": "The source surface is the radius-2 sphere above $z=0$ and inside $x^2+y^2=1$, oriented upward, with $\\mathbf F=(xz,yz,xy)$.",
+        "steps": [
+          {
+            "label": "Differentiate the field",
+            "text": "The curl has equal first two components and zero third component.",
+            "equation": "\\nabla\\times\\mathbf F=(x-y,x-y,0)"
+          },
+          {
+            "label": "Parametrize the cap",
+            "text": "Write $z=\\sqrt{4-x^2-y^2}$ over the unit disk. Its upward vector area is $(x/z,y/z,1)\\,dx\\,dy$.",
+            "equation": "d\\mathbf S=(x/z,y/z,1)\\,dx\\,dy"
+          },
+          {
+            "label": "Integrate with the induced orientation",
+            "text": "The disk is symmetric under swapping $x$ and $y$, so the integrand integrates to zero.",
+            "equation": "\\iint_S(\\nabla\\times\\mathbf F)\\cdot d\\mathbf S=\\iint_{x^2+y^2\\leq1}\\frac{x^2-y^2}{\\sqrt{4-x^2-y^2}}\\,dx\\,dy=0"
+          }
+        ],
+        "result": "The upward curl flux and the induced counterclockwise boundary circulation are both $0$.",
+        "verification": "Directly, the boundary circle is $z=\\sqrt3$, and $\\mathbf F\\cdot d\\mathbf r=0$ for its counterclockwise parametrization."
       }
     ],
     "exercises": [
@@ -22223,6 +22674,32 @@
           "Use the actual curl and account for the disk area; reject the horizontal disk as a different boundary."
         ],
         "solutionTex": "\\oint_C F\\cdot d\\mathbf r=\\iint_{x^2+y^2\\le4}(0,0,2)\\cdot(1,0,-1)\\,dx\\,dy=-8\\pi"
+      },
+      {
+        "id": "mh2100-l11-stokes-cap-transfer",
+        "outcome": "Use the Stokes curl flux on a changed spherical-cap radius.",
+        "kind": "computational",
+        "prompt": "Keep the radius-2 sphere and field $\\mathbf F=(xz,yz,xy)$, but let the cap project to $x^2+y^2\\leq a^2$ for $0<a<2$. Find its upward curl flux.",
+        "hint": "The upward area vector is $(x/z,y/z,1)\\,dx\\,dy$.",
+        "solution": "The integrand is $(x^2-y^2)/\\sqrt{4-x^2-y^2}$. The disk is symmetric under exchanging $x$ and $y$, so the flux is zero for every allowed $a$.",
+        "rubric": [
+          "Use the field’s curl and the correct upward vector area.",
+          "Explain the symmetry cancellation on the changed disk."
+        ],
+        "solutionTex": "\\iint_{x^2+y^2\\leq a^2}\\frac{x^2-y^2}{\\sqrt{4-x^2-y^2}}\\,dx\\,dy=0"
+      },
+      {
+        "id": "mh2100-l11-stokes-singular-transfer",
+        "outcome": "Reject Stokes when the field is not defined near the candidate surface.",
+        "kind": "method-choice",
+        "prompt": "Can Stokes be applied to $\\mathbf F=(-y/(x^2+y^2),x/(x^2+y^2),0)$ on the unit circle $z=0$ using its flat disk?",
+        "hint": "Check whether the field is defined on an open neighborhood of the whole disk.",
+        "solution": "No. The field is undefined on the $z$-axis, which crosses the disk. Although its curl is zero along the punctured disk, the theorem’s field-domain hypothesis fails for this spanning surface.",
+        "rubric": [
+          "Check the field on the full disk, not just its edge.",
+          "Identify the failed neighborhood hypothesis."
+        ],
+        "solutionTex": "\\text{Stokes is inapplicable: }(0,0,0)\\notin\\operatorname{Dom}(\\mathbf F)"
       }
     ]
   },
@@ -22252,7 +22729,86 @@
         "Check with the direct area calculation."
       ],
       "solutionTex": "\\iint_{\\partial B_R}F\\cdot n\\,dS=3\\operatorname{Vol}(B_R)=4\\pi R^3"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "mh2100-l11-gauss-hypotheses",
+        "title": "Gauss–Ostrogradsky: closure and outward orientation",
+        "status": "Theorem used without proof",
+        "statement": "$\\iint_{\\partial E}\\mathbf F\\cdot\\mathbf n\\,dS=\\iiint_E\\operatorname{div}\\mathbf F\\,dV$",
+        "hypotheses": [
+          "The solid $E$ is bounded and closed, with a volume and a piecewise-smooth boundary $S=\\partial E$ that has no exposed edge.",
+          "The field $\\mathbf F$ is $C^1$ on an open neighborhood of all of $E$.",
+          "Every boundary component is oriented outward from $E$; cavity components point into the cavity."
+        ],
+        "prerequisites": [
+          "divergence-and-local-flow",
+          "surface-orientation",
+          "triple-riemann-sums"
+        ]
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-l11-gauss-bounds-strategy",
+        "title": "Translate every face into bounds",
+        "text": "The source solid is bounded by a parabolic cylinder and three planes. Use $-1\\leq x\\leq1$, $0\\leq z\\leq1-x^2$, and $0\\leq y\\leq2-z$; these bounds include the complete closed boundary."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-l11-gauss-source-worked",
+        "title": "Lecture 11 Gauss Example 1: parabolic solid",
+        "strategy": "Replace the closed-surface flux by a triple integral of divergence over the exact source region.",
+        "setup": "Let $E=\\{(x,y,z):-1\\leq x\\leq1,\\ 0\\leq z\\leq1-x^2,\\ 0\\leq y\\leq2-z\\}$ and $\\mathbf F=(xy,\\,y^2+e^{xz^2},\\,\\sin(xy))$.",
+        "steps": [
+          {
+            "label": "Verify the boundary and field",
+            "text": "The cylinder and planes close a bounded region; the field is smooth on all of $\\mathbb R^3$ and the normal is outward.",
+            "equation": "S=\\partial E,\\qquad\\mathbf F\\in C^1(\\mathbb R^3)"
+          },
+          {
+            "label": "Differentiate",
+            "text": "Only the $x$ derivative of the first component and the $y$ derivative of the second contribute.",
+            "equation": "\\operatorname{div}\\mathbf F=y+2y+0=3y"
+          },
+          {
+            "label": "Integrate over the source bounds",
+            "text": "Integrate first in $y$, then $z$, then $x$.",
+            "equation": "\\iint_S\\mathbf F\\cdot\\mathbf n\\,dS=\\int_{-1}^1\\int_0^{1-x^2}\\int_0^{2-z}3y\\,dy\\,dz\\,dx=\\frac12\\int_{-1}^1\\left(8-(1+x^2)^3\\right)dx=\\frac{184}{35}"
+          }
+        ],
+        "result": "The outward flux through the parabolic solid boundary is $184/35$.",
+        "verification": "The bounds make $y\\geq0$, so a positive integral of $3y$ is consistent with the result."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-l11-gauss-transfer",
+        "outcome": "Change the vector field while preserving the source solid.",
+        "kind": "computational",
+        "prompt": "On the source solid $-1\\leq x\\leq1$, $0\\leq z\\leq1-x^2$, $0\\leq y\\leq2-z$, find outward flux for $\\mathbf G=(x,y,z)$.",
+        "hint": "Its divergence is $3$; integrate the volume over the source bounds.",
+        "solution": "The volume is $\\int_{-1}^1\\int_0^{1-x^2}(2-z)\\,dz\\,dx=32/15$. Therefore the flux is $3(32/15)=32/5$.",
+        "rubric": [
+          "Check the complete boundary and outward orientation.",
+          "Use divergence 3 and evaluate the triple integral."
+        ],
+        "solutionTex": "\\iint_{\\partial E}\\mathbf G\\cdot\\mathbf n\\,dS=3\\iiint_E1\\,dV=\\frac{32}{5}"
+      },
+      {
+        "id": "mh2100-l11-gauss-closure-transfer",
+        "outcome": "Decide whether an open surface satisfies the divergence theorem.",
+        "kind": "method-choice",
+        "prompt": "Can the divergence theorem evaluate flux through only the parabolic side $z=1-x^2$ of the source solid?",
+        "hint": "List the faces that meet it along an edge.",
+        "solution": "No. That side has exposed edges and is not the complete edgeless boundary. Include the planar faces at $y=0$, $z=0$, and $y+z=2$, with outward normals, before applying the theorem.",
+        "rubric": [
+          "State the closure requirement.",
+          "Identify the missing boundary pieces and orientation."
+        ],
+        "solutionTex": "S_{\\mathrm{closed}}=S_{\\mathrm{parabolic}}\\cup S_{y=0}\\cup S_{z=0}\\cup S_{y+z=2}"
+      }
+    ]
   },
   "review-integral-methods": {
     "prerequisites": [

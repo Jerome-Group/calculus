@@ -7014,6 +7014,16 @@
         "sourceId": "MH2100_Lecture_10",
         "pages": [40, 40],
         "detail": "Lecture 10 Example 5 blank worked-solution continuation"
+      },
+      {
+        "sourceId": "MH2100_Lecture_11",
+        "pages": [1, 9],
+        "detail": "Surface Integrals — Examples 4–6; flux prompts and bounded-solid setups"
+      },
+      {
+        "sourceId": "MH2100_Lecture_11",
+        "pages": [30, 30],
+        "detail": "Cross-reference: Gauss–Ostrogradsky theorem used to work the flux prompts on pages 1–9"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -7060,6 +7070,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [73, 88],
         "detail": "Optional: Stewart, §16.8–16.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_11",
+        "pages": [12, 12],
+        "detail": "Vector Fields — Curl; paddlewheel interpretation and orientation"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -7101,6 +7116,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [73, 88],
         "detail": "Optional: Stewart, §16.8–16.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_11",
+        "pages": [16, 19],
+        "detail": "Vector Fields — Divergence; positive, negative, and zero flow examples"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

@@ -1183,6 +1183,7 @@
     "modifiedAt": "2026-08-13T05:06:15.171Z",
     "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
     "affectedConcepts": [
+      "flux-through-surfaces",
       "curl-and-local-rotation",
       "divergence-and-local-flow",
       "gradient-curl-divergence",
