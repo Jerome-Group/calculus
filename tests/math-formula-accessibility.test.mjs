@@ -380,3 +380,21 @@ test("graph_function keeps the WebMCP expression connected to the typeset previe
     globalThis.requestAnimationFrame = oldRequestAnimationFrame;
   }
 });
+
+test("revision theorem headings render mathematical notation", async () => {
+  const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
+  const { RevisionView } = await vite.ssrLoadModule(
+    "/components/atlas/revision-view.tsx",
+  );
+  const concept = concepts.find(
+    (item) => item.id === "linearization-differentials",
+  );
+  const html = renderToStaticMarkup(
+    React.createElement(RevisionView, {
+      concept,
+      showReasoning() {},
+    }),
+  );
+  assertNoUnmarkedVisibleMath(html, "linearization revision");
+  assert.match(html, /<h3><span>Separate <\/span><span class="formula"/u);
+});
