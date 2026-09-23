@@ -5506,12 +5506,8 @@
       "source_id": "MH1101_Chapter_02_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Area between curves",
-      "physical_pages_from_audit": "2–19; area 2–4; volumes 5–12; shells 13–19",
-      "linked_concept_ids": [
-        "area-between-curves",
-        "disk-washer-volumes",
-        "cylindrical-shells"
-      ],
+      "physical_pages_from_audit": "Physical pages 2–4: area between curves; page 1 is a contents page.",
+      "linked_concept_ids": ["area-between-curves"],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
       "gap": "Two page-verified area methods are mapped. No outcome-level scene, learner performance, or independent outcome check is claimed; other course sources remain unreviewed.",
       "evidence": {
@@ -5534,53 +5530,256 @@
       "id": "MH1101_Chapter_02_Notes:02",
       "source_id": "MH1101_Chapter_02_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "volumes/cross-sections",
-      "physical_pages_from_audit": "2–19; area 2–4; volumes 5–12; shells 13–19",
-      "linked_concept_ids": [
-        "area-between-curves",
-        "disk-washer-volumes",
-        "cylindrical-shells"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'volumes/cross-sections'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "topic_from_audit_inventory": "Cross-sectional volume and disk/washer method",
+      "physical_pages_from_audit": "Physical pages 5–12: slab limit and sphere 5–7; disk/washer rule 8; Examples 2.4–2.6 on 9–12.",
+      "linked_concept_ids": ["disk-washer-volumes"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills have checked statements, source-specific calculations, and independent transfer. Outcome-specific scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-cross-section-volume].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-cross-section-volume]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-horizontal-washer-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-sphere-cross-sections]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-vertical-disk-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-vertical-washer-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-horizontal-washer-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-shifted-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercise",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-disk-vertical-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-vertical-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-shifted-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["disk-washer-volumes:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "disk-washer-volumes:ch02-cross-section-volume",
+        "disk-washer-volumes:source-skill-1",
+        "disk-washer-volumes:ch02-vertical-disk",
+        "disk-washer-volumes:ch02-vertical-washer",
+        "disk-washer-volumes:ch02-horizontal-washer"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "5–12",
+      "inspected_physical_pages": [5, 6, 7, 8, 9, 10, 11, 12],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Page 12 Example 2.6 prints dy in the simplified x-integral; the bounds, slices, and following antiderivative require dx."
+      ]
     },
     {
       "id": "MH1101_Chapter_02_Notes:03",
       "source_id": "MH1101_Chapter_02_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "cylindrical shells",
-      "physical_pages_from_audit": "2–19; area 2–4; volumes 5–12; shells 13–19",
-      "linked_concept_ids": [
-        "area-between-curves",
-        "disk-washer-volumes",
-        "cylindrical-shells"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'cylindrical shells'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "topic_from_audit_inventory": "Cylindrical shell method",
+      "physical_pages_from_audit": "Physical pages 13–19: shell derivation 13–16; Examples 2.7–2.9 on 16–19.",
+      "linked_concept_ids": ["cylindrical-shells"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills have checked statements, source-specific calculations, and independent transfer. Outcome-specific scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Choose slices relative to the axis]",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Choose slices relative to the axis]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-cubic-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-cubic-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-horizontal-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-between-curves-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-polynomial-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-polynomial-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-horizontal-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercise",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["cylindrical-shells:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "cylindrical-shells:source-skill-1",
+        "cylindrical-shells:ch02-shell-versus-washer",
+        "cylindrical-shells:ch02-horizontal-shell",
+        "cylindrical-shells:ch02-between-curves-shell"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "13–19",
+      "inspected_physical_pages": [13, 14, 15, 16, 17, 18, 19],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "The page 14 shell cylinder difference factors as (r₂−r₁)(r₁+r₂); PDF text extraction misreads the first factor, but the rendered page is correct."
+      ]
     },
     {
       "id": "MH1101_Chapter_03_Notes:01",
@@ -15415,39 +15614,46 @@
       "outcome": "Form a washer area by subtracting squared inner radius from squared outer radius.",
       "core_source": {
         "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
         "physical_page": 8,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
         "page_validation": {
           "status": "page_verified",
           "pages": [8],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page states washer area as outer disk area minus inner disk area."
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [8]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Disk-Washer method supplies the stated skill and source calculation."
         },
         "page_heading": "Disk-Washer method"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#disk-washer-volumes.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.sections[A washer removes an inner disk]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.sections[A washer removes an inner disk]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-horizontal-washer-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
           }
         ],
-        "practiced": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-shifted-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
@@ -15455,32 +15661,44 @@
         "scene_id": "plane-washer",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
       "source_section_id": "MH1101_Chapter_02_Notes:02",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#disk-washer-volumes.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.sections[A washer removes an inner disk]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-horizontal-washer-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-shifted-axis-transfer]",
+            "basis": "Changed data require independent application with feedback."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "worked instance in cited section",
-        "practiced": "Exercise uses equilateral triangle cross sections, not washer inner and outer radii.",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     },
     {
@@ -15489,43 +15707,44 @@
       "outcome": "Form a shell volume from radius, height, and thickness relative to a fixed axis.",
       "core_source": {
         "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
         "physical_page": 16,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [16],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page states shell volume from radius and height with integration relative to the fixed axis."
+          "pages": [13, 14, 15, 16],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [13, 14, 15, 16]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Theorem 2: Volume by Cylindrical Shells supplies the stated skill and source calculation."
         },
-        "page_heading": "Theorem 2. (Volume by Cylindrical Shells)"
+        "page_heading": "Theorem 2: Volume by Cylindrical Shells"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#cylindrical-shells.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Unroll a thin shell]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Unroll a thin shell]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-cubic-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-polynomial-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
           }
         ],
         "visualized": [],
@@ -15535,44 +15754,44 @@
         "scene_id": "plane-shell",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
       "source_section_id": "MH1101_Chapter_02_Notes:03",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#cylindrical-shells.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Unroll a thin shell]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "basis": "The guide states the method and its usable conditions."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Unroll a thin shell]",
-            "basis": "worked expression or example inspected; depth not certified"
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-cubic-shell-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-polynomial-transfer]",
+            "basis": "Changed data require independent application with feedback."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "worked instance in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     },
     {
@@ -51864,6 +52083,657 @@
         "practiced": "The changed-data task and feedback are inspected; learner performance is unverified.",
         "visualized": "The spherical scene is only a candidate; source-specific scene alignment is not verified.",
         "checked": "No independent learner response or outcome-level performance check is claimed."
+      }
+    },
+    {
+      "id": "disk-washer-volumes:ch02-cross-section-volume",
+      "concept_id": "disk-washer-volumes",
+      "outcome": "Integrate the area of actual perpendicular sections to obtain solid volume, including a non-rotational section.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 6,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5, 6, 7],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [5, 6, 7]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Definition 1 and Example 2.3: Volume of Solid supplies the stated skill and source calculation."
+        },
+        "page_heading": "Definition 1 and Example 2.3: Volume of Solid"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-cross-section-volume].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-cross-section-volume]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-sphere-cross-sections]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercise",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-washer",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-cross-section-volume].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-cross-section-volume]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-sphere-cross-sections]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercise",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "disk-washer-volumes:ch02-vertical-disk",
+      "concept_id": "disk-washer-volumes",
+      "outcome": "Use horizontal disks and inverted curve bounds for a solid rotated about a vertical axis.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 9,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [9]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Example 2.4: y=x³ rotated about the y-axis supplies the stated skill and source calculation."
+        },
+        "page_heading": "Example 2.4: y=x³ rotated about the y-axis"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-vertical-disk-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-disk-vertical-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-washer",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-vertical-disk-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-disk-vertical-axis-transfer]",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "disk-washer-volumes:ch02-vertical-washer",
+      "concept_id": "disk-washer-volumes",
+      "outcome": "Invert both bounding curves and select outer and inner horizontal radii for a vertical-axis washer.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 10,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10, 11],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [10, 11]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Example 2.5: first-quadrant vertical-axis washer supplies the stated skill and source calculation."
+        },
+        "page_heading": "Example 2.5: first-quadrant vertical-axis washer"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-vertical-washer-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-vertical-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-washer",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-vertical-washer-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-vertical-axis-transfer]",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "disk-washer-volumes:ch02-horizontal-washer",
+      "concept_id": "disk-washer-volumes",
+      "outcome": "Use vertical washers and the correct integration variable for a horizontal-axis solid.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 11,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 12],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [11, 12]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Example 2.6: washer about y=0 supplies the stated skill and source calculation."
+        },
+        "page_heading": "Example 2.6: washer about y=0"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-horizontal-washer-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-shifted-axis-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-washer",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-washer-method]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.contentBlocks[ch02-horizontal-washer-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#disk-washer-volumes.exercises[ch02-washer-shifted-axis-transfer]",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "cylindrical-shells:ch02-shell-versus-washer",
+      "concept_id": "cylindrical-shells",
+      "outcome": "Choose parallel shells over perpendicular washers when inversion of the boundary is cumbersome.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 16,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 16, 17],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [13, 16, 17]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Example 2.7: cubic boundary and y-axis shells supplies the stated skill and source calculation."
+        },
+        "page_heading": "Example 2.7: cubic boundary and y-axis shells"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Choose slices relative to the axis]",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Choose slices relative to the axis]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-cubic-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-polynomial-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-shell",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Choose slices relative to the axis]",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.sections[Choose slices relative to the axis]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-cubic-shell-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-polynomial-transfer]",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "cylindrical-shells:ch02-horizontal-shell",
+      "concept_id": "cylindrical-shells",
+      "outcome": "Use horizontal shell radius and height expressed in y for rotation about the x-axis.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 18,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [18]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Example 2.8: horizontal shells under square root supplies the stated skill and source calculation."
+        },
+        "page_heading": "Example 2.8: horizontal shells under square root"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-horizontal-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-horizontal-transfer]",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-shell",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-horizontal-shell-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercises[ch02-shell-horizontal-transfer]",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "cylindrical-shells:ch02-between-curves-shell",
+      "concept_id": "cylindrical-shells",
+      "outcome": "Use upper-minus-lower curve height in a nonnegative vertical shell.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+        "inspection": "Canonical 19-page PDF text and rendered physical pages inspected in the authenticated Drive viewer.",
+        "physical_page": 19,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19],
+          "method": "Rendered and inspected canonical Chapter 02 physical pages [19]; SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998.",
+          "claim_observed": "Example 2.9: shells between y=x and y=x² supplies the stated skill and source calculation."
+        },
+        "page_heading": "Example 2.9: shells between y=x and y=x²"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "claim": "A distinct learner-facing title or section names this source skill.",
+            "method": "Compared the title with the canonical source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "claim": "The guide states the method and its usable conditions.",
+            "method": "Checked the statement against the rendered source page and its example."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-between-curves-shell-example]",
+            "claim": "The guide works a source-specific calculation and checks its setup.",
+            "method": "Independently recomputed the source integral and checked bounds and axis."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercise",
+            "claim": "Changed data require independent application with feedback.",
+            "method": "Solved the prompt independently and checked the hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-shell",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source-specific statement, worked reasoning, and independent practice inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_02_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method].title",
+            "basis": "A distinct learner-facing title or section names this source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-shell-method]",
+            "basis": "The guide states the method and its usable conditions."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.contentBlocks[ch02-between-curves-shell-example]",
+            "basis": "The guide works a source-specific calculation and checks its setup."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cylindrical-shells.exercise",
+            "basis": "Changed data require independent application with feedback."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical page image and text with guide statement, exact worked calculation, and independently solved transfer.",
+        "named": "distinct skill heading inspected",
+        "stated": "hypotheses and method boundary inspected",
+        "worked": "source integral and axis checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     }
   ]

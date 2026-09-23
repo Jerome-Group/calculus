@@ -41,6 +41,9 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const chapter04Notes = /^MH1101_Chapter_04_Notes:0[1-4]$/.test(
         section.id,
       );
+      const chapter02Volumes = /^MH1101_Chapter_02_Notes:0[23]$/.test(
+        section.id,
+      );
       const chapter05Notes = /^MH1101_Chapter_05_Notes:0[1-4]$/.test(
         section.id,
       );
@@ -71,6 +74,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         mh2100Lecture10 ||
         mh2100Lecture11 ||
         mh2100Lecture07 ||
+        chapter02Volumes ||
         chapter04Notes ||
         chapter06Notes;
       const pageVerified =
@@ -86,6 +90,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         mh2100Lecture10 ||
         mh2100Lecture11 ||
         mh2100Lecture07 ||
+        chapter02Volumes ||
         partialsSupplement ||
         chapter04Notes ||
         chapter05Notes ||
