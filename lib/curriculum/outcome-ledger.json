@@ -3092,7 +3092,7 @@
       "source_id": "MH1101_Chapter_01_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Antiderivatives",
-      "physical_pages_from_audit": "2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33",
+      "physical_pages_from_audit": "2–5",
       "linked_concept_ids": [
         "integral-antiderivatives",
         "riemann-integral",
@@ -3101,8 +3101,8 @@
         "substitution-integral",
         "improper-integrals"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Antiderivatives' at 2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Atomic source skills mapped to inspected guide evidence. Learner performance, outcome-specific scene alignment, and other course sources remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3113,15 +3113,19 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "integral-antiderivatives:ch1-antiderivative-family",
+        "integral-antiderivatives:ch1-disconnected-domain",
+        "integral-antiderivatives:ch1-indefinite-linearity"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_01_Notes:02",
       "source_id": "MH1101_Chapter_01_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Riemann accumulation",
-      "physical_pages_from_audit": "2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33",
+      "physical_pages_from_audit": "6–17",
       "linked_concept_ids": [
         "integral-antiderivatives",
         "riemann-integral",
@@ -3130,8 +3134,8 @@
         "substitution-integral",
         "improper-integrals"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Riemann accumulation' at 2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Atomic source skills mapped to inspected guide evidence. Learner performance, outcome-specific scene alignment, and other course sources remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3142,15 +3146,23 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "riemann-integral:ch1-right-left-sums",
+        "riemann-integral:ch1-tag-independence",
+        "riemann-integral:ch1-signed-accumulation",
+        "riemann-integral:ch1-orientation-additivity",
+        "riemann-integral:ch1-sum-recognition",
+        "riemann-integral:ch1-definite-linearity",
+        "riemann-integral:ch1-comparison-bounds"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_01_Notes:03",
       "source_id": "MH1101_Chapter_01_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "average",
-      "physical_pages_from_audit": "2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33",
+      "physical_pages_from_audit": "18",
       "linked_concept_ids": [
         "integral-antiderivatives",
         "riemann-integral",
@@ -3159,8 +3171,8 @@
         "substitution-integral",
         "improper-integrals"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'average' at 2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Atomic source skills mapped to inspected guide evidence. Learner performance, outcome-specific scene alignment, and other course sources remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3171,15 +3183,18 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "integral-average:ch1-average-value",
+        "integral-average:ch1-mean-value-attainment"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_01_Notes:04",
       "source_id": "MH1101_Chapter_01_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "FTC",
-      "physical_pages_from_audit": "2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33",
+      "physical_pages_from_audit": "19–24",
       "linked_concept_ids": [
         "integral-antiderivatives",
         "riemann-integral",
@@ -3188,8 +3203,8 @@
         "substitution-integral",
         "improper-integrals"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'FTC' at 2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Atomic source skills mapped to inspected guide evidence. Learner performance, outcome-specific scene alignment, and other course sources remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3200,15 +3215,19 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "fundamental-theorem:ch1-ftc1-accumulation",
+        "fundamental-theorem:ch1-moving-endpoints",
+        "fundamental-theorem:ch1-ftc2-evaluation"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_01_Notes:05",
       "source_id": "MH1101_Chapter_01_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "substitution",
-      "physical_pages_from_audit": "2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33",
+      "physical_pages_from_audit": "25–27",
       "linked_concept_ids": [
         "integral-antiderivatives",
         "riemann-integral",
@@ -3217,8 +3236,8 @@
         "substitution-integral",
         "improper-integrals"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'substitution' at 2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Atomic source skills mapped to inspected guide evidence. Learner performance, outcome-specific scene alignment, and other course sources remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3229,15 +3248,18 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "substitution-integral:ch1-substitution-chain-rule",
+        "substitution-integral:ch1-definite-bounds"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_01_Notes:06",
       "source_id": "MH1101_Chapter_01_Notes",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "improper integrals",
-      "physical_pages_from_audit": "2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33",
+      "physical_pages_from_audit": "28–33",
       "linked_concept_ids": [
         "integral-antiderivatives",
         "riemann-integral",
@@ -3246,8 +3268,8 @@
         "substitution-integral",
         "improper-integrals"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'improper integrals' at 2–33; Riemann 6–17; average 18; FTC 19–24; substitution 25–27; improper 28–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Atomic source skills mapped to inspected guide evidence. Learner performance, outcome-specific scene alignment, and other course sources remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3258,8 +3280,13 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "improper-integrals:ch1-infinite-endpoint",
+        "improper-integrals:ch1-two-tails",
+        "improper-integrals:ch1-finite-endpoint-singularity",
+        "improper-integrals:ch1-interior-singularity"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_02_Notes:01",
@@ -11057,6 +11084,1546 @@
         "practiced": "independent task inspected; learner performance unverified",
         "visualized": "No outcome-level scene check.",
         "checked": "No independent learner response check."
+      }
+    },
+    {
+      "id": "integral-antiderivatives:ch1-antiderivative-family",
+      "concept_id": "integral-antiderivatives",
+      "outcome": "Verify an antiderivative by differentiation and explain why all antiderivatives on an interval differ by a constant.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 2,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [2, 3, 4],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition, constant family, and interval uniqueness"
+        },
+        "page_heading": "Definition, constant family, and interval uniqueness"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-antiderivative-linearity]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:01",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-antiderivative-linearity]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "integral-antiderivatives:ch1-disconnected-domain",
+      "concept_id": "integral-antiderivatives",
+      "outcome": "Choose independent integration constants on distinct connected components of a domain.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 5,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Example 1.3: disconnected domain constants"
+        },
+        "page_heading": "Example 1.3: disconnected domain constants"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-disconnected-antiderivatives]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercises[ch1-component-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:01",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-disconnected-antiderivatives]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercises[ch1-component-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "integral-antiderivatives:ch1-indefinite-linearity",
+      "concept_id": "integral-antiderivatives",
+      "outcome": "Integrate a linear combination using basic antiderivative rules and verify by differentiation.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 4,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Indefinite integral table and linearity"
+        },
+        "page_heading": "Indefinite integral table and linearity"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-antiderivative-linearity]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:01",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-antiderivative-linearity]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-right-left-sums",
+      "concept_id": "riemann-integral",
+      "outcome": "Construct a Riemann sum with interval width and sample points, then take its limit for a continuous function.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 6,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6, 7, 8, 9, 10, 11],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Area problem and Example 1.4"
+        },
+        "page_heading": "Area problem and Example 1.4"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-tag-independence",
+      "concept_id": "riemann-integral",
+      "outcome": "Explain that the definite integral requires the same limit for all sample-point choices, rather than one convenient sequence of sums.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 9,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8, 9],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition 2: arbitrary sample points"
+        },
+        "page_heading": "Definition 2: arbitrary sample points"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.sections[A partition is more than equal bars]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.sections[A partition is more than equal bars]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": []
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-signed-accumulation",
+      "concept_id": "riemann-integral",
+      "outcome": "Distinguish signed integral from geometric area when the integrand changes sign.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 12,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 12],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Signed area under the axis"
+        },
+        "page_heading": "Signed area under the axis"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.sections[Signed accumulation]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-signed-comparison]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.sections[Signed accumulation]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-signed-comparison]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": []
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-orientation-additivity",
+      "concept_id": "riemann-integral",
+      "outcome": "Use interval additivity and orientation to derive an integral over a subinterval or reversed bounds.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 13,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 16],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Properties P1–P7 and comparisons"
+        },
+        "page_heading": "Properties P1–P7 and comparisons"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-orientation-additivity]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-rules-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-orientation-additivity]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-rules-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-sum-recognition",
+      "concept_id": "riemann-integral",
+      "outcome": "Read interval, integrand, width, and tags from a Riemann-sum limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 15,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Example 1.5: limits as definite integrals"
+        },
+        "page_heading": "Example 1.5: limits as definite integrals"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-sum-to-integral]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-sum-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-sum-to-integral]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-sum-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "integral-average:ch1-average-value",
+      "concept_id": "integral-average",
+      "outcome": "Compute the average value of an integrable function by dividing its integral by interval length.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 18,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition 3: average value"
+        },
+        "page_heading": "Definition 3: average value"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.sections[Average height]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.supplementalBlocks[ch1-average-attainment]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercises[ch1-average-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.sections[Average height]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.supplementalBlocks[ch1-average-attainment]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercises[ch1-average-transfer]",
+            "basis": "current guide inspection"
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "integral-average:ch1-mean-value-attainment",
+      "concept_id": "integral-average",
+      "outcome": "Use continuity on a closed interval to justify an attaining point for the integral average, then find it.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 18,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Theorem 2: Mean Value Theorem for Integrals"
+        },
+        "page_heading": "Theorem 2: Mean Value Theorem for Integrals"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.sections[Attainment needs care]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.supplementalBlocks[ch1-average-attainment]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercises[ch1-average-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.sections[Attainment needs care]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.supplementalBlocks[ch1-average-attainment]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercises[ch1-average-transfer]",
+            "basis": "current guide inspection"
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-average.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "fundamental-theorem:ch1-ftc1-accumulation",
+      "concept_id": "fundamental-theorem",
+      "outcome": "Differentiate an accumulation function using continuity and the integral difference quotient.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 19,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20, 21],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Theorem 3: FTC Part 1 and proof"
+        },
+        "page_heading": "Theorem 3: FTC Part 1 and proof"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.sections[Two directions, two jobs]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.supplementalBlocks[ch1-ftc1-difference-quotient]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.sections[Two directions, two jobs]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.supplementalBlocks[ch1-ftc1-difference-quotient]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "fundamental-theorem:ch1-moving-endpoints",
+      "concept_id": "fundamental-theorem",
+      "outcome": "Differentiate an integral with variable endpoints using FTC Part 1 and the chain rule.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 21,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 22, 23],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Examples 1.9–1.10: moving endpoints"
+        },
+        "page_heading": "Examples 1.9–1.10: moving endpoints"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.sections[Moving bounds]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.supplementalBlocks[ch1-ftc-moving-bounds]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.exercises[ch1-moving-bounds-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.sections[Moving bounds]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.supplementalBlocks[ch1-ftc-moving-bounds]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.exercises[ch1-moving-bounds-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "fundamental-theorem:ch1-ftc2-evaluation",
+      "concept_id": "fundamental-theorem",
+      "outcome": "Evaluate a definite integral as an antiderivative difference with oriented bounds.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 21,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 22, 23, 24],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Theorem 4: FTC Part 2 and Example 1.11"
+        },
+        "page_heading": "Theorem 4: FTC Part 2 and Example 1.11"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.sections[Two directions, two jobs]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.supplementalBlocks[ch1-ftc2-signed-bounds]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.sections[Two directions, two jobs]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fundamental-theorem.supplementalBlocks[ch1-ftc2-signed-bounds]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": []
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "substitution-integral:ch1-substitution-chain-rule",
+      "concept_id": "substitution-integral",
+      "outcome": "Choose an inner variable and include its derivative factor when transforming an integral.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 25,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25, 26],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Theorem 5 and chain-rule proof"
+        },
+        "page_heading": "Theorem 5 and chain-rule proof"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.sections[Why the rule holds]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[ch1-substitution-root]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[ch1-substitution-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:05",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.sections[Why the rule holds]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[ch1-substitution-root]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[ch1-substitution-transfer]",
+            "basis": "current guide inspection"
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "substitution-integral:ch1-definite-bounds",
+      "concept_id": "substitution-integral",
+      "outcome": "Transform both limits of integration under substitution and evaluate in the new variable.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 26,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 27],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Examples 1.15–1.16: changed limits"
+        },
+        "page_heading": "Examples 1.15–1.16: changed limits"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.sections[Transform the whole integral]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[ch1-substitution-affine]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[ch1-substitution-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:05",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.sections[Transform the whole integral]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[ch1-substitution-affine]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[ch1-substitution-transfer]",
+            "basis": "current guide inspection"
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "improper-integrals:ch1-infinite-endpoint",
+      "concept_id": "improper-integrals",
+      "outcome": "Define an infinite-endpoint integral as a one-sided limit and decide convergence.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 28,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28, 29],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition 4 and Example 1.17"
+        },
+        "page_heading": "Definition 4 and Example 1.17"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.sections[Every bad endpoint gets a limit]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-infinite-log-tail]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:06",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.sections[Every bad endpoint gets a limit]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-infinite-log-tail]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": []
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "improper-integrals:ch1-two-tails",
+      "concept_id": "improper-integrals",
+      "outcome": "Split an integral over the whole real line and require separate convergence of both tails.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 29,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29, 30],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition 4(c) and Example 1.18"
+        },
+        "page_heading": "Definition 4(c) and Example 1.18"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-two-tailed-convergence]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:06",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-two-tailed-convergence]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": []
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "improper-integrals:ch1-finite-endpoint-singularity",
+      "concept_id": "improper-integrals",
+      "outcome": "Replace a singular finite endpoint by a one-sided limit and decide convergence.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 31,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31, 32],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition 5(a,b) and Example 1.19"
+        },
+        "page_heading": "Definition 5(a,b) and Example 1.19"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-finite-endpoint-root]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.exercise",
+            "claim": "Existing independent guide prompt with solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:06",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-finite-endpoint-root]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.exercise",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "improper-integrals:ch1-interior-singularity",
+      "concept_id": "improper-integrals",
+      "outcome": "Split at an interior singularity and require separate convergence of both one-sided integrals.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 31,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31, 32, 33],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Definition 5(c) and Example 1.20"
+        },
+        "page_heading": "Definition 5(c) and Example 1.20"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.sections[Every bad endpoint gets a limit]",
+            "claim": "Guide prose states this source skill and its key condition.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-interior-pole]",
+            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.exercises[ch1-improper-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:06",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.sections[Every bad endpoint gets a limit]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.supplementalBlocks[ch1-interior-pole]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#improper-integrals.exercises[ch1-improper-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-definite-linearity",
+      "concept_id": "riemann-integral",
+      "outcome": "Separate a definite integral of a linear combination into scaled component integrals.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 13,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Property P2: linearity of definite integrals"
+        },
+        "page_heading": "Property P2: linearity of definite integrals"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-definite-linearity]",
+            "claim": "Worked definite-integral linearity calculation.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-rules-transfer]",
+            "claim": "Independent transfer prompt with justified solution.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-definite-linearity]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-rules-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "riemann-integral:ch1-comparison-bounds",
+      "concept_id": "riemann-integral",
+      "outcome": "Infer and apply a definite-integral inequality from a pointwise bound on the whole interval.",
+      "core_source": {
+        "id": "MH1101_Chapter_01_Notes",
+        "physical_page": 13,
+        "inspection": "Canonical local PDF SHA-256 db7bb583457ae44cda8014b875546e813cd0836aea3238ffcc8745e347669db7; physical pages visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 17],
+          "method": "pdftoppm rendered each relevant physical page; pdftotext -layout used to cross-check exact notation and page boundaries.",
+          "claim_observed": "Properties P5–P7 and Examples 1.7–1.8: comparison bounds"
+        },
+        "page_heading": "Properties P5–P7: comparison bounds"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-signed-comparison]",
+            "claim": "Worked order comparison on the full interval.",
+            "method": "Compared cited guide reasoning with visually inspected canonical PDF pages; learner performance unverified."
+          }
+        ],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "source_section_id": "MH1101_Chapter_01_Notes:02",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-signed-comparison]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": []
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
+        "named": "No exact title evidence claimed.",
+        "stated": "not claimed",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "not claimed",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
       }
     }
   ]
