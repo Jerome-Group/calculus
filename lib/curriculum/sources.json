@@ -408,7 +408,8 @@
     "pages": 40,
     "course": "MH2100",
     "kind": "lecture",
-    "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e"
+    "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+    "errata": []
   },
   "MH2100_Lecture_09": {
     "id": "MH2100_Lecture_09",
