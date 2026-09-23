@@ -21,6 +21,38 @@ test("named MH1100 foundations have purpose-built blocks and independent transfe
       "basic-rule-families",
       "product-rule-increments",
       "trigonometric-rule-families",
+      "base-derivatives-from-definition",
+      "binomial-theorem-for-integer-power-proof",
+      "binomial-increment-expansion",
+      "positive-power-rule-from-binomial-limit",
+      "linearity-rules-at-a-point",
+      "linearity-difference-quotient-proof",
+      "linearity-polynomial-example",
+      "product-rule-pointwise-hypotheses",
+      "quotient-rule-pointwise-hypotheses",
+      "quotient-rule-difference-quotient-proof",
+      "sum-of-cubes-quotient-example",
+      "negative-integer-power-rule-statement",
+      "negative-integer-power-rule-proof",
+      "real-power-rule-positive-domain",
+      "square-root-real-power-example",
+      "tangent-normal-line-equations",
+      "source-tangent-normal-example",
+      "product-quotient-misrule-diagnosis",
+      "radian-convention-and-trig-limits",
+      "degree-input-contrast",
+      "sine-derivative-definition-proof",
+      "cosine-derivative-definition-proof",
+      "sine-cosine-rules-all-real",
+      "sine-cosine-linear-combination-example",
+      "tangent-derivative-quotient-proof",
+      "reciprocal-trig-rules-with-domains",
+      "reciprocal-trig-quotient-derivations",
+      "constant-and-identity-derivative-statements",
+      "positive-integer-power-rule-statement",
+      "preserve-domain-when-canceling",
+      "common-misrule-check",
+      "tangent-derivative-domain-statement",
     ],
     "chain-rule-single": ["chain-rule-remainder"],
     "linearization-differentials": [
@@ -36,10 +68,8 @@ test("named MH1100 foundations have purpose-built blocks and independent transfe
   };
   for (const [id, expected] of Object.entries(paths)) {
     const guide = guides[id];
-    assert.deepEqual(
-      guide.supplementalBlocks.map((block) => block.id),
-      expected,
-    );
+    const blockIds = guide.supplementalBlocks.map((block) => block.id);
+    assert.deepEqual(blockIds, expected);
     assert.ok(
       guide.exercises.length > 0,
       `${id} needs transfer beyond its core exercise`,
