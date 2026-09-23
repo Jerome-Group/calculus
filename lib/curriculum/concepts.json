@@ -1325,7 +1325,7 @@
     "scene": "plane-circle",
     "formula": "x^2+y^2=4\\quad\\Rightarrow\\quad 2x+2y\\frac{dy}{dx}=0",
     "definition": "Implicit differentiation treats the dependent variable as a function while differentiating the whole equation. Related-rate problems instead differentiate a geometric constraint with respect to time, linking simultaneous motions.",
-    "conditions": "A local differentiable graph $y(x)$ is needed for $dy/dx$. In the circle example the solved derivative requires $y\\ne0$. Related rates must refer to the same instant and use consistent units.",
+    "conditions": "A local differentiable graph $y(x)$ is needed for $\\frac{dy}{dx}$. In the circle example the solved derivative requires $y\\ne0$. Related rates must refer to the same instant and use consistent units.",
     "proof": "Apply the chain rule to $y(x)^2$. For a moving point, differentiating $x(t)^2+y(t)^2=4$ gives $x\\dot x+y\\dot y=0$.",
     "example": "At $(x,y)=(1,\\sqrt3)$, the circle slope is $-1/\\sqrt3$. If $\\dot x=2$, then $\\dot y=-2/\\sqrt3$.",
     "pitfall": "Do not substitute instantaneous numerical values before differentiating: doing so can erase the varying quantities.",

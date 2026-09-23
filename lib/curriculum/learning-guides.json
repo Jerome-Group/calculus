@@ -3323,10 +3323,10 @@
         "kind": "theorem",
         "id": "derivative-notation",
         "title": "Translate derivative notations without treating them as a fraction",
-        "statement": "For $y=f(x)$, $f\\prime(x)$, $y\\prime$, $dy/dx$, and $Df(x)$ denote the same first derivative. The evaluation notation $[dy/dx]_{x=a}$ means $f\\prime(a)$.",
+        "statement": "For $y=f(x)$, $f\\prime(x)$, $y\\prime$, $\\frac{dy}{dx}$, and $Df(x)$ denote the same first derivative. The evaluation notation $[\\frac{dy}{dx}]_{x=a}$ means $f\\prime(a)$.",
         "hypotheses": [
           "Specify the dependent and independent variables.",
-          "At this stage $dy/dx$ is derivative notation, not an ordinary ratio of two independent numbers."
+          "At this stage $\\frac{dy}{dx}$ is derivative notation, not an ordinary ratio of two independent numbers."
         ],
         "prerequisites": ["finite limits and function domains"],
         "status": "Source theorem or consequence used without proof"
@@ -3344,11 +3344,11 @@
           },
           {
             "label": "Translate",
-            "text": "$dy/dx=2x$ and $[dy/dx]_{x=3}=f\\prime(3)=6$."
+            "text": "$\\frac{dy}{dx}=2x$ and $[\\frac{dy}{dx}]_{x=3}=f\\prime(3)=6$."
           }
         ],
         "result": "Both notations report the same slope 6 at the same point.",
-        "verification": "$d^2y/dx^2$ later denotes a new derivative, not the square of $dy/dx$."
+        "verification": "$\\frac{d^2y}{dx^2}$ later denotes a new derivative, not the square of $\\frac{dy}{dx}$."
       }
     ],
     "exercises": [
@@ -3412,9 +3412,9 @@
         "id": "derivative-notation-transfer",
         "outcome": "Translate first-derivative symbols at a fixed input.",
         "kind": "proof",
-        "prompt": "If $y=3x^2$ and $x=2$, write $f\\prime(x)$, $dy/dx$, and $[dy/dx]_{x=2}$.",
+        "prompt": "If $y=3x^2$ and $x=2$, write $f\\prime(x)$, $\\frac{dy}{dx}$, and $[\\frac{dy}{dx}]_{x=2}$.",
         "hint": "Differentiate from the definition or the known quadratic result, then evaluate.",
-        "solution": "The derivative function is $f\\prime(x)=6x$, so $dy/dx=6x$ and $[dy/dx]_{x=2}=f\\prime(2)=12$. The symbols describe one operation and its value at 2.",
+        "solution": "The derivative function is $f\\prime(x)=6x$, so $\\frac{dy}{dx}=6x$ and $[\\frac{dy}{dx}]_{x=2}=f\\prime(2)=12$. The symbols describe one operation and its value at 2.",
         "solutionTex": "f\\prime(x)=\\frac{dy}{dx}=6x,\\quad\\left.\\frac{dy}{dx}\\right|_{x=2}=12",
         "rubric": [
           "State the derivative function.",
@@ -3587,7 +3587,7 @@
         "kind": "theorem",
         "id": "higher-derivative-iteration",
         "title": "Iterate derivatives and read order notation",
-        "statement": "When successive finite derivatives exist, $f^{(3)}=(f\\prime\\prime)\\prime$, $f^{(4)}=(f^{(3)})\\prime$, and $f^{(n)}$ is the result of $n$ differentiations; $d^ny/dx^n$ denotes that operation.",
+        "statement": "When successive finite derivatives exist, $f^{(3)}=(f\\prime\\prime)\\prime$, $f^{(4)}=(f^{(3)})\\prime$, and $f^{(n)}$ is the result of $n$ differentiations; $\\frac{d^ny}{dx^n}$ denotes that operation.",
         "hypotheses": [
           "Each lower-order derivative exists on a neighborhood sufficient to differentiate again.",
           "The superscript $(n)$ is an order label, not an ordinary power of $f$."
@@ -3785,7 +3785,7 @@
     "sections": [
       {
         "title": "A second derivative requires a new limit",
-        "text": "If $f'$ is differentiable at $x$, its derivative is $f''(x)=\\lim_{h\\to0}(f'(x+h)-f'(x))/h$. Existence of $f'(x)$ alone does not guarantee this second limit. The notation $d^2y/dx^2$ means differentiating $dy/dx$ once more, not squaring it."
+        "text": "If $f'$ is differentiable at $x$, its derivative is $f''(x)=\\lim_{h\\to0}(f'(x+h)-f'(x))/h$. Existence of $f'(x)$ alone does not guarantee this second limit. The notation $\\frac{d^2y}{dx^2}$ means differentiating $\\frac{dy}{dx}$ once more, not squaring it."
       },
       {
         "title": "Three obstructions",

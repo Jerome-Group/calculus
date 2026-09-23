@@ -131,6 +131,9 @@ test("semantic notation guard rejects math that KaTeX would parse as ordinary le
     "Σ_{k=0}^n x^k",
     "D_(1,1)q(0)=1/2",
     "d(\\ln|x|)/dx=1/x",
+    "dy/dx=2x",
+    "d^2y/dx^2=6x",
+    "dV/dt=4\\pi r^2 dr/dt",
   ]) {
     const failures = [];
     inspectTexSemantics(bad, "example", failures);
@@ -142,11 +145,31 @@ test("semantic notation guard rejects math that KaTeX would parse as ordinary le
     "\\sum_{k=0}^n x^k",
     "D_{(1,1)}q(0)=\\tfrac12",
     "\\frac{d}{dx}\\ln|x|=1/x",
+    "\\frac{dy}{dx}=2x",
+    "\\frac{d^2y}{dx^2}=6x",
+    "\\frac{dV}{dt}=4\\pi r^2\\frac{dr}{dt}",
   ]) {
     const failures = [];
     inspectTexSemantics(good, "example", failures);
     assert.deepEqual(failures, [], good);
   }
+});
+
+test("derivative notation is a fraction in rendered MathML", () => {
+  const notation = guides["derivative-definition"].contentBlocks.find(
+    (block) => block.id === "derivative-notation",
+  );
+  assert.ok(notation);
+  const tex = notation.statement.match(
+    /\$([^$]*\\frac\{dy\}\{dx\}[^$]*)\$/,
+  )?.[1];
+  assert.ok(tex);
+  const html = katex.renderToString(tex, {
+    throwOnError: true,
+    output: "htmlAndMathml",
+  });
+  assert.match(html, /<mfrac>/);
+  assert.doesNotMatch(html, /katex-error/);
 });
 
 test("reported implicit-functions prose is explicitly marked for math rendering", () => {
