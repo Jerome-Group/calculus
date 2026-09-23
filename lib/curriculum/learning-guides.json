@@ -3299,7 +3299,86 @@
       "solution": "Area is $\\int_{-1}^0(-2x)\\,dx+\\int_0^1 2x\\,dx=2$. The unsplit signed integral of 2x is zero and is not the area.",
       "rubric": ["Locate the order change.", "Use nonnegative slice heights."],
       "solutionTex": "A=\\int_{-1}^0(-2x)\\,dx+\\int_0^1 2x\\,dx=2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "ch02-area-strip-definition",
+        "title": "Height is upper minus lower",
+        "text": "When continuous $f(x)\\ge g(x)$ on $[a,b]$, a narrow vertical strip has height $f(x)-g(x)\\ge0$ and width $\\Delta x$. The limit of its Riemann sums is the area $A=\\int_a^b(f-g)\\,dx$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch02-area-source-fixed-order",
+        "title": "Area when the upper curve stays above",
+        "strategy": "Check the order on the full interval, then integrate a nonnegative difference.",
+        "setup": "MH1101 Chapter 02 Example 2.1: $y=x^2+1$ above $y=x$ on $[0,1]$.",
+        "steps": [
+          {
+            "label": "Check the order",
+            "text": "$x^2+1-x=(x-1/2)^2+3/4>0$ on $[0,1]$."
+          },
+          {
+            "label": "Integrate strip heights",
+            "text": "$A=\\int_0^1(x^2+1-x)\\,dx=[x^3/3+x-x^2/2]_0^1$."
+          }
+        ],
+        "result": "$A=5/6$.",
+        "verification": "The integrand is nonnegative everywhere on the interval, so this is geometric area rather than cancellation of signed values."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch02-area-source-crossing",
+        "title": "Split where the curves trade places",
+        "strategy": "Solve the intersection, determine which curve is upper on each side, then add nonnegative integrals.",
+        "setup": "MH1101 Chapter 02 Example 2.2: find the area between $y=\\sin x$ and $y=\\cos x$ for $0\\le x\\le\\pi/2$.",
+        "steps": [
+          {
+            "label": "Find the crossing",
+            "text": "$\\sin x=\\cos x$ at $x=\\pi/4$ in this interval. Before it $\\cos x\\ge\\sin x$; after it the order reverses."
+          },
+          {
+            "label": "Integrate each positive height",
+            "text": "$A=\\int_0^{\\pi/4}(\\cos x-\\sin x)\\,dx+\\int_{\\pi/4}^{\\pi/2}(\\sin x-\\cos x)\\,dx$."
+          },
+          {
+            "label": "Evaluate",
+            "text": "Each piece contributes $\\sqrt2-1$, giving $2\\sqrt2-2$."
+          }
+        ],
+        "result": "$A=2\\sqrt2-2$.",
+        "verification": "The unsplit signed integral of $\\sin x-\\cos x$ on $[0,\\pi/2]$ is zero; it loses the positive geometric area."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch02-fixed-order-transfer",
+        "outcome": "Use continuous upper-minus-lower strip heights on a fresh interval.",
+        "kind": "computational",
+        "prompt": "Find the area between $y=3-x^2$ and $y=x^2$ for $-1\\le x\\le1$. Verify which is upper throughout.",
+        "hint": "Check $3-2x^2\\ge1$ on this interval.",
+        "solution": "The height is $3-2x^2\\ge1$, so $A=\\int_{-1}^1(3-2x^2)\\,dx=6-4/3=14/3$.",
+        "solutionTex": "A=\\int_{-1}^{1}(3-2x^2)\\,dx=\\frac{14}{3}",
+        "rubric": [
+          "Check the curve order on the whole interval.",
+          "Integrate a nonnegative height with correct bounds."
+        ]
+      },
+      {
+        "id": "ch02-multiple-crossing-transfer",
+        "outcome": "Split a fresh area problem at every change of upper curve.",
+        "kind": "computational",
+        "prompt": "Find the area between $y=x^2$ and $y=x$ over $[-1,2]$. State each subinterval’s upper curve.",
+        "hint": "The curves meet at $x=0$ and $x=1$; test all three intervals.",
+        "solution": "$x^2$ is upper on $[-1,0]$ and $[1,2]$, while $x$ is upper on $[0,1]$. The three areas are $5/6$, $1/6$, and $5/6$, so the total is $11/6$.",
+        "solutionTex": "A=\\int_{-1}^{0}(x^2-x)\\,dx+\\int_0^1(x-x^2)\\,dx+\\int_1^2(x^2-x)\\,dx=\\frac{11}{6}",
+        "rubric": [
+          "Locate both intersections and three sign intervals.",
+          "Use a nonnegative height on each piece.",
+          "Add all three areas without cancellation."
+        ]
+      }
+    ]
   },
   "disk-washer-volumes": {
     "prerequisites": ["area-between-curves"],
