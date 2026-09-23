@@ -14,6 +14,7 @@ import {
   type LessonMode,
 } from "@/lib/curriculum/learning-modes";
 import type { StudyController } from "./use-study-controller";
+
 export function LessonWorkspace({ study }: { study: StudyController }) {
   const {
     readingMode,
@@ -160,35 +161,50 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
           </>
         )}
       </div>
-      <footer className="lesson-pagination">
-        <button
-          disabled={index === 0}
-          onClick={() => open(concepts[index - 1].id)}
-        >
-          <ArrowLeft size={18} />
-          <span>
-            <small>PREVIOUS CONCEPT</small>
-            {index ? concepts[index - 1].title : "Start of course"}
-          </span>
-        </button>
-        <span className="concept-count">
-          {index + 1} / {concepts.length}
-        </span>
-        <button
-          disabled={index === concepts.length - 1}
-          onClick={() => open(concepts[index + 1].id)}
-        >
-          <span>
-            <small>
-              {concepts[index + 1]?.course !== concept.course
-                ? "NEXT COURSE"
-                : "NEXT CONCEPT"}
-            </small>
-            {concepts[index + 1]?.title || "End of library"}
-          </span>
-          <ArrowRight size={18} />
-        </button>
-      </footer>
+      <LessonPagination index={index} open={open} />
     </>
+  );
+}
+
+export function LessonPagination({
+  index,
+  open,
+}: {
+  index: number;
+  open: StudyController["open"];
+}) {
+  const concept = concepts[index];
+  return (
+    <footer className="lesson-pagination">
+      <button
+        disabled={index === 0}
+        onClick={() => open(concepts[index - 1].id)}
+      >
+        <ArrowLeft size={18} />
+        <span>
+          <small>PREVIOUS CONCEPT</small>
+          <MathText
+            text={index ? concepts[index - 1].title : "Start of course"}
+          />
+        </span>
+      </button>
+      <span className="concept-count">
+        {index + 1} / {concepts.length}
+      </span>
+      <button
+        disabled={index === concepts.length - 1}
+        onClick={() => open(concepts[index + 1].id)}
+      >
+        <span>
+          <small>
+            {concepts[index + 1]?.course !== concept.course
+              ? "NEXT COURSE"
+              : "NEXT CONCEPT"}
+          </small>
+          <MathText text={concepts[index + 1]?.title || "End of library"} />
+        </span>
+        <ArrowRight size={18} />
+      </button>
+    </footer>
   );
 }
