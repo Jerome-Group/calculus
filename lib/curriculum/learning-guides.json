@@ -3438,7 +3438,7 @@
           "The derivative limit is finite; multiplication by the increment then tends to zero."
         ],
         "prerequisites": ["finite limits and function domains"],
-        "status": "Source theorem or consequence used without proof"
+        "status": "Proof sketch in the statement and worked example below"
       },
       {
         "kind": "worked-example",
@@ -5933,7 +5933,7 @@
           "f is differentiable at c."
         ],
         "prerequisites": ["Local extrema", "Derivative"],
-        "status": "Theorem used without proof"
+        "status": "Proof follows in the one-sided argument below"
       },
       {
         "kind": "worked-example",
