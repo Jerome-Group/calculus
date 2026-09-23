@@ -2857,66 +2857,399 @@
       "source_id": "MH1100_Lecture_05",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Continuity at points and on intervals",
-      "physical_pages_from_audit": "2–37",
+      "physical_pages_from_audit": "2–37 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["continuity-ivt"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Continuity at points and on intervals' at 2–37; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 3 repeats Lecture03 direct substitution; page 5 restates page 4, and pages 10–13 exemplify the mapped discontinuity taxonomy. The graph on page 8 is a diagnostic exercise, represented by the taxonomy outcome. No learner-performance or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuity-three-conditions]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[discontinuity-classification]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[one-sided-continuity]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[interval-continuity]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-root-sum-continuity]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-discontinuity-four-cases]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-floor-one-sided]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-interval-root]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuity-point-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[discontinuity-type-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[one-sided-continuity-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[interval-continuity-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "continuity-ivt:point-three-conditions",
+        "continuity-ivt:discontinuity-types",
+        "continuity-ivt:one-sided-continuity",
+        "continuity-ivt:interval-continuity"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "3–17"
     },
     {
       "id": "MH1100_Lecture_05:02",
       "source_id": "MH1100_Lecture_05",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "algebra/composition",
-      "physical_pages_from_audit": "2–37",
+      "physical_pages_from_audit": "2–37 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["continuity-ivt"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'algebra/composition' at 2–37; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Sine/cosine continuity via addition formulas is separately mapped. Theorem 7 family list on page 24 is grouped by domain eligibility, rather than one outcome per named family. The source omits b≠1 for logarithm bases; the guide states it. Page 26 root-law exercise follows from continuous outer functions. The page 29 extension is mapped separately, with the expression’s additional exclusion at -3 explicit. No learner-performance or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuity-algebra]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[polynomial-rational-continuity]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[elementary-family-domains]",
+            "claim": "Elementary-family domain hypotheses stated.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuous-outer-limit]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuous-composition]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuous-extension]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[trig-continuity-addition]",
+            "claim": "Source zero-angle hypothesis and addition-formula conclusion stated.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-rational-direct-substitution]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-polynomial-proof]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-tangent-domain]",
+            "claim": "Tangent continuity and excluded poles worked.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[root-law-from-continuity]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-nested-root-domain]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-extension-at-three]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[trig-continuity-at-a]",
+            "claim": "Arbitrary-angle sine and cosine limits worked from addition formulas.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuity-algebra-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[polynomial-rational-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[elementary-family-transfer]",
+            "claim": "Independent family-domain transfer has feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuous-outer-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuous-composition-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuous-extension-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[trig-continuity-transfer]",
+            "claim": "Independent translated-angle transfer has feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "continuity-ivt:continuity-algebra",
+        "continuity-ivt:polynomial-rational-continuity",
+        "continuity-ivt:elementary-family-domains",
+        "continuity-ivt:continuous-outer-limit",
+        "continuity-ivt:continuous-composition",
+        "continuity-ivt:continuous-extension",
+        "continuity-ivt:trig-translation-continuity"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "18–29"
     },
     {
       "id": "MH1100_Lecture_05:03",
       "source_id": "MH1100_Lecture_05",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "intermediate values",
-      "physical_pages_from_audit": "2–37",
+      "physical_pages_from_audit": "2–37 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["continuity-ivt"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'intermediate values'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 32–33 illustrate IVT without adding a new theorem. Page 35 refines the same source root bracket; the guide corrects the page 34 arithmetic sign typo for f(6). Physical page 37 has a /36 footer, so physical page numbering is authoritative. No uniqueness or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-eligibility]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-eligibility]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-bound-target]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-disjoint-roots]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-large-polynomial-root]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-large-polynomial-root]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-thousand-target]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-cubic-three-roots]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-eligibility-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-polynomial-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-bound-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-disjoint-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["continuity-ivt:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "continuity-ivt:source-skill-1",
+        "continuity-ivt:ivt-source-polynomial",
+        "continuity-ivt:ivt-bound-target",
+        "continuity-ivt:ivt-disjoint-roots"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "30–37"
     },
     {
       "id": "MH1100_Lecture_06:01",
@@ -7458,16 +7791,16 @@
     {
       "id": "continuity-ivt:source-skill-1",
       "concept_id": "continuity-ivt",
-      "outcome": "Check continuity on the whole closed interval before applying the intermediate value theorem.",
+      "outcome": "Check continuity on the whole closed interval and a strict target bracket before applying IVT.",
       "core_source": {
         "id": "MH1100_Lecture_05",
         "physical_page": 31,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [31],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page states continuity on a closed interval among the intermediate value theorem hypotheses."
+          "pages": [30, 31, 32, 33],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 30 illustrates a skipped horizontal target; page 31 states closed-interval continuity and strict target bracket; pages 32–33 show multiplicity and a line-crossing interpretation."
         },
         "page_heading": "Intermediate Value Theorem"
       },
@@ -7475,29 +7808,29 @@
         "named": [
           {
             "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.sections[Existence is not uniqueness]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-eligibility]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.sections[Existence is not uniqueness]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-large-polynomial-root]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-eligibility-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
           }
         ],
         "visualized": [],
@@ -7507,10 +7840,19 @@
         "scene_id": "plane-ivt",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
       "source_section_id": "MH1100_Lecture_05:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      },
       "candidate_blocks": {
         "named": [
           {
@@ -7536,15 +7878,930 @@
             "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
           }
         ]
+      }
+    },
+    {
+      "id": "continuity-ivt:point-three-conditions",
+      "concept_id": "continuity-ivt",
+      "outcome": "Check point value, finite limit, and equality to establish continuity.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 4,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5, 6],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 4–5 state defined point value, existing limit, and equality; page 6 works x²+√(5-x) at 4."
+        },
+        "page_heading": "Continuity"
       },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuity-three-conditions]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-root-sum-continuity]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuity-point-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:01",
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
         "named": "match",
-        "stated": "match",
-        "worked": "worked instance in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:discontinuity-types",
+      "concept_id": "continuity-ivt",
+      "outcome": "Distinguish removable hole/mismatch, infinite, and jump discontinuities by the failed condition.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 7,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 8, 9, 10, 11, 12, 13],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 7 lists three failure conditions; pages 9–13 contrast removable holes and wrong values, an infinite pole, and floor-function jumps."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[discontinuity-classification]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-discontinuity-four-cases]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[discontinuity-type-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:one-sided-continuity",
+      "concept_id": "continuity-ivt",
+      "outcome": "Test right and left continuity separately against the assigned point value.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 14,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14, 15],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 14 defines right and left continuity; page 15 applies both sides to floor at an integer."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[one-sided-continuity]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-floor-one-sided]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[one-sided-continuity-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:interval-continuity",
+      "concept_id": "continuity-ivt",
+      "outcome": "Check continuity at all interior points and from the domain side at included endpoints.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 16,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 16 defines interval continuity with inward endpoint tests; page 17 asks about 2−√(1−x²) on [-1,1]."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[interval-continuity]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-interval-root]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[interval-continuity-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:continuity-algebra",
+      "concept_id": "continuity-ivt",
+      "outcome": "Combine continuous functions and check quotient denominators.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 18,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18, 21],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 18 states closure under four operations and a quotient with nonzero denominator; page 21 asks for a rational limit."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuity-algebra]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-rational-direct-substitution]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuity-algebra-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:polynomial-rational-continuity",
+      "concept_id": "continuity-ivt",
+      "outcome": "Justify polynomial continuity by finite laws and rational continuity on the nonzero-denominator domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 19,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 19 states polynomial and rational continuity on their domains; page 20 proves polynomial continuity by a finite limit-law sum."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[polynomial-rational-continuity]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-polynomial-proof]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[polynomial-rational-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:elementary-family-domains",
+      "concept_id": "continuity-ivt",
+      "outcome": "Use familiar continuous families only on their real domains, including trigonometric quotient poles.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 23,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 24],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 22 discusses sine/cosine; page 23 excludes cosine zeros for tangent; page 24 lists elementary families as continuous on their domains."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[elementary-family-domains]",
+            "claim": "Elementary-family domain hypotheses stated.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-tangent-domain]",
+            "claim": "Tangent continuity and excluded poles worked.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[elementary-family-transfer]",
+            "claim": "Independent family-domain transfer has feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:continuous-outer-limit",
+      "concept_id": "continuity-ivt",
+      "outcome": "Pass a limit through a continuous outer function and derive the stated root law.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 25,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25, 26],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 25 states the continuous-outer limit rule; page 26 asks to derive the root law, with positive inner limit for even roots."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuous-outer-limit]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[root-law-from-continuity]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuous-outer-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:continuous-composition",
+      "concept_id": "continuity-ivt",
+      "outcome": "Establish composite continuity after checking each nested domain restriction.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 27,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 28],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 27 proves composite continuity; page 28 excludes ±3 from a nested radical quotient."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuous-composition]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-nested-root-domain]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuous-composition-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:continuous-extension",
+      "concept_id": "continuity-ivt",
+      "outcome": "Fill a finite removable limit with its unique continuous extension value.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 29,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 29 defines a continuous extension and asks for the removable limit at 3 of a factored rational function."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[continuous-extension]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-extension-at-three]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[continuous-extension-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:ivt-source-polynomial",
+      "concept_id": "continuity-ivt",
+      "outcome": "Verify source polynomial endpoint signs and invoke IVT without claiming uniqueness.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 34,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [34, 35],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 34–35 use endpoint signs and polynomial continuity to place at least one root between 5 and 6."
+        },
+        "page_heading": "Intermediate Value Theorem"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-eligibility]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-large-polynomial-root]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-polynomial-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:ivt-bound-target",
+      "concept_id": "continuity-ivt",
+      "outcome": "Use robust bounds on an oscillatory term to bracket a requested target value.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 36,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 36 asks whether x²+10 sin x reaches 1000; the guide uses a uniform sine bound to establish a bracket."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-bound-target]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-thousand-target]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-bound-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:ivt-disjoint-roots",
+      "concept_id": "continuity-ivt",
+      "outcome": "Use disjoint IVT brackets to certify distinct roots, then a degree bound for exact count.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 37,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [37],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Physical page 37 asks for three solutions of x³−15x+1 in [-4,4], although its footer says /36."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[ivt-disjoint-roots]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[source-cubic-three-roots]",
+            "claim": "Exact reasoning and contrast inspected; source example identified.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[ivt-disjoint-transfer]",
+            "claim": "Independent guide-created transfer has hint, solution, rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "continuity-ivt:trig-translation-continuity",
+      "concept_id": "continuity-ivt",
+      "outcome": "Use zero-angle limits and addition formulas to establish sine and cosine continuity at any real angle.",
+      "core_source": {
+        "id": "MH1100_Lecture_05",
+        "physical_page": 22,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 22 derives sine/cosine continuity at arbitrary angles from zero-angle limits and addition formulas; page 23 contrasts tangent poles."
+        },
+        "page_heading": "Continuity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#continuity-ivt.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[trig-continuity-addition]",
+            "claim": "Source zero-angle hypothesis and addition-formula conclusion stated.",
+            "method": "Compared source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.contentBlocks[trig-continuity-at-a]",
+            "claim": "Arbitrary-angle sine and cosine limits worked from addition formulas.",
+            "method": "Solved source calculation and compared guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#continuity-ivt.exercises[trig-continuity-transfer]",
+            "claim": "Independent translated-angle transfer has feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ivt",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_05:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
       }
     },
     {

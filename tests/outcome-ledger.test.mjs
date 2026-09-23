@@ -37,15 +37,15 @@ test("every core source has an explicit section inventory and honest gap", () =>
     );
     assert.ok(sections.length > 0, source.id);
     for (const section of sections) {
-      const lecture03 = section.id.startsWith("MH1100_Lecture_03:");
+      const mappedLecture = /^MH1100_Lecture_0[35]:/.test(section.id);
       assert.equal(
         section.verification,
-        lecture03 ? "canonical_sha_and_physical_pages_verified" : "pending",
+        mappedLecture ? "canonical_sha_and_physical_pages_verified" : "pending",
       );
       assert.ok(section.gap);
       assert.ok(section.physical_pages_from_audit);
       assert.ok(
-        (lecture03
+        (mappedLecture
           ? ["mapped_with_reasoned_exclusions"]
           : ["partial_atomic_mapping", "explicit_gap"]
         ).includes(section.coverage_decision),
@@ -62,7 +62,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
       else assert.ok(section.atomic_outcome_ids.length > 0);
       for (const state of ledger.states) {
         if (
-          lecture03 &&
+          mappedLecture &&
           ["named", "stated", "worked", "practiced"].includes(state)
         )
           assert.ok(section.evidence[state].length > 0);
