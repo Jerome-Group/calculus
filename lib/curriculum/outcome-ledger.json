@@ -5155,10 +5155,10 @@
       "source_id": "MH1100_Lecture_12",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Inverse functions",
-      "physical_pages_from_audit": "2–42; inverse 4–16; exponential 17–25; logarithm 26–42",
-      "linked_concept_ids": ["inverse-functions", "exponential-logarithmic"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Inverse functions' at 2–42; inverse 4–16; exponential 17–25; logarithm 26–42; inspect its source pages and split every distinct skill before claiming coverage.",
+      "physical_pages_from_audit": "Physical pages 4–16: one-to-one definition and horizontal-line test (4–6); inverse identities and algebraic solving (7–8, 10); graph reflection (9, 12); continuity and reciprocal-slope theorem/proof (11, 13–14); inverse-derivative examples (15–16).",
+      "linked_concept_ids": ["inverse-functions"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills are mapped to a named guide statement, source-specific worked reasoning, and independent transfer task. No outcome-specific scene alignment or learner performance check is recorded.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -5167,20 +5167,47 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "inverse-functions:lecture12-one-to-one-horizontal-line-test",
+        "inverse-functions:lecture12-inverse-domain-range-identities",
+        "inverse-functions:lecture12-solve-for-inverse",
+        "inverse-functions:lecture12-graph-inverse-reflection",
+        "inverse-functions:lecture12-inverse-continuity",
+        "inverse-functions:lecture12-inverse-derivative-reciprocal-slope",
+        "inverse-functions:lecture12-compute-inverse-derivative-at-output"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "4–16",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Cover only; identifies the lecture but contains no inverse-function instruction."
+        },
+        {
+          "physical_page": 2,
+          "reason": "Synopsis and topic headings only; no distinct theorem, worked reasoning, or practice."
+        },
+        {
+          "physical_page": 3,
+          "reason": "Application and further-reading montage rather than instruction; inverse-function instruction starts on physical page 4."
+        }
+      ],
+      "source_review_notes": [
+        "The graph and algebraic injectivity checks are retained as one outcome because both establish the same one-to-one property; inverse construction, reflection, continuity, theorem proof, and slope calculation remain distinct.",
+        "The inverse-derivative identity is not treated as an existence proof; the local inverse theorem supplies existence and differentiability before the chain-rule alternative is used."
+      ]
     },
     {
       "id": "MH1100_Lecture_12:02",
       "source_id": "MH1100_Lecture_12",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "exponential and logarithmic functions and derivatives",
-      "physical_pages_from_audit": "2–42; inverse 4–16; exponential 17–25; logarithm 26–42",
-      "linked_concept_ids": ["inverse-functions", "exponential-logarithmic"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'exponential and logarithmic functions and derivatives' at 2–42; inverse 4–16; exponential 17–25; logarithm 26–42; inspect its source pages and split every distinct skill before claiming coverage.",
+      "physical_pages_from_audit": "Physical pages 17–39 and 41–42: exponential base behavior and limits (17–22), derivatives and rules (23–25, 35), logarithm inverse/domain and laws (26–30), growth comparison (31), log derivatives (32–34), logarithmic differentiation (36–39), and the e limits (41–42). Physical page 40 is title-only.",
+      "linked_concept_ids": ["exponential-logarithmic"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills are mapped to a named guide statement, source-specific worked reasoning, and independent transfer task. No outcome-specific scene alignment or learner performance check is recorded.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -5189,10 +5216,37 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "exponential-logarithmic:lecture12-exponential-base-behavior",
+        "exponential-logarithmic:lecture12-exponential-end-behavior-limits",
+        "exponential-logarithmic:lecture12-general-exponential-derivative",
+        "exponential-logarithmic:lecture12-chain-and-product-exponential-rules",
+        "exponential-logarithmic:lecture12-log-as-inverse-and-domain",
+        "exponential-logarithmic:lecture12-log-laws-and-evaluation",
+        "exponential-logarithmic:lecture12-logarithmic-end-behavior",
+        "exponential-logarithmic:lecture12-logarithm-slower-than-powers",
+        "exponential-logarithmic:lecture12-natural-log-chain-rule",
+        "exponential-logarithmic:lecture12-change-of-base-log-derivative",
+        "exponential-logarithmic:lecture12-log-differentiate-products-and-quotients",
+        "exponential-logarithmic:lecture12-log-differentiate-variable-powers",
+        "exponential-logarithmic:lecture12-derive-e-limit"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "17–42",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 40,
+          "reason": "Title-only page with no instructional content; the final limit argument resumes on physical page 41."
+        }
+      ],
+      "source_review_notes": [
+        "Page 27 omits the condition b>1 from its increasing logarithm growth statement. The correction is recorded in sources.json; for 0<b<1 the logarithm decreases, consistent with pages 19 and 26.",
+        "Page 31 states ln(x)/x^p tends to zero for p>0 but defers its proof; the guide uses it as a stated result and does not claim a proof.",
+        "Physical page 40 contains a heading only; no outcome is assigned to it.",
+        "Page 29 also evaluates a logarithmic limit at a punctured domain boundary; it is mapped separately from the log-law identities and exact-value work on pages 28–30."
+      ]
     },
     {
       "id": "MH1100_Lecture_13:01",
@@ -31328,6 +31382,1866 @@
         "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
         "visualized": "No rendered app scene was verified for this exact outcome.",
         "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-one-to-one-horizontal-line-test",
+      "concept_id": "inverse-functions",
+      "outcome": "Determine whether a function is one-to-one by checking repeated outputs algebraically or with the horizontal-line test.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 5,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 4–6 define one-to-one functions, state the horizontal-line test, and compare algebraic and visual checks on x^3.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5, 6],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 4–6 define one-to-one functions, state the horizontal-line test, and compare algebraic and visual checks on x^3."
+        },
+        "page_heading": "One-to-One Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-one-to-one-horizontal-line-test-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-one-to-one-horizontal-line-test-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-one-to-one-horizontal-line-test-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-one-to-one-horizontal-line-test-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-one-to-one-horizontal-line-test-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-one-to-one-horizontal-line-test-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-one-to-one-horizontal-line-test-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-one-to-one-horizontal-line-test-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-inverse-domain-range-identities",
+      "concept_id": "inverse-functions",
+      "outcome": "Use the inverse identities on the correct domain and range, and exchange the domain and range of a bijection.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 7,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Page 7 defines an inverse through the two cancellation identities and identifies its domain and range.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Page 7 defines an inverse through the two cancellation identities and identifies its domain and range."
+        },
+        "page_heading": "Definition of an Inverse Function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-domain-range-identities-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-domain-range-identities-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-domain-range-identities-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-inverse-domain-range-identities-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-domain-range-identities-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-domain-range-identities-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-domain-range-identities-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-inverse-domain-range-identities-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-solve-for-inverse",
+      "concept_id": "inverse-functions",
+      "outcome": "Find an inverse formula by writing y=f(x), solving for x, and relabeling the output variable.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 8,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 8 and 10 give the solve-for-the-input procedure and apply it to x^3+2.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8, 10],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 8 and 10 give the solve-for-the-input procedure and apply it to x^3+2."
+        },
+        "page_heading": "Finding an Inverse Function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-solve-for-inverse-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-solve-for-inverse-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-solve-for-inverse-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-solve-for-inverse-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-solve-for-inverse-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-solve-for-inverse-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-solve-for-inverse-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-solve-for-inverse-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-graph-inverse-reflection",
+      "concept_id": "inverse-functions",
+      "outcome": "Relate a function graph and its inverse by reflection across y=x, respecting any domain restriction.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 9,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 9 and 12 explain that inverse graphs reflect across y=x and illustrate the branch restriction for a non-one-to-one graph.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 12],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 9 and 12 explain that inverse graphs reflect across y=x and illustrate the branch restriction for a non-one-to-one graph."
+        },
+        "page_heading": "Graphs of Inverse Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-graph-inverse-reflection-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-graph-inverse-reflection-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-graph-inverse-reflection-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-graph-inverse-reflection-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-graph-inverse-reflection-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-graph-inverse-reflection-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-graph-inverse-reflection-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-graph-inverse-reflection-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-inverse-continuity",
+      "concept_id": "inverse-functions",
+      "outcome": "Use continuity and strict monotonicity on an interval to conclude that the inverse is continuous on the range.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 11,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Page 11 states that a continuous strictly monotone function on an interval has a continuous inverse on its range.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Page 11 states that a continuous strictly monotone function on an interval has a continuous inverse on its range."
+        },
+        "page_heading": "Continuity of Inverse Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-continuity-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-continuity-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-continuity-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-inverse-continuity-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-continuity-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-continuity-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-continuity-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-inverse-continuity-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-inverse-derivative-reciprocal-slope",
+      "concept_id": "inverse-functions",
+      "outcome": "Use the local inverse derivative theorem and derive the reciprocal slope formula at corresponding inputs and outputs.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 14,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 11–14 state the hypotheses, show reciprocal tangent slopes, and derive the inverse-derivative formula from a difference quotient.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 13, 14],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 11–14 state the hypotheses, show reciprocal tangent slopes, and derive the inverse-derivative formula from a difference quotient."
+        },
+        "page_heading": "Derivative of an Inverse Function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-derivative-reciprocal-slope-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-derivative-reciprocal-slope-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-derivative-reciprocal-slope-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-inverse-derivative-reciprocal-slope-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-derivative-reciprocal-slope-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-derivative-reciprocal-slope-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-inverse-derivative-reciprocal-slope-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-inverse-derivative-reciprocal-slope-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "inverse-functions:lecture12-compute-inverse-derivative-at-output",
+      "concept_id": "inverse-functions",
+      "outcome": "Find the original input mapped to a requested output, verify the theorem hypotheses, and evaluate the reciprocal derivative there.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 15,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 15–16 compute inverse slopes at specified outputs by finding the corresponding input and checking the original derivative.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 15–16 compute inverse slopes at specified outputs by finding the corresponding input and checking the original derivative."
+        },
+        "page_heading": "Examples: Derivative of an Inverse Function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-compute-inverse-derivative-at-output-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-compute-inverse-derivative-at-output-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-compute-inverse-derivative-at-output-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-compute-inverse-derivative-at-output-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-inverse",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-compute-inverse-derivative-at-output-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-compute-inverse-derivative-at-output-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.contentBlocks[lecture12-compute-inverse-derivative-at-output-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-functions.exercises[lecture12-compute-inverse-derivative-at-output-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-exponential-base-behavior",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Classify the monotonicity, intercept, and horizontal asymptote of b^x from the value of its positive base.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 17,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 17–20 compare exponential bases, their monotonicity, intercept, reflected reciprocal-base graphs, and end behavior.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [17, 18, 19, 20],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 17–20 compare exponential bases, their monotonicity, intercept, reflected reciprocal-base graphs, and end behavior."
+        },
+        "page_heading": "Exponential Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-base-behavior-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-base-behavior-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-base-behavior-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-exponential-base-behavior-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-base-behavior-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-base-behavior-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-base-behavior-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-exponential-base-behavior-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-exponential-end-behavior-limits",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Use base behavior and dominant exponential terms to evaluate finite limits at an infinite endpoint.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 21,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 20–22 use exponential tail behavior to evaluate shifted and rational expressions with exponential terms.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20, 21, 22],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 20–22 use exponential tail behavior to evaluate shifted and rational expressions with exponential terms."
+        },
+        "page_heading": "Exponential Limits"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-end-behavior-limits-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-end-behavior-limits-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-end-behavior-limits-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-exponential-end-behavior-limits-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-end-behavior-limits-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-end-behavior-limits-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-exponential-end-behavior-limits-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-exponential-end-behavior-limits-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-general-exponential-derivative",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Derive and apply the derivative of b^x, distinguishing the first-principles scaling argument from the e^{x ln b} chain-rule method.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 23,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 23–24 derive the general exponential rate from its derivative at zero and define the natural base; page 35 contrasts rewriting b^x as e^(x ln b).",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [23, 24, 35],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 23–24 derive the general exponential rate from its derivative at zero and define the natural base; page 35 contrasts rewriting b^x as e^(x ln b)."
+        },
+        "page_heading": "Derivative of Exponential Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-general-exponential-derivative-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-general-exponential-derivative-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-general-exponential-derivative-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-general-exponential-derivative-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-general-exponential-derivative-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-general-exponential-derivative-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-general-exponential-derivative-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-general-exponential-derivative-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-chain-and-product-exponential-rules",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Differentiate a composition with e^u and a product containing exponential factors.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 25,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Page 25 applies the chain rule to e^(tan x) and the product rule to e^(-4x) sin(5x).",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Page 25 applies the chain rule to e^(tan x) and the product rule to e^(-4x) sin(5x)."
+        },
+        "page_heading": "Differentiating Exponential Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-chain-and-product-exponential-rules-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-chain-and-product-exponential-rules-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-chain-and-product-exponential-rules-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-chain-and-product-exponential-rules-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-chain-and-product-exponential-rules-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-chain-and-product-exponential-rules-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-chain-and-product-exponential-rules-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-chain-and-product-exponential-rules-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-log-as-inverse-and-domain",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Use log_b as the inverse of b^x and state its domain, range, and base conditions.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 26,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 26–27 define logarithms as exponential inverses and state their base, domain, range, and monotonicity conditions.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 27],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 26–27 define logarithms as exponential inverses and state their base, domain, range, and monotonicity conditions."
+        },
+        "page_heading": "Logarithmic Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-as-inverse-and-domain-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-as-inverse-and-domain-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-as-inverse-and-domain-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-as-inverse-and-domain-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-as-inverse-and-domain-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-as-inverse-and-domain-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-as-inverse-and-domain-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-as-inverse-and-domain-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-log-laws-and-evaluation",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Use product, quotient, and power laws for logarithms and evaluate exact values by converting to powers.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 29,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 28–30 state the logarithm laws, evaluate exact logarithms, and use them in limit examples.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28, 29, 30],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 28–30 state the logarithm laws, evaluate exact logarithms, and use them in limit examples."
+        },
+        "page_heading": "Properties of Logarithms"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-laws-and-evaluation-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-laws-and-evaluation-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-laws-and-evaluation-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-laws-and-evaluation-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-laws-and-evaluation-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-laws-and-evaluation-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-laws-and-evaluation-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-laws-and-evaluation-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-logarithm-slower-than-powers",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Apply the source-stated limit that logarithmic growth is dominated by every positive power at infinity.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 31,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Page 31 states that ln x/x^p tends to zero for p>0, while indicating the result will be shown later rather than proving it there.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Page 31 states that ln x/x^p tends to zero for p>0, while indicating the result will be shown later rather than proving it there."
+        },
+        "page_heading": "Comparing Growth Rates"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithm-slower-than-powers-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithm-slower-than-powers-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithm-slower-than-powers-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-logarithm-slower-than-powers-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithm-slower-than-powers-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithm-slower-than-powers-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithm-slower-than-powers-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-logarithm-slower-than-powers-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-natural-log-chain-rule",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Differentiate ln(u(x)) on its positive domain and use the corresponding ln|x| rule away from zero.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 32,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 32–33 derive d(ln x)/dx=1/x and apply the chain rule to logarithmic compositions, including an example with x>2.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [32, 33],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 32–33 derive d(ln x)/dx=1/x and apply the chain rule to logarithmic compositions, including an example with x>2."
+        },
+        "page_heading": "Derivatives of Logarithmic Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-natural-log-chain-rule-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-natural-log-chain-rule-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-natural-log-chain-rule-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-natural-log-chain-rule-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-natural-log-chain-rule-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-natural-log-chain-rule-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-natural-log-chain-rule-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-natural-log-chain-rule-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-change-of-base-log-derivative",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Derive and apply the change-of-base formula for the derivative of log_b x.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 34,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Page 34 derives log_b x=ln(x)/ln(b) and differentiates it, with an example whose argument is 2+sin x.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [34],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Page 34 derives log_b x=ln(x)/ln(b) and differentiates it, with an example whose argument is 2+sin x."
+        },
+        "page_heading": "Logarithmic Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-change-of-base-log-derivative-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-change-of-base-log-derivative-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-change-of-base-log-derivative-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-change-of-base-log-derivative-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-change-of-base-log-derivative-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-change-of-base-log-derivative-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-change-of-base-log-derivative-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-change-of-base-log-derivative-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-log-differentiate-products-and-quotients",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Use logarithm laws to turn a product and quotient into sums, then solve for the derivative.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 36,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 36–37 use logarithmic differentiation to differentiate a product and quotient with fractional powers.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36, 37],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 36–37 use logarithmic differentiation to differentiate a product and quotient with fractional powers."
+        },
+        "page_heading": "Logarithmic Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-products-and-quotients-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-products-and-quotients-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-products-and-quotients-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-differentiate-products-and-quotients-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-products-and-quotients-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-products-and-quotients-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-products-and-quotients-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-differentiate-products-and-quotients-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-log-differentiate-variable-powers",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Differentiate a variable base raised to a variable exponent on a valid positive domain using logarithmic differentiation.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 38,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 38–39 differentiate variable powers such as x^(sin x) and (sin x)^(ln x), requiring positive bases for the real logarithmic method.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [38, 39],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 38–39 differentiate variable powers such as x^(sin x) and (sin x)^(ln x), requiring positive bases for the real logarithmic method."
+        },
+        "page_heading": "Logarithmic Differentiation: Variable Powers"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-variable-powers-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-variable-powers-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-variable-powers-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-differentiate-variable-powers-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-variable-powers-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-variable-powers-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-log-differentiate-variable-powers-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-log-differentiate-variable-powers-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-derive-e-limit",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Use the derivative of ln x at one to obtain the limit of (1+x)^(1/x) and its sequence form.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 41,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d. Claim observed: Pages 41–42 use the derivative of ln x at one and the substitution n=1/x to obtain the two standard limits defining e.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [41, 42],
+          "method": "Hash-matched canonical 42-page Lecture 12 PDF; rendered the cited physical pages and compared page headings, displayed mathematics, and page numbers with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Pages 41–42 use the derivative of ln x at one and the substitution n=1/x to obtain the two standard limits defining e."
+        },
+        "page_heading": "A Limit Definition of e"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-derive-e-limit-statement].title",
+            "claim": "The atomic skill has a distinct learner-facing heading.",
+            "method": "Compared the heading with the atomic claim and the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-derive-e-limit-strategy]",
+            "claim": "The stable lesson route states the method or condition in source-specific terms.",
+            "method": "Compared the learner-facing method with the hash-matched physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-derive-e-limit-worked]",
+            "claim": "Source-based reasoning is worked and independently checked.",
+            "method": "Recomputed the displayed algebra, derivative, limit, or domain condition independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-derive-e-limit-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed.",
+            "method": "Solved the transfer independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-derive-e-limit-statement].title",
+            "basis": "The atomic skill has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-derive-e-limit-strategy]",
+            "basis": "The stable lesson route states the method or condition in source-specific terms."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-derive-e-limit-worked]",
+            "basis": "Source-based reasoning is worked and independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-derive-e-limit-transfer]",
+            "basis": "Changed-data transfer includes a hint, worked solution, and self-check rubric; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct learner-facing atomic heading inspected",
+        "stated": "source method, hypotheses, and domain inspected",
+        "worked": "calculation or reasoning independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "exponential-logarithmic:lecture12-logarithmic-end-behavior",
+      "concept_id": "exponential-logarithmic",
+      "outcome": "Evaluate logarithmic end-behavior limits when a positive inner expression tends to zero at an excluded endpoint.",
+      "core_source": {
+        "id": "MH1100_Lecture_12",
+        "physical_page": 29,
+        "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+        "inspection": "Hash-matched canonical 42-page Lecture 12 PDF; page 29 was rendered and its limit formula, punctured domain, and page number were compared with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29],
+          "method": "Hash-matched canonical Lecture 12 PDF; visually inspected physical page 29 and compared its displayed limit with pdftotext -layout. SHA-256: 7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d.",
+          "claim_observed": "Page 29 evaluates $\\lim_{x\\to0}\\log_{10}(\\tan^2x)=-\\infty$."
+        },
+        "page_heading": "Logarithmic Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithmic-end-behavior-statement].title",
+            "claim": "The logarithmic endpoint behavior has a distinct learner-facing heading.",
+            "method": "Compared the heading with the page-29 limit claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithmic-end-behavior-strategy]",
+            "claim": "The stable lesson route states positivity, one-sided inner behavior, and the base condition.",
+            "method": "Compared the limit and domain conditions with the hash-matched physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithmic-end-behavior-worked]",
+            "claim": "The page-29 limit is worked from the punctured domain through the positive inner limit.",
+            "method": "Checked the quantified tail argument for arbitrary M>0."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-logarithmic-end-behavior-transfer]",
+            "claim": "Changed-data transfer checks the same endpoint behavior with a new positive inner expression; learner performance is not claimed.",
+            "method": "Solved the changed-input limit independently and checked its punctured domain."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-exponential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source limit, explicit punctured-domain reasoning, and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_12:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithmic-end-behavior-statement].title",
+            "basis": "The logarithmic endpoint behavior has a distinct learner-facing heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithmic-end-behavior-strategy]",
+            "basis": "The stable lesson route states positivity, one-sided inner behavior, and the base condition."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.contentBlocks[lecture12-logarithmic-end-behavior-worked]",
+            "basis": "The page-29 limit is worked from the punctured domain through the positive inner limit."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#exponential-logarithmic.exercises[lecture12-logarithmic-end-behavior-transfer]",
+            "basis": "Changed-data transfer checks the same endpoint behavior with a new positive inner expression; learner performance is not claimed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched page 29, exact guide blocks, changed-data practice, and evidence states were compared.",
+        "named": "distinct logarithmic endpoint skill heading inspected",
+        "stated": "positive inner limit and base condition inspected",
+        "worked": "punctured-domain argument and quantified negative tail independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
       }
     }
   ]

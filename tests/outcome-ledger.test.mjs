@@ -43,6 +43,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
       );
       const lecture10 = /^MH1100_Lecture_10:0[1-4]$/.test(section.id);
       const lecture11 = /^MH1100_Lecture_11:0[1-3]$/.test(section.id);
+      const lecture12 = /^MH1100_Lecture_12:0[12]$/.test(section.id);
       const mappedLecture =
         /^MH1100_Lecture_0[356]:/.test(section.id) ||
         lecture08 ||
@@ -53,6 +54,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         lecture10 ||
         lecture08 ||
         lecture11 ||
+        lecture12 ||
         chapter04Notes;
       const lecture04 = section.id.startsWith("MH1100_Lecture_04:");
       assert.equal(
@@ -62,7 +64,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
       assert.ok(section.gap);
       assert.ok(section.physical_pages_from_audit);
       assert.ok(
-        (lecture10
+        (lecture10 || lecture12
           ? ["mapped_with_reasoned_exclusions", "partial_atomic_mapping"]
           : pageVerified
             ? ["mapped_with_reasoned_exclusions"]

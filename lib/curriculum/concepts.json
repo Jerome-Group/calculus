@@ -1811,6 +1811,16 @@
         "sourceId": "MH1100_Stewart_Chapter_06_Inverse_Functions",
         "pages": [3, 37],
         "detail": "Optional: Stewart, §6.1–6.4; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [5, 9],
+        "detail": "Lecture 12: one-to-one tests, inverse identities, solving, and graph reflection"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [12, 16],
+        "detail": "Lecture 12: reflected branches, inverse continuity, reciprocal slopes, and source examples"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -1877,6 +1887,31 @@
         "sourceId": "MH1100_Stewart_Chapter_06_Inverse_Functions",
         "pages": [3, 37],
         "detail": "Optional: Stewart, §6.1–6.4; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [18, 25],
+        "detail": "Lecture 12: exponential base behavior, limits, derivative, chain and product rules"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [27, 29],
+        "detail": "Lecture 12: logarithm inverse, domain, laws, and exact evaluation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [33, 34],
+        "detail": "Lecture 12: natural-log chain rule and change-of-base derivative"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [37, 39],
+        "detail": "Lecture 12: logarithmic differentiation of products, quotients, and variable powers"
+      },
+      {
+        "sourceId": "MH1100_Lecture_12",
+        "pages": [41, 42],
+        "detail": "Lecture 12: continuous and sequence limits defining e"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

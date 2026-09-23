@@ -8856,6 +8856,309 @@
         ],
         "result": "$(f^{-1})'(2)=1/4$.",
         "verification": "The reciprocal is evaluated at input 1, not at output 2."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-one-to-one-horizontal-line-test-statement",
+        "title": "Test whether a function is one-to-one",
+        "statement": "A function is one-to-one when equal outputs force equal inputs: if $f(x_1)=f(x_2)$, then $x_1=x_2$. Its graph passes the horizontal-line test exactly when each horizontal line meets the graph at most once.",
+        "hypotheses": [
+          "The test concerns the function on its stated domain.",
+          "A horizontal line that meets the graph twice witnesses two distinct inputs with one output."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-one-to-one-horizontal-line-test-strategy",
+        "title": "A source-based method",
+        "text": "Try to show $f(x_1)=f(x_2)$ implies $x_1=x_2$. For a graph, look for a horizontal line that crosses twice. The lecture uses both checks for the cubic $x^3$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-one-to-one-horizontal-line-test-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Factor the difference of two cubic outputs and use the sign of the remaining factor.",
+        "setup": "Check the lecture example $f(x)=x^3$ for injectivity.",
+        "steps": [
+          {
+            "label": "Assume equal outputs",
+            "text": "Let $f(x_1)=f(x_2)$, so $x_1^3=x_2^3$."
+          },
+          {
+            "label": "Factor",
+            "text": "Move all terms to one side and factor the difference of cubes.",
+            "equation": "0=x_1^3-x_2^3=(x_1-x_2)(x_1^2+x_1x_2+x_2^2)"
+          },
+          {
+            "label": "Use positivity",
+            "text": "The quadratic factor is positive unless both inputs are zero. Thus the product can vanish only when $x_1=x_2$."
+          }
+        ],
+        "result": "The function $x^3$ is one-to-one; visually, every horizontal line crosses its graph at most once.",
+        "verification": "The algebraic implication and the graph test agree on the same example."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-inverse-domain-range-identities-statement",
+        "title": "Track inverse domains, ranges, and identities",
+        "statement": "If $f:A\\to B$ is one-to-one and onto its range $f(A)$, then $f^{-1}:f(A)\\to A$. The identities are $f^{-1}(f(x))=x$ for $x\\in A$ and $f(f^{-1}(y))=y$ for $y\\in f(A)$.",
+        "hypotheses": [
+          "$f$ is one-to-one on the stated domain $A$.",
+          "The inverse input $y$ belongs to the range $f(A)$."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-inverse-domain-range-identities-strategy",
+        "title": "A source-based method",
+        "text": "Write the original domain and range before composing. The first identity starts with an original input; the second starts with an output in the range."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-inverse-domain-range-identities-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Solve the inverse formula, then verify both compositions and their domains.",
+        "setup": "Let $f(x)=2x-3$ on $\\mathbb R$.",
+        "steps": [
+          {
+            "label": "Solve",
+            "text": "Write $y=2x-3$ and isolate the original input.",
+            "equation": "x=\\frac{y+3}{2}"
+          },
+          {
+            "label": "Name the inverse",
+            "text": "Use the output variable as the inverse input.",
+            "equation": "f^{-1}(y)=\\frac{y+3}{2}"
+          },
+          {
+            "label": "Check cancellation",
+            "text": "Substitution in either order returns the starting input.",
+            "equation": "f^{-1}(f(x))=x,\\qquad f(f^{-1}(y))=y"
+          }
+        ],
+        "result": "Both $f$ and $f^{-1}$ have domain and range $\\mathbb R$; the inverse identities hold on those sets.",
+        "verification": "The compositions simplify to $x$ and $y$ respectively, not to a new formula with an unrestricted domain."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-solve-for-inverse-statement",
+        "title": "Solve algebraically for an inverse",
+        "statement": "To find an inverse, write $y=f(x)$, solve this equation for $x$ in terms of $y$, and then rename $y$ as the inverse input. The formula defines an inverse only on the range of the original function.",
+        "hypotheses": [
+          "The original function is one-to-one on the selected domain.",
+          "The equation can be solved for the original input on that domain."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-solve-for-inverse-strategy",
+        "title": "A source-based method",
+        "text": "Keep the roles of input and output visible while solving. After isolating $x$, write the result as $f^{-1}(y)$ and check a composition."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-solve-for-inverse-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Undo the vertical shift after undoing the cubic.",
+        "setup": "Find the inverse of $f(x)=x^3+2$ from the lecture example.",
+        "steps": [
+          {
+            "label": "Set the output",
+            "text": "Write $y=x^3+2$."
+          },
+          {
+            "label": "Isolate x",
+            "text": "Subtract two, then take the real cube root.",
+            "equation": "x=\\sqrt[3]{y-2}"
+          },
+          {
+            "label": "Relabel",
+            "text": "Use $y$ as the inverse input.",
+            "equation": "f^{-1}(y)=\\sqrt[3]{y-2}"
+          }
+        ],
+        "result": "The inverse is $f^{-1}(y)=\\sqrt[3]{y-2}$ for every real $y$.",
+        "verification": "Applying $f$ gives $(\\sqrt[3]{y-2})^3+2=y$; the cubic is one-to-one on $\\mathbb R$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-graph-inverse-reflection-statement",
+        "title": "Reflect a graph to obtain its inverse",
+        "statement": "An inverse swaps each ordered pair $(a,b)$ to $(b,a)$, so the graph of $f^{-1}$ is the reflection of the graph of $f$ across $y=x$. Domain and range exchange; a non-one-to-one function needs a restricted branch first.",
+        "hypotheses": [
+          "The original graph represents a one-to-one function on its chosen domain.",
+          "Points are reflected by exchanging their coordinates."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-graph-inverse-reflection-strategy",
+        "title": "A source-based method",
+        "text": "Choose the domain branch, swap coordinates in points, and check that the reflected curve is still a function."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-graph-inverse-reflection-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Reflect the restricted parabola after listing a point and its image.",
+        "setup": "Use the lecture branch $f(x)=x^2$ for $x\\ge0$.",
+        "steps": [
+          {
+            "label": "Identify the branch",
+            "text": "The restriction $x\\ge0$ makes $x^2$ one-to-one, with range $y\\ge0$."
+          },
+          {
+            "label": "Swap a point",
+            "text": "The point $(2,4)$ on $y=x^2$ becomes $(4,2)$ on the inverse."
+          },
+          {
+            "label": "Reflect the curve",
+            "text": "Solving the swapped equation gives the nonnegative square root.",
+            "equation": "y=x^2,\\ x\\ge0\\quad\\Longleftrightarrow\\quad y=\\sqrt{x},\\ x\\ge0"
+          }
+        ],
+        "result": "The graph $y=\\sqrt{x}$ is the reflection of the restricted parabola across $y=x$.",
+        "verification": "The unrestricted parabola fails the horizontal-line test, so reflecting all of it would not give a function."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-inverse-continuity-statement",
+        "title": "Apply the inverse continuity theorem",
+        "statement": "If $f$ is continuous and strictly monotone on an interval $I$, then it has a continuous inverse on the range $f(I)$. This is an imported theorem in the lecture, not a proof by differentiating an identity.",
+        "hypotheses": [
+          "The domain is an interval $I$.",
+          "$f$ is continuous and strictly monotone on $I$."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-inverse-continuity-strategy",
+        "title": "A source-based method",
+        "text": "Check continuity and strict monotonicity on one interval. State the resulting range as the inverse domain; do not use a disconnected collection of branches."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-inverse-continuity-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Apply the theorem to a continuous, strictly increasing cubic on a closed interval.",
+        "setup": "Let $f(x)=x^3$ on $I=[-1,2]$.",
+        "steps": [
+          {
+            "label": "Continuity",
+            "text": "A polynomial is continuous on $[-1,2]$."
+          },
+          {
+            "label": "Strict increase",
+            "text": "If $x_1<x_2$, then $x_1^3<x_2^3$, so the function is one-to-one."
+          },
+          {
+            "label": "Find the range",
+            "text": "The endpoint values are $-1$ and $8$, so the range is $[-1,8]$."
+          }
+        ],
+        "result": "The inverse $f^{-1}(y)=\\sqrt[3]{y}$ is continuous for $y\\in[-1,8]$.",
+        "verification": "The theorem applies on the interval $[-1,2]$; the inverse domain is its image, not the original interval by default."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-inverse-derivative-reciprocal-slope-statement",
+        "title": "Derive the reciprocal-slope rule for an inverse",
+        "statement": "If $f$ has a differentiable local inverse near $a$, with $f'(a)\\ne0$, then $(f^{-1})'(f(a))=1/f'(a)$. The derivative belongs to the inverse at the output $f(a)$ and uses the original slope at input $a$.",
+        "hypotheses": [
+          "$f$ is one-to-one on a local interval near $a$.",
+          "$f$ is continuously differentiable near $a$ and $f'(a)\\ne0$.",
+          "The inverse is defined near $f(a)$."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-inverse-derivative-reciprocal-slope-strategy",
+        "title": "A source-based method",
+        "text": "The lecture first establishes local inverse existence as a theorem. Its difference-quotient proof then writes $y=f(x)$ and reverses the ratio; alternatively, after existence and differentiability are known, differentiate $f(f^{-1}(y))=y$. The identity alone does not prove existence."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-inverse-derivative-reciprocal-slope-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Take the inverse difference quotient and substitute $y=f(x)$, then use the definition of $f'(a)$.",
+        "setup": "Derive the formula at the corresponding pair $a$ and $f(a)$, assuming the local inverse theorem supplies $f^{-1}$.",
+        "steps": [
+          {
+            "label": "Start with the inverse quotient",
+            "text": "As $y\\to f(a)$, continuity of the local inverse gives $x=f^{-1}(y)\\to a$."
+          },
+          {
+            "label": "Reverse the quotient",
+            "text": "Since $y=f(x)$, the numerator and denominator exchange their roles.",
+            "equation": "\\frac{f^{-1}(y)-a}{y-f(a)}=\\frac{x-a}{f(x)-f(a)}"
+          },
+          {
+            "label": "Take the limit",
+            "text": "The reciprocal limit exists because $f'(a)$ is nonzero.",
+            "equation": "(f^{-1})'(f(a))=\\lim_{x\\to a}\\frac{x-a}{f(x)-f(a)}=\\frac{1}{f'(a)}"
+          },
+          {
+            "label": "Compare the identity method",
+            "text": "After the theorem gives differentiability, differentiating $f(f^{-1}(y))=y$ yields the same relation; this chain-rule step is not an existence proof.",
+            "equation": "f'(f^{-1}(y))(f^{-1})'(y)=1"
+          }
+        ],
+        "result": "The inverse tangent slope is the reciprocal of the original tangent slope at the matching input.",
+        "verification": "The formula is evaluated at output $f(a)$; if $f'(a)=0$, the finite reciprocal-slope conclusion is unavailable."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-compute-inverse-derivative-at-output-statement",
+        "title": "Compute an inverse derivative at a given output",
+        "statement": "To compute $(f^{-1})'(y_0)$, first solve $f(x_0)=y_0$, then check local invertibility and use $(f^{-1})'(y_0)=1/f'(x_0)$. The derivative is evaluated at $x_0$, not at $y_0$.",
+        "hypotheses": [
+          "$y_0$ lies in the range of the chosen one-to-one branch.",
+          "$f'(x_0)\\ne0$ at the input satisfying $f(x_0)=y_0$."
+        ],
+        "prerequisites": [],
+        "status": "Source result used; theorem conditions are stated."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-compute-inverse-derivative-at-output-strategy",
+        "title": "A source-based method",
+        "text": "Separate the output from its inverse input. Use the source examples to check monotonicity first, solve for the input second, and take the reciprocal last."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-compute-inverse-derivative-at-output-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Use the source example $f(x)=x^2$ on $[0,2]$ and target output one.",
+        "setup": "Find $(f^{-1})'(1)$ when $f(x)=x^2$ on $[0,2]$.",
+        "steps": [
+          {
+            "label": "Check the branch",
+            "text": "The restriction $[0,2]$ makes $x^2$ strictly increasing, and the range is $[0,4]$."
+          },
+          {
+            "label": "Find the inverse input",
+            "text": "$f(1)=1$, so $f^{-1}(1)=1$."
+          },
+          {
+            "label": "Take the reciprocal",
+            "text": "At input one, $f'(1)=2$.",
+            "equation": "(f^{-1})'(1)=\\frac{1}{f'(1)}=\\frac12"
+          }
+        ],
+        "result": "The inverse slope at output one is $1/2$; the inverse function is $\\sqrt{y}$ on $[0,4]$.",
+        "verification": "The source also checks the result by differentiating $\\sqrt{y}$ at $y=1$."
       }
     ],
     "exercises": [
@@ -8872,6 +9175,104 @@
           "Name each branch and its range.",
           "Keep the negative branch’s derivative sign."
         ]
+      },
+      {
+        "id": "lecture12-one-to-one-horizontal-line-test-transfer",
+        "outcome": "Determine whether a function is one-to-one by checking repeated outputs algebraically or with the horizontal-line test.",
+        "kind": "computational",
+        "prompt": "Show that $g(x)=x^3-3x$ is not one-to-one on $\\mathbb R$ by finding two different inputs with the same output. State the horizontal-line consequence.",
+        "hint": "Try the two inputs $x=\\sqrt3$ and $x=-\\sqrt3$.",
+        "solution": "$g(\\sqrt3)=0=g(-\\sqrt3)$ although $\\sqrt3\\ne-\\sqrt3$. Hence $g$ is not one-to-one and the horizontal line $y=0$ meets its graph at least twice.",
+        "solutionTex": "g(\\sqrt3)=g(-\\sqrt3)=0,\\qquad \\sqrt3\\ne-\\sqrt3",
+        "rubric": [
+          "Uses two distinct real inputs.",
+          "Computes the same output at both inputs.",
+          "Connects the repeated value to a horizontal-line failure."
+        ]
+      },
+      {
+        "id": "lecture12-inverse-domain-range-identities-transfer",
+        "outcome": "Use the inverse identities on the correct domain and range, and exchange the domain and range of a bijection.",
+        "kind": "computational",
+        "prompt": "For $f(x)=4x+5$ on $\\mathbb R$, find $f^{-1}$ and state the domain and range of both functions.",
+        "hint": "Set $y=4x+5$, solve for $x$, then exchange the domain and range.",
+        "solution": "Solving gives $f^{-1}(y)=(y-5)/4$. Both functions map $\\mathbb R$ onto $\\mathbb R$, so both domains and ranges are $\\mathbb R$.",
+        "solutionTex": "f^{-1}(y)=\\frac{y-5}{4},\\qquad f^{-1}(f(x))=x",
+        "rubric": [
+          "Solves the equation for the original input.",
+          "Checks one inverse composition.",
+          "States domain and range without swapping the wrong set."
+        ]
+      },
+      {
+        "id": "lecture12-solve-for-inverse-transfer",
+        "outcome": "Find an inverse formula by writing y=f(x), solving for x, and relabeling the output variable.",
+        "kind": "computational",
+        "prompt": "Find the inverse of $f(x)=2x^3-1$ on $\\mathbb R$ and verify one composition.",
+        "hint": "From $y=2x^3-1$, isolate $x^3$ before taking the cube root.",
+        "solution": "$y=2x^3-1$ gives $x=\\sqrt[3]{(y+1)/2}$, hence $f^{-1}(y)=\\sqrt[3]{(y+1)/2}$. Composing returns $y$.",
+        "solutionTex": "f^{-1}(y)=\\sqrt[3]{\\frac{y+1}{2}},\\qquad f(f^{-1}(y))=y",
+        "rubric": [
+          "Solves in the original input variable.",
+          "Uses the real cube root.",
+          "Checks the formula on the full real range."
+        ]
+      },
+      {
+        "id": "lecture12-graph-inverse-reflection-transfer",
+        "outcome": "Relate a function graph and its inverse by reflection across y=x, respecting any domain restriction.",
+        "kind": "computational",
+        "prompt": "Restrict $f(x)=x^2$ to $x\\le0$. State the inverse formula and describe what happens to the point $(-3,9)$.",
+        "hint": "Use the nonpositive square-root branch and exchange coordinates.",
+        "solution": "The inverse is $f^{-1}(x)=-\\sqrt{x}$ for $x\\ge0$. The point $(-3,9)$ reflects to $(9,-3)$.",
+        "solutionTex": "f^{-1}(x)=-\\sqrt{x},\\qquad (-3,9)\\longmapsto(9,-3)",
+        "rubric": [
+          "Chooses the nonpositive branch.",
+          "Keeps inverse domain equal to the original range.",
+          "Swaps the point coordinates."
+        ]
+      },
+      {
+        "id": "lecture12-inverse-continuity-transfer",
+        "outcome": "Use continuity and strict monotonicity on an interval to conclude that the inverse is continuous on the range.",
+        "kind": "computational",
+        "prompt": "Apply the inverse continuity theorem to $f(x)=\\sin x$ on $[-\\pi/2,\\pi/2]$. Give the inverse domain and continuity conclusion.",
+        "hint": "Check strict increase and the endpoint values on this interval.",
+        "solution": "Sine is continuous and strictly increasing on $[-\\pi/2,\\pi/2]$, with range $[-1,1]$. Its inverse $\\arcsin$ is continuous on $[-1,1]$.",
+        "solutionTex": "\\arcsin:[-1,1]\\to[-\\pi/2,\\pi/2]",
+        "rubric": [
+          "Checks the interval and strict monotonicity.",
+          "Finds the image interval.",
+          "Applies continuity to the inverse on that image."
+        ]
+      },
+      {
+        "id": "lecture12-inverse-derivative-reciprocal-slope-transfer",
+        "outcome": "Use the local inverse derivative theorem and derive the reciprocal slope formula at corresponding inputs and outputs.",
+        "kind": "computational",
+        "prompt": "For $f(x)=x^3+x$ at $a=1$, derive $(f^{-1})'(2)$ using the reciprocal-slope rule and state why the rule applies.",
+        "hint": "Find $f(1)$ and $f'(1)$; also check that the original function is one-to-one.",
+        "solution": "$f(1)=2$ and $f'(x)=3x^2+1>0$, so a differentiable inverse exists. Since $f'(1)=4$, $(f^{-1})'(2)=1/4$.",
+        "solutionTex": "(f^{-1})'(2)=\\frac{1}{f'(1)}=\\frac14",
+        "rubric": [
+          "Pairs output 2 with original input 1.",
+          "Checks nonzero derivative and local one-to-one conditions.",
+          "Takes the reciprocal at input 1."
+        ]
+      },
+      {
+        "id": "lecture12-compute-inverse-derivative-at-output-transfer",
+        "outcome": "Find the original input mapped to a requested output, verify the theorem hypotheses, and evaluate the reciprocal derivative there.",
+        "kind": "computational",
+        "prompt": "Use the source method on $f(x)=2x+\\cos x$ at input $x=0$. Find the inverse derivative at the resulting output.",
+        "hint": "Compute $f(0)$ and $f'(0)$, then check $f'(x)=2-\\sin x$ stays positive.",
+        "solution": "$f(0)=1$ and $f'(x)=2-\\sin x\\ge1$, so $f$ is strictly increasing. Thus $(f^{-1})'(1)=1/f'(0)=1/2$.",
+        "solutionTex": "f(0)=1,\\qquad (f^{-1})'(1)=\\frac{1}{2-\\sin 0}=\\frac12",
+        "rubric": [
+          "Finds the matching original input.",
+          "Checks a nonzero derivative and a one-to-one branch.",
+          "Evaluates the reciprocal at the original input."
+        ]
       }
     ],
     "sections": [
@@ -8882,6 +9283,14 @@
       {
         "title": "Zero derivative is a warning",
         "text": "The inverse of $x^{3}$ is the cube root. Although $x^{3}$ is one-to-one, its derivative at zero vanishes and the inverse has no finite derivative there. For $x^{2}$, choose a branch such as $[0,\\infty )$ before naming $\\sqrt{x}$ as its inverse."
+      },
+      {
+        "title": "The graph and algebra describe the same inverse",
+        "text": "Lecture 12 uses both the horizontal-line test and algebraic injectivity on $x^3$, then reflects inverse graphs across $y=x$. A restriction such as $x\\ge0$ for $x^2$ is what makes the reflected curve a function."
+      },
+      {
+        "title": "Existence comes before the derivative identity",
+        "text": "The inverse continuity and local differentiability results are imported theorems. The source derives the reciprocal slope with a difference quotient; differentiating $f(f^{-1}(y))=y$ is a shorter alternative only after inverse existence and differentiability are known."
       }
     ],
     "exercise": {
@@ -8898,6 +9307,761 @@
   "exponential-logarithmic": {
     "prerequisites": ["inverse-functions", "chain-rule-single"],
     "reasoning": "Theorem used without proof",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "lecture12-exponential-base-behavior-statement",
+        "title": "Compare exponential graphs by their base",
+        "statement": "For $b>0$, the graph of $b^x$ passes through $(0,1)$. If $b>1$ it increases and approaches zero as $x\\to-\\infty$; if $0<b<1$ it decreases and approaches zero as $x\\to\\infty$. The case $b=1$ is constant, and reciprocal bases reflect across the $y$-axis.",
+        "hypotheses": [
+          "The base satisfies $b>0$.",
+          "The logarithmic inverse requires the separate condition $b\\ne1$."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-exponential-base-behavior-strategy",
+        "title": "A source-based method",
+        "text": "Check whether the base exceeds one or lies between zero and one. For reciprocal bases use $b^{-x}$ to read the reflection; do not apply the increasing-base limit in the wrong direction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-exponential-base-behavior-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Compare the source pair with reciprocal bases and match corresponding points under reflection.",
+        "setup": "Compare $3^x$ with $(1/3)^x$.",
+        "steps": [
+          {
+            "label": "Classify the bases",
+            "text": "$3>1$, so $3^x$ increases; $0<1/3<1$, so $(1/3)^x$ decreases."
+          },
+          {
+            "label": "Compare values",
+            "text": "At $x=1$, the first graph has height three; at $x=-1$, the second has height three."
+          },
+          {
+            "label": "Reflect",
+            "text": "Since $(1/3)^x=3^{-x}$, replacing $x$ by $-x$ reflects the graph across the vertical axis.",
+            "equation": "(1/3)^x=3^{-x}"
+          }
+        ],
+        "result": "Both graphs pass through $(0,1)$ and have horizontal asymptote $y=0$ on their respective tails.",
+        "verification": "The reciprocal-base graph is a horizontal reflection, not a reflection across $y=x$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-exponential-end-behavior-limits-statement",
+        "title": "Evaluate exponential end-behavior limits",
+        "statement": "For $b>1$, $b^x\\to0$ as $x\\to-\\infty$ and $b^x\\to\\infty$ as $x\\to\\infty$. If $0<b<1$, the directions reverse. In a quotient, divide by the dominant exponential when its exponent grows.",
+        "hypotheses": [
+          "The exponential base is positive.",
+          "Tail direction is determined by the sign of the exponent and whether the base is above or below one."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-exponential-end-behavior-limits-strategy",
+        "title": "A source-based method",
+        "text": "First identify whether the exponential tends to zero or infinity on the specified tail. For a quotient with a growing exponential in numerator and denominator, divide both by that term."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-exponential-end-behavior-limits-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Reproduce the source limits and isolate the dominant exponential.",
+        "setup": "Evaluate the two source limits $2^{-x}-1$ at positive infinity and $e^{2x}/(e^{2x}+1)$ at positive infinity.",
+        "steps": [
+          {
+            "label": "Shifted exponential",
+            "text": "As $x\\to\\infty$, $2^{-x}\\to0$, so subtracting one gives $-1$.",
+            "equation": "\\lim_{x\\to\\infty}(2^{-x}-1)=-1"
+          },
+          {
+            "label": "Divide by the growing term",
+            "text": "Divide numerator and denominator by $e^{2x}$.",
+            "equation": "\\frac{e^{2x}}{e^{2x}+1}=\\frac{1}{1+e^{-2x}}"
+          },
+          {
+            "label": "Take the limit",
+            "text": "The remaining $e^{-2x}$ tends to zero.",
+            "equation": "\\lim_{x\\to\\infty}\\frac{e^{2x}}{e^{2x}+1}=1"
+          }
+        ],
+        "result": "The limits are $-1$ and $1$ respectively.",
+        "verification": "The second quotient stays between zero and one, which is consistent with its limit."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-general-exponential-derivative-statement",
+        "title": "Differentiate an exponential with any positive base",
+        "statement": "For $b>0$, $\\frac{d}{dx}b^x=b^x\\ln b$. The lecture first obtains the scaling $f'(x)=f'(0)b^x$ from a difference quotient, then identifies the natural base; a second route writes $b^x=e^{x\\ln b}$ and applies the chain rule.",
+        "hypotheses": [
+          "The base satisfies $b>0$.",
+          "The natural exponential satisfies $\\frac{d}{dx}e^x=e^x$."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-general-exponential-derivative-strategy",
+        "title": "A source-based method",
+        "text": "Distinguish two routes: the source first-principles argument factors out $b^x$ and determines the rate at zero; the chain-rule route uses $b^x=e^{x\\ln b}$. The result agrees, with $\\ln b$ as the constant rate factor."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-general-exponential-derivative-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Use the exponential rewrite and chain rule on the source example $10^{x^2}$, then compare the factor $\\ln 10$ with the general rule.",
+        "setup": "Differentiate $y=10^{x^2}$ for real $x$.",
+        "steps": [
+          {
+            "label": "Rewrite",
+            "text": "Use the identity $b^x=e^{x\\ln b}$.",
+            "equation": "10^{x^2}=e^{x^2\\ln 10}"
+          },
+          {
+            "label": "Apply the chain rule",
+            "text": "Differentiate the exponent and multiply by the exponential itself.",
+            "equation": "y'=e^{x^2\\ln 10}(2x\\ln 10)"
+          },
+          {
+            "label": "Return to the original base",
+            "text": "Replace the exponential by $10^{x^2}$.",
+            "equation": "y'=2x\\ln(10)\\,10^{x^2}"
+          }
+        ],
+        "result": "The derivative is $2x\\ln(10)\\,10^{x^2}$.",
+        "verification": "For $g(x)=b^x$, the first-principles route gives $g'(x)=g'(0)b^x$ and identifies $g'(0)=\\ln b$. The worked composition above uses the chain-rule route."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-chain-and-product-exponential-rules-statement",
+        "title": "Combine exponential chain and product rules",
+        "statement": "For a differentiable inner function $u$, $\\frac{d}{dx}e^{u(x)}=u'(x)e^{u(x)}$. Products still require the product rule, and each composite factor needs its own chain rule.",
+        "hypotheses": [
+          "$u$ is differentiable at the input.",
+          "Every product factor is differentiated on the stated domain."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-chain-and-product-exponential-rules-strategy",
+        "title": "A source-based method",
+        "text": "Differentiate each factor separately before combining terms. For an exponential, keep the unchanged exponential and multiply by the derivative of its exponent."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-chain-and-product-exponential-rules-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Follow the source example by differentiating an exponential-trigonometric product term by term.",
+        "setup": "Differentiate $y=e^{-4x}\\sin(5x)$.",
+        "steps": [
+          {
+            "label": "Differentiate the exponential",
+            "text": "The exponent derivative is $-4$.",
+            "equation": "\\frac{d}{dx}e^{-4x}=-4e^{-4x}"
+          },
+          {
+            "label": "Differentiate the sine",
+            "text": "Apply the chain rule to the inner factor $5x$.",
+            "equation": "\\frac{d}{dx}\\sin(5x)=5\\cos(5x)"
+          },
+          {
+            "label": "Use the product rule",
+            "text": "Keep the opposite factor in each term.",
+            "equation": "y'=-4e^{-4x}\\sin(5x)+5e^{-4x}\\cos(5x)"
+          }
+        ],
+        "result": "$y'=e^{-4x}(5\\cos(5x)-4\\sin(5x))$.",
+        "verification": "Both terms retain the common factor $e^{-4x}$; the sine derivative contributes the factor five."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-log-as-inverse-and-domain-statement",
+        "title": "Use logarithms as inverse functions with the right domain",
+        "statement": "For $b>0$ with $b\\ne1$, $\\log_b x$ is the inverse of $b^x$: $\\log_b x=y$ exactly when $b^y=x$. Its domain is $x>0$ and its range is all real numbers. It increases for $b>1$ and decreases for $0<b<1$.",
+        "hypotheses": [
+          "The base satisfies $b>0$ and $b\\ne1$.",
+          "The logarithm input satisfies $x>0$."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-log-as-inverse-and-domain-strategy",
+        "title": "A source-based method",
+        "text": "Convert a logarithmic equation into an exponential equation and check positivity of the input before evaluating. Keep the two base cases separate when describing monotonicity."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-log-as-inverse-and-domain-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Translate a logarithm into its defining exponential equation, then verify the positive input.",
+        "setup": "Evaluate $\\log_{1/2}(1/4)$ from the inverse definition.",
+        "steps": [
+          {
+            "label": "Translate",
+            "text": "Let $y=\\log_{1/2}(1/4)$, so $(1/2)^y=1/4$."
+          },
+          {
+            "label": "Match powers",
+            "text": "Since $1/4=(1/2)^2$, the exponent is two.",
+            "equation": "(1/2)^y=(1/2)^2"
+          },
+          {
+            "label": "Check domain",
+            "text": "The input $1/4$ is positive and the base lies strictly between zero and one."
+          }
+        ],
+        "result": "$\\log_{1/2}(1/4)=2$; this logarithm is decreasing as a function of its positive input.",
+        "verification": "Substitution into the inverse relation returns $(1/2)^2=1/4$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-log-laws-and-evaluation-statement",
+        "title": "Apply logarithm laws and evaluate logarithmic expressions",
+        "statement": "For positive $u,v$ and real $r$, $\\log_b(uv)=\\log_bu+\\log_bv$, $\\log_b(u/v)=\\log_bu-\\log_bv$, and $\\log_b(u^r)=r\\log_bu$. These follow from exponent laws; a logarithm does not split across addition.",
+        "hypotheses": [
+          "The base satisfies $b>0$ and $b\\ne1$.",
+          "Every logarithm argument is positive."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-log-laws-and-evaluation-strategy",
+        "title": "A source-based method",
+        "text": "Check positivity first. Use the laws only for multiplication, division, and powers; evaluate exact values by rewriting arguments as powers of the same base."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-log-laws-and-evaluation-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Compare powers of two to evaluate the source style of exact logarithm.",
+        "setup": "Evaluate $\\log_8 16$ and simplify $\\ln((x^2+1)/e^x)$ for real $x$.",
+        "steps": [
+          {
+            "label": "Rewrite in powers",
+            "text": "Use $8=2^3$ and $16=2^4$.",
+            "equation": "\\log_8 16=\\log_{2^3}(2^4)=\\frac43"
+          },
+          {
+            "label": "Apply the quotient law",
+            "text": "Both $x^2+1$ and $e^x$ are positive.",
+            "equation": "\\ln\\!\\left(\\frac{x^2+1}{e^x}\\right)=\\ln(x^2+1)-\\ln(e^x)"
+          },
+          {
+            "label": "Use the inverse identity",
+            "text": "$\\ln(e^x)=x$.",
+            "equation": "\\ln\\!\\left(\\frac{x^2+1}{e^x}\\right)=\\ln(x^2+1)-x"
+          }
+        ],
+        "result": "$\\log_8 16=4/3$ and the logarithm simplifies to $\\ln(x^2+1)-x$.",
+        "verification": "$8^{4/3}=16$; the quotient-law expansion keeps both arguments positive."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-logarithm-slower-than-powers-statement",
+        "title": "Compare logarithmic and power growth",
+        "statement": "For each $p>0$, $\\lim_{x\\to\\infty}\\frac{\\ln x}{x^p}=0$. Page 31 states this growth comparison for later proof; this lesson records it as an imported result and does not claim a proof on that page.",
+        "hypotheses": [
+          "$x\\to\\infty$ through positive values.",
+          "The power exponent satisfies $p>0$."
+        ],
+        "prerequisites": [],
+        "status": "Source result stated; proof deferred on page 31."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-logarithm-slower-than-powers-strategy",
+        "title": "A source-based method",
+        "text": "Match the logarithm and positive power to the stated result. Do not attribute a proof to the source page; this is an application of the comparison."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-logarithm-slower-than-powers-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Apply the stated comparison to a fractional power by substituting a new variable.",
+        "setup": "Evaluate $\\lim_{x\\to\\infty}\\frac{\\ln x}{\\sqrt{x}}$ using the source-stated result.",
+        "steps": [
+          {
+            "label": "Identify the power",
+            "text": "$\\sqrt{x}=x^{1/2}$, and $1/2>0$."
+          },
+          {
+            "label": "Apply the stated limit",
+            "text": "The source result applies with $p=1/2$.",
+            "equation": "\\lim_{x\\to\\infty}\\frac{\\ln x}{x^{1/2}}=0"
+          }
+        ],
+        "result": "The limit is zero: the logarithm grows more slowly than $\\sqrt{x}$.",
+        "verification": "This calculation applies the comparison; it does not supply the deferred proof."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-natural-log-chain-rule-statement",
+        "title": "Differentiate natural logarithms with a chain rule",
+        "statement": "For $u(x)>0$, $\\frac{d}{dx}\\ln(u(x))=u'(x)/u(x)$. Also $\\frac{d}{dx}\\ln|x|=1/x$ on either interval where $x\\ne0$.",
+        "hypotheses": [
+          "The argument of $\\ln(u(x))$ must be strictly positive.",
+          "For $\\ln|x|$, the input must be nonzero."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-natural-log-chain-rule-strategy",
+        "title": "A source-based method",
+        "text": "Check the logarithm argument before differentiating. Either apply the chain rule directly or expand products and quotients using log laws, then differentiate each term."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-natural-log-chain-rule-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Follow the source example by expanding a quotient and square root before differentiating.",
+        "setup": "Differentiate $y=\\ln\\!\\left(\\frac{x+1}{\\sqrt{x-2}}\\right)$ on its real domain.",
+        "steps": [
+          {
+            "label": "Find the domain",
+            "text": "The numerator and denominator require $x+1>0$ and $x-2>0$, so the domain is $x>2$."
+          },
+          {
+            "label": "Expand the logarithm",
+            "text": "On this domain, use quotient and power laws.",
+            "equation": "y=\\ln(x+1)-\\frac12\\ln(x-2)"
+          },
+          {
+            "label": "Differentiate",
+            "text": "Apply the chain rule to each natural logarithm.",
+            "equation": "y'=\\frac1{x+1}-\\frac{1}{2(x-2)}"
+          }
+        ],
+        "result": "$y'=1/(x+1)-1/(2(x-2))$ for $x>2$.",
+        "verification": "The domain check precedes log expansion, and each inner derivative is included."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-change-of-base-log-derivative-statement",
+        "title": "Differentiate a logarithm with another base",
+        "statement": "For $b>0$, $b\\ne1$, and $x>0$, $\\log_b x=\\ln x/\\ln b$, so $\\frac{d}{dx}\\log_b x=1/(x\\ln b)$.",
+        "hypotheses": [
+          "The base is positive and not one, so $\\ln b\\ne0$.",
+          "The logarithm input satisfies $x>0$."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-change-of-base-log-derivative-strategy",
+        "title": "A source-based method",
+        "text": "Convert to a quotient of natural logarithms. Since $\\ln b$ is constant with respect to $x$, only differentiate the numerator."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-change-of-base-log-derivative-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Use the source example with a positive trigonometric argument and preserve its inner derivative.",
+        "setup": "Differentiate $y=\\log_{10}(2+\\sin x)$.",
+        "steps": [
+          {
+            "label": "Check positivity",
+            "text": "$2+\\sin x\\ge1$, so the logarithm is defined for every real $x$."
+          },
+          {
+            "label": "Change base",
+            "text": "Write the logarithm as a natural-log quotient.",
+            "equation": "y=\\frac{\\ln(2+\\sin x)}{\\ln 10}"
+          },
+          {
+            "label": "Differentiate",
+            "text": "The denominator is constant; the numerator needs the chain rule.",
+            "equation": "y'=\\frac{\\cos x}{(2+\\sin x)\\ln 10}"
+          }
+        ],
+        "result": "$y'=\\cos x/((2+\\sin x)\\ln 10)$.",
+        "verification": "The denominator contains both the positive argument and the constant factor $\\ln 10$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-log-differentiate-products-and-quotients-statement",
+        "title": "Logarithmically differentiate a product and quotient",
+        "statement": "For a positive differentiable function $y$, taking $\\ln y$ can turn products, quotients, and powers into sums. Differentiate the resulting identity and multiply by $y$ to recover $y'$, while preserving the original domain.",
+        "hypotheses": [
+          "The expression being logged is positive on the chosen interval.",
+          "The factors and denominator are differentiable and nonzero there."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-log-differentiate-products-and-quotients-strategy",
+        "title": "A source-based method",
+        "text": "Record the domain first. Take natural logs, expand the products and powers, differentiate implicitly, then multiply by the original $y$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-log-differentiate-products-and-quotients-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Follow the lecture product-and-quotient example term by term.",
+        "setup": "Differentiate $y=\\frac{x^{3/4}\\sqrt{x^2+1}}{(3x+2)^5}$ on $x>0$.",
+        "steps": [
+          {
+            "label": "Set the domain",
+            "text": "For $x>0$, every factor is positive and $3x+2\\ne0$."
+          },
+          {
+            "label": "Take logarithms",
+            "text": "Expand using product, quotient, and power laws.",
+            "equation": "\\ln y=\\frac34\\ln x+\\frac12\\ln(x^2+1)-5\\ln(3x+2)"
+          },
+          {
+            "label": "Differentiate implicitly",
+            "text": "Use $y'/y$ on the left and apply the chain rule on the right.",
+            "equation": "\\frac{y'}y=\\frac{3}{4x}+\\frac{x}{x^2+1}-\\frac{15}{3x+2}"
+          },
+          {
+            "label": "Recover y'",
+            "text": "Multiply by the original expression for $y$.",
+            "equation": "y'=y\\left(\\frac{3}{4x}+\\frac{x}{x^2+1}-\\frac{15}{3x+2}\\right)"
+          }
+        ],
+        "result": "The displayed logarithmic derivative gives $y'$ after multiplication by the original positive product and quotient.",
+        "verification": "The factor 15 comes from differentiating $-5\\ln(3x+2)$; the inner derivative is three."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-log-differentiate-variable-powers-statement",
+        "title": "Differentiate a variable power by logarithms",
+        "statement": "For $y=u(x)^{v(x)}$ with $u(x)>0$, take logarithms to get $\\ln y=v(x)\\ln u(x)$. Then $y'=u^v\\big(v'\\ln u+v\\,u'/u\\big)$. State the interval where the base is positive.",
+        "hypotheses": [
+          "The base $u(x)$ is strictly positive on the interval.",
+          "The base and exponent are differentiable there."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-log-differentiate-variable-powers-strategy",
+        "title": "A source-based method",
+        "text": "Do not apply the power rule with a variable exponent. Take $\\ln y$, use the product rule on $v\\ln u$, and multiply the logarithmic derivative by $y$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-log-differentiate-variable-powers-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Use the source example $y=x^{\\sin x}$ and keep both product-rule terms.",
+        "setup": "Differentiate $y=x^{\\sin x}$ for $x>0$.",
+        "steps": [
+          {
+            "label": "Check the base",
+            "text": "The real logarithmic method requires $x>0$."
+          },
+          {
+            "label": "Take logarithms",
+            "text": "$\\ln y=\\sin x\\ln x$."
+          },
+          {
+            "label": "Differentiate the product",
+            "text": "Apply the product rule and use $\\frac{d}{dx}\\ln x=1/x$.",
+            "equation": "\\frac{y'}y=\\cos x\\ln x+\\frac{\\sin x}{x}"
+          },
+          {
+            "label": "Multiply by y",
+            "text": "Return to the original variable power.",
+            "equation": "y'=x^{\\sin x}\\left(\\cos x\\ln x+\\frac{\\sin x}{x}\\right)"
+          }
+        ],
+        "result": "$y'=x^{\\sin x}(\\cos x\\ln x+\\sin x/x)$ for $x>0$.",
+        "verification": "At $x=1$, the expression gives $y'=\\sin1$, matching the derivative of $1^{\\sin1}$ through the logarithmic formula."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-derive-e-limit-statement",
+        "title": "Derive the defining exponential limit for e",
+        "statement": "Since $(\\ln x)'|_{x=1}=1$, $\\lim_{x\\to0}\\frac{\\ln(1+x)}x=1$. Exponentiating gives $\\lim_{x\\to0}(1+x)^{1/x}=e$ for $x>-1$ near zero; setting $x=1/n$ gives $\\lim_{n\\to\\infty}(1+1/n)^n=e$.",
+        "hypotheses": [
+          "$x$ approaches zero through values with $1+x>0$.",
+          "For the sequence form, $n$ tends to positive infinity."
+        ],
+        "prerequisites": [],
+        "status": "Source rule or method stated; hypotheses and domain are recorded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-derive-e-limit-strategy",
+        "title": "A source-based method",
+        "text": "Rewrite the logarithm of the power as a quotient whose limit is the derivative of $\\ln$ at one. Then use continuity of the exponential; for the sequence form substitute $x=1/n$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-derive-e-limit-worked",
+        "title": "Worked reasoning from Lecture 12",
+        "strategy": "Derive the continuous limit first, then change variables to obtain the sequence form.",
+        "setup": "Start from $L=\\lim_{x\\to0}(1+x)^{1/x}$, with $x>-1$ near zero.",
+        "steps": [
+          {
+            "label": "Take the logarithm",
+            "text": "For each nearby $x$, the positive expression has logarithm $\\ln((1+x)^{1/x})=\\ln(1+x)/x$."
+          },
+          {
+            "label": "Use the derivative definition",
+            "text": "The quotient is the difference quotient for $\\ln$ at one.",
+            "equation": "\\lim_{x\\to0}\\frac{\\ln(1+x)}x=(\\ln x)'\\big|_{x=1}=1"
+          },
+          {
+            "label": "Exponentiate",
+            "text": "The original power is the exponential of that quotient. Continuity of the exponential gives the limit $e^1$.",
+            "equation": "L=e"
+          },
+          {
+            "label": "Change variables",
+            "text": "Putting $x=1/n$ yields the sequence form.",
+            "equation": "\\lim_{n\\to\\infty}\\left(1+\\frac1n\\right)^n=e"
+          }
+        ],
+        "result": "Both $\\lim_{x\\to0}(1+x)^{1/x}$ and $\\lim_{n\\to\\infty}(1+1/n)^n$ equal $e$.",
+        "verification": "Taking logarithms turns the first limit into the derivative quotient at one; the substitution preserves the limiting direction."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture12-logarithmic-end-behavior-statement",
+        "title": "Evaluate a logarithm at a vanishing positive input",
+        "statement": "If $u(x)>0$ and $u(x)\\to0^+$ as $x\\to a$, then for $b>1$, $\\log_b(u(x))\\to-\\infty$. Page 29 applies this boundary behavior to $\\log_{10}(\\tan^2 x)$ as $x\\to0$.",
+        "hypotheses": [
+          "The logarithm base satisfies $b>1$.",
+          "The inner expression is positive for nearby inputs in the punctured domain and tends to zero from above."
+        ],
+        "prerequisites": [],
+        "status": "Source limit evaluated; the boundary argument is made explicit."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture12-logarithmic-end-behavior-strategy",
+        "title": "Separate the inner limit from the logarithm",
+        "text": "First show the inner expression approaches $0^+$ while remaining positive. Then use that $\\log_b t\\to-\\infty$ as $t\\to0^+$ for $b>1$. The value at the excluded endpoint is not needed."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture12-logarithmic-end-behavior-worked",
+        "title": "Work the Lecture 12 trigonometric limit",
+        "strategy": "Track the positive inner expression and then apply logarithmic end behavior.",
+        "setup": "Evaluate $\\lim_{x\\to0}\\log_{10}(\\tan^2 x)$.",
+        "steps": [
+          {
+            "label": "Check the punctured domain",
+            "text": "For $0<|x|<\\pi/2$, $\\tan^2 x>0$, so the logarithm is defined near zero except at the endpoint."
+          },
+          {
+            "label": "Take the inner limit",
+            "text": "$\\tan x\\to0$, so $\\tan^2 x\\to0^+$."
+          },
+          {
+            "label": "Apply the base-10 endpoint behavior",
+            "text": "For any $M>0$, $0<t<10^{-M}$ implies $\\log_{10}t<-M$. Since $\\tan^2x\\to0^+$, this inequality eventually holds.",
+            "equation": "0<\\tan^2x<10^{-M}\\quad\\Longrightarrow\\quad\\log_{10}(\\tan^2x)<-M"
+          }
+        ],
+        "result": "$\\lim_{x\\to0}\\log_{10}(\\tan^2x)=-\\infty$.",
+        "verification": "The original expression is undefined at $x=0$, but is defined for nearby nonzero $x$; the two-sided limit is determined on that punctured neighborhood."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture12-exponential-base-behavior-transfer",
+        "outcome": "Classify the monotonicity, intercept, and horizontal asymptote of b^x from the value of its positive base.",
+        "kind": "computational",
+        "prompt": "Compare $2^x$ and $(1/2)^x$. State which is increasing and the tail on which each tends to zero.",
+        "hint": "Classify each base relative to one and use $(1/2)^x=2^{-x}$.",
+        "solution": "$2^x$ increases and tends to zero as $x\\to-\\infty$. $(1/2)^x$ decreases and tends to zero as $x\\to\\infty$.",
+        "solutionTex": "\\lim_{x\\to-\\infty}2^x=0,\\qquad \\lim_{x\\to\\infty}(1/2)^x=0",
+        "rubric": [
+          "Classifies each base correctly.",
+          "Pairs each limit with the correct tail.",
+          "Identifies the shared intercept and asymptote."
+        ]
+      },
+      {
+        "id": "lecture12-exponential-end-behavior-limits-transfer",
+        "outcome": "Use base behavior and dominant exponential terms to evaluate finite limits at an infinite endpoint.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to\\infty}\\frac{4e^x+1}{2e^x+3}$ by dividing by the dominant exponential.",
+        "hint": "Divide the numerator and denominator by $e^x$.",
+        "solution": "After division the quotient is $(4+e^{-x})/(2+3e^{-x})$. Since $e^{-x}\\to0$, the limit is two.",
+        "solutionTex": "\\lim_{x\\to\\infty}\\frac{4e^x+1}{2e^x+3}=\\frac42=2",
+        "rubric": [
+          "Identifies the growing exponential.",
+          "Divides both terms by the same exponential.",
+          "Evaluates the resulting finite quotient."
+        ]
+      },
+      {
+        "id": "lecture12-general-exponential-derivative-transfer",
+        "outcome": "Derive and apply the derivative of b^x, distinguishing the first-principles scaling argument from the e^{x ln b} chain-rule method.",
+        "kind": "computational",
+        "prompt": "Differentiate $5^{3x-1}$ using the chain rule through $e^{(3x-1)\\ln5}$.",
+        "hint": "The derivative of the exponent $(3x-1)\\ln5$ is $3\\ln5$.",
+        "solution": "Rewrite $5^{3x-1}=e^{(3x-1)\\ln5}$. Thus the derivative is $3\\ln(5)5^{3x-1}$.",
+        "solutionTex": "\\frac{d}{dx}5^{3x-1}=3\\ln(5)\\,5^{3x-1}",
+        "rubric": [
+          "Includes the logarithmic base factor.",
+          "Includes the inner derivative factor 3.",
+          "Rewrites to the original base correctly."
+        ]
+      },
+      {
+        "id": "lecture12-chain-and-product-exponential-rules-transfer",
+        "outcome": "Differentiate a composition with e^u and a product containing exponential factors.",
+        "kind": "computational",
+        "prompt": "Differentiate $y=e^{x^2}\\cos x$ and factor the result.",
+        "hint": "Apply the product rule; the exponential derivative contributes $2x$.",
+        "solution": "$y'=e^{x^2}(2x)\\cos x-e^{x^2}\\sin x=e^{x^2}(2x\\cos x-\\sin x)$.",
+        "solutionTex": "y'=e^{x^2}(2x\\cos x-\\sin x)",
+        "rubric": [
+          "Uses the chain rule on $e^{x^2}$.",
+          "Uses the product rule with correct signs.",
+          "Factors the common exponential."
+        ]
+      },
+      {
+        "id": "lecture12-log-as-inverse-and-domain-transfer",
+        "outcome": "Use log_b as the inverse of b^x and state its domain, range, and base conditions.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\log_3(1/9)$ from the inverse definition and state whether $\\log_3 x$ increases or decreases.",
+        "hint": "Write $1/9$ as a power of 3 and compare the base with one.",
+        "solution": "Since $1/9=3^{-2}$, $\\log_3(1/9)=-2$. Because $3>1$, $\\log_3 x$ is increasing for $x>0$.",
+        "solutionTex": "\\log_3(1/9)=-2",
+        "rubric": [
+          "Converts to an exponential equation.",
+          "Uses the correct exponent.",
+          "Checks domain and monotonicity."
+        ]
+      },
+      {
+        "id": "lecture12-log-laws-and-evaluation-transfer",
+        "outcome": "Use product, quotient, and power laws for logarithms and evaluate exact values by converting to powers.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\log_9 3$ and expand $\\ln((x^2+4)/e^{2x})$ for real $x$.",
+        "hint": "Express 9 and 3 as powers of 3, then use the quotient law and $\\ln(e^{2x})=2x$.",
+        "solution": "$\\log_9 3=1/2$. The second expression is $\\ln(x^2+4)-2x$; both arguments are positive.",
+        "solutionTex": "\\log_9 3=\\frac12,\\qquad \\ln\\!\\left(\\frac{x^2+4}{e^{2x}}\\right)=\\ln(x^2+4)-2x",
+        "rubric": [
+          "Evaluates the exact logarithm through a common base.",
+          "Uses the quotient law with correct order.",
+          "Checks the log arguments are positive."
+        ]
+      },
+      {
+        "id": "lecture12-logarithm-slower-than-powers-transfer",
+        "outcome": "Apply the source-stated limit that logarithmic growth is dominated by every positive power at infinity.",
+        "kind": "computational",
+        "prompt": "Use the stated growth comparison to evaluate $\\lim_{x\\to\\infty}\\frac{\\ln x}{x^{1/3}}$.",
+        "hint": "Check that the exponent $1/3$ is positive.",
+        "solution": "Since $1/3>0$, the source-stated result gives the limit zero. No proof of that result is supplied on page 31.",
+        "solutionTex": "\\lim_{x\\to\\infty}\\frac{\\ln x}{x^{1/3}}=0",
+        "rubric": [
+          "Identifies a positive power.",
+          "Applies the logarithm-versus-power statement.",
+          "Does not claim the cited page proves it."
+        ]
+      },
+      {
+        "id": "lecture12-natural-log-chain-rule-transfer",
+        "outcome": "Differentiate ln(u(x)) on its positive domain and use the corresponding ln|x| rule away from zero.",
+        "kind": "computational",
+        "prompt": "Differentiate $y=\\ln(\\sin x)$ on its real domain.",
+        "hint": "Require $\\sin x>0$, then use the chain rule.",
+        "solution": "The domain is the set of intervals where $\\sin x>0$. On it, $y'=\\cos x/\\sin x=\\cot x$.",
+        "solutionTex": "y'=\\cot x,\\qquad \\sin x>0",
+        "rubric": [
+          "States the positive-argument domain.",
+          "Includes the derivative of the inner function.",
+          "Simplifies to cotangent only on the valid domain."
+        ]
+      },
+      {
+        "id": "lecture12-change-of-base-log-derivative-transfer",
+        "outcome": "Derive and apply the change-of-base formula for the derivative of log_b x.",
+        "kind": "computational",
+        "prompt": "Differentiate $\\log_3(x^2+1)$ for real $x$.",
+        "hint": "The argument is always positive; use $u'/(u\\ln3)$.",
+        "solution": "$x^2+1>0$ for all real $x$, so the derivative is $2x/((x^2+1)\\ln3)$.",
+        "solutionTex": "\\frac{d}{dx}\\log_3(x^2+1)=\\frac{2x}{(x^2+1)\\ln3}",
+        "rubric": [
+          "Uses the change-of-base constant $\\ln3$.",
+          "Includes the inner derivative $2x$.",
+          "States the real domain."
+        ]
+      },
+      {
+        "id": "lecture12-log-differentiate-products-and-quotients-transfer",
+        "outcome": "Use logarithm laws to turn a product and quotient into sums, then solve for the derivative.",
+        "kind": "computational",
+        "prompt": "Logarithmically differentiate $y=\\frac{(x+1)^2\\sqrt{x^2+1}}{(2x+3)^4}$ on its real domain.",
+        "hint": "The square root and denominator are positive when $x>-1$. Take $\\ln y$ and differentiate term by term.",
+        "solution": "On $x>-1$, $\\ln y=2\\ln(x+1)+\\frac12\\ln(x^2+1)-4\\ln(2x+3)$. Thus $y'/y=2/(x+1)+x/(x^2+1)-8/(2x+3)$; multiply by $y$.",
+        "solutionTex": "y'=y\\left(\\frac2{x+1}+\\frac{x}{x^2+1}-\\frac8{2x+3}\\right)",
+        "rubric": [
+          "States the domain $x>-1$.",
+          "Expands the logarithm with correct exponents and signs.",
+          "Includes inner derivatives and multiplies by $y$."
+        ]
+      },
+      {
+        "id": "lecture12-log-differentiate-variable-powers-transfer",
+        "outcome": "Differentiate a variable base raised to a variable exponent on a valid positive domain using logarithmic differentiation.",
+        "kind": "computational",
+        "prompt": "Differentiate $y=(x+1)^x$ on the interval $x>-1$.",
+        "hint": "Set $\\ln y=x\\ln(x+1)$ and use the product rule.",
+        "solution": "For $x>-1$, $\\ln y=x\\ln(x+1)$. Hence $y'/y=\\ln(x+1)+x/(x+1)$ and $y'=(x+1)^x(\\ln(x+1)+x/(x+1))$.",
+        "solutionTex": "y'=(x+1)^x\\left(\\ln(x+1)+\\frac{x}{x+1}\\right)",
+        "rubric": [
+          "Requires a positive base and states $x>-1$.",
+          "Uses the product rule on $x\\ln(x+1)$.",
+          "Multiplies by the original power."
+        ]
+      },
+      {
+        "id": "lecture12-derive-e-limit-transfer",
+        "outcome": "Use the derivative of ln x at one to obtain the limit of (1+x)^(1/x) and its sequence form.",
+        "kind": "computational",
+        "prompt": "Use the Lecture 12 limit to evaluate $\\lim_{n\\to\\infty}(1+1/(2n))^{2n}$.",
+        "hint": "Set $m=2n$ in the sequence form.",
+        "solution": "With $m=2n\\to\\infty$, the expression is $(1+1/m)^m$, whose limit is $e$.",
+        "solutionTex": "\\lim_{n\\to\\infty}\\left(1+\\frac1{2n}\\right)^{2n}=e",
+        "rubric": [
+          "Uses the sequence limit with a variable tending to infinity.",
+          "Matches both the increment and exponent.",
+          "Concludes the limit is $e$."
+        ]
+      },
+      {
+        "id": "lecture12-logarithmic-end-behavior-transfer",
+        "outcome": "Evaluate a logarithmic limit when its positive inner expression tends to zero at an excluded endpoint.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to0}\\log_2(\\sin^2 x)$. State where the logarithm is defined near zero.",
+        "hint": "For nearby nonzero $x$, $\\sin^2x>0$ and $\\sin^2x\\to0^+$. The base 2 is greater than one.",
+        "solution": "For $0<|x|<\\pi$, $\\sin^2x>0$ and $\\sin^2x\\to0^+$. Since $\\log_2t\\to-\\infty$ as $t\\to0^+$, the limit is $-\\infty$.",
+        "solutionTex": "\\lim_{x\\to0}\\log_2(\\sin^2 x)=-\\infty",
+        "rubric": [
+          "Excludes the point where the logarithm argument is zero.",
+          "Shows the inner expression tends to zero through positive values.",
+          "Uses the decreasing end behavior of the logarithm near zero for base 2."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "A definition must have a foundation",
@@ -8906,6 +10070,18 @@
       {
         "title": "Logarithmic differentiation",
         "text": "For $y=x^{x}$ on $x>0$, take $\\ln y=x\\ln x$. Differentiate to obtain $y'/y=\\ln x+1$, hence $y'=x^{x}(\\ln x+1)$. The positive domain permits logarithms; this argument does not define a real differentiable $x^x$ on all negative inputs."
+      },
+      {
+        "title": "Base condition in the growth comparison",
+        "text": "Page 27 calls $\\log_b x$ increasing and slowly growing for $x>1$ without stating the base restriction. Read the increase claim as $b>1$; for $0<b<1$, $\\log_b x$ is decreasing. The hash-matched source page is unchanged; pages 19 and 26 supply the base distinction."
+      },
+      {
+        "title": "Two routes to the exponential derivative",
+        "text": "The source first factors $b^x$ from a first-principles difference quotient and isolates the rate at zero. It later rewrites $b^x=e^{x\\ln b}$ and applies the chain rule. Both routes give $b^x\\ln b$; the second uses the natural exponential rule."
+      },
+      {
+        "title": "Logarithmic differentiation preserves a domain",
+        "text": "For products, quotients, and variable powers, log laws turn the expression into a sum before differentiation. This method requires a positive expression on the chosen real interval, so state the domain before taking $\\ln$."
       }
     ],
     "exercise": {

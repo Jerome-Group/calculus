@@ -21,6 +21,10 @@ test("Rolle and inverse paths distinguish proof status and hypothesis use", asyn
   );
   const rolle = learningGuides["rolle-mean-value"].contentBlocks;
   const inverse = learningGuides["inverse-functions"].contentBlocks;
+  const originalInverseTheorems = new Set([
+    "inverse-existence",
+    "inverse-derivative-theorem",
+  ]);
   assert.deepEqual(
     rolle
       .filter((block) => block.kind === "theorem")
@@ -29,7 +33,7 @@ test("Rolle and inverse paths distinguish proof status and hypothesis use", asyn
   );
   assert.deepEqual(
     inverse
-      .filter((block) => block.kind === "theorem")
+      .filter((block) => originalInverseTheorems.has(block.id))
       .map((block) => block.status),
     ["Theorem used without proof", "Theorem used without proof"],
   );
