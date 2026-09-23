@@ -55,7 +55,7 @@
     "@types/three": "^0.185.4",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
-    "drizzle-kit": "0.31.10",
+    "drizzle-kit": "0.31.11",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "prettier": "3.9.6",
@@ -66,6 +66,11 @@
     "vinext": "0.0.50",
     "vite": "8.3.0",
     "wrangler": "4.131.2"
+  },
+  "overrides": {
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.12"
+    }
   },
   "type": "module"
 }
