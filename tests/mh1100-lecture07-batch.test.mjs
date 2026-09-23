@@ -5,12 +5,16 @@ import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
+import katex from "katex";
 
 const read = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
 const ledger = read("../lib/curriculum/outcome-ledger.json");
 const concepts = read("../lib/curriculum/concepts.json");
 const sources = read("../lib/curriculum/sources.json");
+const ruleGuide = read("../lib/curriculum/learning-guides.json")[
+  "differentiation-rules"
+];
 const conceptId = "differentiation-rules";
 const sourceId = "MH1100_Lecture_07";
 const sectionId = `${sourceId}:01`;
@@ -168,6 +172,92 @@ test("worked and transfer calculations have independent mathematical checks", ()
       1 / Math.sin(Math.PI / 4) ** 2,
     5 * Math.sqrt(2) - 2,
   );
+});
+
+test("derivative formulas use valid TeX operators and semantic MathML", () => {
+  const formulas = [];
+  const collectFormulaFields = (value, path) => {
+    if (Array.isArray(value)) {
+      value.forEach((item, index) =>
+        collectFormulaFields(item, path + "[" + index + "]"),
+      );
+      return;
+    }
+    if (!value || typeof value !== "object") return;
+    for (const [key, item] of Object.entries(value)) {
+      const itemPath = path + "." + key;
+      if (
+        typeof item === "string" &&
+        ["equation", "solutionTex", "tex"].includes(key)
+      ) {
+        formulas.push({ path: itemPath, source: item });
+      } else if (typeof item === "string") {
+        for (const match of item.matchAll(/\$([^$]+)\$/gu))
+          formulas.push({ path: itemPath, source: match[1] });
+      } else {
+        collectFormulaFields(item, itemPath);
+      }
+    }
+  };
+  collectFormulaFields(ruleGuide, "differentiation-rules");
+
+  assert.ok(formulas.length > 0);
+  for (const { path, source } of formulas) {
+    assert.doesNotMatch(
+      source,
+      /[−→Σπ≠]|(?<!\\)\b(?:lim|sin|cos|tan|sec|csc|cot|sqrt|binom)\b|(?<!\\)\bd\(/u,
+      path + " uses TeX commands instead of pseudo-TeX",
+    );
+    assert.doesNotThrow(
+      () =>
+        katex.renderToString(source, {
+          throwOnError: true,
+          strict: "error",
+          output: "htmlAndMathml",
+        }),
+      path,
+    );
+  }
+
+  const mathml = (source) => {
+    const markup = katex.renderToString(source, {
+      throwOnError: true,
+      strict: "error",
+      output: "htmlAndMathml",
+    });
+    const start = markup.indexOf("<math");
+    const end = markup.indexOf("</math>") + "</math>".length;
+    assert.ok(start >= 0 && end > start, source);
+    return markup.slice(start, end);
+  };
+  const block = (id) =>
+    ruleGuide.supplementalBlocks.find((entry) => entry.id === id);
+  const limit = mathml(
+    block("base-derivatives-from-definition").steps[0].equation,
+  );
+  assert.match(limit, /<mi>lim<\/mi><mo>⁡<\/mo>/);
+  assert.doesNotMatch(limit, /<mi>l<\/mi><mi>i<\/mi>/);
+
+  const binomial = mathml(
+    block("positive-power-rule-from-binomial-limit").steps[0].equation,
+  );
+  assert.match(binomial, /<mo>∑<\/mo>/);
+  assert.match(binomial, /<mfrac linethickness="0px">/);
+
+  const rootDerivative = mathml(
+    block("square-root-real-power-example").steps[0].equation,
+  );
+  assert.match(
+    rootDerivative,
+    /<mfrac><mi>d<\/mi><mrow><mi>d<\/mi><mi>x<\/mi><\/mrow><\/mfrac>/,
+  );
+  assert.match(rootDerivative, /<msqrt><mi>x<\/mi><\/msqrt>/);
+
+  const secant = mathml(
+    block("reciprocal-trig-quotient-derivations").steps[0].equation,
+  );
+  assert.match(secant, /<mi>sec<\/mi><mo>⁡<\/mo><mi>x<\/mi>/);
+  assert.doesNotMatch(secant, /<mi>s<\/mi><mi>e<\/mi><mi>c<\/mi>/);
 });
 
 const root = fileURLToPath(new URL("..", import.meta.url));
