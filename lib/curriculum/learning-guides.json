@@ -16576,7 +16576,146 @@
         "Use a nonzero gradient."
       ],
       "solutionTex": "2(x-1)+4(y-2)+4(z-2)=0\\iff x+2y+2z=9"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "l03-regular-level-tangent",
+        "title": "A regular level set has a tangent",
+        "statement": "For a differentiable $F$ with $F(p)=0$ and $\\nabla F(p)\\ne0$, the tangent line or plane to the regular zero set at $p$ has normal $\\nabla F(p)$.",
+        "hypotheses": [
+          "$p$ lies in an open domain and $F(p)=0$.",
+          "$F$ is totally differentiable at $p$ and $\\nabla F(p)\\ne0$."
+        ],
+        "prerequisites": [
+          "Multivariable chain rule",
+          "Point-normal line and plane"
+        ],
+        "status": "Existence used without proof; normal direction shown by chain rule"
+      },
+      {
+        "kind": "derivation",
+        "id": "l03-tangent-chain-rule",
+        "title": "Why the gradient is normal",
+        "strategy": "Differentiate the constant value of $F$ along every differentiable curve in the zero set.",
+        "setup": "Take a curve $r(t)$ in $F=0$ with $r(t_0)=p$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "Since $F(r(t))=0$, the chain rule gives $0=(F\\circ r)'(t_0)=\\nabla F(p)\\cdot r'(t_0)$."
+          },
+          {
+            "label": "Form the plane",
+            "text": "Each tangent velocity is orthogonal to the nonzero gradient. Therefore the candidate plane through $p$ is $\\nabla F(p)\\cdot(X-p)=0$."
+          }
+        ],
+        "result": "In two dimensions this is a tangent line; in three dimensions it is a tangent plane.",
+        "verification": "This argument constrains every tangent velocity and proves the normal direction. It does not establish existence of the tangent line or plane; that conclusion is imported from the regular-level theorem."
+      },
+      {
+        "kind": "theorem",
+        "id": "l03-implicit-function-theorem",
+        "title": "Choose a local graph coordinate",
+        "statement": "If $F$ is continuously totally differentiable near $p=(a,b,c)$, $F(p)=0$, and $F_z(p)\\ne0$, then near $p$ the zero set is a unique continuously differentiable graph $z=g(x,y)$.",
+        "hypotheses": [
+          "$F$ is continuously totally differentiable on an open neighborhood of $p$.",
+          "$F(p)=0$ and $F_z(p)\\ne0$."
+        ],
+        "prerequisites": ["Total differentiability", "Partial derivatives"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "l03-implicit-differentiation",
+        "title": "Differentiate only after existence is justified",
+        "strategy": "Apply the chain rule to the local graph supplied by the theorem.",
+        "setup": "On the local disk, $F(x,y,g(x,y))=0$ and $F_z$ stays nonzero.",
+        "steps": [
+          {
+            "label": "Vary x",
+            "text": "Holding $y$ fixed gives $F_x+F_zg_x=0$, so $g_x=-F_x/F_z$."
+          },
+          {
+            "label": "Vary y",
+            "text": "Holding $x$ fixed gives $F_y+F_zg_y=0$, so $g_y=-F_y/F_z$."
+          }
+        ],
+        "result": "Evaluate all partials at $(x,y,g(x,y))$. The quotient formulas compute derivatives of the already justified graph.",
+        "verification": "If $F_z(p)=0$, these quotients do not apply to a $z$ graph; test another partial before judging the surface."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l03-source-cubic-example",
+        "title": "Work the lecture’s cubic level set",
+        "strategy": "Check the nonzero denominator before using the implicit formula.",
+        "setup": "On physical page 44, $F(x,y,z)=x^3+y^3+z^3+6xyz-1$ and $p=(a,b,c)$ satisfies $F(p)=0$ and $F_z(p)\\ne0$.",
+        "steps": [
+          {
+            "label": "Differentiate F",
+            "text": "$F_x=3x^2+6yz$ and $F_z=3z^2+6xy$."
+          },
+          {
+            "label": "Evaluate the graph slope",
+            "text": "The theorem supplies $z=g(x,y)$ near $(a,b)$, hence $g_x(a,b)=-(3a^2+6bc)/(3c^2+6ab)=-(a^2+2bc)/(c^2+2ab)$."
+          }
+        ],
+        "result": "$g_x(a,b)=-\\dfrac{a^2+2bc}{c^2+2ab}$ when $c^2+2ab\\ne0$.",
+        "verification": "At $(1,0,0)$ the level equation holds but $F_z=0$ and $F_x=3$; the same surface can instead be graphed locally as $x=x(y,z)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l03-chart-and-singular-contrast",
+        "title": "A bad chart is not a singular point",
+        "strategy": "Test the full gradient after a chosen denominator vanishes.",
+        "setup": "For the sphere $F=x^2+y^2+z^2-25$, compare $p=(3,0,4)$ and $q=(5,0,0)$; then compare the cone $H=x^2+y^2-z^2$ at the origin.",
+        "steps": [
+          {
+            "label": "Viable z chart",
+            "text": "At $p$, $F_z=8$, so $z_x=-F_x/F_z=-6/8=-3/4$. The tangent plane is $3(x-3)+4(z-4)=0$."
+          },
+          {
+            "label": "Change coordinate",
+            "text": "At $q$, $F_z=0$ but $F_x=10$. A $z$ graph is not justified, while an $x=x(y,z)$ graph is."
+          },
+          {
+            "label": "Singular case",
+            "text": "At the cone vertex $\\nabla H(0,0,0)=0$. No coordinate passes the nonzero-partial test there."
+          }
+        ],
+        "result": "A failed graph direction and a zero-gradient point require different conclusions.",
+        "verification": "Check $F(p)=F(q)=H(0,0,0)=0$ before applying either theorem."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l03-regular-surface-transfer",
+        "outcome": "Choose a graph coordinate, compute its partials, and form a tangent plane from new coefficients.",
+        "kind": "computational",
+        "prompt": "Let $F=x^2+2y^2+z^2+xyz-17$ at $p=(1,2,2)$. Is a local $z=g(x,y)$ justified? Find $g_x$, $g_y$, and the tangent plane at $p$.",
+        "hint": "Check $F(p)=0$ and $F_z(p)$ first. Then compute the full gradient.",
+        "solution": "$F(p)=0$ and $F_z=2z+xy=6\\ne0$, so the implicit-function theorem supplies a local $z$ graph. $F_x=2x+yz=6$ and $F_y=4y+xz=10$ at $p$. Therefore $g_x=-1$, $g_y=-5/3$, and the tangent plane is $6(x-1)+10(y-2)+6(z-2)=0$.",
+        "solutionTex": "F(p)=0,\\quad\\nabla F(p)=(6,10,6),\\quad(g_x,g_y)=(-1,-5/3)",
+        "rubric": [
+          "Verify the point and nonzero solved-for partial.",
+          "Use all three partial derivatives at the point.",
+          "State both graph derivatives and the tangent plane."
+        ]
+      },
+      {
+        "id": "l03-coordinate-failure-transfer",
+        "outcome": "Separate an unusable projection from a singular zero set.",
+        "kind": "method-choice",
+        "prompt": "For $F=x^2+y^2+z^2-25$ at $(5,0,0)$ and $H=x^2+y^2-z^2$ at $(0,0,0)$, explain what $F_z=H_z=0$ does and does not establish. Which point permits another local graph coordinate?",
+        "hint": "Compare the full gradients, not just their $z$ components.",
+        "solution": "At $(5,0,0)$, $\\nabla F=(10,0,0)$, so the sphere is regular and $x$ is locally a function of $y,z$ even though a $z$ graph is not justified. At the cone vertex, $\\nabla H=0$, so no coordinate satisfies the nonzero-partial hypothesis; the regular-level-set theorem gives no tangent plane there.",
+        "solutionTex": "F_z(5,0,0)=0,\\quad\\nabla F(5,0,0)=(10,0,0);\\quad\\nabla H(0,0,0)=0",
+        "rubric": [
+          "Distinguish the chosen projection from surface regularity.",
+          "Identify the usable $x$ coordinate on the sphere.",
+          "State the theorem’s limit at the cone vertex without asserting a unique tangent plane."
+        ]
+      }
+    ]
   },
   "directional-derivatives-and-gradient": {
     "prerequisites": ["total-differentiability", "vectors-and-coordinates"],

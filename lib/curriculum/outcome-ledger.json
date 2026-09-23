@@ -7222,8 +7222,8 @@
         "implicit-functions-and-tangents",
         "directional-derivatives-and-gradient"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'multivariable chain and implicit-function rules'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "outcome_status": "source_pages_37_to_44_reviewed_implicit_mapping_added_with_broader_chain_gap",
+      "gap": "Implicit curve tangent (pages 37–39), surface tangent (40), local graph theorem (41–42), and implicit differentiation/example (43–44) have four page-checked outcomes with guide reasoning and independent transfer. The theorem proof is explicitly omitted by the source. Other chain-rule subskills on pages 27–36 remain only partially mapped; scene alignment and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -7234,7 +7234,13 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": ["multivariable-chain-rule:source-skill-1"],
+      "atomic_outcome_ids": [
+        "multivariable-chain-rule:source-skill-1",
+        "implicit-functions-and-tangents:l03-curve-tangent",
+        "implicit-functions-and-tangents:l03-surface-tangent",
+        "implicit-functions-and-tangents:l03-local-graph-choice",
+        "implicit-functions-and-tangents:l03-implicit-derivatives"
+      ],
       "coverage_decision": "partial_atomic_mapping"
     },
     {
@@ -53626,6 +53632,378 @@
         "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
         "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
         "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "implicit-functions-and-tangents:l03-curve-tangent",
+      "concept_id": "implicit-functions-and-tangents",
+      "outcome": "Find the tangent line of a regular implicit plane curve from its nonzero gradient.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 39,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [39],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against the manifest SHA.",
+          "claim_observed": "The unit-circle example checks total differentiability and nonzero gradient at any point, then obtains the tangent line ax+by=1."
+        },
+        "page_heading": "The Multivariable Chain Rule — Implicitly Defined Curves (Example 1)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "claim": "The stable route names implicit surfaces and local graphs.",
+            "method": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-regular-level-tangent]",
+            "claim": "The cited block states the outcome and its usable conditions.",
+            "method": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-tangent-chain-rule]",
+            "claim": "The cited block works or derives a concrete application.",
+            "method": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-regular-surface-transfer]",
+            "claim": "The changed-data exercise applies the outcome with a solution and rubric.",
+            "method": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "implicit",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide block, and changed-data exercise inspected. Exact scene alignment and learner outcome performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "basis": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-regular-level-tangent]",
+            "basis": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-tangent-chain-rule]",
+            "basis": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-regular-surface-transfer]",
+            "basis": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with current statement, worked reasoning, and independently solved changed-data practice.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions checked against source",
+        "worked": "algebra and theorem use checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable implicit scene remains a candidate; exact alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "implicit-functions-and-tangents:l03-surface-tangent",
+      "concept_id": "implicit-functions-and-tangents",
+      "outcome": "Form the tangent plane of a regular implicit surface using a point and its nonzero gradient.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 40,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [40],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against the manifest SHA.",
+          "claim_observed": "The theorem states open domain, F(p)=0, total differentiability, and nonzero gradient before giving the point-normal plane."
+        },
+        "page_heading": "Theorem (Existence of a Unique Tangent Plane)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "claim": "The stable route names implicit surfaces and local graphs.",
+            "method": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-regular-level-tangent]",
+            "claim": "The cited block states the outcome and its usable conditions.",
+            "method": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-chart-and-singular-contrast]",
+            "claim": "The cited block works or derives a concrete application.",
+            "method": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-regular-surface-transfer]",
+            "claim": "The changed-data exercise applies the outcome with a solution and rubric.",
+            "method": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "implicit",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide block, and changed-data exercise inspected. Exact scene alignment and learner outcome performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "basis": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-regular-level-tangent]",
+            "basis": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-chart-and-singular-contrast]",
+            "basis": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-regular-surface-transfer]",
+            "basis": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with current statement, worked reasoning, and independently solved changed-data practice.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions checked against source",
+        "worked": "algebra and theorem use checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable implicit scene remains a candidate; exact alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "implicit-functions-and-tangents:l03-local-graph-choice",
+      "concept_id": "implicit-functions-and-tangents",
+      "outcome": "Check the implicit-function theorem hypotheses and select a coordinate with a nonzero partial for a unique local graph.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 42,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against the manifest SHA.",
+          "claim_observed": "The theorem requires continuous total differentiability and Fz(p) nonzero, then supplies a unique local differentiable z graph; its proof is omitted."
+        },
+        "page_heading": "Theorem (the Implicit Function Theorem)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "claim": "The stable route names implicit surfaces and local graphs.",
+            "method": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-implicit-function-theorem]",
+            "claim": "The cited block states the outcome and its usable conditions.",
+            "method": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-chart-and-singular-contrast]",
+            "claim": "The cited block works or derives a concrete application.",
+            "method": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-coordinate-failure-transfer]",
+            "claim": "The changed-data exercise applies the outcome with a solution and rubric.",
+            "method": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "implicit",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide block, and changed-data exercise inspected. Exact scene alignment and learner outcome performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "basis": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-implicit-function-theorem]",
+            "basis": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-chart-and-singular-contrast]",
+            "basis": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-coordinate-failure-transfer]",
+            "basis": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with current statement, worked reasoning, and independently solved changed-data practice.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions checked against source",
+        "worked": "algebra and theorem use checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable implicit scene remains a candidate; exact alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "implicit-functions-and-tangents:l03-implicit-derivatives",
+      "concept_id": "implicit-functions-and-tangents",
+      "outcome": "Differentiate a locally justified implicit surface graph and evaluate its partial derivatives from ratios of F partials.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 44,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [44],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against the manifest SHA.",
+          "claim_observed": "The cubic example applies the preceding page’s chain-rule formulas to get z_x=-(a²+2bc)/(c²+2ab) with Fz(p) nonzero."
+        },
+        "page_heading": "Implicit Differentiation — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "claim": "The stable route names implicit surfaces and local graphs.",
+            "method": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-implicit-differentiation]",
+            "claim": "The cited block states the outcome and its usable conditions.",
+            "method": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-source-cubic-example]",
+            "claim": "The cited block works or derives a concrete application.",
+            "method": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-regular-surface-transfer]",
+            "claim": "The changed-data exercise applies the outcome with a solution and rubric.",
+            "method": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "implicit",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide block, and changed-data exercise inspected. Exact scene alignment and learner outcome performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-functions-and-tangents.title",
+            "basis": "Compared the catalog title with the page skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-implicit-differentiation]",
+            "basis": "Checked the guide statement against the page-verified source."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.contentBlocks[l03-source-cubic-example]",
+            "basis": "Independently checked the algebra and hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-functions-and-tangents.exercises[l03-regular-surface-transfer]",
+            "basis": "Solved the new instance independently; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with current statement, worked reasoning, and independently solved changed-data practice.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions checked against source",
+        "worked": "algebra and theorem use checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Stable implicit scene remains a candidate; exact alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
       }
     }
   ]
