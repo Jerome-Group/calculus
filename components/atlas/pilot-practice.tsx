@@ -1,22 +1,62 @@
 "use client";
-import { useState } from "react";
-import type {
-  PilotLesson,
-  PilotTask,
-  SupportLevel,
-} from "@/lib/curriculum/learning-modes";
+import { useEffect, useState } from "react";
+import type { PilotLesson, PilotTask } from "@/lib/curriculum/learning-modes";
 import { savePilotAttempt } from "@/lib/curriculum/pilot-progress";
+import {
+  deletePilotDraft,
+  readPilotDraft,
+  writePilotDraft,
+  type PilotTaskDraft,
+} from "@/lib/curriculum/pilot-drafts";
 import { MathText } from "./math-text";
 
 function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
-  const [choice, setChoice] = useState("");
-  const [reasoning, setReasoning] = useState("");
-  const [support, setSupport] = useState<SupportLevel>("none");
-  const [feedback, setFeedback] = useState("");
+  const [draft, setDraft] = useState<PilotTaskDraft>({
+    choice: "",
+    reasoning: "",
+    support: "none",
+    feedback: "",
+  });
+  const [storageStatus, setStorageStatus] = useState("");
+  useEffect(() => {
+    let active = true;
+    queueMicrotask(() => {
+      if (!active) return;
+      const restored = readPilotDraft(lessonId, task.id);
+      setDraft(restored.draft);
+      setStorageStatus(
+        restored.stored
+          ? restored.draft.reasoning || restored.draft.choice
+            ? "Draft restored from this device."
+            : ""
+          : "Storage is unavailable. Your draft remains usable in this tab.",
+      );
+    });
+    return () => {
+      active = false;
+    };
+  }, [lessonId, task.id]);
+  function update(patch: Partial<PilotTaskDraft>) {
+    const next = { ...draft, ...patch };
+    setDraft(next);
+    setStorageStatus(
+      writePilotDraft(lessonId, task.id, next)
+        ? "Draft saved on this device."
+        : "Storage is unavailable. Your draft remains usable in this tab.",
+    );
+  }
+  function clear() {
+    setDraft({ choice: "", reasoning: "", support: "none", feedback: "" });
+    setStorageStatus(
+      deletePilotDraft(lessonId, task.id)
+        ? "This task draft was deleted. Other work remains saved."
+        : "Storage is unavailable. This draft was cleared in this tab only.",
+    );
+  }
   function check() {
-    const selected = task.choices.find((item) => item.id === choice);
+    const selected = task.choices.find((item) => item.id === draft.choice);
     if (!selected) return;
-    const correct = choice === task.answer;
+    const correct = draft.choice === task.answer;
     const message = correct
       ? task.explanation
       : task.feedback[selected.errorCode || ""] ||
@@ -26,15 +66,17 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
         taskId: task.id,
         kind: task.kind,
         correct,
-        support,
+        support: draft.support,
         errorCode: selected.errorCode,
         at: new Date().toISOString(),
       });
-      setFeedback(
-        `${correct ? "Choice correct. Compare your reasoning:" : "Try again."} ${message}`,
-      );
+      update({
+        feedback: `${correct ? "Choice correct. Compare your reasoning:" : "Try again."} ${message}`,
+      });
     } catch {
-      setFeedback(`${message} Progress could not be saved on this device.`);
+      update({
+        feedback: `${message} Progress could not be saved on this device.`,
+      });
     }
   }
   return (
@@ -51,8 +93,8 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
             type="radio"
             name={`${lessonId}-${task.id}`}
             value={item.id}
-            checked={choice === item.id}
-            onChange={() => setChoice(item.id)}
+            checked={draft.choice === item.id}
+            onChange={() => update({ choice: item.id, feedback: "" })}
           />
           <MathText text={item.text} />
         </label>
@@ -64,33 +106,40 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
           </label>
           <textarea
             id={`${lessonId}-${task.id}-reasoning`}
-            value={reasoning}
-            onChange={(event) => setReasoning(event.target.value)}
+            value={draft.reasoning}
+            onChange={(event) =>
+              update({ reasoning: event.target.value, feedback: "" })
+            }
             rows={3}
           />
         </>
       )}
       <div className="pilot-task-actions">
-        <button type="button" onClick={() => setSupport("hint")}>
+        <button type="button" onClick={() => update({ support: "hint" })}>
           Show hint
         </button>
         <button
           type="button"
           onClick={check}
           disabled={
-            !choice || (task.kind !== "recognition" && !reasoning.trim())
+            !draft.choice ||
+            (task.kind !== "recognition" && !draft.reasoning.trim())
           }
         >
           Check answer
         </button>
       </div>
-      {support === "hint" && (
+      <button type="button" onClick={clear}>
+        Delete this draft
+      </button>
+      <p role="status">{storageStatus}</p>
+      {draft.support === "hint" && (
         <p>
           <strong>Hint:</strong> <MathText text={task.hint} />
         </p>
       )}
       <p role="status">
-        <MathText text={feedback} />
+        <MathText text={draft.feedback} />
       </p>
     </fieldset>
   );
