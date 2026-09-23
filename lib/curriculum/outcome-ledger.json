@@ -2363,88 +2363,406 @@
       "source_id": "MH1100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Limit laws",
-      "physical_pages_from_audit": "2–41",
+      "physical_pages_from_audit": "2–41 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["limit-laws-squeeze"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Limit laws' at 2–41; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 2 is a synopsis, not a separate teachable skill. Graph reading on pages 4–5 is separately mapped; pages 15–18 reuse one-sided and finite-law decisions. Repeated polynomial arithmetic is grouped under finite law composition. No learner-performance or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[finite-limit-algebra]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[quotient-root-eligibility]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[one-sided-limit-algebra]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[graph-limit-reading]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared with SHA-matched, visually checked physical source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[finite-limit-polynomial]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[quotient-root-calculation]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[one-sided-product-failure]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[source-graph-sum-contrast]",
+            "claim": "Worked reasoning and contrast inspected; any guide-created example identified.",
+            "method": "Checked algebra and source-page attribution."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[finite-limit-algebra-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[quotient-root-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[one-sided-product-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[graph-sum-transfer]",
+            "claim": "Independent guide-created transfer with hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "limit-laws-squeeze:finite-limit-algebra",
+        "limit-laws-squeeze:quotient-root-eligibility",
+        "limit-laws-squeeze:one-sided-limit-algebra",
+        "limit-laws-squeeze:graph-sum-reading"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "3–20"
     },
     {
       "id": "MH1100_Lecture_03:02",
       "source_id": "MH1100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "substitution and replacement",
-      "physical_pages_from_audit": "2–41",
+      "physical_pages_from_audit": "2–41 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["limit-laws-squeeze"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "One source-specific atomic outcome is mapped for 'substitution and replacement'. Other subskills, source examples, and independent learner validation require further review.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 22 cancellation is mapped to replacement-law and section :03 factor practice; continuity is named as future §1.8, so no full continuity outcome is claimed here. No learner-performance or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The existing catalog names the source topic.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[direct-substitution-domain]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "claim": "The source-page condition and its eligibility are stated separately.",
+            "method": "Compared the theorem block with the rendered source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[direct-substitution-contrast]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-factor-cancellation]",
+            "claim": "The source example is reasoned through with its domain and sign or bound conditions.",
+            "method": "Checked each algebraic step and conclusion against source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[direct-substitution-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[replacement-law-transfer]",
+            "claim": "An independent transfer prompt, hint, solution, and rubric require this exact decision.",
+            "method": "Solved the transfer case independently and compared it to the guide; learner performance unverified."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["limit-laws-squeeze:replacement-law"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "limit-laws-squeeze:direct-substitution-domain",
+        "limit-laws-squeeze:replacement-law"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "21–24"
     },
     {
       "id": "MH1100_Lecture_03:03",
       "source_id": "MH1100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "algebraic calculation",
-      "physical_pages_from_audit": "2–41",
+      "physical_pages_from_audit": "2–41 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["limit-laws-squeeze"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'algebraic calculation' at 2–41; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 25–26 are source exercises solved explicitly in the guide. Page 29 |x| reuses the one-sided criterion, not a separate theorem. No learner-performance or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "claim": "Eligibility stated.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "claim": "Eligibility stated.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[two-sided-one-sided-criterion]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[source-common-factor-exercise]",
+            "claim": "The physical page 25 source exercise is solved with deleted-domain reasoning.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[source-radical-conjugate-exercise]",
+            "claim": "The physical page 26 source exercise is solved by conjugation and a nonzero replacement denominator.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[absolute-ratio-jump]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[replacement-law-transfer]",
+            "claim": "Independent guide-created transfer and feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[root-rationalization-transfer]",
+            "claim": "Independent guide-created transfer and feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[two-sided-abs-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "limit-laws-squeeze:factor-cancellation",
+        "limit-laws-squeeze:root-conjugate",
+        "limit-laws-squeeze:two-sided-one-sided-criterion"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "25–29"
     },
     {
       "id": "MH1100_Lecture_03:04",
       "source_id": "MH1100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "squeeze theorem",
-      "physical_pages_from_audit": "2–41",
+      "physical_pages_from_audit": "2–41 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": ["limit-laws-squeeze"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "One source-specific atomic outcome is mapped for 'squeeze theorem'. Other subskills, source examples, and independent learner validation require further review.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 32 restates the squeeze theorem and pages 33–36 work it, so no duplicate outcome. Page 40 general |f|→0 rule is separately derived from -|f|≤f≤|f|. The guide area proof for page 41 is explicitly guide-created. No learner-performance or scene claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The existing catalog names the source topic.",
+            "method": "Direct catalog title inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[order-preservation]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[squeeze-theorem-hypotheses]",
+            "claim": "The source-page condition and its eligibility are stated separately.",
+            "method": "Compared the theorem block with the rendered source page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[trig-chord-bound]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[trig-chord-bound]",
+            "claim": "Eligibility stated.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[absolute-zero-squeeze]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared with SHA-matched, visually checked physical source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[order-preservation-equality]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[squeeze-oscillating-factor]",
+            "claim": "The source example is reasoned through with its domain and sign or bound conditions.",
+            "method": "Checked each algebraic step and conclusion against source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[trig-squeeze-continuity]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.supplementalBlocks[unit-circle-trig-limit]",
+            "claim": "Worked reasoning reviewed; analogous or guide-created work identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[absolute-zero-oscillation]",
+            "claim": "Worked reasoning and contrast inspected; any guide-created example identified.",
+            "method": "Checked algebra and source-page attribution."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[order-preservation-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[squeeze-bounds-transfer]",
+            "claim": "An independent transfer prompt, hint, solution, and rubric require this exact decision.",
+            "method": "Solved the transfer case independently and compared it to the guide; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[trig-chord-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[trig-limit-transfer]",
+            "claim": "Independent guide-created transfer and feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[absolute-zero-transfer]",
+            "claim": "Independent guide-created transfer with hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["limit-laws-squeeze:squeeze-hypotheses"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "limit-laws-squeeze:order-preservation",
+        "limit-laws-squeeze:squeeze-hypotheses",
+        "limit-laws-squeeze:trig-chord-bound",
+        "limit-laws-squeeze:sine-ratio",
+        "limit-laws-squeeze:absolute-zero-rule"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "30–41"
     },
     {
       "id": "MH1100_Lecture_04:01",
@@ -10398,7 +10716,7 @@
         "page_validation": {
           "status": "page_verified",
           "pages": [23, 24],
-          "method": "Rendered physical PDF pages visually inspected; extracted text checked for page boundaries.",
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
           "claim_observed": "Page 23 states equal values away from the target preserve existence and value of limits; page 24 applies it after cancelling a factor in a deleted domain."
         },
         "page_heading": "Theorem: the replacement law"
@@ -10441,7 +10759,7 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Replacement theorem, factor cancellation, and independent point-value transfer are present. General substitution rules and learner performance remain unverified.",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
       "source_section_id": "MH1100_Lecture_03:02",
       "candidate_blocks": {
         "named": [
@@ -10490,7 +10808,7 @@
         "page_validation": {
           "status": "page_verified",
           "pages": [31, 34, 36],
-          "method": "Rendered physical PDF pages visually inspected; extracted text checked for page boundaries.",
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
           "claim_observed": "Page 31 requires two existing equal outer limits and near-point inequalities; pages 34 and 36 bound x sin(1/x) between -|x| and |x|."
         },
         "page_heading": "Theorem 3: the squeeze theorem"
@@ -10533,7 +10851,7 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Source theorem, worked oscillatory bound, and independent transfer are present. Geometric sine-limit proof, scene alignment, and learner performance remain unverified.",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
       "source_section_id": "MH1100_Lecture_03:04",
       "candidate_blocks": {
         "named": [
@@ -16956,6 +17274,798 @@
         "practiced": "Independent transfer task and feedback inspected; learner performance unverified.",
         "visualized": "No outcome-level scene check.",
         "checked": "No independent learner response check."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:finite-limit-algebra",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Apply finite sum, difference, constant-multiple, product, simple-function, and positive-integer power laws in a justified calculation.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 3,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3, 6, 8, 9, 10, 11, 13, 14, 19],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Theorems on pages 3, 6, 8–11 and the stepwise polynomial examples on pages 13–14 and 19."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[finite-limit-algebra]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[finite-limit-polynomial]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[finite-limit-algebra-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:01",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:quotient-root-eligibility",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Check a nonzero limiting denominator and the source even-root positivity condition before using quotient or root laws.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 7,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 12, 18, 20],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Quotient theorem on page 7, even-root restriction on page 12, denominator-zero contrast on page 18, and computed quotient on page 20."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[quotient-root-eligibility]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[quotient-root-calculation]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[quotient-root-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:01",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:one-sided-limit-algebra",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Use one-sided limit laws to decide whether a composite limit exists when a component jumps.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 17,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16, 17, 18],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 17 explicitly computes left and right products from graph limits; pages 15–18 contain the graph example and zero-denominator contrast."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[one-sided-limit-algebra]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[one-sided-product-failure]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[one-sided-product-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:01",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:direct-substitution-domain",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Use direct substitution for a polynomial or rational function only when the target lies in its domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 21,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 22],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 21 states direct substitution for polynomials and rational functions when the target is in the domain; page 22 contrasts a zero denominator."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[direct-substitution-domain]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[direct-substitution-contrast]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[direct-substitution-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:02",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:two-sided-one-sided-criterion",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Compare left and right limits, including absolute-value sign cases, to determine a two-sided limit.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 27,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 28, 29],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 27 states the criterion, page 28 works |x|/x, and page 29 asks for |x|."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[two-sided-one-sided-criterion]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[absolute-ratio-jump]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[two-sided-abs-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:03",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:order-preservation",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Pass a near-point weak inequality to two existing finite limits without inferring strict order.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 30,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 30 states the order theorem; the equality contrast is guide-created."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[order-preservation]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[order-preservation-equality]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[order-preservation-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:04",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:trig-chord-bound",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Use the radian unit-circle chord bound and squeeze to establish sine and cosine limits at zero.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 37,
+        "inspection": "Canonical PDF SHA-256 matched; relevant physical pages rendered and visually checked against text extraction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [37, 38, 39, 40],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 37–39 derive the chord estimates; page 40 asks for sine and cosine limits."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[trig-chord-bound]",
+            "claim": "The lesson states the exact hypotheses.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[trig-squeeze-continuity]",
+            "claim": "The worked reasoning and contrast are source-checked; guide-created examples are identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[trig-chord-transfer]",
+            "claim": "An independent prompt, hint, solution, and rubric target this decision; learner performance unverified.",
+            "method": "Solved and reviewed guide-created transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:04",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:factor-cancellation",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Factor a removable zero-denominator expression and cancel only on its deleted domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 25,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 24, 25],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 22–25 show and practice common-factor cancellation; page 25 is a distinct exercise."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "claim": "Eligibility stated.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[source-common-factor-exercise]",
+            "claim": "The physical page 25 source exercise is solved with deleted-domain reasoning.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[replacement-law-transfer]",
+            "claim": "Independent guide-created transfer and feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:03",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:root-conjugate",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Rationalize a zero-over-zero radical quotient while preserving its deleted domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 26,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 26 poses the radical conjugate exercise; the guide works an analogous example and independent transfer."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "claim": "Eligibility stated.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[source-radical-conjugate-exercise]",
+            "claim": "The physical page 26 source exercise is solved by conjugation and a nonzero replacement denominator.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[root-rationalization-transfer]",
+            "claim": "Independent guide-created transfer and feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:03",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:sine-ratio",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Prove the radian sine-over-angle limit by geometric inequalities and squeeze without derivative circularity.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 41,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [37, 38, 39, 40, 41],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 37–40 establish sine/cosine bounds and limits; page 41 asks for the sine ratio proof. The area proof is guide-created."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[trig-chord-bound]",
+            "claim": "Eligibility stated.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.supplementalBlocks[unit-circle-trig-limit]",
+            "claim": "Worked reasoning reviewed; analogous or guide-created work identified.",
+            "method": "Compared the rendered lesson with the SHA-matched, visually checked physical source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[trig-limit-transfer]",
+            "claim": "Independent guide-created transfer and feedback; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:04",
+      "inspection_check": {
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check.",
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:graph-sum-reading",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Read nearby graph limits and use side-specific sum laws without substituting filled point markers.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 5,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 4 gives a sum limit of -1 despite a changed marker; page 5 graph has unequal one-sided blue branch limits."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[graph-limit-reading]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared with SHA-matched, visually checked physical source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[source-graph-sum-contrast]",
+            "claim": "Worked reasoning and contrast inspected; any guide-created example identified.",
+            "method": "Checked algebra and source-page attribution."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[graph-sum-transfer]",
+            "claim": "Independent guide-created transfer with hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:01",
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:absolute-zero-rule",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Derive the absolute-value zero rule from squeeze and use it when a function changes sign.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 40,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [40],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 40 explicitly asks for the general implication |f(x)|→0 implies f(x)→0."
+        },
+        "page_heading": "Limit laws"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[absolute-zero-squeeze]",
+            "claim": "Statement and hypotheses inspected.",
+            "method": "Compared with SHA-matched, visually checked physical source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[absolute-zero-oscillation]",
+            "claim": "Worked reasoning and contrast inspected; any guide-created example identified.",
+            "method": "Checked algebra and source-page attribution."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[absolute-zero-transfer]",
+            "claim": "Independent guide-created transfer with hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_03:04",
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered physical pages with the cited lesson blocks and transfer feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "task and feedback checked; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
       }
     }
   ]
