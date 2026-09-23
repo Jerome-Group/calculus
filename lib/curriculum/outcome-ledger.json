@@ -4267,7 +4267,7 @@
       "source_id": "MH2100_Lecture_05",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Lagrange one/two constraints",
-      "physical_pages_from_audit": "2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61",
+      "physical_pages_from_audit": "2–19; 20–23 visually blank continuation slides",
       "linked_concept_ids": [
         "lagrange-circle",
         "lagrange-sphere",
@@ -4278,7 +4278,7 @@
         "type-one-two-regions"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Lagrange one/two constraints' at 2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Physical pages 7–19 source-checked for one- and two-constraint methods. Page 18 states a nonzero-gradient condition insufficient for two independent constraints; guide supplies the rank correction. Page 19 poses Example 3 but pages 20–23 visually blank continuation slides show no solution; the guide derivation is independent. Scene-specific and learner-performance evidence remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4289,8 +4289,18 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "lagrange-circle:regular-one-constraint-2d",
+        "lagrange-circle:compact-candidate-comparison",
+        "lagrange-circle:circle-factor-branches",
+        "lagrange-sphere:regular-one-constraint-3d",
+        "lagrange-sphere:open-box-model",
+        "lagrange-sphere:box-stationary-candidate",
+        "lagrange-sphere:noncompact-amgm-certificate",
+        "lagrange-two-constraints:independent-gradients",
+        "lagrange-two-constraints:source-prompt-feasible-set"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_05:02",
@@ -15386,6 +15396,726 @@
         "practiced": "task inspected; learner response unverified",
         "visualized": "No outcome-specific scene checked.",
         "checked": "No independent learner check."
+      }
+    },
+    {
+      "id": "lagrange-circle:regular-one-constraint-2d",
+      "concept_id": "lagrange-circle",
+      "outcome": "State the regular one-constraint necessary condition for a constrained extremum and distinguish it from an existence guarantee.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 7,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Two-Variable Case"
+        },
+        "page_heading": "Lagrange Multipliers — Two-Variable Case"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.sections[Regularity gives a necessary equation]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.supplementalBlocks[l05-circle-theorem]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.exercises[l05-circle-theorem-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.sections[Regularity gives a necessary equation]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.supplementalBlocks[l05-circle-theorem]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.exercises[l05-circle-theorem-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-circle:compact-candidate-comparison",
+      "concept_id": "lagrange-circle",
+      "outcome": "Solve the constraint and multiplier equations, discard the multiplier, and compare every objective value; use compactness to certify global extrema.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 8,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Two-Variable Case"
+        },
+        "page_heading": "Lagrange Multipliers — Two-Variable Case"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.sections[Candidates need a global certificate]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.supplementalBlocks[l05-circle-example]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.exercises[l05-circle-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.sections[Candidates need a global certificate]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.supplementalBlocks[l05-circle-example]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.exercises[l05-circle-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-circle:circle-factor-branches",
+      "concept_id": "lagrange-circle",
+      "outcome": "Retain both zero-coordinate and multiplier branches when solving the unit-circle example.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 10,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Example 1 (cont’d)"
+        },
+        "page_heading": "Lagrange Multipliers — Example 1 (cont’d)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.sections[Do not divide away a branch]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.supplementalBlocks[l05-circle-example]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.exercises[l05-circle-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.sections[Do not divide away a branch]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.supplementalBlocks[l05-circle-example]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-circle.exercises[l05-circle-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-sphere:regular-one-constraint-3d",
+      "concept_id": "lagrange-sphere",
+      "outcome": "Apply the regular one-constraint condition in three variables while keeping existence separate from the multiplier equation.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 12,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Three-Variable Case (Single Constraint)"
+        },
+        "page_heading": "Lagrange Multipliers — Three-Variable Case (Single Constraint)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[A surface condition is necessary only]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-method]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[A surface condition is necessary only]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-method]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-sphere:open-box-model",
+      "concept_id": "lagrange-sphere",
+      "outcome": "Model an open-top box with positive dimensions, volume xyz, and cardboard area xy+2xz+2yz.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 14,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Example 2"
+        },
+        "page_heading": "Lagrange Multipliers — Example 2"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[Model the open-top box]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-method]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[Model the open-top box]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-method]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-sphere:box-stationary-candidate",
+      "concept_id": "lagrange-sphere",
+      "outcome": "Solve the positive-dimension multiplier system to obtain the candidate x=y=2z and the 12-unit dimensions (2,2,1).",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 15,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Example 2 (cont’d)"
+        },
+        "page_heading": "Lagrange Multipliers — Example 2 (cont’d)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[Solve without losing positivity]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-candidate]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[Solve without losing positivity]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-candidate]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-sphere:noncompact-amgm-certificate",
+      "concept_id": "lagrange-sphere",
+      "outcome": "Prove a noncompact constraint candidate is globally maximal by AM–GM and its equality conditions rather than by an unavailable compactness argument.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 17,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [17],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Example 2 (cont’d)"
+        },
+        "page_heading": "Lagrange Multipliers — Example 2 (cont’d)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[Certify the open-domain maximum]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-amgm]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.sections[Certify the open-domain maximum]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.supplementalBlocks[l05-box-amgm]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-sphere.exercises[l05-box-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-two-constraints:independent-gradients",
+      "concept_id": "lagrange-two-constraints",
+      "outcome": "Require linearly independent constraint gradients for the regular two-constraint multiplier condition and identify why the source slide’s stated nonzero pair does not suffice.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 18,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Three-Variable Case (Double Constraints)"
+        },
+        "page_heading": "Lagrange Multipliers — Three-Variable Case (Double Constraints)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.sections[Two gradients must have rank two]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.supplementalBlocks[l05-rank-counterexample]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.exercises[l05-rank-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.sections[Two gradients must have rank two]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.supplementalBlocks[l05-rank-counterexample]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.exercises[l05-rank-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "lagrange-two-constraints:source-prompt-feasible-set",
+      "concept_id": "lagrange-two-constraints",
+      "outcome": "Reduce the source cone-and-plane feasible set, check gradient independence, and determine global extrema without presuming a supplied source solution.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "physical_page": 19,
+        "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19],
+          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
+          "claim_observed": "Lagrange Multipliers — Example 3"
+        },
+        "page_heading": "Lagrange Multipliers — Example 3"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.sections[The source gives a prompt only]",
+            "claim": "Guide states the source skill and any corrected regularity condition.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.supplementalBlocks[l05-cone-plane-derived]",
+            "claim": "Worked reasoning applies the source skill with explicit conditions and calculation.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.exercises[l05-two-transfer]",
+            "claim": "Independent transfer task with solution applies this skill; learner performance unverified.",
+            "method": "Compared the rendered physical source page, guide reasoning and task; source Example 3 derivation is identified as independent."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and cited guide evidence inspected. No outcome-specific scene or independent learner check. Page 19 has no supplied solution; guide derivation is independent.",
+      "source_section_id": "MH2100_Lecture_05:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.sections[The source gives a prompt only]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.supplementalBlocks[l05-cone-plane-derived]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lagrange-two-constraints.exercises[l05-two-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source page, guide section, worked calculation and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match with explicit source correction where needed",
+        "worked": "source-aligned reasoning inspected; Example 3 independently derived",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
       }
     }
   ]
