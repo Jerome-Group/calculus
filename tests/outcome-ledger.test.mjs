@@ -27,7 +27,7 @@ test("outcome ledger carries all concept review entries as unverified checklist 
   }
 });
 
-test("every core source has an explicit section inventory and unverified gap", () => {
+test("every core source has an explicit section inventory and honest gap", () => {
   const core = Object.values(sources).filter(
     (source) => source.kind !== "textbook",
   );
@@ -37,25 +37,37 @@ test("every core source has an explicit section inventory and unverified gap", (
     );
     assert.ok(sections.length > 0, source.id);
     for (const section of sections) {
-      assert.equal(section.verification, "pending");
+      const lecture03 = section.id.startsWith("MH1100_Lecture_03:");
+      assert.equal(
+        section.verification,
+        lecture03 ? "canonical_sha_and_physical_pages_verified" : "pending",
+      );
       assert.ok(section.gap);
       assert.ok(section.physical_pages_from_audit);
       assert.ok(
-        ["partial_atomic_mapping", "explicit_gap"].includes(
-          section.coverage_decision,
-        ),
+        (lecture03
+          ? ["mapped_with_reasoned_exclusions"]
+          : ["partial_atomic_mapping", "explicit_gap"]
+        ).includes(section.coverage_decision),
       );
       assert.deepEqual(
-        section.atomic_outcome_ids,
+        [...section.atomic_outcome_ids].sort(),
         ledger.atomic_outcomes
           .filter((outcome) => outcome.source_section_id === section.id)
-          .map((outcome) => outcome.id),
+          .map((outcome) => outcome.id)
+          .sort(),
       );
       if (section.coverage_decision === "explicit_gap")
         assert.equal(section.atomic_outcome_ids.length, 0);
       else assert.ok(section.atomic_outcome_ids.length > 0);
-      for (const state of ledger.states)
-        assert.deepEqual(section.evidence[state], []);
+      for (const state of ledger.states) {
+        if (
+          lecture03 &&
+          ["named", "stated", "worked", "practiced"].includes(state)
+        )
+          assert.ok(section.evidence[state].length > 0);
+        else assert.deepEqual(section.evidence[state], []);
+      }
     }
   }
 });
