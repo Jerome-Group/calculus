@@ -2503,19 +2503,34 @@
     "topics": ["sequences", "epsilon N", "limit", "convergence", "divergence"],
     "sources": [
       {
+        "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
+        "pages": [3, 12],
+        "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+      },
+      {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [2, 2],
-        "detail": "Definition 1. (Sequence)"
+        "detail": "Sequence definition and index convention"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [3, 3],
+        "detail": "Examples with distinct initial indices"
       },
       {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [4, 4],
-        "detail": "Definition 2. (Limit of a Sequence (Informal)); Definition 3. (Limit of a Sequence (Formal))"
+        "detail": "Informal sequence limit"
       },
       {
-        "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
-        "pages": [3, 12],
-        "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [5, 5],
+        "detail": "Formal epsilon-tail definition"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [6, 6],
+        "detail": "First-principles epsilon-N calculations"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -2538,14 +2553,29 @@
     "topics": ["subsequence", "subsequence test", "boundedness", "oscillation"],
     "sources": [
       {
-        "sourceId": "MH1101_Chapter_04_Notes",
-        "pages": [7, 7],
-        "detail": "Definition 4. (Subsequence); Theorem 1. (Subsequence Test)"
-      },
-      {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
         "pages": [3, 12],
         "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [7, 7],
+        "detail": "Subsequence definition and inheritance"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [8, 8],
+        "detail": "Subsequence divergence test and parity correction"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [9, 9],
+        "detail": "Growth-to-infinity comparison"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [10, 10],
+        "detail": "Factorial-root growth comparison"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -2574,19 +2604,49 @@
     ],
     "sources": [
       {
+        "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
+        "pages": [3, 12],
+        "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+      },
+      {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [11, 11],
-        "detail": "4.2      Finding Limits of Sequences"
+        "detail": "Section 4.2 limit calculations"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [12, 12],
+        "detail": "Limit-law examples"
       },
       {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [13, 13],
-        "detail": "Theorem 2. (Sequence defined by a Function); Theorem 3. (Squeeze Theorem for Sequences); Theorem 4. (Continuous Function for Convergent Sequences)"
+        "detail": "Function restriction, squeeze, and continuity theorems"
       },
       {
-        "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
-        "pages": [3, 12],
-        "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [14, 14],
+        "detail": "Squeeze examples"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [15, 15],
+        "detail": "Geometric cases"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [16, 16],
+        "detail": "Geometric cases"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [17, 17],
+        "detail": "L'Hopital application"
+      },
+      {
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [18, 18],
+        "detail": "Sequence squeeze example"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -2614,19 +2674,24 @@
     ],
     "sources": [
       {
+        "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
+        "pages": [3, 12],
+        "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+      },
+      {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [19, 19],
-        "detail": "Definition 5. (Monotonic Sequences); Definition 6. (Boundedness)"
+        "detail": "Monotonicity, boundedness, and rational sequence"
       },
       {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [20, 20],
-        "detail": "Theorem 5. (Monotonic Sequence Theorem)"
+        "detail": "Monotone convergence and recurrence bounds"
       },
       {
-        "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
-        "pages": [3, 12],
-        "detail": "Optional: Stewart, §11.1; PDF pages within the supplied chapter extract"
+        "sourceId": "MH1101_Chapter_04_Notes",
+        "pages": [21, 21],
+        "detail": "Nested-radical fixed point"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

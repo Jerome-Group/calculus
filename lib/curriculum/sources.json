@@ -225,7 +225,16 @@
     "pages": 32,
     "course": "MH1101",
     "kind": "lecture",
-    "sha256": "8436a45c67c64106e9c79ba5d61babdf31421d22729c0470febefc49aed3f3de"
+    "sha256": "8436a45c67c64106e9c79ba5d61babdf31421d22729c0470febefc49aed3f3de",
+    "errata": [
+      {
+        "page": 8,
+        "printed": "Example 4.4 says the even subsequence of $(-1)^n$ is $-1,-1,\\ldots$ and the odd subsequence is $1,1,\\ldots$.",
+        "correction": "For indices beginning at $n=1$, the even subsequence is $1,1,\\ldots$ and the odd subsequence is $-1,-1,\\ldots$.",
+        "justification": "Substitution gives $(-1)^{2k}=1$ and $(-1)^{2k-1}=-1$; page 2 allows indices starting at 1 and page 7 defines subsequences by increasing indices.",
+        "provenance": "Compared printed labels with powers on canonical SHA-256 matched page 8; parity recomputed using page 7's indexing convention."
+      }
+    ]
   },
   "MH1101_Stewart_Chapter_11_Sequence_Series_Power": {
     "id": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",

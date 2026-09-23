@@ -38,10 +38,17 @@ test("every core source has an explicit section inventory and honest gap", () =>
     assert.ok(sections.length > 0, source.id);
     for (const section of sections) {
       const lecture08 = /^MH1100_Lecture_08:0[1-4]$/.test(section.id);
+      const chapter04Notes = /^MH1101_Chapter_04_Notes:0[1-4]$/.test(
+        section.id,
+      );
       const mappedLecture =
-        /^MH1100_Lecture_0[356]:/.test(section.id) || lecture08;
+        /^MH1100_Lecture_0[356]:/.test(section.id) ||
+        lecture08 ||
+        chapter04Notes;
       const pageVerified =
-        /^MH1100_Lecture_0[3456]:/.test(section.id) || lecture08;
+        /^MH1100_Lecture_0[3456]:/.test(section.id) ||
+        lecture08 ||
+        chapter04Notes;
       const lecture04 = section.id.startsWith("MH1100_Lecture_04:");
       assert.equal(
         section.verification,
@@ -67,7 +74,8 @@ test("every core source has an explicit section inventory and honest gap", () =>
       else assert.ok(section.atomic_outcome_ids.length > 0);
       for (const state of ledger.states) {
         if (
-          (mappedLecture ||
+          // These catalog titles name parent topics, not the Chapter 04 atomic outcomes.
+          ((mappedLecture && !(chapter04Notes && state === "named")) ||
             (lecture04 &&
               (["stated", "worked", "practiced"].includes(state) ||
                 section.evidence[state].length > 0))) &&

@@ -5112,117 +5112,401 @@
       "id": "MH1101_Chapter_04_Notes:01",
       "source_id": "MH1101_Chapter_04_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Sequences",
-      "physical_pages_from_audit": "2–32; limits 2–18; monotone 19–21; series 22–32",
-      "linked_concept_ids": [
-        "sequence-limits",
-        "subsequences-bounded",
-        "sequence-limit-laws",
-        "monotone-sequences",
-        "series-geometric-telescoping",
-        "series-divergence-test"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Sequences' at 2–32; limits 2–18; monotone 19–21; series 22–32; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Sequence indexing and formal limits",
+      "physical_pages_from_audit": "Canonical notes; inspected physical pages 2–6; page 1 contents excluded; page 22 starts series.",
+      "linked_concept_ids": ["sequence-limits"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 2–6 map indexing, informal and formal limit definitions, and cutoff proofs. Page 1 is contents, not a separate skill. Scene alignment and learner performance are unverified.",
       "evidence": {
         "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-index]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-informal]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-index-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-informal-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-index-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-epsilon-quantifiers]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-epsilon-proof]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-informal-transfer]",
+            "claim": "Independent transfer has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "sequence-limits:chapter04-indexed-sequence",
+        "sequence-limits:chapter04-epsilon-n-definition",
+        "sequence-limits:chapter04-direct-epsilon-n-proof",
+        "sequence-limits:chapter04-informal-limit-language"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–6",
+      "inspected_physical_pages": [2, 3, 4, 5, 6]
     },
     {
       "id": "MH1101_Chapter_04_Notes:02",
       "source_id": "MH1101_Chapter_04_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "subsequences/boundedness",
-      "physical_pages_from_audit": "2–32; limits 2–18; monotone 19–21; series 22–32",
-      "linked_concept_ids": [
-        "sequence-limits",
-        "subsequences-bounded",
-        "sequence-limit-laws",
-        "monotone-sequences",
-        "series-geometric-telescoping",
-        "series-divergence-test"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'subsequences/boundedness' at 2–32; limits 2–18; monotone 19–21; series 22–32; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Subsequence tests and growth comparisons",
+      "physical_pages_from_audit": "Canonical notes; inspected physical pages 7–10; page 1 contents excluded; page 22 starts series.",
+      "linked_concept_ids": ["subsequences-bounded", "sequence-limits"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 7–10 map subsequence inheritance, divergence tests, reciprocal implications, and growth comparisons including factorial roots. Page 8 reverses parity labels; see source errata. Scene alignment and learner performance are unverified.",
       "evidence": {
         "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-inherit]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-diverge]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-growth]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-growth]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-reciprocal]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-growth-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-factorial-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-reciprocal-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-subseq-inherit]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-subseq-test]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-growth-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-factorial-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-reciprocal-transfer]",
+            "claim": "Independent transfer has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "subsequences-bounded:chapter04-subsequence-inheritance",
+        "subsequences-bounded:chapter04-subsequence-divergence-test",
+        "subsequences-bounded:chapter04-growth-to-infinity",
+        "subsequences-bounded:chapter04-factorial-root-growth",
+        "subsequences-bounded:chapter04-reciprocal-growth"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "7–10",
+      "inspected_physical_pages": [7, 8, 9, 10]
     },
     {
       "id": "MH1101_Chapter_04_Notes:03",
       "source_id": "MH1101_Chapter_04_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "calculations",
-      "physical_pages_from_audit": "2–32; limits 2–18; monotone 19–21; series 22–32",
-      "linked_concept_ids": [
-        "sequence-limits",
-        "subsequences-bounded",
-        "sequence-limit-laws",
-        "monotone-sequences",
-        "series-geometric-telescoping",
-        "series-divergence-test"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'calculations' at 2–32; limits 2–18; monotone 19–21; series 22–32; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Sequence limit calculations",
+      "physical_pages_from_audit": "Canonical notes; inspected physical pages 11–18; page 1 contents excluded; page 22 starts series.",
+      "linked_concept_ids": ["sequence-limit-laws"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 11–18 map finite laws, squeeze examples (including page 18), function restriction, continuity, geometric cases, and L'Hôpital on a real extension. Guide states standard L'Hôpital hypotheses; scene alignment and learner performance are unverified.",
       "evidence": {
         "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-laws]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-squeeze]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-function]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-function]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-geometric]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-lhopital]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-laws-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-squeeze-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-function-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-continuity-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-geometric-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-lhopital-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-laws-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-squeeze-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-function-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-continuity-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-geometric-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-lhopital-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "sequence-limit-laws:chapter04-limit-law-hypotheses",
+        "sequence-limit-laws:chapter04-sequence-squeeze",
+        "sequence-limit-laws:chapter04-function-limit-restriction",
+        "sequence-limit-laws:chapter04-continuous-composition",
+        "sequence-limit-laws:chapter04-geometric-sequence-cases",
+        "sequence-limit-laws:chapter04-lhopital-real-extension"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "11–18",
+      "inspected_physical_pages": [11, 12, 13, 14, 15, 16, 17, 18]
     },
     {
       "id": "MH1101_Chapter_04_Notes:04",
       "source_id": "MH1101_Chapter_04_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "monotone convergence",
-      "physical_pages_from_audit": "2–32; limits 2–18; monotone 19–21; series 22–32",
-      "linked_concept_ids": [
-        "sequence-limits",
-        "subsequences-bounded",
-        "sequence-limit-laws",
-        "monotone-sequences",
-        "series-geometric-telescoping",
-        "series-divergence-test"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'monotone convergence' at 2–32; limits 2–18; monotone 19–21; series 22–32; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Monotone convergence and recursive limits",
+      "physical_pages_from_audit": "Canonical notes; inspected physical pages 19–21; page 1 contents excluded; page 22 starts series.",
+      "linked_concept_ids": ["monotone-sequences"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 19–21 map monotonicity and bounds, the monotone convergence theorem and its supremum proof, and the nested-radical limit after convergence is proved. Page 22 begins out-of-scope series. Scene alignment and learner performance are unverified.",
       "evidence": {
         "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone-theorem]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-recursive]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone-proof]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-fixedpoint-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.exercises[ch04-monotone-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.exercises[ch04-monotone-theorem-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.exercises[ch04-recursive-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "monotone-sequences:chapter04-monotonicity-bounds",
+        "monotone-sequences:chapter04-monotone-convergence",
+        "monotone-sequences:chapter04-recursive-fixed-point"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "19–21",
+      "inspected_physical_pages": [19, 20, 21]
     },
     {
       "id": "MH1101_Chapter_04_Notes:05",
@@ -25875,6 +26159,1086 @@
         "practiced": "independent task and solution inspected; learner performance unverified",
         "visualized": "Candidate scene unverified for this outcome.",
         "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "sequence-limits:chapter04-indexed-sequence",
+      "concept_id": "sequence-limits",
+      "outcome": "Specify sequence terms from the declared initial index.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 2,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [2, 3],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 2, 3 state or work the mapped skill."
+        },
+        "page_heading": "4.1 Limits of Sequences"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-index]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-index-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-index-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limits:chapter04-epsilon-n-definition",
+      "concept_id": "sequence-limits",
+      "outcome": "State the formal epsilon-tail definition for a sequence limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 5,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 5 state or work the mapped skill."
+        },
+        "page_heading": "Definition 3. (Limit of a Sequence (Formal))"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-epsilon-quantifiers]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limits:chapter04-direct-epsilon-n-proof",
+      "concept_id": "sequence-limits",
+      "outcome": "Choose an integer cutoff from an error formula to prove a sequence limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 6,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 6 state or work the mapped skill."
+        },
+        "page_heading": "Example 4.3"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-epsilon-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-epsilon-proof]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "subsequences-bounded:chapter04-subsequence-inheritance",
+      "concept_id": "subsequences-bounded",
+      "outcome": "Use subsequence inheritance to transfer a convergent sequence's limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 7,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 8],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 7, 8 state or work the mapped skill."
+        },
+        "page_heading": "Definition 4. (Subsequence); Theorem 1. (Subsequence Test)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-inherit]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-subseq-inherit]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "subsequences-bounded:chapter04-subsequence-divergence-test",
+      "concept_id": "subsequences-bounded",
+      "outcome": "Refute convergence with a divergent subsequence or distinct limits.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 8,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 8 state or work the mapped skill."
+        },
+        "page_heading": "Subsequence Test application"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-diverge]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-subseq-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-subseq-test]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "subsequences-bounded:chapter04-growth-to-infinity",
+      "concept_id": "subsequences-bounded",
+      "outcome": "Prove divergence to infinity by a lower comparison.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 9,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 9 state or work the mapped skill."
+        },
+        "page_heading": "Example 4.6"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-growth]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-growth-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-growth-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "subsequences-bounded:chapter04-factorial-root-growth",
+      "concept_id": "subsequences-bounded",
+      "outcome": "Use a factorial-root bound to prove power-normalized growth.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 10,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 10 state or work the mapped skill."
+        },
+        "page_heading": "Example 4.7"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-growth]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-factorial-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-factorial-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limit-laws:chapter04-limit-law-hypotheses",
+      "concept_id": "sequence-limit-laws",
+      "outcome": "Calculate finite limits using limit laws and check the quotient condition.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 11,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 12],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 11, 12 state or work the mapped skill."
+        },
+        "page_heading": "4.2 Finding Limits of Sequences"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-laws]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-laws-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-laws-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limit-laws:chapter04-sequence-squeeze",
+      "concept_id": "sequence-limit-laws",
+      "outcome": "Prove a sequence limit by squeezing between equal limits.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 13,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 18],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 13, 14 state or work the mapped skill."
+        },
+        "page_heading": "Squeeze theorem and examples"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-squeeze]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-squeeze-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-squeeze-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limit-laws:chapter04-function-limit-restriction",
+      "concept_id": "sequence-limit-laws",
+      "outcome": "Restrict a real-function limit at infinity to integer inputs.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 13,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 13 state or work the mapped skill."
+        },
+        "page_heading": "Function limits and sequences"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-function]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-function-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-function-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limit-laws:chapter04-continuous-composition",
+      "concept_id": "sequence-limit-laws",
+      "outcome": "Pass a sequence limit through a function continuous at its limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 13,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 18],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 13, 14 state or work the mapped skill."
+        },
+        "page_heading": "Continuous functions and sequence limits"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-function]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-continuity-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-continuity-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limit-laws:chapter04-geometric-sequence-cases",
+      "concept_id": "sequence-limit-laws",
+      "outcome": "Classify geometric sequence behavior from its real ratio.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 15,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 15, 16 state or work the mapped skill."
+        },
+        "page_heading": "Geometric sequences"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-geometric]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-geometric-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-geometric-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limit-laws:chapter04-lhopital-real-extension",
+      "concept_id": "sequence-limit-laws",
+      "outcome": "Apply L'Hôpital on a real extension, then restrict to integers.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 17,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [17],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 17 state or work the mapped skill."
+        },
+        "page_heading": "L'Hôpital's Rule"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-lhopital]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.contentBlocks[ch04-lhopital-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limit-laws.exercises[ch04-lhopital-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "monotone-sequences:chapter04-monotonicity-bounds",
+      "concept_id": "monotone-sequences",
+      "outcome": "Verify monotonicity and bounds using consecutive terms.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 19,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 19, 20 state or work the mapped skill."
+        },
+        "page_heading": "Definition 5. (Monotonic sequence); Example 4.17"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.exercises[ch04-monotone-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:04",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "monotone-sequences:chapter04-monotone-convergence",
+      "concept_id": "monotone-sequences",
+      "outcome": "Apply monotone convergence with the matching finite bound.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 20,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20, 21],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 20, 21 state or work the mapped skill."
+        },
+        "page_heading": "Monotone Convergence Theorem"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone-theorem]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-monotone-proof]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.exercises[ch04-monotone-theorem-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:04",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "monotone-sequences:chapter04-recursive-fixed-point",
+      "concept_id": "monotone-sequences",
+      "outcome": "Find a recurrence limit only after proving convergence and checking roots.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 21,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20, 21],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page(s) 20, 21 state or work the mapped skill."
+        },
+        "page_heading": "Example 4.18"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-recursive]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.contentBlocks[ch04-fixedpoint-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#monotone-sequences.exercises[ch04-recursive-transfer]",
+            "claim": "Independent task has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:04",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "sequence-limits:chapter04-informal-limit-language",
+      "concept_id": "sequence-limits",
+      "outcome": "Describe convergence as eventual arbitrary closeness to a finite target.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 4,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page 4 states or works the mapped skill."
+        },
+        "page_heading": "Definition 2. (Limit of a Sequence (Informal))"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-informal]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.contentBlocks[ch04-informal-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sequence-limits.exercises[ch04-informal-transfer]",
+            "claim": "Independent transfer has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "subsequences-bounded:chapter04-reciprocal-growth",
+      "concept_id": "subsequences-bounded",
+      "outcome": "Apply reciprocal implications between zero and positive infinity.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 9,
+        "inspection": "Canonical SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9],
+          "method": "Canonical SHA-256 matched; listed physical pages rendered and visually checked with Poppler.",
+          "claim_observed": "Physical page 9 states or works the mapped skill."
+        },
+        "page_heading": "Some useful properties"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-reciprocal]",
+            "claim": "Guide states the source rule and its hypotheses.",
+            "method": "Compared with SHA-matched, visually inspected pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.contentBlocks[ch04-reciprocal-work]",
+            "claim": "Worked reasoning is checked against source pages; guide-created work is identified.",
+            "method": "Recomputed the cited calculation or proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#subsequences-bounded.exercises[ch04-reciprocal-transfer]",
+            "claim": "Independent transfer has prompt, hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed the guide-created task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "sequence-number-line",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Pages and guide reasoning inspected; catalog names only parent topics so no atomic named match is claimed. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered pages, stated rule, worked reasoning, and independent transfer.",
+        "named": "Parent-topic titles only; exact atomic outcome title absent, no named match claimed.",
+        "stated": "Source conditions compared with guide.",
+        "worked": "Source work recomputed.",
+        "practiced": "Task solved and reviewed; learner performance unverified.",
+        "visualized": "No aligned scene established.",
+        "checked": "No learner outcome check."
       }
     }
   ]
