@@ -1760,7 +1760,103 @@
         "Use differentiation as an independent check."
       ],
       "solutionTex": "\\int(3x^2-4x+2)\\,dx=x^3-2x^2+2x+C"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "ch1-disconnected-antiderivatives",
+        "title": "Constants belong to interval components",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Find all antiderivatives of $1/x$ on $(-\\infty,0)\\cup(0,\\infty)$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "On each interval, $d(\\ln|x|)/dx=1/x$."
+          },
+          {
+            "label": "2",
+            "text": "The domain is disconnected, so differentiation cannot compare the constants across zero."
+          },
+          {
+            "label": "3",
+            "text": "Write $F(x)=\\ln|x|+C_-$ for $x<0$ and $F(x)=\\ln x+C_+$ for $x>0$."
+          }
+        ],
+        "result": "Two independent constants $C_-$ and $C_+$ are allowed.",
+        "verification": "Differentiating either branch gives $1/x$; changing only one constant still gives an antiderivative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-antiderivative-linearity",
+        "title": "Use the table and linearity",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Integrate $3x^2-2\\cos x$ on the real line.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Integrate each term: $\\int3x^2\\,dx=x^3$ and $\\int(-2\\cos x)\\,dx=-2\\sin x$."
+          },
+          {
+            "label": "2",
+            "text": "Combine the terms and add one constant on this connected interval."
+          }
+        ],
+        "result": "$x^3-2\\sin x+C$.",
+        "verification": "Differentiation returns $3x^2-2\\cos x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-constant-family-proof",
+        "title": "Why an interval has one constant",
+        "strategy": "Compare two antiderivatives by subtracting them and apply the mean value theorem on the interval.",
+        "setup": "Suppose $F$ and $G$ are antiderivatives of the same $f$ on an interval $I$. Explain every possible difference.",
+        "steps": [
+          {
+            "label": "Differentiate the difference",
+            "text": "Put $H=G-F$. Since $F' =G'=f$ on $I$, $H'=0$ throughout $I$."
+          },
+          {
+            "label": "Use the interval",
+            "text": "For any $u<v$ in $I$, the mean value theorem on $[u,v]$ gives $H(v)-H(u)=H'(c)(v-u)=0$ for some $c\\in(u,v)$."
+          },
+          {
+            "label": "Conclude",
+            "text": "Every pair of points in $I$ has the same $H$ value, so $G=F+C$ on that entire interval."
+          }
+        ],
+        "result": "All antiderivatives on one interval form the family $F+C$. Separate interval components may have separate constants.",
+        "verification": "The converse is immediate: $(F+C)'=F'=f$. The mean value theorem does not compare points across a gap in the domain."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch1-component-transfer",
+        "outcome": "Find antiderivatives on a disconnected domain.",
+        "kind": "computational",
+        "prompt": "Find every antiderivative of $1/x^2$ on $(-\\infty,0)\\cup(0,\\infty)$. Explain the constants.",
+        "hint": "Integrate $x^{-2}$ on each connected interval.",
+        "solution": "$-1/x+C_-$ for negative $x$ and $-1/x+C_+$ for positive $x$. The constants can differ because the domain has two components.",
+        "solutionTex": "F(x)=\\begin{cases}-1/x+C_-&x<0\\\\-1/x+C_+&x>0\\end{cases}",
+        "rubric": [
+          "Differentiate both branches.",
+          "Allow independent constants on separate intervals."
+        ]
+      },
+      {
+        "id": "ch1-constant-family-transfer",
+        "outcome": "Prove uniqueness up to a constant on an interval and respect disconnected components.",
+        "kind": "proof",
+        "prompt": "Let $F$ and $G$ both differentiate to $3x^2$ on $(-2,4)$. Prove that $G-F$ is one constant there. Would the same conclusion force one shared constant on $(-2,0)\\cup(0,4)$?",
+        "hint": "Apply the mean value theorem to $H=G-F$ between any two points in the same interval.",
+        "solution": "On $(-2,4)$, $H'=G'-F'=0$. For any $u<v$ in that interval, the mean value theorem gives $H(v)-H(u)=H'(c)(v-u)=0$, so $H=C$. On the disconnected domain, the argument works separately on each component but cannot compare their constants; two independent constants are possible.",
+        "solutionTex": "H'=0\\ \text{on }(-2,4)\\implies H=C\\ \text{there}",
+        "rubric": [
+          "Use the derivative of the difference.",
+          "Apply the mean value theorem to arbitrary points in one interval.",
+          "Distinguish a connected interval from two disconnected components."
+        ]
+      }
+    ]
   },
   "riemann-integral": {
     "prerequisites": ["sequence-limits", "continuity-ivt"],
@@ -1784,7 +1880,177 @@
         "Distinguish one sequence of sums from the full integrability theorem."
       ],
       "solutionTex": "S_n=\\frac1{n^2}\\sum_{k=1}^n k=\\frac{n+1}{2n}\\longrightarrow\\frac12"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "ch1-x2-right-sums",
+        "title": "Compare left and right parabola sums",
+        "strategy": "Use the same partition width with left and right sample points, then compare both limits.",
+        "setup": "On $[0,1]$, construct left and right endpoint sums for $f(x)=x^2$.",
+        "steps": [
+          {
+            "label": "Partition",
+            "text": "For $n$ equal pieces, $\\Delta x=1/n$; the left tags are $(i-1)/n$ and the right tags are $i/n$."
+          },
+          {
+            "label": "Left sum",
+            "text": "$L_n=n^{-3}\\sum_{i=0}^{n-1}i^2=(n-1)(2n-1)/(6n^2)$."
+          },
+          {
+            "label": "Right sum",
+            "text": "$R_n=n^{-3}\\sum_{i=1}^{n}i^2=(n+1)(2n+1)/(6n^2)$."
+          },
+          {
+            "label": "Compare limits",
+            "text": "Because $x^2$ increases on $[0,1]$, $L_n\\le S_n\\le R_n$ for every tagged sum on this equal partition. Both endpoint sums tend to $1/3$."
+          }
+        ],
+        "result": "$L_n\\to1/3$ and $R_n\\to1/3$; every tagged sum on these equal partitions has the same limit.",
+        "verification": "The gap is $R_n-L_n=1/n$. Arbitrary partitions still require the all-partitions definition or a separate argument."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-sum-to-integral",
+        "title": "Read width, tags, and interval from a limit",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Interpret $\\lim_{n\\to\\infty}\\sum_{i=1}^n(2+3i/n)^4(3/n)$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "The width is $3/n$, so the interval has length 3."
+          },
+          {
+            "label": "2",
+            "text": "The tags $2+3i/n$ start at 2 and end at 5; the integrand is $x^4$."
+          }
+        ],
+        "result": "The limit is $\\int_2^5 x^4\\,dx$.",
+        "verification": "The right-endpoint form matches $a+i(b-a)/n$ with $a=2$, $b=5$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-signed-comparison",
+        "title": "Use signed area and order",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Compare $\\int_{-1}^1x\\,dx$ with geometric area and compare $x^2$ to $x$ on $[0,1]$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Odd cancellation gives $\\int_{-1}^1x\\,dx=0$, while $\\int_{-1}^1|x|\\,dx=1$."
+          },
+          {
+            "label": "2",
+            "text": "Since $0\\le x^2\\le x$ on $[0,1]$, comparison gives $0\\le\\int_0^1x^2\\,dx\\le\\int_0^1x\\,dx$."
+          }
+        ],
+        "result": "$0\\le1/3\\le1/2$.",
+        "verification": "The inequalities agree with the values from integration, and the signed result is not geometric area."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-orientation-additivity",
+        "title": "Subtract adjacent intervals and reverse orientation",
+        "strategy": "Apply each integral rule with its stated bounds and hypotheses.",
+        "setup": "Given $\\int_0^3f(x)\\,dx=3$ and $\\int_0^7f(x)\\,dx=7$, find $\\int_7^3f(x)\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Additivity gives $\\int_3^7f=\\int_0^7f-\\int_0^3f=4$."
+          },
+          {
+            "label": "2",
+            "text": "Reversing the endpoints changes the sign: $\\int_7^3f=-\\int_3^7f$."
+          }
+        ],
+        "result": "$-4$.",
+        "verification": "Reversing again recovers $\\int_3^7f=4$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-definite-linearity",
+        "title": "Separate a linear combination",
+        "strategy": "Apply each integral rule with its stated bounds and hypotheses.",
+        "setup": "Evaluate $\\int_0^1(2x+3)\\,dx$ using linearity.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "$\\int_0^1(2x+3)\\,dx=2\\int_0^1x\\,dx+3\\int_0^1 1\\,dx$."
+          },
+          {
+            "label": "2",
+            "text": "The two integrals are $1/2$ and $1$."
+          }
+        ],
+        "result": "$2(1/2)+3(1)=4$.",
+        "verification": "Direct antiderivative evaluation gives $[x^2+3x]_0^1=4$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-all-tags-linear-proof",
+        "title": "Every tag and every fine partition agree",
+        "strategy": "Compare each tagged rectangle with a telescoping endpoint difference and bound the total error by the mesh.",
+        "setup": "For $f(x)=x$ on $[0,1]$, let $0=x_0<\\cdots<x_n=1$ be any partition, $t_i\\in[x_{i-1},x_i]$, and $h=\\max_i(x_i-x_{i-1})$.",
+        "steps": [
+          {
+            "label": "Compare one interval",
+            "text": "Write $\\Delta_i=x_i-x_{i-1}$. Since $t_i$ lies between the endpoints, $|t_i\\Delta_i-(x_i^2-x_{i-1}^2)/2|\\le\\Delta_i^2/2$."
+          },
+          {
+            "label": "Sum and telescope",
+            "text": "The endpoint differences sum to $1/2$, while $\\sum_i\\Delta_i^2\\le h\\sum_i\\Delta_i=h$."
+          },
+          {
+            "label": "Take the mesh limit",
+            "text": "Every choice of tags and every partition with mesh $h$ satisfies $|\\sum_i t_i\\Delta_i-1/2|\\le h/2$, which tends to zero."
+          }
+        ],
+        "result": "$\\int_0^1x\\,dx=1/2$ by the all-tags, all-partitions condition.",
+        "verification": "This bound is uniform in the number, widths, and tags of the subintervals; a single right-endpoint sequence would not give that conclusion."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch1-sum-transfer",
+        "outcome": "Identify an integral from a new Riemann sum.",
+        "kind": "computational",
+        "prompt": "Express $\\lim_{n\\to\\infty}\\sum_{i=1}^n(1+2i/n)^2(2/n)$ as an integral and evaluate it.",
+        "hint": "Read the left endpoint 1 and width $2/n$.",
+        "solution": "It is $\\int_1^3x^2\\,dx=[x^3/3]_1^3=26/3$.",
+        "solutionTex": "\\lim_{n\\to\\infty}\\sum_{i=1}^n(1+2i/n)^2\\frac2n=\\int_1^3x^2\\,dx=\\frac{26}{3}",
+        "rubric": [
+          "Identify both interval endpoints and width.",
+          "Evaluate the resulting integral."
+        ]
+      },
+      {
+        "id": "ch1-rules-transfer",
+        "outcome": "Combine orientation, additivity, and linearity.",
+        "kind": "computational",
+        "prompt": "If $\\int_0^2f=5$ and $\\int_0^5f=9$, find $\\int_5^2(3f(x)-2)\\,dx$.",
+        "hint": "First find $\\int_2^5f$, then reverse bounds. The interval length is 3.",
+        "solution": "$\\int_2^5f=4$, so $\\int_5^2f=-4$ and $\\int_5^2 1=-3$. Hence $3(-4)-2(-3)=-6$.",
+        "solutionTex": "\\int_5^2(3f(x)-2)\\,dx=-6",
+        "rubric": [
+          "Apply additivity and orientation before linearity.",
+          "Keep the constant term’s reversed interval sign."
+        ]
+      },
+      {
+        "id": "ch1-all-tags-linear-transfer",
+        "outcome": "Prove sample-point independence for a new linear integrand.",
+        "kind": "proof",
+        "prompt": "For $f(x)=2x$ on $[0,1]$, prove that every tagged Riemann sum over every partition of mesh $h$ differs from $1$ by at most $h$. Explain why a right-endpoint sequence alone would not prove this.",
+        "hint": "Compare $2t_i\\Delta_i$ with $x_i^2-x_{i-1}^2$ on each subinterval.",
+        "solution": "Because $t_i\\in[x_{i-1},x_i]$, $|2t_i\\Delta_i-(x_i^2-x_{i-1}^2)|\\le\\Delta_i^2$. Summing and telescoping gives $|\\sum_i2t_i\\Delta_i-1|\\le\\sum_i\\Delta_i^2\\le h\\sum_i\\Delta_i=h$. The bound applies to every partition and every tag choice, so all sums converge to $1$ as $h\\to0$. One selected right-endpoint sequence cannot establish that quantifier.",
+        "solutionTex": "\\left|\\sum_i2t_i\\Delta_i-1\\right|\\le\\sum_i\\Delta_i^2\\le h",
+        "rubric": [
+          "Keep partitions and tags arbitrary.",
+          "Bound each interval error and telescope.",
+          "Conclude uniform convergence over all tagged partitions."
+        ]
+      }
+    ]
   },
   "integral-average": {
     "prerequisites": ["riemann-integral"],
@@ -1808,7 +2074,43 @@
         "Separate the average from the point attaining it."
       ],
       "solutionTex": "f_{\\rm avg}=\\frac12\\int_1^3(2x+1)\\,dx=5,\\quad c=2"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "ch1-average-attainment",
+        "title": "Find the height and its witness",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "For $f(x)=x^2$ on $[0,2]$, find the average and a point attaining it.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "$\\int_0^2x^2\\,dx=8/3$ and the interval length is 2."
+          },
+          {
+            "label": "2",
+            "text": "The average is $4/3$; solve $c^2=4/3$ with $c\\in[0,2]$."
+          }
+        ],
+        "result": "$f_{\\rm avg}=4/3$ at $c=2/\\sqrt3$.",
+        "verification": "Continuity on the closed interval ensures some attaining point; the computed point lies inside it."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch1-average-transfer",
+        "outcome": "Compute average and attaining point.",
+        "kind": "computational",
+        "prompt": "Find the average of $x^2$ on $[1,3]$ and every $c$ in that interval with $c^2$ equal to the average.",
+        "hint": "Divide the integral by the length 2, then solve within the interval.",
+        "solution": "$[x^3/3]_1^3/2=13/3$. The sole point in $[1,3]$ is $c=\\sqrt{13/3}$.",
+        "solutionTex": "f_{\\rm avg}=\\frac{13}{3},\\quad c=\\sqrt{13/3}",
+        "rubric": [
+          "Divide by interval length.",
+          "Restrict the solution to the given interval."
+        ]
+      }
+    ]
   },
   "fundamental-theorem": {
     "prerequisites": ["riemann-integral", "derivative-definition"],
@@ -1832,7 +2134,85 @@
         "Multiply by $3x^{2}$."
       ],
       "solutionTex": "\\frac d{dx}\\int_0^{x^3}e^{t^2}\\,dt=3x^2e^{x^6}"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "ch1-ftc1-difference-quotient",
+        "title": "Why accumulation differentiates",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Let $A(x)=\\int_a^x f(t)\\,dt$ for continuous $f$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "The difference quotient is $[A(x+h)-A(x)]/h=(1/h)\\int_x^{x+h}f(t)\\,dt$."
+          },
+          {
+            "label": "2",
+            "text": "The integral mean-value theorem gives this average as $f(c_h)$ for a point between $x$ and $x+h$."
+          },
+          {
+            "label": "3",
+            "text": "Continuity and $c_h\\to x$ imply $f(c_h)\\to f(x)$."
+          }
+        ],
+        "result": "$A\\prime(x)=f(x)$.",
+        "verification": "This uses continuity near $x$; the dummy variable $t$ does not change the endpoint derivative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-ftc2-signed-bounds",
+        "title": "Evaluate with oriented endpoints",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Evaluate $\\int_1^{-2}x^3\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "An antiderivative is $F(x)=x^4/4$."
+          },
+          {
+            "label": "2",
+            "text": "Use the stated order of endpoints: $F(-2)-F(1)=4-1/4$."
+          }
+        ],
+        "result": "$15/4$.",
+        "verification": "The result also equals $-\\int_{-2}^1x^3\\,dx$; reversing endpoints changes the sign."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-ftc-moving-bounds",
+        "title": "Differentiate each endpoint",
+        "strategy": "Apply each integral rule with its stated bounds and hypotheses.",
+        "setup": "Let $H(x)=\\int_x^{x^2}\\sin t\\,dt$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Write $H(x)=A(x^2)-A(x)$ where $A(y)=\\int_0^y\\sin t\\,dt$."
+          },
+          {
+            "label": "2",
+            "text": "FTC Part 1 and the chain rule give $A\\prime(x^2)2x-A\\prime(x)=2x\\sin(x^2)-\\sin x$."
+          }
+        ],
+        "result": "$H\\prime(x)=2x\\sin(x^2)-\\sin x$.",
+        "verification": "At $x=1$ both endpoints meet, but the derivative formula still follows from the endpoint rates."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch1-moving-bounds-transfer",
+        "outcome": "Differentiate both moving endpoints.",
+        "kind": "computational",
+        "prompt": "Differentiate $H(x)=\\int_{x^2}^{2x}\\cos(t^2)\\,dt$.",
+        "hint": "Upper endpoint contribution minus lower endpoint contribution.",
+        "solution": "$H\\prime(x)=2\\cos(4x^2)-2x\\cos(x^4)$.",
+        "solutionTex": "H\\prime(x)=2\\cos(4x^2)-2x\\cos(x^4)",
+        "rubric": [
+          "Apply the chain rule at both bounds.",
+          "Subtract the lower-bound contribution."
+        ]
+      }
+    ]
   },
   "substitution-integral": {
     "prerequisites": ["fundamental-theorem", "chain-rule-single"],
@@ -1853,7 +2233,66 @@
       "solution": "The bounds become 1 and 5. The integral is $(1/2)\\int_1^5u^{1/2}\\,du =(5\\sqrt{5}-1)/3$.",
       "rubric": ["Transform both endpoints.", "Keep the factor $1/2$."],
       "solutionTex": "\\int_0^2x\\sqrt{1+x^2}\\,dx=\\frac12\\int_1^5u^{1/2}\\,du=\\frac{5\\sqrt5-1}{3}"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "ch1-substitution-affine",
+        "title": "Transform factor and endpoints together",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Evaluate $\\int_1^2(3-5x)^{-2}\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Set $u=3-5x$, so $du=-5\\,dx$ and $dx=-du/5$."
+          },
+          {
+            "label": "2",
+            "text": "The bounds $x=1,2$ become $u=-2,-7$ respectively."
+          },
+          {
+            "label": "3",
+            "text": "$-\\tfrac15\\int_{-2}^{-7}u^{-2}\\,du=\\tfrac15[1/u]_{-2}^{-7}$."
+          }
+        ],
+        "result": "$1/14$.",
+        "verification": "The integrand is positive; the answer must be positive. Direct differentiation of $1/[5(3-5x)]$ verifies the antiderivative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-substitution-root",
+        "title": "Use the inner derivative of a radical",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Evaluate $\\int_0^4\\sqrt{2x+1}\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Set $u=\\sqrt{2x+1}$; then $u^2=2x+1$ and $dx=u\\,du$."
+          },
+          {
+            "label": "2",
+            "text": "The bounds become $u=1$ and $u=3$, so the integral is $\\int_1^3u^2\\,du$."
+          }
+        ],
+        "result": "$26/3$.",
+        "verification": "Equivalently, $u=2x+1$ gives the same value with its factor $1/2$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch1-substitution-transfer",
+        "outcome": "Substitute into a distinct definite integral.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\int_0^1 3x^2(1+x^3)^2\\,dx$.",
+        "hint": "Let $u=1+x^3$ and transform both endpoints.",
+        "solution": "$u$ runs from 1 to 2, so $\\int_1^2u^2\\,du=7/3$.",
+        "solutionTex": "\\int_0^1 3x^2(1+x^3)^2\\,dx=\\int_1^2u^2\\,du=\\frac73",
+        "rubric": [
+          "Use the full derivative $du=3x^2dx$.",
+          "Transform both bounds."
+        ]
+      }
+    ]
   },
   "improper-integrals": {
     "prerequisites": ["fundamental-theorem", "limits-one-sided"],
@@ -1878,7 +2317,123 @@
         "Distinguish divergence from a finite numerical cutoff."
       ],
       "solutionTex": "\\int_\\varepsilon^1x^{-3/2}\\,dx=\\frac2{\\sqrt\\varepsilon}-2\\longrightarrow+\\infty"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "ch1-infinite-tails",
+        "title": "Test two infinite tails separately",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Decide whether $\\int_{-\\infty}^{\\infty}x^{-2}\\,dx$ exists.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "The integrand has an interior singularity at zero, so split there before testing either infinite tail."
+          },
+          {
+            "label": "2",
+            "text": "On $(0,1]$, $\\int_\\varepsilon^1x^{-2}\\,dx=1/\\varepsilon-1\\to\\infty$."
+          }
+        ],
+        "result": "The integral diverges, regardless of the behavior at infinite endpoints.",
+        "verification": "No cancellation or symmetric cutoff can replace separate one-sided limits."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-interior-pole",
+        "title": "Split at an interior discontinuity",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Test $\\int_0^3 1/(x-1)\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Split at $x=1$ into $\\int_0^1$ and $\\int_1^3$."
+          },
+          {
+            "label": "2",
+            "text": "The left part is $\\lim_{t\\to1^-}[\\ln|x-1|]_0^t=-\\infty$; the right part diverges to $+\\infty$."
+          }
+        ],
+        "result": "The improper integral diverges.",
+        "verification": "Using $[\\ln|x-1|]_0^3=\\ln2$ across the pole is invalid."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-two-tailed-convergence",
+        "title": "Combine convergent one-sided limits",
+        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
+        "setup": "Evaluate $\\int_{-\\infty}^{\\infty}1/(1+x^2)\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Split at zero and take independent limits: $\\lim_{A\\to-\\infty}\\int_A^0=\\pi/2$ and $\\lim_{B\\to\\infty}\\int_0^B=\\pi/2$."
+          },
+          {
+            "label": "2",
+            "text": "Both limits are finite, so their sum defines the improper integral."
+          }
+        ],
+        "result": "$\\pi$.",
+        "verification": "One symmetric cutoff is insufficient as a definition; both tails were checked separately."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-infinite-log-tail",
+        "title": "Test an infinite endpoint",
+        "strategy": "Apply each integral rule with its stated bounds and hypotheses.",
+        "setup": "Test $\\int_1^\\infty 1/x\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "Use the finite cutoff $R>1$: $\\int_1^R1/x\\,dx=\\ln R$."
+          },
+          {
+            "label": "2",
+            "text": "As $R\\to\\infty$, $\\ln R\\to\\infty$."
+          }
+        ],
+        "result": "The integral diverges.",
+        "verification": "A finite area would require a finite one-sided limit."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-finite-endpoint-root",
+        "title": "Use a one-sided finite endpoint limit",
+        "strategy": "Apply each integral rule with its stated bounds and hypotheses.",
+        "setup": "Evaluate $\\int_2^5 1/\\sqrt{x-2}\\,dx$.",
+        "steps": [
+          {
+            "label": "1",
+            "text": "The left endpoint is singular, so integrate from $2+\\varepsilon$ to $5$."
+          },
+          {
+            "label": "2",
+            "text": "The cutoff value is $[2\\sqrt{x-2}]_{2+\\varepsilon}^5=2\\sqrt3-2\\sqrt\\varepsilon$."
+          },
+          {
+            "label": "3",
+            "text": "Let $\\varepsilon\\to0^+$."
+          }
+        ],
+        "result": "$2\\sqrt3$, so the improper integral converges.",
+        "verification": "The antiderivative is used only on the proper interval $[2+\\varepsilon,5]$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch1-improper-transfer",
+        "outcome": "Test a new interior singularity.",
+        "kind": "computational",
+        "prompt": "Does $\\int_0^2 (x-1)^{-2}\\,dx$ converge? Show the required limits.",
+        "hint": "Split at 1; one divergent side is enough.",
+        "solution": "$\\int_0^t(x-1)^{-2}dx=[-1/(x-1)]_0^t=-1/(t-1)-1\\to+\\infty$ as $t\\to1^-$. It diverges.",
+        "solutionTex": "\\lim_{t\\to1^-}\\int_0^t\\frac{dx}{(x-1)^2}=+\\infty",
+        "rubric": [
+          "Split at the interior singularity.",
+          "Evaluate a one-sided limit before combining."
+        ]
+      }
+    ]
   },
   "area-between-curves": {
     "prerequisites": ["riemann-integral"],
