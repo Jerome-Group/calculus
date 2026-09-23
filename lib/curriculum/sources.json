@@ -57,7 +57,16 @@
     "pages": 39,
     "course": "MH1100",
     "kind": "lecture",
-    "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5"
+    "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+    "errata": [
+      {
+        "page": 38,
+        "printed": "The ball example prompt says the acceleration on earth surface is $\\mathrm{m/s^2}$ but omits its numerical value.",
+        "correction": "For the worked solution, take upward as positive and use $a(t)=-9.8\\,\\mathrm{m/s^2}$.",
+        "justification": "Page 38's solution explicitly sets $a(t)=\\frac{dv}{dt}=-9.8\\,\\mathrm{m/s^2}$; page 39 uses the resulting height equation. The prompt omits the coefficient, so the guide identifies this assumption.",
+        "provenance": "Direct visual inspection of the canonical SHA-matched PDF; the source file is unchanged."
+      }
+    ]
   },
   "MH1100_Lecture_02": {
     "id": "MH1100_Lecture_02",

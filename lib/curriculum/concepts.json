@@ -1688,8 +1688,8 @@
     "sources": [
       {
         "sourceId": "MH1100_Lecture_11",
-        "pages": [4, 4],
-        "detail": "Optimization Problems"
+        "pages": [4, 17],
+        "detail": "Optimization Problems and worked applications"
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",
@@ -1723,8 +1723,8 @@
     "sources": [
       {
         "sourceId": "MH1100_Lecture_11",
-        "pages": [18, 18],
-        "detail": "Newton’s Method"
+        "pages": [18, 28],
+        "detail": "Newton’s Method and worked iterations"
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",
@@ -1758,8 +1758,8 @@
     "sources": [
       {
         "sourceId": "MH1100_Lecture_11",
-        "pages": [29, 29],
-        "detail": "Antiderivatives"
+        "pages": [29, 39],
+        "detail": "Antiderivatives, motion, and initial data"
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",

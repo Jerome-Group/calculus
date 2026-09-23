@@ -47,9 +47,9 @@ The audit reviews are leads from commit `d5977e8745563b8d36778bbf6860ff3c40b7a20
 - **Rolle and the mean value theorem** (`rolle-mean-value`): lecture 9; PDF pages 19, 20, 25, 26. Topics: Rolle theorem, mean value theorem, zero derivative, equal derivatives.
 - **Shape from derivatives** (`derivative-tests`): lecture 10; PDF pages 4, 9, 12, 15. Topics: first derivative test, second derivative test, concavity, inflection, monotonicity.
 - **Infinity and curve sketching** (`infinity-curve-sketching`): lecture 10; PDF pages 22, 25, 26, 27, 31, 35, 36, 39, 40, 42. Topics: limits at infinity, horizontal asymptote, slant asymptote, curve sketching, precise limits at infinity.
-- **Turn a constraint into an optimum** (`optimization-single`): lecture 11; PDF pages 4. Topics: optimization, constraints, feasible domain, global comparison.
-- **Newton’s tangent iteration** (`newton-method`): lecture 11; PDF pages 18. Topics: Newton method, iteration, root approximation, convergence caveats.
-- **Recover a function from its rate** (`antiderivatives-single`): lecture 11; PDF pages 29. Topics: antiderivatives, constant of integration, initial conditions, motion.
+- **Turn a constraint into an optimum** (`optimization-single`): lecture 11; PDF pages 4–17. Topics: one-variable models, feasible domains, endpoint comparison, distance, travel time, geometric constraints.
+- **Newton’s tangent iteration** (`newton-method`): lecture 11; PDF pages 18–28. Topics: graphical root location, tangent iteration, starting values, decimal approximations, fixed points.
+- **Recover a function from its rate** (`antiderivatives-single`): lecture 11; PDF pages 29–39. Topics: interval constants, power and trigonometric rules, initial data, motion, vertical launch.
 - **Invert a function** (`inverse-functions`): lecture 12; PDF pages 4, 10, 11. Topics: one-to-one, horizontal line test, inverse, inverse derivative, domain restriction.
 - **Exponential and logarithmic rates** (`exponential-logarithmic`): lecture 12; PDF pages 17, 26, 30, 31, 32, 35, 36. Topics: exponential, natural logarithm, log laws, logarithmic differentiation, variable powers.
 - **Indeterminate forms and L’Hôpital** (`lhopital`): lecture 13; PDF pages 3. Topics: LHopital, indeterminate forms, zero over zero, infinity over infinity, logarithmic conversion.

@@ -7779,7 +7779,297 @@
         "Retain units and parameter dependence."
       ],
       "solutionTex": "A=\\frac{P^2}{16}-\\left(x-\\frac P4\\right)^2\\le\\frac{P^2}{16}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture11-one-variable-model-statement",
+        "title": "Translate a constrained geometry problem into a one-variable objective and contextual domain.",
+        "text": "Name the target quantity, translate the constraint, eliminate variables, and state the domain in the problem's units. The river-side field uses $2x+y=2400$ and $A=xy$, giving $A(x)=x(2400-2x)$ for $0\\leq x\\leq1200$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-fencing-model",
+        "title": "Model the three-sided field",
+        "strategy": "Use the fencing constraint to eliminate the side parallel to the river.",
+        "setup": "A field with depth $x$ and river-side width $y$ uses 2400 ft of fence on three sides.",
+        "steps": [
+          {
+            "label": "Constraint",
+            "text": "Two depths and one width use all the fencing.",
+            "equation": "2x+y=2400"
+          },
+          {
+            "label": "Objective",
+            "text": "Substitute the remaining side into area.",
+            "equation": "A(x)=xy=x(2400-2x)"
+          },
+          {
+            "label": "Contextual domain",
+            "text": "Both side lengths are nonnegative; a nondegenerate field makes the endpoints limiting cases.",
+            "equation": "0\\leq x\\leq1200"
+          }
+        ],
+        "result": "The area problem is reduced to one function on a closed feasible interval.",
+        "verification": "At the endpoint $x=1200$, the river-side width is zero; values outside the interval make a side negative."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-closed-interval-candidates-statement",
+        "title": "Certify an absolute extremum on a closed interval by comparing interior critical numbers and endpoints.",
+        "text": "For a continuous objective on a closed interval, the closed-interval method compares every interior critical number with both endpoints. The derivative locates candidates; the value comparison decides the absolute result."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-fencing-global-maximum",
+        "title": "Compare all field-area candidates",
+        "strategy": "Find interior critical numbers, then compare their objective values with both endpoints.",
+        "setup": "For the source field, $A(x)=2400x-2x^2$ on $[0,1200]$.",
+        "steps": [
+          {
+            "label": "Critical candidate",
+            "text": "Set the derivative to zero.",
+            "equation": "A\\prime(x)=2400-4x=0\\quad\\Longrightarrow\\quad x=600"
+          },
+          {
+            "label": "Endpoint and interior values",
+            "text": "Evaluate the objective at every candidate.",
+            "equation": "A(0)=0,\\quad A(600)=720000,\\quad A(1200)=0"
+          },
+          {
+            "label": "Interpret",
+            "text": "The maximum is the interior value; recover the other side from the constraint.",
+            "equation": "y=2400-2(600)=1200"
+          }
+        ],
+        "result": "The source field has maximum area $720000\\,\\mathrm{ft^2}$ at depth $600\\,\\mathrm{ft}$ and width $1200\\,\\mathrm{ft}$.",
+        "verification": "The endpoint values are zero and the single interior critical value is larger."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-first-derivative-absolute-test-statement",
+        "title": "Use a global derivative sign change on an interval to certify an absolute maximum or minimum.",
+        "text": "The source's First Derivative Test assumes $f$ is continuous on an interval and $c$ is a critical number. If $f\\prime$ is positive throughout the interval left of $c$ and negative throughout the interval right of $c$, then $f(c)$ is an absolute maximum; reversing the signs gives an absolute minimum."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-parabola-closest-point",
+        "title": "Use a sign test for the closest point",
+        "strategy": "Minimize squared distance and use the derivative sign over the entire real parameter line.",
+        "setup": "The source asks for the point on $y^2=2x$ closest to $(1,4)$. Parameterize the parabola as $x=y^2/2$.",
+        "steps": [
+          {
+            "label": "Equivalent objective",
+            "text": "Distance is nonnegative, so minimizing its square preserves the minimizer.",
+            "equation": "D(y)=(y^2/2-1)^2+(y-4)^2"
+          },
+          {
+            "label": "Critical number",
+            "text": "Differentiate and solve.",
+            "equation": "D\\prime(y)=y^3-8=0\\quad\\Longrightarrow\\quad y=2"
+          },
+          {
+            "label": "Global sign",
+            "text": "The derivative is negative before 2 and positive after 2, so the function decreases then increases on $\\mathbb{R}$.",
+            "equation": "y<2\\Rightarrow D\\prime(y)<0,\\qquad y>2\\Rightarrow D\\prime(y)>0"
+          },
+          {
+            "label": "Recover the point",
+            "text": "Substitute into the parabola and distance.",
+            "equation": "x=2,\\qquad D(2)=5"
+          }
+        ],
+        "result": "The closest point is $(2,2)$ and its distance is $\\sqrt{5}$. There is no farthest point because the distance grows without bound along the parabola.",
+        "verification": "The sign test proves global minimality on an unbounded domain; as $|y|\\to\\infty$, $D(y)\\to\\infty$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-squared-distance-statement",
+        "title": "Replace distance by squared distance and prove a closest point on an unbounded curve.",
+        "text": "For nonnegative distance $d$, minimizing $d$ is equivalent to minimizing $d^2$, which often removes a square root. On an unbounded curve, a derivative sign test can prove a closest point while the distance itself has no maximum."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-squared-distance-work",
+        "title": "Reduce distance to a polynomial",
+        "strategy": "Square the distance without changing its minimizer, then check the derivative on the full parameter domain.",
+        "setup": "For the source parabola $y^2=2x$ and target $(1,4)$, use $y$ as the parameter.",
+        "steps": [
+          {
+            "label": "Square the distance",
+            "text": "The square root is unnecessary for locating the minimum.",
+            "equation": "D(y)=(y^2/2-1)^2+(y-4)^2"
+          },
+          {
+            "label": "Differentiate",
+            "text": "The cross terms cancel after expansion.",
+            "equation": "D\\prime(y)=y^3-8"
+          },
+          {
+            "label": "Classify on all of $\\mathbb{R}$",
+            "text": "The sign is negative for $y<2$ and positive for $y>2$.",
+            "equation": "D\\prime(y)<0 (y<2),\\qquad D\\prime(y)>0 (y>2)"
+          },
+          {
+            "label": "Check the value",
+            "text": "The minimum square distance is 5.",
+            "equation": "D(2)=5"
+          }
+        ],
+        "result": "A closest point exists at $(2,2)$ with distance $\\sqrt{5}$; no farthest point exists.",
+        "verification": "As $|y|$ increases without bound, the squared distance tends to infinity, while the sign pattern gives a global minimum."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-travel-time-statement",
+        "title": "Build and globally minimize a travel-time objective from geometric distances and different speeds.",
+        "text": "For each travel segment, divide distance by its rate and add the times. Put the landing point on its feasible interval, include both endpoint routes, and compare every critical value with those endpoints."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-boat-time-work",
+        "title": "Choose where to land",
+        "strategy": "Use Pythagorean distance for the rowing leg and linear distance for the run.",
+        "setup": "The river is 3 km wide, the destination is 8 km downstream, rowing speed is 6 km/h, and running speed is 8 km/h. Let $x$ be the landing point downstream from the point directly opposite the start.",
+        "steps": [
+          {
+            "label": "Build the time function",
+            "text": "The row is $\\sqrt{x^2+9}$ km and the run is $8-x$ km.",
+            "equation": "T(x)=\\frac{\\sqrt{x^2+9}}6+\\frac{8-x}8,\\qquad 0\\leq x\\leq8"
+          },
+          {
+            "label": "Find the critical candidate",
+            "text": "Set the derivative to zero and use $x\\geq0$.",
+            "equation": "T\\prime(x)=\\frac{x}{6\\sqrt{x^2+9}}-\\frac18=0\\Rightarrow x=\\frac9{\\sqrt{7}}"
+          },
+          {
+            "label": "Compare routes",
+            "text": "Check the interior candidate and the endpoints (row to the near bank, or row directly to the destination).",
+            "equation": "T(0)=1.5,\\quad T(9/\\sqrt{7})=1+\\frac{\\sqrt{7}}{8}\\approx1.33,\\quad T(8)=\\frac{\\sqrt{73}}6\\approx1.42"
+          }
+        ],
+        "result": "The source landing point is $\\frac{9}{\\sqrt{7}}\\,\\mathrm{km}$ downstream, about $3.4\\,\\mathrm{km}$.",
+        "verification": "The compared candidate values show the interior route is faster than either endpoint strategy."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-semicircle-rectangle-statement",
+        "title": "Express a rectangle’s area through a semicircle constraint and maximize it on its feasible interval.",
+        "text": "For a rectangle symmetric about the vertical axis in an upper semicircle, a vertex $(x,y)$ satisfies $x^2+y^2=r^2$, its width is $2x$, and its height is $y$. This gives $A(x)=2x\\sqrt{r^2-x^2}$ on $[0,r]$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-semicircle-work",
+        "title": "Maximize the inscribed area",
+        "strategy": "Use the circle equation to eliminate the height, then compare the critical value with degenerate endpoints.",
+        "setup": "The source uses the upper semicircle $x^2+y^2=r^2$ and the first-quadrant rectangle vertex $(x,y)$.",
+        "steps": [
+          {
+            "label": "Area and domain",
+            "text": "Symmetry makes the width $2x$; the circle gives the height.",
+            "equation": "A(x)=2x\\sqrt{r^2-x^2},\\qquad 0\\leq x\\leq r"
+          },
+          {
+            "label": "Critical point",
+            "text": "Differentiation gives a single interior candidate.",
+            "equation": "A\\prime(x)=\\frac{2(r^2-2x^2)}{\\sqrt{r^2-x^2}}=0\\Rightarrow x=\\frac r{\\sqrt2}"
+          },
+          {
+            "label": "Compare boundary",
+            "text": "The endpoints have zero area.",
+            "equation": "A(0)=A(r)=0,\\qquad A(\\frac{r}{\\sqrt{2}})=r^2"
+          }
+        ],
+        "result": "The largest inscribed rectangle has area $r^2$.",
+        "verification": "The only interior critical number has larger area than both endpoints."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture11-fence-model-transfer",
+        "outcome": "Build a one-variable model and feasible interval from a new three-sided fence constraint.",
+        "kind": "computational",
+        "prompt": "A shelter wall forms one side of a rectangular animal pen. There are 180 m of fencing for the other three sides. Let $x$ be the depth. Write the area as a function of $x$ and give its contextual domain; do not optimize.",
+        "hint": "Use two depths and the wall-parallel side in the fence equation.",
+        "solution": "The wall-parallel side is $180-2x$, so $A(x)=x(180-2x)$ and $0\\leq x\\leq90$. A positive-area pen has $0<x<90$; including degenerate endpoints gives the closed interval for endpoint comparisons.",
+        "solutionTex": "A(x)=x(180-2x),\\quad 0\\leq x\\leq90",
+        "rubric": [
+          "Eliminate the wall-parallel side using $2x+y=180$.",
+          "State the area function.",
+          "Keep the physical domain and its degenerate endpoints clear."
+        ]
+      },
+      {
+        "id": "lecture11-closed-interval-transfer",
+        "outcome": "Compare all candidates, including endpoints, to certify a closed-interval maximum.",
+        "kind": "computational",
+        "prompt": "Find the absolute maximum of $R(x)=-x^2+6x+7$ on $[0,8]$.",
+        "hint": "Check the critical number and both endpoints.",
+        "solution": "$R\\prime(x)=-2x+6$ vanishes at $x=3$. The values are $R(0)=7$, $R(3)=16$, and $R(8)=-9$, so the absolute maximum is $16$ at $x=3$.",
+        "solutionTex": "R\\prime(x)=-2x+6=0\\Rightarrow x=3;\\quad R(0)=7,\\ R(3)=16,\\ R(8)=-9",
+        "rubric": [
+          "Find all interior critical numbers.",
+          "Evaluate both endpoints.",
+          "State the largest value and where it occurs."
+        ]
+      },
+      {
+        "id": "lecture11-absolute-sign-test-transfer",
+        "outcome": "Apply a derivative sign pattern on an interval and name the absolute extremum.",
+        "kind": "proof",
+        "prompt": "For $q(x)=(x-3)^2+1$ on $[0,5]$, use derivative signs to certify its absolute minimum.",
+        "hint": "Locate the critical number and check the derivative sign on each side within the interval.",
+        "solution": "$q\\prime(x)=2(x-3)$ is negative for $0\\leq x<3$ and positive for $3<x\\leq5$. Thus $q$ decreases and then increases throughout the interval, so its absolute minimum is $q(3)=1$.",
+        "solutionTex": "q\\prime(x)=2(x-3),\\quad q(3)=1",
+        "rubric": [
+          "State the interval and critical number.",
+          "Verify the sign on both sides.",
+          "Conclude global, not merely local, minimality."
+        ]
+      },
+      {
+        "id": "lecture11-distance-transfer",
+        "outcome": "Minimize squared distance to an unbounded curve and distinguish closest from farthest.",
+        "kind": "computational",
+        "prompt": "Find the points on $y=x^2$ closest to $(0,3)$, and decide whether a farthest point exists.",
+        "hint": "Minimize $D(x)=x^2+(x^2-3)^2$ over all real $x$.",
+        "solution": "$D\\prime(x)=2x(2x^2-5)$, so the candidates are $0$ and $\\pm\\sqrt{5/2}$. Their squared distances are $9$ and $11/4$. Since $D(x)\\to\\infty$ as $|x|\\to\\infty$, the closest points are $(\\pm\\sqrt{5/2},5/2)$ at distance $\\sqrt{11}/2$, and no farthest point exists.",
+        "solutionTex": "D(x)=x^2+(x^2-3)^2,\\quad D\\prime(x)=2x(2x^2-5)",
+        "rubric": [
+          "Use squared distance on the full real domain.",
+          "Compare critical values and check the behavior as $|x|\\to\\infty$.",
+          "Report both closest points and explain why no farthest point exists."
+        ]
+      },
+      {
+        "id": "lecture11-boat-time-transfer",
+        "outcome": "Translate a new travel geometry into time and compare feasible candidates.",
+        "kind": "computational",
+        "prompt": "A river is 4 km wide. A destination is 12 km downstream on the opposite bank. A boat rows at 5 km/h and its passenger walks at 8 km/h. If $x$ is the downstream landing distance, model total time on $[0,12]$ and find the fastest landing point.",
+        "hint": "Rowing distance is $\\sqrt{x^2+16}$; time is distance divided by speed.",
+        "solution": "$T(x)=\\frac{\\sqrt{x^2+16}}5+\\frac{12-x}8$. The derivative vanishes when $8x=5\\sqrt{x^2+16}$, so $39x^2=400$ and $x=20/\\sqrt{39}$. This lies in $[0,12]$. The endpoints take $2.3$ h and $\\sqrt{160}/5\\approx2.53$ h, while the interior time is about $2.13$ h; choose $x=20/\\sqrt{39}\\approx3.20$ km.",
+        "solutionTex": "T(x)=\\frac{\\sqrt{x^2+16}}5+\\frac{12-x}8,\\quad x=\\frac{20}{\\sqrt{39}}",
+        "rubric": [
+          "Use distance divided by speed for both legs.",
+          "Differentiate and retain the feasible critical point.",
+          "Compare both endpoints and interpret the landing point."
+        ]
+      },
+      {
+        "id": "lecture11-parabola-rectangle-transfer",
+        "outcome": "Model and optimize a rectangle under a different curved boundary.",
+        "kind": "computational",
+        "prompt": "A rectangle is symmetric about the $y$-axis with upper corners on $y=9-x^2$ and lower side on the $x$-axis. Find its maximum area.",
+        "hint": "For a right upper corner $(x,9-x^2)$, use width $2x$ and $0\\leq x\\leq3$.",
+        "solution": "$A(x)=2x(9-x^2)$ on $[0,3]$. Since $A\\prime(x)=18-6x^2$, the interior critical value is $x=\\sqrt3$. Both endpoints have area 0, and $A(\\sqrt3)=12\\sqrt3$, so this is the absolute maximum.",
+        "solutionTex": "A(x)=2x(9-x^2),\\quad A\\prime(x)=18-6x^2,\\quad A(\\sqrt3)=12\\sqrt3",
+        "rubric": [
+          "Use the curve to express height and state the domain.",
+          "Find the critical value.",
+          "Compare endpoints and state the maximum."
+        ]
+      }
+    ]
   },
   "newton-method": {
     "prerequisites": ["linearization-differentials"],
@@ -7804,7 +8094,287 @@
         "Avoid claiming universal convergence."
       ],
       "solutionTex": "x_1=\\frac32,\\quad x_2=\\frac{17}{12},\\quad x_2^2-2=\\frac1{144}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture11-graphical-root-location-statement",
+        "title": "Use graph zoom to locate a root to a chosen interval while distinguishing a visual estimate from a proof.",
+        "text": "A graphing device can reveal an approximate root and repeated zoom can refine it. A plotted location is evidence for an estimate, not by itself a proof; a sign-changing bracket for a continuous function supplies a check."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-graphical-root-work",
+        "title": "Bracket the small nonzero root",
+        "strategy": "Read the source graph, then check the displayed interval by evaluating the continuous function at its ends.",
+        "setup": "The source equation is $48x(1+x)^{60}-(1+x)^{60}+1=0$; it has the exact root $x=0$ and a second plotted root near $0.0076$.",
+        "steps": [
+          {
+            "label": "Source interval",
+            "text": "The source graph locates the nonzero crossing between 0.007 and 0.008.",
+            "equation": "0.007<r<0.008"
+          },
+          {
+            "label": "Numerical sign check",
+            "text": "Evaluating the left side at the bracket ends gives opposite signs.",
+            "equation": "f(0.007)\\approx-0.009105<0<f(0.008)\\approx0.006398"
+          },
+          {
+            "label": "Interpret the evidence",
+            "text": "Continuity and a sign change certify a root in the interval; the graph and repeated zoom refine the estimate.",
+            "equation": "r\\approx0.0076"
+          }
+        ],
+        "result": "The nonzero root lies in $(0.007,0.008)$, with the source estimating it as $0.0076$.",
+        "verification": "The endpoint evaluations support the visual bracket; the source still presents the graph estimate rather than a symbolic solution."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-tangent-intercept-update-statement",
+        "title": "Derive the Newton update from a tangent-line intercept and require a nonzero derivative.",
+        "text": "At $x_n$, the tangent line has equation $y=f(x_n)+f\\prime(x_n)(x-x_n)$. Setting $y=0$ and solving gives $x_{n+1}=x_n-f(x_n)/f\\prime(x_n)$, only when $f\\prime(x_n)\\ne0$. This is the tangent intercept, not an exact root."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-tangent-derivation",
+        "title": "Derive one Newton step",
+        "strategy": "Set the tangent-line height to zero and solve for its horizontal intercept.",
+        "setup": "At $(x_n,f(x_n))$, the tangent has slope $f\\prime(x_n)$.",
+        "steps": [
+          {
+            "label": "Write the tangent",
+            "text": "Use point-slope form.",
+            "equation": "y=f(x_n)+f\\prime(x_n)(x-x_n)"
+          },
+          {
+            "label": "Set the intercept height to zero",
+            "text": "The next estimate is the tangent’s $x$-intercept.",
+            "equation": "0=f(x_n)+f\\prime(x_n)(x_{n+1}-x_n)"
+          },
+          {
+            "label": "Solve",
+            "text": "Division is valid only if the tangent is not horizontal.",
+            "equation": "x_{n+1}=x_n-\\frac{f(x_n)}{f\\prime(x_n)},\\qquad f\\prime(x_n)\\ne0"
+          }
+        ],
+        "result": "Newton’s update converts the current tangent intercept into the next estimate.",
+        "verification": "Substitution into the tangent equation gives zero height; the original function value at the intercept need not be zero."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-bad-starting-value-statement",
+        "title": "Recognize that a poor initial estimate can prevent Newton iteration from converging.",
+        "text": "The source warns that Newton’s method may fail from an improper initial approximation. Each step also requires $f\\prime(x_n)\\ne0$. A zero derivative stops the iteration, while a poor start can create a cycle or move away from the desired root."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-newton-cycle",
+        "title": "A starting value can create a cycle",
+        "strategy": "Calculate each update and check whether the iterates approach a root.",
+        "setup": "This is an added guide contrast for the source warning: take $f(x)=x^3-2x+2$ with $x_0=0$.",
+        "steps": [
+          {
+            "label": "First step",
+            "text": "At zero the derivative is nonzero.",
+            "equation": "f(0)=2,\\quad f\\prime(0)=-2,\\quad x_1=0-\\frac2{-2}=1"
+          },
+          {
+            "label": "Second step",
+            "text": "At 1, the function and derivative are both 1.",
+            "equation": "f(1)=1,\\quad f\\prime(1)=1,\\quad x_2=1-1=0"
+          },
+          {
+            "label": "Conclude",
+            "text": "The sequence repeats and does not converge to a root.",
+            "equation": "0,1,0,1,\\ldots"
+          }
+        ],
+        "result": "This starting value cycles; Newton’s formula alone gives no universal convergence guarantee.",
+        "verification": "Direct substitution confirms $f(0)=2$ and $f(1)=1$, so neither member of the cycle is a root."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-polynomial-iteration-statement",
+        "title": "Compute successive Newton iterates for a polynomial root.",
+        "text": "For a polynomial, substitute the current iterate into both $f$ and $f\\prime$ and repeat the quotient update. Keep enough digits during the calculation before rounding the requested approximation."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-cubic-iterates",
+        "title": "Compute the source cubic estimates",
+        "strategy": "Apply Newton’s update twice to the source polynomial.",
+        "setup": "The source asks for the third approximation to $x^3-2x-5=0$ from $x_1=2$.",
+        "steps": [
+          {
+            "label": "Set the function and derivative",
+            "text": "Differentiate the polynomial.",
+            "equation": "f(x)=x^3-2x-5,\\qquad f\\prime(x)=3x^2-2"
+          },
+          {
+            "label": "First update",
+            "text": "Use the supplied initial estimate.",
+            "equation": "x_2=2-\\frac{f(2)}{f\\prime(2)}=2.1"
+          },
+          {
+            "label": "Second update",
+            "text": "Use the unrounded previous value.",
+            "equation": "x_3=2.1-\\frac{f(2.1)}{f\\prime(2.1)}\\approx2.0946"
+          }
+        ],
+        "result": "The source reports $x_3\\approx2.0946$, accurate to four decimal places.",
+        "verification": "The exact update gives $x_3\\approx2.09456812$; evaluating the original polynomial leaves a small residual, not an exact root."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-decimal-agreement-statement",
+        "title": "Apply Newton iteration to a transformed root problem and use successive-estimate agreement for requested decimal precision.",
+        "text": "To find $\\sqrt[6]{2}$, solve $f(x)=x^6-2=0$ and apply Newton’s update. The source stops when consecutive displayed estimates agree to the requested number of decimal places; this numerical agreement is a stopping rule, not a general error theorem."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-sixth-root-iterates",
+        "title": "Track the sixth-root iterates",
+        "strategy": "Transform the radical request into a positive polynomial root, then iterate with the stated start.",
+        "setup": "The source uses $x_1=1$ for $x^6-2=0$.",
+        "steps": [
+          {
+            "label": "Update formula",
+            "text": "Differentiate the root equation.",
+            "equation": "x_{n+1}=x_n-\\frac{x_n^6-2}{6x_n^5}"
+          },
+          {
+            "label": "Iterates",
+            "text": "Keep the source’s displayed precision.",
+            "equation": "x_2\\approx1.16666667,\\quad x_3\\approx1.12644368,\\quad x_4\\approx1.12249707"
+          },
+          {
+            "label": "Check stopping digits",
+            "text": "The next two iterates agree to eight decimal places.",
+            "equation": "x_5\\approx1.12246205,\\quad x_6\\approx1.12246205"
+          }
+        ],
+        "result": "The source reports $\\sqrt[6]{2}\\approx1.12246205$ to eight decimal places.",
+        "verification": "Agreement of consecutive rounded iterates is the source’s numerical stopping test; the lecture does not give a general error bound from that agreement."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-cosine-fixed-point-statement",
+        "title": "Use a graph-informed starting estimate and radian mode to approximate a trigonometric fixed point.",
+        "text": "Write the equation in root form $f(x)=\\cos x-x=0$, use a graph to choose a plausible starting estimate, and calculate trigonometric values in radian mode. A closer initial estimate can reduce the number of Newton steps."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-cosine-iterates",
+        "title": "Solve the cosine fixed-point equation",
+        "strategy": "Use the graph for a start, then apply the derivative update in radian mode.",
+        "setup": "The source rewrites $\\cos x=x$ as $f(x)=\\cos x-x$ and uses $x_1=1$.",
+        "steps": [
+          {
+            "label": "Form the update",
+            "text": "Differentiate and substitute into Newton’s rule.",
+            "equation": "x_{n+1}=x_n+\\frac{\\cos x_n-x_n}{\\sin x_n+1}"
+          },
+          {
+            "label": "Iterate from 1",
+            "text": "The calculator must be in radian mode.",
+            "equation": "x_2\\approx0.75036387,\\quad x_3\\approx0.73911289,\\quad x_4\\approx0.73908513,\\quad x_5\\approx0.73908513"
+          },
+          {
+            "label": "Compare a closer start",
+            "text": "The source also tries $x_1=0.75$ and reaches the same reported digits one step sooner.",
+            "equation": "x_2\\approx0.73911114,\\quad x_3\\approx0.73908513,\\quad x_4\\approx0.73908513"
+          }
+        ],
+        "result": "The source reports the root as $0.739085$ to six decimal places.",
+        "verification": "The repeated iterates support the numerical answer; they do not prove a global convergence guarantee."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture11-graph-bracket-transfer",
+        "outcome": "Refine a graph estimate and support it with a sign-changing interval.",
+        "kind": "method-choice",
+        "prompt": "Use a graph or sign check to locate the positive root of $x^3=2$ in an interval of width $0.01$.",
+        "hint": "Try $1.25$ and $1.26$ in $f(x)=x^3-2$.",
+        "solution": "$f(1.25)=1.25^3-2=-0.046875$ and $f(1.26)=1.26^3-2=0.000376$. Since the polynomial is continuous, the root lies in $(1.25,1.26)$; graph zoom suggests about $1.26$.",
+        "solutionTex": "f(1.25)=-0.046875<0<0.000376=f(1.26)",
+        "rubric": [
+          "Name the function whose root is sought.",
+          "Give a bracket no wider than $0.01$.",
+          "Use opposite endpoint signs and continuity to justify existence."
+        ]
+      },
+      {
+        "id": "lecture11-tangent-step-transfer",
+        "outcome": "Apply a tangent intercept to compute a Newton estimate.",
+        "kind": "computational",
+        "prompt": "For $f(x)=x^2-5$ and current estimate $x_0=2$, derive the tangent intercept formula and compute $x_1$.",
+        "hint": "Evaluate both $f(2)$ and $f\\prime(2)$ before dividing.",
+        "solution": "The tangent equation is $y=f(2)+f\\prime(2)(x-2)=-1+4(x-2)$. Setting $y=0$ gives $x_1=2-(-1)/4=9/4$.",
+        "solutionTex": "x_1=2-\\frac{f(2)}{f\\prime(2)}=2-\\frac{-1}{4}=\\frac94",
+        "rubric": [
+          "Use the tangent at the current estimate.",
+          "Check the derivative is nonzero.",
+          "Solve for the tangent’s $x$-intercept."
+        ]
+      },
+      {
+        "id": "lecture11-zero-derivative-transfer",
+        "outcome": "Detect a zero-derivative failure and restart from a valid estimate.",
+        "kind": "counterexample",
+        "prompt": "For $g(x)=x^2-9$, explain why Newton’s method cannot start at $x_0=0$. Then take one step from $x_0=2$.",
+        "hint": "Check $g\\prime(0)$, then use $g\\prime(2)$.",
+        "solution": "$g\\prime(x)=2x$, so the update is undefined at $x_0=0$. From $x_0=2$, $x_1=2-(-5)/4=13/4=3.25$. This valid step does not by itself prove later convergence.",
+        "solutionTex": "g\\prime(0)=0;\\qquad x_1=2-\\frac{g(2)}{g\\prime(2)}=\\frac{13}{4}",
+        "rubric": [
+          "Identify the zero denominator at the first start.",
+          "Compute the restarted step correctly.",
+          "Do not infer general convergence from one step."
+        ]
+      },
+      {
+        "id": "lecture11-cubic-transfer",
+        "outcome": "Carry out two Newton updates and interpret the resulting residual.",
+        "kind": "computational",
+        "prompt": "Use Newton’s method for $x^2-3=0$ from $x_0=2$. Find $x_1$, $x_2$, and the residual at $x_2$.",
+        "hint": "For this function, simplify the update to $(x_n+3/x_n)/2$.",
+        "solution": "$x_1=7/4$ and $x_2=(7/4+12/7)/2=97/56$. The residual is $(97/56)^2-3=1/3136$, so the iterate is approximate, not an exact root.",
+        "solutionTex": "x_1=\\frac74,\\quad x_2=\\frac{97}{56},\\quad x_2^2-3=\\frac1{3136}",
+        "rubric": [
+          "Use the right derivative in both steps.",
+          "Retain exact values until the residual.",
+          "Distinguish a small residual from a proved root error bound."
+        ]
+      },
+      {
+        "id": "lecture11-sixth-root-transfer",
+        "outcome": "Use Newton’s method on a transformed radical equation and state a cautious stopping reason.",
+        "kind": "computational",
+        "prompt": "Approximate $\\sqrt[6]{3}$ by Newton iteration from $x_1=1$ until successive estimates agree to five decimal places.",
+        "hint": "Use $x_{n+1}=x_n-(x_n^6-3)/(6x_n^5)$.",
+        "solution": "The iterates are $x_2\\approx1.33333333$, $x_3\\approx1.22976345$, $x_4\\approx1.20257436$, $x_5\\approx1.20094252$, and $x_6\\approx1.20093696$. Both last estimates round to $1.20094$, the requested five places; this is an iterative stopping criterion, not a universal error guarantee.",
+        "solutionTex": "x_{n+1}=x_n-\\frac{x_n^6-3}{6x_n^5},\\quad x_5\\approx1.20094252,\\quad x_6\\approx1.20093696",
+        "rubric": [
+          "Write the correct derivative-based update.",
+          "Keep enough digits before the final rounding.",
+          "Describe successive agreement as the chosen stopping test, not a theorem."
+        ]
+      },
+      {
+        "id": "lecture11-cosine-transfer",
+        "outcome": "Apply a graph-informed Newton method to a different trigonometric root in radians.",
+        "kind": "method-choice",
+        "prompt": "Solve $\\cos x=2x$ approximately with Newton’s method from $x_0=0.5$. Use radian mode and stop when successive values agree to five decimal places.",
+        "hint": "Use $f(x)=\\cos x-2x$ and $f\\prime(x)=-\\sin x-2$.",
+        "solution": "The update is $x_{n+1}=x_n+(\\cos x_n-2x_n)/(\\sin x_n+2)$. It gives $x_1\\approx0.45062669$, $x_2\\approx0.45018365$, and $x_3\\approx0.45018361$; the last two agree to five decimal places, giving about $0.45018$.",
+        "solutionTex": "x_{n+1}=x_n+\\frac{\\cos x_n-2x_n}{\\sin x_n+2},\\quad x_2\\approx0.45018365,\\quad x_3\\approx0.45018361",
+        "rubric": [
+          "Use the equation in root form and its correct derivative.",
+          "Use radians.",
+          "State the numerical stopping basis and approximation."
+        ]
+      }
+    ]
   },
   "antiderivatives-single": {
     "prerequisites": ["rolle-mean-value", "differentiation-rules"],
@@ -7828,7 +8398,384 @@
         "Allow separate constants on disconnected components."
       ],
       "solutionTex": "F(x)=\\begin{cases}\\ln|x|+C_-&x<0\\\\\\ln|x|+C_+&x>0\\end{cases}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture11-constant-on-interval-statement",
+        "title": "Describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.",
+        "text": "If $F\\prime=f$ on an interval, every other antiderivative differs from $F$ by a constant on that interval. The connectedness condition matters: if the domain has separate components, each component can have its own constant. Changing that constant vertically translates the graph without changing its derivative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-separated-constants",
+        "title": "Keep constants on the two components",
+        "strategy": "Apply the power rule on each interval where the integrand is defined.",
+        "setup": "The source considers $f(x)=x^{-3}$, which is undefined at zero.",
+        "steps": [
+          {
+            "label": "Particular antiderivative",
+            "text": "Use the power rule away from zero.",
+            "equation": "F(x)=\\frac{x^{-2}}{-2}=-\\frac1{2x^2}"
+          },
+          {
+            "label": "Separate components",
+            "text": "The theorem applies on intervals not crossing zero.",
+            "equation": "F(x)=\\begin{cases}-\\frac1{2x^2}+C_-&x<0\\\\-\\frac1{2x^2}+C_+&x>0\\end{cases}"
+          },
+          {
+            "label": "Verify",
+            "text": "Differentiate either branch on its domain.",
+            "equation": "\\frac{d}{dx}\\left(-\\frac1{2x^2}\\right)=x^{-3}"
+          }
+        ],
+        "result": "The constants on $(-\\infty,0)$ and $(0,\\infty)$ are independent.",
+        "verification": "The derivative relation cannot connect the two components through the excluded point $x=0$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-power-rule-statement",
+        "title": "Apply the reverse power rule only when its denominator is nonzero and the function is defined.",
+        "text": "For $n\\ne-1$, the power rule gives an antiderivative $x^{n+1}/(n+1)+C$ on an interval where $x^n$ is defined. If the domain is split, the constant is chosen separately on each component."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-negative-power-rule",
+        "title": "Apply the rule to a negative power",
+        "strategy": "Substitute the exponent and verify by differentiation.",
+        "setup": "The source uses $f(x)=x^{-3}$ on intervals that exclude zero.",
+        "steps": [
+          {
+            "label": "Integrate the power",
+            "text": "Here $n=-3$, so $n+1=-2$.",
+            "equation": "\\int x^{-3}\\,dx=\\frac{x^{-2}}{-2}+C=-\\frac1{2x^2}+C"
+          },
+          {
+            "label": "Check",
+            "text": "Differentiate the proposed antiderivative.",
+            "equation": "\\frac{d}{dx}\\left(-\\frac1{2x^2}\\right)=x^{-3}"
+          },
+          {
+            "label": "State the domain",
+            "text": "The original function is undefined at zero.",
+            "equation": "x\\in(-\\infty,0)\\quad\\text{or}\\quad x\\in(0,\\infty)"
+          }
+        ],
+        "result": "On either interval not containing zero, the general antiderivative is $-1/(2x^2)+C$.",
+        "verification": "The exponent rule is applied with $n+1=-2\\ne0$; the omitted point requires separate constants if both components are considered."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-linearity-and-trig-table-statement",
+        "title": "Use linearity and basic trigonometric antiderivatives by reversing derivative rules.",
+        "text": "The source table records that a constant multiple and a sum can be integrated term by term. It also gives $\\int\\cos x\\,dx=\\sin x$, $\\int\\sin x\\,dx=-\\cos x$, $\\int\\sec^2 x\\,dx=\\tan x$, and $\\int\\sec x\\tan x\\,dx=\\sec x$, each up to a constant on a suitable interval."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-linearity-trig-work",
+        "title": "Combine table entries",
+        "strategy": "Split the sum, integrate each known derivative, and attach one arbitrary constant.",
+        "setup": "Find an antiderivative of $3\\sin x+2\\cos x-4\\sec^2 x$ on any interval where the terms are defined.",
+        "steps": [
+          {
+            "label": "Use linearity",
+            "text": "Treat each summand separately.",
+            "equation": "\\int (3\\sin x+2\\cos x-4\\sec^2 x)\\,dx=3\\int\\sin x\\,dx+2\\int\\cos x\\,dx-4\\int\\sec^2 x\\,dx"
+          },
+          {
+            "label": "Apply the table",
+            "text": "Reverse the derivatives of cosine, sine, and tangent.",
+            "equation": "F(x)=-3\\cos x+2\\sin x-4\\tan x+C"
+          },
+          {
+            "label": "Differentiate",
+            "text": "Check all three terms.",
+            "equation": "F\\prime(x)=3\\sin x+2\\cos x-4\\sec^2 x"
+          }
+        ],
+        "result": "A general antiderivative is $-3\\cos x+2\\sin x-4\\tan x+C$.",
+        "verification": "The derivative recovers the integrand on each interval where $\\sec x$ is defined."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-rewrite-integrand-statement",
+        "title": "Rewrite a quotient with radicals as a sum of power terms before integrating.",
+        "text": "Before using the table, divide each numerator term by the denominator and rewrite radicals as fractional powers. This exposes a sum of basic powers and trigonometric terms; respect the original domain while simplifying."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-rewrite-integrand-work",
+        "title": "Rewrite and integrate the source expression",
+        "strategy": "Divide through by $x$ and convert the square-root quotient to a power.",
+        "setup": "The source asks for all $g$ with $g\\prime(x)=4\\sin x+(2x^5-\\sqrt{x})/x$, where $x>0$.",
+        "steps": [
+          {
+            "label": "Rewrite",
+            "text": "Separate the quotient and write the radical as $x^{1/2}$.",
+            "equation": "g\\prime(x)=4\\sin x+2x^4-x^{-1/2}"
+          },
+          {
+            "label": "Integrate term by term",
+            "text": "Use the trigonometric and power rules.",
+            "equation": "g(x)=-4\\cos x+\\frac25x^5-2\\sqrt{x}+C"
+          },
+          {
+            "label": "Check",
+            "text": "Differentiate and retain the positive-domain condition.",
+            "equation": "g\\prime(x)=4\\sin x+2x^4-x^{-1/2},\\qquad x>0"
+          }
+        ],
+        "result": "The family is $g(x)=-4\\cos x+(2/5)x^5-2\\sqrt{x}+C$ on $x>0$.",
+        "verification": "Differentiation recovers the rewritten expression, and $x>0$ avoids division by zero and defines the radical."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-two-initial-values-statement",
+        "title": "Integrate a second derivative twice and use two function values to determine both constants.",
+        "text": "Two antidifferentiations introduce two constants. Use one value to determine the additive constant and a second independent condition to determine the linear term; then substitute both conditions back into the reconstructed function."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-second-derivative-work",
+        "title": "Reconstruct the source function",
+        "strategy": "Integrate twice, then solve for the constants with the two given values.",
+        "setup": "The source gives $f\\prime\\prime(x)=12x^2+6x-4$, $f(0)=4$, and $f(1)=1$.",
+        "steps": [
+          {
+            "label": "Integrate once",
+            "text": "Introduce the first constant.",
+            "equation": "f\\prime(x)=4x^3+3x^2-4x+C"
+          },
+          {
+            "label": "Integrate again",
+            "text": "Introduce a second constant.",
+            "equation": "f(x)=x^4+x^3-2x^2+Cx+D"
+          },
+          {
+            "label": "Use the values",
+            "text": "First find $D$, then use $f(1)=1$ to solve for $C$.",
+            "equation": "D=4,\\qquad 1+1-2+C+4=1\\Rightarrow C=-3"
+          }
+        ],
+        "result": "The source function is $f(x)=x^4+x^3-2x^2-3x+4$.",
+        "verification": "Differentiating twice recovers $12x^2+6x-4$, and substitution gives $f(0)=4$, $f(1)=1$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-motion-from-acceleration-statement",
+        "title": "Recover velocity and position by integrating acceleration twice with initial data.",
+        "text": "For straight-line motion, $v=s\\prime$ and $a=v\\prime$. Thus known acceleration determines velocity up to one constant, and velocity determines position up to another; initial velocity and position determine those constants."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-particle-motion-work",
+        "title": "Find the source particle position",
+        "strategy": "Integrate acceleration to velocity, then velocity to position, using the two initial values.",
+        "setup": "The source gives $a(t)=6t+4$, $v(0)=-6\\,\\mathrm{cm/s}$, and $s(0)=9\\,\\mathrm{cm}$.",
+        "steps": [
+          {
+            "label": "Recover velocity",
+            "text": "Integrate acceleration and set the constant using the initial velocity.",
+            "equation": "v(t)=3t^2+4t+C,\\qquad v(0)=-6\\Rightarrow C=-6"
+          },
+          {
+            "label": "Recover position",
+            "text": "Integrate velocity and use the initial displacement.",
+            "equation": "s(t)=t^3+2t^2-6t+D,\\qquad s(0)=9\\Rightarrow D=9"
+          },
+          {
+            "label": "Check derivatives",
+            "text": "Differentiate twice.",
+            "equation": "s\\prime(t)=3t^2+4t-6,\\qquad s\\prime\\prime(t)=6t+4"
+          }
+        ],
+        "result": "The position function is $s(t)=t^3+2t^2-6t+9$.",
+        "verification": "The derivatives match the stated acceleration and initial velocity, and the value at zero is the initial position."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-projectile-apex-statement",
+        "title": "Use constant gravitational acceleration and initial data to find height and the time of maximum height.",
+        "text": "When upward is positive, the worked solution assumes constant acceleration $a=-9.8\\,\\mathrm{m/s^2}$. Integrate with the initial velocity to obtain $v(t)$; the apex occurs when $v(t)=0$. Because the prompt omits the acceleration coefficient, this result is conditional on the worked solution’s $9.8$ assumption."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-projectile-apex-work",
+        "title": "Find the height and apex",
+        "strategy": "State the gravitational acceleration assumption, integrate to velocity and position, then set velocity to zero.",
+        "setup": "The source ball starts upward at $15\\,\\mathrm{m/s}$ from $140\\,\\mathrm{m}$. Its prompt omits the coefficient of acceleration; its solution uses $a=-9.8\\,\\mathrm{m/s^2}$.",
+        "steps": [
+          {
+            "label": "Velocity",
+            "text": "Use the initial upward velocity.",
+            "equation": "v(t)=-9.8t+15"
+          },
+          {
+            "label": "Position",
+            "text": "Integrate velocity and impose $s(0)=140$.",
+            "equation": "s(t)=-4.9t^2+15t+140"
+          },
+          {
+            "label": "Apex time",
+            "text": "The height is maximal when the velocity first becomes zero.",
+            "equation": "v(t)=0\\Rightarrow t=\\frac{15}{9.8}\\approx1.53\\,\\mathrm{s}"
+          },
+          {
+            "label": "Maximum height",
+            "text": "Evaluate the height at this time.",
+            "equation": "s(15/9.8)=140+\\frac{225}{19.6}\\approx151.48\\,\\mathrm{m}"
+          }
+        ],
+        "result": "Under the solution’s acceleration assumption, the ball reaches about $151.48\\,\\mathrm{m}$ at $1.53\\,\\mathrm{s}$.",
+        "verification": "The velocity changes from positive to negative at the apex; the original prompt’s omitted coefficient is explicitly disclosed."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture11-impact-time-statement",
+        "title": "Solve a height equation and select the physically meaningful impact time.",
+        "text": "After deriving height, ground contact is the equation $s(t)=0$. The quadratic can have two algebraic roots; for a ball launched at time zero, choose the positive root as the future impact time and discard the negative time."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture11-projectile-impact-work",
+        "title": "Select the future ground contact",
+        "strategy": "Set the height equal to ground level, solve the quadratic, and interpret time.",
+        "setup": "The source height equation is $s(t)=-4.9t^2+15t+140$ until impact.",
+        "steps": [
+          {
+            "label": "Set height to zero",
+            "text": "Rearrange to a quadratic with positive leading coefficient.",
+            "equation": "4.9t^2-15t-140=0"
+          },
+          {
+            "label": "Solve",
+            "text": "Apply the quadratic formula.",
+            "equation": "t=\\frac{15\\pm\\sqrt{2969}}{9.8}"
+          },
+          {
+            "label": "Select physical time",
+            "text": "The negative root predates the launch and is not a future impact.",
+            "equation": "t=\\frac{15+\\sqrt{2969}}{9.8}\\approx7.1\\,\\mathrm{s}"
+          }
+        ],
+        "result": "The source ball hits the ground about $7.1$ seconds after launch.",
+        "verification": "The positive root satisfies the modeled height equation; the negative root is excluded because the model begins at launch."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture11-separated-constants-transfer",
+        "outcome": "Find antiderivatives on a disconnected domain with a separate constant on each component.",
+        "kind": "computational",
+        "prompt": "Find every antiderivative of $2x^{-3}$ on $\\mathbb{R}\\setminus\\{0\\}$.",
+        "hint": "Integrate on the negative and positive intervals separately.",
+        "solution": "On each component the power rule gives $-x^{-2}$. Thus $F(x)=-x^{-2}+C_-$ for $x<0$ and $F(x)=-x^{-2}+C_+$ for $x>0$, with independent constants.",
+        "solutionTex": "F(x)=\\begin{cases}-x^{-2}+C_-&x<0\\\\-x^{-2}+C_+&x>0\\end{cases}",
+        "rubric": [
+          "Use the correct power antiderivative.",
+          "Respect the missing point at zero.",
+          "Allow independent constants on the two intervals."
+        ]
+      },
+      {
+        "id": "lecture11-power-rule-transfer",
+        "outcome": "Use and verify the reverse power rule for a negative exponent.",
+        "kind": "computational",
+        "prompt": "Find and check an antiderivative of $3x^{-4}$ on an interval not containing zero.",
+        "hint": "Increase the exponent by one and divide by the new exponent.",
+        "solution": "$\\int3x^{-4}\\,dx=3x^{-3}/(-3)=-x^{-3}+C$. Differentiating $-x^{-3}$ gives $3x^{-4}$.",
+        "solutionTex": "\\int3x^{-4}\\,dx=-x^{-3}+C,\\quad \\frac{d}{dx}(-x^{-3})=3x^{-4}",
+        "rubric": [
+          "Increase the exponent by one.",
+          "Divide by the new exponent.",
+          "Differentiate to verify."
+        ]
+      },
+      {
+        "id": "lecture11-trig-linearity-transfer",
+        "outcome": "Integrate a trigonometric sum using linearity and table entries.",
+        "kind": "computational",
+        "prompt": "Find an antiderivative of $2\\cos x-5\\sin x+3\\sec^2 x$ on $(-\\pi/2,\\pi/2)$.",
+        "hint": "Use the table separately on each term.",
+        "solution": "An antiderivative is $2\\sin x+5\\cos x+3\\tan x+C$, since differentiating returns $2\\cos x-5\\sin x+3\\sec^2 x$.",
+        "solutionTex": "2\\sin x+5\\cos x+3\\tan x+C",
+        "rubric": [
+          "Apply linearity term by term.",
+          "Use the correct signs for sine and cosine.",
+          "Differentiate the result on the stated interval."
+        ]
+      },
+      {
+        "id": "lecture11-rewrite-transfer",
+        "outcome": "Rewrite and integrate a mixed trigonometric and radical expression.",
+        "kind": "computational",
+        "prompt": "Find all $h$ such that $h\\prime(x)=6\\cos x+3x^4-\\frac2{\\sqrt{x}}$ for $x>0$.",
+        "hint": "Rewrite the last term as $-2x^{-1/2}$.",
+        "solution": "Integrating term by term gives $h(x)=6\\sin x+\\frac35x^5-4\\sqrt{x}+C$. Its derivative is $6\\cos x+3x^4-2x^{-1/2}$ on $x>0$.",
+        "solutionTex": "h(x)=6\\sin x+\\frac35x^5-4\\sqrt{x}+C",
+        "rubric": [
+          "Rewrite the radical quotient as a power.",
+          "Integrate each term with the correct coefficient.",
+          "Check the derivative and domain."
+        ]
+      },
+      {
+        "id": "lecture11-two-values-transfer",
+        "outcome": "Recover a function from its second derivative and two independent values.",
+        "kind": "computational",
+        "prompt": "Find $f$ if $f\\prime\\prime(x)=6x+4$, $f(0)=1$, and $f(2)=15$.",
+        "hint": "Write $f(x)=x^3+2x^2+Cx+D$ after integrating twice.",
+        "solution": "Integrating gives $f(x)=x^3+2x^2+Cx+D$. From $f(0)=1$, $D=1$. From $f(2)=15$, $8+8+2C+1=15$, so $C=-1$. Thus $f(x)=x^3+2x^2-x+1$.",
+        "solutionTex": "f(x)=x^3+2x^2+Cx+D,\\quad D=1,\\quad C=-1",
+        "rubric": [
+          "Integrate twice and keep both constants.",
+          "Use both data conditions independently.",
+          "Verify both function values."
+        ]
+      },
+      {
+        "id": "lecture11-motion-distance-transfer",
+        "outcome": "Integrate motion data and distinguish displacement from total distance after a velocity reversal.",
+        "kind": "computational",
+        "prompt": "A particle has $a(t)=6t+4$, $v(0)=-6$, and $s(0)=9$. Find $s(2)$, displacement from $t=0$ to $t=2$, and total distance traveled.",
+        "hint": "Use the source formulas, then split total distance where $v(t)=0$.",
+        "solution": "Integrating gives $v(t)=3t^2+4t-6$ and $s(t)=t^3+2t^2-6t+9$. Thus $s(2)=13$ and displacement is $13-9=4$. Velocity changes sign at $t_*=(-2+\\sqrt{22})/3\\approx0.89681$, where $s(t_*)\\approx5.94895$. Total distance is $(9-s(t_*))+(13-s(t_*))\\approx10.1021$, which differs from the displacement.",
+        "solutionTex": "t_*=\\frac{-2+\\sqrt{22}}3,\\quad s(2)-s(0)=4,\\quad \\text{distance}\\approx10.1021",
+        "rubric": [
+          "Integrate twice and apply both initial data.",
+          "Find the time when velocity changes sign.",
+          "Split distance at the reversal and contrast it with signed displacement."
+        ]
+      },
+      {
+        "id": "lecture11-projectile-apex-transfer",
+        "outcome": "Integrate a new vertical-launch model and determine the maximum height.",
+        "kind": "computational",
+        "prompt": "A ball is launched upward at $12\\,\\mathrm{m/s}$ from $30\\,\\mathrm{m}$. Assume upward positive and $a=-9.8\\,\\mathrm{m/s^2}$. Find $s(t)$, the apex time, and maximum height.",
+        "hint": "Integrate acceleration using $v(0)=12$, then integrate velocity using $s(0)=30$.",
+        "solution": "$v(t)=-9.8t+12$ and $s(t)=-4.9t^2+12t+30$. The apex is at $t=12/9.8=60/49\\approx1.2245$ s. Substitution gives $s_{\\max}=30+360/49\\approx37.3469$ m.",
+        "solutionTex": "s(t)=-4.9t^2+12t+30,\\quad t_{\\max}=\\frac{60}{49},\\quad s_{\\max}=\\frac{1830}{49}",
+        "rubric": [
+          "Use the stated acceleration and initial position/velocity.",
+          "Set velocity to zero for the apex.",
+          "Evaluate position at that time."
+        ]
+      },
+      {
+        "id": "lecture11-impact-time-transfer",
+        "outcome": "Solve a new height equation and choose the positive impact time.",
+        "kind": "computational",
+        "prompt": "For the launch model $s(t)=-4.9t^2+12t+30$, find when the object reaches ground level and explain which root is physical.",
+        "hint": "Set $s(t)=0$ and keep the solution with $t>0$.",
+        "solution": "The equation is $4.9t^2-12t-30=0$, so $t=(12\\pm\\sqrt{732})/9.8$. The future impact is $t=(12+\\sqrt{732})/9.8\\approx3.9853$ s; the negative root occurs before launch.",
+        "solutionTex": "t=\\frac{12+\\sqrt{732}}{9.8}\\approx3.9853\\,\\mathrm{s}",
+        "rubric": [
+          "Set position equal to ground level.",
+          "Solve the quadratic accurately.",
+          "Reject the negative time using the physical context."
+        ]
+      }
+    ]
   },
   "inverse-functions": {
     "prerequisites": ["chain-rule-single", "continuity-ivt"],

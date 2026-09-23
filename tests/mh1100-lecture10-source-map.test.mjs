@@ -105,7 +105,7 @@ test("Lecture 10 source identity, page map, stable routes, and atomic evidence",
   assert.equal(manifest?.sha256, sourceSha);
   assert.equal(concepts.length, 125);
   assert.equal(new Set(concepts.map((item) => item.id)).size, 125);
-  assert.equal(ledger.atomic_outcomes.length, 280);
+  assert.equal(mapped.length, 25);
   assert.deepEqual(
     Object.keys(expected).map(
       (id) => ledger.source_sections.find((section) => section.id === id)?.id,
