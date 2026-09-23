@@ -55,6 +55,7 @@ export function studyTools(
       : [];
   const snapshot = () => {
     const s = current();
+    const isPlanarScene = s.activeScene?.startsWith("plane-") ?? false;
     return {
       visualLayout: s.visualLayout,
       sidebarOpen: s.sidebarOpen,
@@ -67,11 +68,13 @@ export function studyTools(
       parameter: s.p,
       mathematicalReadout: s.info.readout?.(s.p) ?? null,
       mathematicalReadoutTex: s.activeScene
-        ? s.activeScene.startsWith("plane-")
+        ? isPlanarScene
           ? planarModel(s.activeScene, s.p).readout
           : readoutTex(s.activeScene, s.p)
         : null,
-      mathematicalReadoutFormat: "plain-text compatibility",
+      mathematicalReadoutFormat: isPlanarScene
+        ? "LaTeX for typeset display"
+        : "plain-text compatibility",
       mathematicalReadoutTexFormat: "LaTeX for typeset display",
       inlineExperiments: inlineExperiments(),
       representation:
@@ -178,7 +181,7 @@ export function studyTools(
       name: "get_study_state",
       title: "Read current study state",
       description:
-        "Read the visible course, lesson, notes section, experiment and graph configuration. mathematicalReadout is the plain-text compatibility value; mathematicalReadoutTex is the LaTeX value used for typeset display.",
+        "Read the visible course, lesson, notes section, experiment and graph configuration. mathematicalReadout preserves the existing value: LaTeX for planar scenes, plain text for spatial scenes. Check mathematicalReadoutFormat; mathematicalReadoutTex is always LaTeX for typeset display.",
       inputSchema: schema({}),
       annotations: { readOnlyHint: true },
       execute: snapshot,

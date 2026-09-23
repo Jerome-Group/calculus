@@ -376,12 +376,38 @@ test("WebMCP state includes the mathematical readout and its evidence limit", as
   const result = tool.execute({});
   assert.equal(result.mathematicalReadout, "Dᵤf(0)=1");
   assert.equal(result.mathematicalReadoutTex, readoutTex("differential", 0));
+  assert.equal(result.mathematicalReadoutFormat, "plain-text compatibility");
+  assert.equal(
+    result.mathematicalReadoutTexFormat,
+    "LaTeX for typeset display",
+  );
   assert.match(result.representation, /Sampled illustration/);
   state.activeScene = "plane-domain";
+  state.info = {
+    ...planarModel("plane-domain", 0),
+    readout: (p) => planarModel("plane-domain", p).readout,
+  };
   const planar = tool.execute({});
+  assert.equal(
+    planar.mathematicalReadout,
+    planarModel("plane-domain", 0).readout,
+  );
   assert.equal(
     planar.mathematicalReadoutTex,
     planarModel("plane-domain", 0).readout,
+  );
+  assert.equal(planar.mathematicalReadoutFormat, "LaTeX for typeset display");
+  assert.equal(
+    planar.mathematicalReadoutTexFormat,
+    "LaTeX for typeset display",
+  );
+  assert.match(
+    katex.renderToString(planar.mathematicalReadoutTex, {
+      throwOnError: true,
+      strict: "error",
+      output: "htmlAndMathml",
+    }),
+    /<math\b/,
   );
 });
 
