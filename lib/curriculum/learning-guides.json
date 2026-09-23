@@ -1185,6 +1185,39 @@
         ],
         "result": "The velocity is $49\\,\\mathrm{m/s}$ downward because $s$ measures downward distance.",
         "verification": "For $\\tau=0.1$, average velocity is $49.49\\,\\mathrm{m/s}$; for $\\tau=-0.1$, it is $48.51\\,\\mathrm{m/s}$. Both approach $49\\,\\mathrm{m/s}$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture04-one-sided-epsilon-delta-definition",
+        "title": "Precise left and right limits",
+        "statement": "$\\lim_{x\\to a^-}f(x)=L$ means every $\\varepsilon>0$ admits $\\delta>0$ such that $a-\\delta<x<a$ implies $|f(x)-L|<\\varepsilon$. For $\\lim_{x\\to a^+}f(x)=L$, require $a<x<a+\\delta$ instead.",
+        "hypotheses": [
+          "The inputs must lie in the domain on the named side of $a$.",
+          "The target point $a$ is excluded; the opposite side is not constrained."
+        ],
+        "prerequisites": ["the finite $\\varepsilon$-$\\delta$ definition"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-right-root-limit",
+        "title": "Source example: prove a right-hand square-root limit",
+        "strategy": "Use the right-side condition to convert the input distance into a bound on the square root.",
+        "setup": "Lecture 04 Example 3 proves $\\lim_{x\\to4^+}\\sqrt{x}=2$.",
+        "steps": [
+          {
+            "label": "Choose $\\delta$",
+            "text": "Given $\\varepsilon>0$, choose $\\delta=\\varepsilon^2+4\\varepsilon$. If $0<x-4<\\delta$, then $4<x<4+\\delta=(2+\\varepsilon)^2$.",
+            "equation": "4<x<(\\varepsilon+2)^2"
+          },
+          {
+            "label": "Bound the output error",
+            "text": "Taking square roots gives $2<\\sqrt{x}<2+\\varepsilon$, hence the right-side output error is less than $\\varepsilon$.",
+            "equation": "0<\\sqrt{x}-2<\\varepsilon"
+          }
+        ],
+        "result": "$\\lim_{x\\to4^+}\\sqrt{x}=2$.",
+        "verification": "The proof uses $x>4$ throughout; it makes no claim about inputs from the left."
       }
     ],
     "sections": [
@@ -1248,6 +1281,21 @@
           "Use displacement divided by a nonzero elapsed time.",
           "Expand and simplify the average-rate expression correctly.",
           "Take the limit with units and distinguish it from evaluation at zero."
+        ]
+      },
+      {
+        "id": "lecture04-left-root-transfer",
+        "outcome": "Use a left-only input condition to prove a finite one-sided limit.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to4^-}\\sqrt{x+5}=3$ with a valid $\\delta$ for every $\\varepsilon>0$.",
+        "hint": "First require $|x-4|<1$, then rationalize $3-\\sqrt{x+5}$.",
+        "solution": "Given $\\varepsilon>0$, choose $\\delta=\\min\\{1,3\\varepsilon\\}$. If $0<4-x<\\delta$, then $x>3$ and $\\sqrt{x+5}>0$. Thus $0<3-\\sqrt{x+5}=(4-x)/(3+\\sqrt{x+5})<(4-x)/3<\\delta/3\\leq\\varepsilon$.",
+        "solutionTex": "\\delta=\\min\\{1,3\\varepsilon\\},\\quad 0<4-x<\\delta\\implies 0<3-\\sqrt{x+5}<\\varepsilon",
+        "rubric": [
+          "Use the left-sided input condition $0<4-x$.",
+          "Keep $x$ in the real domain of the square root.",
+          "Rationalize with a positive denominator.",
+          "Choose $\\delta$ to enforce both the local bound and $\\varepsilon$ tolerance."
         ]
       }
     ]
@@ -1314,6 +1362,72 @@
         ],
         "result": "These functions diverge with specified signs; neither has a finite real limit at $2$.",
         "verification": "The proof handles every $M>0$ and every allowed $x$ sufficiently close to $2$; a clipped graph or selected samples would not establish either claim."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture04-positive-infinite-definition",
+        "title": "Positive infinite limits use thresholds",
+        "statement": "$\\lim_{x\\to a}f(x)=+\\infty$ means that for every $M>0$ there is a $\\delta>0$ such that every allowed $x$ with $0<|x-a|<\\delta$ satisfies $f(x)>M$.",
+        "hypotheses": [
+          "The inequality must hold for every allowed input in the deleted neighborhood, not only selected samples.",
+          "The notation $+\\infty$ describes arbitrarily large values; it is not a finite real limit."
+        ],
+        "prerequisites": ["punctured neighborhoods and order inequalities"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-positive-infinite-example",
+        "title": "Source example: prove reciprocal squares grow without bound",
+        "strategy": "Solve the threshold inequality for the distance to the target.",
+        "setup": "Lecture 04 Example 5 proves $\\lim_{x\\to0}1/x^2=+\\infty$.",
+        "steps": [
+          {
+            "label": "Choose a threshold radius",
+            "text": "Let $M>0$ be arbitrary and choose $\\delta=1/\\sqrt{M}$.",
+            "equation": "\\delta=M^{-1/2}"
+          },
+          {
+            "label": "Verify the threshold",
+            "text": "If $0<|x|<\\delta$, then $x^2<1/M$. Taking reciprocals of positive quantities gives $1/x^2>M$.",
+            "equation": "0<|x|<M^{-1/2}\\implies 1/x^2>M"
+          }
+        ],
+        "result": "$\\lim_{x\\to0}1/x^2=+\\infty$.",
+        "verification": "The bound holds on both sides and for every positive $M$. A denominator zero alone would not establish this inequality."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture04-negative-infinite-definition",
+        "title": "Negative infinite limits use lower thresholds",
+        "statement": "$\\lim_{x\\to a}f(x)=-\\infty$ means that for every negative number $N$ there is a $\\delta>0$ such that every allowed $x$ with $0<|x-a|<\\delta$ satisfies $f(x)<N$. For a one-sided limit, restrict $x$ to that side.",
+        "hypotheses": [
+          "The threshold $N$ is negative and is chosen before $\\delta$.",
+          "The inequality must hold for every domain input in the specified deleted neighborhood."
+        ],
+        "prerequisites": ["positive infinite threshold definition"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-negative-infinite-log-example",
+        "title": "Source exercise: prove the right-hand logarithm limit",
+        "strategy": "Invert the logarithm inequality while preserving the positive-side domain.",
+        "setup": "Lecture 04 asks to prove $\\lim_{x\\to0^+}\\ln x=-\\infty$.",
+        "steps": [
+          {
+            "label": "Choose $\\delta$ from the negative threshold",
+            "text": "Given any negative $N$, choose $\\delta=e^N>0$.",
+            "equation": "\\delta=e^N"
+          },
+          {
+            "label": "Check every right-side input",
+            "text": "If $0<x<\\delta$, the logarithm is increasing, so $\\ln x<\\ln(e^N)=N$.",
+            "equation": "0<x<e^N\\implies\\ln x<N"
+          }
+        ],
+        "result": "$\\lim_{x\\to0^+}\\ln x=-\\infty$.",
+        "verification": "Only $x>0$ is in the claimed approach; there is no two-sided logarithm domain near zero."
       }
     ],
     "sections": [
@@ -1364,6 +1478,35 @@
           "State an arbitrary positive threshold and a valid positive distance.",
           "Bound the numerator and denominator throughout the deleted neighborhood.",
           "Use the eventual negative inequality on both sides, without treating infinity as a number."
+        ]
+      },
+      {
+        "id": "lecture04-positive-infinite-transfer",
+        "outcome": "Construct a positive threshold radius for a shifted reciprocal square.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to3}1/(x-3)^2=+\\infty$ using the threshold definition.",
+        "hint": "Given $M>0$, solve $1/(x-3)^2>M$ for $|x-3|$.",
+        "solution": "Given $M>0$, choose $\\delta=M^{-1/2}$. If $0<|x-3|<\\delta$, then $(x-3)^2<1/M$, hence $1/(x-3)^2>M$. The condition covers both sides.",
+        "solutionTex": "\\delta=M^{-1/2},\\quad0<|x-3|<\\delta\\implies1/(x-3)^2>M",
+        "rubric": [
+          "Quantify over every $M>0$.",
+          "Choose $\\delta$ as a positive distance.",
+          "Keep $x=3$ excluded.",
+          "Reverse the positive reciprocal inequality correctly."
+        ]
+      },
+      {
+        "id": "lecture04-negative-infinite-transfer",
+        "outcome": "Prove a right-hand negative infinite limit with a threshold valid throughout the side-neighborhood.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to0^+}\\ln(2x)=-\\infty$ using a negative threshold $N$.",
+        "hint": "Choose $\\delta$ so that $2\\delta=e^N$.",
+        "solution": "Given any negative $N$, choose $\\delta=e^N/2>0$. If $0<x<\\delta$, then $0<2x<e^N$, so monotonicity of $\\ln$ gives $\\ln(2x)<N$.",
+        "solutionTex": "\\delta=e^N/2,\\quad0<x<\\delta\\implies\\ln(2x)<N",
+        "rubric": [
+          "Use arbitrary negative $N$ and choose $\\delta$ afterward.",
+          "Restrict inputs to the positive side.",
+          "Use the monotonicity of $\\ln$ and state a strict threshold inequality."
         ]
       }
     ]
@@ -1754,6 +1897,56 @@
         ],
         "result": "$\\lim_{x\\to0}x\\cos(1/x)=0$.",
         "verification": "The oscillating cosine factor has no limit, but its bounded magnitude does not obstruct this proof."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture04-triangle-inequality",
+        "title": "Triangle inequality for a sum error",
+        "statement": "For real numbers $u$ and $v$, $|u+v|\\leq|u|+|v|$. In the sum-law proof, use $u=f(x)-L$ and $v=g(x)-M$.",
+        "hypotheses": ["$u$ and $v$ are real values at an allowed input $x$."],
+        "prerequisites": ["absolute value inequalities"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture04-sum-law-statement",
+        "title": "Sum law for finite limits",
+        "statement": "If $\\lim_{x\\to a}f(x)=L$ and $\\lim_{x\\to a}g(x)=M$ both exist as finite limits, then $\\lim_{x\\to a}(f(x)+g(x))=L+M$.",
+        "hypotheses": [
+          "Both component limits exist and are finite at the same target $a$.",
+          "Use inputs in a common deleted neighborhood contained in both domains."
+        ],
+        "prerequisites": [
+          "finite-limit $\\varepsilon$-$\\delta$ definition",
+          "triangle inequality"
+        ],
+        "status": "Proof sketch"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-sum-law-proof",
+        "title": "Source proof: split $\\varepsilon$ and take the smaller radius",
+        "strategy": "Use half the output tolerance for each summand and intersect their input neighborhoods.",
+        "setup": "Lecture 04 proves the sum law for arbitrary finite component limits $L$ and $M$ at $a$.",
+        "steps": [
+          {
+            "label": "Allocate the error tolerance",
+            "text": "Given $\\varepsilon>0$, the two component limits give positive radii $\\delta_1$ and $\\delta_2$ so each component error is less than $\\varepsilon/2$.",
+            "equation": "0<|x-a|<\\delta_1\\implies|f(x)-L|<\\varepsilon/2,\\quad0<|x-a|<\\delta_2\\implies|g(x)-M|<\\varepsilon/2"
+          },
+          {
+            "label": "Use one input radius",
+            "text": "Choose $\\delta=\\min\\{\\delta_1,\\delta_2\\}$. A punctured input within $\\delta$ satisfies both component bounds.",
+            "equation": "0<|x-a|<\\delta\\implies|f(x)-L|<\\varepsilon/2\\text{ and }|g(x)-M|<\\varepsilon/2"
+          },
+          {
+            "label": "Apply the triangle inequality",
+            "text": "Bound the total output error by the sum of the two component errors.",
+            "equation": "|(f(x)+g(x))-(L+M)|\\leq|f(x)-L|+|g(x)-M|<\\varepsilon"
+          }
+        ],
+        "result": "$\\lim_{x\\to a}(f(x)+g(x))=L+M$.",
+        "verification": "Both finite-limit hypotheses are used. The minimum radius guarantees both implications; adding the radii would not do so."
       }
     ],
     "supplementalBlocks": [
@@ -1991,6 +2184,21 @@
           "Cancel only in the deleted domain.",
           "Evaluate the nonzero limiting denominator."
         ]
+      },
+      {
+        "id": "lecture04-sum-law-transfer",
+        "outcome": "Prove a new finite sum limit by splitting $\\varepsilon$ and intersecting the component radii.",
+        "kind": "proof",
+        "prompt": "Use the sum-law proof to show $\\lim_{x\\to1}(2x+x^2)=3$. For the two terms, you may use $\\delta_1=\\varepsilon/4$ and $\\delta_2=\\min\\{1,\\varepsilon/6\\}$.",
+        "hint": "For $|x-1|<1$, we have $0<x<2$ and $|x+1|<3$. Choose $\\delta=\\min\\{\\delta_1,\\delta_2\\}$.",
+        "solution": "If $0<|x-1|<\\delta_1$, then $|2x-2|=2|x-1|<2\\delta_1=\\varepsilon/2$. If $0<|x-1|<\\delta_2$, then $0<x<2$ and $|x^2-1|=|x-1||x+1|<3|x-1|<3\\delta_2\\leq\\varepsilon/2$. With $\\delta=\\min\\{\\delta_1,\\delta_2\\}$ both bounds hold, so $|(2x+x^2)-3|\\leq|2x-2|+|x^2-1|<\\varepsilon$.",
+        "solutionTex": "\\delta=\\min\\{\\varepsilon/4,1,\\varepsilon/6\\},\\quad |(2x+x^2)-3|<\\varepsilon",
+        "rubric": [
+          "Show both component limits or their $\\varepsilon/2$ bounds.",
+          "Keep the local restriction for the quadratic factor.",
+          "Choose the minimum of the radii.",
+          "Use the triangle inequality and conclude a strict total error below $\\varepsilon$."
+        ]
       }
     ],
     "sections": [
@@ -2023,8 +2231,8 @@
         "text": "The statement is: for every $\\varepsilon >0$ there exists $\\delta >0$ such that every allowed $x$ with $0<|x-a|<\\delta$ satisfies $|f(x)-L|<\\varepsilon$. The chosen $\\delta$ may depend on $\\varepsilon$ and a, but not on the particular $x$. Its negation has some $\\varepsilon_{0}>0$ for which every $\\delta >0$ admits a violating input."
       },
       {
-        "title": "A nonlinear estimate",
-        "text": "To prove $x^{2}\\to 4$ as $x\\to 2$, factor $|x^{2}-4|=|x-2||x+2|$. First require $|x-2|<1$, giving $|x+2|<5$. Then choose $\\delta=\\min(1,\\varepsilon/5)$. The same $\\delta$ enforces both the local bound and the requested output tolerance."
+        "title": "A new guide example: nonlinear estimate",
+        "text": "Added guide example, not a calculation from Lecture 04: to prove $x^{2}\\to4$ as $x\\to2$, factor $|x^{2}-4|=|x-2||x+2|$. First require $|x-2|<1$, giving $|x+2|<5$. Then choose $\\delta=\\min(1,\\varepsilon/5)$. The same $\\delta$ enforces both the local bound and the requested output tolerance."
       }
     ],
     "exercise": {
@@ -2037,7 +2245,257 @@
         "Use strict inequalities consistently."
       ],
       "solutionTex": "\\delta=\\varepsilon/3,\\quad |3x+2-5|=3|x-1|<\\varepsilon"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "lecture04-epsilon-delta-definition",
+        "title": "The precise finite-limit definition",
+        "statement": "$\\lim_{x\\to a}f(x)=L$ means: for every $\\varepsilon>0$ there is a $\\delta>0$ such that every allowed $x$ with $0<|x-a|<\\delta$ satisfies $|f(x)-L|<\\varepsilon$. Choose $\\delta$ after $\\varepsilon$; the same $\\delta$ must work for all such $x$.",
+        "hypotheses": [
+          "The domain contains an open interval around $a$, though $f(a)$ may be undefined.",
+          "The input condition is punctured: $x=a$ is excluded from the implication."
+        ],
+        "prerequisites": ["absolute value as distance on the real line"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-identity-limit",
+        "title": "Source example: prove the identity limit",
+        "strategy": "Choose a radius that makes the input error itself smaller than the requested output error.",
+        "setup": "Lecture 04 asks for an $\\varepsilon$-$\\delta$ proof that $\\lim_{x\\to a}x=a$.",
+        "steps": [
+          {
+            "label": "Choose the radius",
+            "text": "Given any $\\varepsilon>0$, set $\\delta=\\varepsilon$. This choice uses only the requested tolerance."
+          },
+          {
+            "label": "Check every nearby input",
+            "text": "If $0<|x-a|<\\delta$, then $|x-a|<\\varepsilon$, which is exactly the required output bound.",
+            "equation": "|f(x)-L|=|x-a|<\\delta=\\varepsilon"
+          }
+        ],
+        "result": "$\\lim_{x\\to a}x=a$.",
+        "verification": "The radius is fixed before $x$ is chosen. Any positive $\\delta\\leq\\varepsilon$ also works; the value at $x=a$ is not used."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-affine-limit-example",
+        "title": "Source example: choose $\\delta$ for an affine limit",
+        "strategy": "Solve the output-error inequality for the input distance, then verify the resulting radius.",
+        "setup": "Lecture 04 Example 2 asks to prove $\\lim_{x\\to3}(4x-5)=7$.",
+        "steps": [
+          {
+            "label": "Relate the two errors",
+            "text": "Factor the output difference so its size is a constant multiple of the input distance.",
+            "equation": "|(4x-5)-7|=|4x-12|=4|x-3|"
+          },
+          {
+            "label": "Choose and verify $\\delta$",
+            "text": "Given $\\varepsilon>0$, choose $\\delta=\\varepsilon/4$. Every $x$ with $0<|x-3|<\\delta$ then has output error below $\\varepsilon$.",
+            "equation": "4|x-3|<4\\delta=4(\\varepsilon/4)=\\varepsilon"
+          }
+        ],
+        "result": "$\\lim_{x\\to3}(4x-5)=7$.",
+        "verification": "The same radius works for every allowed $x$. The proof uses strict inequalities and does not depend on the value assigned at $x=3$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture04-negate-limit-definition",
+        "title": "The quantifiers for a failed limit",
+        "text": "To disprove a proposed finite limit $L$, it is enough to find one fixed $\\varepsilon_0>0$ such that every $\\delta>0$ admits an allowed $x$ with $0<|x-a|<\\delta$ and $|f(x)-L|\\geq\\varepsilon_0$. To disprove existence, this argument must work for every candidate $L$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-nonexistence-negation",
+        "title": "Guide example: use a fixed $\\varepsilon$ to rule out every limit",
+        "strategy": "Use the gap between the two side values to choose one $\\varepsilon$ that defeats every candidate limit.",
+        "setup": "Added guide example based on Lecture 04’s nonexistence question: let $g(x)=1$ for $x<0$ and $g(x)=0$ for $x>0$; set $g(0)$ arbitrarily.",
+        "steps": [
+          {
+            "label": "Fix the output tolerance",
+            "text": "For any proposed $L$, the triangle inequality gives $1\\leq|1-L|+|L|$, so at least one of the two side values is at least $1/2$ from $L$. Set $\\varepsilon_0=1/3$."
+          },
+          {
+            "label": "Defeat every input radius",
+            "text": "For any $\\delta>0$, choose $x=-\\delta/2$ or $x=\\delta/2$ on a side whose value is at least $1/2$ from $L$. Then $0<|x|<\\delta$ but $|g(x)-L|\\geq1/2>\\varepsilon_0$."
+          }
+        ],
+        "result": "No real $L$ is a limit of $g$ at $0$.",
+        "verification": "This follows the negated quantifier order: choose $\\varepsilon$ first, then defeat each $\\delta$. The assigned value $g(0)$ does not enter."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture04-interval-definition",
+        "title": "The same definition in interval form",
+        "statement": "The finite-limit condition is equivalent to $f(((a-\\delta,a+\\delta)\\setminus\\{a\\})\\cap\\operatorname{dom}f)\\subset(L-\\varepsilon,L+\\varepsilon)$. The input interval is punctured at $a$, and every output lies in the open tolerance interval.",
+        "hypotheses": [
+          "The input interval is restricted to the domain of $f$.",
+          "The point $a$ is omitted even when $f(a)$ is defined."
+        ],
+        "prerequisites": [
+          "the $\\varepsilon$-$\\delta$ definition of a finite limit"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-interval-image-example",
+        "title": "Guide example: read the $\\varepsilon$ and $\\delta$ intervals",
+        "strategy": "Translate the absolute-value bounds into open intervals and check the image inclusion.",
+        "setup": "For the added guide example $f(x)=2x+1$, consider $x\\to a$ with target value $2a+1$.",
+        "steps": [
+          {
+            "label": "Choose $\\delta$",
+            "text": "Given $\\varepsilon>0$, use $\\delta=\\varepsilon/2$. The allowed input interval is $(a-\\delta,a+\\delta)$ with $a$ removed."
+          },
+          {
+            "label": "Map the interval",
+            "text": "For every input in that punctured interval, the output differs from $2a+1$ by less than $\\varepsilon$.",
+            "equation": "|(2x+1)-(2a+1)|=2|x-a|<2\\delta=\\varepsilon"
+          }
+        ],
+        "result": "$f((a-\\delta,a+\\delta)\\setminus\\{a\\})\\subset(2a+1-\\varepsilon,2a+1+\\varepsilon)$.",
+        "verification": "The set inclusion is precisely the quantified definition in interval language; no output condition is asserted at $x=a$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-bounded-oscillatory-example",
+        "title": "Source example: bound an oscillating factor",
+        "strategy": "Replace a complicated factor by a uniform bound, then solve the remaining inequality for $\\delta$.",
+        "setup": "Lecture 04 Example A proves $\\lim_{x\\to0}x^{2023}[1+\\sin^2(2024x)]=0$.",
+        "steps": [
+          {
+            "label": "Bound the factor",
+            "text": "Since $0\\leq\\sin^2(2024x)\\leq1$, the bracket lies between 1 and 2 for every $x$.",
+            "equation": "|x^{2023}[1+\\sin^2(2024x)]|\\leq2|x|^{2023}"
+          },
+          {
+            "label": "Choose $\\delta$",
+            "text": "Given $\\varepsilon>0$, choose $\\delta=(\\varepsilon/2)^{1/2023}$. If $0<|x|<\\delta$, the bound is strictly below $\\varepsilon$.",
+            "equation": "2|x|^{2023}<2\\delta^{2023}=\\varepsilon"
+          }
+        ],
+        "result": "$\\lim_{x\\to0}x^{2023}[1+\\sin^2(2024x)]=0$.",
+        "verification": "The bound holds for every nonzero $x$ near $0$, even though the oscillating factor need not have a limit."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture04-estimation-strategy",
+        "title": "Bound locally before choosing $\\delta$",
+        "text": "When factoring $|f(x)-L|$, first restrict $x$ to a small neighborhood where the remaining factor has a fixed bound. Then choose $\\delta$ small enough to meet both the neighborhood restriction and the $\\varepsilon$ requirement."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture04-cubic-estimation-example",
+        "title": "Source example: estimate a cubic difference",
+        "strategy": "Factor the difference, locally bound the other factor, and combine both input restrictions with a minimum.",
+        "setup": "Lecture 04 Example 4 proves $\\lim_{x\\to3}x^3=27$ by estimation.",
+        "steps": [
+          {
+            "label": "Factor the output error",
+            "text": "The factor $x^2+3x+9$ is unbounded on all of $\\mathbb R$, so first impose $|x-3|<1$. This gives $2<x<4$ and hence $x^2+3x+9<37$.",
+            "equation": "|x^3-27|=|x-3||x^2+3x+9|"
+          },
+          {
+            "label": "Satisfy both restrictions",
+            "text": "Given $\\varepsilon>0$, set $\\delta=\\min\\{1,\\varepsilon/37\\}$. Then the local bound and the $\\varepsilon$ bound hold together.",
+            "equation": "|x^3-27|<37|x-3|<37(\\varepsilon/37)=\\varepsilon"
+          }
+        ],
+        "result": "$\\lim_{x\\to3}x^3=27$.",
+        "verification": "A global constant bound for the quadratic factor would fail. The minimum keeps $x$ in the interval where the local bound is valid."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture04-identity-transfer",
+        "outcome": "Choose $\\delta$ after $\\varepsilon$ and verify it uniformly for every punctured input.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to a}2x=2a$ directly from the $\\varepsilon$-$\\delta$ definition. Give a $\\delta$ for each $\\varepsilon>0$.",
+        "hint": "Express the output error as a constant times $|x-a|$.",
+        "solution": "Given $\\varepsilon>0$, choose $\\delta=\\varepsilon/2$. If $0<|x-a|<\\delta$, then $|(2x)-(2a)|=2|x-a|<2\\delta=\\varepsilon$.",
+        "solutionTex": "\\delta=\\varepsilon/2,\\quad |2x-2a|=2|x-a|<\\varepsilon",
+        "rubric": [
+          "Choose positive $\\delta$ after arbitrary $\\varepsilon$.",
+          "Make the choice independent of $x$.",
+          "Use the punctured input condition and strict output inequality."
+        ]
+      },
+      {
+        "id": "lecture04-affine-transfer",
+        "outcome": "Solve an affine output-error inequality to choose a valid $\\delta$.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to2}(3x+1)=7$. State a valid $\\delta$ and show the implication for every allowed $x$.",
+        "hint": "Factor $(3x+1)-7$ before choosing $\\delta$.",
+        "solution": "Given $\\varepsilon>0$, choose $\\delta=\\varepsilon/3$. Then $0<|x-2|<\\delta$ gives $|(3x+1)-7|=3|x-2|<3\\delta=\\varepsilon$.",
+        "solutionTex": "\\delta=\\varepsilon/3,\\quad |3x+1-7|=3|x-2|<\\varepsilon",
+        "rubric": [
+          "Factor the output error exactly.",
+          "Choose a positive $\\delta$ depending on $\\varepsilon$, not $x$.",
+          "Verify the strict implication."
+        ]
+      },
+      {
+        "id": "lecture04-nonexistence-transfer",
+        "outcome": "Use a fixed $\\varepsilon$ and a violating input in every $\\delta$-neighborhood to disprove all candidate limits.",
+        "kind": "proof",
+        "prompt": "Let $h(x)=-1$ for $x<2$ and $h(x)=3$ for $x>2$, with any value assigned at $2$. Prove that $h$ has no finite limit as $x\\to2$.",
+        "hint": "For any candidate $L$, at least one of $-1$ and $3$ is at least $2$ units from $L$.",
+        "solution": "For any proposed $L$, at least one of $|-1-L|$ and $|3-L|$ is at least 2. Fix $\\varepsilon_0=1$. For every $\\delta>0$, choose $x=2-\\delta/2$ or $x=2+\\delta/2$ from a side with that value. Then $0<|x-2|<\\delta$ and $|h(x)-L|\\geq2>\\varepsilon_0$. Thus no $L$ is the limit; $h(2)$ is irrelevant.",
+        "solutionTex": "\\forall L\\in\\mathbb R\\ \\exists\\varepsilon_0=1\\ \\forall\\delta>0\\ \\exists x:\\ 0<|x-2|<\\delta,\\quad|h(x)-L|>\\varepsilon_0",
+        "rubric": [
+          "Quantify over every candidate $L$.",
+          "Fix $\\varepsilon$ before taking an arbitrary $\\delta$.",
+          "Choose an allowed violating input inside that $\\delta$.",
+          "Exclude the point value from the argument."
+        ]
+      },
+      {
+        "id": "lecture04-interval-transfer",
+        "outcome": "Translate an $\\varepsilon$-$\\delta$ implication into a punctured input interval mapped into an output tolerance interval.",
+        "kind": "conceptual",
+        "prompt": "For $f(x)=5x-3$ as $x\\to2$, write the input and output intervals that verify $\\lim_{x\\to2}f(x)=7$. Give a valid $\\delta$ in terms of $\\varepsilon$.",
+        "hint": "Use $|f(x)-7|=5|x-2|$ and keep $x=2$ out of the input interval.",
+        "solution": "Choose $\\delta=\\varepsilon/5$. Every $x\\in(2-\\delta,2+\\delta)\\setminus\\{2\\}$ satisfies $|f(x)-7|=5|x-2|<\\varepsilon$, so its image lies in $(7-\\varepsilon,7+\\varepsilon)$.",
+        "solutionTex": "f((2-\\varepsilon/5,2+\\varepsilon/5)\\setminus\\{2\\})\\subset(7-\\varepsilon,7+\\varepsilon)",
+        "rubric": [
+          "Use the punctured input interval.",
+          "Derive the correct $\\delta$ from the output error.",
+          "State the output tolerance interval with strict bounds."
+        ]
+      },
+      {
+        "id": "lecture04-oscillatory-transfer",
+        "outcome": "Use a uniform bound on an oscillating factor to construct a finite-limit $\\delta$.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to0}x^5(2+\\cos(1/x))=0$ by an $\\varepsilon$-$\\delta$ estimate.",
+        "hint": "$|2+\\cos(1/x)|\\leq3$ for every nonzero $x$.",
+        "solution": "For $x\\ne0$, $|2+\\cos(1/x)|\\leq3$. Given $\\varepsilon>0$, choose $\\delta=(\\varepsilon/3)^{1/5}$. Then $0<|x|<\\delta$ gives $|x^5(2+\\cos(1/x))|\\leq3|x|^5<3\\delta^5=\\varepsilon$.",
+        "solutionTex": "\\delta=(\\varepsilon/3)^{1/5},\\quad |x^5(2+\\cos(1/x))|\\leq3|x|^5<\\varepsilon",
+        "rubric": [
+          "Use a bound valid throughout the punctured neighborhood.",
+          "Choose $\\delta$ only after an arbitrary positive $\\varepsilon$.",
+          "Do not assume the oscillating factor has a limit."
+        ]
+      },
+      {
+        "id": "lecture04-estimation-transfer",
+        "outcome": "Restrict the input to bound a factored term locally before choosing the minimum $\\delta$.",
+        "kind": "proof",
+        "prompt": "Use an estimate to prove $\\lim_{x\\to2}x^3=8$. Choose a local bound and a valid $\\delta$.",
+        "hint": "If $|x-2|<1$, then $1<x<3$ and $x^2+2x+4<19$.",
+        "solution": "Factor $|x^3-8|=|x-2|(x^2+2x+4)$. Given $\\varepsilon>0$, set $\\delta=\\min\\{1,\\varepsilon/19\\}$. If $0<|x-2|<\\delta$, then $1<x<3$, so $x^2+2x+4<19$ and $|x^3-8|<19|x-2|<19\\delta\\leq\\varepsilon$.",
+        "solutionTex": "\\delta=\\min\\{1,\\varepsilon/19\\},\\quad |x^3-8|<19|x-2|<\\varepsilon",
+        "rubric": [
+          "Factor the difference correctly.",
+          "Justify the local bound using $|x-2|<1$.",
+          "Use the minimum to enforce both conditions.",
+          "Keep the final inequalities strict."
+        ]
+      }
+    ]
   },
   "continuity-ivt": {
     "prerequisites": ["epsilon-delta-one-variable"],
