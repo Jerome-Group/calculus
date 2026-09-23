@@ -3528,7 +3528,7 @@
         "ratio-root-tests"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 2 source-specific atomic outcome(s) mapped for audit inventory topic 'Convergence tests and quantitative remainder estimates'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "gap": "Four source-specific atomic outcomes are mapped for convergence tests. Comparison, quantitative remainder, other examples, and learner checks still require review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3541,6 +3541,8 @@
       "verification": "pending",
       "atomic_outcome_ids": [
         "integral-test:source-skill-1",
+        "absolute-conditional-alternating:alternating-hypotheses",
+        "absolute-conditional-alternating:conditional-classification",
         "ratio-root-tests:source-skill-1"
       ],
       "coverage_decision": "partial_atomic_mapping"
@@ -8437,6 +8439,190 @@
         "practiced": "Exercise asks for a remainder threshold, not verification of continuity, positivity, and monotonicity before the test.",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
         "checked": "No independent outcome-level validation or learner performance check."
+      }
+    },
+    {
+      "id": "absolute-conditional-alternating:alternating-hypotheses",
+      "concept_id": "absolute-conditional-alternating",
+      "outcome": "Check decreasing positive magnitudes and their zero limit before applying the Alternating Series Test.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 16,
+        "inspection": "Canonical local PDF text and rendered physical page inspected for the theorem hypotheses.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17],
+          "method": "pdftotext -layout with physical page boundaries and visual inspection of pages 16–17.",
+          "claim_observed": "Page 16 states the Alternating Series Test for decreasing positive magnitudes tending to zero; page 17 applies it to the inverse-square-root series."
+        },
+        "page_heading": "Theorem 6. (Alternating Series Test)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
+            "claim": "The catalog names absolute and conditional convergence.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-series-test-hypotheses]",
+            "claim": "The guide states the required alternating-test magnitude conditions and marks the theorem imported.",
+            "method": "Compared theorem block and source physical page 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
+            "claim": "The guide checks decrease and zero limit in the lecture's inverse-square-root example.",
+            "method": "Checked the stated magnitudes and convergence argument against page 17."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
+            "claim": "An independent rational-term task requires checking monotonicity and the zero limit.",
+            "method": "Compared prompt, hint, and solution with the exact theorem hypotheses."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-alternating",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source theorem is imported, not reproved in this guide. The scene and independent learner performance are unverified.",
+      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-series-test-hypotheses]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
+            "basis": "independent task inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual source, guide, worked calculation, and independent task comparison.",
+        "named": "match",
+        "stated": "match",
+        "worked": "theorem hypotheses applied correctly",
+        "practiced": "task requires the outcome; learner performance unverified",
+        "visualized": "No outcome-level rendered scene check.",
+        "checked": "No independent learner check."
+      }
+    },
+    {
+      "id": "absolute-conditional-alternating:conditional-classification",
+      "concept_id": "absolute-conditional-alternating",
+      "outcome": "Classify an alternating series as absolute or conditional by testing its signed and absolute-value series separately.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 16,
+        "inspection": "Canonical local PDF text and rendered pages inspected; the page 17 example's printed exponent inequality is a typo, so the guide uses the correct exponent.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17],
+          "method": "pdftotext -layout with physical page boundaries and visual inspection of pages 16–17.",
+          "claim_observed": "Page 16 defines conditional convergence as signed convergence without absolute convergence; page 17 classifies the inverse-square-root alternating series using a divergent p-series of magnitudes."
+        },
+        "page_heading": "Definition 2. (Conditional Convergence); Example 5.11"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
+            "claim": "The catalog names the two convergence types.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.sections[Separate two convergence questions]",
+            "claim": "The guide states both definitions as separate tests.",
+            "method": "Compared the section with physical page 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
+            "claim": "The guide proves signed convergence and divergence of magnitudes for the source example.",
+            "method": "Checked page 17's example and corrected its printed p-series exponent comparison."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
+            "claim": "The independent task requires both verdicts for a rational magnitude sequence.",
+            "method": "Compared prompt, hint, and justified solution with the classification outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-alternating",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked and independent guide task are inspected; rendered visual relevance and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.sections[Separate two convergence questions]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
+            "basis": "independent task inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual source, guide, worked classification, and independent task comparison.",
+        "named": "match",
+        "stated": "match",
+        "worked": "signed and absolute verdicts justified separately",
+        "practiced": "task requires the outcome; learner performance unverified",
+        "visualized": "No outcome-level rendered scene check.",
+        "checked": "No independent learner check."
       }
     },
     {
