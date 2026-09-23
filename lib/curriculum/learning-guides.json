@@ -8,6 +8,10 @@
         "text": "The intersection $A\\cap B$ contains inputs allowed by both restrictions; the union $A\\cup B$ allows either. The interval $[a,b)$ includes a and excludes $b$. A function assigns exactly one output to every member of its domain. Its codomain is the declared target set; its range consists of outputs actually attained."
       },
       {
+        "title": "Set laws preserve membership",
+        "text": "For subsets of one universe, union and intersection are each commutative: $A\\cup B=B\\cup A$ and $A\\cap B=B\\cap A$. They are each associative: $A\\cup(B\\cup C)=(A\\cup B)\\cup C$ and likewise for $\\cap$. Distribution works in both directions: $A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$ and $A\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C)$. Check these by translating membership into “or” and “and”; changing parentheses never changes which member passes the test."
+      },
+      {
         "title": "Derive the domain",
         "text": "For $f(x)=\\sqrt{x-1}/(x-2)$, the root requires $x\\geq 1$ and the denominator requires $x\\ne 2$. Intersecting gives $[1,2)\\cup (2,\\infty )$. Declaring only $[3,4]$ as the domain defines a different, restricted function. A circle as a relation fails the function test where one input has two output heights."
       }
@@ -22,7 +26,131 @@
         "Use an explicit input to refute the proposed codomain."
       ],
       "solutionTex": "D=[-2,2],\\quad C=\\mathbb R,\\quad f(D)=[0,4]"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "assumption",
+        "id": "sets-notation-and-universe",
+        "title": "Specify the set and its universe",
+        "items": [
+          "A set contains distinct elements. List a small set, such as $S=\\{1,3,5\\}$, or describe it, such as $I=\\{n\\in\\mathbb Z:n>0\\}$. Membership $x\\in S$ is a statement about one object.",
+          "Write $A\\subseteq B$ only when every element of $A$ belongs to $B$. The empty set is a subset of every set; disjoint sets have empty intersection.",
+          "Fix a universe $U$ before taking complements: $A^{c}=U\\setminus A$. A different $U$ can change the complement."
+        ]
+      },
+      {
+        "kind": "equation",
+        "id": "set-operations",
+        "title": "Read operations as logical tests",
+        "tex": "x\\in A\\cup B\\iff(x\\in A\\lor x\\in B),\\qquad x\\in A\\cap B\\iff(x\\in A\\land x\\in B),\\qquad x\\in A^c\\iff(x\\in U\\land x\\notin A)",
+        "note": "The “or” in a union includes elements in both sets. A complement is always relative to the chosen universe."
+      },
+      {
+        "kind": "worked-example",
+        "id": "finite-set-operations",
+        "title": "Work one finite universe",
+        "strategy": "Test membership before writing each result; use an explicit witness to reject a subset claim.",
+        "setup": "Take $U=\\{1,2,3,4\\}$, $A=\\{1,3\\}$, and $B=\\{1,2,3\\}$.",
+        "steps": [
+          {
+            "label": "Subset and disjointness",
+            "text": "Every member of $A$ lies in $B$, so $A\\subseteq B$. The sets are not disjoint because $1$ belongs to both."
+          },
+          {
+            "label": "Union and intersection",
+            "text": "The shared members are $1$ and $3$; every member of either set is $1$, $2$, or $3$.",
+            "equation": "A\\cap B=\\{1,3\\},\\qquad A\\cup B=\\{1,2,3\\}"
+          },
+          {
+            "label": "Complement",
+            "text": "Subtract the members of $A$ from the specified universe, not from all integers.",
+            "equation": "A^c=U\\setminus A=\\{2,4\\}"
+          }
+        ],
+        "result": "$2\\in B$ but $2\\notin A$, so $B\\nsubseteq A$ even though $A\\subseteq B$.",
+        "verification": "The complement changes if the universe changes: with $U^{\\prime}=\\{1,2,3,4,5\\}$, it also contains $5$."
+      },
+      {
+        "kind": "derivation",
+        "id": "set-distributive-law",
+        "title": "Why the distributive law holds",
+        "strategy": "Show the same arbitrary element passes both membership tests.",
+        "setup": "Let $A,B,C$ be subsets of the same universe.",
+        "steps": [
+          {
+            "label": "Expand the left side",
+            "text": "$x\\in A\\cap(B\\cup C)$ means $x\\in A$ and at least one of $x\\in B$ or $x\\in C$.",
+            "equation": "x\\in A\\cap(B\\cup C)\\iff (x\\in A)\\land((x\\in B)\\lor(x\\in C))"
+          },
+          {
+            "label": "Distribute the and",
+            "text": "This is equivalent to $x$ lying in both $A,B$ or in both $A,C$.",
+            "equation": "((x\\in A)\\land(x\\in B))\\lor((x\\in A)\\land(x\\in C))"
+          }
+        ],
+        "result": "$A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$ by equality of members.",
+        "verification": "Replacing $(A\\cap C)$ with $C$ is invalid: elements of $C$ outside $A$ would be added."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "set-notation-transfer",
+        "outcome": "Translate a described set to a roster and decide membership.",
+        "kind": "conceptual",
+        "prompt": "In $U=\\{-2,-1,0,1,2,3\\}$, let $S=\\{n\\in U:n\\text{ is odd}\\}$. Enumerate $S$. Decide whether $0\\in S$ and $3\\in S$, and explain why writing $\\{-1,1,3,3\\}$ gives the same set.",
+        "hint": "Test every member of the finite universe against “odd”. A set records membership, not repetition.",
+        "solution": "The odd members of $U$ are $-1,1,3$, so $S=\\{-1,1,3\\}$. We have $0\\notin S$ and $3\\in S$. Repeating $3$ in a roster adds no new element.",
+        "rubric": [
+          "Enumerate exactly the odd members of the stated universe.",
+          "Use membership symbols correctly for $0$ and $3$.",
+          "Explain that repeated entries do not change a set."
+        ],
+        "solutionTex": "S=\\{-1,1,3\\},\\qquad 0\\notin S,\\quad3\\in S"
+      },
+      {
+        "id": "finite-set-transfer",
+        "outcome": "Compute set operations and a relative complement, and decide subset claims by a witness.",
+        "kind": "computational",
+        "prompt": "Let $U=\\{0,1,2,3,4\\}$, $A=\\{0,2,4\\}$, and $B=\\{2,3\\}$. Find $A\\cap B$, $A\\cup B$, $A^c$ relative to $U$, and $(A\\cup B)^c$. Is $B\\subseteq A$? Justify. Are $A$ and $B$ disjoint?",
+        "hint": "For each element of $U$, mark membership in $A$ and $B$. A single counterexample settles a false subset claim.",
+        "solution": "The only common element is $2$, so $A\\cap B=\\{2\\}$. The union is $\\{0,2,3,4\\}$. Relative to $U$, $A^c=\\{1,3\\}$ and $(A\\cup B)^c=\\{1\\}$. The subset claim fails because $3\\in B$ but $3\\notin A$. They are not disjoint because $2\\in A\\cap B$.",
+        "rubric": [
+          "Use the stated $U$ for both complements.",
+          "Include $3$ in the union but not the intersection.",
+          "Give the member $3$ as a witness against $B\\subseteq A$.",
+          "Use the shared member $2$ to reject disjointness."
+        ],
+        "solutionTex": "A\\cap B=\\{2\\},\\quad A\\cup B=\\{0,2,3,4\\},\\quad A^c=\\{1,3\\},\\quad(A\\cup B)^c=\\{1\\}"
+      },
+      {
+        "id": "distributive-transfer",
+        "outcome": "Prove a set law by element membership and reject a tempting false variant.",
+        "kind": "proof",
+        "prompt": "Prove $A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$ for subsets of one universe. Is $A\\cap(B\\cup C)=(A\\cap B)\\cup C$ always true? Give a counterexample if not.",
+        "hint": "Start with an arbitrary $x$ and translate $\\cap$ to “and” and $\\cup$ to “or”. For the second claim, try an element of $C$ that is outside $A$.",
+        "solution": "For any $x$, membership in the left side means $(x\\in A)\\land((x\\in B)\\lor(x\\in C))$. Distributing gives $((x\\in A)\\land(x\\in B))\\lor((x\\in A)\\land(x\\in C))$, exactly membership in the right side. For the false variant, take $A=\\{1\\}$, $B=\\varnothing$, $C=\\{2\\}$ in $U=\\{1,2\\}$: the left side is empty but the proposed right side is $\\{2\\}$.",
+        "rubric": [
+          "Prove both directions through an arbitrary member or an equivalent biconditional.",
+          "Keep $A$ in both intersection terms.",
+          "Give a concrete universe and contrasting results for the false variant."
+        ],
+        "solutionTex": "x\\in A\\cap(B\\cup C)\\iff (x\\in A\\cap B)\\lor(x\\in A\\cap C)"
+      },
+      {
+        "id": "commutative-associative-transfer",
+        "outcome": "Use commutativity and associativity to rearrange a union without changing members.",
+        "kind": "proof",
+        "prompt": "For arbitrary sets $A,B,C$, justify $(A\\cup B)\\cup C=B\\cup(A\\cup C)$ by naming each law or by testing an arbitrary member. Does the same rearrangement hold with every $\\cup$ replaced by $\\cap$?",
+        "hint": "First change the grouping; then swap $A$ and $B$. Both operations are available for union and intersection.",
+        "solution": "Associativity gives $(A\\cup B)\\cup C=A\\cup(B\\cup C)$. Commutativity of the outer union gives $(B\\cup C)\\cup A$, and associativity/commutativity yield $B\\cup(A\\cup C)$. More directly, both sides contain exactly the members in at least one of $A,B,C$. The all-intersection statement also holds, because intersection is associative and commutative; both sides contain exactly the members in all three sets.",
+        "rubric": [
+          "Name or demonstrate both associative and commutative steps.",
+          "Apply the same membership reasoning to intersection.",
+          "Do not invoke distributivity for a pure rearrangement."
+        ],
+        "solutionTex": "(A\\cup B)\\cup C=A\\cup(B\\cup C)=B\\cup(A\\cup C)"
+      }
+    ]
   },
   "function-shapes": {
     "prerequisites": ["sets-functions-domains"],
