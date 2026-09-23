@@ -3923,7 +3923,7 @@
       "source_id": "MH2100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Cross products",
-      "physical_pages_from_audit": "2–54; cross product 8–12; candidate plane 13–15; differentiability 16–26; chain 27–36; implicit 37–44; directional 45–54",
+      "physical_pages_from_audit": "PDF physical pages 8–10 (cross-product definition, geometric characterization, and algebraic laws).",
       "linked_concept_ids": [
         "cross-products-and-planes",
         "total-differentiability",
@@ -3933,8 +3933,8 @@
         "implicit-functions-and-tangents",
         "directional-derivatives-and-gradient"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Cross products' at 2–54; cross product 8–12; candidate plane 13–15; differentiability 16–26; chain 27–36; implicit 37–44; directional 45–54; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_added_with_evidence_limits",
+      "gap": "Page 8’s opening scalar-product recap is prerequisite review already represented by the vectors-and-coordinates route, so no second scalar-product outcome is claimed. Pages 8–10 map the ordered component calculation, geometric area/orientation and dependent-input zero case, and algebraic laws with a nonassociativity counterexample. The cross scene is only a candidate; its alignment and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3945,15 +3945,19 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "cross-products-and-planes:component-calculation",
+        "cross-products-and-planes:geometric-area-normal",
+        "cross-products-and-planes:algebraic-properties-and-nonassociativity"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_03:02",
       "source_id": "MH2100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "planes",
-      "physical_pages_from_audit": "2–54; cross product 8–12; candidate plane 13–15; differentiability 16–26; chain 27–36; implicit 37–44; directional 45–54",
+      "physical_pages_from_audit": "PDF physical pages 11–15 (point-normal and two-direction planes; graph tangent-plane construction and example).",
       "linked_concept_ids": [
         "cross-products-and-planes",
         "total-differentiability",
@@ -3963,8 +3967,8 @@
         "implicit-functions-and-tangents",
         "directional-derivatives-and-gradient"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'planes' at 2–54; cross product 8–12; candidate plane 13–15; differentiability 16–26; chain 27–36; implicit 37–44; directional 45–54; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_with_documented_exclusion",
+      "gap": "Pages 11–12 map the point-normal and independent-direction plane theorems. Page 13 maps the graph-slice construction; page 15’s quadratic calculation has a separate outcome. Page 14 repeats the candidate-plane function represented by the page-13 construction and the companion outcome total-differentiability:candidate-plane-function; its question comparing a candidate with a linear approximation duplicates the supplement outcome candidate-plane-is-not-yet-approximation (#66), so no second outcome or practice is claimed. The page-14 definition/question were visually reviewed; scene alignment and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3975,8 +3979,13 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "cross-products-and-planes:point-normal-plane",
+        "cross-products-and-planes:two-direction-plane",
+        "cross-products-and-planes:graph-tangent-plane-construction",
+        "cross-products-and-planes:source-quadratic-plane-example"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_03:03",
@@ -4016,7 +4025,7 @@
       "source_id": "MH2100_Lecture_03",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "errors",
-      "physical_pages_from_audit": "2–54; cross product 8–12; candidate plane 13–15; differentiability 16–26; chain 27–36; implicit 37–44; directional 45–54",
+      "physical_pages_from_audit": "PDF physical pages 25–26 (linear-approximation formula and cone-volume error estimate).",
       "linked_concept_ids": [
         "cross-products-and-planes",
         "total-differentiability",
@@ -4026,8 +4035,8 @@
         "implicit-functions-and-tangents",
         "directional-derivatives-and-gradient"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'errors' at 2–54; cross product 8–12; candidate plane 13–15; differentiability 16–26; chain 27–36; implicit 37–44; directional 45–54; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_with_error_limit_correction",
+      "gap": "Pages 25–26 map the total-differentiability hypothesis for first-order change and the cone sensitivity calculation. The source’s 20π is only a first-order estimate; the guide checks the exact box and records the larger worst-case error. A scene and learner performance have not been verified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4038,8 +4047,11 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "certifying-differentiability-and-errors:linear-approximation-error-theorem",
+        "certifying-differentiability-and-errors:cone-first-order-error-estimate"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_03:05",
@@ -16116,6 +16128,834 @@
         "practiced": "independent task directly applies skill; learner performance unverified",
         "visualized": "No outcome-specific scene verified.",
         "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:component-calculation",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Compute the ordered cross product from its component formula and check orthogonality.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 8,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 8 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8],
+          "method": "Rendered physical page(s) 8 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 8 recalls the dot product and defines a×b by the signed component expansion."
+        },
+        "page_heading": "Definition (the Cross/Vector Product)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[Cross product and rank]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 8."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-components]",
+            "claim": "The cited guide block works a concrete instance of the source outcome.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[cross-product-component-area-transfer]",
+            "claim": "The independent task requires the outcome and includes feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The calculation, guide and independent transfer task were inspected. The cross scene has not been checked against this outcome, and learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_03:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[Cross product and rank]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 8."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-components]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 8."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[cross-product-component-area-transfer]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 8."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "worked instance inspected",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:geometric-area-normal",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Interpret a nonzero cross product as an oriented common normal whose magnitude is parallelogram area, and recognize the zero result for dependent inputs.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 9,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 9 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9],
+          "method": "Rendered physical page(s) 9 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 9 states perpendicularity, magnitude, right-hand orientation and the zero cases for zero or parallel vectors."
+        },
+        "page_heading": "Theorem (a Geometric Characterization of Cross/Vector Product)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-geometric-characterization]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 9."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-components]",
+            "claim": "The cited guide block computes a nonzero pair's area and a dependent pair's zero product.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[cross-product-component-area-transfer]",
+            "claim": "The independent task asks for both a nonzero cross product and a dependent pair's zero-area interpretation, with feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The theorem, a nonzero area computation, a dependent-input zero contrast and both cases in independent practice are present. Rendered scene behavior and learner performance are unverified.",
+      "source_section_id": "MH2100_Lecture_03:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-geometric-characterization]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 9."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-components]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 9."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[cross-product-component-area-transfer]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 9."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "Nonzero area calculation and dependent-input zero contrast inspected.",
+        "practiced": "Independent tasks include both nonzero and dependent inputs with feedback; learner performance unverified.",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:algebraic-properties-and-nonassociativity",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Apply anti-commutativity, distributivity and scalar compatibility, and reject associativity with a counterexample.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 10,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 10 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10],
+          "method": "Rendered physical page(s) 10 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 10 lists the algebraic laws, derives zero products, and explicitly warns that associativity fails."
+        },
+        "page_heading": "Algebraic Properties of the Cross/Vector Product"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[The algebraic laws have limits]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 10."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-algebraic-properties]",
+            "claim": "The cited guide block works a concrete instance of the source outcome.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[cross-product-laws-transfer]",
+            "claim": "The independent task requires the outcome and includes feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The basis-vector counterexample and separate transfer task were inspected; no scene or learner check is claimed.",
+      "source_section_id": "MH2100_Lecture_03:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[The algebraic laws have limits]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 10."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[cross-product-algebraic-properties]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 10."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[cross-product-laws-transfer]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 10."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "worked instance inspected",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:point-normal-plane",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Write the unique plane through a point perpendicular to a specified nonzero normal.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 11,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 11 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11],
+          "method": "Rendered physical page(s) 11 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 11 states the point and nonzero-normal hypotheses and derives n·(x−p₀)=0."
+        },
+        "page_heading": "Theorem (Plane Existence Theorem 1)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[point-normal-plane-theorem]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 11."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[point-normal-plane-example]",
+            "claim": "The cited guide block works a concrete instance of the source outcome.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercise",
+            "claim": "The independent task requires the outcome and includes feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Hypotheses, substitution and point/normal verification were inspected; no learner check is claimed.",
+      "source_section_id": "MH2100_Lecture_03:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[point-normal-plane-theorem]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 11."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[point-normal-plane-example]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 11."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercise",
+            "basis": "Current catalog or guide inspection against source physical page(s) 11."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "worked instance inspected",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:two-direction-plane",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Construct the unique plane through a point parallel to two nonzero nonparallel directions.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 12,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 12 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12],
+          "method": "Rendered physical page(s) 12 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 12 requires nonzero nonparallel directions, defines their nonzero cross-product normal, and gives the plane parametrically."
+        },
+        "page_heading": "Theorem (Plane Existence Theorem 2)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[plane-from-two-directions-theorem]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[two-direction-plane-example]",
+            "claim": "The cited guide block works a concrete instance of the source outcome.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[plane-from-directions-transfer]",
+            "claim": "The independent task requires the outcome and includes feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parametric and point-normal descriptions are linked and independently practiced; scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[plane-from-two-directions-theorem]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[two-direction-plane-example]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 12."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[plane-from-directions-transfer]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 12."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "worked instance inspected",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:graph-tangent-plane-construction",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Derive the graph candidate tangent-plane function by crossing its two coordinate-slice tangent vectors.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 13,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page 13 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13],
+          "method": "Rendered physical page 13 at 120 dpi with pdftoppm; visually checked printed page number, heading and equations; cross-checked the page boundary with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 13 crosses the coordinate-slice tangent vectors to derive the normal (-f_x,-f_y,1) and writes the candidate tangent-plane equation."
+        },
+        "page_heading": "Back to Tangent Plane Functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[Graph slices give a candidate tangent plane]",
+            "claim": "The guide derives the candidate graph plane from the slice vectors.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 13, 15."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[graph-tangent-plane-from-slices]",
+            "claim": "The derivation block works the cross product and point-normal equation step by step.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[graph-plane-from-slices-transfer]",
+            "claim": "An independent function and point require the same slice-vector construction and include solution feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-13 construction and independent application task are mapped. Page 15’s exact quadratic calculation has its own outcome. The page-14 comparison question is excluded as duplicate of #66; scene and learner evidence remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "Inspected the exact guide locator against rendered physical page 13; learner performance remains unverified."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[Graph slices give a candidate tangent plane]",
+            "basis": "Inspected the exact guide locator against rendered physical page 13; learner performance remains unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[graph-tangent-plane-from-slices]",
+            "basis": "Inspected the exact guide locator against rendered physical page 13; learner performance remains unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[graph-plane-from-slices-transfer]",
+            "basis": "Inspected the exact guide locator against rendered physical page 13; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "Stepwise derivation inspected; equations checked.",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "certifying-differentiability-and-errors:linear-approximation-error-theorem",
+      "concept_id": "certifying-differentiability-and-errors",
+      "outcome": "Use total differentiability at an interior point to obtain a first-order output change with a norm-small remainder.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 25,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 25 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25],
+          "method": "Rendered physical page(s) 25 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 25 assumes total differentiability at p, gives a local approximation and warns that it lacks an error bound."
+        },
+        "page_heading": "Theorem (the Linear-Approximation Formula)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#certifying-differentiability-and-errors.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.contentBlocks[linear-approximation-formula]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 25."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.contentBlocks[cone-volume-sensitivity-example]",
+            "claim": "The cited guide block works a concrete instance of the source outcome.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.exercises[sensitivity-versus-exact-box]",
+            "claim": "The independent task requires the outcome and includes feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "tangent",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The pointwise differentiability hypothesis and first-order expansion are stated; the scene and learner performance have not been checked.",
+      "source_section_id": "MH2100_Lecture_03:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#certifying-differentiability-and-errors.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.contentBlocks[linear-approximation-formula]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 25."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.contentBlocks[cone-volume-sensitivity-example]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 25."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.exercises[sensitivity-versus-exact-box]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 25."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "worked instance inspected",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "certifying-differentiability-and-errors:cone-first-order-error-estimate",
+      "concept_id": "certifying-differentiability-and-errors",
+      "outcome": "Compute the cone-volume first-order error estimate from componentwise measurement tolerances and distinguish it from the exact maximum.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 26,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 26 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26],
+          "method": "Rendered physical page(s) 26 at 120 dpi with pdftoppm; visually checked printed page numbers, headings and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 26 models cone volume from radius and height, sets each measurement error to at most 0.1, and computes the first-order absolute-error estimate 20π."
+        },
+        "page_heading": "Total Differentiability — Example 3"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#certifying-differentiability-and-errors.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.sections[Linearization estimates change, not finite error]",
+            "claim": "This guide block or section states the page-verified outcome and its conditions.",
+            "method": "Compared the cited guide statement and its hypotheses with rendered physical source page(s) 26."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.contentBlocks[cone-volume-sensitivity-example]",
+            "claim": "The cited guide block works a concrete instance of the source outcome.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.exercises[sensitivity-versus-exact-box]",
+            "claim": "The independent task requires the outcome and includes feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "tangent",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source estimate is reproduced and corrected against the exact uncertainty box. Scene alignment and learner performance are unverified.",
+      "source_section_id": "MH2100_Lecture_03:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#certifying-differentiability-and-errors.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.sections[Linearization estimates change, not finite error]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 26."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.contentBlocks[cone-volume-sensitivity-example]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 26."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.exercises[sensitivity-versus-exact-box]",
+            "basis": "Current catalog or guide inspection against source physical page(s) 26."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked physical page, concept title, cited guide content, exact practice feedback, and scene status.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "match",
+        "worked": "worked instance inspected",
+        "practiced": "independent task present; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level render or alignment check was performed.",
+        "checked": "No independent learner check was performed."
+      }
+    },
+    {
+      "id": "cross-products-and-planes:source-quadratic-plane-example",
+      "concept_id": "cross-products-and-planes",
+      "outcome": "Compute the source quadratic graph’s candidate tangent plane at (1,1) from its value and coordinate partials.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "physical_page": 15,
+        "inspection": "Canonical local lecture PDF SHA-256 matched; physical page(s) 15 rendered at 120 dpi and visually checked, then cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15],
+          "method": "Rendered physical page(s) 15 at 120 dpi with pdftoppm; visually checked printed page number, heading and equations; cross-checked page boundaries with pdftotext -layout; canonical PDF SHA-256 matched d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb.",
+          "claim_observed": "Page 15 asks for the tangent-plane function of f(x,y)=2x^2+y^2 at (1,1), evaluates its two partials, and derives z=4x+2y-3."
+        },
+        "page_heading": "Tangent Plane Functions — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "claim": "The catalog names the parent concept route.",
+            "method": "Checked only the exact concept title; it names the parent topic route and is not treated as an atomic-skill title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[Graph slices give a candidate tangent plane]",
+            "claim": "The guide states the candidate-plane formula and the role of the two coordinate partials.",
+            "method": "Compared the cited guide statement and hypotheses with rendered physical source page(s) 15."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[graph-tangent-plane-source-example]",
+            "claim": "The source quadratic example is worked through its base value, partials, and final plane.",
+            "method": "Checked the exact steps and equations in this guide block; calculations were independently verified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[graph-plane-from-slices-transfer]",
+            "claim": "An independent function and point require a candidate plane and include solution feedback.",
+            "method": "Checked that the independent task changes the data or setting and has solution feedback; learner performance remains unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "cross",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source quadratic example is worked and transferred to a different function and point. The page does not establish learner performance or outcome-level scene alignment.",
+      "source_section_id": "MH2100_Lecture_03:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#cross-products-and-planes.title",
+            "basis": "The catalog title names the parent concept route; no atomic-skill title is claimed."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.sections[Graph slices give a candidate tangent plane]",
+            "basis": "Compared the exact guide locator with rendered physical page 15; learner performance is unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.contentBlocks[graph-tangent-plane-source-example]",
+            "basis": "Compared the exact guide locator with rendered physical page 15; learner performance is unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#cross-products-and-planes.exercises[graph-plane-from-slices-transfer]",
+            "basis": "Compared the exact guide locator with rendered physical page 15; learner performance is unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of the hash-checked rendered page 15, guide statement, exact calculation and independent task; no scene or learner checks.",
+        "named": "Parent topic route named; exact atomic skill title not claimed.",
+        "stated": "Source definition and guide statement match.",
+        "worked": "Exact quadratic calculation inspected and verified.",
+        "practiced": "Independent transfer task and feedback inspected; learner performance unverified.",
+        "visualized": "No outcome-level scene check.",
+        "checked": "No independent learner response check."
       }
     }
   ]
