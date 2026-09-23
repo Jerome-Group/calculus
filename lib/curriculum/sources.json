@@ -7,7 +7,16 @@
     "pages": 42,
     "course": "MH1100",
     "kind": "lecture",
-    "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d"
+    "sha256": "7f27aae06453b925ce419ee020d82a4c4ba9a358e4ac452e097e0abcaa7a096d",
+    "errata": [
+      {
+        "page": 27,
+        "printed": "Page 27 describes $\\log_b x$ as increasing for $x>1$ without stating the condition on $b$.",
+        "correction": "The increase claim requires $b>1$. For $0<b<1$, $\\log_b x$ is decreasing on $x>0$.",
+        "justification": "Page 26 permits $b>0$, $b\\ne1$; page 19 distinguishes increasing and decreasing exponential bases, and $\\log_b$ is the corresponding inverse.",
+        "provenance": "Direct visual inspection of the hash-matched physical page and cross-check against pages 19 and 26; canonical PDF unchanged."
+      }
+    ]
   },
   "MH1100_Lecture_08": {
     "id": "MH1100_Lecture_08",
