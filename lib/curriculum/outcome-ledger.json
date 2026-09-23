@@ -2302,7 +2302,7 @@
       "physical_pages_from_audit": "2–49",
       "linked_concept_ids": ["limits-one-sided", "infinite-limits"],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'vertical asymptotes' at 2–49; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "One source-specific atomic outcome is mapped for 'vertical asymptotes'. Other subskills, source examples, and independent learner validation require further review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2313,8 +2313,8 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": ["infinite-limits:one-sided-asymptote"],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_03:01",
@@ -2346,7 +2346,7 @@
       "physical_pages_from_audit": "2–41",
       "linked_concept_ids": ["limit-laws-squeeze"],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'substitution and replacement' at 2–41; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "One source-specific atomic outcome is mapped for 'substitution and replacement'. Other subskills, source examples, and independent learner validation require further review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2357,8 +2357,8 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": ["limit-laws-squeeze:replacement-law"],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_03:03",
@@ -2390,7 +2390,7 @@
       "physical_pages_from_audit": "2–41",
       "linked_concept_ids": ["limit-laws-squeeze"],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'squeeze theorem' at 2–41; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "One source-specific atomic outcome is mapped for 'squeeze theorem'. Other subskills, source examples, and independent learner validation require further review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2401,8 +2401,8 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": ["limit-laws-squeeze:squeeze-hypotheses"],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_04:01",
@@ -10174,6 +10174,282 @@
         "practiced": "independent transfer task inspected; learner performance unverified",
         "visualized": "Candidate scene not verified for this exact outcome.",
         "checked": "No independent learner outcome-level check."
+      }
+    },
+    {
+      "id": "infinite-limits:one-sided-asymptote",
+      "concept_id": "infinite-limits",
+      "outcome": "Certify a vertical asymptote from a correctly signed one-sided infinite limit rather than a denominator zero.",
+      "core_source": {
+        "id": "MH1100_Lecture_02",
+        "physical_page": 46,
+        "inspection": "Canonical local lecture PDF pages rendered with Poppler and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [46, 47],
+          "method": "Rendered physical PDF pages visually inspected; extracted text checked for page boundaries.",
+          "claim_observed": "Page 46 defines a vertical asymptote by any one finite-side or two-sided infinite limit; page 47 determines opposite signs for tangent at pi/2."
+        },
+        "page_heading": "Definition: vertical asymptote"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#infinite-limits.title",
+            "claim": "The existing catalog names the source topic.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[vertical-asymptote-one-sided-criterion]",
+            "claim": "The source-page condition and its eligibility are stated separately.",
+            "method": "Compared the theorem block with the rendered source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[tangent-vertical-asymptote]",
+            "claim": "The source example is reasoned through with its domain and sign or bound conditions.",
+            "method": "Checked each algebraic step and conclusion against source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.exercises[rational-asymptote-transfer]",
+            "claim": "An independent transfer prompt, hint, solution, and rubric require this exact decision.",
+            "method": "Solved the transfer case independently and compared it to the guide; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-improper",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Definition, worked tangent signs, and independent rational practice are present. Scene behavior, learner performance, and other infinite-limit subskills remain unverified.",
+      "source_section_id": "MH1100_Lecture_02:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#infinite-limits.title",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[vertical-asymptote-one-sided-criterion]",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[tangent-vertical-asymptote]",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.exercises[rational-asymptote-transfer]",
+            "basis": "current guide or catalog inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages with catalog, guide theorem, worked example, and transfer task.",
+        "named": "match",
+        "stated": "match",
+        "worked": "algebra and eligibility checked",
+        "practiced": "task requires the exact outcome; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:replacement-law",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Replace a function by one equal on a deleted neighborhood, retaining the domain restriction and ignoring the target value.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 23,
+        "inspection": "Canonical local lecture PDF pages rendered with Poppler and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [23, 24],
+          "method": "Rendered physical PDF pages visually inspected; extracted text checked for page boundaries.",
+          "claim_observed": "Page 23 states equal values away from the target preserve existence and value of limits; page 24 applies it after cancelling a factor in a deleted domain."
+        },
+        "page_heading": "Theorem: the replacement law"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The existing catalog names the source topic.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "claim": "The source-page condition and its eligibility are stated separately.",
+            "method": "Compared the theorem block with the rendered source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-factor-cancellation]",
+            "claim": "The source example is reasoned through with its domain and sign or bound conditions.",
+            "method": "Checked each algebraic step and conclusion against source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[replacement-law-transfer]",
+            "claim": "An independent transfer prompt, hint, solution, and rubric require this exact decision.",
+            "method": "Solved the transfer case independently and compared it to the guide; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Replacement theorem, factor cancellation, and independent point-value transfer are present. General substitution rules and learner performance remain unverified.",
+      "source_section_id": "MH1100_Lecture_03:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-punctured-neighborhood]",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[replacement-law-factor-cancellation]",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[replacement-law-transfer]",
+            "basis": "current guide or catalog inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages with catalog, guide theorem, worked example, and transfer task.",
+        "named": "match",
+        "stated": "match",
+        "worked": "algebra and eligibility checked",
+        "practiced": "task requires the exact outcome; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "limit-laws-squeeze:squeeze-hypotheses",
+      "concept_id": "limit-laws-squeeze",
+      "outcome": "Check near-point order and matching finite outer limits before concluding a squeezed limit exists.",
+      "core_source": {
+        "id": "MH1100_Lecture_03",
+        "physical_page": 31,
+        "inspection": "Canonical local lecture PDF pages rendered with Poppler and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31, 34, 36],
+          "method": "Rendered physical PDF pages visually inspected; extracted text checked for page boundaries.",
+          "claim_observed": "Page 31 requires two existing equal outer limits and near-point inequalities; pages 34 and 36 bound x sin(1/x) between -|x| and |x|."
+        },
+        "page_heading": "Theorem 3: the squeeze theorem"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "claim": "The existing catalog names the source topic.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[squeeze-theorem-hypotheses]",
+            "claim": "The source-page condition and its eligibility are stated separately.",
+            "method": "Compared the theorem block with the rendered source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[squeeze-oscillating-factor]",
+            "claim": "The source example is reasoned through with its domain and sign or bound conditions.",
+            "method": "Checked each algebraic step and conclusion against source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[squeeze-bounds-transfer]",
+            "claim": "An independent transfer prompt, hint, solution, and rubric require this exact decision.",
+            "method": "Solved the transfer case independently and compared it to the guide; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-squeeze",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source theorem, worked oscillatory bound, and independent transfer are present. Geometric sine-limit proof, scene alignment, and learner performance remain unverified.",
+      "source_section_id": "MH1100_Lecture_03:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#limit-laws-squeeze.title",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[squeeze-theorem-hypotheses]",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.contentBlocks[squeeze-oscillating-factor]",
+            "basis": "current guide or catalog inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limit-laws-squeeze.exercises[squeeze-bounds-transfer]",
+            "basis": "current guide or catalog inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages with catalog, guide theorem, worked example, and transfer task.",
+        "named": "match",
+        "stated": "match",
+        "worked": "algebra and eligibility checked",
+        "practiced": "task requires the exact outcome; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
       }
     }
   ]
