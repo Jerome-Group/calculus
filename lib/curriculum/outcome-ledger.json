@@ -5252,11 +5252,11 @@
       "id": "MH1100_Lecture_13:01",
       "source_id": "MH1100_Lecture_13",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Indeterminate forms and L’Hôpital",
-      "physical_pages_from_audit": "2–15",
+      "topic_from_audit_inventory": "Indeterminate forms and L’Hôpital’s Rule, including Cauchy’s mean value theorem proof",
+      "physical_pages_from_audit": "Physical pages 3–15: 0/0 (3), earlier cancellation and geometric limits (4), infinity/infinity (5), rule and hypotheses (6), endpoint variants and special-case derivative argument (7), logarithmic quotient example (8), product conversion (9–10), difference conversion and secant-cosecant example (11–12), variable-power conversion and example (13–14), and Cauchy’s mean value theorem and proof (15).",
       "linked_concept_ids": ["lhopital"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Indeterminate forms and L’Hôpital' at 2–15; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 3–15 are mapped to source-specific statements, checked worked reasoning, and changed-data practice. Pages 1–2 are reviewed exclusions. No outcome-specific scene alignment or learner performance/mastery is claimed.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -5265,10 +5265,40 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "lhopital:lecture13-zero-over-zero-form",
+        "lhopital:lecture13-infinity-over-infinity-form",
+        "lhopital:lecture13-choose-limit-method",
+        "lhopital:lecture13-apply-lhopital-hypotheses",
+        "lhopital:lecture13-extend-lhopital-endpoints",
+        "lhopital:lecture13-special-case-derivative-proof",
+        "lhopital:lecture13-convert-indeterminate-product",
+        "lhopital:lecture13-convert-indeterminate-difference",
+        "lhopital:lecture13-convert-variable-power",
+        "lhopital:lecture13-cauchy-mean-value-theorem",
+        "lhopital:lecture13-cauchy-mean-value-proof"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "3–15",
+      "inspected_physical_pages": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Cover page only; it identifies the course and handout but contains no lesson content."
+        },
+        {
+          "physical_page": 2,
+          "reason": "Synopsis page with the topic headings only; it contains no theorem, worked reasoning, or learner task."
+        }
+      ],
+      "source_review_notes": [
+        "The rendered physical pages 1 and 2 are a cover and synopsis; instruction starts on p3.",
+        "Page 7 gives a derivative-definition argument only for the stronger local case f(a)=g(a)=0, continuous derivatives, and g'(a)≠0; it is not the proof of the full L’Hôpital theorem.",
+        "On p14, rendered inspection confirms the numerator derivative is 4 cos(4x)/(1+sin(4x)) and the denominator derivative is sec²x; extracted text is unreliable here.",
+        "Page 15 states Cauchy’s mean value theorem and proves it with an auxiliary function and Rolle’s theorem."
+      ]
     },
     {
       "id": "MH1101_Chapter_01_Notes:01",
@@ -42730,6 +42760,1051 @@
         "practiced": "transfer solution checked; learner performance unverified",
         "visualized": "scene candidate identified; exact outcome alignment unverified",
         "checked": "no independent learner performance check"
+      }
+    },
+    {
+      "id": "lhopital:lecture13-zero-over-zero-form",
+      "concept_id": "lhopital",
+      "outcome": "Classify a quotient whose numerator and denominator both tend to zero.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 3,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p3 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3, 6],
+          "method": "Rendered canonical PDF pages [3, 6]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [3, 6] support: Classify a quotient whose numerator and denominator both tend to zero."
+        },
+        "page_heading": "Indeterminate forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-zero-over-zero-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 3."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-zero-over-zero-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [3, 6]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-zero-over-zero-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [3, 6] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-zero-over-zero-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-zero-over-zero-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-zero-over-zero-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-zero-over-zero-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-zero-over-zero-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-infinity-over-infinity-form",
+      "concept_id": "lhopital",
+      "outcome": "Classify a quotient whose numerator and denominator have infinite limits.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 5,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p5 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5, 6],
+          "method": "Rendered canonical PDF pages [5, 6]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [5, 6] support: Classify a quotient whose numerator and denominator have infinite limits."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-infinity-over-infinity-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 5."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-infinity-over-infinity-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [5, 6]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-infinity-over-infinity-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [5, 6] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-infinity-over-infinity-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-infinity-over-infinity-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-infinity-over-infinity-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-infinity-over-infinity-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-infinity-over-infinity-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-choose-limit-method",
+      "concept_id": "lhopital",
+      "outcome": "Choose cancellation, a known special limit, or L’Hôpital only when the method fits.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 4,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p4 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4],
+          "method": "Rendered canonical PDF pages [4]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [4] support: Choose cancellation, a known special limit, or L’Hôpital only when the method fits."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-method-contrast-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 4."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-method-contrast-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [4]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-method-contrast-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [4] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-method-contrast-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-method-contrast-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-method-contrast-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-method-contrast-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-method-contrast-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-apply-lhopital-hypotheses",
+      "concept_id": "lhopital",
+      "outcome": "Check the form and theorem hypotheses before evaluating a quotient by derivative ratios.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 6,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p6 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6, 8],
+          "method": "Rendered canonical PDF pages [6, 8]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [6, 8] support: Check the form and theorem hypotheses before evaluating a quotient by derivative ratios."
+        },
+        "page_heading": "L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-lhopital-rule-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 6."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-lhopital-rule-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [6, 8]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-logarithm-quotient-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [6, 8] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-lhopital-rule-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-lhopital-rule-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-lhopital-rule-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-logarithm-quotient-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-lhopital-rule-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-extend-lhopital-endpoints",
+      "concept_id": "lhopital",
+      "outcome": "Use the one-sided or infinite-endpoint version with the approached domain and form checked.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 7,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p7 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7],
+          "method": "Rendered canonical PDF pages [7]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [7] support: Use the one-sided or infinite-endpoint version with the approached domain and form checked."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-endpoint-variants-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 7."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-endpoint-variants-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [7]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-endpoint-variants-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [7] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-endpoint-variants-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-endpoint-variants-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-endpoint-variants-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-endpoint-variants-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-endpoint-variants-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-special-case-derivative-proof",
+      "concept_id": "lhopital",
+      "outcome": "Derive the source’s stronger-hypothesis local 0/0 case from derivative definitions.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 7,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p7 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7],
+          "method": "Rendered canonical PDF pages [7]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [7] support: Derive the source’s stronger-hypothesis local 0/0 case from derivative definitions."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-special-case-proof-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 7."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-special-case-proof-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [7]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-special-case-proof-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [7] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-special-case-proof-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-special-case-proof-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-special-case-proof-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-special-case-proof-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-special-case-proof-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-convert-indeterminate-product",
+      "concept_id": "lhopital",
+      "outcome": "Convert a 0 times infinity product into a usable quotient and choose a simple form.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 9,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p9 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 10],
+          "method": "Rendered canonical PDF pages [9, 10]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [9, 10] support: Convert a 0 times infinity product into a usable quotient and choose a simple form."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-product-conversion-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 9."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-product-conversion-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [9, 10]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.supplementalBlocks[lhopital-convert-product]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [9, 10] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-product-conversion-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-product-conversion-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-product-conversion-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.supplementalBlocks[lhopital-convert-product]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-product-conversion-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-convert-indeterminate-difference",
+      "concept_id": "lhopital",
+      "outcome": "Convert an infinity-minus-infinity difference before applying the quotient rule.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 11,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p11 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 12],
+          "method": "Rendered canonical PDF pages [11, 12]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [11, 12] support: Convert an infinity-minus-infinity difference before applying the quotient rule."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-difference-conversion-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 11."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-difference-conversion-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [11, 12]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-difference-conversion-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [11, 12] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-difference-conversion-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-difference-conversion-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-difference-conversion-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-difference-conversion-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-difference-conversion-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-convert-variable-power",
+      "concept_id": "lhopital",
+      "outcome": "Use logarithms to convert an indeterminate variable power to a product and quotient.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 13,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p13 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14],
+          "method": "Rendered canonical PDF pages [13, 14]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [13, 14] support: Use logarithms to convert an indeterminate variable power to a product and quotient."
+        },
+        "page_heading": "Indeterminate Forms and L’Hospital’s Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-variable-power-conversion-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 13."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-variable-power-conversion-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [13, 14]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-variable-power-example-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [13, 14] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-variable-power-conversion-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-variable-power-conversion-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-variable-power-conversion-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-variable-power-example-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-variable-power-conversion-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-cauchy-mean-value-theorem",
+      "concept_id": "lhopital",
+      "outcome": "State and apply Cauchy’s mean value theorem with its hypotheses.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 15,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p15 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15],
+          "method": "Rendered canonical PDF pages [15]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [15] support: State and apply Cauchy’s mean value theorem with its hypotheses."
+        },
+        "page_heading": "Cauchy’s Mean Value Theorem"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[cauchy-mean-value-theorem].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 15."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[cauchy-mean-value-theorem]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [15]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-application-worked]",
+            "claim": "A guide-created application of the source theorem is independently calculated; source p15 does not present this application.",
+            "method": "Checked all theorem hypotheses and recomputed the endpoint and derivative ratios in the guide-created example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-cauchy-mean-value-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[cauchy-mean-value-theorem].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[cauchy-mean-value-theorem]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-application-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-cauchy-mean-value-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "lhopital:lecture13-cauchy-mean-value-proof",
+      "concept_id": "lhopital",
+      "outcome": "Reconstruct the p15 proof using an auxiliary function and Rolle’s theorem.",
+      "core_source": {
+        "id": "MH1100_Lecture_13",
+        "physical_page": 15,
+        "sha256": "7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693",
+        "inspection": "Rendered and visually inspected the canonical 15-page PDF, SHA-256 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693; checked physical p15 and cross-checked its layout text.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15],
+          "method": "Rendered canonical PDF pages [15]; visually inspected the page image(s) and cross-checked extracted layout text. SHA-256: 7aae00a0abab034a81b96be4c4ff09feae30648dc66bde87b25619eb05ec9693.",
+          "claim_observed": "Physical page(s) [15] support: Reconstruct the p15 proof using an auxiliary function and Rolle’s theorem."
+        },
+        "page_heading": "Cauchy’s Mean Value Theorem"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-proof-statement].title",
+            "claim": "A distinct learner-facing block names the source skill.",
+            "method": "Compared the guide title with the SHA-matched physical page 15."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-proof-statement]",
+            "claim": "The guide states the form, hypotheses, method boundary, or theorem used by this skill.",
+            "method": "Checked the complete statement against the rendered source pages [15]."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-proof-worked]",
+            "claim": "The worked reasoning follows the source-specific page and was independently recalculated.",
+            "method": "Compared the guide derivation with rendered source page(s) [15] and checked its algebra/calculus independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-cauchy-mean-value-proof-transfer]",
+            "claim": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the feedback against the source skill."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-lhopital",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source-specific statement, worked reasoning, and independent transfer were inspected. The plane-lhopital scene is only a candidate; outcome-specific scene alignment and learner performance or mastery are unverified.",
+      "source_section_id": "MH1100_Lecture_13:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-proof-statement].title",
+            "basis": "A distinct learner-facing block names the source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-proof-statement]",
+            "basis": "The guide states the form, hypotheses, method boundary, or theorem used by this skill."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.contentBlocks[lecture13-cauchy-mean-value-proof-worked]",
+            "basis": "The worked reasoning follows the source-specific page and was independently recalculated."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#lhopital.exercises[lecture13-cauchy-mean-value-proof-transfer]",
+            "basis": "Changed-data transfer includes a hint, solution, and rubric; learner performance is not claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "inspection_check": {
+        "method": "Compared the rendered canonical page and its mathematical text with the named guide block, worked derivation, and independently solved changed-data practice.",
+        "named": "Distinct outcome title inspected.",
+        "stated": "The form, hypotheses, theorem statement, or conversion boundary was checked against the cited page.",
+        "worked": "The displayed source-specific calculation or proof was independently recomputed.",
+        "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
+        "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
       }
     }
   ]

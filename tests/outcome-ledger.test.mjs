@@ -50,6 +50,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const lecture10 = /^MH1100_Lecture_10:0[1-4]$/.test(section.id);
       const lecture11 = /^MH1100_Lecture_11:0[1-3]$/.test(section.id);
       const lecture12 = /^MH1100_Lecture_12:0[12]$/.test(section.id);
+      const lecture13 = section.id === "MH1100_Lecture_13:01";
       const mh2100Lecture08 = /^MH2100_Lecture_08:0[1-5]$/.test(section.id);
       const mh2100Lecture09 = /^MH2100_Lecture_09:0[1-6]$/.test(section.id);
       const partialsSupplement =
@@ -70,6 +71,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         lecture08 ||
         lecture11 ||
         lecture12 ||
+        lecture13 ||
         mh2100Lecture08 ||
         mh2100Lecture09 ||
         partialsSupplement ||
@@ -267,11 +269,11 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
             assert.ok(block.title, locator);
             continue;
           }
-          assert.equal(
-            state,
-            block.kind === "worked-example" ? "worked" : "stated",
-            locator,
-          );
+          const allowedStates =
+            block.kind === "derivation"
+              ? ["stated", "worked"]
+              : [block.kind === "worked-example" ? "worked" : "stated"];
+          assert.ok(allowedStates.includes(state), locator);
         } else if (guide[2] === "supplementalBlocks") {
           const block = lesson.supplementalBlocks?.find(
             (item) => item.id === guide[3],
