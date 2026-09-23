@@ -3923,7 +3923,7 @@
             "equation": "\\lim_{h\\to0}\\frac{(x+h)^n-x^n}{h}=nx^{n-1}"
           },
           {
-            "label": "Handle n=1",
+            "label": "Handle $n=1$",
             "text": "The case omitted from the expansion proof is direct.",
             "equation": "\\lim_{h\\to0}\\frac{(x+h)-x}{h}=1"
           }

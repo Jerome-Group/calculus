@@ -265,6 +265,44 @@ test("all 125 lesson scenes render their initial learner-facing surfaces without
   }
 });
 
+test("structured lesson blocks keep mathematical step labels in MathML", async () => {
+  const { StructuredLessonBlockView } = await vite.ssrLoadModule(
+    "/components/atlas/structured-lesson-block.tsx",
+  );
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
+  assert.equal(concepts.length, 125);
+  let foundPowerRule = false;
+  for (const concept of concepts) {
+    const guide = learningGuides[concept.id];
+    for (const block of [
+      ...(guide.contentBlocks ?? []),
+      ...(guide.supplementalBlocks ?? []),
+    ]) {
+      const html = renderToStaticMarkup(
+        React.createElement(StructuredLessonBlockView, { block }),
+      );
+      assert.doesNotMatch(
+        ordinaryText(html),
+        unmarkedNotation,
+        `${concept.id} / ${block.id}`,
+      );
+      assert.doesNotMatch(html, /katex-error/, `${concept.id} / ${block.id}`);
+      if (block.id === "positive-power-rule-from-binomial-limit") {
+        foundPowerRule = true;
+        assert.doesNotMatch(ordinaryText(html), /n=1/);
+        assert.match(
+          html,
+          /<strong><span>Handle <\/span><span class="formula"><span class="katex"><span class="katex-mathml"><math\b/,
+        );
+      }
+    }
+  }
+  assert.ok(foundPowerRule, "the power-rule worked step was checked");
+});
+
 test("graph_function keeps the WebMCP expression connected to the typeset preview", async () => {
   const { studyTools } = await vite.ssrLoadModule(
     "/components/atlas/study-tools.ts",
