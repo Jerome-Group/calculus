@@ -86,3 +86,40 @@ test("structured renderer shows statement, status, hypothesis, and worked verifi
   assert.match(calculation, /Result/);
   assert.match(calculation, /Verification/);
 });
+
+test("one-sided limits teach equal, unequal, and missing side limits", async () => {
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const { StructuredLessonBlockView } = await vite.ssrLoadModule(
+    "/components/atlas/structured-lesson-block.tsx",
+  );
+  const guide = learningGuides["limits-one-sided"];
+  const blocks = guide.contentBlocks;
+  assert.equal(blocks[0].status, "Proof sketch");
+  assert.equal(
+    blocks.filter((block) => block.kind === "worked-example").length,
+    2,
+  );
+  const rendered = blocks
+    .map((block) =>
+      renderToStaticMarkup(
+        React.createElement(StructuredLessonBlockView, { block }),
+      ),
+    )
+    .join("");
+  assert.match(rendered, /Equal sides, missing point value/);
+  assert.match(rendered, /Unequal sides, no two-sided limit/);
+  assert.match(rendered, /<math\b/);
+  assert.doesNotMatch(rendered, /katex-error/);
+  const transfer = guide.exercises.find(
+    (exercise) => exercise.id === "oscillating-right-side",
+  );
+  assert.ok(transfer?.solution.includes("right-hand limit does not exist"));
+  for (const n of [1, 2, 10, 100]) {
+    assert.ok(Math.abs(Math.sin(Math.PI / 2 + 2 * Math.PI * n) - 1) < 1e-12);
+    assert.ok(
+      Math.abs(Math.sin((3 * Math.PI) / 2 + 2 * Math.PI * n) + 1) < 1e-12,
+    );
+  }
+});

@@ -1,0 +1,9 @@
+# One-sided limit lesson follow-up · 2026-09-23
+
+Issue #44 deepens the existing `limits-one-sided` route. The source claim is MH1100 Lecture 02, physical PDF page 40, “Theorem: The one-sided limits theorem.” The source-page text was previously checked through the authenticated Drive PDF and recorded in `lib/curriculum/outcome-ledger.json`; this change does not claim a fresh PDF inspection or full Lecture 02 coverage.
+
+The lesson now states the finite criterion with both-sided domain approach, labels its argument a proof sketch, and links to the later epsilon-delta lesson for the formal version. At the hole, `(x²−1)/(x−1)=x+1` away from 1, so both side limits are 2 regardless of the point value. At the jump, `g(x)=x+1` for `x<0` has left limit 1, while `g(x)=x²` for `x≥0` has right limit 0; the two-sided limit does not exist. The separate transfer task uses `sin(1/x)` on the right. Positive inputs `1/(π/2+2πn)` and `1/(3π/2+2πn)` approach zero with outputs 1 and −1, so no right-hand or two-sided limit exists. Numeric regression checks validate the sine witnesses; the lesson and task remain exact arguments, not numerical estimates.
+
+Local Vite route `http://127.0.0.1:4175/#limits-one-sided` rendered both worked examples and the transfer task. At an emulated 320×700 CSS viewport, document width and scroll width were both 320px; the page exposed 77 MathML nodes, no KaTeX errors and no browser warning/error log. WebMCP `read_concept({conceptId:"limits-one-sided"})` returned the new theorem block and transfer task. A fresh production check follows merge and publication.
+
+The atomic outcome ledger now cites the exact theorem, worked and transfer IDs. It remains partial: the candidate scene has not been validated against this outcome, learner performance is unknown, and the remaining Lecture 02 subskills have not been decomposed or certified.

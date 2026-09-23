@@ -75,6 +75,87 @@
   "limits-one-sided": {
     "prerequisites": ["sets-functions-domains"],
     "reasoning": "Proof sketch",
+    "relatedStep": {
+      "id": "epsilon-delta-one-variable",
+      "label": "Formalize the limit argument"
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "one-sided-limit-criterion",
+        "title": "When a two-sided limit exists",
+        "statement": "A finite $\\lim_{x\\to a}f(x)=L$ exists if and only if the left and right limits both exist as finite numbers and equal $L$.",
+        "hypotheses": [
+          "The domain has inputs approaching $a$ from both sides.",
+          "Each side is considered on a punctured neighbourhood; $f(a)$ does not enter the limit."
+        ],
+        "prerequisites": [
+          "the left- and right-hand approach described in this lesson"
+        ],
+        "status": "Proof sketch"
+      },
+      {
+        "kind": "derivation",
+        "id": "one-sided-limit-proof",
+        "title": "Why the two directions hold",
+        "strategy": "Restrict an approach to each side, then combine the two near-input conditions. The later precise-limits lesson gives the formal epsilon-delta version.",
+        "setup": "Assume inputs of the domain approach $a$ from both sides.",
+        "steps": [
+          {
+            "label": "Only if",
+            "text": "If outputs approach $L$ for every sufficiently near input, they also approach $L$ when we restrict inputs to either side."
+          },
+          {
+            "label": "If",
+            "text": "Each side can bring outputs as close to $L$ as wanted. Use the smaller of the two allowable input distances; every sufficiently near input lies on one of those sides."
+          }
+        ],
+        "result": "Both directions give the stated equivalence for a finite limit.",
+        "verification": "The argument never uses the value at $a$ and needs approach points on both sides."
+      },
+      {
+        "kind": "worked-example",
+        "id": "one-sided-hole-example",
+        "title": "Equal sides, missing point value",
+        "strategy": "Simplify only where the function is defined, then take each side's limit.",
+        "setup": "Let $f(x)=(x^2-1)/(x-1)$ for $x\\ne1$; leave $f(1)$ undefined.",
+        "steps": [
+          {
+            "label": "Simplify",
+            "text": "For $x\\ne1$, factor and cancel $x-1$; this says nothing about $f(1)$.",
+            "equation": "\\frac{x^2-1}{x-1}=x+1\\quad(x\\ne1)"
+          },
+          {
+            "label": "Compare sides",
+            "text": "The simplified expression approaches 2 from below and above 1.",
+            "equation": "\\lim_{x\\to1^-}f(x)=2=\\lim_{x\\to1^+}f(x)"
+          }
+        ],
+        "result": "The two-sided limit is 2 even though $f(1)$ is undefined.",
+        "verification": "Setting $f(1)=7$ changes continuity, not either one-sided limit."
+      },
+      {
+        "kind": "worked-example",
+        "id": "one-sided-jump-example",
+        "title": "Unequal sides, no two-sided limit",
+        "strategy": "Evaluate the branch used on each side before asking about the value at the join.",
+        "setup": "Let $g(x)=x+1$ for $x<0$ and $g(x)=x^2$ for $x\\ge0$.",
+        "steps": [
+          {
+            "label": "Approach from left",
+            "text": "The left branch approaches 1.",
+            "equation": "\\lim_{x\\to0^-}g(x)=\\lim_{x\\to0^-}(x+1)=1"
+          },
+          {
+            "label": "Approach from right",
+            "text": "The right branch approaches 0.",
+            "equation": "\\lim_{x\\to0^+}g(x)=\\lim_{x\\to0^+}x^2=0"
+          }
+        ],
+        "result": "The limits disagree, so $\\lim_{x\\to0}g(x)$ does not exist.",
+        "verification": "Along $x=-1/n$, values tend to 1; along $x=1/n$, values tend to 0. Changing $g(0)$ cannot reconcile them."
+      }
+    ],
     "sections": [
       {
         "title": "Four different failures",
@@ -94,7 +175,23 @@
         "Explain why one-point repair needs a pre-existing finite limit."
       ],
       "solutionTex": "\\lim_{x\\to1}f(x)=2;\\quad f(1)=2\\text{ restores continuity}"
-    }
+    },
+    "exercises": [
+      {
+        "id": "oscillating-right-side",
+        "outcome": "Decide whether a two-sided limit exists when one one-sided limit fails.",
+        "kind": "counterexample",
+        "prompt": "Let $h(x)=x+2$ for $x<0$, $h(x)=\\sin(1/x)$ for $x>0$, and $h(0)=2$. Does $\\lim_{x\\to0}h(x)$ exist? Explain using both sides, not only a plot or $h(0)$.",
+        "hint": "The left limit is 2. On the right, find two positive sequences tending to zero whose sine values differ.",
+        "solution": "From the left, $x+2\\to2$. On the right, $x_n=1/(\\pi/2+2\\pi n)$ gives $h(x_n)=1$ and $y_n=1/(3\\pi/2+2\\pi n)$ gives $h(y_n)=-1$. Both sequences approach zero from the right, so the right-hand limit does not exist. Therefore the two-sided limit does not exist; $h(0)=2$ is irrelevant.",
+        "rubric": [
+          "State the left-hand limit and identify that the right-hand limit fails to exist.",
+          "Give two right-side sequences with distinct limiting outputs or an equivalent proof of oscillation.",
+          "Do not use the point value as evidence for a punctured limit."
+        ],
+        "solutionTex": "\\lim_{x\\to0^-}h(x)=2,\\quad h(x_n)=1,\\quad h(y_n)=-1\\ (x_n,y_n\\to0^+)"
+      }
+    ]
   },
   "infinite-limits": {
     "prerequisites": ["limits-one-sided"],
