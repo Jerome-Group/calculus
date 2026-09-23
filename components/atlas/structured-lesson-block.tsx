@@ -69,7 +69,10 @@ export function StructuredLessonBlockView({
           <ol>
             {block.steps.map((step) => (
               <li key={step.label}>
-                <strong>{step.label}.</strong> <MathText text={step.text} />
+                <strong>
+                  <MathText text={step.label} />.
+                </strong>{" "}
+                <MathText text={step.text} />
                 {step.usesHypothesis && (
                   <p>
                     <strong>Uses hypothesis:</strong>{" "}
