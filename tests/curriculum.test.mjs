@@ -252,6 +252,14 @@ test("WebMCP concept read returns the same practice and source data as the visib
       (exercise) => exercise.id === "second-derivative-definition-transfer",
     ),
   );
+  const directional = tool.execute({
+    conceptId: "directional-derivatives-and-gradient",
+  });
+  assert.equal(
+    directional.lesson.exercises[0].solution,
+    learningGuides["directional-derivatives-and-gradient"].exercises[0]
+      .solution,
+  );
   const alternating = tool.execute({
     conceptId: "absolute-conditional-alternating",
   });

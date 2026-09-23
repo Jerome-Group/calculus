@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import katex from "katex";
 import {
   inspectNotation as inspect,
+  inspectTexSemantics,
   mathSpan,
   unmarkedNotation,
 } from "./helpers/math-notation.mjs";
@@ -18,11 +20,13 @@ function inspectExercise(exercise, locator, failures) {
   exercise.rubric.forEach((item, index) =>
     inspect(item, `${locator}.rubric[${index}]`, failures),
   );
+  inspectTexSemantics(exercise.solutionTex, `${locator}.solutionTex`, failures);
 }
 
 test("catalog and every guide keep learner-facing math inside valid MathML spans", () => {
   const failures = [];
   for (const concept of concepts) {
+    inspectTexSemantics(concept.formula, `${concept.id}.formula`, failures);
     inspect(concept.title, `${concept.id}.title`, failures);
     for (const field of [
       "definition",
@@ -72,6 +76,7 @@ test("catalog and every guide keep learner-facing math inside valid MathML spans
       ["supplementalBlocks", guide.supplementalBlocks],
     ])
       blocks?.forEach((block, index) => {
+        inspectTexSemantics(block.tex, `${id}.${kind}[${index}].tex`, failures);
         inspect(block.title, `${id}.${kind}[${index}].title`, failures);
         for (const field of [
           "statement",
@@ -93,6 +98,11 @@ test("catalog and every guide keep learner-facing math inside valid MathML spans
             ),
           );
         block.steps?.forEach((step, stepIndex) => {
+          inspectTexSemantics(
+            step.equation,
+            `${id}.${kind}[${index}].steps[${stepIndex}].equation`,
+            failures,
+          );
           inspect(
             step.text,
             `${id}.${kind}[${index}].steps[${stepIndex}]`,
@@ -114,6 +124,31 @@ test("catalog and every guide keep learner-facing math inside valid MathML spans
   );
 });
 
+test("semantic notation guard rejects math that KaTeX would parse as ordinary letters", () => {
+  for (const bad of [
+    "sqrt(x)",
+    "lim_{h→0} f(h)",
+    "Σ_{k=0}^n x^k",
+    "D_(1,1)q(0)=1/2",
+    "d(\\ln|x|)/dx=1/x",
+  ]) {
+    const failures = [];
+    inspectTexSemantics(bad, "example", failures);
+    assert.equal(failures.length, 1, bad);
+  }
+  for (const good of [
+    "\\sqrt{x}",
+    "\\lim_{h\\to0}f(h)",
+    "\\sum_{k=0}^n x^k",
+    "D_{(1,1)}q(0)=\\tfrac12",
+    "\\frac{d}{dx}\\ln|x|=1/x",
+  ]) {
+    const failures = [];
+    inspectTexSemantics(good, "example", failures);
+    assert.deepEqual(failures, [], good);
+  }
+});
+
 test("reported implicit-functions prose is explicitly marked for math rendering", () => {
   const guide = guides["implicit-functions-and-tangents"];
   for (const section of guide.sections)
@@ -121,5 +156,16 @@ test("reported implicit-functions prose is explicitly marked for math rendering"
   assert.doesNotMatch(
     guide.exercise.solution.replace(mathSpan, ""),
     unmarkedNotation,
+  );
+});
+
+test("directional transfer subscript is grouped in MathML", () => {
+  const transfer = guides["directional-derivatives-and-gradient"].exercises[0];
+  const match = transfer.solution.match(/\$([^$]+)\$/);
+  assert.ok(match);
+  const mathml = katex.renderToString(match[1], { output: "mathml" });
+  assert.match(
+    mathml,
+    /<msub><mi>D<\/mi><mrow><mo stretchy="false">\(<\/mo><mn>1<\/mn>/,
   );
 });

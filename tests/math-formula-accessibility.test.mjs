@@ -37,3 +37,32 @@ test("block equations expose a named keyboard scroll region and MathML", async (
   assert.doesNotMatch(inline, /role="region"|tabindex="0"/);
   assert.match(inline, /<math\b/);
 });
+
+test("graph expression and reported implicit theorem render MathML", async () => {
+  const { ExpressionPreview } = await vite.ssrLoadModule(
+    "/components/atlas/expression-preview.tsx",
+  );
+  const { MathText } = await vite.ssrLoadModule(
+    "/components/atlas/math-text.tsx",
+  );
+  const { initialGraph } = await vite.ssrLoadModule("/lib/atlas/math.ts");
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const graph = renderToStaticMarkup(
+    React.createElement(ExpressionPreview, {
+      graph: { ...initialGraph, expressions: ["x^2+y^2-a"] },
+    }),
+  );
+  const theorem = renderToStaticMarkup(
+    React.createElement(MathText, {
+      text: learningGuides["implicit-functions-and-tangents"].sections[0].text,
+    }),
+  );
+  for (const html of [graph, theorem]) {
+    assert.match(html, /<math\b/);
+    assert.doesNotMatch(html, /katex-error/);
+  }
+  assert.match(graph, /<msup>/);
+  assert.match(theorem, /<msub>/);
+});

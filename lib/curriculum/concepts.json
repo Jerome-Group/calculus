@@ -1847,7 +1847,7 @@
     "conditions": "For the standard course statement, $f$ is continuous on the closed interval. For evaluation, $F\\prime=f$ on its interior with appropriate endpoint continuity.",
     "proof": "The quotient $[A(x+h)-A(x)]/h$ is an average of $f$ over a short interval. Continuity forces it to approach $f(x)$. Then $(A-F)\\prime=0$, so endpoint subtraction gives the evaluation formula.",
     "example": "For $f(t)=t^2$, $A(x)=x^3/3$ and $A\\prime(x)=x^2$. Increasing the upper limit adds a thin strip whose height is the current rate.",
-    "pitfall": "A varying upper limit invokes the chain rule: $d[\\int_0^{g(x)}f(t)dt]/dx=f(g(x))g\\prime(x)$.",
+    "pitfall": "A varying upper limit invokes the chain rule: $\\frac{d}{dx}\\bigl[\\int_0^{g(x)}f(t)\\,dt\\bigr]=f(g(x))g\\prime(x)$.",
     "task": "Move the upper limit and compare the accumulating area with the boundary height.",
     "insight": "The height of the next thin strip is the rate at which area grows.",
     "topics": ["FTC1", "FTC2", "net change", "accumulation", "variable bounds"],
