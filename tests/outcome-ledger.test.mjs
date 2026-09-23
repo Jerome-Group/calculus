@@ -51,6 +51,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const lecture11 = /^MH1100_Lecture_11:0[1-3]$/.test(section.id);
       const lecture12 = /^MH1100_Lecture_12:0[12]$/.test(section.id);
       const mh2100Lecture08 = /^MH2100_Lecture_08:0[1-5]$/.test(section.id);
+      const mh2100Lecture09 = /^MH2100_Lecture_09:0[1-6]$/.test(section.id);
       const partialsSupplement =
         /^MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:0[1-4]$/.test(
           section.id,
@@ -60,6 +61,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         lecture08 ||
         lecture11 ||
         mh2100Lecture08 ||
+        mh2100Lecture09 ||
         chapter04Notes ||
         chapter06Notes;
       const pageVerified =
@@ -69,6 +71,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         lecture11 ||
         lecture12 ||
         mh2100Lecture08 ||
+        mh2100Lecture09 ||
         partialsSupplement ||
         chapter04Notes ||
         chapter05Notes ||

@@ -6053,6 +6053,11 @@
         "sourceId": "MH2100_Lecture_08",
         "pages": [37, 44],
         "detail": "Motivation, curve assumptions, scalar Riemann-sum definition, existence theorem, smooth-curve formula, and circle problem."
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [13, 13],
+        "detail": "Additivity of the Line Integral over Sub-Curves — Example 1"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6091,6 +6096,11 @@
         "sourceId": "MH2100_Lecture_08",
         "pages": [46, 46],
         "detail": "Vector-field definition, component regularity, and domain."
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [18, 18],
+        "detail": "Work Done by a Force Field — Force Fields"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6130,6 +6140,11 @@
         "sourceId": "MH2100_Lecture_08",
         "pages": [47, 50],
         "detail": "Oriented vector Riemann sum, reversal theorem, smooth-curve formula, and three-dimensional work problem."
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [10, 10],
+        "detail": "Theorem (Relation to Line Integrals of Space Vector Fields)"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6197,6 +6212,16 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [9, 36],
         "detail": "Optional: Stewart, §16.2–16.4; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [7, 7],
+        "detail": "Theorem (Continuous Space Scalar Fields and Smooth Oriented Curves)"
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [3, 3],
+        "detail": "Line Integrals of Plane Scalar Fields — the First and Second Kinds"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6358,6 +6383,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [9, 36],
         "detail": "Optional: Stewart, §16.2–16.4; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [41, 41],
+        "detail": "Methods of Computing Line Integrals"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6409,6 +6439,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [9, 36],
         "detail": "Optional: Stewart, §16.2–16.4; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [32, 32],
+        "detail": "The Fundamental Theorem of Line Integrals"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6461,6 +6496,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [9, 36],
         "detail": "Optional: Stewart, §16.2–16.4; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_09",
+        "pages": [33, 33],
+        "detail": "Conservative Vector Fields"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

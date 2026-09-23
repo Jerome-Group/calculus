@@ -18110,6 +18110,33 @@
         ],
         "result": "The source circle integral is $128\\pi$.",
         "verification": "The average of $x^2$ around a radius-two circle is $2$, its length is $4\\pi$, and $y^2=16$, giving $16\\cdot2\\cdot4\\pi=128\\pi$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-piecewise-arclength-example-statement",
+        "title": "Scalar arclength integrals add over pieces",
+        "text": "For scalar integrals $ds=\\|\\mathbf r\\prime(t)\\|dt$ is unsigned. Integrate each piece and add; the guide supplies the omitted calculation."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-piecewise-arclength-example-worked",
+        "title": "Scalar arclength integrals add over pieces",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The first piece is $y=x^2$ from $(0,0)$ to $(1,1)$, then vertical to $(1,2)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\int_0^1 2x\\sqrt{1+4x^2}\\,dx=\\frac{5\\sqrt5-1}{6}"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "On the parabola, $ds=\\sqrt{1+4x^2}\\,dx$; on the vertical segment $x=1$.",
+            "equation": "\\int_1^2 2\\,dy=2,\\quad\\int_C2x\\,ds=\\frac{5\\sqrt5+11}{6}"
+          }
+        ],
+        "result": "The complete example is $\\frac{5\\sqrt5+11}{6}$.",
+        "verification": "On the parabola, $ds=\\sqrt{1+4x^2}\\,dx$; on the vertical segment $x=1$."
       }
     ],
     "exercises": [
@@ -18151,6 +18178,16 @@
           "Multiply by speed before integrating over one traversal."
         ],
         "solutionTex": "\\int_Cg\\,ds=\\int_0^{2\\pi}9\\cdot3\\,dt=54\\pi"
+      },
+      {
+        "id": "lecture09-piecewise-arclength-example-transfer",
+        "outcome": "Use arclength additivity to evaluate a scalar line integral over a curved arc and a straight segment.",
+        "kind": "computational",
+        "prompt": "Use the same parabola arc followed by the vertical segment from $(1,1)$ to $(1,3)$. Find $\\int_Cx\\,ds$.",
+        "hint": "The arc gives $\\int_0^1x\\sqrt{1+4x^2}\\,dx$; the segment contributes $2$.",
+        "solution": "The total is $\\frac{5\\sqrt5-1}{12}+2=\\frac{5\\sqrt5+23}{12}$.",
+        "solutionTex": "\\int_Cx\\,ds=\\int_0^1x\\sqrt{1+4x^2}\\,dx+2=\\frac{5\\sqrt5+23}{12}",
+        "rubric": ["Use speed only for ds.", "Add both pieces."]
       }
     ]
   },
@@ -18209,6 +18246,33 @@
         ],
         "result": "The value of $F$ at $(1,-2)$ is $(1,-4)$, while $G$ has no value at the origin.",
         "verification": "Both components of $F$ are linear; the denominator in $G$ is zero exactly at the excluded point."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-force-field-domain-statement",
+        "title": "Check the field domain before integrating",
+        "text": "A denominator may exclude points from a field domain. A valid path and any region theorem must remain in that domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-force-field-domain-worked",
+        "title": "Check the field domain before integrating",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The point-mass field is $\\mathbf F=-GMm(x,y,z)/(x^2+y^2+z^2)^{3/2}$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "x^2+y^2+z^2=0\\iff(x,y,z)=(0,0,0)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "A path crossing the origin is not contained in the continuous field domain.",
+            "equation": "\\operatorname{dom}\\mathbf F=\\mathbb R^3\\setminus\\{(0,0,0)\\}"
+          }
+        ],
+        "result": "The field is defined away from the origin only.",
+        "verification": "A path crossing the origin is not contained in the continuous field domain."
       }
     ],
     "exercises": [
@@ -18224,6 +18288,19 @@
           "Evaluate both components and state smoothness only on the stated domain."
         ],
         "solutionTex": "H(-2,3)=(3,-\\tfrac12)"
+      },
+      {
+        "id": "lecture09-force-field-domain-transfer",
+        "outcome": "Identify a force field’s domain before evaluating work, especially at singular points.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf G=(x,y)/(x^2+y^2)$, state its domain and decide if a circle through the origin is admissible.",
+        "hint": "Find where the shared denominator is nonzero.",
+        "solution": "The domain is $\\mathbb R^2\\setminus\\{(0,0)\\}$. A curve through the origin is inadmissible.",
+        "solutionTex": "\\operatorname{dom}\\mathbf G=\\mathbb R^2\\setminus\\{(0,0)\\}",
+        "rubric": [
+          "Check regularity along the full path.",
+          "Do not apply a theorem across an excluded singularity."
+        ]
       }
     ]
   },
@@ -18383,6 +18460,33 @@
         ],
         "result": "The source line integral is $\\frac{e^{16}-1}{2}+3e^2+15+\\frac{e^8-1}{4}$.",
         "verification": "Differentiating the displayed antiderivatives recovers the exact dot-product integrand."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-vector-is-sum-of-coordinate-integrals-statement",
+        "title": "Vector integration sums coordinate contributions",
+        "text": "Compose each field component with the curve and pair it with the matching velocity component; their sum is $\\mathbf F\\cdot\\mathbf r\\prime$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-vector-is-sum-of-coordinate-integrals-worked",
+        "title": "Vector integration sums coordinate contributions",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "For $\\mathbf F=(x,y,z)$ along $\\mathbf r(t)=(t,2t,-t)$ on $[0,1]$, the velocity is $(1,2,-1)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "(t,2t,-t)\\cdot(1,2,-1)=6t"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The third contribution is positive because both the field component and velocity component are negative.",
+            "equation": "\\int_C\\mathbf F\\cdot d\\mathbf r=\\int_0^1 6t\\,dt=3"
+          }
+        ],
+        "result": "The vector line integral is $3$.",
+        "verification": "The third contribution is positive because both the field component and velocity component are negative."
       }
     ],
     "exercises": [
@@ -18437,6 +18541,19 @@
           "Use all velocity components with their signs."
         ],
         "solutionTex": "\\int_CG\\cdot dr=\\int_0^1 6t\\,dt=3"
+      },
+      {
+        "id": "lecture09-vector-is-sum-of-coordinate-integrals-transfer",
+        "outcome": "Express a vector line integral as the sum of its coordinate line integrals.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(1,0,2)$ along $\\mathbf r(t)=(2t,t,-t)$, $0\\leq t\\leq1$, compute $\\int_C\\mathbf F\\cdot d\\mathbf r$.",
+        "hint": "Dot the field with velocity $(2,1,-1)$.",
+        "solution": "The dot product is $2-2=0$, so the integral is zero.",
+        "solutionTex": "\\int_C\\mathbf F\\cdot d\\mathbf r=\\int_0^1(2-2)\\,dt=0",
+        "rubric": [
+          "Include all coordinate contributions.",
+          "Keep negative velocity components."
+        ]
       }
     ]
   },
@@ -18462,7 +18579,171 @@
         "Carry the minus sign in dx."
       ],
       "solutionTex": "\\oint_Cx\\,dy-y\\,dx=\\int_0^{2\\pi}(\\cos^2t+\\sin^2t)\\,dt=2\\pi"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-finite-length-existence-statement",
+        "title": "Continuity and finite length establish existence",
+        "text": "The theorem gives existence, not a value: continuity on the curve and finite curve length suffice; smoothness is not required."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-finite-length-existence-worked",
+        "title": "Continuity and finite length establish existence",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Take $f(x,y)=x^2+1$ on the directed segment from $(0,0)$ to $(3,0)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf r(t)=(t,0),\\quad 0\\leq t\\leq3,\\quad dx=dt"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The parameter interval is compact and the composed integrand is continuous.",
+            "equation": "\\int_C f\\,dx=\\int_0^3(t^2+1)\\,dt=12"
+          }
+        ],
+        "result": "The integral exists and equals $12$.",
+        "verification": "The parameter interval is compact and the composed integrand is continuous."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-plane-smooth-formulas-statement",
+        "title": "Plane coordinate differentials follow matching derivatives",
+        "text": "On $\\mathbf r(t)=(X(t),Y(t))$, use $dx=X\\prime(t)dt$ and $dy=Y\\prime(t)dt$ separately; the derivative sign records direction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-plane-smooth-formulas-worked",
+        "title": "Plane coordinate differentials follow matching derivatives",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The source segment runs from $(0,2)$ to $(1,4)$ and asks for $\\int_C x^2y\\,dx+\\sin(\\pi y)\\,dy$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf r(t)=(t,2+2t),\\quad0\\leq t\\leq1"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The affine parameter gives $dx=dt$ and $dy=2dt$; the sine term spans one full period.",
+            "equation": "\\int_0^1\\left[t^2(2+2t)+2\\sin(2\\pi+2\\pi t)\\right]dt=\\frac76"
+          }
+        ],
+        "result": "The source integral is $\\frac76$.",
+        "verification": "The affine parameter gives $dx=dt$ and $dy=2dt$; the sine term spans one full period."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-space-three-kinds-statement",
+        "title": "The three space kinds use dx, dy, or dz",
+        "text": "For $\\mathbf r(t)=(X,Y,Z)$, each kind uses one matching coordinate derivative. It is not the speed unless the differential is $ds$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-space-three-kinds-worked",
+        "title": "The three space kinds use dx, dy, or dz",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Use $f(x,y,z)=z$ on $\\mathbf r(t)=(t,t^2,t^3)$, $0\\leq t\\leq1$, and choose the third-kind differential.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "z=t^3,\\quad dz=3t^2\\,dt"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The $dz$ factor uses $z\\prime$; speed would instead define an arclength integral.",
+            "equation": "\\int_C z\\,dz=\\int_0^1 3t^5\\,dt=\\frac12"
+          }
+        ],
+        "result": "The third-kind integral is $\\frac12$.",
+        "verification": "The $dz$ factor uses $z\\prime$; speed would instead define an arclength integral."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-coordinate-riemann-sum-definition-statement",
+        "title": "Coordinate integrals weight signed increments",
+        "text": "The Riemann sums weight field values by $\\Delta x$, $\\Delta y$, or $\\Delta z$. These are signed coordinate changes, unlike the nonnegative arclength element $ds$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-coordinate-riemann-sum-definition-worked",
+        "title": "Coordinate integrals weight signed increments",
+        "strategy": "State the source test, apply it to the whole oriented path, then interpret the sign or nonzero value.",
+        "setup": "For $f=1$ on the x-axis segment from $x=0$ to $x=1$, compare the forward and reversed traversals.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path and field before evaluating.",
+            "equation": "\\sum_i 1\\cdot\\Delta x_i=x_{end}-x_{start}"
+          },
+          {
+            "label": "Evaluate and interpret",
+            "text": "The same geometric segment has opposite coordinate increments under reversed traversal.",
+            "equation": "\\int_{C_{forward}}1\\,dx=1,\\quad\\int_{C_{reverse}}1\\,dx=-1"
+          }
+        ],
+        "result": "The signed increment records orientation; the reversed integral is $-1$.",
+        "verification": "The same geometric segment has opposite coordinate increments under reversed traversal."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-finite-length-existence-transfer",
+        "outcome": "Use continuity and finite curve length to establish existence of a coordinate line integral.",
+        "kind": "computational",
+        "prompt": "Let $f(x,y)=2x+1$ on the segment from $(0,0)$ to $(2,0)$. Explain existence and compute $\\int_C f\\,dx$.",
+        "hint": "Use finite length and continuity, then parametrize left to right.",
+        "solution": "The field is continuous and the segment has finite length. With $\\mathbf r(t)=(t,0)$, the value is $\\int_0^2(2t+1)\\,dt=6$.",
+        "solutionTex": "\\int_C(2x+1)\\,dx=\\int_0^2(2t+1)\\,dt=6",
+        "rubric": [
+          "Check continuity on the curve.",
+          "Use the specified orientation for signed coordinate change."
+        ]
+      },
+      {
+        "id": "lecture09-plane-smooth-formulas-transfer",
+        "outcome": "Convert plane integrals with $dx$ and $dy$ into parameter integrals using the matching coordinate derivative.",
+        "kind": "computational",
+        "prompt": "Along $\\mathbf r(t)=(t,1+t)$, $0\\leq t\\leq2$, evaluate $\\int_C(x+2y)\\,dx$.",
+        "hint": "Substitute $x=t$, $y=1+t$, and $dx=dt$.",
+        "solution": "The value is $\\int_0^2(3t+2)\\,dt=10$.",
+        "solutionTex": "\\int_C(x+2y)\\,dx=\\int_0^2(3t+2)\\,dt=10",
+        "rubric": [
+          "Pair each differential with its coordinate derivative.",
+          "Preserve the path direction and limits."
+        ]
+      },
+      {
+        "id": "lecture09-space-three-kinds-transfer",
+        "outcome": "Distinguish first-, second-, and third-kind integrals as integrals against $dx$, $dy$, and $dz$ along a space curve.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf r(t)=(t,2t,t^2)$, $0\\leq t\\leq1$, compute $\\int_C z\\,dy$.",
+        "hint": "Use $z=t^2$ and $dy=2dt$.",
+        "solution": "The value is $\\int_0^1 2t^2\\,dt=\\frac23$.",
+        "solutionTex": "\\int_Cz\\,dy=\\int_0^1 2t^2\\,dt=\\frac23",
+        "rubric": [
+          "Match dx, dy, or dz with the corresponding derivative.",
+          "Do not replace a coordinate derivative with speed."
+        ]
+      },
+      {
+        "id": "lecture09-coordinate-riemann-sum-definition-transfer",
+        "outcome": "Interpret coordinate line integrals as limits of field values multiplied by signed coordinate increments.",
+        "kind": "computational",
+        "prompt": "For $f=3$ on the x-axis segment traversed from $x=2$ to $x=0$, compare $\\int_C f\\,dx$ with $\\int_C f\\,ds$.",
+        "hint": "The x-coordinate decreases by two; the segment length is two.",
+        "solution": "The coordinate integral is $3(0-2)=-6$, while the scalar arclength integral is $3(2)=6$.",
+        "solutionTex": "\\int_C3\\,dx=-6,\\quad\\int_C3\\,ds=6",
+        "rubric": [
+          "Use signed endpoint change for dx.",
+          "Use nonnegative length for ds."
+        ]
+      }
+    ]
   },
   "piecewise-paths": {
     "prerequisites": ["coordinate-line-integrals"],
@@ -18486,7 +18767,91 @@
         "Avoid inferring endpoint-only dependence."
       ],
       "solutionTex": "\\int_{C_1}y\\,dx=0,\\quad\\int_{C_2}y\\,dx=0"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-directed-segment-parametrization-statement",
+        "title": "Affine parameters preserve segment direction",
+        "text": "The standard affine parameter starts at $A$ and ends at $B$; swapping endpoints reverses the direction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-directed-segment-parametrization-worked",
+        "title": "Affine parameters preserve segment direction",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Parametrize the directed segment from $(0,2)$ to $(1,4)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf r(t)=(0,2)+t(1,2)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "Checking the parameter endpoints verifies both the segment and the direction.",
+            "equation": "\\mathbf r(0)=(0,2),\\quad\\mathbf r(1)=(1,4)"
+          }
+        ],
+        "result": "The affine parametrization has the source orientation.",
+        "verification": "Checking the parameter endpoints verifies both the segment and the direction."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-line-integral-additivity-statement",
+        "title": "Add vector integrals over oriented pieces",
+        "text": "Corners need no single smooth formula: use a parameter on each smooth piece and add the resulting integrals in order."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-line-integral-additivity-worked",
+        "title": "Add vector integrals over oriented pieces",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Take $\\mathbf F=(x,y)$ along $(0,0)\\to(1,0)\\to(1,2)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\int_{C_1}\\mathbf F\\cdot d\\mathbf r=\\int_0^1t\\,dt=\\frac12"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The shared corner is one parameter value and contributes no extra integral.",
+            "equation": "\\int_{C_2}\\mathbf F\\cdot d\\mathbf r=\\int_0^1 4s\\,ds=2,\\quad\\int_C\\mathbf F\\cdot d\\mathbf r=\\frac52"
+          }
+        ],
+        "result": "The total is $\\frac52$.",
+        "verification": "The shared corner is one parameter value and contributes no extra integral."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-directed-segment-parametrization-transfer",
+        "outcome": "Parametrize a directed segment from its initial endpoint to its terminal endpoint with an affine parameter.",
+        "kind": "computational",
+        "prompt": "Write the affine parametrization from $(-1,2)$ to $(3,-2)$ and check its endpoints.",
+        "hint": "Use initial point plus $t$ times terminal minus initial.",
+        "solution": "The direction is $(4,-4)$, so $\\mathbf r(t)=(-1+4t,2-4t)$ on $[0,1]$.",
+        "solutionTex": "\\mathbf r(t)=(-1,2)+t(4,-4),\\quad0\\leq t\\leq1",
+        "rubric": [
+          "Subtract in terminal-minus-initial order.",
+          "Check both parameter endpoints."
+        ]
+      },
+      {
+        "id": "lecture09-line-integral-additivity-transfer",
+        "outcome": "Add oriented vector line integrals over finitely many smooth subcurves in traversal order.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(0,x)$ along $(0,0)\\to(2,0)\\to(2,3)$, compute the integral.",
+        "hint": "The horizontal piece has $dy=0$; the vertical piece has $x=2$.",
+        "solution": "The first contribution is zero and the second is $\\int_0^3 2\\,dy=6$.",
+        "solutionTex": "\\int_C\\mathbf F\\cdot d\\mathbf r=0+\\int_0^3 2\\,dy=6",
+        "rubric": [
+          "Respect the order and direction of pieces.",
+          "Use a separate parameter on each segment."
+        ]
+      }
+    ]
   },
   "work-and-circulation": {
     "prerequisites": ["vector-line-integrals", "piecewise-paths"],
@@ -18507,7 +18872,211 @@
       "solution": "The dot product is $2R^{2}$, giving circulation $4\\pi R^{2}$. Clockwise traversal changes the sign.",
       "rubric": ["Track both radius factors.", "State the orientation."],
       "solutionTex": "\\oint_C F\\cdot d\\mathbf r=\\int_0^{2\\pi}2R^2\\,dt=4\\pi R^2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-constant-force-displacement-statement",
+        "title": "Constant-force work is a dot product",
+        "text": "The dot product keeps the force component along the displacement; a perpendicular component contributes zero work."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-constant-force-displacement-worked",
+        "title": "Constant-force work is a dot product",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Let $\\mathbf F=(3,-2)$ move an object from $A=(0,1)$ to $B=(4,2)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\overrightarrow{AB}=(4,1)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The negative vertical force reduces the work from the horizontal contribution.",
+            "equation": "W=(3,-2)\\cdot(4,1)=10"
+          }
+        ],
+        "result": "The work is $10$.",
+        "verification": "The negative vertical force reduces the work from the horizontal contribution."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-work-line-integral-definition-statement",
+        "title": "Work accumulates the tangential force",
+        "text": "For a changing field or curved path, accumulate the local tangential force $\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-work-line-integral-definition-worked",
+        "title": "Work accumulates the tangential force",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Let $\\mathbf F=(x,1)$ along $\\mathbf r(t)=(t,t^2)$, $0\\leq t\\leq1$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=3t"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The field and velocity are both evaluated along the path before taking the dot product.",
+            "equation": "W=\\int_0^1 3t\\,dt=\\frac32"
+          }
+        ],
+        "result": "The force does work $\\frac32$.",
+        "verification": "The field and velocity are both evaluated along the path before taking the dot product."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-source-plane-work-statement",
+        "title": "Respect the decreasing parameter in source work",
+        "text": "The source orientation makes the x-parameter decrease from $1$ to $-2$. Reversing the limits changes the work sign."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-source-plane-work-worked",
+        "title": "Respect the decreasing parameter in source work",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Use $\\mathbf r(t)=(t,t^2-1)$ for $1\\geq t\\geq-2$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "(t^2-1,-t)\\cdot(1,2t)=-(t^2+1)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The integrand is negative and the parameter decreases, so the integral is positive.",
+            "equation": "\\int_1^{-2}-(t^2+1)\\,dt=6"
+          }
+        ],
+        "result": "The source work is $6$.",
+        "verification": "The integrand is negative and the parameter decreases, so the integral is positive."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-source-space-piecewise-work-statement",
+        "title": "Add work over the source’s space pieces",
+        "text": "Compute each oriented segment’s dot product and integral; their sum is the work over the concatenated path."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-source-space-piecewise-work-worked",
+        "title": "Add work over the source’s space pieces",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "First use $\\mathbf r(t)=(t,t^2,t^3)$; then $\\mathbf s(u)=(1-u,1,1-u)$, both on $[0,1]$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=3t^2+3t^5"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "On the segment the field is $(1,1-u,1-u)$ and velocity is $(-1,0,-1)$, giving $-2+u$.",
+            "equation": "\\int_0^1(3t^2+3t^5)\\,dt+\\int_0^1(-2+u)\\,du=\\frac32-\\frac32=0"
+          }
+        ],
+        "result": "The source path has total work $0$.",
+        "verification": "On the segment the field is $(1,1-u,1-u)$ and velocity is $(-1,0,-1)$, giving $-2+u$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-method-selection-statement",
+        "title": "Choose direct, potential, or Green methods from structure",
+        "text": "Use a potential when a valid global potential is known; use Green on a qualifying planar boundary and interior; otherwise parametrize the path directly."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-method-selection-worked",
+        "title": "Choose direct, potential, or Green methods from structure",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "For $\\mathbf F=(-y,x)$ on the unit circle, compare direct evaluation with Green’s theorem. Its curl is $2$, and the unit disk is regular.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf r(t)=(\\cos t,\\sin t),\\quad\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=1"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "Green applies since the field is smooth on a neighborhood of the disk; the fundamental theorem does not apply.",
+            "equation": "\\oint_C\\mathbf F\\cdot d\\mathbf r=2\\pi=\\iint_D2\\,dA"
+          }
+        ],
+        "result": "Both valid methods give $2\\pi$; the field has no potential on the disk because its curl is nonzero.",
+        "verification": "Green applies since the field is smooth on a neighborhood of the disk; the fundamental theorem does not apply."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-constant-force-displacement-transfer",
+        "outcome": "Compute constant-force work on a straight displacement by dotting force with displacement.",
+        "kind": "computational",
+        "prompt": "A constant force $(-1,4)$ moves an object from $(2,0)$ to $(5,2)$. Find its work.",
+        "hint": "Dot the force with terminal-minus-initial displacement.",
+        "solution": "The displacement is $(3,2)$, so work is $-3+8=5$.",
+        "solutionTex": "W=(-1,4)\\cdot(3,2)=5",
+        "rubric": [
+          "Subtract endpoints in the correct order.",
+          "Include signed components."
+        ]
+      },
+      {
+        "id": "lecture09-work-line-integral-definition-transfer",
+        "outcome": "Represent work by a force field along an oriented curve as a vector line integral.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(y,0)$ along $\\mathbf r(t)=(t,1-t)$, $0\\leq t\\leq1$, find the work.",
+        "hint": "Compose the field as $(1-t,0)$ and dot with $(1,-1)$.",
+        "solution": "The local work rate is $1-t$, so work is $\\int_0^1(1-t)dt=\\frac12$.",
+        "solutionTex": "W=\\int_0^1(1-t)\\,dt=\\frac12",
+        "rubric": [
+          "Evaluate the field on the path.",
+          "Dot with oriented velocity before integrating."
+        ]
+      },
+      {
+        "id": "lecture09-source-plane-work-transfer",
+        "outcome": "Evaluate the source plane-work example with its decreasing x-parameter and stated orientation.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(y,-x)$ on $y=x^2$, traverse from $(2,4)$ to $(0,0)$. Find work.",
+        "hint": "Use $\\mathbf r(t)=(t,t^2)$ with $t$ decreasing from $2$ to $0$.",
+        "solution": "The dot product is $-t^2$, so work is $\\int_2^0-t^2dt=\\frac83$.",
+        "solutionTex": "W=\\int_2^0-t^2\\,dt=\\frac83",
+        "rubric": [
+          "Preserve directed parameter limits.",
+          "Check the dot product before integration."
+        ]
+      },
+      {
+        "id": "lecture09-source-space-piecewise-work-transfer",
+        "outcome": "Add work contributions along a curved space arc and a following directed segment.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(x,y,z)$, compute work on the broken path $(0,0,0)\\to(1,0,0)\\to(1,1,1)$.",
+        "hint": "Use separate line integrals on the two directed segments.",
+        "solution": "The first segment contributes $\\int_0^1t\\,dt=\\frac12$. On the second, the dot product is $2s$, contributing $1$. Total work is $\\frac32$.",
+        "solutionTex": "\\int_C\\mathbf F\\cdot d\\mathbf r=\\frac12+1=\\frac32",
+        "rubric": [
+          "Keep the component order of the field.",
+          "Add oriented contributions."
+        ]
+      },
+      {
+        "id": "lecture09-method-selection-transfer",
+        "outcome": "Choose direct parametrization, a potential, or Green’s theorem based on the field, path, and domain.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(2x,2y)$ around the unit circle, choose an efficient method and compute the integral.",
+        "hint": "The field has potential $x^2+y^2$ on the full disk.",
+        "solution": "Use the fundamental theorem: the curve is closed, so endpoint potential difference is zero.",
+        "solutionTex": "\\oint_C\\mathbf F\\cdot d\\mathbf r=0",
+        "rubric": [
+          "Check method hypotheses before choosing.",
+          "Do not infer conservativeness from one zero circulation."
+        ]
+      }
+    ]
   },
   "fundamental-line-theorem": {
     "prerequisites": ["multivariable-chain-rule", "vector-line-integrals"],
@@ -18531,7 +19100,51 @@
         "Subtract in endpoint order."
       ],
       "solutionTex": "W=\\phi(1,2)-\\phi(0,0)=6"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-endpoint-theorem-statement",
+        "title": "A global potential reduces work to endpoints",
+        "text": "The chain rule gives $\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=\\frac{d}{dt}\\phi(\\mathbf r(t))$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-endpoint-theorem-worked",
+        "title": "A global potential reduces work to endpoints",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Let $\\phi=x^2+y^3$ and $\\mathbf F=\\nabla\\phi$. Find work from $(0,1)$ to $(2,-1)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=\\frac{d}{dt}\\phi(\\mathbf r(t))"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The entire path must remain in a domain where the supplied global potential exists.",
+            "equation": "\\phi(2,-1)-\\phi(0,1)=(4-1)-(0+1)=2"
+          }
+        ],
+        "result": "Work is $2$ on every admissible path with these endpoints.",
+        "verification": "The entire path must remain in a domain where the supplied global potential exists."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-endpoint-theorem-transfer",
+        "outcome": "Apply the Fundamental Theorem of Line Integrals when a global potential is defined along the whole path.",
+        "kind": "computational",
+        "prompt": "For $\\phi=x^2+2y^2$, find work from $(1,-1)$ to $(3,2)$.",
+        "hint": "Evaluate at the terminal point and subtract the initial value.",
+        "solution": "The difference is $(9+8)-(1+2)=14$.",
+        "solutionTex": "W=\\phi(3,2)-\\phi(1,-1)=14",
+        "rubric": [
+          "Subtract in endpoint order.",
+          "Check the potential domain contains the path."
+        ]
+      }
+    ]
   },
   "conservative-domains": {
     "prerequisites": ["fundamental-line-theorem", "mixed-and-higher-partials"],
@@ -18555,7 +19168,245 @@
         "Account for an inner boundary when using an annulus."
       ],
       "solutionTex": "\\nabla\\times F=0\\ (r>0),\\quad\\oint_{|r|=1}F\\cdot d\\mathbf r=2\\pi\\ne0"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-conservative-definition-potential-statement",
+        "title": "Conservative means globally a gradient",
+        "text": "The defining requirement is global on the stated domain: $\\mathbf F=\\nabla\\phi$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-conservative-definition-potential-worked",
+        "title": "Conservative means globally a gradient",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The source field is $\\mathbf F=(2xy,1+x^2-y^2)$ with candidate $\\phi=x^2y+y-y^3/3$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\nabla\\phi=(2xy,1+x^2-y^2)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The candidate gradient matches both components everywhere in the domain.",
+            "equation": "\\mathbf F=\\nabla\\phi"
+          }
+        ],
+        "result": "The source field is conservative on $\\mathbb R^2$.",
+        "verification": "The candidate gradient matches both components everywhere in the domain."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-unequal-cross-partials-test-statement",
+        "title": "Unequal cross partials rule out a potential",
+        "text": "For a field with continuous first partials, a potential requires $P_y=Q_x$. If they differ at a point, no potential exists on a neighborhood of it."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-unequal-cross-partials-test-worked",
+        "title": "Unequal cross partials rule out a potential",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Consider $\\mathbf F=(P,Q)=(x+y,2x)$ on $\\mathbb R^2$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "P_y=1,\\quad Q_x=2"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "Equality is necessary but, on an arbitrary domain, does not by itself prove a global potential exists.",
+            "equation": "P_y\\ne Q_x\\implies\\mathbf F\\text{ is not conservative}"
+          }
+        ],
+        "result": "The field has no potential on $\\mathbb R^2$.",
+        "verification": "Equality is necessary but, on an arbitrary domain, does not by itself prove a global potential exists."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-planar-zero-curl-domain-criterion-statement",
+        "title": "Planar zero curl needs a simply connected domain",
+        "text": "For a $C^1$ field on a simply connected open plane domain, $P_y=Q_x$ throughout implies a potential exists. The page’s last subscript is corrected to $Q_x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-planar-zero-curl-domain-criterion-worked",
+        "title": "Planar zero curl needs a simply connected domain",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "For $\\mathbf F=(3x^2y,x^3+2y)$ on $\\mathbb R^2$, check the criterion and construct a potential.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "P_y=3x^2,\\quad Q_x=3x^2"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The result uses the whole-plane topology; zero curl alone can fail on a domain with a hole.",
+            "equation": "\\phi=x^3y+y^2,\\quad\\nabla\\phi=\\mathbf F"
+          }
+        ],
+        "result": "The field is conservative with potential $x^3y+y^2$.",
+        "verification": "The result uses the whole-plane topology; zero curl alone can fail on a domain with a hole."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-space-zero-curl-domain-criterion-statement",
+        "title": "Space zero curl needs a simply connected domain",
+        "text": "For a $C^1$ field on a simply connected open space domain, $\\nabla\\times\\mathbf F=\\mathbf0$ is sufficient for a potential."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-space-zero-curl-domain-criterion-worked",
+        "title": "Space zero curl needs a simply connected domain",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "For $\\mathbf F=(y,z,x)$ on $\\mathbb R^3$, compute its curl.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\nabla\\times\\mathbf F=(R_y-Q_z,P_z-R_x,Q_x-P_y)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "A nonzero curl directly rejects a potential; simple connectedness is the added hypothesis for the converse.",
+            "equation": "\\nabla\\times\\mathbf F=(-1,-1,-1)\\ne\\mathbf0"
+          }
+        ],
+        "result": "The field is not conservative on $\\mathbb R^3$.",
+        "verification": "A nonzero curl directly rejects a potential; simple connectedness is the added hypothesis for the converse."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-source-plane-potential-statement",
+        "title": "Verify the source’s plane potential",
+        "text": "In the source plane example, the cross partials agree and $\\phi=3x+x^2y-y^3$ reproduces both components."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-source-plane-potential-worked",
+        "title": "Verify the source’s plane potential",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Use the source field $\\mathbf F=(3+2xy,x^2-3y^2)$ on $\\mathbb R^2$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "P_y=2x=Q_x"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The potential is checked by differentiating both components.",
+            "equation": "\\nabla(3x+x^2y-y^3)=(3+2xy,x^2-3y^2)"
+          }
+        ],
+        "result": "The source field is conservative with the displayed potential.",
+        "verification": "The potential is checked by differentiating both components."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-nonzero-loop-rejection-statement",
+        "title": "A nonzero closed-loop integral rejects a potential",
+        "text": "If a field has a potential on its domain, every closed path there has integral zero. One nonzero closed-loop integral therefore rules out a potential on that domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-nonzero-loop-rejection-worked",
+        "title": "A nonzero closed-loop integral rejects a potential",
+        "strategy": "State the source test, apply it to the whole oriented path, then interpret the sign or nonzero value.",
+        "setup": "Use $\\mathbf F=(-y,x)$ on the positively oriented unit circle, a closed path entirely in $\\mathbb R^2$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path and field before evaluating.",
+            "equation": "\\mathbf r(t)=(\\cos t,\\sin t),\\quad\\mathbf F(\\mathbf r(t))=\\mathbf r\\prime(t)"
+          },
+          {
+            "label": "Evaluate and interpret",
+            "text": "The field is smooth on the disk, and a potential would force every closed integral to vanish.",
+            "equation": "\\oint_C\\mathbf F\\cdot d\\mathbf r=\\int_0^{2\\pi}1\\,dt=2\\pi\\ne0"
+          }
+        ],
+        "result": "The field is not conservative on $\\mathbb R^2$.",
+        "verification": "The field is smooth on the disk, and a potential would force every closed integral to vanish."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-conservative-definition-potential-transfer",
+        "outcome": "Recognize a conservative field as the gradient of a scalar potential on its domain.",
+        "kind": "computational",
+        "prompt": "Is $\\mathbf F=(2x,2y)$ conservative on $\\mathbb R^2$? Give a potential.",
+        "hint": "Integrate the first component in $x$, then match the second.",
+        "solution": "A potential is $\\phi=x^2+y^2$, since its gradient is $(2x,2y)$.",
+        "solutionTex": "\\phi=x^2+y^2,\\quad\\nabla\\phi=(2x,2y)",
+        "rubric": ["Verify every gradient component.", "State the domain."]
+      },
+      {
+        "id": "lecture09-unequal-cross-partials-test-transfer",
+        "outcome": "Use unequal cross partials at a point to rule out a potential on an open neighborhood.",
+        "kind": "computational",
+        "prompt": "Test $\\mathbf F=(x+3y,5x)$ by cross partials.",
+        "hint": "Compare $P_y$ and $Q_x$.",
+        "solution": "Here $P_y=3$ and $Q_x=5$, so no potential exists on a neighborhood.",
+        "solutionTex": "P_y=3\\ne5=Q_x",
+        "rubric": [
+          "Differentiate the correct components.",
+          "Use inequality as rejection; equality needs domain hypotheses."
+        ]
+      },
+      {
+        "id": "lecture09-planar-zero-curl-domain-criterion-transfer",
+        "outcome": "Use the simply connected open-domain hypothesis in the planar zero-curl sufficiency criterion.",
+        "kind": "computational",
+        "prompt": "On $\\mathbb R^2$, test $\\mathbf F=(2xy,x^2+4y^3)$ and find a potential.",
+        "hint": "Compare the cross partials, integrate $P$ in $x$, then match $Q$.",
+        "solution": "Both cross partials are $2x$. A potential is $x^2y+y^4$.",
+        "solutionTex": "P_y=Q_x=2x,\\quad\\phi=x^2y+y^4",
+        "rubric": [
+          "Check openness and simple connectedness.",
+          "Differentiate the proposed potential to verify it."
+        ]
+      },
+      {
+        "id": "lecture09-space-zero-curl-domain-criterion-transfer",
+        "outcome": "Apply the three-dimensional zero-curl criterion only on a simply connected open domain.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf G=(y,x,0)$ on $\\mathbb R^3$, compute curl and decide whether the criterion gives a potential.",
+        "hint": "Compute the three cross-component derivatives.",
+        "solution": "The curl is zero. Since $\\mathbb R^3$ is simply connected, a potential exists.",
+        "solutionTex": "\\nabla\\times\\mathbf G=\\mathbf0,\\quad\\mathbb R^3\\text{ simply connected}",
+        "rubric": [
+          "Compute components in the stated order.",
+          "Include the domain hypothesis."
+        ]
+      },
+      {
+        "id": "lecture09-source-plane-potential-transfer",
+        "outcome": "Verify the source field on page 40 by matching its cross partials and potential.",
+        "kind": "computational",
+        "prompt": "Classify $\\mathbf H=(4y,4x+2y)$ on $\\mathbb R^2$ and find a potential.",
+        "hint": "The cross partials agree; integrate the first component in $x$.",
+        "solution": "A potential is $4xy+y^2$, whose gradient is $(4y,4x+2y)$.",
+        "solutionTex": "\\phi=4xy+y^2,\\quad\\nabla\\phi=(4y,4x+2y)",
+        "rubric": ["Compare cross partials.", "Verify the full gradient."]
+      },
+      {
+        "id": "lecture09-nonzero-loop-rejection-transfer",
+        "outcome": "Use one nonzero closed-loop integral to rule out conservativeness on the field domain.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(-2y,2x)$, compute the integral around the unit circle traversed clockwise and decide whether this one calculation rejects a potential on $\\mathbb R^2$.",
+        "hint": "The clockwise velocity is the negative of the counterclockwise unit-circle velocity.",
+        "solution": "The dot product is constantly $-2$, so the integral is $-4\\pi\\ne0$. This rejects a potential on $\\mathbb R^2$.",
+        "solutionTex": "\\oint_{C_{cw}}\\mathbf F\\cdot d\\mathbf r=\\int_0^{2\\pi}-2\\,dt=-4\\pi",
+        "rubric": [
+          "Use a closed path in the field domain.",
+          "Explain what the nonzero value implies."
+        ]
+      }
+    ]
   },
   "greens-theorem": {
     "prerequisites": [
@@ -18583,7 +19434,211 @@
         "Use the assigned boundary orientation."
       ],
       "solutionTex": "\\oint_C(-y\\,dx+x\\,dy)=\\iint_D2\\,dA=2\\pi"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-positive-orientation-statement",
+        "title": "Counterclockwise is positive boundary orientation",
+        "text": "For a simple boundary, positive orientation keeps the enclosed region on the traveler’s left."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-positive-orientation-worked",
+        "title": "Counterclockwise is positive boundary orientation",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The unit-circle path $\\mathbf r(t)=(\\cos t,\\sin t)$, $0\\leq t\\leq2\\pi$, is counterclockwise.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\mathbf r(0)=(1,0),\\quad\\mathbf r\\prime(0)=(0,1)"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "Reversing the parameter limits negates signed boundary integrals.",
+            "equation": "\\text{disk lies left of the tangent: positive orientation}"
+          }
+        ],
+        "result": "The displayed circle traversal is positive.",
+        "verification": "Reversing the parameter limits negates signed boundary integrals."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-jordan-simple-boundary-statement",
+        "title": "Jordan’s inside-outside conclusion needs a simple closed curve",
+        "text": "Jordan’s conclusion applies to a simple closed curve. The source page’s satirical parody proof is not a proof and is excluded."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-jordan-simple-boundary-worked",
+        "title": "Jordan’s inside-outside conclusion needs a simple closed curve",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Compare a circle boundary with a figure-eight traversal.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\text{circle image: simple and closed}"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The geometric image and the number of times a path traverses it are different data.",
+            "equation": "\\text{figure-eight: closed but self-intersecting}"
+          }
+        ],
+        "result": "The Jordan theorem gives the inside and outside for the circle; it does not make the figure-eight one simple boundary.",
+        "verification": "The geometric image and the number of times a path traverses it are different data."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-green-hypotheses-statement",
+        "title": "Green requires a regular field on the whole region",
+        "text": "Use the standard theorem for a bounded region with piecewise-smooth simple boundary and $P,Q\\in C^1$ on an open neighborhood of its closure. For holes, include clockwise inner boundaries."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-green-hypotheses-worked",
+        "title": "Green requires a regular field on the whole region",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Let $D=[0,2]\\times[0,1]$ and $\\mathbf F=(0,x)$, smooth near the full rectangle.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "Q_x-P_y=1,\\quad\\iint_D1\\,dA=2"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "A field defined only on the boundary is not enough; an interior singularity violates the hypothesis.",
+            "equation": "\\oint_{\\partial D}x\\,dy=2"
+          }
+        ],
+        "result": "Both sides equal $2$.",
+        "verification": "A field defined only on the boundary is not enough; an interior singularity violates the hypothesis."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-green-triangle-source-statement",
+        "title": "Integrate curl over the source triangle",
+        "text": "For this field $Q_x-P_y=y$; integrate over $x,y\\geq0$, $x+y\\leq1$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-green-triangle-source-worked",
+        "title": "Integrate curl over the source triangle",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Set the source triangle bounds as $0\\leq x\\leq1$ and $0\\leq y\\leq1-x$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "\\iint_D y\\,dA=\\int_0^1\\int_0^{1-x}y\\,dy\\,dx"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The listed vertex order is counterclockwise, so the positive Green sign applies.",
+            "equation": "\\int_0^1\\frac{(1-x)^2}{2}\\,dx=\\frac16"
+          }
+        ],
+        "result": "The source boundary integral is $\\frac16$.",
+        "verification": "The listed vertex order is counterclockwise, so the positive Green sign applies."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-green-disk-source-statement",
+        "title": "Multiply constant curl by the source disk area",
+        "text": "The cross derivatives give $Q_x-P_y=7-3=4$; the disk area is $9\\pi$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-green-disk-source-worked",
+        "title": "Multiply constant curl by the source disk area",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The source circle encloses a radius-three disk.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "Q_x-P_y=7-3=4"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The other terms depend only on the other coordinate, so they disappear from these cross derivatives.",
+            "equation": "\\iint_D4\\,dA=4\\cdot9\\pi=36\\pi"
+          }
+        ],
+        "result": "The source circulation is $36\\pi$.",
+        "verification": "The other terms depend only on the other coordinate, so they disappear from these cross derivatives."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-positive-orientation-transfer",
+        "outcome": "Choose counterclockwise traversal for the positive orientation of a simple planar boundary.",
+        "kind": "computational",
+        "prompt": "Is $\\mathbf r(t)=(\\cos t,-\\sin t)$ positive or negative around the unit disk?",
+        "hint": "Check the tangent at $(1,0)$ and which side contains the disk.",
+        "solution": "The tangent points down and the disk is on the right; the traversal is clockwise and negative.",
+        "solutionTex": "\\mathbf r\\prime(0)=(0,-1),\\quad\\text{negative orientation}",
+        "rubric": [
+          "Check direction at a known boundary point.",
+          "Separate orientation from unsigned area."
+        ]
+      },
+      {
+        "id": "lecture09-jordan-simple-boundary-transfer",
+        "outcome": "Distinguish a simple closed curve from a self-intersecting closed traversal.",
+        "kind": "computational",
+        "prompt": "A path traces the same circle twice and closes. Is its traversal one-to-one, and what does Jordan describe?",
+        "hint": "Separate the image of the circle from the repeated parametrization.",
+        "solution": "The image is a simple circle, but the traversal has multiplicity two. Jordan describes the image’s inside and outside; an integral along the path counts both traversals.",
+        "solutionTex": "\\text{simple image; traversal multiplicity }2",
+        "rubric": [
+          "Check simplicity of the curve image.",
+          "Do not confuse image simplicity with traversal multiplicity."
+        ]
+      },
+      {
+        "id": "lecture09-green-hypotheses-transfer",
+        "outcome": "Check Green’s theorem on the whole region and include all oriented boundary components.",
+        "kind": "computational",
+        "prompt": "Apply Green to $\\mathbf F=(-y/2,x/2)$ on an annulus with radii $1$ and $3$. State both boundary directions and circulation.",
+        "hint": "The curl is $1$; the outer loop is counterclockwise and the inner loop clockwise.",
+        "solution": "The sum is the annulus area $\\pi(9-1)=8\\pi$.",
+        "solutionTex": "\\oint_{C_{out},ccw}\\mathbf F\\cdot d\\mathbf r+\\oint_{C_{in},cw}\\mathbf F\\cdot d\\mathbf r=8\\pi",
+        "rubric": [
+          "Check smoothness on a neighborhood of the closed region.",
+          "Include every boundary component with its positive direction."
+        ]
+      },
+      {
+        "id": "lecture09-green-triangle-source-transfer",
+        "outcome": "Evaluate the source triangle circulation by integrating its scalar curl over the region.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(0,x)$ on the positive triangle $(0,0),(2,0),(0,2)$, find the boundary integral.",
+        "hint": "Its curl is one, so use the triangle’s area.",
+        "solution": "The triangle area is $2$, so circulation is $2$.",
+        "solutionTex": "\\oint_{\\partial D}x\\,dy=\\iint_D1\\,dA=2",
+        "rubric": [
+          "Compute $Q_x-P_y$.",
+          "Check orientation from the vertex order."
+        ]
+      },
+      {
+        "id": "lecture09-green-disk-source-transfer",
+        "outcome": "Evaluate the source radius-three disk example from its constant curl.",
+        "kind": "computational",
+        "prompt": "For $\\mathbf F=(-3y,3x)$ around the counterclockwise radius-two circle, find circulation.",
+        "hint": "The curl is $6$ and the disk area is $4\\pi$.",
+        "solution": "Circulation is $6(4\\pi)=24\\pi$.",
+        "solutionTex": "\\oint_C\\mathbf F\\cdot d\\mathbf r=6\\cdot4\\pi=24\\pi",
+        "rubric": [
+          "Differentiate with respect to the cross variable.",
+          "Multiply curl by enclosed area."
+        ]
+      }
+    ]
   },
   "area-from-boundary": {
     "prerequisites": ["greens-theorem"],
@@ -18604,7 +19659,128 @@
       "solution": "Only the edge $(3,0)\\to (0,2)$ contributes 6 before halving. The area is 3 and the ordering is counterclockwise.",
       "rubric": ["Close the polygon.", "Check sign and orientation."],
       "solutionTex": "A=\\tfrac12(0+3\\cdot2+0)=3"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture09-curl-one-area-fields-statement",
+        "title": "Three curl-one fields recover area",
+        "text": "For $(P,Q)=(0,x),(-y,0),(-y/2,x/2)$, each curl $Q_x-P_y$ equals one, so Green gives the area."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-curl-one-area-fields-worked",
+        "title": "Three curl-one fields recover area",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "Compare the source’s three plane fields on one positive simple boundary.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "(0,x):Q_x-P_y=1,\\quad(-y,0):Q_x-P_y=1"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The symmetric expression averages the two coordinate-specific formulas.",
+            "equation": "(-y/2,x/2):Q_x-P_y=1"
+          }
+        ],
+        "result": "All three line integrals equal the same geometric area.",
+        "verification": "The symmetric expression averages the two coordinate-specific formulas."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-signed-area-orientation-statement",
+        "title": "Clockwise boundary gives negative signed area",
+        "text": "Boundary integrals are signed. A clockwise simple boundary gives negative signed area while geometric area stays nonnegative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-signed-area-orientation-worked",
+        "title": "Clockwise boundary gives negative signed area",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "For the unit circle use $x=\\cos t$, $y=-\\sin t$ on $[0,2\\pi]$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "(x\\,dy-y\\,dx)/2=-dt/2"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "The sign records orientation, not a negative geometric measure.",
+            "equation": "\\frac12\\oint_C(x\\,dy-y\\,dx)=-\\pi"
+          }
+        ],
+        "result": "The signed area integral is $-\\pi$ and geometric disk area is $\\pi$.",
+        "verification": "The sign records orientation, not a negative geometric measure."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture09-ellipse-area-source-statement",
+        "title": "Derive ellipse area from its boundary",
+        "text": "For $a,b>0$, use $x=a\\cos t$, $y=b\\sin t$; then $x y\\prime-y x\\prime=ab$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture09-ellipse-area-source-worked",
+        "title": "Derive ellipse area from its boundary",
+        "strategy": "State the source rule, substitute the oriented path or domain data, then check signs and hypotheses.",
+        "setup": "The source ellipse is parametrized counterclockwise by $\\mathbf r(t)=(a\\cos t,b\\sin t)$.",
+        "steps": [
+          {
+            "label": "Apply the source rule",
+            "text": "Substitute the path, field, or domain data before evaluating.",
+            "equation": "xy\\prime-yx\\prime=ab(\\cos^2t+\\sin^2t)=ab"
+          },
+          {
+            "label": "Evaluate and check",
+            "text": "Positive orientation and positive semiaxes give a positive area.",
+            "equation": "A=\\frac12\\int_0^{2\\pi}ab\\,dt=\\pi ab"
+          }
+        ],
+        "result": "The ellipse area is $\\pi ab$.",
+        "verification": "Positive orientation and positive semiaxes give a positive area."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture09-curl-one-area-fields-transfer",
+        "outcome": "Choose any of the source’s three curl-one fields to recover area from a positively oriented boundary.",
+        "kind": "computational",
+        "prompt": "Use $\\oint x\\,dy$ for the positively oriented rectangle $(0,0),(4,0),(4,2),(0,2)$.",
+        "hint": "Only the right vertical edge contributes.",
+        "solution": "There $x=4$ and $y$ rises from zero to two, so the integral is $8$.",
+        "solutionTex": "\\oint_{\\partial D}x\\,dy=\\int_0^2 4\\,dy=8",
+        "rubric": ["Choose a curl-one field.", "Keep positive orientation."]
+      },
+      {
+        "id": "lecture09-signed-area-orientation-transfer",
+        "outcome": "Interpret a reversed boundary integral as negative signed area, not negative geometric area.",
+        "kind": "computational",
+        "prompt": "Traverse $x=a\\cos t$, $y=-b\\sin t$ clockwise with $a,b>0$. Find the symmetric area integral.",
+        "hint": "Compute $x\\,dy-y\\,dx=-ab\\,dt$.",
+        "solution": "Half its full-period integral is $-\\pi ab$.",
+        "solutionTex": "\\frac12\\oint_C(x\\,dy-y\\,dx)=-\\pi ab",
+        "rubric": [
+          "Track orientation sign.",
+          "Distinguish signed integral from geometric area."
+        ]
+      },
+      {
+        "id": "lecture09-ellipse-area-source-transfer",
+        "outcome": "Derive the source ellipse’s area from its positively oriented boundary parametrization.",
+        "kind": "computational",
+        "prompt": "Find the area of $x^2/9+y^2/4=1$ with the symmetric boundary formula.",
+        "hint": "The semiaxes are $a=3$ and $b=2$.",
+        "solution": "The area is $6\\pi$.",
+        "solutionTex": "A=\\frac12\\int_0^{2\\pi}6\\,dt=6\\pi",
+        "rubric": [
+          "Use semiaxes, not full axis lengths.",
+          "Check counterclockwise orientation."
+        ]
+      }
+    ]
   },
   "surface-charts": {
     "prerequisites": [
