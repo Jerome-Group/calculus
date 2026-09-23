@@ -192,6 +192,10 @@ details > p {
   overflow-x: auto;
   padding: 10px 0;
 }
+.formula.display:focus-visible {
+  outline: 2px solid #145b52;
+  outline-offset: 2px;
+}
 .katex {
   font-size: 1.08em;
 }

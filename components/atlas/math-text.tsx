@@ -9,6 +9,13 @@ export function Formula({
   return (
     <span
       className={block ? "formula display" : "formula"}
+      role={block ? "region" : undefined}
+      aria-label={
+        block
+          ? "Mathematical expression; scroll horizontally if needed"
+          : undefined
+      }
+      tabIndex={block ? 0 : undefined}
       dangerouslySetInnerHTML={{
         __html: katex.renderToString(children, {
           displayMode: block,
