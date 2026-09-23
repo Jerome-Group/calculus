@@ -7,6 +7,8 @@ import {
 } from "@/lib/curriculum";
 import { initialGraph, validateGraph, type GraphSpec } from "@/lib/atlas/math";
 import { learningGuides } from "@/lib/curriculum/learning";
+import { planarModel } from "@/lib/curriculum/planar";
+import { readoutTex } from "@/lib/curriculum/readouts";
 import { examplesForConcept } from "@/lib/curriculum/example-registry";
 import {
   inlineExperimentCatalog,
@@ -64,6 +66,11 @@ export function studyTools(
       scene: s.activeScene,
       parameter: s.p,
       mathematicalReadout: s.info.readout?.(s.p) ?? null,
+      mathematicalReadoutTex: s.activeScene
+        ? s.activeScene.startsWith("plane-")
+          ? planarModel(s.activeScene, s.p).readout
+          : readoutTex(s.activeScene, s.p)
+        : null,
       inlineExperiments: inlineExperiments(),
       representation:
         "Sampled illustration; use the lesson proof for exact conclusions.",
