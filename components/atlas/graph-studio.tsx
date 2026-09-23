@@ -12,7 +12,7 @@ import {
 import { Viewport } from "./viewport";
 import { Formula } from "./math-text";
 import { type GraphSpec } from "@/lib/atlas/math";
-import { ExpressionPreview } from "./expression-preview";
+import { ExpressionPreview, expressionPreview } from "./expression-preview";
 import { QuickGraphExpression } from "./quick-graph-expression";
 import type { StudyController } from "./use-study-controller";
 const presets = [
@@ -77,6 +77,44 @@ const presets = [
     clip: 2.5,
   },
 ] as const;
+
+function GraphExpressionInput({
+  id,
+  value,
+  onChange,
+}: {
+  id: string;
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  let tex = "";
+  try {
+    if (value.trim()) tex = expressionPreview(value);
+  } catch {
+    // Keep incomplete parser syntax visible for editing.
+  }
+  return (
+    <div
+      className={
+        tex ? "graph-expression-input has-preview" : "graph-expression-input"
+      }
+    >
+      <input
+        id={id}
+        autoComplete="off"
+        spellCheck={false}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+      {tex && (
+        <span className="graph-expression-input-preview" aria-hidden="true">
+          <Formula>{tex}</Formula>
+        </span>
+      )}
+    </div>
+  );
+}
+
 export function GraphStudio({ study }: { study: StudyController }) {
   const renderedGraphId = useId();
   const graphStatusId = useId();
@@ -246,15 +284,13 @@ export function GraphStudio({ study }: { study: StudyController }) {
                           : ["x=", "y=", "z="][i]}
                     </Formula>
                   </label>
-                  <input
+                  <GraphExpressionInput
                     id={"expression-" + i}
-                    autoComplete="off"
-                    spellCheck={false}
                     value={draft.expressions[i] || ""}
-                    onChange={(e) =>
+                    onChange={(value) =>
                       setDraft((g) => {
                         const es = [...g.expressions];
-                        es[i] = e.target.value;
+                        es[i] = value;
                         return { ...g, expressions: es };
                       })
                     }

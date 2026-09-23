@@ -1119,6 +1119,31 @@ details > p {
   font-size: 14px;
   margin: 0 0 8px;
 }
+.graph-expression-input {
+  position: relative;
+}
+.graph-expression-input.has-preview input:not(:focus) {
+  color: transparent;
+  caret-color: transparent;
+}
+.graph-expression-input-preview {
+  position: absolute;
+  z-index: 1;
+  inset: 1px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 12px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.graph-expression-input-preview .formula {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.graph-expression-input:focus-within .graph-expression-input-preview {
+  display: none;
+}
 .expression-field input,
 .bounds-grid input {
   width: 100%;

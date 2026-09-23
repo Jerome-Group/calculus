@@ -219,6 +219,73 @@ test("Graph Studio and the sampled implicit lesson keep math out of ordinary tex
   assertNoUnmarkedVisibleMath(implicitLesson, "implicit lesson at p=0.5");
 });
 
+test("Graph Studio editors typeset valid idle expressions in every mode", async () => {
+  const { GraphStudio } = await vite.ssrLoadModule(
+    "/components/atlas/graph-studio.tsx",
+  );
+  const { initialGraph } = await vite.ssrLoadModule("/lib/atlas/math.ts");
+  for (const [mode, expressions] of [
+    ["surface", ["x^2+y^2-a"]],
+    ["implicit", ["x^2+y^2+z^2-4"]],
+    ["curve", ["cos(t)", "sin(t)", "t/3"]],
+    ["parametric", ["cos(u)*sin(v)", "sin(u)*sin(v)", "cos(v)"]],
+  ]) {
+    const graph = { ...initialGraph, mode, expressions };
+    const html = renderToStaticMarkup(
+      React.createElement(GraphStudio, {
+        study: {
+          status: "Ready",
+          graph,
+          setGraph() {},
+          draft: graph,
+          setDraft() {},
+          graphError: "",
+          plot() {},
+          rendered() {},
+        },
+      }),
+    );
+    assert.equal(
+      (html.match(/class="graph-expression-input-preview"/g) ?? []).length,
+      expressions.length,
+      mode,
+    );
+    assert.equal(
+      (html.match(/class="graph-expression-input has-preview"/g) ?? []).length,
+      expressions.length,
+      mode,
+    );
+    assert.match(
+      html,
+      /class="graph-expression-input-preview" aria-hidden="true"><span class="formula"><span class="katex"><span class="katex-mathml"><math\b/,
+    );
+    for (const [index, expression] of expressions.entries()) {
+      assert.ok(html.includes(`id="expression-${index}"`), mode);
+      assert.ok(html.includes(`value="${expression}"`), mode);
+    }
+    assert.doesNotMatch(html, /katex-error/);
+  }
+
+  const invalidGraph = { ...initialGraph, expressions: ["sqrt("] };
+  const invalid = renderToStaticMarkup(
+    React.createElement(GraphStudio, {
+      study: {
+        status: "Ready",
+        graph: invalidGraph,
+        setGraph() {},
+        draft: invalidGraph,
+        setDraft() {},
+        graphError: "",
+        plot() {},
+        rendered() {},
+      },
+    }),
+  );
+  assert.match(invalid, /id="expression-0"[^>]*value="sqrt\("/);
+  assert.doesNotMatch(invalid, /class="graph-expression-input-preview"/);
+  assert.match(invalid, /class="expression-feedback" role="status"/);
+});
+
 test("all 125 lesson scenes render their initial learner-facing surfaces without raw math text", async () => {
   const { LessonExperiment } = await vite.ssrLoadModule(
     "/components/atlas/lesson-experiment.tsx",
