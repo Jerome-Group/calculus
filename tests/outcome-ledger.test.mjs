@@ -71,7 +71,7 @@ test("optional textbook inventory cannot count as core outcomes", () => {
 });
 
 test("inspected atomic outcomes retain core locators and separate evidence states", () => {
-  assert.ok(ledger.atomic_outcomes.length >= 52);
+  assert.ok(ledger.atomic_outcomes.length >= 58);
   assert.equal(
     new Set(ledger.atomic_outcomes.map((entry) => entry.id)).size,
     ledger.atomic_outcomes.length,
@@ -118,6 +118,12 @@ test("inspected atomic outcomes retain core locators and separate evidence state
     "partials-do-not-make-a-plane:failed-implications",
     "certifying-differentiability-and-errors:neighborhood-partials-criterion",
     "total-differentiability:normalized-remainder-decision",
+  ])
+    assert.ok(ledger.atomic_outcomes.some((entry) => entry.id === id));
+  for (const id of [
+    "limits-one-sided:secant-slope-limit",
+    "limits-one-sided:instantaneous-velocity-limit",
+    "infinite-limits:two-sided-threshold-definition",
   ])
     assert.ok(ledger.atomic_outcomes.some((entry) => entry.id === id));
   for (const entry of ledger.atomic_outcomes) {
