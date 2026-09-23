@@ -1466,16 +1466,16 @@
     "course": "MH1100",
     "lecture": 9,
     "title": "Extrema and critical points",
-    "subtitle": "Critical points are candidates; comparison and hypotheses decide the result.",
+    "subtitle": "Extrema, critical candidates and endpoint comparison require different hypotheses.",
     "scene": "plane-extrema",
-    "formula": "f\\prime(c)=0\\quad\\text{at a differentiable interior extremum}",
-    "definition": "An absolute extremum compares with the whole domain; a local extremum compares with nearby points. Critical numbers occur where the derivative is zero or fails to exist while the function is defined. A continuous function on a closed bounded interval attains both absolute extrema.",
-    "conditions": "Fermat’s theorem requires an interior local extremum and differentiability. The extreme value theorem requires continuity and a compact interval.",
-    "proof": "At a local maximum, right difference quotients are nonpositive and left quotients nonnegative. If they share a limit it must be zero. For global extrema on a closed interval, compare critical points and endpoints.",
-    "example": "$f(x)=x^3-3x$ has critical points $x=\\pm1$. On $[-2,2]$, evaluate all four candidates to obtain maximum $2$ and minimum $-2$.",
-    "pitfall": "A stationary point need not be an extremum: $x^3$ is stationary at zero. Endpoint extrema need not have zero derivative.",
-    "task": "Move across the cubic and identify where its tangent becomes horizontal.",
-    "insight": "Critical points are candidates; comparison and hypotheses decide the result.",
+    "formula": "f'(c)=0\\quad\\text{at a differentiable interior extremum}",
+    "definition": "An absolute extremum compares a value with the entire domain; a local extremum compares it with values on some open interval around the point. A critical number lies in the domain and has derivative zero or no derivative. On a closed interval, endpoints are candidates alongside interior critical numbers.",
+    "conditions": "The Extreme Value Theorem requires continuity on a closed bounded interval. Fermat's theorem requires a local extremum at an interior point and differentiability there. The closed-interval method relies on continuity on the full closed interval.",
+    "proof": "At a differentiable local minimum, right difference quotients are nonnegative and left difference quotients are nonpositive; if their common limit exists, it is zero. Fermat gives a necessary condition only. The Extreme Value Theorem guarantees attainment, and the closed-interval method compares all interior critical values with both endpoint values.",
+    "example": "For $f(x)=x^3-3x^2+1$ on $[-1/2,4]$, $f'(x)=3x(x-2)$, so the interior critical numbers are $0$ and $2$. The four candidate values are $1/8$, $1$, $-3$, and $17$; the absolute minimum is $-3$ at $2$, and the maximum is $17$ at $4.",
+    "pitfall": "A horizontal tangent need not be an extremum ($x^3$ at zero); an extremum may occur where the derivative does not exist ($|x|$ at zero). A local extremum need not be absolute. Endpoints are checked separately.",
+    "task": "List the interior critical numbers, evaluate them and both endpoints, then compare the values.",
+    "insight": "Extrema, critical candidates and endpoint comparison require different hypotheses.",
     "topics": [
       "local extrema",
       "absolute extrema",
@@ -1486,18 +1486,13 @@
     "sources": [
       {
         "sourceId": "MH1100_Lecture_09",
-        "pages": [4, 4],
-        "detail": "Maximum and Minimum Values"
-      },
-      {
-        "sourceId": "MH1100_Lecture_09",
-        "pages": [15, 15],
-        "detail": "Theorem. In general, the converse of Fermat’s Theorem is false."
+        "pages": [4, 18],
+        "detail": "Physical pages 4–18: local and absolute extrema, the Extreme Value Theorem, Fermat's theorem, critical numbers, and the closed-interval method."
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",
         "pages": [3, 16],
-        "detail": "Optional: Stewart, §3.1–3.2; PDF pages within the supplied chapter extract"
+        "detail": "Optional: Stewart, §3.1–3.2; PDF pages within the supplied chapter extract."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -1507,16 +1502,16 @@
     "course": "MH1100",
     "lecture": 9,
     "title": "Rolle and the mean value theorem",
-    "subtitle": "Some instantaneous rate must match the interval’s average rate.",
+    "subtitle": "Rolle and the mean value theorem turn interval change into an interior derivative.",
     "scene": "plane-mvt",
-    "formula": "f\\prime(c)=\\frac{f(b)-f(a)}{b-a},\\qquad a<c<b",
-    "definition": "The mean value theorem identifies a point where instantaneous slope equals the average slope across an interval. Rolle’s theorem is its equal-endpoint case. Consequences include constant functions when the derivative is zero and uniqueness of antiderivatives up to a constant.",
-    "conditions": "$f$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Rolle also assumes $f(a)=f(b)$.",
-    "proof": "Subtract the secant line from $f$. The resulting function has equal endpoint values. Rolle produces a zero derivative, which says the original derivative equals the secant slope.",
-    "example": "For $f(x)=x^2$ on $[0,b]$ with $b>0$, the secant slope is $b$. Since $f\\prime(c)=2c$, the matching tangent occurs at $c=b/2$.",
-    "pitfall": "Continuity alone is insufficient: $|x|$ on $[-1,1]$ has equal endpoint values but no zero derivative in the interior.",
-    "task": "Change the right endpoint and track the matching tangent point.",
-    "insight": "Some instantaneous rate must match the interval’s average rate.",
+    "formula": "f'(c)=\\frac{f(b)-f(a)}{b-a},\\qquad a<c<b",
+    "definition": "For a continuous function on $[a,b]$ differentiable on $(a,b)$, the mean value theorem gives an interior derivative equal to the secant slope. Rolle's theorem is its zero-secant special case when $f(a)=f(b)$.",
+    "conditions": "Require $a<b$, continuity on $[a,b]$, and differentiability on $(a,b)$; Rolle also requires equal endpoint values. Derivative-zero and equal-derivative consequences apply on an interval, not automatically across a disconnected domain.",
+    "proof": "Subtract the secant line from f. The resulting function has equal endpoint values, so Rolle gives an interior zero derivative; rearranging recovers the secant slope. Applying MVT to arbitrary pairs proves that zero derivative means constant and equal derivatives mean a constant difference on an interval.",
+    "example": "For $f(x)=x^3-x$ on $[0,2]$, the secant slope is $3$. Solving $3c^2-1=3$ gives $c=\\frac{2}{\\sqrt{3}}$, the only solution in $(0,2)$.",
+    "pitfall": "Equal endpoint values do not suffice if interior differentiability fails. A domain that is not an interval can carry derivative zero everywhere on its domain without the function being globally constant.",
+    "task": "Check each hypothesis before using Rolle or MVT; then solve the derivative-equals-secant equation inside the open interval.",
+    "insight": "Rolle and the mean value theorem turn interval change into an interior derivative.",
     "topics": [
       "Rolle theorem",
       "mean value theorem",
@@ -1526,28 +1521,13 @@
     "sources": [
       {
         "sourceId": "MH1100_Lecture_09",
-        "pages": [19, 19],
-        "detail": "3.2 The Mean Value Theorem"
-      },
-      {
-        "sourceId": "MH1100_Lecture_09",
-        "pages": [20, 20],
-        "detail": "The Mean Value Theorem"
-      },
-      {
-        "sourceId": "MH1100_Lecture_09",
-        "pages": [25, 25],
-        "detail": "Prove of the Mean Value Theorem"
-      },
-      {
-        "sourceId": "MH1100_Lecture_09",
-        "pages": [26, 26],
-        "detail": "The Mean Value Theorem"
+        "pages": [19, 31],
+        "detail": "Physical pages 19–31: Rolle's theorem, the mean value theorem, examples, proof, and consequences."
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_03_Applications_Of_Differentiation",
         "pages": [3, 16],
-        "detail": "Optional: Stewart, §3.1–3.2; PDF pages within the supplied chapter extract"
+        "detail": "Optional: Stewart, §3.1–3.2; PDF pages within the supplied chapter extract."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

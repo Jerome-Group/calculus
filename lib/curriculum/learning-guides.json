@@ -5834,12 +5834,20 @@
     "reasoning": "Proof sketch",
     "sections": [
       {
-        "title": "A convention for candidates",
-        "text": "Here a critical point is an interior domain point where $f'=0$ or $f'$ does not exist; a stationary point has $f'=0$. Endpoints are checked separately. Fermat’s theorem says that a differentiable interior local extremum is stationary, not that every stationary point is an extremum."
+        "title": "Local and absolute comparisons",
+        "text": "An absolute extremum compares against the full domain; a local extremum compares only in a neighborhood. Source examples show these labels can differ, and cosine reaches each extreme value at infinitely many points."
       },
       {
-        "title": "List, then compare",
-        "text": "For $f(x)=x^{3}-3x$ on $[-2,2]$, $f'=3x^{2}-3$ vanishes at $\\pm 1$. Evaluate endpoints and stationary points: $f(-2)=-2$, $f(-1)=2$, $f(1)=-2$, $f(2)=2$. The global minimum is $-2$ at $-2$ and 1; the maximum is 2 at $-1$ and 2. Compactness and continuity ensure attainment."
+        "title": "What guarantees attainment",
+        "text": "Continuity on a closed interval guarantees absolute extrema. Dropping continuity or the closed-interval hypothesis can remove attainment; the theorem does not say where the extrema occur."
+      },
+      {
+        "title": "From Fermat to candidates",
+        "text": "Fermat gives a necessary condition for a differentiable interior extremum. Critical numbers include derivative-zero and nondifferentiable domain points; neither alone proves an extremum."
+      },
+      {
+        "title": "Compare the closed-interval candidates",
+        "text": "For a continuous function $f$ on $[a,b]$, evaluate $f$ at every interior critical number and both endpoints. Compare those values to determine the absolute extrema."
       }
     ],
     "exercise": {
@@ -5851,7 +5859,277 @@
         "Do not infer no extrema from no stationary points."
       ],
       "solutionTex": "\\max_{x\\in[0,1]}x=1,\\qquad f'(x)=1\\quad(0<x<1)"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "strategy",
+        "id": "local-vs-absolute-statement",
+        "title": "Absolute and local values",
+        "text": "An absolute maximum satisfies $f(c)\\geq f(x)$ for every $x$ in the domain; an absolute minimum reverses the inequality. A local maximum or minimum makes the same comparison for domain points in some neighborhood of $c$. With this domain-relative definition, every absolute extremum is also local; a local extremum need not be absolute."
+      },
+      {
+        "kind": "worked-example",
+        "id": "local-vs-absolute-worked",
+        "title": "Compare nearby and global values",
+        "strategy": "Use the source graph's stated values to separate the neighborhood comparison from the whole-domain comparison, then use the cosine bounds.",
+        "setup": "The handout says $f(4)=5$ is a local minimum but not an absolute minimum; $f(12)=3$ is both; $f(8)=7$ is a local maximum but not an absolute maximum. It also considers $f(x)=\\cos x$.",
+        "steps": [
+          {
+            "label": "Local check",
+            "text": "The graph describes the values near 4 as at least 5, and the values near 8 as at most 7; the comparison is only local."
+          },
+          {
+            "label": "Global check",
+            "text": "Values near 12 are below 5 and values near 1 exceed 7, so those two local extrema are not absolute."
+          },
+          {
+            "label": "Periodic example",
+            "text": "The cosine bounds show that its repeated peaks and troughs attain global as well as local extreme values.",
+            "equation": "\\cos(2n\\pi)=1,\\quad \\cos((2n+1)\\pi)=-1,\\quad -1\\leq\\cos x\\leq 1\\quad(n\\in\\mathbb Z)"
+          }
+        ],
+        "result": "The handout's local/global classifications follow from different comparison sets; cosine attains both extreme values infinitely often.",
+        "verification": "The values 3 and 7 establish the source's global comparisons, while the bound on cosine proves global attainment."
+      },
+      {
+        "kind": "theorem",
+        "id": "extreme-value-theorem",
+        "title": "Extreme Value Theorem",
+        "statement": "A continuous function on a closed interval $[a,b]$ attains an absolute maximum and an absolute minimum at points in $[a,b]$.",
+        "hypotheses": [
+          "$a<b$.",
+          "f is continuous on the entire closed interval $[a,b]$."
+        ],
+        "prerequisites": ["Continuity", "Closed intervals"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "extreme-value-hypothesis-contrast",
+        "title": "What fails when a hypothesis is removed",
+        "strategy": "Track attainment in the source's two figures; a missing endpoint or a discontinuity can leave an extreme value unattained.",
+        "setup": "The left source graph is discontinuous and has range $[0,3)$. The right graph is continuous on $(0,2)$ and has range $(1,\\infty )$.",
+        "steps": [
+          {
+            "label": "Continuity omitted",
+            "text": "The value 3 is an upper bound for the left range but is not in the range, so no absolute maximum is attained."
+          },
+          {
+            "label": "Closed interval omitted",
+            "text": "The right range has no maximum because it is unbounded above, and no minimum because its lower bound 1 is not attained."
+          }
+        ],
+        "result": "Neither example satisfies both hypotheses of the Extreme Value Theorem; the theorem's guarantee is unavailable.",
+        "verification": "The guide describes the displayed ranges and continuity facts only; it does not infer an unstated formula for either source graph."
+      },
+      {
+        "kind": "theorem",
+        "id": "fermat-statement",
+        "title": "Fermat's theorem",
+        "statement": "If $f$ has a local maximum or minimum at an interior point $c$ and $f$ is differentiable at $c$, then $f'(c)=0$.",
+        "hypotheses": [
+          "There is an open interval around c in the domain.",
+          "f has a local extremum at c.",
+          "f is differentiable at c."
+        ],
+        "prerequisites": ["Local extrema", "Derivative"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "fermat-one-sided-proof",
+        "title": "Why a differentiable interior extremum is stationary",
+        "strategy": "For a local minimum, compare the difference quotient on each side and then use existence of the two-sided derivative.",
+        "setup": "Suppose $c$ is a local minimum. For $x$ sufficiently close to $c$, $f(x)\\geq f(c)$.",
+        "steps": [
+          {
+            "label": "Right side",
+            "text": "For $x>c$ the numerator and denominator are nonnegative and positive respectively, so the quotient is nonnegative.",
+            "equation": "\\frac{f(x)-f(c)}{x-c}\\geq 0"
+          },
+          {
+            "label": "Left side",
+            "text": "For $x<c$ the numerator is nonnegative and the denominator is negative, so the quotient is nonpositive.",
+            "equation": "\\frac{f(x)-f(c)}{x-c}\\leq 0"
+          },
+          {
+            "label": "Common derivative",
+            "text": "If $f'(c)$ exists, the one-sided limits agree. Their common value is both nonnegative and nonpositive, hence zero.",
+            "equation": "f'(c)=\\lim_{x\\to c^-}\\frac{f(x)-f(c)}{x-c}=\\lim_{x\\to c^+}\\frac{f(x)-f(c)}{x-c}=0"
+          }
+        ],
+        "result": "A differentiable local minimum at an interior point has derivative zero; reverse the inequalities for a local maximum.",
+        "verification": "The proof uses local minimality on both sides and differentiability at c; it makes no claim about endpoints."
+      },
+      {
+        "kind": "strategy",
+        "id": "fermat-converse-statement",
+        "title": "Fermat is a necessary condition",
+        "text": "Fermat gives a necessary condition at a differentiable interior extremum. Its converse fails: a zero derivative need not create an extremum, and an extremum need not have a derivative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "fermat-converse-contrast",
+        "title": "Two failures of the converse",
+        "strategy": "Check the derivative and the local value behavior in the source's two examples.",
+        "setup": "Compare $f(x)=x^3$ and $g(x)=|x|$ at zero.",
+        "steps": [
+          {
+            "label": "Zero derivative is not sufficient",
+            "text": "For $x^3$ the derivative is $3x^2$, but values are negative on one side of zero and positive on the other; there is no local maximum or minimum.",
+            "equation": "f'(0)=0,\\qquad f(x)<f(0)\\ (x<0),\\quad f(x)>f(0)\\ (x>0)"
+          },
+          {
+            "label": "Differentiability is not necessary for an extremum",
+            "text": "The absolute-value graph has a minimum at zero, but its one-sided slopes differ.",
+            "equation": "g(0)=0=\\min_{x\\in\\mathbb R}|x|,\\qquad g'(0)\\text{ does not exist}"
+          }
+        ],
+        "result": "Fermat's implication cannot be reversed in either direction.",
+        "verification": "The examples distinguish a stationary non-extremum from an extremum at a nondifferentiable point."
+      },
+      {
+        "kind": "strategy",
+        "id": "critical-number-statement",
+        "title": "Critical numbers are candidates",
+        "text": "A critical number $c$ must lie in the domain of $f$ and satisfy $f'(c)=0$ or have no derivative there. Fermat says each local extremum is a critical number; critical numbers are candidates, not verdicts."
+      },
+      {
+        "kind": "worked-example",
+        "id": "critical-number-worked",
+        "title": "Find the critical number of an absolute-value function",
+        "strategy": "Differentiate where possible and check the remaining domain point.",
+        "setup": "Let $f(x)=|x|$ on $[-1,1]$.",
+        "steps": [
+          {
+            "label": "Differentiate away from zero",
+            "text": "The function is linear on each side of zero, with nonzero derivative."
+          },
+          {
+            "label": "Check the join",
+            "text": "At zero, the left and right derivatives disagree, while zero is in the domain.",
+            "equation": "f'(x)=-1\\ (x<0),\\quad f'(x)=1\\ (x>0),\\quad f'(0)\\text{ does not exist}"
+          },
+          {
+            "label": "List candidates",
+            "text": "Thus zero is the only interior critical number. The interval endpoints are checked separately by the closed-interval method."
+          }
+        ],
+        "result": "The interior critical-number list is {0}; -1 and 1 remain endpoint candidates.",
+        "verification": "A point outside the domain could not be a critical number."
+      },
+      {
+        "kind": "strategy",
+        "id": "closed-interval-method-statement",
+        "title": "Closed Interval Method",
+        "text": "For continuous $f$ on $[a,b]$, evaluate $f$ at every critical number in $(a,b)$ and at both endpoints. Compare those values; the largest and smallest are the absolute maximum and minimum, which the Extreme Value Theorem guarantees exist."
+      },
+      {
+        "kind": "worked-example",
+        "id": "closed-interval-source-cubic",
+        "title": "Compare the four source candidates",
+        "strategy": "Find interior critical numbers from the derivative, evaluate those points and both endpoints, then compare.",
+        "setup": "The source asks for absolute extrema of $f(x)=x^3-3x^2+1$ on $[-1/2,4]$.",
+        "steps": [
+          {
+            "label": "Critical numbers",
+            "text": "The derivative factors, so the interior candidates are $0$ and $2$.",
+            "equation": "f'(x)=3x^2-6x=3x(x-2)"
+          },
+          {
+            "label": "Evaluate candidates",
+            "text": "Substitute both critical numbers and both endpoints.",
+            "equation": "f(0)=1,\\quad f(2)=-3,\\quad f\\left(-\\frac12\\right)=\\frac18,\\quad f(4)=17"
+          },
+          {
+            "label": "Compare",
+            "text": "The smallest of the four values is $-3$ and the largest is $17$."
+          }
+        ],
+        "result": "The absolute minimum is $f(2)=-3$; the absolute maximum is $f(4)=17$.",
+        "verification": "The polynomial is continuous on the given closed interval, and all interior critical numbers and endpoints were included."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "local-global-periodic-transfer",
+        "outcome": "Classify local and absolute extrema from neighborhood and domain comparisons.",
+        "kind": "conceptual",
+        "prompt": "For $g(x)=2+\\cos x$ on $\\mathbb{R}$, list all local maxima and minima and state which values are absolute. Explain why the local and absolute labels coincide here.",
+        "hint": "Use $-1\\leq\\cos x\\leq1$ and the points where equality holds.",
+        "solution": "The maximum value is $3$ at $x=2n\\pi$ and the minimum is $1$ at $x=(2n+1)\\pi$, for $n\\in\\mathbb{Z}$. The cosine bound applies on the whole domain, so each repeated local extremum is also absolute.",
+        "solutionTex": "\\max g=3\\text{ at }x=2n\\pi,\\qquad \\min g=1\\text{ at }x=(2n+1)\\pi",
+        "rubric": [
+          "Give both sets of points and values.",
+          "Use a global bound, not only a local graph description."
+        ]
+      },
+      {
+        "id": "evt-hypothesis-transfer",
+        "outcome": "Explain why the extreme-value guarantee can fail when either hypothesis is omitted.",
+        "kind": "counterexample",
+        "prompt": "Give one continuous function on a nonclosed interval with no absolute maximum, and one discontinuous function on a closed interval whose range has no maximum.",
+        "hint": "Use $f(x)=x$ on $[0,1)$ and redefine its value at the right endpoint on $[0,1]$.",
+        "solution": "On $[0,1)$, $f(x)=x$ is continuous and has range $[0,1)$, so it has no maximum. On $[0,1]$, set $g(x)=x$ for $0\\leq x<1$ and $g(1)=0$. It is discontinuous at $1$ and its range is $[0,1)$, again with no maximum. Each example omits one EVT hypothesis.",
+        "solutionTex": "f([0,1))=[0,1),\\qquad g([0,1])=[0,1)",
+        "rubric": [
+          "Name which hypothesis is omitted in each example.",
+          "Show the missing supremum is not attained."
+        ]
+      },
+      {
+        "id": "fermat-interior-minimum-transfer",
+        "outcome": "Apply Fermat's theorem with its interior and differentiability hypotheses.",
+        "kind": "computational",
+        "prompt": "Show that $f(x)=2x^2-8x+5$ has a local minimum at $c=2$ and verify the derivative conclusion.",
+        "hint": "Complete the square and differentiate.",
+        "solution": "Since $f(x)=2(x-2)^2-3$, $c=2$ is a local (in fact absolute) minimum and is an interior point of $\\mathbb{R}$. The polynomial is differentiable there and $f'(x)=4x-8$, so $f'(2)=0$.",
+        "solutionTex": "f(x)=2(x-2)^2-3,\\qquad f'(2)=0",
+        "rubric": [
+          "Verify c lies in the domain and is interior.",
+          "Check differentiability and compute $f'(c)$."
+        ]
+      },
+      {
+        "id": "fermat-converse-transfer",
+        "outcome": "Distinguish a stationary point that is not an extremum from a nondifferentiable extremum.",
+        "kind": "counterexample",
+        "prompt": "Classify $h(x)=(x-1)^3$ and $k(x)=|x-1|$ at $x=1$. Which has derivative zero, and which has a local extremum?",
+        "hint": "Translate the two source examples from zero to one.",
+        "solution": "For $h$, $h'(1)=0$ but nearby values lie on opposite sides of $h(1)$, so there is no local extremum. For $k$, $x=1$ is a minimum but $k'(1)$ does not exist. Thus neither converse of Fermat is valid.",
+        "solutionTex": "h'(1)=0,\\qquad k(1)=0=\\min k,\\qquad k'(1)\\text{ does not exist}",
+        "rubric": [
+          "Compare nearby values for h.",
+          "State why Fermat does not apply to k."
+        ]
+      },
+      {
+        "id": "critical-number-domain-transfer",
+        "outcome": "List interior critical numbers without admitting points outside the domain.",
+        "kind": "computational",
+        "prompt": "For $f(x)=\\sqrt{x}$ on $[0,4]$, identify the interior critical numbers and the endpoint candidates for the closed-interval method.",
+        "hint": "Differentiate on the interior of the domain and keep the endpoint rule separate.",
+        "solution": "For $0<x<4$, $f'(x)=\\frac{1}{2\\sqrt{x}}$ is never zero. The derivative fails at $x=0$, but $0$ is an endpoint, not an interior critical-number candidate for this method. There are no interior critical numbers; check endpoints $0$ and $4$ separately.",
+        "solutionTex": "f'(x)=\\frac{1}{2\\sqrt{x}}>0\\ (0<x<4),\\qquad f(0)=0,\\quad f(4)=2",
+        "rubric": [
+          "Restrict the derivative calculation to the domain.",
+          "Separate interior critical numbers from endpoints."
+        ]
+      },
+      {
+        "id": "closed-interval-transfer",
+        "outcome": "Find absolute extrema by checking every interior critical number and both endpoints.",
+        "kind": "computational",
+        "prompt": "Use the Closed Interval Method for $g(x)=x^3-3x^2$ on $[0,4]$.",
+        "hint": "Solve $g'(x)=0$ in $(0,4)$, then evaluate the complete candidate list.",
+        "solution": "$g'(x)=3x(x-2)$, so the interior critical number is $2$. The values are $g(0)=0$, $g(2)=-4$, and $g(4)=16$. Thus the absolute minimum is $-4$ at $2$ and the absolute maximum is $16$ at $4$.",
+        "solutionTex": "g'(x)=3x(x-2),\\qquad g(0)=0,\\quad g(2)=-4,\\quad g(4)=16",
+        "rubric": [
+          "Include both endpoints.",
+          "Compare function values, not x-coordinates."
+        ]
+      }
+    ]
   },
   "rolle-mean-value": {
     "prerequisites": ["extrema-fermat", "continuity-ivt"],
@@ -5861,7 +6139,7 @@
         "kind": "theorem",
         "id": "rolle-theorem",
         "title": "Rolle’s theorem",
-        "statement": "If $f(a)=f(b)$, some $c$ strictly between $a$ and $b$ has $f'(c)=0$.",
+        "statement": "If $f(a)=f(b)$, some $c\\in(a,b)$ satisfies $f'(c)=0$.",
         "hypotheses": [
           "$a<b$ and $f$ is continuous on $[a,b]$.",
           "$f$ is differentiable on $(a,b)$.",
@@ -5903,7 +6181,7 @@
         "kind": "theorem",
         "id": "mean-value-theorem",
         "title": "Mean value theorem",
-        "statement": "Some $c\\in(a,b)$ satisfies $f'(c)=(f(b)-f(a))/(b-a)$.",
+        "statement": "Some $c\\in(a,b)$ satisfies $f'(c)=\\frac{f(b)-f(a)}{b-a}$.",
         "hypotheses": [
           "$a<b$ and $f$ is continuous on $[a,b]$.",
           "$f$ is differentiable on $(a,b)$."
@@ -5968,23 +6246,135 @@
         "kind": "proof",
         "prompt": "Let $f$ be continuous on $[a,b]$, differentiable on $(a,b)$, and $f'(x)=0$ throughout $(a,b)$. Prove $f$ is constant on $[a,b]$.",
         "hint": "Choose arbitrary $u<v$ in the interval. Apply the theorem on $[u,v]$.",
-        "solution": "For any $u<v$ in $[a,b]$, MVT gives $c\\in(u,v)$ with $(f(v)-f(u))/(v-u)=f'(c)=0$. Thus $f(v)=f(u)$. Since the pair was arbitrary, $f$ is constant.",
+        "solution": "For any $u<v$ in $[a,b]$, MVT gives $c\\in(u,v)$ with $\\frac{f(v)-f(u)}{v-u}=f'(c)=0$. Thus $f(v)=f(u)$. Since the pair was arbitrary, $f$ is constant.",
         "solutionTex": "\\forall u<v,\\quad\\frac{f(v)-f(u)}{v-u}=f'(c)=0\\implies f(v)=f(u)",
         "rubric": [
           "Apply MVT to arbitrary points, not only the original endpoints.",
           "State continuity and differentiability on the chosen subinterval.",
           "Conclude equality of all values."
         ]
+      },
+      {
+        "id": "rolle-theorem-transfer",
+        "outcome": "Check Rolle's hypotheses and locate a zero derivative.",
+        "kind": "computational",
+        "prompt": "Apply Rolle's theorem to $f(x)=x^2-1$ on $[-1,1]$. Verify all hypotheses and find an eligible c.",
+        "hint": "Check equal endpoint values, regularity, then solve $f'(c)=0$ in $(-1,1)$.",
+        "solution": "The polynomial is continuous on $[-1,1]$ and differentiable on $(-1,1)$; $f(-1)=f(1)=0$. Since $f'(x)=2x$, $c=0$ lies in $(-1,1)$ and $f'(0)=0$.",
+        "solutionTex": "f(-1)=f(1)=0,\\qquad f'(0)=0",
+        "rubric": [
+          "Verify all three Rolle hypotheses.",
+          "Check that c is strictly inside the interval."
+        ]
+      },
+      {
+        "id": "rolle-uniqueness-transfer",
+        "outcome": "Prove exactly one real root by separating existence and uniqueness.",
+        "kind": "proof",
+        "prompt": "Prove that $x^3+2x+1=0$ has exactly one real root.",
+        "hint": "Use an IVT sign change between -1 and 0; if there were two roots, apply Rolle between them.",
+        "solution": "The polynomial $p$ is continuous, with $p(-1)=-2$ and $p(0)=1$, so IVT gives a root. If $r<s$ were two roots, Rolle would give $p'(c)=0$ for some $c$ between them. But $p'(x)=3x^2+2\\geq2$, a contradiction. Thus there is exactly one root.",
+        "solutionTex": "p(-1)=-2<0<p(0)=1,\\qquad p'(x)=3x^2+2\\geq2",
+        "rubric": [
+          "Use IVT for existence.",
+          "State the Rolle hypotheses for the hypothetical two roots.",
+          "Use the derivative bound to reach a contradiction."
+        ]
+      },
+      {
+        "id": "mvt-geometric-transfer",
+        "outcome": "Interpret the mean value theorem as a slope match.",
+        "kind": "conceptual",
+        "prompt": "For $f(x)=x^2$ on $[1,3]$, find a point where the tangent is parallel to the secant.",
+        "hint": "The secant slope is 4; set $f'(c)=2c$ equal to it.",
+        "solution": "The secant slope is $\\frac{9-1}{3-1}=4$. Since $f'(c)=2c$, $c=2$ lies in $(1,3)$, and the tangent is parallel to the secant.",
+        "solutionTex": "\\frac{9-1}{3-1}=4=f'(2)",
+        "rubric": [
+          "Compute the secant slope.",
+          "Find an interior c with matching derivative."
+        ]
+      },
+      {
+        "id": "mvt-proof-transfer",
+        "outcome": "Reconstruct the MVT proof by subtracting the secant line.",
+        "kind": "proof",
+        "prompt": "Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$, where $a<b$. Define $m=\\frac{f(b)-f(a)}{b-a}$ and $h(x)=f(x)-f(a)-m(x-a)$. Explain why Rolle yields MVT.",
+        "hint": "Check $h(a)=h(b)=0$ and that subtracting a linear function preserves regularity.",
+        "solution": "The definition of $m$ gives $h(a)=h(b)=0$. The function $h$ is continuous on $[a,b]$ and differentiable on $(a,b)$, so Rolle gives $h'(c)=0$ for some $c\\in(a,b)$. Since $h'(c)=f'(c)-m$, we get $f'(c)=m=\\frac{f(b)-f(a)}{b-a}$, the MVT conclusion.",
+        "solutionTex": "h(a)=h(b)=0,\\qquad 0=h'(c)=f'(c)-m",
+        "rubric": [
+          "Show both endpoint values are equal.",
+          "Verify both regularity hypotheses.",
+          "Rearrange $h'(c)=0$ to the MVT formula."
+        ]
+      },
+      {
+        "id": "mvt-cubic-transfer",
+        "outcome": "Solve the MVT equation and retain only points inside the interval.",
+        "kind": "computational",
+        "prompt": "Find every MVT point for $f(x)=x^3$ on $[-1,1]$.",
+        "hint": "The secant slope is 1; solve $3c^2=1$ and retain roots in $(-1,1)$.",
+        "solution": "The endpoint secant slope is $\\frac{1-(-1)}{2}=1$. Solving $f'(c)=3c^2=1$ gives $c=\\pm\\frac{1}{\\sqrt{3}}$; both roots lie in $(-1,1)$.",
+        "solutionTex": "c=\\pm\\frac{1}{\\sqrt{3}}",
+        "rubric": [
+          "Compute the average slope.",
+          "Check each solution is in the open interval."
+        ]
+      },
+      {
+        "id": "mvt-derivative-bound-transfer",
+        "outcome": "Use a derivative lower bound to bound a later function value.",
+        "kind": "computational",
+        "prompt": "Suppose $f(1)=4$, $f$ is differentiable on $\\mathbb{R}$, and $f'(x)\\geq-2$ for all $x$. Find the smallest possible value of $f(4)$.",
+        "hint": "Apply MVT on $[1,4]$ and use the derivative lower bound.",
+        "solution": "For some $c\\in(1,4)$, $f(4)-4=3f'(c)\\geq-6$, so $f(4)\\geq-2$. The bound is attained by $f(x)=4-2(x-1)$, which satisfies the assumptions.",
+        "solutionTex": "f(4)=4+3f'(c)\\geq4+3(-2)=-2",
+        "rubric": [
+          "State the MVT point and interval length.",
+          "Preserve the inequality direction.",
+          "Give an example attaining the bound."
+        ]
+      },
+      {
+        "id": "zero-derivative-interval-transfer",
+        "outcome": "Use zero derivative on a connected interval and distinguish a disconnected domain.",
+        "kind": "counterexample",
+        "prompt": "Let $f'(x)=0$ for every $x\\in(-2,3)$ and $f(0)=4$. What is $f$ throughout this interval? Why does the same conclusion not follow from $f'(x)=0$ on $\\mathbb{R}\\setminus\\{0\\}$ alone?",
+        "hint": "Use the zero-derivative theorem on the interval, then inspect the source's sign function.",
+        "solution": "On $(-2,3)$, the theorem gives $f(x)=4$ everywhere because the interval is connected and contains $0$. On $\\mathbb{R}\\setminus\\{0\\}$, $\\frac{x}{|x|}$ has derivative zero everywhere in its domain but takes $-1$ and $1$ on separate components, so there is no single global constant.",
+        "solutionTex": "f(x)=4\\quad(-2<x<3),\\qquad \\frac{x}{|x|}=\\begin{cases}1,&x>0,\\\\-1,&x<0\\end{cases}",
+        "rubric": [
+          "Apply the theorem to arbitrary points of the interval.",
+          "Identify why $\\mathbb{R}\\setminus\\{0\\}$ is not an interval.",
+          "Do not claim constancy across components."
+        ]
+      },
+      {
+        "id": "equal-derivatives-transfer",
+        "outcome": "Conclude two functions differ by a constant on an interval.",
+        "kind": "proof",
+        "prompt": "Suppose $F'(x)=G'(x)$ for all $x\\in\\mathbb{R}$ and $F(0)=2$, $G(0)=-1$. What relation holds for every $x$?",
+        "hint": "Apply the equal-derivatives corollary to $F-G$ and evaluate the constant at zero.",
+        "solution": "The function $F-G$ has derivative zero on the interval $\\mathbb{R}$, so it is constant. At zero its value is $F(0)-G(0)=2-(-1)=3$. Therefore $F(x)=G(x)+3$ for all $x\\in\\mathbb{R}$.",
+        "solutionTex": "F(x)-G(x)=3\\quad\\Longrightarrow\\quad F(x)=G(x)+3",
+        "rubric": [
+          "Apply the corollary on R.",
+          "Use the initial values to determine the constant."
+        ]
       }
     ],
     "sections": [
       {
-        "title": "Rolle’s theorem supplies the bridge",
-        "text": "If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$, extrema are attained. If $f$ is constant, any interior point has derivative zero. Otherwise a value differs from the common endpoint value, so a maximum or minimum occurs inside; Fermat gives derivative zero there."
+        "title": "Rolle's theorem",
+        "text": "Continuity on $[a,b]$, differentiability on $(a,b)$, and equal endpoint values guarantee an interior point with zero derivative. The proof uses the Extreme Value Theorem and Fermat's theorem, with a separate constant-function case."
       },
       {
-        "title": "Subtract the secant",
-        "text": "Set $g(x)=f(x)-f(a)-m(x-a)$, where $m=(f(b)-f(a))/(b-a)$. Then $g(a)=g(b)=0$. Rolle provides $c$ with $g'(c)=0$, hence $f'(c)=m$. For $f(x)=x^{2}$ on $[1,3]$, $m=4$ and $c=2$."
+        "title": "The mean value theorem",
+        "text": "Under continuity on $[a,b]$ and differentiability on $(a,b)$, some tangent slope equals the secant slope. Subtracting the secant line creates the equal-endpoint function needed for Rolle."
+      },
+      {
+        "title": "Applications and consequences",
+        "text": "Rolle can prove uniqueness after IVT establishes existence. MVT can solve for a matching tangent, bound endpoint changes from derivative bounds, and prove zero derivative implies constancy on an interval."
       }
     ],
     "exercise": {
@@ -5996,7 +6386,294 @@
         "Compute the secant and available derivatives."
       ],
       "solutionTex": "\\frac{f(1)-f(-1)}{2}=0,\\quad f'(x)\\in\\{-1,1\\}\\ (x\\ne0)"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "theorem",
+        "id": "rolle-theorem",
+        "title": "Rolle's theorem",
+        "statement": "If $f(a)=f(b)$, there is $c\\in(a,b)$ such that $f'(c)=0$.",
+        "hypotheses": [
+          "$a<b$ and f is continuous on $[a,b]$.",
+          "f is differentiable on $(a,b)$.",
+          "$f(a)=f(b)$."
+        ],
+        "prerequisites": [
+          "Extreme Value Theorem",
+          "Fermat's theorem for interior extrema"
+        ],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "rolle-proof-source",
+        "title": "The constant and nonconstant cases",
+        "strategy": "Use the Extreme Value Theorem and Fermat's theorem after separating a constant function from the nonconstant case.",
+        "setup": "Let $k=f(a)=f(b)$, with $f$ continuous on $[a,b]$ and differentiable on $(a,b)$.",
+        "steps": [
+          {
+            "label": "Constant case",
+            "text": "If $f$ is constant, any $c\\in(a,b)$ has derivative zero.",
+            "equation": "f'(c)=0\\quad\\text{for every }c\\in(a,b)"
+          },
+          {
+            "label": "Attain an extremum",
+            "text": "If $f$ is not constant, some value differs from $k$. If it is larger, the absolute maximum exceeds both endpoint values and must occur in the interior; if smaller, the absolute minimum does."
+          },
+          {
+            "label": "Use differentiability",
+            "text": "At that interior extremum, Fermat's theorem gives derivative zero.",
+            "equation": "f'(c)=0\\quad\\text{for some }c\\in(a,b)"
+          }
+        ],
+        "result": "Rolle's theorem holds under all three hypotheses.",
+        "verification": "The Extreme Value Theorem gives attainment; equal endpoint values put a nonconstant extremum inside, where differentiability permits Fermat."
+      },
+      {
+        "kind": "strategy",
+        "id": "rolle-root-uniqueness-statement",
+        "title": "Use Rolle to rule out two roots",
+        "text": "To prove a continuous equation has exactly one root, first establish existence with the Intermediate Value Theorem. If two roots existed, Rolle would force a zero derivative between them; a derivative with a fixed nonzero sign rules this out."
+      },
+      {
+        "kind": "worked-example",
+        "id": "rolle-unique-root-source",
+        "title": "The source's unique real root",
+        "strategy": "Combine an IVT sign change with a Rolle contradiction.",
+        "setup": "Let $f(x)=x^3+x-1$.",
+        "steps": [
+          {
+            "label": "Existence",
+            "text": "The polynomial is continuous; opposite signs at zero and one give a root between them.",
+            "equation": "f(0)=-1<0,\\qquad f(1)=1>0"
+          },
+          {
+            "label": "Assume two roots",
+            "text": "If $r<s$ were roots, the polynomial is continuous on $[r,s]$ and differentiable on $(r,s)$, with equal endpoint values. Rolle would give an interior $c$ with $f'(c)=0$."
+          },
+          {
+            "label": "Contradiction",
+            "text": "Its derivative is always positive, so the Rolle conclusion is impossible.",
+            "equation": "f'(x)=3x^2+1\\geq 1"
+          }
+        ],
+        "result": "A root exists in $(0,1)$, and there cannot be two distinct real roots; therefore there is exactly one.",
+        "verification": "Both existence and uniqueness are needed for “exactly one”; the derivative bound applies for every $x\\in\\mathbb{R}$."
+      },
+      {
+        "kind": "theorem",
+        "id": "mvt-statement",
+        "title": "Mean Value Theorem",
+        "statement": "There is $c\\in(a,b)$ such that $f'(c)=\\frac{f(b)-f(a)}{b-a}$.",
+        "hypotheses": [
+          "$a<b$ and $f$ is continuous on $[a,b]$.",
+          "$f$ is differentiable on $(a,b)$."
+        ],
+        "prerequisites": ["Rolle's theorem"],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "strategy",
+        "id": "mvt-geometric-statement",
+        "title": "Secant and tangent slopes",
+        "text": "The secant slope is the average rate over $[a,b]$. The theorem says at least one interior tangent has the same slope, so the tangent and secant lines are parallel; the point need not be unique."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mvt-geometric-square",
+        "title": "A matching tangent for a quadratic",
+        "strategy": "Compute the secant slope and solve for an interior point with that derivative.",
+        "setup": "Let $f(x)=x^2$ on $[0,b]$, where $b>0$.",
+        "steps": [
+          {
+            "label": "Secant slope",
+            "text": "The average rate is $b$.",
+            "equation": "\\frac{f(b)-f(0)}{b-0}=\\frac{b^2}{b}=b"
+          },
+          {
+            "label": "Match the tangent",
+            "text": "Since $f'(x)=2x$, equality with the secant slope gives $c=b/2$.",
+            "equation": "f'(c)=2c=b\\quad\\Longrightarrow\\quad c=\\frac{b}{2}"
+          },
+          {
+            "label": "Check the interval",
+            "text": "The assumption $b>0$ ensures the point is strictly interior."
+          }
+        ],
+        "result": "$c=b/2$ has tangent slope equal to the secant slope.",
+        "verification": "The source gives the parallel-slope interpretation; the quadratic calculation is guide-added and explicitly verifies it."
+      },
+      {
+        "kind": "derivation",
+        "id": "mvt-subtract-secant-proof",
+        "title": "Derive MVT from Rolle",
+        "strategy": "Subtract the line through the endpoint values so the new function has equal endpoint values.",
+        "setup": "Set $m=\\frac{f(b)-f(a)}{b-a}$ and $h(x)=f(x)-f(a)-m(x-a)$.",
+        "steps": [
+          {
+            "label": "Endpoint values",
+            "text": "Substitution gives $h(a)=0$ and $h(b)=0$.",
+            "equation": "h(a)=0,\\qquad h(b)=f(b)-f(a)-m(b-a)=0"
+          },
+          {
+            "label": "Preserve regularity",
+            "text": "Subtracting a linear function preserves continuity on $[a,b]$ and differentiability on $(a,b)$, so Rolle applies."
+          },
+          {
+            "label": "Differentiate",
+            "text": "At some $c\\in(a,b)$, $h'(c)=0$; rearranging yields the MVT slope equality.",
+            "equation": "0=h'(c)=f'(c)-m\\quad\\Longrightarrow\\quad f'(c)=\\frac{f(b)-f(a)}{b-a}"
+          }
+        ],
+        "result": "Some interior tangent slope equals the original secant slope.",
+        "verification": "Both endpoint equality and the regularity hypotheses are checked before invoking Rolle."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mvt-cubic-source-example",
+        "title": "Solve for the source's MVT point",
+        "strategy": "Verify theorem hypotheses, calculate the average slope, and solve the derivative equation only for c in the open interval.",
+        "setup": "The source uses $f(x)=x^3-x$ on $[0,2]$.",
+        "steps": [
+          {
+            "label": "Eligibility",
+            "text": "A polynomial is continuous on $[0,2]$ and differentiable on $(0,2)$."
+          },
+          {
+            "label": "Average slope",
+            "text": "Evaluate the endpoints and divide by the interval length.",
+            "equation": "\\frac{f(2)-f(0)}{2-0}=\\frac{6-0}{2}=3"
+          },
+          {
+            "label": "Solve and filter",
+            "text": "Set $3c^2-1=3$. The algebra gives two real roots, but only the positive one lies in $(0,2)$.",
+            "equation": "3c^2-1=3\\quad\\Longrightarrow\\quad c=\\pm\\frac{2}{\\sqrt{3}}"
+          }
+        ],
+        "result": "c $=\\frac{2}{\\sqrt{3}}$",
+        "verification": "The selected c lies strictly inside the interval, and substitution gives derivative 3."
+      },
+      {
+        "kind": "strategy",
+        "id": "mvt-derivative-bound-statement",
+        "title": "Convert a derivative bound to an endpoint bound",
+        "text": "If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, MVT writes the endpoint change as $f'(c)(b-a)$. Preserve the sign of $b-a$ when using an upper or lower derivative bound."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mvt-endpoint-bound-source",
+        "title": "Bound the possible endpoint value",
+        "strategy": "Apply MVT on $[0,2]$, then substitute the given derivative upper bound.",
+        "setup": "The source assumes $f(0)=-3$ and $f'(x)\\leq5$ for every $x$.",
+        "steps": [
+          {
+            "label": "Use MVT",
+            "text": "There is $c\\in(0,2)$ with $f(2)-f(0)=2f'(c)$."
+          },
+          {
+            "label": "Apply the bound",
+            "text": "Since $f'(c)\\leq5$, the endpoint value is at most $-3+10$.",
+            "equation": "f(2)=-3+2f'(c)\\leq -3+2(5)=7"
+          },
+          {
+            "label": "Show sharpness",
+            "text": "The affine function $f(x)=5x-3$ satisfies the data and reaches 7; this sharpness check is guide-added."
+          }
+        ],
+        "result": "The largest possible value is 7, and it is attained by the guide-added example $f(x)=5x-3$.",
+        "verification": "The theorem gives the upper bound; the stated affine example proves that the bound is attainable."
+      },
+      {
+        "kind": "theorem",
+        "id": "zero-derivative-constant-theorem",
+        "title": "Zero derivative on an interval",
+        "statement": "If $f$ is differentiable on an interval $I$ and $f'(x)=0$ for every $x\\in I$, then $f$ is constant on $I$.",
+        "hypotheses": [
+          "I is an interval containing the points under comparison.",
+          "f is differentiable on I.",
+          "$f'(x)=0$ for every x in I."
+        ],
+        "prerequisites": ["Mean Value Theorem"],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "zero-derivative-constant-proof",
+        "title": "Compare arbitrary points",
+        "strategy": "Choose any two points in the interval and apply MVT on the closed subinterval between them.",
+        "setup": "Let $u<v$ be any two points of I.",
+        "steps": [
+          {
+            "label": "Apply MVT",
+            "text": "Differentiability on I gives continuity on $[u,v]$ and differentiability on $(u,v)$."
+          },
+          {
+            "label": "Use the derivative condition",
+            "text": "For some $c\\in(u,v)$, MVT gives zero change.",
+            "equation": "f(v)-f(u)=f'(c)(v-u)=0"
+          },
+          {
+            "label": "Conclude",
+            "text": "Since the pair $u,v$ was arbitrary, all values on $I$ are equal."
+          }
+        ],
+        "result": "$f$ is constant on $I$.",
+        "verification": "The interval condition ensures every $[u,v]$ between points of I stays inside the domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "zero-derivative-disconnected-domain",
+        "title": "Why an interval matters",
+        "strategy": "Differentiate on each connected component of the domain, then compare the component values.",
+        "setup": "The source gives $f(x)=\\frac{x}{|x|}$ with domain $\\mathbb{R}\\setminus\\{0\\}$.",
+        "steps": [
+          {
+            "label": "Differentiate on the domain",
+            "text": "The function is constant on each side of zero and has derivative zero at every point of its domain.",
+            "equation": "f(x)=\\begin{cases}1,&x>0,\\\\-1,&x<0,\\end{cases}\\qquad f'(x)=0\\quad(x\\ne0)"
+          },
+          {
+            "label": "Check the domain shape",
+            "text": "The domain $\\mathbb{R}\\setminus\\{0\\}$ is not an interval and contains two components with different values."
+          }
+        ],
+        "result": "The zero-derivative theorem applies separately on $(-\\infty ,0)$ and $(0,\\infty )$, not across the missing point.",
+        "verification": "This is the source's p. 31 qualification, not a counterexample to the theorem."
+      },
+      {
+        "kind": "theorem",
+        "id": "equal-derivatives-corollary",
+        "title": "Equal derivatives differ by a constant",
+        "statement": "If $f$ and $g$ are differentiable on an interval $I$ and $f'(x)=g'(x)$ throughout $I$, then $f(x)-g(x)$ is constant on $I$; equivalently, there is a constant $C$ such that $f(x)=g(x)+C$.",
+        "hypotheses": [
+          "I is an interval.",
+          "Both functions are differentiable on I.",
+          "Their derivatives agree at every point of I."
+        ],
+        "prerequisites": ["Zero-derivative theorem"],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "equal-derivatives-proof",
+        "title": "Apply the zero-derivative result to a difference",
+        "strategy": "Set F $=f-g$ and use the preceding theorem.",
+        "setup": "Assume $f'(x)=g'(x)$ for all x in an interval I.",
+        "steps": [
+          {
+            "label": "Differentiate the difference",
+            "text": "Linearity gives $F'(x)=0$ throughout I.",
+            "equation": "F(x)=f(x)-g(x),\\qquad F'(x)=f'(x)-g'(x)=0"
+          },
+          {
+            "label": "Apply the theorem",
+            "text": "F is constant on I, so the difference f-g has one constant value there."
+          }
+        ],
+        "result": "There is a constant $C$ such that $f(x)=g(x)+C$ for all $x\\in I$.",
+        "verification": "The conclusion holds on each interval under consideration; constants on different components need not match."
+      }
+    ]
   },
   "derivative-tests": {
     "prerequisites": ["rolle-mean-value", "extrema-fermat"],
