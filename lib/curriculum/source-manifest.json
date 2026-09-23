@@ -885,10 +885,20 @@
     "driveFileId": "1XmY_hoDlUt7VvPdi9bzRwbxp63Abfpmy",
     "title": "MH2100_Lecture_01_Annotated",
     "kind": "annotated_lecture",
-    "status": "unreviewed",
+    "status": "annotated_variant",
     "modifiedAt": "2026-08-20T00:14:01.803Z",
     "canonicalParent": "MH2100_Lecture_01",
-    "affectedConcepts": []
+    "reviewedAt": "2026-09-24",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "affectedConcepts": [
+      "vectors-and-coordinates",
+      "curves-and-parametrizations",
+      "constructing-curves",
+      "tangents-velocity-and-singularities",
+      "surfaces-and-level-sets"
+    ],
+    "note": "Page review found explanatory annotations only; no erratum or new outcome. See docs/audits/annotation-archive-review-2026-09-24.md."
   },
   {
     "sourceId": "MH2100_Lecture_02",
@@ -915,10 +925,22 @@
     "driveFileId": "1RsFB5jv-t4Z0Ja7m895oIArz3zxK_asa",
     "title": "MH2100_Lecture_02_Annotated",
     "kind": "annotated_lecture",
-    "status": "unreviewed",
+    "status": "annotated_variant",
     "modifiedAt": "2026-09-08T22:07:14.926Z",
     "canonicalParent": "MH2100_Lecture_02",
-    "affectedConcepts": []
+    "reviewedAt": "2026-09-24",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "affectedConcepts": [
+      "distance-and-neighborhoods",
+      "epsilon-delta-limits",
+      "different-paths-different-limits",
+      "curved-paths-hide-obstructions",
+      "squeeze-and-continuity",
+      "limits-at-infinity",
+      "partial-derivatives-as-slices"
+    ],
+    "note": "Page review found explanatory annotations only; no erratum or new outcome. See docs/audits/annotation-archive-review-2026-09-24.md."
   },
   {
     "sourceId": "MH2100_Lecture_03",
@@ -945,10 +967,22 @@
     "driveFileId": "1hWI46iZE42nw3mLh2JiB_C3uhShUcTpO",
     "title": "MH2100_Lecture_03_Annotated",
     "kind": "annotated_lecture",
-    "status": "unreviewed",
+    "status": "annotated_variant",
     "modifiedAt": "2026-09-08T22:07:14.903Z",
     "canonicalParent": "MH2100_Lecture_03",
-    "affectedConcepts": []
+    "reviewedAt": "2026-09-24",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "affectedConcepts": [
+      "cross-products-and-planes",
+      "total-differentiability",
+      "partials-do-not-make-a-plane",
+      "certifying-differentiability-and-errors",
+      "multivariable-chain-rule",
+      "implicit-functions-and-tangents",
+      "directional-derivatives-and-gradient"
+    ],
+    "note": "Page review found explanatory annotations only; no erratum or new outcome. See docs/audits/annotation-archive-review-2026-09-24.md."
   },
   {
     "sourceId": "MH2100_Lecture_04",
@@ -973,10 +1007,20 @@
     "driveFileId": "1KO44VEnB6_MsZOyQ4Bp8Bn6MNl7tv7_I",
     "title": "MH2100_Lecture_04_Annotated",
     "kind": "annotated_lecture",
-    "status": "unreviewed",
+    "status": "annotated_variant",
     "modifiedAt": "2026-09-09T22:07:30.385Z",
     "canonicalParent": "MH2100_Lecture_04",
-    "affectedConcepts": []
+    "reviewedAt": "2026-09-24",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "affectedConcepts": [
+      "gradient-normals-and-steepest-ascent",
+      "local-extrema-and-saddles",
+      "mixed-and-higher-partials",
+      "hessian-classification",
+      "global-extrema-and-boundaries"
+    ],
+    "note": "Page review found explanatory annotations only; no erratum or new outcome. See docs/audits/annotation-archive-review-2026-09-24.md."
   },
   {
     "sourceId": "MH2100_Lecture_05",
