@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { capDecision } from "@/lib/curriculum/cap-orientation";
-import { Formula } from "./math-text";
+import { Formula, MathText } from "./math-text";
 
 export function CapOrientationDecision() {
   const [closed, setClosed] = useState(false);
@@ -15,8 +15,8 @@ export function CapOrientationDecision() {
     >
       <h3>Can the divergence theorem be used?</h3>
       <p>
-        Fixed example: upper hemisphere of radius 2, with its equatorial disk
-        when selected. The regular field is{" "}
+        Fixed example: upper hemisphere of radius <Formula>2</Formula>, with its
+        equatorial disk when selected. The regular field is{" "}
         <Formula>{String.raw`\mathbf F=(x,y,z)`}</Formula>.
       </p>
       <div
@@ -49,9 +49,13 @@ export function CapOrientationDecision() {
       <p>
         {regular ? (
           <>
-            Cap flux {outward ? "+" : "−"}16π;{" "}
-            {closed ? "closing disk flux 0; " : ""}
-            scalar cap area 8π under either normal.
+            Cap flux <Formula>{outward ? "+16\\pi" : "-16\\pi"}</Formula>;{" "}
+            {closed && (
+              <>
+                closing disk flux <Formula>0</Formula>;{" "}
+              </>
+            )}
+            scalar cap area <Formula>{"8\\pi"}</Formula> under either normal.
           </>
         ) : (
           <>
@@ -61,10 +65,19 @@ export function CapOrientationDecision() {
         )}
       </p>
       <p>
-        {result.theoremEligible
-          ? "Eligible: divergence 3 times hemisphere volume 16π/3 gives outward flux 16π."
-          : "Direct divergence-theorem equality is unavailable for this choice."}{" "}
-        {result.reason}
+        {result.theoremEligible ? (
+          <>
+            Eligible: divergence <Formula>3</Formula> times hemisphere volume{" "}
+            <Formula>{"16\\pi/3"}</Formula> gives outward flux{" "}
+            <Formula>{"16\\pi"}</Formula>.{" "}
+          </>
+        ) : (
+          <>
+            Direct divergence-theorem equality is unavailable for this
+            choice.{" "}
+          </>
+        )}
+        <MathText text={result.reason} />
       </p>
     </aside>
   );

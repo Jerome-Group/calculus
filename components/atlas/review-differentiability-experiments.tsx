@@ -14,7 +14,7 @@ import {
   reviewValue,
   type ReviewFunction,
 } from "@/lib/curriculum/review-differentiability";
-import { Formula } from "./math-text";
+import { Formula, MathText } from "./math-text";
 import { exampleById } from "@/lib/curriculum/example-registry";
 
 const reviews = [
@@ -24,7 +24,7 @@ const reviews = [
     plane: "L_f(x,y)=0",
     exact: "0\\le |f-L_f|/r=(x^4+y^4)/r^2\\le r^2\\to0",
     explanation:
-      "The coordinate partials are zero, so the candidate plane is z=0. The inequality holds in every direction; for error below ε, radius below √ε suffices.",
+      "The coordinate partials are zero, so the candidate plane is $z=0$. The inequality holds in every direction; for error below $\\varepsilon$, radius below $\\sqrt\\varepsilon$ suffices.",
   },
   {
     kind: "counterexample" as const,
@@ -32,7 +32,7 @@ const reviews = [
     plane: "L_g(x,y)=x",
     exact: "(g-L_g)/r=-2xy^2/r^3;\\quad (x,y)=(t,t),\\ t>0\\implies -1/\\sqrt2",
     explanation:
-      "The partials force the plane z=x. Along either coordinate axis the remainder vanishes, but on the positive diagonal its normalized value stays −1/√2 as radius shrinks.",
+      "The partials force the plane $z=x$. Along either coordinate axis the remainder vanishes, but on the positive diagonal its normalized value stays $-1/\\sqrt2$ as radius shrinks.",
   },
 ] as const;
 
@@ -124,15 +124,18 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
       data-review-function={review.kind}
       data-example-id={identity.id}
     >
-      <h3>{identity.title}</h3>
+      <h3>
+        <MathText text={identity.title} />
+      </h3>
       <div style={{ overflowX: "auto" }}>
         <Formula block>{identity.formula}</Formula>
       </div>
       <p>
-        {identity.domain} {identity.annotation}
+        <MathText text={`${identity.domain} ${identity.annotation}`} />
       </p>
       <p>
-        <Formula>{review.plane}</Formula>. {review.explanation}
+        <Formula>{review.plane}</Formula>.{" "}
+        <MathText text={review.explanation} />
       </p>
       <p>
         <Formula>{review.exact}</Formula>
@@ -149,7 +152,9 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
       >
         <summary>Inspect the exact function and plane</summary>
         <div style={{ paddingBlock: "1rem" }}>
-          <label htmlFor={radiusId}>Distance from origin r</label>
+          <label htmlFor={radiusId}>
+            Distance from origin <Formula>r</Formula>
+          </label>
           <input
             id={radiusId}
             type="range"
@@ -168,7 +173,9 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
             }
             style={{ width: "100%" }}
           />
-          <label htmlFor={angleId}>Direction θ in radians</label>
+          <label htmlFor={angleId}>
+            Direction <Formula>{String.raw`\theta`}</Formula> in radians
+          </label>
           <input
             id={angleId}
             type="range"
@@ -189,13 +196,13 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
           />
           <output aria-live="polite">
             <p>
-              r = {radius.toFixed(2)}; θ = {angle.toFixed(2)}; point (x,y) = (
-              {x.toFixed(3)}, {y.toFixed(3)}).
+              <Formula>{`r=${radius.toFixed(2)},\\quad\\theta=${angle.toFixed(2)},\\quad(x,y)=(${x.toFixed(3)},${y.toFixed(3)})`}</Formula>
+              .
             </p>
             <p>
-              Function value = {value.toFixed(4)}; candidate plane ={" "}
-              {plane.toFixed(4)}; signed normalized remainder ={" "}
-              {residual.toFixed(4)}.
+              Function value <Formula>{value.toFixed(4)}</Formula>; candidate
+              plane <Formula>{plane.toFixed(4)}</Formula>; signed normalized
+              remainder <Formula>{residual.toFixed(4)}</Formula>.
             </p>
           </output>
           {active && <ReviewMesh kind={review.kind} />}

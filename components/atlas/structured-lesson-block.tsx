@@ -8,7 +8,9 @@ export function StructuredLessonBlockView({
 }) {
   return (
     <section className="lesson-extension" aria-labelledby={block.id}>
-      <h3 id={block.id}>{block.title}</h3>
+      <h3 id={block.id}>
+        <MathText text={block.title} />
+      </h3>
       {block.kind === "theorem" && (
         <>
           <p className="reasoning-status">{block.status}</p>

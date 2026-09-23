@@ -56,5 +56,5 @@ test("narrative has ordered independent experiment IDs and visible text equivale
   assert.match(html, /vertical slice/i);
   assert.match(html, /parameter region/i);
   assert.match(html, /type="range"/);
-  assert.doesNotMatch(html, /<svg/);
+  assert.doesNotMatch(html, /<svg viewBox="0 0 (?:320|340) 280"/);
 });

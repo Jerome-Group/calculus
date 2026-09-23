@@ -164,6 +164,7 @@ test("known calculus values and parameter symbols remain correct", () => {
   assert.equal(planarModel("plane-squeeze").symbol, "\\delta");
   assert.match(planarModel("plane-secant", 0.1).readout, /2\.1/);
   assert.equal(parameterTex("Angle θ"), "Angle $\\theta$");
+  assert.equal(parameterTex("Slice y=b"), "Slice $y=b$");
 });
 
 test("all spatial scene variants construct finite geometry at range endpoints", async () => {

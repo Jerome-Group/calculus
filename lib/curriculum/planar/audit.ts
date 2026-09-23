@@ -156,7 +156,7 @@ export function auditModel(id: string, value?: number) {
       m.formula = tex`T(u,v)=(u,v+uv^2),\quad\det DT=1+2uv`;
       m.readout = tex`h=k=${decimal(h)},\quad d=${decimal(Math.hypot(h, k))},\quad\frac{A_{\rm cell}}{hk}=${decimal(finiteRatio)},\quad\det DT=${decimal(1 + 2 * u * v)}`;
       m.note =
-        "Both cell sides shrink, so diameter d=√(h²+k²) tends to zero. Exact finite ratio is 1+2(u+h/2)(v+k/2). Keeping k fixed instead leaves bias uk as h→0; shrinking both removes it. Orange is the exact image; dashed blue is the derivative parallelogram.";
+        "Both cell sides shrink, so diameter $d=\\sqrt{h^2+k^2}$ tends to zero. Exact finite ratio is $1+2(u+h/2)(v+k/2)$. Keeping $k$ fixed instead leaves bias $uk$ as $h\\to0$; shrinking both removes it. Orange is the exact image; dashed blue is the derivative parallelogram.";
     } else {
       m.formula = tex`T(u,v)=(u,(1+u)v),\quad\det DT=1+u`;
       m.readout = tex`u=${decimal(u)},\ h=${decimal(h)},\quad\frac{A_{\rm cell}}{hk}=${decimal(1 + u + h / 2)},\quad\det DT=${decimal(1 + u)}`;

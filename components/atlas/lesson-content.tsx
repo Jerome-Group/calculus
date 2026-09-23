@@ -25,7 +25,7 @@ export function LessonContent({
           <span>Builds on</span>
           {guide.prerequisites.map((id) => (
             <button key={id} onClick={() => openPrerequisite(id)}>
-              {concepts.find((c) => c.id === id)?.title}
+              <MathText text={concepts.find((c) => c.id === id)?.title ?? ""} />
             </button>
           ))}
         </nav>
@@ -85,7 +85,9 @@ export function LessonContent({
       ))}
       {guide?.sections.map((section) => (
         <section className="lesson-extension" key={section.title}>
-          <h2>{section.title}</h2>
+          <h2>
+            <MathText text={section.title} />
+          </h2>
           <p>
             <MathText text={section.text} />
           </p>

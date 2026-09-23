@@ -1,4 +1,5 @@
 "use client";
+import { MathText } from "./math-text";
 import { useSyncExternalStore } from "react";
 import { concepts } from "@/lib/curriculum";
 import {
@@ -34,14 +35,16 @@ export function StudyProgress({ open }: { open: (id: string) => void }) {
         marked for practice. Opening a lesson does not award mastery.
       </p>
       {resume && (
-        <button onClick={() => open(resume.id)}>Resume: {resume.title}</button>
+        <button onClick={() => open(resume.id)}>
+          Resume: <MathText text={resume.title} />
+        </button>
       )}
       {practice.length > 0 && (
         <details>
           <summary>Revisit practice ({practice.length})</summary>
           {practice.map((c) => (
             <button key={c.id} onClick={() => open(c.id)}>
-              {c.title}
+              <MathText text={c.title} />
             </button>
           ))}
         </details>

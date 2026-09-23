@@ -1,3 +1,4 @@
+import { MathText } from "./math-text";
 import { concepts } from "@/lib/curriculum";
 import {
   integrationFailure,
@@ -16,21 +17,29 @@ export function IntegrationFramework({ open }: { open: (id: string) => void }) {
           <li key={`${step.id}-${index}`}>
             <h3>{step.title}</h3>
             <p>
-              <strong>Assume:</strong> {step.hypothesis}
+              <strong>Assume:</strong> <MathText text={step.hypothesis} />
             </p>
             <p>
-              <strong>Then:</strong> {step.conclusion}
+              <strong>Then:</strong> <MathText text={step.conclusion} />
             </p>
             <p>
-              <strong>Limit:</strong> {step.boundary}
+              <strong>Limit:</strong> <MathText text={step.boundary} />
             </p>
             <button onClick={() => open(step.id)}>
-              Open {concepts.find((concept) => concept.id === step.id)?.title}
+              Open{" "}
+              <MathText
+                text={
+                  concepts.find((concept) => concept.id === step.id)?.title ??
+                  ""
+                }
+              />
             </button>
           </li>
         ))}
       </ol>
-      <p>{integrationFailure}</p>
+      <p>
+        <MathText text={integrationFailure} />
+      </p>
     </section>
   );
 }

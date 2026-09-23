@@ -300,8 +300,11 @@ export function GraphStudio({ study }: { study: StudyController }) {
                   {key === "clip" ? (
                     <>
                       {draft.mode === "curve"
-                        ? "Coordinate clip (x, y, z)"
-                        : "Height clip ±z"}
+                        ? "Coordinate clip "
+                        : "Height clip "}
+                      <Formula>
+                        {draft.mode === "curve" ? "(x,y,z)" : "\\pm z"}
+                      </Formula>
                     </>
                   ) : (
                     <>
@@ -372,8 +375,9 @@ export function GraphStudio({ study }: { study: StudyController }) {
               Implicit surfaces use sign changes and bounded root refinement
               with a residual check. Discontinuous expressions can still produce
               misleading candidates. Zero sets without a sign change, such as{" "}
-              <code>x^2 = 0</code>, can be missed. A blank scene means no
-              visible sampled geometry, not a proof that the zero set is empty.
+              <Formula>{"x^2=0"}</Formula>, can be missed. A blank scene means
+              no visible sampled geometry, not a proof that the zero set is
+              empty.
             </p>
           </div>
         </section>

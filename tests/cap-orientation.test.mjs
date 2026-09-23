@@ -50,5 +50,10 @@ test("a singularity on the closing disk bars direct theorem use", async () => {
   );
   assert.match(html, /Open cap only/);
   assert.match(html, /aria-pressed="false"/);
-  assert.match(html, /scalar cap area 8π/);
+  assert.match(html, /scalar cap area <span class="formula">/);
+  assert.match(
+    html,
+    /<annotation encoding="application\/x-tex">8\\pi<\/annotation>/,
+  );
+  assert.doesNotMatch(html, /scalar cap area 8π/);
 });

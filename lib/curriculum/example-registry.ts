@@ -28,23 +28,24 @@ export const exampleRegistry: readonly ExampleIdentity[] = [
     id: "review-differentiable-f",
     conceptId: "review-total-differentiability",
     status: "original",
-    title: "Differentiable review function f",
+    title: "Differentiable review function $f$",
     formula: String.raw`f(x,y)=\begin{cases}(x^4+y^4)/\sqrt{x^2+y^2},&(x,y)\ne(0,0)\\0,&(x,y)=(0,0)\end{cases}`,
-    domain: "All of R²; f(0,0)=0.",
+    domain: "All of $\\mathbb R^2$; $f(0,0)=0$.",
     orientation: "Not applicable; scalar function.",
-    annotation: "Candidate derivative L=0; normalized remainder is at most r².",
+    annotation:
+      "Candidate derivative $L=0$; normalized remainder is at most $r^2$.",
     graph: reviewPreset(0),
   },
   {
     id: "review-counterexample-g",
     conceptId: "review-total-differentiability",
     status: "original",
-    title: "Nondifferentiable review function g",
+    title: "Nondifferentiable review function $g$",
     formula: String.raw`g(x,y)=\begin{cases}(x^3-xy^2)/(x^2+y^2),&(x,y)\ne(0,0)\\0,&(x,y)=(0,0)\end{cases}`,
-    domain: "All of R²; g(0,0)=0.",
+    domain: "All of $\\mathbb R^2$; $g(0,0)=0$.",
     orientation: "Not applicable; scalar function.",
     annotation:
-      "Candidate derivative L(x,y)=x; diagonal normalized residual is −1/√2.",
+      "Candidate derivative $L(x,y)=x$; diagonal normalized residual is $-1/\\sqrt2$.",
     graph: reviewPreset(1),
   },
   {
@@ -53,10 +54,10 @@ export const exampleRegistry: readonly ExampleIdentity[] = [
     status: "original",
     title: "Original clockwise Green problem",
     formula: String.raw`P=y\cos x-xy\sin x,\quad Q=xy+x\cos x`,
-    domain: "Triangle with vertices (0,0), (0,12), (3,0).",
+    domain: "Triangle with vertices $(0,0)$, $(0,12)$, $(3,0)$.",
     orientation:
-      "Clockwise boundary; region lies on the right; circulation −72.",
-    annotation: "Qₓ−Pᵧ=y; trigonometric derivative terms cancel.",
+      "Clockwise boundary; region lies on the right; circulation $-72$.",
+    annotation: "$Q_x-P_y=y$; trigonometric derivative terms cancel.",
     graph: noGraph("The shared Stokes scene is not this triangular region."),
   },
   {
@@ -65,10 +66,10 @@ export const exampleRegistry: readonly ExampleIdentity[] = [
     status: "scaffold",
     title: "Simplified Green scaffold",
     formula: String.raw`P=0,\quad Q=xy`,
-    domain: "The same triangle with vertices (0,0), (0,12), (3,0).",
-    orientation: "Clockwise boundary; circulation −72.",
+    domain: "The same triangle with vertices $(0,0)$, $(0,12)$, $(3,0)$.",
+    orientation: "Clockwise boundary; circulation $-72$.",
     annotation:
-      "Same curl y and answer; omits the original derivative cancellation.",
+      "Same curl $y$ and answer; omits the original derivative cancellation.",
     graph: noGraph("The shared Stokes scene is not this triangular region."),
   },
   {
@@ -77,9 +78,9 @@ export const exampleRegistry: readonly ExampleIdentity[] = [
     status: "original",
     title: "Original orientation-reversing potential problem",
     formula: String.raw`P=2xy+e^{-x^2},\ Q=x^2+y\cos(\pi y^2/2);\quad\mathbf r(t)=(e^{t^2-t}-\cos(2\pi t),\ 2\sin(\pi t^2/2)-t^9)`,
-    domain: "0≤t≤1; parametrization runs (0,0) to (0,1).",
+    domain: "$0\\le t\\le1$; parametrization runs $(0,0)$ to $(0,1)$.",
     orientation:
-      "Requested traversal is (0,1) to (0,0), opposite increasing t; integral −1/π.",
+      "Requested traversal is $(0,1)$ to $(0,0)$, opposite increasing $t$; integral $-1/\\pi$.",
     annotation: String.raw`Use the potential $\phi(x,y)=x^2y+\int_0^x e^{-s^2}\,ds+\sin(\pi y^2/2)/\pi$.`,
     graph: noGraph(
       "No exact plot is provided for the original parametrized curve.",
@@ -91,8 +92,8 @@ export const exampleRegistry: readonly ExampleIdentity[] = [
     status: "scaffold",
     title: "Straight-path potential scaffold",
     formula: String.raw`\mathbf r(t)=(0,1-t),\quad0\le t\le1`,
-    domain: "0≤t≤1; straight segment from (0,1) to (0,0).",
-    orientation: "Already follows the requested direction; integral −1/π.",
+    domain: "$0\\le t\\le1$; straight segment from $(0,1)$ to $(0,0)$.",
+    orientation: "Already follows the requested direction; integral $-1/\\pi$.",
     annotation:
       "Endpoint method keeps the answer but removes the original orientation trap.",
     graph: noGraph("The shared Stokes scene is not this path."),

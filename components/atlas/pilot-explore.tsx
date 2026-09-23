@@ -49,21 +49,31 @@ function BoundsDiagram({
           strokeWidth="5"
         />
       )}
-      <text x="220" y="247">
-        x
-      </text>
-      <text x="12" y="35">
-        y
-      </text>
-      <text x="40" y="218">
-        0
-      </text>
-      <text x="214" y="218">
-        2
-      </text>
-      <text x="38" y="42">
-        2
-      </text>
+      <foreignObject x="220" y="229" width="28" height="28">
+        <div>
+          <Formula>x</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="12" y="17" width="28" height="28">
+        <div>
+          <Formula>y</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="40" y="200" width="28" height="28">
+        <div>
+          <Formula>0</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="214" y="200" width="28" height="28">
+        <div>
+          <Formula>2</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="38" y="24" width="28" height="28">
+        <div>
+          <Formula>2</Formula>
+        </div>
+      </foreignObject>
     </svg>
   );
 }
@@ -132,7 +142,7 @@ export function PilotExplore({
             </button>
           </div>
           <label htmlFor="slice-coordinate">
-            Slice coordinate: {coordinate.toFixed(2)}
+            Slice coordinate: <Formula>{coordinate.toFixed(2)}</Formula>
           </label>
           <input
             id="slice-coordinate"
@@ -148,7 +158,8 @@ export function PilotExplore({
       {epsilon && representation === "table" && (
         <section className="pilot-controls" aria-label="Tolerance control">
           <label htmlFor="epsilon-tolerance">
-            Output tolerance epsilon: {study.p.toFixed(2)}
+            Output tolerance{" "}
+            <Formula>{String.raw`\varepsilon=${study.p.toFixed(2)}`}</Formula>
           </label>
           <input
             id="epsilon-tolerance"
@@ -194,7 +205,9 @@ export function PilotExplore({
         {epsilon ? (
           <>
             <p>
-              <MathText text="The output band is $2-\varepsilon<2x<2+\varepsilon$; the input interval is $1-\delta<x<1+\delta$." />
+              <MathText
+                text={String.raw`The output band is $2-\varepsilon<2x<2+\varepsilon$; the input interval is $1-\delta<x<1+\delta$.`}
+              />
             </p>
             <Formula
               block
@@ -213,19 +226,28 @@ export function PilotExplore({
               <tbody>
                 <tr>
                   <th scope="row">Input interval, endpoints excluded</th>
-                  <td>{(1 - delta).toFixed(2)}</td>
-                  <td>{(1 + delta).toFixed(2)}</td>
+                  <td>
+                    <Formula>{(1 - delta).toFixed(2)}</Formula>
+                  </td>
+                  <td>
+                    <Formula>{(1 + delta).toFixed(2)}</Formula>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">Output band, endpoints excluded</th>
-                  <td>{(2 - study.p).toFixed(2)}</td>
-                  <td>{(2 + study.p).toFixed(2)}</td>
+                  <td>
+                    <Formula>{(2 - study.p).toFixed(2)}</Formula>
+                  </td>
+                  <td>
+                    <Formula>{(2 + study.p).toFixed(2)}</Formula>
+                  </td>
                 </tr>
               </tbody>
             </table>
             <div className="pilot-delta-challenge">
               <label htmlFor="candidate-delta">
-                Choose one delta for the selected epsilon
+                Choose one <Formula>{String.raw`\delta`}</Formula> for the
+                selected <Formula>{String.raw`\varepsilon`}</Formula>
               </label>
               <input
                 id="candidate-delta"
@@ -244,7 +266,9 @@ export function PilotExplore({
               >
                 Check all inputs algebraically
               </button>
-              <p role="status">{candidateFeedback}</p>
+              <p role="status">
+                <MathText text={candidateFeedback} />
+              </p>
             </div>
           </>
         ) : (
@@ -255,7 +279,9 @@ export function PilotExplore({
                 : `y=${coordinate.toFixed(2)},\\quad0\\le x\\le${(2 - coordinate).toFixed(2)}`}
             </Formula>
             <p>
-              <MathText text="Both orders describe $D=\{(x,y):x\ge0,y\ge0,x+y\le2\}$." />
+              <MathText
+                text={String.raw`Both orders describe $D=\{(x,y):x\ge0,y\ge0,x+y\le2\}$.`}
+              />
             </p>
             <table>
               <caption>Exact bounds at the current slice</caption>
@@ -269,8 +295,12 @@ export function PilotExplore({
               <tbody>
                 <tr>
                   <th scope="row">{orientation}</th>
-                  <td>{coordinate.toFixed(2)}</td>
-                  <td>0 to {(2 - coordinate).toFixed(2)}</td>
+                  <td>
+                    <Formula>{coordinate.toFixed(2)}</Formula>
+                  </td>
+                  <td>
+                    <Formula>{`0\\le ${orientation === "vertical" ? "y" : "x"}\\le${(2 - coordinate).toFixed(2)}`}</Formula>
+                  </td>
                 </tr>
               </tbody>
             </table>

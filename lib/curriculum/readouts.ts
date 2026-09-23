@@ -9,7 +9,7 @@ export function parameterTex(label: string) {
   };
   let s = label.replace(/[θεαφ]/g, (c) => `$${symbols[c]}$`);
   s = s.replace(/\b([a-zA-Z])\b/g, "$$$1$");
-  return s;
+  return s.replace(/\$([a-zA-Z])\$=\$([a-zA-Z])\$/g, "$$$1=$2$");
 }
 export function readoutTex(id: string, p: number): string {
   switch (id) {

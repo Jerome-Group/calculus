@@ -48,7 +48,7 @@ export function LessonExperiment({ study }: { study: StudyController }) {
   const integralReviewTransfer =
     concept.id === "review-integral-methods" && activeScene === "stokes";
   const sceneDescription = relatedReviewScene
-    ? "Generic transfer model: h(x,y)=x³/(x²+y²) away from the origin, with h(0,0)=0. This is neither exact review function. Their separate diagrams and graph presets appear below."
+    ? "Generic transfer model: $h(x,y)=\\frac{x^3}{x^2+y^2}$ away from the origin, with $h(0,0)=0$. This is neither exact review function. Their separate diagrams and graph presets appear below."
     : integralReviewTransfer
       ? "Related Stokes transfer model: paraboloid cap and its boundary. The original review Green and potential problems have different fields and geometry, listed below."
       : `${concept.title}. ${concept.subtitle}`;

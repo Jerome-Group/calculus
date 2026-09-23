@@ -67,11 +67,13 @@ export function RegionBoundsIllustration({ lessonId }: { lessonId: string }) {
           <Formula>{String.raw`-2\le x\le2,\quad-\sqrt{4-x^2}\le y\le\sqrt{4-x^2}`}</Formula>
         </p>
         <p>
-          The right panel shades the actual set implied by the single bound −2 ≤
-          y ≤ 2 at x=0, extended to the full disk. Its dashed inner disk is an
-          erroneous inclusion. Split the vertical fiber at the inner circle. The
-          intended annulus has area 3π; the proposed full disk has area 4π,
-          including π of unwanted hole.
+          The right panel shades the actual set implied by the single bound{" "}
+          <Formula>{String.raw`-2\le y\le2`}</Formula> at <Formula>x=0</Formula>
+          , extended to the full disk. Its dashed inner disk is an erroneous
+          inclusion. Split the vertical fiber at the inner circle. The intended
+          annulus has area <Formula>{String.raw`3\pi`}</Formula>; the proposed
+          full disk has area <Formula>{String.raw`4\pi`}</Formula>, including{" "}
+          <Formula>{String.raw`\pi`}</Formula> of unwanted hole.
         </p>
       </aside>
     );
@@ -106,20 +108,28 @@ export function RegionBoundsIllustration({ lessonId }: { lessonId: string }) {
           <path d="M 90 190 V 35 M 90 190 H 210" stroke="currentColor" />
           <path d="M 90 190 L 160 120" stroke="currentColor" strokeWidth="4" />
           <circle cx="160" cy="120" r="4" fill="currentColor" />
-          <text x="165" y="116" fill="currentColor">
-            ρ=cos φ
-          </text>
-          <text x="96" y="185" fill="currentColor">
-            φ
-          </text>
+          <foreignObject x="165" y="100" width="70" height="30">
+            <div>
+              <Formula>{String.raw`\rho=\cos\phi`}</Formula>
+            </div>
+          </foreignObject>
+          <foreignObject x="96" y="169" width="30" height="30">
+            <div>
+              <Formula>{String.raw`\phi`}</Formula>
+            </div>
+          </foreignObject>
         </svg>
         <p>
           <Formula>{String.raw`x^2+y^2+z^2=z\iff0\le\rho\le\cos\phi,\quad0\le\phi\le\pi/2`}</Formula>
         </p>
         <p>
-          The whole azimuth is 0 ≤ θ ≤ 2π. The radial bound describes the
-          domain; the volume Jacobian is separately ρ² sin φ. For density f,
-          substitute x, y, z into f before multiplying by that Jacobian.
+          The whole azimuth is{" "}
+          <Formula>{String.raw`0\le\theta\le2\pi`}</Formula>. The radial bound
+          describes the domain; the volume Jacobian is separately{" "}
+          <Formula>{String.raw`\rho^2\sin\phi`}</Formula>. For density{" "}
+          <Formula>f</Formula>, substitute <Formula>x</Formula>,{" "}
+          <Formula>y</Formula>, <Formula>z</Formula> into <Formula>f</Formula>
+          before multiplying by that Jacobian.
         </p>
       </aside>
     );

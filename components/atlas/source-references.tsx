@@ -39,7 +39,9 @@ export function SourceReferences({ concept }: { concept: Concept }) {
                 <a href={reading.url} target="_blank" rel="noreferrer">
                   {reading.locator} <ExternalLink size={12} />
                 </a>
-                <p>{reading.purpose}</p>
+                <p>
+                  <MathText text={reading.purpose} />
+                </p>
               </li>
             ))}
           </ul>
@@ -63,11 +65,13 @@ export function SourceReferences({ concept }: { concept: Concept }) {
                         ? `PDF p. ${citation.pages[0]}`
                         : `PDF pp. ${citation.pages.join("–")}`}
                     </strong>
-                    <span>{citation.detail}</span>
+                    <span>
+                      <MathText text={citation.detail} />
+                    </span>
                     <ExternalLink size={12} />
                   </a>
                   <p>
-                    <strong>{use.role}.</strong> {use.purpose}
+                    <strong>{use.role}.</strong> <MathText text={use.purpose} />
                   </p>
                 </li>
               );
@@ -85,9 +89,11 @@ export function SourceReferences({ concept }: { concept: Concept }) {
             {source.errata?.map((note) => (
               <aside className="source-erratum" key={note.page}>
                 <strong>Source erratum · PDF p. {note.page}</strong>
-                <p>{note.printed}</p>
                 <p>
-                  {note.correction} {note.justification}
+                  <MathText text={note.printed} />
+                </p>
+                <p>
+                  <MathText text={`${note.correction} ${note.justification}`} />
                 </p>
                 <small>{note.provenance}</small>
               </aside>

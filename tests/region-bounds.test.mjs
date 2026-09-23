@@ -27,7 +27,8 @@ test("split annulus exposes two fibers and the false central inclusion", async (
   assert.match(html, /fill-rule="evenodd"/);
   assert.match(html, /minus two to minus one and one to two/);
   assert.match(html, /erroneous inclusion/);
-  assert.match(html, /area 3π/);
+  assert.match(html, /annulus has area <span class="formula">/);
+  assert.ok(html.includes(String.raw`3\pi</annotation>`));
   assert.equal(4 * Math.PI - Math.PI, 3 * Math.PI);
 });
 
@@ -42,7 +43,8 @@ test("offset sphere keeps variable radial bound separate from Jacobian", async (
   );
   assert.match(html, /radius cos pi over four/);
   assert.match(html, /cos\\phi/);
-  assert.match(html, /ρ² sin φ/);
-  assert.match(html, /substitute x, y, z into f/);
+  assert.ok(html.includes(String.raw`\rho^2\sin\phi</annotation>`));
+  assert.match(html, /substitute <span class="formula">/);
+  assert.match(html, /before multiplying by that Jacobian/);
   assert.ok(Math.abs(Math.cos(Math.PI / 4) - 1 / Math.sqrt(2)) < 1e-12);
 });
