@@ -71,7 +71,7 @@ test("optional textbook inventory cannot count as core outcomes", () => {
 });
 
 test("inspected atomic outcomes retain core locators and separate evidence states", () => {
-  assert.ok(ledger.atomic_outcomes.length >= 43);
+  assert.ok(ledger.atomic_outcomes.length >= 52);
   assert.equal(
     new Set(ledger.atomic_outcomes.map((entry) => entry.id)).size,
     ledger.atomic_outcomes.length,
@@ -113,6 +113,13 @@ test("inspected atomic outcomes retain core locators and separate evidence state
     "series-divergence-test:harmonic-blocks",
   ])
     assert.ok(ledger.atomic_outcomes.some((entry) => entry.id === skill));
+  for (const id of [
+    "total-differentiability:candidate-plane-function",
+    "partials-do-not-make-a-plane:failed-implications",
+    "certifying-differentiability-and-errors:neighborhood-partials-criterion",
+    "total-differentiability:normalized-remainder-decision",
+  ])
+    assert.ok(ledger.atomic_outcomes.some((entry) => entry.id === id));
   for (const entry of ledger.atomic_outcomes) {
     const source = sources[entry.core_source.id];
     assert.ok(source, entry.id);
@@ -194,8 +201,18 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
             (item) => item.id === guide[3],
           );
           assert.ok(block, locator);
-          assert.equal(state, "worked", locator);
-          assert.ok(["derivation", "worked-example"].includes(block.kind));
+          assert.equal(
+            state,
+            ["derivation", "worked-example"].includes(block.kind)
+              ? "worked"
+              : "stated",
+            locator,
+          );
+          assert.ok(
+            ["derivation", "worked-example", "theorem", "strategy"].includes(
+              block.kind,
+            ),
+          );
         } else if (guide[2] === "exercises") {
           assert.ok(
             lesson.exercises?.some(

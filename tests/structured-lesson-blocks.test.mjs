@@ -145,3 +145,23 @@ test("alternating series lesson renders both convergence verdicts", async () => 
   assert.doesNotMatch(rendered, /katex-error/);
   assert.equal(guide.exercises[0].id, "alternating-rational-transfer");
 });
+
+test("candidate plane distinction renders as accessible mathematics", async () => {
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const { StructuredLessonBlockView } = await vite.ssrLoadModule(
+    "/components/atlas/structured-lesson-block.tsx",
+  );
+  const block = learningGuides[
+    "total-differentiability"
+  ].supplementalBlocks.find(
+    (item) => item.id === "candidate-plane-is-not-yet-approximation",
+  );
+  const rendered = renderToStaticMarkup(
+    React.createElement(StructuredLessonBlockView, { block }),
+  );
+  assert.match(rendered, /tangent plane function/);
+  assert.match(rendered, /<math\b/);
+  assert.doesNotMatch(rendered, /katex-error/);
+});

@@ -284,6 +284,22 @@ test("WebMCP concept read returns the same practice and source data as the visib
       (exercise) => exercise.id === "scaled-harmonic-transfer",
     ),
   );
+  const differentiability = tool.execute({
+    conceptId: "total-differentiability",
+  });
+  assert.ok(
+    differentiability.lesson.supplementalBlocks.some(
+      (block) => block.id === "candidate-plane-is-not-yet-approximation",
+    ),
+  );
+  const certification = tool.execute({
+    conceptId: "certifying-differentiability-and-errors",
+  });
+  assert.ok(
+    certification.lesson.exercises.some(
+      (exercise) => exercise.id === "continuous-partials-neighborhood-transfer",
+    ),
+  );
 });
 
 test("WebMCP state includes the mathematical readout and its evidence limit", async () => {

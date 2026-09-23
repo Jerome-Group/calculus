@@ -3082,6 +3082,12 @@
     },
     "supplementalBlocks": [
       {
+        "kind": "strategy",
+        "id": "candidate-plane-is-not-yet-approximation",
+        "title": "Build the candidate, then test it",
+        "text": "When $f_x(a,b)$ and $f_y(a,b)$ exist, the supplement calls $L_{f,(a,b)}(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$ the tangent plane function. This formula defines the only possible affine first-order model. It is a proven linear approximation only if $|f(x,y)-L_{f,(a,b)}(x,y)|/\\|(x-a,y-b)\\|\\to0$ as $(x,y)\\to(a,b)$ through the domain."
+      },
+      {
         "kind": "theorem",
         "id": "partials-determine-candidate-map",
         "title": "A derivative forces the slice slopes",
@@ -3161,7 +3167,7 @@
     "sections": [
       {
         "title": "One linear map for all increments",
-        "text": "At a, differentiability means $f(a+h)=f(a)+Lh+r(h)$ with $r(h)/|h|\\to 0$. For scalar $f$ with existing partials, the only candidate is $Lh=\\nabla f(a)\\cdot h$. The candidate still needs an all-direction remainder check."
+        "text": "At $a$, differentiability means $f(a+h)=f(a)+Lh+r(h)$ with $r(h)/\\|h\\|\\to 0$. For scalar $f$ with existing partials, the only candidate is $Lh=\\nabla f(a)\\cdot h$. The candidate still needs an all-direction remainder check."
       },
       {
         "title": "Work a polynomial remainder",
@@ -3194,6 +3200,12 @@
       "label": "two exact review functions"
     },
     "supplementalBlocks": [
+      {
+        "kind": "strategy",
+        "id": "supplement-failed-implications",
+        "title": "Keep the implications one-way",
+        "text": "The supplement warns that continuity at $p$ alone does not imply total differentiability. Existence of $f_x(p)$ and $f_y(p)$ does not imply continuity or prove that the candidate $L_{f,p}$ is a linear approximation. Even continuity of the partial-derivative functions merely at $p$ is not the neighborhood-existence hypothesis of the sufficient theorem. The continuous counterexample below defeats differentiability and approximation; the discontinuous zero extension in the concept card defeats continuity. The next lesson states the stronger neighborhood condition."
+      },
       {
         "kind": "derivation",
         "id": "directional-counterexample-obstruction",
@@ -3302,6 +3314,20 @@
           "Prove differentiability with a uniform norm bound.",
           "Identify a failed neighborhood hypothesis.",
           "Do not treat a sufficient theorem as necessary."
+        ]
+      },
+      {
+        "id": "continuous-partials-neighborhood-transfer",
+        "outcome": "Use neighborhood existence and pointwise continuity of partials to certify a candidate plane.",
+        "kind": "method-choice",
+        "prompt": "For $f(x,y)=e^{xy}+x^2$ at $p=(1,0)$, find its candidate tangent plane function and decide whether the continuous-partials theorem certifies total differentiability. State which neighborhood hypothesis you checked.",
+        "hint": "Compute $f(p)$, $f_x(p)$ and $f_y(p)$. The formula is smooth on an open neighborhood of $p$, so both partials exist there and are continuous at $p$.",
+        "solution": "$f(1,0)=2$, $f_x(x,y)=ye^{xy}+2x$, and $f_y(x,y)=xe^{xy}$, giving $f_x(1,0)=2$ and $f_y(1,0)=1$. Thus $L_{f,p}(x,y)=2+2(x-1)+y$. Both first partials exist on a neighborhood of $p$ and are continuous at $p$, so the sufficient theorem proves this candidate is the unique linear approximation there.",
+        "solutionTex": "L_{f,(1,0)}(x,y)=2+2(x-1)+y,\\qquad f_x(1,0)=2,\\quad f_y(1,0)=1",
+        "rubric": [
+          "Calculate the base value and both partial derivatives correctly.",
+          "Check existence of both partials on an open neighborhood and continuity at the point.",
+          "Distinguish the candidate formula from its certification by the theorem."
         ]
       }
     ],
