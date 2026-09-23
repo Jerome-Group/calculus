@@ -5220,7 +5220,7 @@
         "steps": [
           {
             "label": "Reasoning",
-            "text": "The only solution is $(0,0)$. Yet $f(t,0)=-t^2<0$ and $f(0,t)=t^2>0$ for $t\ne0$, so it is a saddle, not an extremum."
+            "text": "The only solution is $(0,0)$. Yet $f(t,0)=-t^2<0$ and $f(0,t)=t^2>0$ for $t\\ne0$, so it is a saddle, not an extremum."
           }
         ],
         "result": "The only solution is $(0,0)$. Yet $f(t,0)=-t^2<0$ and $f(0,t)=t^2>0$ for $t\\ne0$, so it is a saddle, not an extremum.",
@@ -5242,7 +5242,7 @@
             "text": "$f(t,0)=|t|>0$ and $f(0,t)=-t^2<0$ for $t\\ne0$. Nearby values have both signs, so no local extremum occurs."
           }
         ],
-        "result": "The origin is critical without being stationary or an extremum.",
+        "result": "The origin is critical with an undefined gradient and no extremum.",
         "verification": "The source definition on physical page 19 includes an undefined partial; the two axis comparisons verify the classification."
       }
     ],
@@ -5541,7 +5541,7 @@
         "steps": [
           {
             "label": "Reasoning",
-            "text": "Interior $\nabla f=(2x-2y,-2x+2)$ gives $(1,1)$ with value 1. Bottom $x^2$: 0,9. Right $9-4y$: 9,1. Top $(x-2)^2$: 4,0,1. Left $2y$: 0,4. Comparing yields minimum 0 at $(0,0)$ and $(2,2)$; maximum 9 at $(3,0)$."
+            "text": "Interior $\\nabla f=(2x-2y,-2x+2)$ gives $(1,1)$ with value 1. Bottom $x^2$: 0,9. Right $9-4y$: 9,1. Top $(x-2)^2$: 4,0,1. Left $2y$: 0,4. Comparing yields minimum 0 at $(0,0)$ and $(2,2)$; maximum 9 at $(3,0)$."
           }
         ],
         "result": "Interior $\\nabla f=(2x-2y,-2x+2)$ gives $(1,1)$ with value 1. Bottom $x^2$: 0,9. Right $9-4y$: 9,1. Top $(x-2)^2$: 4,0,1. Left $2y$: 0,4. Comparing yields minimum 0 at $(0,0)$ and $(2,2)$; maximum 9 at $(3,0)$.",
