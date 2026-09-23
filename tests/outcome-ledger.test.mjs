@@ -41,6 +41,9 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const chapter04Notes = /^MH1101_Chapter_04_Notes:0[1-4]$/.test(
         section.id,
       );
+      const chapter05Notes = /^MH1101_Chapter_05_Notes:0[1-4]$/.test(
+        section.id,
+      );
       const lecture10 = /^MH1100_Lecture_10:0[1-4]$/.test(section.id);
       const lecture11 = /^MH1100_Lecture_11:0[1-3]$/.test(section.id);
       const lecture12 = /^MH1100_Lecture_12:0[12]$/.test(section.id);
@@ -63,7 +66,8 @@ test("every core source has an explicit section inventory and honest gap", () =>
         lecture12 ||
         mh2100Lecture08 ||
         partialsSupplement ||
-        chapter04Notes;
+        chapter04Notes ||
+        chapter05Notes;
       const lecture04 = section.id.startsWith("MH1100_Lecture_04:");
       assert.equal(
         section.verification,
