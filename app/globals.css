@@ -1028,9 +1028,18 @@ details > p {
   min-width: 0;
   gap: 8px;
 }
-.quick-graph input {
+.quick-graph .quick-graph-expression-field {
+  position: relative;
   flex: 1;
   min-width: 0;
+}
+.quick-graph .quick-graph-expression-input {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 36px;
+  padding: 0 10px;
   border: 0;
   background: transparent;
   outline: 0;
@@ -1038,16 +1047,44 @@ details > p {
     14px ui-monospace,
     monospace;
 }
-.quick-graph .quick-graph-expression {
+.quick-graph .quick-graph-expression-input:not(:focus) {
+  color: transparent;
+  caret-color: transparent;
+}
+.quick-graph .quick-graph-expression-input:focus {
+  border-radius: 4px;
+  outline: 2px solid #087f75;
+  outline-offset: 1px;
+  background: var(--background, white);
+  color: var(--foreground, #171717);
+}
+.quick-graph .quick-graph-expression-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.quick-graph .quick-graph-expression-value {
   flex: 1;
   min-width: 0;
-  overflow-x: auto;
-  background: transparent;
-  color: inherit;
+  overflow: hidden;
+}
+.quick-graph .quick-graph-expression-display .formula {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.quick-graph .quick-graph-expression-display code {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
-  text-align: left;
 }
 .quick-graph-edit {
+  flex: none;
   margin-left: 10px;
   font: 11px var(--font-sans);
   opacity: 0.8;

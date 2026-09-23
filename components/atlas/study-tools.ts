@@ -71,6 +71,8 @@ export function studyTools(
           ? planarModel(s.activeScene, s.p).readout
           : readoutTex(s.activeScene, s.p)
         : null,
+      mathematicalReadoutFormat: "plain-text compatibility",
+      mathematicalReadoutTexFormat: "LaTeX for typeset display",
       inlineExperiments: inlineExperiments(),
       representation:
         "Sampled illustration; use the lesson proof for exact conclusions.",
@@ -176,7 +178,7 @@ export function studyTools(
       name: "get_study_state",
       title: "Read current study state",
       description:
-        "Read the visible course, lesson, notes section, experiment and graph configuration.",
+        "Read the visible course, lesson, notes section, experiment and graph configuration. mathematicalReadout is the plain-text compatibility value; mathematicalReadoutTex is the LaTeX value used for typeset display.",
       inputSchema: schema({}),
       annotations: { readOnlyHint: true },
       execute: snapshot,
