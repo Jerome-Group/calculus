@@ -7,6 +7,11 @@ const guides = JSON.parse(
     new URL("../lib/curriculum/learning-guides.json", import.meta.url),
   ),
 );
+const ledger = JSON.parse(
+  await readFile(
+    new URL("../lib/curriculum/outcome-ledger.json", import.meta.url),
+  ),
+);
 
 test("named MH1100 foundations have purpose-built blocks and independent transfer", () => {
   const paths = {
@@ -72,5 +77,43 @@ test("worked limits and higher derivative values are mathematically coherent", (
   for (const h of [0.1, 0.01, 0.001]) {
     assert.ok(Math.abs(h) ** 1.5 / Math.abs(h) < Math.sqrt(0.1) + 1e-12);
     assert.ok(Math.abs(h) ** 1.5 / (h * h) >= 1 / Math.sqrt(0.1) - 1e-12);
+  }
+});
+
+test("Lecture 06 second derivative uses a new quotient and independent transfer", () => {
+  const guide = guides["differentiability-corners"];
+  const worked = guide.contentBlocks.find(
+    (block) => block.id === "second-derivative-from-definition",
+  );
+  const exercise = guide.exercises.find(
+    (item) => item.id === "second-derivative-definition-transfer",
+  );
+  const outcome = ledger.atomic_outcomes.find(
+    (item) =>
+      item.id === "differentiability-corners:second-derivative-definition",
+  );
+  assert.equal(worked.kind, "worked-example");
+  assert.ok(
+    worked.steps.some((step) => step.equation.includes("f'(x+h)-f'(x)")),
+  );
+  assert.ok(exercise.prompt.includes("g'(x+h)-g'(x)"));
+  assert.deepEqual(outcome.core_source.page_validation.pages, [24, 25]);
+  assert.equal(outcome.evidence.visualized.length, 0);
+  assert.equal(outcome.evidence.checked.length, 0);
+
+  for (const x of [-2, 0, 1.5]) {
+    for (const h of [-0.1, 0.1]) {
+      const sourcePrime = (t) => 3 * t * t - 1;
+      const transferPrime = (t) => 3 * t * t + 4 * t;
+      assert.ok(
+        Math.abs((sourcePrime(x + h) - sourcePrime(x)) / h - (6 * x + 3 * h)) <
+          1e-10,
+      );
+      assert.ok(
+        Math.abs(
+          (transferPrime(x + h) - transferPrime(x)) / h - (6 * x + 3 * h + 4),
+        ) < 1e-10,
+      );
+    }
   }
 });

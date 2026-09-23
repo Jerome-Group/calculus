@@ -525,6 +525,34 @@
   "differentiability-corners": {
     "prerequisites": ["derivative-definition", "continuity-ivt"],
     "reasoning": "Proof sketch",
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "second-derivative-from-definition",
+        "title": "Differentiate the derivative by its own limit",
+        "strategy": "Find the first derivative, then form a fresh difference quotient for that derivative.",
+        "setup": "For $f(x)=x^3-x$, find $f''(x)$ from the definition, as in Lecture 06 Example 6.",
+        "steps": [
+          {
+            "label": "First derivative",
+            "text": "Expand $f(x+h)-f(x)$ and divide only for $h\\ne0$.",
+            "equation": "\\frac{f(x+h)-f(x)}h=3x^2+3xh+h^2-1\\longrightarrow f'(x)=3x^2-1"
+          },
+          {
+            "label": "New quotient",
+            "text": "Apply the derivative definition to $f'$, rather than taking the old quotient's limit twice.",
+            "equation": "\\frac{f'(x+h)-f'(x)}h=\\frac{3(x+h)^2-1-(3x^2-1)}h=6x+3h\\quad(h\\ne0)"
+          },
+          {
+            "label": "Second limit",
+            "text": "Now let the nonzero increment tend to zero.",
+            "equation": "f''(x)=\\lim_{h\\to0}(6x+3h)=6x"
+          }
+        ],
+        "result": "$f''(x)=6x$ is the rate of change of $f'(x)$.",
+        "verification": "Both quotients are defined only for $h\\ne0$; a second derivative exists here because $f'$ is differentiable everywhere."
+      }
+    ],
     "supplementalBlocks": [
       {
         "kind": "worked-example",
@@ -554,6 +582,20 @@
     ],
     "exercises": [
       {
+        "id": "second-derivative-definition-transfer",
+        "outcome": "Compute a second derivative by taking the difference-quotient limit of the first derivative.",
+        "kind": "computational",
+        "prompt": "For $g(x)=x^3+2x^2$, first find $g'(x)$. Then use $\\lim_{h\\to0}(g'(x+h)-g'(x))/h$ to find $g''(x)$; show the quotient before taking its limit.",
+        "hint": "After $g'(x)=3x^2+4x$, expand $g'(x+h)$ and cancel the matching terms before dividing by nonzero $h$.",
+        "solution": "For $h\\ne0$, $(g'(x+h)-g'(x))/h=[3(x+h)^2+4(x+h)-(3x^2+4x)]/h=6x+3h+4$. Thus $g''(x)=6x+4$ by taking $h\\to0$.",
+        "solutionTex": "g'(x)=3x^2+4x,\\quad\\frac{g'(x+h)-g'(x)}h=6x+3h+4\\longrightarrow g''(x)=6x+4",
+        "rubric": [
+          "Find the first derivative before forming the new quotient.",
+          "Show cancellation for $h\\ne0$ before taking the limit.",
+          "Conclude $g''(x)=6x+4$, not $g'(x)$ again."
+        ]
+      },
+      {
         "id": "higher-derivative-transfer",
         "outcome": "Compute and interpret first and second derivatives separately.",
         "kind": "computational",
@@ -569,6 +611,10 @@
       }
     ],
     "sections": [
+      {
+        "title": "A second derivative requires a new limit",
+        "text": "If $f'$ is differentiable at $x$, its derivative is $f''(x)=\\lim_{h\\to0}(f'(x+h)-f'(x))/h$. Existence of $f'(x)$ alone does not guarantee this second limit. The notation $d^2y/dx^2$ means differentiating $dy/dx$ once more, not squaring it."
+      },
       {
         "title": "Three obstructions",
         "text": "For $|x|$ at zero, the difference quotient is $-1$ from the left and 1 from the right: a corner. For $x^{1/3}$, its quotient at zero is $|h|^{-2/3}$, which has no finite limit: a vertical tangent does not supply a finite derivative. A discontinuity also prevents differentiability."

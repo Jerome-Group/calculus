@@ -241,6 +241,17 @@ test("WebMCP concept read returns the same practice and source data as the visib
   const result = tool.execute({ conceptId: concept.id });
   assert.deepEqual(result.lesson.exercise, learningGuides[concept.id].exercise);
   assert.ok(result.sources.every((source) => source.source.url));
+  const derivative = tool.execute({ conceptId: "differentiability-corners" });
+  assert.ok(
+    derivative.lesson.contentBlocks.some(
+      (block) => block.id === "second-derivative-from-definition",
+    ),
+  );
+  assert.ok(
+    derivative.lesson.exercises.some(
+      (exercise) => exercise.id === "second-derivative-definition-transfer",
+    ),
+  );
 });
 
 test("WebMCP state includes the mathematical readout and its evidence limit", async () => {
