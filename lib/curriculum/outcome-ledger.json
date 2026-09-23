@@ -7478,121 +7478,615 @@
       "id": "MH2100_Lecture_05:02",
       "source_id": "MH2100_Lecture_05",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "double sums/integrals",
-      "physical_pages_from_audit": "2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61",
-      "linked_concept_ids": [
-        "lagrange-circle",
-        "lagrange-sphere",
-        "lagrange-two-constraints",
-        "double-riemann-sums",
-        "general-double-integrals",
-        "fubini-double",
-        "type-one-two-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'double sums/integrals' at 2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "closed-rectangle double Riemann sums and integral",
+      "physical_pages_from_audit": "24–31; SHA-matched pages visually inspected and classified in the source review",
+      "linked_concept_ids": ["double-riemann-sums"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 24–25 are reviewed single-variable prerequisites, not new double-integral outcomes. Pages 26–31 map the closed-rectangle definition, tagged sums, and nonnegative volume. The page 27 endpoint erratum is recorded in sources.json. Scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-rectangular-mesh-cell-area-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-tagged-double-riemann-sum-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-double-integral-tagged-limit-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-nonnegative-graph-volume-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "double-riemann-sums:lecture05-rectangular-mesh-cell-area",
+        "double-riemann-sums:lecture05-tagged-double-riemann-sum",
+        "double-riemann-sums:lecture05-double-integral-tagged-limit",
+        "double-riemann-sums:lecture05-nonnegative-graph-volume"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "24–31",
+      "inspected_physical_pages": [24, 25, 26, 27, 28, 29, 30, 31],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 24,
+          "reason": "Single-variable Riemann-integral definition reviewed as prerequisite recall; it states no new double-integral outcome."
+        },
+        {
+          "physical_page": 25,
+          "reason": "Single-variable Riemann-sum visualization reviewed as prerequisite illustration; it adds no distinct double-integral skill."
+        }
+      ]
     },
     {
       "id": "MH2100_Lecture_05:03",
       "source_id": "MH2100_Lecture_05",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "general regions",
-      "physical_pages_from_audit": "2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61",
-      "linked_concept_ids": [
-        "lagrange-circle",
-        "lagrange-sphere",
-        "lagrange-two-constraints",
-        "double-riemann-sums",
-        "general-double-integrals",
-        "fubini-double",
-        "type-one-two-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'general regions' at 2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "general bounded regions and integral applications",
+      "physical_pages_from_audit": "32–40; SHA-matched pages visually inspected and classified in the source review",
+      "linked_concept_ids": ["general-double-integrals"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 32–40 map zero extension, consistency, area and its boundary criterion, the bounded almost-everywhere continuity criterion, and volume, mass, and probability applications. The source does not prove its integrability criterion. Scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-zero-extension-definition-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-enclosing-rectangle-independence-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-area-as-integral-of-one-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-boundary-zero-area-criterion-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-riemann-integrability-criterion-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-volume-over-general-region-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-mass-density-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-joint-density-probability-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "general-double-integrals:lecture05-zero-extension-definition",
+        "general-double-integrals:lecture05-enclosing-rectangle-independence",
+        "general-double-integrals:lecture05-area-as-integral-of-one",
+        "general-double-integrals:lecture05-boundary-zero-area-criterion",
+        "general-double-integrals:lecture05-riemann-integrability-criterion",
+        "general-double-integrals:lecture05-volume-over-general-region",
+        "general-double-integrals:lecture05-mass-density",
+        "general-double-integrals:lecture05-joint-density-probability"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "32–40",
+      "inspected_physical_pages": [32, 33, 34, 35, 36, 37, 38, 39, 40],
+      "reviewed_exclusions": []
     },
     {
       "id": "MH2100_Lecture_05:04",
       "source_id": "MH2100_Lecture_05",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Fubini",
-      "physical_pages_from_audit": "2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61",
-      "linked_concept_ids": [
-        "lagrange-circle",
-        "lagrange-sphere",
-        "lagrange-two-constraints",
-        "double-riemann-sums",
-        "general-double-integrals",
-        "fubini-double",
-        "type-one-two-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Fubini' at 2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "iterated rectangular integrals and Fubini",
+      "physical_pages_from_audit": "41–48; SHA-matched pages visually inspected and classified in the source review",
+      "linked_concept_ids": ["fubini-double"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 41–48 map the rectangular iterated orders, continuous closed-rectangle Fubini hypotheses, and the oscillatory source example. The theorem is used without proof; scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-iterated-orders-slices-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-source-monomial-either-order-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-continuous-rectangle-hypotheses-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-source-oscillatory-integral-two-orders-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "fubini-double:lecture05-iterated-orders-slices",
+        "fubini-double:lecture05-source-monomial-either-order",
+        "fubini-double:lecture05-continuous-rectangle-hypotheses",
+        "fubini-double:lecture05-source-oscillatory-integral-two-orders"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "41–48",
+      "inspected_physical_pages": [41, 42, 43, 44, 45, 46, 47, 48],
+      "reviewed_exclusions": []
     },
     {
       "id": "MH2100_Lecture_05:05",
       "source_id": "MH2100_Lecture_05",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Type I/II",
-      "physical_pages_from_audit": "2–61; Lagrange 2–23; sums 24–31; regions 32–40; Fubini 41–48; simple regions 49–61",
-      "linked_concept_ids": [
-        "lagrange-circle",
-        "lagrange-sphere",
-        "lagrange-two-constraints",
-        "double-riemann-sums",
-        "general-double-integrals",
-        "fubini-double",
-        "type-one-two-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'Type I/II'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "topic_from_audit_inventory": "Type I/II regions and source applications",
+      "physical_pages_from_audit": "49–61; SHA-matched pages visually inspected and classified in the source review",
+      "linked_concept_ids": ["type-one-two-regions"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 49–61 map Type I/II fibers, both integration formulas, slice choice, two source region integrals, and the projected tetrahedron volume. No broader classification of arbitrary regions is claimed; scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-skill-1-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-statement].title",
+            "claim": "Dedicated title names the atomic outcome.",
+            "method": "Compared with cited page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-skill-1-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-statement]",
+            "claim": "Source operation and hypotheses are stated.",
+            "method": "Compared with rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-skill-1-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-worked]",
+            "claim": "A derivation is present and independently checked.",
+            "method": "Recomputed the calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-skill-1-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-type-i-integral-bounds-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-type-ii-integral-bounds-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-slice-orientation-choice-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-type-i-parabola-integral-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-type-ii-parabola-integral-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-tetrahedron-projection-volume-transfer]",
+            "claim": "Changed-data practice was solved; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["type-one-two-regions:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "type-one-two-regions:source-skill-1",
+        "type-one-two-regions:lecture05-type-i-integral-bounds",
+        "type-one-two-regions:lecture05-type-ii-integral-bounds",
+        "type-one-two-regions:lecture05-slice-orientation-choice",
+        "type-one-two-regions:lecture05-source-type-i-parabola-integral",
+        "type-one-two-regions:lecture05-source-type-ii-parabola-integral",
+        "type-one-two-regions:lecture05-source-tetrahedron-projection-volume"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "49–61",
+      "inspected_physical_pages": [
+        49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61
+      ],
+      "reviewed_exclusions": []
     },
     {
       "id": "MH2100_Lecture_06:01",
@@ -17952,42 +18446,43 @@
       "core_source": {
         "id": "MH2100_Lecture_05",
         "physical_page": 49,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [49, 50],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Pages define Type I vertical fibers and Type II horizontal fibers."
+          "pages": [49, 50, 51],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "Pages 49–50 define Type I vertical fibers and Type II horizontal fibers. Page 51 diagrams both kinds of region and labels their function bounds."
         },
-        "page_heading": "Definition (Type-I Region in R2 )"
+        "page_heading": "Definition (Type-I Region in R2 )",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#type-one-two-regions.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-skill-1-statement].title",
+            "claim": "Dedicated title names the preserved fiber outcome.",
+            "method": "Compared with source pages 49–51."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.sections[Bounds describe a set]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-skill-1-statement]",
+            "claim": "The source definitions and hypotheses are stated.",
+            "method": "Compared with visually inspected pages 49–51."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.sections[Bounds describe a set]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-skill-1-worked]",
+            "claim": "A worked conversion describes the same set by vertical and horizontal fibers.",
+            "method": "Recomputed the inequalities and checked the intersections."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-skill-1-transfer]",
+            "claim": "Changed-data practice requires reversing fiber bounds; learner attempt unobserved.",
+            "method": "Prompt, solution, and rubric checked."
           }
         ],
         "visualized": [],
@@ -17999,7 +18494,7 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "The source pages, guide statement, worked instance, and practice support the preserved fiber outcome. Scene alignment is unverified and learner performance is unverified; visualized and checked evidence remain empty.",
       "source_section_id": "MH2100_Lecture_05:05",
       "candidate_blocks": {
         "named": [
@@ -54004,6 +54499,2052 @@
         "practiced": "changed-data solution checked; learner performance unverified",
         "visualized": "Stable implicit scene remains a candidate; exact alignment unverified.",
         "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "double-riemann-sums:lecture05-rectangular-mesh-cell-area",
+      "concept_id": "double-riemann-sums",
+      "outcome": "Compute every cell area in a uniform rectangular partition.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 27,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 28],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "For $R=[a,b]\\times[c,d]$ split into $m$ x-intervals and $n$ y-intervals, each cell has $\\Delta A=((b-a)/m)((d-c)/n)$. Page 27 prints the last y endpoint as $d+j\\Delta y$; the corrected endpoint is $c+j\\Delta y$."
+        },
+        "page_heading": "Double Integrals over a Closed Standard Rectangle in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-rectangular-mesh-cell-area-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-rectangular-mesh-cell-area-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-rectangular-mesh-cell-area-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "double-riemann-sums:lecture05-tagged-double-riemann-sum",
+      "concept_id": "double-riemann-sums",
+      "outcome": "Form a tagged double sum by weighting each sampled value by its cell area.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 27,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 29],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "For an $m\\times n$ grid, a tagged sum is $\\sum_{i=1}^m\\sum_{j=1}^n f(x^*_{ij},y^*_{ij})\\Delta A$, with one point from every cell."
+        },
+        "page_heading": "Double Integrals over a Closed Standard Rectangle in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-tagged-double-riemann-sum-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-tagged-double-riemann-sum-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-tagged-double-riemann-sum-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "double-riemann-sums:lecture05-double-integral-tagged-limit",
+      "concept_id": "double-riemann-sums",
+      "outcome": "Identify the integral as the unique sampling-independent limit of fine tagged sums.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 30,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30, 31],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source defines $\\iint_R f\\,dA=L$ when tagged sums tend to the same finite $L$ for every sampling as $m,n\\to\\infty$. A finite sum is only an approximation; continuity is not part of this definition."
+        },
+        "page_heading": "Double Integrals over a Closed Standard Rectangle in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-double-integral-tagged-limit-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-double-integral-tagged-limit-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-double-integral-tagged-limit-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "double-riemann-sums:lecture05-nonnegative-graph-volume",
+      "concept_id": "double-riemann-sums",
+      "outcome": "Interpret a nonnegative rectangular double integral as volume under its graph.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 26,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 28, 29, 30],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "For a nonnegative height on a closed standard rectangle, each sum term is a column height times base area. When the defining limit exists, it is the volume between the graph and the base."
+        },
+        "page_heading": "Double Integrals over a Closed Standard Rectangle in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-nonnegative-graph-volume-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.contentBlocks[lecture05-nonnegative-graph-volume-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#double-riemann-sums.exercises[lecture05-nonnegative-graph-volume-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-zero-extension-definition",
+      "concept_id": "general-double-integrals",
+      "outcome": "Define a bounded-region integral by extending the integrand by zero to an enclosing rectangle.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 32,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [32, 33, 34],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "Enclose bounded $D$ in a closed standard rectangle $R$ and set $F=f$ on D and zero on $R\\setminus D$. If $F$ is integrable on R, define $\\iint_D f\\,dA=\\iint_R F\\,dA$."
+        },
+        "page_heading": "Double Integrals over a General Bounded Region in R2 — Definition"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-zero-extension-definition-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-zero-extension-definition-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-zero-extension-definition-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-enclosing-rectangle-independence",
+      "concept_id": "general-double-integrals",
+      "outcome": "Use consistency of zero extension to show the value does not depend on the enclosing rectangle.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 35,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [35],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "For two enclosing rectangles, if both zero extensions are integrable, the source theorem says both rectangular integrals exist together and are equal."
+        },
+        "page_heading": "Theorem (Consistency of the Definition of General Double Integrals)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-enclosing-rectangle-independence-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-enclosing-rectangle-independence-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-enclosing-rectangle-independence-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-area-as-integral-of-one",
+      "concept_id": "general-double-integrals",
+      "outcome": "Compute area as the integral of the constant function one.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 36,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "When it exists, the area of a bounded region D is $\\operatorname{Area}(D)=\\iint_D1\\,dA$."
+        },
+        "page_heading": "Double Integrals over a General Bounded Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-area-as-integral-of-one-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-area-as-integral-of-one-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-area-as-integral-of-one-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-boundary-zero-area-criterion",
+      "concept_id": "general-double-integrals",
+      "outcome": "Apply the boundary-zero-area criterion to decide whether a bounded region has an area.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 36,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source states that a bounded region has an area if and only if its boundary has zero area; familiar disks and polygonal regions are named examples."
+        },
+        "page_heading": "Theorem (a Necessary and Sufficient Condition for the Existence of an Area)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-boundary-zero-area-criterion-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-boundary-zero-area-criterion-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-boundary-zero-area-criterion-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-riemann-integrability-criterion",
+      "concept_id": "general-double-integrals",
+      "outcome": "Apply boundedness and continuity almost everywhere as the source's iff criterion for a region's double Riemann integral.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 37,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [37],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "For bounded D whose area exists, the slide states that $\\iint_Df\\,dA$ exists iff f is bounded and continuous almost everywhere. This is the source's Riemann-integrability criterion, not an introduction to Lebesgue integration."
+        },
+        "page_heading": "Theorem (the Lebesgue Integrability Criterion)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-riemann-integrability-criterion-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-riemann-integrability-criterion-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-riemann-integrability-criterion-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-volume-over-general-region",
+      "concept_id": "general-double-integrals",
+      "outcome": "Interpret the integral of a nonnegative continuous height over an area-bearing region as volume.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 38,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [38],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "For an area-bearing bounded D and bounded, continuous, nonnegative f, the source defines volume as $V=\\iint_Df\\,dA$."
+        },
+        "page_heading": "Double Integrals over a General Bounded Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-volume-over-general-region-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-volume-over-general-region-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-volume-over-general-region-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-mass-density",
+      "concept_id": "general-double-integrals",
+      "outcome": "Compute total mass by integrating a bounded, continuous, nonnegative density over its region.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 39,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [39],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source defines a mass-density function $\\rho$ on an area-bearing bounded region and total mass $m=\\iint_D\\rho\\,dA$, with rho bounded, continuous, and nonnegative."
+        },
+        "page_heading": "Double Integrals over a General Bounded Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-mass-density-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-mass-density-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-mass-density-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "general-double-integrals:lecture05-joint-density-probability",
+      "concept_id": "general-double-integrals",
+      "outcome": "Interpret a joint density's integral over a bounded event as its probability.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 40,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [40],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "A joint density on $\\mathbb R^2$ is nonnegative and integrates to one; the source calls the whole-plane integral improper because the domain is unbounded. For bounded D, event probability is $\\iint_Df\\,dA$ when defined."
+        },
+        "page_heading": "Double Integrals over a General Bounded Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-joint-density-probability-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.contentBlocks[lecture05-joint-density-probability-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#general-double-integrals.exercises[lecture05-joint-density-probability-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "fubini-double:lecture05-iterated-orders-slices",
+      "concept_id": "fubini-double",
+      "outcome": "Interpret a rectangular iterated integral's inner order as accumulation along one-coordinate slices.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 41,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [41, 42],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "Over $[a,b]\\times[c,d]$, the two orders are $\\int_a^b[\\int_c^df\\,dy]dx$ and $\\int_c^d[\\int_a^bf\\,dx]dy$. Fix the outer coordinate and accumulate along its vertical or horizontal slice."
+        },
+        "page_heading": "Iterated Double Integrals"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-iterated-orders-slices-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-iterated-orders-slices-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-iterated-orders-slices-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "fubini-double:lecture05-source-monomial-either-order",
+      "concept_id": "fubini-double",
+      "outcome": "Evaluate a rectangular monomial integral in either iterated order.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 43,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [43, 44],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source evaluates $x^2y$ on $[0,3]\\times[1,2]$ in both orders; each yields 27/2."
+        },
+        "page_heading": "Iterated Double Integrals"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-source-monomial-either-order-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-monomial-either-order-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-source-monomial-either-order-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "fubini-double:lecture05-continuous-rectangle-hypotheses",
+      "concept_id": "fubini-double",
+      "outcome": "Apply Fubini after checking continuity on a closed standard rectangle.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 45,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [45],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source assumes f is continuous on a closed standard rectangle; then both iterated integrals exist and equal the double integral. It does not state this theorem for arbitrary regions or discontinuous functions."
+        },
+        "page_heading": "Iterated Double Integrals"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-continuous-rectangle-hypotheses-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-continuous-rectangle-hypotheses-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-continuous-rectangle-hypotheses-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "fubini-double:lecture05-source-oscillatory-integral-two-orders",
+      "concept_id": "fubini-double",
+      "outcome": "Evaluate the source's oscillatory integral in both orders, using integration by parts in the y-first order.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 46,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [46, 47, 48],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source integrates $y\\sin(xy)$ on $[1,2]\\times[0,\\pi]$ in both orders. Integrating x first gives cosine terms; integrating y first takes two integrations by parts."
+        },
+        "page_heading": "Iterated Double Integrals — Example 3"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-source-oscillatory-integral-two-orders-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "riemann",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene riemann was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.contentBlocks[lecture05-source-oscillatory-integral-two-orders-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#fubini-double.exercises[lecture05-source-oscillatory-integral-two-orders-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "type-one-two-regions:lecture05-type-i-integral-bounds",
+      "concept_id": "type-one-two-regions",
+      "outcome": "Integrate over a Type I region using its vertical lower and upper bounds.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 52,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [52],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "With continuous boundary functions $g_1\\leq g_2$ on a closed x interval, the source gives $\\iint_Df\\,dA=\\int_a^b\\int_{g_1(x)}^{g_2(x)}f\\,dy\\,dx$ when the integral exists."
+        },
+        "page_heading": "Double Integrals over a Type-I/II Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-type-i-integral-bounds-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-i-integral-bounds-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-type-i-integral-bounds-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "type-one-two-regions:lecture05-type-ii-integral-bounds",
+      "concept_id": "type-one-two-regions",
+      "outcome": "Integrate over a Type II region using its horizontal left and right bounds.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 53,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [53],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "With continuous boundary functions $h_1\\leq h_2$ on a closed y interval, the source gives $\\iint_Df\\,dA=\\int_c^d\\int_{h_1(y)}^{h_2(y)}f\\,dx\\,dy$ when the integral exists."
+        },
+        "page_heading": "Double Integrals over a Type-I/II Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-type-ii-integral-bounds-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-type-ii-integral-bounds-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-type-ii-integral-bounds-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "type-one-two-regions:lecture05-slice-orientation-choice",
+      "concept_id": "type-one-two-regions",
+      "outcome": "Choose an orientation that describes a region with one continuous pair of bounds when possible.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 56,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [56, 57],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "Vertical slices test Type I and horizontal slices test Type II. Prefer a single continuous pair of bounds; if the other orientation needs splitting or extra branches, avoid it unless the integrand favors that work."
+        },
+        "page_heading": "Double Integrals over a Type-I/II Region in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-slice-orientation-choice-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-slice-orientation-choice-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-slice-orientation-choice-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "type-one-two-regions:lecture05-source-type-i-parabola-integral",
+      "concept_id": "type-one-two-regions",
+      "outcome": "Evaluate the source's Type I integral between two parabolas and verify its exact value.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 54,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [54, 55],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source uses $-1\\leq x\\leq1$, $2x^2\\leq y\\leq1+x^2$, and asks for $\\iint_D(x+2y)\\,dA$."
+        },
+        "page_heading": "Double Integrals over a Type-I/II Region in R2 — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-type-i-parabola-integral-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-i-parabola-integral-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-type-i-parabola-integral-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "type-one-two-regions:lecture05-source-type-ii-parabola-integral",
+      "concept_id": "type-one-two-regions",
+      "outcome": "Evaluate the source's Type II integral between a sideways parabola and a line.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 57,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [57, 58],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source uses $-2\\leq y\\leq4$, left boundary $x=y^2/2-3$, right boundary $x=y+1$, and integrand xy."
+        },
+        "page_heading": "Double Integrals over a Type-I/II Region in R2 — Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-type-ii-parabola-integral-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-type-ii-parabola-integral-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-type-ii-parabola-integral-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "type-one-two-regions:lecture05-source-tetrahedron-projection-volume",
+      "concept_id": "type-one-two-regions",
+      "outcome": "Project the source tetrahedron to the xy-plane, derive Type I bounds, and integrate height.",
+      "core_source": {
+        "id": "MH2100_Lecture_05",
+        "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+        "physical_page": 59,
+        "inspection": "Canonical Drive PDF SHA-256 matched sources.json; all physical pages rendered and visually swept, with cited pages checked at high resolution.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [59, 60, 61],
+          "method": "SHA-256 matched sources.json; all 61 physical pages rendered and visually swept; cited page(s) checked at high resolution; extracted text served only as a locator.",
+          "claim_observed": "The source tetrahedron has $x+2y+z=2$, $x=2y$, $x=0$, $z=0$. Its projection is $0\\leq x\\leq1$, $x/2\\leq y\\leq1-x/2$, with height $2-x-2y$."
+        },
+        "page_heading": "Double Integrals over a Type-I/II Region in R2 — Example 3"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-statement].title",
+            "claim": "A dedicated lesson-block title names this exact atomic outcome.",
+            "method": "Compared the title and outcome with the cited physical page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-statement]",
+            "claim": "The block states the mapped operation and source hypotheses.",
+            "method": "Compared with the SHA-matched rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-worked]",
+            "claim": "A derivation applies this outcome with worked data.",
+            "method": "Recomputed the algebra independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-tetrahedron-projection-volume-transfer]",
+            "claim": "Changed-data practice includes a hint, solution, and rubric; no learner response is claimed.",
+            "method": "Solved and reviewed the transfer task independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source page, lesson statement, independent derivation, and changed-data practice were inspected. Candidate scene double was not rendered and aligned to this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_05:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-statement].title",
+            "basis": "Dedicated outcome title checked against its source claim."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-statement]",
+            "basis": "Statement and hypotheses checked against the rendered page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.contentBlocks[lecture05-source-tetrahedron-projection-volume-worked]",
+            "basis": "Calculation independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#type-one-two-regions.exercises[lecture05-source-tetrahedron-projection-volume-transfer]",
+            "basis": "Changed-data task checked; no learner attempt observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered canonical pages, guide statement, independent derivation, and changed-data practice.",
+        "named": "dedicated title names the outcome",
+        "stated": "source operation and hypotheses compared",
+        "worked": "derivation independently recomputed",
+        "practiced": "solution checked; learner performance unverified",
+        "visualized": "candidate scene not rendered or aligned to outcome",
+        "checked": "no independent learner response or outcome validation recorded"
       }
     }
   ]

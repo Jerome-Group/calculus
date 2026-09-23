@@ -478,7 +478,16 @@
     "pages": 61,
     "course": "MH2100",
     "kind": "lecture",
-    "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd"
+    "sha256": "7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd",
+    "errata": [
+      {
+        "page": 27,
+        "printed": "The upper endpoint of the jth $y$-subinterval is printed as $d+j(d-c)/n$.",
+        "correction": "Read the endpoint as $c+j(d-c)/n$, so the interval is $[c+(j-1)(d-c)/n, c+j(d-c)/n]$.",
+        "justification": "A uniform partition of $[c,d]$ into $n$ equal intervals has those endpoints. The printed endpoint exceeds $d$ for positive $j$ and is not in $R$. Pages 28–31 use the common cell area $((b-a)/m)((d-c)/n)$.",
+        "provenance": "Canonical Drive PDF SHA-256 matched and page 27 visually inspected; correction independently checked; source PDF unchanged."
+      }
+    ]
   },
   "MH2100_Lecture_03": {
     "id": "MH2100_Lecture_03",
