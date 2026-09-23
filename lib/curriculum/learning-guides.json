@@ -4658,11 +4658,19 @@
     "sections": [
       {
         "title": "Cross product and rank",
-        "text": "For $u$,$v$ in $\\mathbb{R}^{3}$, $u\\times v$ is perpendicular to both and has magnitude equal to their parallelogram area. If the vectors are dependent the product is zero, so it supplies no normal direction. Swapping the order reverses the normal."
+        "text": "For $u,v\\in\\mathbb R^3$, the ordered product $u\\times v$ is perpendicular to both vectors and has magnitude equal to the parallelogram area. If $u$ and $v$ are dependent, the product is zero and gives no normal direction. Reversing the order reverses the normal: $u\\times v=-(v\\times u)$."
+      },
+      {
+        "title": "The algebraic laws have limits",
+        "text": "The cross product is anti-commutative, distributes over vector addition, and is compatible with scalar multiplication. It is not associative: $(u\\times v)\\times w$ need not equal $u\\times(v\\times w)$."
       },
       {
         "title": "Write a plane from its normal",
-        "text": "For point $p$ and nonzero normal $n$, the plane is $n\\cdot (x-p)=0$. With $u=(1,0,1)$, $v=(0,1,1)$, $u\\times v=(-1,-1,1)$. Through $p=(0,0,2)$, the plane is $z=x+y+2$."
+        "text": "For $p_0\\in\\mathbb R^3$ and a nonzero normal $n$, the unique plane through $p_0$ perpendicular to $n$ is $n\\cdot(x-p_0)=0$. Two nonzero nonparallel directions $u,v$ determine such a normal $u\\times v$."
+      },
+      {
+        "title": "Graph slices give a candidate tangent plane",
+        "text": "If $f$ is defined on an open set and its two partials exist at $p=(a,b)$, the coordinate-slice tangent vectors are $(1,0,f_x(p))$ and $(0,1,f_y(p))$. Their cross product is $(-f_x(p),-f_y(p),1)$, so the plane through $(a,b,f(p))$ has equation $z=f(p)+f_x(p)(x-a)+f_y(p)(y-b)$. This is the source-defined candidate tangent-plane function; the differentiability supplement treats whether it is a linear approximation."
       }
     ],
     "exercise": {
@@ -4674,7 +4682,260 @@
         "Avoid confusing plane coefficients with a point on the plane."
       ],
       "solutionTex": "\\mathbf n=(1,-1,1),\\quad x-y+z=0"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "cross-product-geometric-characterization",
+        "title": "Magnitude gives area; orientation gives a normal",
+        "statement": "For nonzero, nonparallel $u,v\\in\\mathbb R^3$, $u\\times v$ is perpendicular to both, has magnitude $\\|u\\|\\|v\\|\\sin\\theta$ where $\\theta\\in(0,\\pi)$ is their angle, and points in the right-hand-rule direction. If either vector is zero or they are parallel, $u\\times v=0$.",
+        "hypotheses": [
+          "$u,v$ are vectors in $\\mathbb R^3$.",
+          "The angle formula uses nonzero, nonparallel vectors; the dependent cases have zero product."
+        ],
+        "prerequisites": ["Dot products and the right-hand rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "point-normal-plane-theorem",
+        "title": "A nonzero normal fixes one plane through a point",
+        "statement": "For $p_0\\in\\mathbb R^3$ and $n\\in\\mathbb R^3$ with $n\\ne0$, the set $\\{x:n\\cdot(x-p_0)=0\\}$ is the unique plane through $p_0$ perpendicular to $n$.",
+        "hypotheses": ["$p_0\\in\\mathbb R^3$.", "$n\\ne0$."],
+        "prerequisites": ["Dot product and orthogonality"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "plane-from-two-directions-theorem",
+        "title": "Two independent directions fix one plane",
+        "statement": "For $p_0\\in\\mathbb R^3$ and nonzero, nonparallel $u,v\\in\\mathbb R^3$, $n=u\\times v\\ne0$. The unique plane through $p_0$ parallel to both directions is $p_0+s u+t v$ and equivalently $n\\cdot(x-p_0)=0$.",
+        "hypotheses": [
+          "$p_0\\in\\mathbb R^3$.",
+          "$u,v$ are nonzero and nonparallel, so $u\\times v\\ne0$."
+        ],
+        "prerequisites": [
+          "Cross-product geometry",
+          "Point-normal plane equation"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "cross-product-components",
+        "title": "Expand an ordered cross product",
+        "strategy": "Expand the determinant along its first row, keeping the alternating sign in the middle component.",
+        "setup": "Let $u=(1,2,0)$ and $v=(3,-1,4)$.",
+        "steps": [
+          {
+            "label": "First component",
+            "text": "Use the minor from the first coordinate.",
+            "equation": "u_2v_3-u_3v_2=2\\cdot4-0\\cdot(-1)=8"
+          },
+          {
+            "label": "Second component",
+            "text": "The middle component has the negative determinant sign.",
+            "equation": "u_3v_1-u_1v_3=0\\cdot3-1\\cdot4=-4"
+          },
+          {
+            "label": "Third component",
+            "text": "Use the minor from the third coordinate.",
+            "equation": "u_1v_2-u_2v_1=1\\cdot(-1)-2\\cdot3=-7"
+          },
+          {
+            "label": "Check orthogonality",
+            "text": "The result is perpendicular to both inputs.",
+            "equation": "u\\cdot(8,-4,-7)=8-8=0,\\qquad v\\cdot(8,-4,-7)=24+4-28=0"
+          },
+          {
+            "label": "Dependent inputs",
+            "text": "If one input is a multiple of the other, the parallelogram is degenerate and the cross product is zero.",
+            "equation": "(1,2,0)\\times(2,4,0)=(0,0,0),\\qquad \\|(1,2,0)\\times(2,4,0)\\|=0"
+          }
+        ],
+        "result": "$u\\times v=(8,-4,-7)$; its magnitude $\\sqrt{129}$ is the parallelogram area. The dependent pair has zero cross product and zero area.",
+        "verification": "Reversing the independent inputs gives $v\\times u=(-8,4,7)$, so the oriented normal changes sign while its length stays the same. For the dependent pair, the zero cross product supplies no nonzero normal direction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "cross-product-algebraic-properties",
+        "title": "Check the laws and the failed converse",
+        "strategy": "Evaluate basis-vector products to test each algebraic claim directly.",
+        "setup": "Let $i,j,k$ be the standard unit vectors, with $i\\times j=k$, $j\\times k=i$ and $i\\times k=-j$.",
+        "steps": [
+          {
+            "label": "Order",
+            "text": "Swapping the inputs reverses the result.",
+            "equation": "j\\times i=-k"
+          },
+          {
+            "label": "Distribute",
+            "text": "The product distributes over a sum in the second input.",
+            "equation": "i\\times(j+k)=k-j=(i\\times j)+(i\\times k)"
+          },
+          {
+            "label": "Scale an input",
+            "text": "For $u=i+2j$, compare scaling the first input with scaling the result.",
+            "equation": "(3u)\\times k=(3i+6j)\\times k=-3j+6i=6i-3j=3(2i-j)=3(u\\times k)"
+          },
+          {
+            "label": "Associativity fails",
+            "text": "The two parenthesizations give different vectors.",
+            "equation": "(i\\times i)\\times j=0,\\qquad i\\times(i\\times j)=i\\times k=-j"
+          }
+        ],
+        "result": "These instances agree with anti-commutativity, distributivity and scalar compatibility; associativity fails for the displayed triple.",
+        "verification": "The unequal results $0$ and $-j$ are a counterexample to associativity, not a failure of distributivity."
+      },
+      {
+        "kind": "worked-example",
+        "id": "point-normal-plane-example",
+        "title": "Build a plane from its point and normal",
+        "strategy": "Substitute the point and normal into $n\\cdot(x-p_0)=0$, then simplify.",
+        "setup": "Take $p_0=(2,-1,3)$ and $n=(2,1,-2)$.",
+        "steps": [
+          {
+            "label": "Use the point-normal equation",
+            "text": "The displacement from $p_0$ must be orthogonal to $n$.",
+            "equation": "2(x-2)+(y+1)-2(z-3)=0"
+          },
+          {
+            "label": "Simplify",
+            "text": "Collect the coordinate terms and constants.",
+            "equation": "2x+y-2z+3=0"
+          }
+        ],
+        "result": "The plane is $2x+y-2z+3=0$.",
+        "verification": "The point $(2,-1,3)$ satisfies the equation; the coefficient vector $(2,1,-2)$ is its nonzero normal."
+      },
+      {
+        "kind": "worked-example",
+        "id": "two-direction-plane-example",
+        "title": "Use two directions to find a plane",
+        "strategy": "Take the ordered cross product to get a normal, then use the point-normal plane equation.",
+        "setup": "Let $p_0=(0,0,2)$, $u=(1,0,1)$ and $v=(0,1,1)$.",
+        "steps": [
+          {
+            "label": "Find a normal",
+            "text": "The directions are nonzero and nonparallel, so their cross product is nonzero.",
+            "equation": "u\\times v=(-1,-1,1)"
+          },
+          {
+            "label": "Write the plane",
+            "text": "Use the normal and the point $p_0$.",
+            "equation": "-x-y+(z-2)=0"
+          }
+        ],
+        "result": "The plane is $z=x+y+2$; its parametric form is $(0,0,2)+s(1,0,1)+t(0,1,1)$.",
+        "verification": "The normal has zero dot product with each direction, and the plane contains $p_0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "graph-tangent-plane-from-slices",
+        "title": "Derive the graph plane from its slice directions",
+        "strategy": "Take the cross product of the two coordinate-slice tangent vectors, then apply the point-normal plane equation.",
+        "setup": "Let $f$ be defined on an open set, let $p=(a,b)$, and suppose $f_x(p)$ and $f_y(p)$ exist. Set $P=(a,b,f(p))$.",
+        "steps": [
+          {
+            "label": "Read the slice tangents",
+            "text": "Vary one coordinate at a time.",
+            "equation": "v_1=(1,0,f_x(p)),\\qquad v_2=(0,1,f_y(p))"
+          },
+          {
+            "label": "Take their cross product",
+            "text": "The first two coordinates make these vectors independent, so the normal is nonzero.",
+            "equation": "v_1\\times v_2=(-f_x(p),-f_y(p),1)"
+          },
+          {
+            "label": "Use the point-normal equation",
+            "text": "Set the normal dot the displacement from $P$ equal to zero.",
+            "equation": "-f_x(p)(x-a)-f_y(p)(y-b)+z-f(p)=0"
+          }
+        ],
+        "result": "The source-defined candidate tangent plane function is $z=f(p)+f_x(p)(x-a)+f_y(p)(y-b)$.",
+        "verification": "This derives the source-defined candidate plane from the two coordinate-slice directions. The separate differentiability lesson treats whether the candidate is a linear approximation."
+      },
+      {
+        "kind": "worked-example",
+        "id": "graph-tangent-plane-source-example",
+        "title": "Apply the formula to a quadratic graph",
+        "strategy": "Evaluate the function and partials at the base point, then substitute into the candidate formula.",
+        "setup": "Let $f(x,y)=2x^2+y^2$ at $p=(1,1)$.",
+        "steps": [
+          {
+            "label": "Find the base value and slopes",
+            "text": "Differentiate each coordinate slice.",
+            "equation": "f(1,1)=3,\\qquad f_x(1,1)=4,\\qquad f_y(1,1)=2"
+          },
+          {
+            "label": "Write the candidate plane",
+            "text": "Use the base point and the two slice slopes.",
+            "equation": "z=3+4(x-1)+2(y-1)=4x+2y-3"
+          }
+        ],
+        "result": "The candidate tangent plane function is $z=4x+2y-3$.",
+        "verification": "At $(1,1)$ it has height $3$ and coordinate slopes $4$ and $2$, matching the graph there."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "cross-product-component-area-transfer",
+        "outcome": "Compute and interpret an ordered cross product.",
+        "kind": "computational",
+        "prompt": "For $u=(2,-1,0)$ and $v=(1,3,4)$, compute $u\\times v$, verify it is perpendicular to both inputs, find the parallelogram area, and state $v\\times u$. Then take $p=(1,-2,3)$ and $q=-2p$; compute $p\\times q$ and explain what its magnitude says about the parallelogram and its normal.",
+        "hint": "Use the signed component formula; the area is the norm of the cross product. In the second pair, substitute the scalar multiple into the formula.",
+        "solution": "$u\\times v=(-4,-8,7)$. Its dot products with $u$ and $v$ are $-8+8=0$ and $-4-24+28=0$. Its norm is $\\sqrt{16+64+49}=\\sqrt{129}$, and $v\\times u=(4,8,-7)$. Since $q=-2p$, $p\\times q=p\\times(-2p)=-2(p\\times p)=0$; the parallelogram area is zero and this product gives no nonzero normal direction.",
+        "solutionTex": "u\\times v=(-4,-8,7),\\quad \\|u\\times v\\|=\\sqrt{129},\\quad v\\times u=(4,8,-7),\\quad p\\times(-2p)=0",
+        "rubric": [
+          "Compute the middle component with the correct sign.",
+          "Check orthogonality with both vectors.",
+          "Interpret the norm as area and reverse the orientation when the order is swapped.",
+          "Identify that dependent inputs give zero area and no nonzero cross-product normal."
+        ]
+      },
+      {
+        "id": "cross-product-laws-transfer",
+        "outcome": "Distinguish the valid cross-product laws from associativity.",
+        "kind": "conceptual",
+        "prompt": "Let $u=(1,0,1)$ and $v=(0,1,1)$. Verify $(-2u)\\times v=-2(u\\times v)$, compute $v\\times u$ to compare the order, and verify $u\\times(v+w)=(u\\times v)+(u\\times w)$ for $w=(1,1,0)$. Finally compare $(i\\times i)\\times j$ with $i\\times(i\\times j)$ using $i\\times j=k$ and $i\\times k=-j$.",
+        "hint": "Use the component formula for the vector calculations. For the last comparison, preserve both sets of parentheses.",
+        "solution": "$u\\times v=(-1,-1,1)$, so $(-2u)\\times v=(2,2,-2)=-2(u\\times v)$. Reversing order gives $v\\times u=(1,1,-1)=-(u\\times v)$. Also $u\\times w=(-1,1,1)$ and $u\\times(v+w)=(-2,0,2)=u\\times v+u\\times w$. But $(i\\times i)\\times j=0$ while $i\\times(i\\times j)=i\\times k=-j$; this counterexample shows associativity fails.",
+        "solutionTex": "(-2u)\\times v=(2,2,-2)=-2(u\\times v),\\quad v\\times u=(1,1,-1),\\quad u\\times(v+w)=(-2,0,2)=u\\times v+u\\times w,\\quad (i\\times i)\\times j=0\\ne-j=i\\times(i\\times j)",
+        "rubric": [
+          "Evaluate both sides of the scalar-compatibility identity.",
+          "Show reversing the input order negates the cross product.",
+          "Evaluate both sides of the distributive identity.",
+          "Keep the parentheses in the associativity test and use unequal vectors as a counterexample."
+        ]
+      },
+      {
+        "id": "plane-from-directions-transfer",
+        "outcome": "Construct a plane from a point and two nonparallel directions.",
+        "kind": "computational",
+        "prompt": "Find the plane through $(1,2,0)$ parallel to $u=(1,0,1)$ and $v=(0,1,1)$. Give both a point-normal equation and a parametric form.",
+        "hint": "Compute $u\\times v$ in the stated order, then use the point-normal equation.",
+        "solution": "$u\\times v=(-1,-1,1)$. Thus $-(x-1)-(y-2)+z=0$, or $z=x+y-3$. A parametric form is $(1,2,0)+s(1,0,1)+t(0,1,1)$.",
+        "solutionTex": "z=x+y-3,\\qquad (x,y,z)=(1,2,0)+s(1,0,1)+t(0,1,1)",
+        "rubric": [
+          "Check the directions are nonzero and nonparallel.",
+          "Use a nonzero cross product as the normal.",
+          "Verify the point and both direction vectors satisfy the plane."
+        ]
+      },
+      {
+        "id": "graph-plane-from-slices-transfer",
+        "outcome": "Derive a candidate graph plane from its coordinate-slice slopes.",
+        "kind": "computational",
+        "prompt": "For $f(x,y)=x^2+2xy+3y^2$ at $(1,-1)$, find the two slice tangent vectors, their cross-product normal, and the candidate tangent plane function.",
+        "hint": "Compute $f$, $f_x$ and $f_y$ at the point, then use $(-f_x,-f_y,1)$.",
+        "solution": "$f(1,-1)=2$, $f_x(1,-1)=0$ and $f_y(1,-1)=-4$. The slice tangents are $(1,0,0)$ and $(0,1,-4)$, with normal $(0,4,1)$. The plane is $4(y+1)+(z-2)=0$, or $z=-4y-2$.",
+        "solutionTex": "v_1=(1,0,0),\\quad v_2=(0,1,-4),\\quad v_1\\times v_2=(0,4,1),\\quad z=-4y-2",
+        "rubric": [
+          "Evaluate the base value and both partials.",
+          "Use the ordered cross product as a nonzero normal."
+        ]
+      }
+    ]
   },
   "total-differentiability": {
     "prerequisites": [
@@ -4935,6 +5196,21 @@
           "Check existence of both partials on an open neighborhood and continuity at the point.",
           "Distinguish the candidate formula from its certification by the theorem."
         ]
+      },
+      {
+        "id": "sensitivity-versus-exact-box",
+        "outcome": "Compute a first-order measurement estimate and test it against the exact worst-case change.",
+        "kind": "method-choice",
+        "prompt": "For $W(x,y)=x^2y$ measured at $(2,3)$ with $|\\Delta x|\\le0.05$ and $|\\Delta y|\\le0.1$, find the first-order absolute error estimate. Then expand the exact change and determine the exact maximum absolute error over the uncertainty box.",
+        "hint": "Use $W_x=2xy$, $W_y=x^2$. On this positive box, check whether $W$ increases with both inputs.",
+        "solution": "$W_x(2,3)=12$ and $W_y(2,3)=4$, so the first-order estimate is $12(0.05)+4(0.1)=1$. With $u=\\Delta x,v=\\Delta y$, the exact change is $12u+4v+3u^2+4uv+u^2v$. Both partials stay positive, so the extreme values occur at corners. The upper corner gives $1+0.0075+0.02+0.00025=1.02775$; the lower corner has absolute error $0.97275$. Thus the exact maximum is $1.02775$, larger than the linear estimate.",
+        "solutionTex": "\\Delta W=12u+4v+3u^2+4uv+u^2v,\\qquad |\\Delta W|_{\\max}=1.02775>1",
+        "rubric": [
+          "Evaluate both partial derivatives at the measured point.",
+          "Use absolute input tolerances in the first-order estimate.",
+          "Retain every nonlinear term in the exact expansion.",
+          "Justify the endpoint comparison using monotonicity on the box."
+        ]
       }
     ],
     "sections": [
@@ -4945,6 +5221,10 @@
       {
         "title": "Finite versus asymptotic error",
         "text": "If a twice continuously differentiable $f$ has Hessian operator norm at most $M$ along the segment from a to $a+h$, Taylor gives $|f(a+h)-f(a)-\\nabla f(a)\\cdot h|\\leq M|h|^{2}/2$. This finite bound needs an actual $M$; little-o alone does not provide one."
+      },
+      {
+        "title": "Linearization estimates change, not finite error",
+        "text": "If $f$ is totally differentiable at an interior point $p$, then $f(p+h)=f(p)+Df(p)h+o(\\|h\\|)$. For measurement limits $|h_i|\\le\\varepsilon_i$, the derivative gives the first-order estimate $|Df(p)h|\\le\\sum_i|f_{x_i}(p)|\\varepsilon_i$. The little-o term tends to zero relative to $\\|h\\|$; by itself it gives no fixed finite error bound."
       }
     ],
     "exercise": {
@@ -4956,7 +5236,55 @@
         "Distinguish a guaranteed bound from a sampled error."
       ],
       "solutionTex": "\\left|f(a+h)-f(a)-Df(a)h\\right|=\\|h\\|^2\\le10^{-4}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "linear-approximation-formula",
+        "title": "The linear error estimate assumes total differentiability",
+        "statement": "If $f:D\\to\\mathbb R$ is totally differentiable at an interior point $p$, then $f(p+h)-f(p)=Df(p)h+o(\\|h\\|)$ as $h\\to0$. Componentwise measurement limits give a first-order estimate by maximizing the linear term over those limits.",
+        "hypotheses": [
+          "$p$ is an interior point of the domain, so all sufficiently small increments remain in $D$.",
+          "$f$ is totally differentiable at $p$; partial derivatives at $p$ alone do not suffice."
+        ],
+        "prerequisites": [
+          "Definition of total differentiability",
+          "Coordinate partial derivatives"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "cone-volume-sensitivity-example",
+        "title": "Separate the cone estimate from the exact error",
+        "strategy": "Check differentiability, apply the derivative to the measurement tolerances, then expand the exact change to test whether the estimate is a bound.",
+        "setup": "The cone volume is $V(r,h)=\\frac{\\pi}{3}r^2h$ for $r,h>0$. The measured values are $(10,25)$ with $|u|=|\\Delta r|\\le0.1$ and $|v|=|\\Delta h|\\le0.1$.",
+        "steps": [
+          {
+            "label": "Check the approximation hypothesis",
+            "text": "The domain $r>0,h>0$ is open and both partial derivatives are continuous there, so the continuous-partials criterion makes $V$ totally differentiable at $(10,25)$.",
+            "equation": "V_r=\\frac{2\\pi rh}{3},\\qquad V_h=\\frac{\\pi r^2}{3}"
+          },
+          {
+            "label": "Compute the first-order estimate",
+            "text": "At the measured point, weight each absolute input error by its sensitivity.",
+            "equation": "|DV_{(10,25)}(u,v)|\\le\\frac{500\\pi}{3}(0.1)+\\frac{100\\pi}{3}(0.1)=20\\pi"
+          },
+          {
+            "label": "Expand the exact change",
+            "text": "Keep the quadratic and mixed terms that the differential omits.",
+            "equation": "V(10+u,25+v)-V(10,25)=\\frac{\\pi}{3}(500u+100v+25u^2+20uv+u^2v)"
+          },
+          {
+            "label": "Find the exact worst case",
+            "text": "Both partials are positive throughout the uncertainty box, so the maximum and minimum occur at opposite corners.",
+            "equation": "V(10.1,25.1)-V(10,25)=\\frac{60.451\\pi}{3},\\quad V(10,25)-V(9.9,24.9)=\\frac{59.551\\pi}{3}"
+          }
+        ],
+        "result": "The source’s $20\\pi$ is a first-order estimate. The exact maximum absolute error over the stated box is $60.451\\pi/3\\approx20.1503\\pi$, so $20\\pi$ is not a guaranteed upper bound.",
+        "verification": "The conclusion uses monotonicity on the whole positive uncertainty box and compares both endpoint errors; little-o alone does not certify the finite maximum."
+      }
+    ]
   },
   "multivariable-chain-rule": {
     "prerequisites": ["total-differentiability", "vectors-and-coordinates"],
