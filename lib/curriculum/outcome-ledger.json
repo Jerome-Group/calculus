@@ -11107,15 +11107,15 @@
         "stated": [],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-antiderivative-linearity]",
-            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-constant-family-proof]",
+            "claim": "Worked mean-value-theorem argument establishes uniqueness up to one constant on an interval.",
             "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercise",
-            "claim": "Existing independent guide prompt with solution.",
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.exercises[ch1-constant-family-transfer]",
+            "claim": "Independent proof task distinguishes one interval from disconnected components.",
             "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
           }
         ],
@@ -11134,7 +11134,7 @@
         "stated": [],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-antiderivative-linearity]",
+            "locator": "lib/curriculum/learning-guides.json#integral-antiderivatives.supplementalBlocks[ch1-constant-family-proof]",
             "basis": "current guide inspection"
           }
         ],
@@ -11315,7 +11315,7 @@
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
-            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "claim": "Worked source-aligned left and right endpoint construction for x², with both limits compared.",
             "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
           }
         ],
@@ -11335,7 +11335,7 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Source page and cited guide evidence inspected. No learner performance check, verified outcome-specific visual, or complete cross-source coverage claimed.",
+      "gap": "Left and right equal-partition sums now worked; arbitrary tagged partitions are established separately. No learner performance or outcome-specific visual check.",
       "source_section_id": "MH1101_Chapter_01_Notes:02",
       "candidate_blocks": {
         "stated": [],
@@ -11389,12 +11389,18 @@
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
-            "claim": "Worked source-aligned reasoning for this atomic skill.",
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-all-tags-linear-proof]",
+            "claim": "Uniform mesh bound proves the same limit for every tagged partition of a new linear function.",
             "method": "Compared the cited guide item and calculation with the visually inspected canonical PDF pages; learner performance unverified."
           }
         ],
-        "practiced": [],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-all-tags-linear-transfer]",
+            "claim": "Independent all-tags proof task for 2x.",
+            "method": "Compared the bound and quantifiers to the canonical definition; learner performance unverified."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
@@ -11415,18 +11421,23 @@
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-x2-right-sums]",
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.supplementalBlocks[ch1-all-tags-linear-proof]",
             "basis": "current guide inspection"
           }
         ],
-        "practiced": []
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#riemann-integral.exercises[ch1-all-tags-linear-transfer]",
+            "basis": "current guide inspection"
+          }
+        ]
       },
       "inspection_check": {
         "method": "Manual semantic comparison of rendered source page, worked calculation, and cited independent task where present.",
         "named": "No exact title evidence claimed.",
         "stated": "match",
         "worked": "source-aligned worked reasoning inspected",
-        "practiced": "not claimed",
+        "practiced": "independent all-tags proof task inspected; learner performance unverified",
         "visualized": "No outcome-specific scene verified.",
         "checked": "No independent learner outcome check."
       }

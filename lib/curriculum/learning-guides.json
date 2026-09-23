@@ -1803,6 +1803,29 @@
         ],
         "result": "$x^3-2\\sin x+C$.",
         "verification": "Differentiation returns $3x^2-2\\cos x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-constant-family-proof",
+        "title": "Why an interval has one constant",
+        "strategy": "Compare two antiderivatives by subtracting them and apply the mean value theorem on the interval.",
+        "setup": "Suppose $F$ and $G$ are antiderivatives of the same $f$ on an interval $I$. Explain every possible difference.",
+        "steps": [
+          {
+            "label": "Differentiate the difference",
+            "text": "Put $H=G-F$. Since $F' =G'=f$ on $I$, $H'=0$ throughout $I$."
+          },
+          {
+            "label": "Use the interval",
+            "text": "For any $u<v$ in $I$, the mean value theorem on $[u,v]$ gives $H(v)-H(u)=H'(c)(v-u)=0$ for some $c\\in(u,v)$."
+          },
+          {
+            "label": "Conclude",
+            "text": "Every pair of points in $I$ has the same $H$ value, so $G=F+C$ on that entire interval."
+          }
+        ],
+        "result": "All antiderivatives on one interval form the family $F+C$. Separate interval components may have separate constants.",
+        "verification": "The converse is immediate: $(F+C)'=F'=f$. The mean value theorem does not compare points across a gap in the domain."
       }
     ],
     "exercises": [
@@ -1817,6 +1840,20 @@
         "rubric": [
           "Differentiate both branches.",
           "Allow independent constants on separate intervals."
+        ]
+      },
+      {
+        "id": "ch1-constant-family-transfer",
+        "outcome": "Prove uniqueness up to a constant on an interval and respect disconnected components.",
+        "kind": "proof",
+        "prompt": "Let $F$ and $G$ both differentiate to $3x^2$ on $(-2,4)$. Prove that $G-F$ is one constant there. Would the same conclusion force one shared constant on $(-2,0)\\cup(0,4)$?",
+        "hint": "Apply the mean value theorem to $H=G-F$ between any two points in the same interval.",
+        "solution": "On $(-2,4)$, $H'=G'-F'=0$. For any $u<v$ in that interval, the mean value theorem gives $H(v)-H(u)=H'(c)(v-u)=0$, so $H=C$. On the disconnected domain, the argument works separately on each component but cannot compare their constants; two independent constants are possible.",
+        "solutionTex": "H'=0\\ \text{on }(-2,4)\\implies H=C\\ \text{there}",
+        "rubric": [
+          "Use the derivative of the difference.",
+          "Apply the mean value theorem to arbitrary points in one interval.",
+          "Distinguish a connected interval from two disconnected components."
         ]
       }
     ]
@@ -1848,25 +1885,29 @@
       {
         "kind": "worked-example",
         "id": "ch1-x2-right-sums",
-        "title": "Derive the parabola area from sums",
-        "strategy": "Identify the applicable definition, then compute without skipping its conditions.",
-        "setup": "Use right endpoints for $f(x)=x^2$ on $[0,1]$.",
+        "title": "Compare left and right parabola sums",
+        "strategy": "Use the same partition width with left and right sample points, then compare both limits.",
+        "setup": "On $[0,1]$, construct left and right endpoint sums for $f(x)=x^2$.",
         "steps": [
           {
-            "label": "1",
-            "text": "For $n$ equal pieces, $\\Delta x=1/n$ and $x_i=i/n$."
+            "label": "Partition",
+            "text": "For $n$ equal pieces, $\\Delta x=1/n$; the left tags are $(i-1)/n$ and the right tags are $i/n$."
           },
           {
-            "label": "2",
-            "text": "$S_n=\\sum_{i=1}^n(i/n)^2(1/n)=\\sum_{i=1}^n i^2/n^3$."
+            "label": "Left sum",
+            "text": "$L_n=n^{-3}\\sum_{i=0}^{n-1}i^2=(n-1)(2n-1)/(6n^2)$."
           },
           {
-            "label": "3",
-            "text": "Using $\\sum i^2=n(n+1)(2n+1)/6$, take the limit."
+            "label": "Right sum",
+            "text": "$R_n=n^{-3}\\sum_{i=1}^{n}i^2=(n+1)(2n+1)/(6n^2)$."
+          },
+          {
+            "label": "Compare limits",
+            "text": "Because $x^2$ increases on $[0,1]$, $L_n\\le S_n\\le R_n$ for every tagged sum on this equal partition. Both endpoint sums tend to $1/3$."
           }
         ],
-        "result": "$\\lim_{n\\to\\infty}S_n=1/3$.",
-        "verification": "Continuity of $x^2$ makes the Riemann integral equal this limit; one sequence alone is not a general integrability proof."
+        "result": "$L_n\\to1/3$ and $R_n\\to1/3$; every tagged sum on these equal partitions has the same limit.",
+        "verification": "The gap is $R_n-L_n=1/n$. Arbitrary partitions still require the all-partitions definition or a separate argument."
       },
       {
         "kind": "worked-example",
@@ -1943,6 +1984,29 @@
         ],
         "result": "$2(1/2)+3(1)=4$.",
         "verification": "Direct antiderivative evaluation gives $[x^2+3x]_0^1=4$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch1-all-tags-linear-proof",
+        "title": "Every tag and every fine partition agree",
+        "strategy": "Compare each tagged rectangle with a telescoping endpoint difference and bound the total error by the mesh.",
+        "setup": "For $f(x)=x$ on $[0,1]$, let $0=x_0<\\cdots<x_n=1$ be any partition, $t_i\\in[x_{i-1},x_i]$, and $h=\\max_i(x_i-x_{i-1})$.",
+        "steps": [
+          {
+            "label": "Compare one interval",
+            "text": "Write $\\Delta_i=x_i-x_{i-1}$. Since $t_i$ lies between the endpoints, $|t_i\\Delta_i-(x_i^2-x_{i-1}^2)/2|\\le\\Delta_i^2/2$."
+          },
+          {
+            "label": "Sum and telescope",
+            "text": "The endpoint differences sum to $1/2$, while $\\sum_i\\Delta_i^2\\le h\\sum_i\\Delta_i=h$."
+          },
+          {
+            "label": "Take the mesh limit",
+            "text": "Every choice of tags and every partition with mesh $h$ satisfies $|\\sum_i t_i\\Delta_i-1/2|\\le h/2$, which tends to zero."
+          }
+        ],
+        "result": "$\\int_0^1x\\,dx=1/2$ by the all-tags, all-partitions condition.",
+        "verification": "This bound is uniform in the number, widths, and tags of the subintervals; a single right-endpoint sequence would not give that conclusion."
       }
     ],
     "exercises": [
@@ -1970,6 +2034,20 @@
         "rubric": [
           "Apply additivity and orientation before linearity.",
           "Keep the constant term’s reversed interval sign."
+        ]
+      },
+      {
+        "id": "ch1-all-tags-linear-transfer",
+        "outcome": "Prove sample-point independence for a new linear integrand.",
+        "kind": "proof",
+        "prompt": "For $f(x)=2x$ on $[0,1]$, prove that every tagged Riemann sum over every partition of mesh $h$ differs from $1$ by at most $h$. Explain why a right-endpoint sequence alone would not prove this.",
+        "hint": "Compare $2t_i\\Delta_i$ with $x_i^2-x_{i-1}^2$ on each subinterval.",
+        "solution": "Because $t_i\\in[x_{i-1},x_i]$, $|2t_i\\Delta_i-(x_i^2-x_{i-1}^2)|\\le\\Delta_i^2$. Summing and telescoping gives $|\\sum_i2t_i\\Delta_i-1|\\le\\sum_i\\Delta_i^2\\le h\\sum_i\\Delta_i=h$. The bound applies to every partition and every tag choice, so all sums converge to $1$ as $h\\to0$. One selected right-endpoint sequence cannot establish that quantifier.",
+        "solutionTex": "\\left|\\sum_i2t_i\\Delta_i-1\\right|\\le\\sum_i\\Delta_i^2\\le h",
+        "rubric": [
+          "Keep partitions and tags arbitrary.",
+          "Bound each interval error and telescope.",
+          "Conclude uniform convergence over all tagged partitions."
         ]
       }
     ]
