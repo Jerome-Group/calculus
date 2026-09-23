@@ -62,6 +62,17 @@ test("Rolle and inverse paths distinguish proof status and hypothesis use", asyn
     learningGuides.lhopital.contentBlocks[0].status,
     "Theorem used without proof",
   );
+  const cauchyTheorems = learningGuides.lhopital.contentBlocks.filter(
+    (block) => block.id === "cauchy-mean-value-theorem",
+  );
+  assert.equal(cauchyTheorems.length, 1);
+  assert.equal(cauchyTheorems[0].status, "Complete proof");
+  assert.equal(
+    learningGuides.lhopital.contentBlocks.find(
+      (block) => block.id === "lecture13-lhopital-rule-statement",
+    ).status,
+    "Theorem used without proof",
+  );
   assert.equal(
     learningGuides["taylor-series"].contentBlocks[0].status,
     "Theorem used without proof",

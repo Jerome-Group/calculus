@@ -10101,16 +10101,361 @@
     "contentBlocks": [
       {
         "kind": "theorem",
-        "id": "cauchy-mean-value-theorem",
-        "title": "Cauchy’s mean value theorem (imported)",
-        "statement": "There is $c\\in(a,b)$ such that $(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)$.",
+        "id": "lecture13-zero-over-zero-statement",
+        "title": "The $0/0$ form is indeterminate",
+        "statement": "If $f(x)\\to0$ and $g(x)\\to0$, then $f(x)/g(x)$ has type $0/0$. The quotient limit may exist or may fail to exist; $0/0$ is not a value.",
         "hypotheses": [
-          "$a<b$.",
-          "$f$ and $g$ are continuous on $[a,b]$.",
-          "$f$ and $g$ are differentiable on $(a,b)$."
+          "Find the numerator and denominator limits separately.",
+          "Do not infer the quotient limit from the form alone."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture13-infinity-over-infinity-statement",
+        "title": "The $\\infty/\\infty$ form is indeterminate",
+        "statement": "If $f(x)$ and $g(x)$ each tend to $+\\infty$ or $-\\infty$, their quotient has type $\\infty/\\infty$. The quotient limit still requires a separate argument.",
+        "hypotheses": [
+          "Check each function limit independently.",
+          "The signs and growth rates can change the quotient limit."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture13-method-contrast-statement",
+        "title": "Choose an available limit method first",
+        "text": "For a rational $0/0$ expression, factor and cancel a common factor when valid. Use known special limits such as $\\lim_{x\\to0}\\sin x/x=1$ when their hypotheses match. Neither method directly simplifies $\\ln x/(x-1)$ at $x=1$; the indeterminate form needs another justified method."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture13-lhopital-rule-statement",
+        "title": "L’Hôpital’s Rule: forms and hypotheses",
+        "statement": "If $f,g$ are differentiable on a punctured interval around $a$, $g\\prime(x)\\ne0$ there, and either both functions tend to $0$ or each tends to $+\\infty$ or $-\\infty$, then $\\lim_{x\\to a}f(x)/g(x)=\\lim_{x\\to a}f\\prime(x)/g\\prime(x)$ when the latter limit exists as a finite value or as $+\\infty$ or $-\\infty$.",
+        "hypotheses": [
+          "The original quotient must be defined on the punctured domain.",
+          "Check the $0/0$ or $\\infty/\\infty$ form before differentiating.",
+          "Check differentiability and $g\\prime(x)\\ne0$ near the endpoint.",
+          "The derivative-ratio limit must exist, possibly with a signed infinite value."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture13-endpoint-variants-statement",
+        "title": "Use the matching one-sided or infinite-endpoint version",
+        "text": "The source allows $x\\to a^+$, $x\\to a^-$, $x\\to+\\infty$, and $x\\to-\\infty$. Keep the form and derivative hypotheses on the side or tail actually approached."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture13-special-case-proof-statement",
+        "title": "A local derivative argument for the 0/0 case",
+        "statement": "If $f(a)=g(a)=0$, $f\\prime$ and $g\\prime$ are continuous near $a$, and $g\\prime(a)\\ne0$, then both quotient limits equal $f\\prime(a)/g\\prime(a)$. This proves a stronger-hypothesis special case, not the full L’Hôpital theorem.",
+        "hypotheses": [
+          "$f$ and $g$ are differentiable at $a$ and vanish there.",
+          "$f\\prime,g\\prime$ are continuous near $a$.",
+          "$g\\prime(a)\\ne0$."
+        ],
+        "prerequisites": ["Definition of derivative"],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture13-product-conversion-statement",
+        "title": "Convert an indeterminate product to a quotient",
+        "statement": "For a product with one factor tending to $0$ and the other to $+\\infty$ or $-\\infty$, rewrite $fg$ as $f/(1/g)$ or $g/(1/f)$. Choose the version that gives a usable $0/0$ or $\\infty/\\infty$ quotient and the simpler derivative ratio.",
+        "hypotheses": [
+          "The original product is not itself an input to L’Hôpital’s Rule.",
+          "Check the converted quotient’s form, domain, differentiability, and denominator derivative."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture13-difference-conversion-statement",
+        "title": "Convert an indeterminate difference before using the rule",
+        "statement": "When $f$ and $g$ both tend to an infinity, $f-g$ is an indeterminate difference. Use a common denominator, rationalization, or factoring to turn it into a quotient of type $0/0$ or $\\infty/\\infty$ before considering L’Hôpital’s Rule.",
+        "hypotheses": [
+          "Do not differentiate the two terms of a difference separately.",
+          "After conversion, verify the new quotient’s form and hypotheses."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture13-variable-power-conversion-statement",
+        "title": "Take logarithms of an indeterminate variable power",
+        "statement": "For a positive base, forms $0^0$, $\\infty^0$, and $1^{+\\infty}$ or $1^{-\\infty}$ are indeterminate. Set $y=f(x)^{g(x)}$, use $\\ln y=g(x)\\ln f(x)$, evaluate this product by a quotient conversion and the limit rule, then recover $y\\to e^L$ when $\\ln y\\to L$.",
+        "hypotheses": [
+          "Ensure $f(x)>0$ near the endpoint so $\\ln f(x)$ is defined.",
+          "Convert the logarithmic product to an eligible quotient before applying L’Hôpital.",
+          "Exponentiate the logarithmic limit at the end."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-zero-over-zero-worked",
+        "title": "Recognize the source $\\ln x/(x-1)$ form",
+        "strategy": "Evaluate the numerator and denominator limits separately.",
+        "setup": "For $\\lim_{x\\to1}\\frac{\\ln x}{x-1}$, identify the original form before choosing a method.",
+        "steps": [
+          {
+            "label": "Numerator",
+            "text": "$\\ln x\\to\\ln1=0$.",
+            "equation": "\\lim_{x\\to1}\\ln x=0"
+          },
+          {
+            "label": "Denominator",
+            "text": "$x-1\\to0$.",
+            "equation": "\\lim_{x\\to1}(x-1)=0"
+          }
+        ],
+        "result": "The quotient has indeterminate form $0/0$; the form itself gives no limit value.",
+        "verification": "The source returns to this quotient on p8 and evaluates it only after invoking the rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-infinity-over-infinity-worked",
+        "title": "Use the source horizontal-asymptote limit",
+        "strategy": "Classify both function limits, then use the rule on the quotient.",
+        "setup": "The source asks for $\\lim_{x\\to\\infty}\\frac{\\ln x}{x-1}$ when finding the horizontal asymptote.",
+        "steps": [
+          {
+            "label": "Form",
+            "text": "$\\ln x\\to+\\infty$ and $x-1\\to+\\infty$, so the form is $\\infty/\\infty$.",
+            "equation": "\\lim_{x\\to\\infty}\\ln x=+\\infty,\\qquad\\lim_{x\\to\\infty}(x-1)=+\\infty"
+          },
+          {
+            "label": "Derivative ratio",
+            "text": "The denominator derivative is $1\\ne0$, and the derivative ratio tends to zero.",
+            "equation": "\\lim_{x\\to\\infty}\\frac{1/x}{1}=0"
+          }
+        ],
+        "result": "The limit is $0$, so the graph has horizontal asymptote $y=0$.",
+        "verification": "The $\\infty/\\infty$ label alone did not determine the answer; the derivative-ratio limit supplied it."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-method-contrast-worked",
+        "title": "Compare cancellation, a known limit, and the new quotient",
+        "strategy": "Match each expression to a method whose hypotheses or algebra fit.",
+        "setup": "The source contrasts two earlier methods with the new logarithmic quotient.",
+        "steps": [
+          {
+            "label": "Cancel a common factor",
+            "text": "Factor and cancel only for $x\\ne1$, then take the limit.",
+            "equation": "\\lim_{x\\to1}\\frac{x^2-x}{x^2-1}=\\lim_{x\\to1}\\frac{x}{x+1}=\\frac12"
+          },
+          {
+            "label": "Use a known geometric limit",
+            "text": "The unit-circle result directly gives the standard sine quotient.",
+            "equation": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1"
+          },
+          {
+            "label": "Reject a mismatched shortcut",
+            "text": "$\\ln x/(x-1)$ has no common factor to cancel and is not the sine limit; its $0/0$ form calls for a justified theorem.",
+            "equation": "\\lim_{x\\to1}\\frac{\\ln x}{x-1}\\quad\\text{has form }0/0"
+          }
+        ],
+        "result": "Use cancellation for the factored rational quotient, the geometric limit for sine, and L’Hôpital for the logarithmic quotient after checking its hypotheses.",
+        "verification": "A $0/0$ form is a prompt to investigate, not an answer and not permission to use an unrelated limit rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-logarithm-quotient-worked",
+        "title": "Evaluate the source $0/0$ logarithmic example",
+        "strategy": "Verify the form, then replace the quotient by its derivative ratio.",
+        "setup": "Find $\\lim_{x\\to1}\\frac{\\ln x}{x-1}$ as on source p8.",
+        "steps": [
+          {
+            "label": "Verify the form",
+            "text": "Both functions tend to zero.",
+            "equation": "\\lim_{x\\to1}\\ln x=0,\\qquad\\lim_{x\\to1}(x-1)=0"
+          },
+          {
+            "label": "Differentiate",
+            "text": "The denominator derivative is $1$, so it is nonzero near $1$.",
+            "equation": "\\lim_{x\\to1}\\frac{(\\ln x)\\prime}{(x-1)\\prime}=\\lim_{x\\to1}\\frac{1/x}{1}=1"
+          }
+        ],
+        "result": "The quotient limit is $1$.",
+        "verification": "The equality is a limit conclusion under L’Hôpital’s hypotheses; the quotients are not equal pointwise."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-endpoint-variants-worked",
+        "title": "Apply the rule from one side and at negative infinity",
+        "strategy": "Keep the endpoint direction attached to each limit.",
+        "setup": "Compare a right-hand $0/0$ limit with a tail limit as $x\\to-\\infty$.",
+        "steps": [
+          {
+            "label": "Right-hand limit",
+            "text": "$e^x-1\\to0$ and $x\\to0$ as $x\\to0^+$; the derivative ratio tends to $1$.",
+            "equation": "\\lim_{x\\to0^+}\\frac{e^x-1}{x}=\\lim_{x\\to0^+}\\frac{e^x}{1}=1"
+          },
+          {
+            "label": "Negative-infinite endpoint",
+            "text": "Both numerator and denominator tend to $-\\infty$; the derivative ratio is constantly $2$.",
+            "equation": "\\lim_{x\\to-\\infty}\\frac{2x+3}{x-1}=\\lim_{x\\to-\\infty}\\frac{2}{1}=2"
+          }
+        ],
+        "result": "L’Hôpital’s Rule applies at both endpoints because the form and derivative conditions hold on the approached domain.",
+        "verification": "For the first limit the rule is one-sided; for the second it is applied on a negative tail."
+      },
+      {
+        "kind": "derivation",
+        "id": "lecture13-special-case-proof-worked",
+        "title": "Derive the local 0/0 case from derivatives",
+        "strategy": "Use continuity of the derivatives and the alternative derivative quotient at the endpoint.",
+        "setup": "Let $f(x)=\\ln x$, $g(x)=x-1$, and $a=1$.",
+        "steps": [
+          {
+            "label": "Check endpoint values",
+            "text": "$f(1)=g(1)=0$, and $f\\prime,g\\prime$ are continuous near $1$ with $g\\prime(1)=1$.",
+            "equation": "\\frac{f\\prime(1)}{g\\prime(1)}=1"
+          },
+          {
+            "label": "Use derivative definitions",
+            "text": "Each quotient by $x-1$ tends to its derivative at $1$; the denominator limit is nonzero.",
+            "equation": "\\lim_{x\\to1}\\frac{f(x)}{g(x)}=\\frac{\\lim_{x\\to1}\\frac{f(x)-f(1)}{x-1}}{\\lim_{x\\to1}\\frac{g(x)-g(1)}{x-1}}=\\frac{f\\prime(1)}{g\\prime(1)}"
+          },
+          {
+            "label": "Compare derivative limits",
+            "text": "Continuity of $f\\prime,g\\prime$ gives the same value for the derivative quotient.",
+            "equation": "\\lim_{x\\to1}\\frac{f\\prime(x)}{g\\prime(x)}=\\frac{f\\prime(1)}{g\\prime(1)}=1"
+          }
+        ],
+        "result": "Under these stronger local hypotheses, both limits equal $1$.",
+        "verification": "This is the special case shown on p7; it is not a proof of every version of L’Hôpital’s Rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-difference-conversion-worked",
+        "title": "Convert the source difference $\\sec x-\\tan x$",
+        "strategy": "Combine over a common denominator to produce an eligible quotient.",
+        "setup": "Evaluate $\\lim_{x\\to(\\pi/2)^-}(\\sec x-\\tan x)$ as on source p12.",
+        "steps": [
+          {
+            "label": "Identify the difference form",
+            "text": "Both terms tend to $+\\infty$, so the original expression is $\\infty-\\infty$.",
+            "equation": "\\sec x\\to+\\infty,\\qquad\\tan x\\to+\\infty"
+          },
+          {
+            "label": "Convert to a quotient",
+            "text": "Use a common denominator; the new numerator and denominator both tend to zero.",
+            "equation": "\\sec x-\\tan x=\\frac{1-\\sin x}{\\cos x}\\quad\\left(\\frac00\\text{ as }x\\to(\\pi/2)^-\\right)"
+          },
+          {
+            "label": "Apply the rule",
+            "text": "The derivative ratio tends to zero.",
+            "equation": "\\lim_{x\\to(\\pi/2)^-}\\frac{-\\cos x}{-\\sin x}=0"
+          }
+        ],
+        "result": "The original difference tends to $0$.",
+        "verification": "The rule is used only after the difference has been converted to a $0/0$ quotient."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-variable-power-example-worked",
+        "title": "Evaluate the source $1^{\\infty}$ power",
+        "strategy": "Take a logarithm, form a quotient, and exponentiate the result.",
+        "setup": "Find $\\lim_{x\\to0^+}(1+\\sin4x)^{\\cot x}$ as on source p14.",
+        "steps": [
+          {
+            "label": "Classify the power",
+            "text": "The base tends to $1$ and $\\cot x\\to+\\infty$, so this is type $1^{\\infty}$.",
+            "equation": "1+\\sin4x\\to1,\\qquad\\cot x\\to+\\infty"
+          },
+          {
+            "label": "Take logarithms",
+            "text": "For $y=(1+\\sin4x)^{\\cot x}$, the log quotient has type $0/0$.",
+            "equation": "\\ln y=\\cot x\\ln(1+\\sin4x)=\\frac{\\ln(1+\\sin4x)}{\\tan x}"
+          },
+          {
+            "label": "Differentiate numerator and denominator",
+            "text": "The rendered source gives the numerator derivative $4\\cos(4x)/(1+\\sin(4x))$ and denominator derivative $\\sec^2x$.",
+            "equation": "\\lim_{x\\to0^+}\\ln y=\\lim_{x\\to0^+}\\frac{\\frac{4\\cos(4x)}{1+\\sin(4x)}}{\\sec^2x}=4"
+          },
+          {
+            "label": "Return from the logarithm",
+            "text": "$y=e^{\\ln y}$, so exponentiate the limit.",
+            "equation": "\\lim_{x\\to0^+}(1+\\sin4x)^{\\cot x}=e^4"
+          }
+        ],
+        "result": "The limit is $e^4$.",
+        "verification": "The numerator derivative is read from the rendered p14 page; OCR misreads its superscript/numerator. The derivative is $4\\cos(4x)/(1+\\sin(4x))$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture13-cauchy-mean-value-application-worked",
+        "title": "Apply Cauchy’s mean value theorem",
+        "strategy": "Check the hypotheses, compute the endpoint quotient, and solve for an interior point.",
+        "setup": "Use $f(x)=x^2$ and $g(x)=x$ on $[1,3]$.",
+        "steps": [
+          {
+            "label": "Check the hypotheses",
+            "text": "Both functions are continuous on $[1,3]$, differentiable on $(1,3)$, and $g\\prime(x)=1\\ne0$.",
+            "equation": "\\frac{f(3)-f(1)}{g(3)-g(1)}=\\frac{9-1}{3-1}=4"
+          },
+          {
+            "label": "Solve the derivative equation",
+            "text": "Cauchy’s theorem gives a point $c\\in(1,3)$ with derivative ratio $4$.",
+            "equation": "\\frac{f\\prime(c)}{g\\prime(c)}=\\frac{2c}{1}=4\\quad\\Longrightarrow\\quad c=2"
+          }
+        ],
+        "result": "The theorem’s interior point is $c=2$.",
+        "verification": "The endpoint quotient and derivative quotient agree at the interior value; no endpoint value of $c$ is allowed."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture13-cauchy-mean-value-proof-statement",
+        "title": "Prove Cauchy’s theorem with an auxiliary function",
+        "text": "Scale the change in $g$ so that it matches the endpoint change in $f$. The resulting function has equal endpoint values, so Rolle’s theorem supplies the required interior point."
+      },
+      {
+        "kind": "derivation",
+        "id": "lecture13-cauchy-mean-value-proof-worked",
+        "title": "Follow the p15 proof through Rolle’s theorem",
+        "strategy": "Subtract a constant multiple of the change in g to make the endpoint values agree.",
+        "setup": "Assume the Cauchy hypotheses and let $\\Delta f=f(b)-f(a)$ and $\\Delta g=g(b)-g(a)\\ne0$.",
+        "steps": [
+          {
+            "label": "Define the auxiliary function",
+            "text": "$h$ is continuous on $[a,b]$ and differentiable on $(a,b)$.",
+            "equation": "h(x)=f(x)-f(a)-\\frac{\\Delta f}{\\Delta g}(g(x)-g(a))"
+          },
+          {
+            "label": "Match endpoint values",
+            "text": "The construction gives $h(a)=h(b)=0$.",
+            "equation": "h(a)=0,\\qquad h(b)=\\Delta f-\\frac{\\Delta f}{\\Delta g}\\Delta g=0"
+          },
+          {
+            "label": "Apply Rolle and rearrange",
+            "text": "For some $c\\in(a,b)$, $h\\prime(c)=0$; because $g\\prime(c)\\ne0$, divide to obtain Cauchy’s conclusion.",
+            "equation": "h\\prime(c)=f\\prime(c)-\\frac{\\Delta f}{\\Delta g}g\\prime(c)=0\\quad\\Longrightarrow\\quad\\frac{f\\prime(c)}{g\\prime(c)}=\\frac{\\Delta f}{\\Delta g}"
+          }
+        ],
+        "result": "This proves the stated Cauchy mean value theorem.",
+        "verification": "The source’s proof uses the auxiliary function and Rolle’s theorem; it does not present a proof of the full L’Hôpital theorem."
+      },
+      {
+        "kind": "theorem",
+        "id": "cauchy-mean-value-theorem",
+        "title": "Cauchy’s mean value theorem",
+        "statement": "If $f,g$ are continuous on $[a,b]$, differentiable on $(a,b)$, and $g\\prime(x)\\ne0$ throughout $(a,b)$, then some $c\\in(a,b)$ satisfies $\\frac{f\\prime(c)}{g\\prime(c)}=\\frac{f(b)-f(a)}{g(b)-g(a)}$.",
+        "hypotheses": [
+          "$a<b$; $f$ and $g$ are continuous on $[a,b]$ and differentiable on $(a,b)$.",
+          "$g\\prime(x)\\ne0$ for every $x\\in(a,b)$; this makes $g(b)-g(a)\\ne0$."
         ],
         "prerequisites": ["Rolle’s theorem"],
-        "status": "Theorem used without proof"
+        "status": "Complete proof"
       }
     ],
     "supplementalBlocks": [
@@ -10186,10 +10531,15 @@
             "label": "Derivative ratio",
             "text": "The ratio of derivatives tends to zero.",
             "equation": "\\frac{(\\ln x)'}{(1/x)'}=\\frac{1/x}{-1/x^2}=-x\\longrightarrow0"
+          },
+          {
+            "label": "Compare the other conversion",
+            "text": "The alternative $x/(1/\\ln x)$ is also $0/0$, but its derivative ratio $-x(\\ln x)^2$ is less simple.",
+            "equation": "\\frac{1}{(1/\\ln x)\\prime}=-x(\\ln x)^2\\longrightarrow0"
           }
         ],
         "result": "$x\\ln x\\to0$ as $x\\to0^+$.",
-        "verification": "The quotient rule here concerns limits of ratios, not equality between the original quotient and its derivative quotient at each $x$."
+        "verification": "The source prefers ln(x)/(1/x) because its derivative ratio is simply -x; the alternative quotient also works but takes more algebra."
       }
     ],
     "exercises": [
@@ -10206,6 +10556,160 @@
           "Use logarithms only for the positive power.",
           "Check differentiability and nonzero denominator derivative after conversion.",
           "Reject the ineligible nonindeterminate quotient."
+        ]
+      },
+      {
+        "id": "lecture13-zero-over-zero-transfer",
+        "outcome": "Classify a new 0/0 quotient without treating the form as its answer.",
+        "kind": "conceptual",
+        "prompt": "As $x\\to0$, identify the form of $\\frac{1-\\cos x}{x^2}$. Does the form alone determine its limit?",
+        "hint": "Take the numerator and denominator limits separately; distinguish the form from a limit value.",
+        "solution": "Both numerator and denominator tend to zero, so the quotient has indeterminate form $0/0$. The form alone does not determine the limit. A separate standard trigonometric limit gives $1/2$.",
+        "solutionTex": "\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12",
+        "rubric": [
+          "Compute both function limits separately.",
+          "Name the form as indeterminate.",
+          "Do not use 0/0 as a quotient value."
+        ]
+      },
+      {
+        "id": "lecture13-infinity-over-infinity-transfer",
+        "outcome": "Classify and then evaluate a new infinity-over-infinity limit.",
+        "kind": "computational",
+        "prompt": "As $x\\to+\\infty$, classify and evaluate $\\frac{3x^2+1}{x^2+5x}$. Explain why the form alone is insufficient.",
+        "hint": "Check both limits, then divide numerator and denominator by $x^2$.",
+        "solution": "Both functions tend to $+\\infty$, so the form is $\\infty/\\infty$, which is indeterminate. Dividing by $x^2$ shows the quotient tends to $3$.",
+        "solutionTex": "\\frac{3x^2+1}{x^2+5x}=\\frac{3+1/x^2}{1+5/x}\\longrightarrow3",
+        "rubric": [
+          "Verify both limits are infinite.",
+          "Identify the form as indeterminate.",
+          "Use an additional valid argument to find the limit."
+        ]
+      },
+      {
+        "id": "lecture13-method-contrast-transfer",
+        "outcome": "Choose cancellation, a known limit, or L’Hôpital based on the source examples.",
+        "kind": "method-choice",
+        "prompt": "Choose a method and evaluate $\\lim_{x\\to2}\\frac{x^2-4}{x-2}$, $\\lim_{x\\to0}\\frac{\\sin(4x)}{2x}$, and $\\lim_{x\\to1}\\frac{\\ln x}{x-1}$.",
+        "hint": "Factor the first quotient, rescale the standard sine limit for the second, and check the form before using L’Hôpital on the third.",
+        "solution": "The first limit is $4$ by cancellation, the second is $2$ by the geometric sine limit, and the third is $1$ by L’Hôpital after verifying $0/0$.",
+        "solutionTex": "\\lim_{x\\to2}\\frac{x^2-4}{x-2}=4,\\quad\\lim_{x\\to0}\\frac{\\sin(4x)}{2x}=2,\\quad\\lim_{x\\to1}\\frac{\\ln x}{x-1}=1",
+        "rubric": [
+          "Match each limit to a method whose hypotheses fit.",
+          "Show the algebra or known limit used.",
+          "Verify the form before applying L’Hôpital."
+        ]
+      },
+      {
+        "id": "lecture13-lhopital-rule-transfer",
+        "outcome": "Apply the full rule after checking a new 0/0 quotient.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to0}\\frac{e^{2x}-1}{\\sin(3x)}$ with L’Hôpital’s Rule. State the form and check the denominator derivative.",
+        "hint": "Both functions tend to zero. Differentiate numerator and denominator once.",
+        "solution": "The form is $0/0$. The denominator derivative $3\\cos(3x)$ is nonzero near zero, and the derivative ratio tends to $2/3$.",
+        "solutionTex": "\\lim_{x\\to0}\\frac{e^{2x}-1}{\\sin(3x)}=\\lim_{x\\to0}\\frac{2e^{2x}}{3\\cos(3x)}=\\frac23",
+        "rubric": [
+          "Identify the original indeterminate form.",
+          "Check differentiability and nonzero denominator derivative.",
+          "Take the derivative-ratio limit."
+        ]
+      },
+      {
+        "id": "lecture13-endpoint-variants-transfer",
+        "outcome": "Apply L’Hôpital at one-sided and infinite endpoints.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to1^-}\\frac{\\sqrt{x}-1}{x-1}$ and $\\lim_{x\\to+\\infty}\\frac{3x+1}{2x-5}$. Name each endpoint form.",
+        "hint": "For the first, approach from the left in the domain $x>0$; for the second, compare the two infinite limits.",
+        "solution": "The first is a one-sided $0/0$ form and its derivative ratio tends to $1/2$. The second is an $\\infty/\\infty$ form and its derivative ratio is $3/2$.",
+        "solutionTex": "\\lim_{x\\to1^-}\\frac{\\sqrt{x}-1}{x-1}=\\frac12,\\qquad\\lim_{x\\to+\\infty}\\frac{3x+1}{2x-5}=\\frac32",
+        "rubric": [
+          "Keep the one-sided direction.",
+          "Classify each form at its endpoint.",
+          "Check the derivative-ratio limits."
+        ]
+      },
+      {
+        "id": "lecture13-special-case-proof-transfer",
+        "outcome": "Use the derivative-definition argument under its stronger local assumptions.",
+        "kind": "proof",
+        "prompt": "For $f(x)=e^{2x}-1$, $g(x)=3x$, and $a=0$, verify the p7 special-case hypotheses and derive $\\lim_{x\\to0}f(x)/g(x)$.",
+        "hint": "Check $f(0)=g(0)=0$, continuity of both derivatives, and $g\\prime(0)\\ne0$.",
+        "solution": "The hypotheses hold and $f\\prime(0)/g\\prime(0)=2/3$. The two difference quotients in the derivative definitions therefore give the same limit $2/3$.",
+        "solutionTex": "\\lim_{x\\to0}\\frac{e^{2x}-1}{3x}=\\frac{f\\prime(0)}{g\\prime(0)}=\\frac23",
+        "rubric": [
+          "Verify every stronger hypothesis.",
+          "Use the alternative derivative definition for numerator and denominator.",
+          "State that this proves the special case, not the general theorem."
+        ]
+      },
+      {
+        "id": "lecture13-product-conversion-transfer",
+        "outcome": "Choose an efficient quotient conversion for a 0 times infinity form.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to0^+}x^2\\ln x$. Show the converted quotient and derivative ratio.",
+        "hint": "Use $\\ln x/(1/x^2)$; the numerator and denominator have infinite magnitude.",
+        "solution": "The product is $0\\cdot(-\\infty)$. The quotient $\\ln x/(1/x^2)$ has an infinite-over-infinite form; its derivative ratio is $-x^2/2\\to0$.",
+        "solutionTex": "\\lim_{x\\to0^+}x^2\\ln x=\\lim_{x\\to0^+}\\frac{\\ln x}{1/x^2}=\\lim_{x\\to0^+}\\frac{1/x}{-2/x^3}=0",
+        "rubric": [
+          "Identify the original product form.",
+          "Choose a quotient with a valid form.",
+          "Differentiate the converted numerator and denominator."
+        ]
+      },
+      {
+        "id": "lecture13-difference-conversion-transfer",
+        "outcome": "Convert a new infinity-minus-infinity difference to a quotient.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to0^+}(\\csc x-\\cot x)$ by converting the difference before applying L’Hôpital.",
+        "hint": "Use the common denominator $\\sin x$ and verify the new form.",
+        "solution": "Both terms tend to $+\\infty$. Their difference is $(1-\\cos x)/\\sin x$, a $0/0$ quotient; the derivative ratio $\\sin x/\\cos x$ tends to zero.",
+        "solutionTex": "\\lim_{x\\to0^+}(\\csc x-\\cot x)=\\lim_{x\\to0^+}\\frac{1-\\cos x}{\\sin x}=0",
+        "rubric": [
+          "Name the original difference form.",
+          "Convert algebraically to a quotient.",
+          "Check the converted form before applying the rule."
+        ]
+      },
+      {
+        "id": "lecture13-variable-power-conversion-transfer",
+        "outcome": "Evaluate a new 1 to an infinite power by logarithmic conversion.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to0}(1+2x)^{1/x}$ using logarithms and L’Hôpital.",
+        "hint": "The base is positive near zero. Let $y=(1+2x)^{1/x}$ and find $\\lim\\ln y$.",
+        "solution": "The logarithm is $\\ln y=\\ln(1+2x)/x$, a $0/0$ quotient. Its derivative ratio tends to $2$, so $\\ln y\\to2$ and $y\\to e^2$.",
+        "solutionTex": "\\lim_{x\\to0}(1+2x)^{1/x}=\\exp\\left(\\lim_{x\\to0}\\frac{\\ln(1+2x)}{x}\\right)=e^2",
+        "rubric": [
+          "Check the base is positive and the power form is indeterminate.",
+          "Take logarithms and form an eligible quotient.",
+          "Exponentiate the logarithmic limit."
+        ]
+      },
+      {
+        "id": "lecture13-cauchy-mean-value-transfer",
+        "outcome": "Apply Cauchy’s theorem with all endpoint hypotheses checked.",
+        "kind": "computational",
+        "prompt": "For $f(x)=x^2$ and $g(x)=2x+1$ on $[0,1]$, find the interior point supplied by Cauchy’s mean value theorem.",
+        "hint": "Compute the endpoint difference quotient, then solve $f\\prime(c)/g\\prime(c)$ equal to it.",
+        "solution": "Both functions are continuous on $[0,1]$ and differentiable inside; $g\\prime=2\\ne0$. The endpoint quotient is $1/2$, while the derivative ratio is $c$, so $c=1/2$.",
+        "solutionTex": "\\frac{f(1)-f(0)}{g(1)-g(0)}=\\frac12=\\frac{f\\prime(c)}{g\\prime(c)}=c\\quad\\Longrightarrow\\quad c=\\frac12",
+        "rubric": [
+          "Verify continuity and differentiability on the required sets.",
+          "Check $g\\prime$ never vanishes.",
+          "Solve for a point strictly inside the interval."
+        ]
+      },
+      {
+        "id": "lecture13-cauchy-mean-value-proof-transfer",
+        "outcome": "Reconstruct the auxiliary-function proof on changed data.",
+        "kind": "proof",
+        "prompt": "For $f(x)=x^3$, $g(x)=x$ on $[1,2]$, form the source auxiliary function, check its endpoint values, and find the Rolle point.",
+        "hint": "The endpoint slope is $7$. Define $h(x)=f(x)-f(1)-7(g(x)-g(1))$.",
+        "solution": "$h(x)=x^3-1-7(x-1)$ has $h(1)=h(2)=0$. Rolle gives $3c^2-7=0$, so $c=\\sqrt{7/3}\\in(1,2)$.",
+        "solutionTex": "h(x)=x^3-1-7(x-1),\\qquad c=\\sqrt{\\frac73}\\in(1,2)",
+        "rubric": [
+          "Use the endpoint quotient to choose the scale.",
+          "Verify both auxiliary-function endpoint values.",
+          "Apply Rolle and check the resulting point is interior."
         ]
       }
     ],
