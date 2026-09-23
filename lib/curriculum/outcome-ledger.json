@@ -6023,16 +6023,11 @@
       "id": "MH1101_Chapter_05_Notes:01",
       "source_id": "MH1101_Chapter_05_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Convergence tests and quantitative remainder estimates",
-      "physical_pages_from_audit": "2–24; integral 2–6; comparison 7–12; alternating/absolute 13–18; ratio/root 19–24",
-      "linked_concept_ids": [
-        "integral-test",
-        "comparison-tests",
-        "absolute-conditional-alternating",
-        "ratio-root-tests"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Four source-specific atomic outcomes are mapped for convergence tests. Comparison, quantitative remainder, other examples, and learner checks still require review.",
+      "topic_from_audit_inventory": "Integral Test, p-series threshold, logarithmic p-series, and quantitative remainder bounds",
+      "physical_pages_from_audit": "Physical pages 2–6: Integral Test (2–3); p-series threshold and arctangent example (4–5); logarithmic p-series benchmark (6).",
+      "linked_concept_ids": ["integral-test"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills map to learner-facing statements, source-specific reasoning, and changed-data practice. Outcome-specific scene alignment and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -6041,15 +6036,128 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
       "atomic_outcome_ids": [
         "integral-test:source-skill-1",
+        "integral-test:ch05-p-series-threshold",
+        "integral-test:ch05-integral-remainder-estimate",
+        "integral-test:ch05-log-p-series-threshold"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–6",
+      "inspected_physical_pages": [2, 3, 4, 5, 6],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Table of contents only; it names sections but contains no theorem, worked convergence reasoning, or learner task."
+        }
+      ],
+      "source_review_notes": [
+        "Physical page 1 is a table of contents only and is excluded from instructional coverage.",
+        "Page 6 prints the hint substitution as u=ln u; the displayed integral requires u=ln x."
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_05_Notes:02",
+      "source_id": "MH1101_Chapter_05_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Direct and limit comparison tests",
+      "physical_pages_from_audit": "Physical pages 7–12: direct comparison theorem/examples (7–8); limit comparison theorem and examples (9–12).",
+      "linked_concept_ids": ["comparison-tests"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills map to learner-facing statements, source-specific reasoning, and changed-data practice. Outcome-specific scene alignment and learner performance remain unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "comparison-tests:ch05-direct-comparison",
+        "comparison-tests:ch05-limit-comparison"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "7–12",
+      "inspected_physical_pages": [7, 8, 9, 10, 11, 12],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "The limit-comparison zero and infinite cases are one-sided implications; the finite positive case gives equivalence.",
+        "Physical-page 12 radical comparison is interpreted from the displayed term and comparator; its ratio limit is 1."
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_05_Notes:03",
+      "source_id": "MH1101_Chapter_05_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Absolute and conditional convergence, alternating convergence, and its remainder estimate",
+      "physical_pages_from_audit": "Physical pages 13–18: absolute convergence definitions and theorem (13–15); conditional convergence and Alternating Series Test/examples (16–18).",
+      "linked_concept_ids": ["absolute-conditional-alternating"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills map to learner-facing statements, source-specific reasoning, and changed-data practice. Outcome-specific scene alignment and learner performance remain unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "absolute-conditional-alternating:ch05-absolute-implies-convergence",
+        "absolute-conditional-alternating:ch05-absolute-majorant",
         "absolute-conditional-alternating:alternating-hypotheses",
         "absolute-conditional-alternating:conditional-classification",
-        "ratio-root-tests:source-skill-1"
+        "absolute-conditional-alternating:ch05-alternating-remainder-estimate"
       ],
-      "coverage_decision": "partial_atomic_mapping"
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "13–18",
+      "inspected_physical_pages": [13, 14, 15, 16, 17, 18],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Example 5.13 repeats the rational alternating classification as independent practice and is solved in the guide.",
+        "Page 17 incorrectly says p<1/2 for the inverse-square-root p-series; the correct comparison is p=1/2≤1."
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_05_Notes:04",
+      "source_id": "MH1101_Chapter_05_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Ratio and root tests, boundary cases, and test selection",
+      "physical_pages_from_audit": "Physical pages 19–24: Ratio Test theorem/examples (19–22); Root Test theorem and nth-power examples (23–24).",
+      "linked_concept_ids": ["ratio-root-tests"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills map to learner-facing statements, source-specific reasoning, and changed-data practice. Outcome-specific scene alignment and learner performance remain unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [],
+        "practiced": [],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "ratio-root-tests:ch05-ratio-test-criteria",
+        "ratio-root-tests:source-skill-1",
+        "ratio-root-tests:ch05-root-test-criteria",
+        "ratio-root-tests:ch05-test-selection"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "19–24",
+      "inspected_physical_pages": [19, 20, 21, 22, 23, 24],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Root and ratio limits equal to one remain inconclusive even when another test settles the same series.",
+        "Exercise 5.19 uses separate odd/even formulas; both nth-root subsequences tend to 1/2."
+      ]
     },
     {
       "id": "MH1101_Chapter_06_Notes:01",
@@ -13094,36 +13202,59 @@
     {
       "id": "integral-test:source-skill-1",
       "concept_id": "integral-test",
-      "outcome": "Check positivity, continuity, and eventual decrease before using the integral test.",
+      "outcome": "Check positivity, continuity, and eventual decrease before transferring convergence between a positive series and its improper integral.",
       "core_source": {
         "id": "MH1101_Chapter_05_Notes",
         "physical_page": 3,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 2–5 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the Integral Test statement and its two worked examples against extracted text and page images.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [3],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page states continuous, positive, and eventually decreasing hypotheses and convergence equivalence."
+          "pages": [2, 3, 4, 5],
+          "method": "Rendered and inspected canonical PDF physical pages 2–5; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "Page 2 motivates area comparison; page 3 states the Integral Test; pages 4–5 work the arctangent and logarithmic examples, including the eventual-decrease check."
         },
         "page_heading": "Theorem 1. (The Integral Test)"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#integral-test.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-hypotheses-statement].title",
+            "claim": "A distinct learner-facing heading names integral test hypotheses and convergence equivalence.",
+            "method": "Compared the guide title with the page-verified source skill."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integral-test.sections[A comparison of positive tails]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-hypotheses-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
           }
         ],
-        "worked": [],
-        "practiced": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-hypotheses-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-arctangent-worked]",
+            "claim": "The source arctangent example verifies positivity, decrease, and a finite comparison integral.",
+            "method": "Compared the derivative and improper integral with source Example 5.1 or 5.2 on the cited physical page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-log-over-n-worked]",
+            "claim": "The source logarithmic numerator example verifies eventual decrease and evaluates the divergent integral by parts.",
+            "method": "Compared the derivative and improper integral with source Example 5.1 or 5.2 on the cited physical page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-integral-test-hypotheses-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
@@ -13131,77 +13262,962 @@
         "scene_id": "plane-integral-test",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
       "source_section_id": "MH1101_Chapter_05_Notes:01",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#integral-test.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-hypotheses-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integral-test.sections[A comparison of positive tails]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-hypotheses-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-hypotheses-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-arctangent-worked]",
+            "basis": "The source arctangent example verifies positivity, decrease, and a finite comparison integral."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-test-log-over-n-worked]",
+            "basis": "The source logarithmic numerator example verifies eventual decrease and evaluates the divergent integral by parts."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-integral-test-hypotheses-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "Exercise asks for a remainder threshold, not verification of continuity, positivity, and monotonicity before the test.",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "integral-test:ch05-p-series-threshold",
+      "concept_id": "integral-test",
+      "outcome": "Classify the p-series for every real exponent using the integral threshold, including the boundary exponent.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 4,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 4, 5 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5],
+          "method": "Rendered and inspected canonical PDF physical pages 4, 5; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 2. ($p$-series)” supports the stated skill and examples."
+        },
+        "page_heading": "Theorem 2. ($p$-series)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-p-series-threshold-statement].title",
+            "claim": "A distinct learner-facing heading names the p-series threshold.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-p-series-threshold-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-p-series-threshold-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-p-series-threshold-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-integral-test",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-p-series-threshold-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-p-series-threshold-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-p-series-threshold-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-p-series-threshold-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "integral-test:ch05-integral-remainder-estimate",
+      "concept_id": "integral-test",
+      "outcome": "Use adjacent-area bounds to guarantee an upper bound for a positive decreasing series remainder.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 3,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical page 3 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the remainder inequality against extracted text and page image.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3],
+          "method": "Rendered and inspected canonical PDF physical page 3; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "Page 3 derives the Integral Test rectangle bounds and uses them to compare a positive series tail with an improper integral."
+        },
+        "page_heading": "Theorem 1. (The Integral Test)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-remainder-estimate-statement].title",
+            "claim": "A distinct learner-facing heading names integral bounds for a series remainder.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-remainder-estimate-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-remainder-estimate-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-integral-remainder-estimate-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-integral-test",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-remainder-estimate-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-remainder-estimate-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-integral-remainder-estimate-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-integral-remainder-estimate-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "integral-test:ch05-log-p-series-threshold",
+      "concept_id": "integral-test",
+      "outcome": "Classify the logarithmic p-series by substitution and verify that its integrand is decreasing on the relevant tail.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 6,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 6 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6],
+          "method": "Rendered and inspected canonical PDF physical pages 6; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Example 5.3” supports the stated skill and examples."
+        },
+        "page_heading": "Example 5.3"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-log-p-series-threshold-statement].title",
+            "claim": "A distinct learner-facing heading names the logarithmic p-series threshold.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-log-p-series-threshold-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-log-p-series-threshold-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-log-p-series-threshold-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-integral-test",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-log-p-series-threshold-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-log-p-series-threshold-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.contentBlocks[ch05-log-p-series-threshold-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integral-test.exercises[ch05-log-p-series-threshold-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "comparison-tests:ch05-direct-comparison",
+      "concept_id": "comparison-tests",
+      "outcome": "Choose the direction of a positive-term comparison to transfer convergence downward or divergence upward.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 7,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 7, 8, 9 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 8, 9],
+          "method": "Rendered and inspected canonical PDF physical pages 7, 8, 9; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 3. (The Comparison Test)” supports the stated skill and examples."
+        },
+        "page_heading": "Theorem 3. (The Comparison Test)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-direct-comparison-statement].title",
+            "claim": "A distinct learner-facing heading names direct comparison directions.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-direct-comparison-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-direct-comparison-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.exercises[ch05-direct-comparison-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-comparison",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-direct-comparison-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-direct-comparison-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-direct-comparison-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.exercises[ch05-direct-comparison-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "comparison-tests:ch05-limit-comparison",
+      "concept_id": "comparison-tests",
+      "outcome": "Use a finite positive limit ratio to transfer behavior, and interpret zero or infinite ratios only in a valid one-sided direction.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 9,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 9–12 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the Limit Comparison theorem, its proof, and Examples 5.6–5.7 against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 10, 11, 12],
+          "method": "Rendered and inspected canonical PDF physical pages 9–12; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "Pages 9–10 state and prove the finite positive limit comparison case and its one-sided cases; pages 11–12 apply it to the geometric and radical benchmark examples."
+        },
+        "page_heading": "Theorem 4. (The Limit Comparison Test)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-limit-comparison-statement].title",
+            "claim": "A distinct learner-facing heading names limit comparison and one-sided limits.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-limit-comparison-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-limit-comparison-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.exercises[ch05-limit-comparison-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-comparison",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-limit-comparison-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-limit-comparison-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.contentBlocks[ch05-limit-comparison-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#comparison-tests.exercises[ch05-limit-comparison-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "absolute-conditional-alternating:ch05-absolute-implies-convergence",
+      "concept_id": "absolute-conditional-alternating",
+      "outcome": "Explain why convergence of the absolute-value series guarantees convergence of the signed series.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 14,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 13, 14 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14],
+          "method": "Rendered and inspected canonical PDF physical pages 13, 14; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 5. (Absolute Convergence implies Convergence)” supports the stated skill and examples."
+        },
+        "page_heading": "Theorem 5. (Absolute Convergence implies Convergence)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-implies-convergence-statement].title",
+            "claim": "A distinct learner-facing heading names absolute convergence implies convergence.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-implies-convergence-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-implies-convergence-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-source-example-worked]",
+            "claim": "The source Example 5.8 is classified by convergence of its absolute-value p-series.",
+            "method": "Checked the p=2 benchmark and implication against physical pages 13–14."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-absolute-implies-convergence-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-alternating",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-implies-convergence-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-implies-convergence-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-implies-convergence-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-source-example-worked]",
+            "basis": "Source Example 5.8 worked classification inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-absolute-implies-convergence-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "absolute-conditional-alternating:ch05-absolute-majorant",
+      "concept_id": "absolute-conditional-alternating",
+      "outcome": "Prove absolute convergence for a non-alternating signed series by bounding magnitudes with a convergent positive series.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 15,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 15 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15],
+          "method": "Rendered and inspected canonical PDF physical pages 15; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Example 5.9” supports the stated skill and examples."
+        },
+        "page_heading": "Example 5.9"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-majorant-statement].title",
+            "claim": "A distinct learner-facing heading names absolute convergence by a majorant.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-majorant-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-majorant-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-absolute-majorant-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-alternating",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-majorant-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-majorant-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-absolute-majorant-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-absolute-majorant-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
       }
     },
     {
       "id": "absolute-conditional-alternating:alternating-hypotheses",
       "concept_id": "absolute-conditional-alternating",
-      "outcome": "Check decreasing positive magnitudes and their zero limit before applying the Alternating Series Test.",
+      "outcome": "Check alternating signs, eventually decreasing positive magnitudes, and a zero magnitude limit before using the Alternating Series Test.",
       "core_source": {
         "id": "MH1101_Chapter_05_Notes",
         "physical_page": 16,
-        "inspection": "Canonical local PDF text and rendered physical page inspected for the theorem hypotheses.",
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 16, 17 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
         "page_validation": {
           "status": "page_verified",
           "pages": [16, 17],
-          "method": "pdftotext -layout with physical page boundaries and visual inspection of pages 16–17.",
-          "claim_observed": "Page 16 states the Alternating Series Test for decreasing positive magnitudes tending to zero; page 17 applies it to the inverse-square-root series."
+          "method": "Rendered and inspected canonical PDF physical pages 16, 17; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 6. (Alternating Series Test); Example 5.12” supports the stated skill and examples."
+        },
+        "page_heading": "Theorem 6. (Alternating Series Test); Example 5.12"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-hypotheses-statement].title",
+            "claim": "A distinct learner-facing heading names alternating series test hypotheses.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-hypotheses-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-hypotheses-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-alternating-hypotheses-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-alternating",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-hypotheses-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-hypotheses-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-hypotheses-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-alternating-hypotheses-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "absolute-conditional-alternating:conditional-classification",
+      "concept_id": "absolute-conditional-alternating",
+      "outcome": "Classify a signed series by proving signed convergence and separately deciding whether its absolute-value series converges.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 16,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 15, 16, 17, 18 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16, 17, 18],
+          "method": "Rendered and inspected canonical PDF physical pages 15, 16, 17, 18; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Definition 2. (Conditional Convergence); Examples 5.10–5.13” supports the stated skill and examples."
+        },
+        "page_heading": "Definition 2. (Conditional Convergence); Examples 5.10–5.13"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-classification-statement].title",
+            "claim": "A distinct learner-facing heading names separate signed and absolute convergence.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-classification-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-logarithmic-worked]",
+            "claim": "This source example contributes a distinct step to the mapped outcome (1 of 2).",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-rational-worked]",
+            "claim": "This source example contributes a distinct step to the mapped outcome (2 of 2).",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
+            "claim": "The source Example 5.11 is classified as conditional after correcting its printed exponent inequality.",
+            "method": "Checked alternating convergence and p=1/2≤1 divergence against page 17 and the recorded erratum."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
+            "claim": "The established rational transfer changes the source examples and requires separate signed and absolute verdicts.",
+            "method": "Independently solved the n/(n²+1) task and checked its two test hypotheses."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-alternating",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-classification-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-classification-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-logarithmic-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-conditional-rational-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
+            "basis": "Source Example 5.11 and the corrected p-series exponent comparison inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
+            "basis": "Existing independent rational task reused; task and solution inspected, learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "absolute-conditional-alternating:ch05-alternating-remainder-estimate",
+      "concept_id": "absolute-conditional-alternating",
+      "outcome": "Use the next omitted magnitude to bound the error of a partial sum of a decreasing alternating series.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 16,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 16 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16],
+          "method": "Rendered and inspected canonical PDF physical pages 16; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 6. (Alternating Series Test)” supports the stated skill and examples."
         },
         "page_heading": "Theorem 6. (Alternating Series Test)"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
-            "claim": "The catalog names absolute and conditional convergence.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-remainder-estimate-statement].title",
+            "claim": "A distinct learner-facing heading names alternating-series remainder bound.",
+            "method": "Compared the guide title with the page-verified source skill."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-series-test-hypotheses]",
-            "claim": "The guide states the required alternating-test magnitude conditions and marks the theorem imported.",
-            "method": "Compared theorem block and source physical page 16."
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-remainder-estimate-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
-            "claim": "The guide checks decrease and zero limit in the lecture's inverse-square-root example.",
-            "method": "Checked the stated magnitudes and convergence argument against page 17."
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-remainder-estimate-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
-            "claim": "An independent rational-term task requires checking monotonicity and the zero limit.",
-            "method": "Compared prompt, hint, and solution with the exact theorem hypotheses."
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-alternating-remainder-estimate-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
           }
         ],
         "visualized": [],
@@ -13211,171 +14227,92 @@
         "scene_id": "plane-alternating",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "The source theorem is imported, not reproved in this guide. The scene and independent learner performance are unverified.",
-      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:03",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
-            "basis": "current catalog inspection"
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-remainder-estimate-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-series-test-hypotheses]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-remainder-estimate-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[ch05-alternating-remainder-estimate-worked]",
+            "basis": "Source-specific derivation or example inspected."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
-            "basis": "independent task inspection"
+            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[ch05-alternating-remainder-estimate-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual source, guide, worked calculation, and independent task comparison.",
-        "named": "match",
-        "stated": "match",
-        "worked": "theorem hypotheses applied correctly",
-        "practiced": "task requires the outcome; learner performance unverified",
-        "visualized": "No outcome-level rendered scene check.",
-        "checked": "No independent learner check."
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
       }
     },
     {
-      "id": "absolute-conditional-alternating:conditional-classification",
-      "concept_id": "absolute-conditional-alternating",
-      "outcome": "Classify an alternating series as absolute or conditional by testing its signed and absolute-value series separately.",
-      "core_source": {
-        "id": "MH1101_Chapter_05_Notes",
-        "physical_page": 16,
-        "inspection": "Canonical local PDF text and rendered pages inspected; the page 17 example's printed exponent inequality is a typo, so the guide uses the correct exponent.",
-        "page_validation": {
-          "status": "page_verified",
-          "pages": [16, 17],
-          "method": "pdftotext -layout with physical page boundaries and visual inspection of pages 16–17.",
-          "claim_observed": "Page 16 defines conditional convergence as signed convergence without absolute convergence; page 17 classifies the inverse-square-root alternating series using a divergent p-series of magnitudes."
-        },
-        "page_heading": "Definition 2. (Conditional Convergence); Example 5.11"
-      },
-      "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
-            "claim": "The catalog names the two convergence types.",
-            "method": "Direct catalog title inspection."
-          }
-        ],
-        "stated": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.sections[Separate two convergence questions]",
-            "claim": "The guide states both definitions as separate tests.",
-            "method": "Compared the section with physical page 16."
-          }
-        ],
-        "worked": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
-            "claim": "The guide proves signed convergence and divergence of magnitudes for the source example.",
-            "method": "Checked page 17's example and corrected its printed p-series exponent comparison."
-          }
-        ],
-        "practiced": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
-            "claim": "The independent task requires both verdicts for a rational magnitude sequence.",
-            "method": "Compared prompt, hint, and justified solution with the classification outcome."
-          }
-        ],
-        "visualized": [],
-        "checked": []
-      },
-      "visual_candidate": {
-        "scene_id": "plane-alternating",
-        "verified_for_outcome": false
-      },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "A worked and independent guide task are inspected; rendered visual relevance and learner performance remain unverified.",
-      "source_section_id": "MH1101_Chapter_05_Notes:01",
-      "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#absolute-conditional-alternating.title",
-            "basis": "current catalog inspection"
-          }
-        ],
-        "stated": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.sections[Separate two convergence questions]",
-            "basis": "current guide inspection"
-          }
-        ],
-        "worked": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.contentBlocks[alternating-root-series-classification]",
-            "basis": "current guide inspection"
-          }
-        ],
-        "practiced": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#absolute-conditional-alternating.exercises[alternating-rational-transfer]",
-            "basis": "independent task inspection"
-          }
-        ]
-      },
-      "inspection_check": {
-        "method": "Manual source, guide, worked classification, and independent task comparison.",
-        "named": "match",
-        "stated": "match",
-        "worked": "signed and absolute verdicts justified separately",
-        "practiced": "task requires the outcome; learner performance unverified",
-        "visualized": "No outcome-level rendered scene check.",
-        "checked": "No independent learner check."
-      }
-    },
-    {
-      "id": "ratio-root-tests:source-skill-1",
+      "id": "ratio-root-tests:ch05-ratio-test-criteria",
       "concept_id": "ratio-root-tests",
-      "outcome": "Interpret a ratio or root limit of one as inconclusive.",
+      "outcome": "Apply the ratio test using absolute neighboring-term ratios and distinguish strict verdicts from the boundary.",
       "core_source": {
         "id": "MH1101_Chapter_05_Notes",
         "physical_page": 19,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 19, 20, 21, 22 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [19],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page states ratio limit one gives no convergence conclusion."
+          "pages": [19, 20, 21, 22],
+          "method": "Rendered and inspected canonical PDF physical pages 19, 20, 21, 22; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 7. (Ratio Test); Examples 5.14–5.17” supports the stated skill and examples."
         },
-        "page_heading": "Theorem 7. (Ratio Test)"
+        "page_heading": "Theorem 7. (Ratio Test); Examples 5.14–5.17"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#ratio-root-tests.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-ratio-test-criteria-statement].title",
+            "claim": "A distinct learner-facing heading names ratio test criteria.",
+            "method": "Compared the guide title with the page-verified source skill."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.sections[A limit of one is inconclusive]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-ratio-test-criteria-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
           }
         ],
-        "worked": [],
-        "practiced": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-ratio-test-criteria-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-ratio-test-criteria-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
@@ -13383,38 +14320,323 @@
         "scene_id": "plane-ratio",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
-      "source_section_id": "MH1101_Chapter_05_Notes:01",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:04",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#ratio-root-tests.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-ratio-test-criteria-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.sections[A limit of one is inconclusive]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-ratio-test-criteria-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-ratio-test-criteria-worked]",
+            "basis": "Source-specific derivation or example inspected."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-ratio-test-criteria-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "Exercise does not require identifying why ratio/root limit one is inconclusive.",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "ratio-root-tests:source-skill-1",
+      "concept_id": "ratio-root-tests",
+      "outcome": "Interpret a ratio or root limit of one as inconclusive and return to a test that can distinguish the series.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 19,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 19, 21, 23 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 21, 23],
+          "method": "Rendered and inspected canonical PDF physical pages 19, 21, 23; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 7. (Ratio Test); Theorem 8. (Root Test); Example 5.14” supports the stated skill and examples."
+        },
+        "page_heading": "Theorem 7. (Ratio Test); Theorem 8. (Root Test); Example 5.14"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-limit-one-statement].title",
+            "claim": "A distinct learner-facing heading names a test limit of one is inconclusive.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-limit-one-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-limit-one-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-test-limit-one-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ratio",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-limit-one-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-limit-one-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-limit-one-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-test-limit-one-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "ratio-root-tests:ch05-root-test-criteria",
+      "concept_id": "ratio-root-tests",
+      "outcome": "Use nth roots to classify exponential-form terms, including a sequence whose formula varies with parity.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 23,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 23, 24 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [23, 24],
+          "method": "Rendered and inspected canonical PDF physical pages 23, 24; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Theorem 8. (Root Test); Examples 5.18–5.19” supports the stated skill and examples."
+        },
+        "page_heading": "Theorem 8. (Root Test); Examples 5.18–5.19"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-root-test-criteria-statement].title",
+            "claim": "A distinct learner-facing heading names root test and exponential scale.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-root-test-criteria-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-root-test-criteria-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-root-test-criteria-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ratio",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-root-test-criteria-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-root-test-criteria-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-root-test-criteria-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-root-test-criteria-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "ratio-root-tests:ch05-test-selection",
+      "concept_id": "ratio-root-tests",
+      "outcome": "Choose among comparison, ratio, root, and alternating tests from term structure, then verify boundary cases independently.",
+      "core_source": {
+        "id": "MH1101_Chapter_05_Notes",
+        "physical_page": 24,
+        "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+        "inspection": "Rendered physical pages 19, 20, 21, 23, 24 from the SHA-256-matched canonical 24-page Chapter 05 PDF; checked the theorem/example against extracted text and page images.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20, 21, 23, 24],
+          "method": "Rendered and inspected canonical PDF physical pages 19, 20, 21, 23, 24; SHA-256: bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385.",
+          "claim_observed": "The source page heading “Examples 5.14–5.19; Exercise 5.19” supports the stated skill and examples."
+        },
+        "page_heading": "Examples 5.14–5.19; Exercise 5.19"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-selection-statement].title",
+            "claim": "A distinct learner-facing heading names choose a convergence test from the term structure.",
+            "method": "Compared the guide title with the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-selection-statement]",
+            "claim": "The guide states the source-specific conclusion and its hypotheses or method boundary.",
+            "method": "Compared the statement and conditions with the cited canonical physical pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-selection-worked]",
+            "claim": "The worked guide example follows source-specific hypotheses and reasoning.",
+            "method": "Independently checked each displayed calculation against the hash-matched PDF and convergence-test hypotheses."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-test-selection-transfer]",
+            "claim": "Changed data requires a learner to apply the outcome and justify the test rather than repeat the source example.",
+            "method": "Solved the prompt independently and checked its hint, solution, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-ratio",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page-specific statement, worked reasoning, and independent transfer are inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1101_Chapter_05_Notes:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-selection-statement].title",
+            "basis": "Dedicated learner-facing statement heading inspected."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-selection-statement]",
+            "basis": "The theorem or method statement and hypotheses were checked against the cited physical page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.contentBlocks[ch05-test-selection-worked]",
+            "basis": "Source-specific derivation or example inspected."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#ratio-root-tests.exercises[ch05-test-selection-transfer]",
+            "basis": "Independent changed-data task and solution inspected; learner performance unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical page image and text with the named statement, guide reasoning, and independently solved changed-data task.",
+        "named": "distinct outcome heading inspected",
+        "stated": "hypotheses and verdict conditions inspected",
+        "worked": "source example or proof steps independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
+        "checked": "No independent learner response or performance measurement is claimed."
       }
     },
     {

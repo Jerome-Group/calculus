@@ -2830,17 +2830,17 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [2, 2],
+        "pages": [2, 6],
         "detail": "5.1              The Integral Test"
       },
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [3, 3],
+        "pages": [2, 6],
         "detail": "Theorem 1. (The Integral Test)"
       },
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [4, 4],
+        "pages": [2, 6],
         "detail": "Theorem 2. ($p$-series)"
       },
       {
@@ -2875,12 +2875,12 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [7, 7],
+        "pages": [7, 12],
         "detail": "Theorem 3. (The Comparison Test)"
       },
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [9, 9],
+        "pages": [7, 12],
         "detail": "Theorem 4. (The Limit Comparison Test)"
       },
       {
@@ -2915,17 +2915,17 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [13, 13],
+        "pages": [13, 18],
         "detail": "Definition 1. (Absolute Convergence)"
       },
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [14, 14],
+        "pages": [13, 18],
         "detail": "Theorem 5. (Absolute Convergence implies Convergence)"
       },
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [16, 16],
+        "pages": [13, 18],
         "detail": "Definition 2. (Conditional Convergence); Theorem 6. (Alternating Series Test)"
       },
       {
@@ -2961,12 +2961,12 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [19, 19],
+        "pages": [19, 24],
         "detail": "Theorem 7. (Ratio Test)"
       },
       {
         "sourceId": "MH1101_Chapter_05_Notes",
-        "pages": [23, 23],
+        "pages": [19, 24],
         "detail": "Theorem 8. (Root Test)"
       },
       {

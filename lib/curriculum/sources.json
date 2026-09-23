@@ -233,7 +233,23 @@
     "pages": 24,
     "course": "MH1101",
     "kind": "lecture",
-    "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385"
+    "sha256": "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385",
+    "errata": [
+      {
+        "page": 6,
+        "printed": "The Example 5.3 hint states $u=\\ln u$.",
+        "correction": "Use the substitution $u=\\ln x$.",
+        "justification": "Differentiating $u=\\ln x$ gives $du=dx/x$, which transforms the displayed integrand $dx/[x(\\ln x)^p]$ to $u^{-p}du$.",
+        "provenance": "Compared the printed hint, displayed integral, and substitution on physical page 6 of the SHA-256-matched canonical 24-page PDF."
+      },
+      {
+        "page": 17,
+        "printed": "The absolute inverse-square-root series is said to diverge “since $p<1/2$.”",
+        "correction": "The exponent is $p=1/2$, and the p-series diverges because $p=1/2\\le1$.",
+        "justification": "Taking absolute values gives $\\sum n^{-1/2}$; the p-series threshold is convergence exactly for $p>1$.",
+        "provenance": "Compared the printed exponent inequality and displayed series on physical page 17 of the SHA-256-matched canonical 24-page PDF; recomputed the p-series criterion."
+      }
+    ]
   },
   "MH1101_Chapter_04_Notes": {
     "id": "MH1101_Chapter_04_Notes",

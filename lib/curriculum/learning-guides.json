@@ -12470,7 +12470,254 @@
         "State the positive decreasing hypothesis."
       ],
       "solutionTex": "0\\le R_N\\le\\int_N^\\infty x^{-2}\\,dx=\\frac1N\\le0.001\\quad(N\\ge1000)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch05-integral-test-hypotheses-statement",
+        "title": "Integral Test hypotheses and conclusion",
+        "statement": "If $f$ is positive, continuous, and decreasing eventually, and $a_n=f(n)$, then $\\sum a_n$ and $\\int f(x)\\,dx$ have the same convergence behavior. Finitely many initial exceptions do not change convergence.",
+        "hypotheses": [
+          "Check positivity and continuity on a tail.",
+          "Check that the sampled function is eventually decreasing.",
+          "The test transfers convergence; it does not assert equality of a sum and an integral."
+        ],
+        "prerequisites": ["Improper integrals", "Positive-term series"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-integral-test-hypotheses-worked",
+        "title": "The source comparison for $\\sum 1/n^2$",
+        "strategy": "Use adjacent rectangles under and over a decreasing curve, then show the partial sums are bounded.",
+        "setup": "For $f(x)=x^{-2}$ and $n\\ge2$, compare the rectangles of height $f(n)$ with the area on neighboring unit intervals.",
+        "steps": [
+          {
+            "label": "Check the hypotheses",
+            "text": "The function is positive, continuous, and decreasing for $x\\ge1$.",
+            "equation": "f(x)=x^{-2},\\qquad f'(x)=-2x^{-3}<0"
+          },
+          {
+            "label": "Bound partial sums",
+            "text": "The lower and upper rectangle comparisons bound the partial sums by a finite integral plus the first term.",
+            "equation": "1+\\sum_{n=2}^{m}\\frac1{n^2}\\le1+\\int_{1}^{m}x^{-2}\\,dx<2"
+          }
+        ],
+        "result": "The partial sums increase and stay below 2, so the series converges; the associated integral also converges.",
+        "verification": "The rectangle argument proves a convergence equivalence, not equality of the discrete sum and the area."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-p-series-threshold-statement",
+        "title": "P-series convergence threshold",
+        "statement": "The positive series $\\sum_{n=1}^{\\infty}n^{-p}$ converges exactly when $p>1$ and diverges when $p\\le1$.",
+        "hypotheses": [
+          "For $p>0$, apply the Integral Test to $x^{-p}$.",
+          "At $p=1$, the integral grows logarithmically.",
+          "For $p\\le0$, terms do not tend to zero."
+        ],
+        "prerequisites": ["Integral Test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-p-series-threshold-worked",
+        "title": "Derive the p-series threshold",
+        "strategy": "Evaluate the comparison integral and separate the logarithmic boundary from the power cases.",
+        "setup": "Consider $\\int_1^T x^{-p}\\,dx$ as $T\\to\\infty$.",
+        "steps": [
+          {
+            "label": "For $p>0$, $p\\ne1$",
+            "text": "For positive exponents the Integral Test applies; its integral has a finite limit only when $p>1$.",
+            "equation": "\\int_1^T x^{-p}\\,dx=\\frac{T^{1-p}-1}{1-p}\\quad(p>0,\\ p\\ne1)"
+          },
+          {
+            "label": "At the boundary",
+            "text": "The logarithmic integral diverges.",
+            "equation": "\\int_1^T\\frac{dx}{x}=\\ln T\\to\\infty"
+          },
+          {
+            "label": "For $p\\le0$",
+            "text": "The terms fail the necessary zero-term condition.",
+            "equation": "n^{-p}\\not\\longrightarrow0"
+          }
+        ],
+        "result": "The threshold is strict: convergence holds for $p>1$ only.",
+        "verification": "The boundary $p=1$ is divergent; no value of the antiderivative formula at $p=1$ is used."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-integral-remainder-estimate-statement",
+        "title": "Integral bounds for the positive tail",
+        "statement": "For a positive decreasing $f$ with $a_n=f(n)$ and a convergent series, $\\int_{N+1}^{\\infty}f(x)\\,dx\\le R_N\\le\\int_N^{\\infty}f(x)\\,dx$, where $R_N=\\sum_{n=N+1}^{\\infty}a_n$.",
+        "hypotheses": [
+          "Terms are positive and eventually decreasing.",
+          "Use the upper integral bound when a guaranteed maximum error is needed.",
+          "A bound is not an equality or an exact tail sum."
+        ],
+        "prerequisites": ["Integral Test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-integral-remainder-estimate-worked",
+        "title": "Bound the reciprocal-square remainder after four terms",
+        "strategy": "Place the tail between the integrals starting at the first omitted index and the last retained index.",
+        "setup": "For $a_n=1/n^2$ and $N=4$, the omitted tail starts at $n=5$.",
+        "steps": [
+          {
+            "label": "Apply the lower area bound",
+            "text": "The integral begins at $N+1$.",
+            "equation": "\\int_5^{\\infty}x^{-2}\\,dx=\\frac15"
+          },
+          {
+            "label": "Apply the upper area bound",
+            "text": "The integral begins at $N$.",
+            "equation": "\\int_4^{\\infty}x^{-2}\\,dx=\\frac14"
+          }
+        ],
+        "result": "The remaining sum satisfies $1/5\\le R_4\\le1/4$.",
+        "verification": "The lower estimate is not needed for an upper error guarantee; the remainder is not asserted to equal either bound."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-log-p-series-threshold-statement",
+        "title": "Logarithmic p-series threshold",
+        "statement": "For fixed $p>0$, the series $\\sum_{n=2}^{\\infty}\\frac1{n(\\ln n)^p}$ converges exactly when $p>1$.",
+        "hypotheses": [
+          "The integrand is positive and continuous for $x\\ge2$.",
+          "Its derivative is negative for $p>0$ and $x\\ge2$.",
+          "Use $u=\\ln x$; the case $p=1$ is a divergent logarithmic integral."
+        ],
+        "prerequisites": ["Integral Test", "P-series threshold"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-log-p-series-threshold-worked",
+        "title": "Work the source logarithmic benchmark",
+        "strategy": "Check eventual decrease, substitute $u=\\ln x$, and split the exponent cases.",
+        "setup": "For $f_p(x)=1/[x(\\ln x)^p]$ with $p>0$ and $x\\ge2$, test the integral from 2 to infinity.",
+        "steps": [
+          {
+            "label": "Verify monotonicity",
+            "text": "The derivative is negative because both terms in its numerator sum are positive.",
+            "equation": "f_p'(x)=-\\frac{\\ln x+p}{x^2(\\ln x)^{p+1}}<0"
+          },
+          {
+            "label": "Substitute",
+            "text": "The lower limit is positive, so the power integral criterion applies.",
+            "equation": "u=\\ln x,\\qquad\\int_2^{\\infty}\\frac{dx}{x(\\ln x)^p}=\\int_{\\ln2}^{\\infty}u^{-p}\\,du"
+          },
+          {
+            "label": "Classify",
+            "text": "The integral converges for $p>1$, while it diverges for $0<p<1$ and for $p=1$.",
+            "equation": "\\int u^{-1}\\,du=\\ln u\\to\\infty"
+          }
+        ],
+        "result": "The logarithmic series converges precisely when $p>1$.",
+        "verification": "The source hint prints $u=\\ln u$; the substitution variable is $u=\\ln x$. The $p=1$ boundary diverges."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-integral-test-arctangent-worked",
+        "title": "Use the Integral Test on $\\sum 1/(1+n^2)$",
+        "strategy": "Check the positive decreasing function and evaluate the convergent improper integral.",
+        "setup": "For the source Example 5.1, set $f(x)=1/(1+x^2)$ for $x\\ge1$.",
+        "steps": [
+          {
+            "label": "Check the hypotheses",
+            "text": "The function is positive, continuous, and decreasing on the tail.",
+            "equation": "f(x)=\\frac1{1+x^2}>0,\\qquad f\\prime(x)=-\\frac{2x}{(1+x^2)^2}<0\\quad(x\\ge1)"
+          },
+          {
+            "label": "Evaluate the integral",
+            "text": "The antiderivative is arctangent and has a finite limit.",
+            "equation": "\\int_1^{\\infty}\\frac{dx}{1+x^2}=\\lim_{T\\to\\infty}[\\arctan x]_1^T=\\frac\\pi2-\\frac\\pi4"
+          }
+        ],
+        "result": "The series in Example 5.1 converges by the Integral Test.",
+        "verification": "The integral is not the value of the series; it supplies the same convergence verdict."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-integral-test-log-over-n-worked",
+        "title": "Use the Integral Test on $\\sum (\\ln n)/n$",
+        "strategy": "Verify eventual decrease, then use integration by parts to show the comparison integral diverges.",
+        "setup": "For the source Example 5.2 tail, take $f(x)=\\ln x/x$ for $x\\ge3$.",
+        "steps": [
+          {
+            "label": "Check eventual decrease",
+            "text": "The derivative is negative when $\\ln x>1$, which holds on $x\\ge3$.",
+            "equation": "f\\prime(x)=\\frac{1-\\ln x}{x^2}<0\\quad(x\\ge3)"
+          },
+          {
+            "label": "Integrate by parts",
+            "text": "The logarithm squared grows without bound.",
+            "equation": "\\int_3^T\\frac{\\ln x}{x}\\,dx=\\frac{(\\ln T)^2-(\\ln3)^2}{2}\\to\\infty"
+          }
+        ],
+        "result": "The tail, and therefore the full series, diverges by the Integral Test.",
+        "verification": "The initial zero term and any finite starting terms do not affect convergence; the positivity and decrease hypotheses hold on the tested tail."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch05-integral-test-hypotheses-transfer",
+        "outcome": "Verify the test hypotheses and use the Integral Test on changed data.",
+        "kind": "proof",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}\\frac1{n+1}$. Name the function sampled by the terms and verify every Integral Test hypothesis before evaluating the tail integral.",
+        "hint": "Use $f(x)=1/(x+1)$ and check its derivative on $x\\ge1$.",
+        "solution": "The function is positive, continuous, and decreasing for $x\\ge1$. Its integral is $\\int_1^T dx/(x+1)=\\ln(T+1)-\\ln2$, which diverges as $T\\to\\infty$. Thus the series diverges by the Integral Test.",
+        "solutionTex": "f(x)=\\frac1{x+1}>0,\\quad f'(x)=-\\frac1{(x+1)^2}<0,\\quad\\int_1^T f(x)\\,dx\\to\\infty",
+        "rubric": [
+          "Identify the sampled function.",
+          "Verify positivity, continuity, and decrease on a tail.",
+          "State how the improper integral determines the series verdict."
+        ]
+      },
+      {
+        "id": "ch05-p-series-threshold-transfer",
+        "outcome": "Apply the p-series threshold at and around the boundary.",
+        "kind": "computational",
+        "prompt": "Classify $\\sum n^{-3/4}$, $\\sum 1/n$, and $\\sum n^{-5/4}$. Explain why the boundary term belongs with the divergent cases.",
+        "hint": "Compare each exponent with 1; at $p=1$, use the logarithmic integral.",
+        "solution": "The first series diverges because $3/4<1$. The harmonic series diverges at $p=1$. The last series converges because $5/4>1$.",
+        "solutionTex": "p=\\frac34<1,\\qquad p=1,\\qquad p=\\frac54>1",
+        "rubric": [
+          "Use the exact threshold, not a rounded exponent.",
+          "State the boundary case explicitly."
+        ]
+      },
+      {
+        "id": "ch05-integral-remainder-estimate-transfer",
+        "outcome": "Choose a cutoff that guarantees a prescribed Integral Test error bound.",
+        "kind": "computational",
+        "prompt": "For $\\sum_{n=1}^{\\infty}1/n^2$, find a cutoff $N$ that guarantees $R_N\\le0.005$ using the source's upper integral bound.",
+        "hint": "Evaluate $\\int_N^{\\infty}x^{-2}\\,dx$ and solve the resulting inequality.",
+        "solution": "The upper bound is $R_N\\le1/N$. Taking $N=200$ gives $R_N\\le0.005$. This guarantees the error without claiming that the actual tail equals $0.005$.",
+        "solutionTex": "R_N\\le\\int_N^{\\infty}x^{-2}\\,dx=\\frac1N\\le0.005\\quad(N\\ge200)",
+        "rubric": [
+          "Use the upper tail integral.",
+          "Solve for an integer cutoff.",
+          "Describe the result as a guarantee."
+        ]
+      },
+      {
+        "id": "ch05-log-p-series-threshold-transfer",
+        "outcome": "Transfer the logarithmic benchmark to exponents on both sides of one.",
+        "kind": "computational",
+        "prompt": "Classify $\\sum_{n=2}^{\\infty}1/[n(\\ln n)^{3/2}]$ and $\\sum_{n=2}^{\\infty}1/[n\\ln n]$. For each, name the substitution and the boundary behavior.",
+        "hint": "Check that the associated function is positive and decreasing, then put $u=\\ln x$.",
+        "solution": "Both integrands are positive and decreasing for $x\\ge2$. The first becomes $\\int_{\\ln2}^{\\infty}u^{-3/2}\\,du$, which converges. The second becomes $\\int_{\\ln2}^{\\infty}du/u$, which diverges. Thus the first series converges and the second diverges.",
+        "solutionTex": "p=\\frac32>1\\Rightarrow\\text{converges},\\qquad p=1\\Rightarrow\\text{diverges}",
+        "rubric": [
+          "State the monotonicity check.",
+          "Use the logarithmic substitution.",
+          "Do not treat $p=1$ as a convergent boundary."
+        ]
+      }
+    ]
   },
   "comparison-tests": {
     "prerequisites": ["integral-test"],
@@ -12494,7 +12741,108 @@
         "Verify a finite strictly positive ratio."
       ],
       "solutionTex": "\\lim_{n\\to\\infty}\\frac{1/\\sqrt{n^2+1}}{1/n}=1"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch05-direct-comparison-statement",
+        "title": "Direct Comparison Test",
+        "statement": "For nonnegative terms, $0\\le a_n\\le b_n$ and convergence of $\\sum b_n$ imply convergence of $\\sum a_n$. If $0\\le b_n\\le a_n$ and $\\sum b_n$ diverges, then $\\sum a_n$ diverges.",
+        "hypotheses": [
+          "Terms are nonnegative.",
+          "The inequality must point from the series being classified toward the benchmark with a known verdict.",
+          "Reverse directions do not give a conclusion."
+        ],
+        "prerequisites": ["Positive-term series"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-direct-comparison-worked",
+        "title": "Use both directions from Examples 5.4 and 5.5",
+        "strategy": "For convergence, bound above by a known convergent series; for divergence, bound below by a known divergent one.",
+        "setup": "Compare the two positive series from the notes after their stated starting indices.",
+        "steps": [
+          {
+            "label": "Convergent comparison",
+            "text": "For $n\\ge1$, the source term is bounded above by a constant multiple of $1/n^2$.",
+            "equation": "\\frac{100}{2n^2+5n+4}<\\frac{50}{n^2}"
+          },
+          {
+            "label": "Divergent comparison",
+            "text": "For $n\\ge3$, logarithmic growth makes the source term at least the harmonic term.",
+            "equation": "\\frac{\\ln n}{n}>\\frac1n"
+          }
+        ],
+        "result": "The first series converges by comparison with a p-series; the second diverges by comparison from below with the harmonic series.",
+        "verification": "The inequality directions match the desired verdict in each example; an upper bound by a divergent series would not prove convergence."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-limit-comparison-statement",
+        "title": "Limit Comparison Test: finite and one-sided cases",
+        "statement": "For positive $a_n,b_n$, a limit $a_n/b_n\\to L$ with $0<L<\\infty$ gives the same convergence behavior. If the ratio tends to $0$, convergence of $\\sum b_n$ implies convergence of $\\sum a_n$. If it tends to $\\infty$, divergence of $\\sum b_n$ implies divergence of $\\sum a_n$.",
+        "hypotheses": [
+          "Both sequences are positive eventually.",
+          "A finite positive ratio gives two-sided comparability.",
+          "At zero or infinity, only the stated one-sided implication follows; the opposite comparator verdict is inconclusive."
+        ],
+        "prerequisites": ["Direct Comparison Test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-limit-comparison-worked",
+        "title": "Choose benchmarks in Examples 5.6 and 5.7",
+        "strategy": "Match the dominant term scale, compute the ratio, then import only the benchmark verdict.",
+        "setup": "The notes compare a geometric-denominator series and a radical-denominator series.",
+        "steps": [
+          {
+            "label": "Geometric benchmark",
+            "text": "For $a_n=1/(2^n-1)$ and $b_n=1/2^n$, the ratio tends to one; the geometric benchmark converges.",
+            "equation": "\\frac{a_n}{b_n}=\\frac{2^n}{2^n-1}\\to1"
+          },
+          {
+            "label": "Power benchmark",
+            "text": "For $a_n=(2n^2+3n)/\\sqrt{5+n^5}$ and $b_n=2/\\sqrt n$, the ratio tends to 1; the benchmark is a divergent p-series with exponent $1/2$.",
+            "equation": "\\frac{a_n}{b_n}=\\frac{1+3/(2n)}{\\sqrt{1+5/n^5}}\\to1"
+          }
+        ],
+        "result": "The first series converges; the second diverges. Both conclusions use a finite, strictly positive ratio limit.",
+        "verification": "The ratio simplifies to $(1+3/(2n))/\\sqrt{1+5/n^5}$, tending to 1. The benchmark still diverges."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch05-direct-comparison-transfer",
+        "outcome": "Select and justify a one-sided comparison on changed data.",
+        "kind": "method-choice",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}\\frac{3}{4n^2+7n+9}$ by direct comparison. State the inequality and the benchmark verdict.",
+        "hint": "The denominator is at least $4n^2$, so compare from above with a constant multiple of $1/n^2$.",
+        "solution": "For $n\\ge1$, $4n^2+7n+9\\ge4n^2$, so $0<3/(4n^2+7n+9)\\le3/(4n^2)$. The comparison p-series converges, so the given series converges.",
+        "solutionTex": "0<\\frac{3}{4n^2+7n+9}\\le\\frac{3}{4n^2},\\qquad\\sum\\frac1{n^2}<\\infty",
+        "rubric": [
+          "Use the inequality in the convergence direction.",
+          "Name a convergent benchmark.",
+          "Do not infer an exact sum."
+        ]
+      },
+      {
+        "id": "ch05-limit-comparison-transfer",
+        "outcome": "Choose a benchmark and apply limit comparison to changed data.",
+        "kind": "computational",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}(5n+1)/(n^3+4)$ using limit comparison. Give the comparator, ratio limit, and verdict. Also say whether a zero ratio with a divergent benchmark or an infinite ratio with a convergent benchmark settles convergence.",
+        "hint": "The leading powers suggest $b_n=1/n^2$ for the changed series. The zero and infinite ratio cases only transfer a verdict in one direction.",
+        "solution": "With $b_n=1/n^2$, $a_n/b_n=(5n+1)n^2/(n^3+4)\\to5$. Since $0<5<\\infty$ and $\\sum1/n^2$ converges, the given series converges. A zero ratio with a divergent benchmark and an infinite ratio with a convergent benchmark do not settle the smaller or larger series, respectively.",
+        "solutionTex": "\\lim_{n\\to\\infty}\\frac{(5n+1)/(n^3+4)}{1/n^2}=5",
+        "rubric": [
+          "Choose a positive-term benchmark.",
+          "Compute a finite positive ratio limit.",
+          "State the benchmark verdict.",
+          "Do not treat the zero or infinite cases as two-way equivalences."
+        ]
+      }
+    ]
   },
   "absolute-conditional-alternating": {
     "prerequisites": ["comparison-tests", "monotone-sequences"],
@@ -12531,6 +12879,219 @@
         ],
         "result": "$S$ is conditionally convergent: the signed sum converges, but its absolute-value series diverges.",
         "verification": "The fact that $b_n\\to0$ is necessary but does not by itself prove convergence; the decrease and alternating signs supply the signed-series verdict."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-absolute-implies-convergence-statement",
+        "title": "Absolute convergence theorem",
+        "statement": "If $\\sum_{n=1}^{\\infty}|a_n|$ converges, then $\\sum_{n=1}^{\\infty}a_n$ converges.",
+        "hypotheses": [
+          "The hypothesis concerns the series of absolute values.",
+          "Absolute convergence is sufficient, not necessary, for signed convergence.",
+          "The source proves the claim by comparison of nonnegative terms."
+        ],
+        "prerequisites": ["Positive-term comparison"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-absolute-implies-convergence-worked",
+        "title": "Follow the source proof through a nonnegative comparison",
+        "strategy": "Bound a nonnegative transformed term by twice the absolute value, then recover the signed sum from two convergent sums.",
+        "setup": "Assume $\\sum|a_n|$ converges and set $c_n=a_n+|a_n|$.",
+        "steps": [
+          {
+            "label": "Bound the transformed terms",
+            "text": "Since $-|a_n|\\le a_n\\le|a_n|$, the transformed terms are nonnegative and at most twice the absolute value.",
+            "equation": "0\\le a_n+|a_n|\\le2|a_n|"
+          },
+          {
+            "label": "Transfer convergence",
+            "text": "Direct comparison gives convergence of $\\sum(a_n+|a_n|)$. Subtract the already convergent absolute-value sum.",
+            "equation": "\\sum a_n=\\sum(a_n+|a_n|)-\\sum|a_n|"
+          }
+        ],
+        "result": "The signed series converges whenever its absolute-value series converges.",
+        "verification": "This implication does not assert the converse; conditionally convergent examples in the next section show why."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch05-absolute-majorant-statement",
+        "title": "Use a positive majorant for irregular signs",
+        "text": "If $|a_n|\\le b_n$ eventually and the positive benchmark $\\sum b_n$ converges, then $\\sum|a_n|$ converges and hence $\\sum a_n$ converges. The signs need not alternate."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-absolute-majorant-worked",
+        "title": "Bound the cosine series in Example 5.9",
+        "strategy": "Remove the irregular signs by taking absolute values, then compare term by term with a p-series.",
+        "setup": "Consider $\\sum_{n=1}^{\\infty}\\cos(n)/n^2$.",
+        "steps": [
+          {
+            "label": "Take absolute values",
+            "text": "The trigonometric factor is bounded in magnitude by one.",
+            "equation": "\\left|\\frac{\\cos n}{n^2}\\right|\\le\\frac1{n^2}"
+          },
+          {
+            "label": "Use the benchmark",
+            "text": "The p-series with exponent 2 converges.",
+            "equation": "\\sum_{n=1}^{\\infty}\\frac1{n^2}<\\infty"
+          }
+        ],
+        "result": "The original cosine series converges absolutely, and therefore converges.",
+        "verification": "No Alternating Series Test applies: the signs of $\\cos n$ are not asserted to alternate."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-alternating-hypotheses-statement",
+        "title": "Alternating Series Test",
+        "statement": "If the terms alternate in sign and $b_n>0$ is eventually nonincreasing with $b_n\\to0$, then $\\sum(-1)^{n-1}b_n$ converges.",
+        "hypotheses": [
+          "Alternating signs are required.",
+          "Magnitudes are positive and eventually nonincreasing.",
+          "Magnitudes tend to zero; this alone is not sufficient."
+        ],
+        "prerequisites": ["Sequence limits", "Monotonicity"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-alternating-hypotheses-worked",
+        "title": "Verify the rational magnitude in Example 5.12",
+        "strategy": "Differentiate the continuous magnitude to find where it decreases, then check the first integer transition.",
+        "setup": "For $b_n=n^2/(n^3+1)$, use $g(x)=x^2/(x^3+1)$.",
+        "steps": [
+          {
+            "label": "Find the eventual decrease",
+            "text": "The derivative is negative once $x^3>2$.",
+            "equation": "g'(x)=\\frac{x(2-x^3)}{(x^3+1)^2}<0\\quad(x>\\sqrt[3]2)"
+          },
+          {
+            "label": "Check the initial pair",
+            "text": "The derivative argument begins after the first integer, so compare $b_2$ with $b_1$.",
+            "equation": "b_1=\\frac12,\\qquad b_2=\\frac49<\\frac12"
+          },
+          {
+            "label": "Check the zero limit",
+            "text": "The denominator has one higher power of $n$ than the numerator.",
+            "equation": "b_n\\sim\\frac1n\\to0"
+          }
+        ],
+        "result": "The magnitudes decrease to zero from the start, so the alternating series converges by the test.",
+        "verification": "The source uses eventual monotonicity; the separate $b_2<b_1$ check closes the initial-index gap."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-conditional-classification-statement",
+        "title": "Absolute versus conditional convergence",
+        "statement": "A convergent series $\\sum a_n$ is conditionally convergent exactly when $\\sum|a_n|$ diverges. If the absolute-value series converges, the original series is absolutely convergent.",
+        "hypotheses": [
+          "The signed and absolute-value series require separate verdicts.",
+          "Alternation can prove signed convergence but says nothing by itself about absolute convergence.",
+          "For the alternating test, verify the magnitude hypotheses."
+        ],
+        "prerequisites": [
+          "Absolute convergence theorem",
+          "Alternating Series Test"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-conditional-logarithmic-worked",
+        "title": "Classify the alternating logarithmic harmonic series",
+        "strategy": "Use the Alternating Series Test for the signed series, then the Integral Test for the magnitudes.",
+        "setup": "For $\\sum_{n=2}^{\\infty}(-1)^n/(n\\ln n)$, let $b_n=1/(n\\ln n)$.",
+        "steps": [
+          {
+            "label": "Signed convergence",
+            "text": "The magnitudes decrease to zero, so the alternating series converges.",
+            "equation": "b_n\\downarrow0"
+          },
+          {
+            "label": "Absolute divergence",
+            "text": "The positive magnitude series has a logarithmically divergent integral.",
+            "equation": "\\int_2^T\\frac{dx}{x\\ln x}=\\ln\\ln T-\\ln\\ln2\\to\\infty"
+          }
+        ],
+        "result": "The series converges conditionally.",
+        "verification": "The signed convergence and absolute divergence are two separate claims; the Integral Test applies to magnitudes."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-conditional-rational-worked",
+        "title": "Classify the rational alternating series in Example 5.13",
+        "strategy": "Use the alternating theorem on the signed series and a limit comparison on its absolute values.",
+        "setup": "For $\\sum_{n=1}^{\\infty}(-1)^{n+1}n^2/(n^3+1)$, set $b_n=n^2/(n^3+1)$.",
+        "steps": [
+          {
+            "label": "Signed convergence",
+            "text": "The magnitudes decrease eventually and tend to zero; the first transition also decreases.",
+            "equation": "b_1=\\frac12,\\quad b_2=\\frac49,\\quad b_n\\sim\\frac1n"
+          },
+          {
+            "label": "Absolute divergence",
+            "text": "Compare the positive magnitudes with the harmonic benchmark.",
+            "equation": "\\frac{n^2/(n^3+1)}{1/n}=\\frac{n^3}{n^3+1}\\to1"
+          }
+        ],
+        "result": "The alternating series converges conditionally.",
+        "verification": "The ratio limit is finite and positive, and the harmonic benchmark diverges. The $p=1/2$ statement in Example 5.11 is corrected in the source errata."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-alternating-remainder-estimate-statement",
+        "title": "Alternating Series remainder estimate",
+        "statement": "For an alternating series with eventually nonincreasing positive magnitudes tending to zero, the remainder after $N$ terms has magnitude at most $b_{N+1}$ and the sign of the first omitted term.",
+        "hypotheses": [
+          "Alternating signs.",
+          "Positive magnitudes eventually nonincreasing and tending to zero.",
+          "Apply the bound only after the monotone tail begins."
+        ],
+        "prerequisites": ["Alternating Series Test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-alternating-remainder-estimate-worked",
+        "title": "Bound the alternating harmonic error",
+        "strategy": "The alternating tail has the sign of its first omitted term and is no larger in magnitude than that term.",
+        "setup": "For $S=\\sum_{n=1}^{\\infty}(-1)^{n-1}/n$ and its $N$-term partial sum $S_N$, use $b_n=1/n$.",
+        "steps": [
+          {
+            "label": "Check the hypotheses",
+            "text": "The magnitudes decrease and tend to zero.",
+            "equation": "b_{n+1}<b_n,\\qquad b_n\\to0"
+          },
+          {
+            "label": "Read the next term",
+            "text": "The first omitted magnitude gives the error ceiling.",
+            "equation": "|S-S_N|\\le b_{N+1}=\\frac1{N+1}"
+          }
+        ],
+        "result": "After 100 terms, the error is less than 0.01.",
+        "verification": "The bound concerns the error, not the value of the sum; the first omitted term also determines the error sign."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-absolute-source-example-worked",
+        "title": "Classify the alternating reciprocal-square series in Example 5.8",
+        "strategy": "Take absolute values, identify a convergent p-series, then apply the absolute-convergence theorem.",
+        "setup": "Consider $\\sum_{n=1}^{\\infty}(-1)^{n-1}/n^2$.",
+        "steps": [
+          {
+            "label": "Test the magnitudes",
+            "text": "Removing the signs gives a p-series with exponent 2.",
+            "equation": "\\sum_{n=1}^{\\infty}\\left|\\frac{(-1)^{n-1}}{n^2}\\right|=\\sum_{n=1}^{\\infty}\\frac1{n^2}<\\infty"
+          },
+          {
+            "label": "Transfer to the signed series",
+            "text": "Convergence of the absolute-value series implies convergence of the original series.",
+            "equation": "\\sum|a_n|<\\infty\\quad\\Longrightarrow\\quad\\sum a_n\\text{ converges}"
+          }
+        ],
+        "result": "Example 5.8 converges absolutely.",
+        "verification": "Alternation is not needed to prove convergence once the absolute-value series is known to converge."
       }
     ],
     "sections": [
@@ -12567,6 +13128,62 @@
           "State conditional convergence only after both verdicts."
         ],
         "solutionTex": "\\sum_{n=1}^{\\infty}(-1)^{n-1}\\frac{n}{n^2+1}\\text{ converges conditionally},\\qquad\\lim_{n\\to\\infty}\\frac{n/(n^2+1)}{1/n}=1"
+      },
+      {
+        "id": "ch05-absolute-implies-convergence-transfer",
+        "outcome": "Use absolute convergence to settle a signed-series classification.",
+        "kind": "proof",
+        "prompt": "Show that $\\sum_{n=1}^{\\infty}(-1)^n/(n^2+3n+1)$ converges, and identify the theorem that transfers the verdict.",
+        "hint": "Take absolute values and compare with the p-series with exponent 2.",
+        "solution": "The absolute-value terms satisfy $0\\le1/(n^2+3n+1)\\le1/n^2$. The p-series with exponent 2 converges, so the absolute-value series converges. The Absolute Convergence Theorem then implies convergence of the signed series.",
+        "solutionTex": "\\sum_{n=1}^{\\infty}\\left|\\frac{(-1)^n}{n^2+3n+1}\\right|\\le\\sum_{n=1}^{\\infty}\\frac1{n^2}<\\infty",
+        "rubric": [
+          "Test the absolute-value series first.",
+          "Name the p-series benchmark.",
+          "Apply the implication in the correct direction."
+        ]
+      },
+      {
+        "id": "ch05-absolute-majorant-transfer",
+        "outcome": "Use a majorant for a new non-alternating signed series.",
+        "kind": "proof",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}\\sin(n)/(n^2+1)$ by proving absolute convergence.",
+        "hint": "Use $|\\sin n|\\le1$ and compare the denominator with $n^2$.",
+        "solution": "For every $n$, $|\\sin(n)/(n^2+1)|\\le1/(n^2+1)\\le1/n^2$. The p-series majorant converges, so the series converges absolutely.",
+        "solutionTex": "\\left|\\frac{\\sin n}{n^2+1}\\right|\\le\\frac1{n^2+1}\\le\\frac1{n^2},\\qquad\\sum\\frac1{n^2}<\\infty",
+        "rubric": [
+          "Bound the magnitude, not the signed term.",
+          "Use a convergent positive majorant.",
+          "Distinguish absolute convergence from alternating cancellation."
+        ]
+      },
+      {
+        "id": "ch05-alternating-hypotheses-transfer",
+        "outcome": "Check the alternating-test hypotheses on changed rational magnitudes.",
+        "kind": "proof",
+        "prompt": "For $S=\\sum_{n=2}^{\\infty}(-1)^n n/(n^2+4)$, prove convergence by the Alternating Series Test.",
+        "hint": "Differentiate $g(x)=x/(x^2+4)$ on $x\\ge2$, and check that the magnitudes tend to zero.",
+        "solution": "Here $g'(x)=(4-x^2)/(x^2+4)^2\\le0$ for $x\\ge2$, and $n/(n^2+4)\\to0$. The signs alternate, so the Alternating Series Test proves convergence.",
+        "solutionTex": "g'(x)=\\frac{4-x^2}{(x^2+4)^2}\\le0\\quad(x\\ge2),\\qquad\\frac{n}{n^2+4}\\to0",
+        "rubric": [
+          "Verify alternating signs.",
+          "Prove eventual decrease of positive magnitudes.",
+          "Check their limit is zero."
+        ]
+      },
+      {
+        "id": "ch05-alternating-remainder-estimate-transfer",
+        "outcome": "Choose a term count for a guaranteed alternating-series accuracy.",
+        "kind": "computational",
+        "prompt": "How many terms of $\\sum_{n=1}^{\\infty}(-1)^{n-1}/n^2$ guarantee error at most $10^{-4}$?",
+        "hint": "The next omitted term is $1/(N+1)^2$. Solve the error inequality.",
+        "solution": "Require $1/(N+1)^2\\le10^{-4}$, so $N+1\\ge100$ and $N=99$ suffices.",
+        "solutionTex": "|S-S_N|\\le\\frac1{(N+1)^2}\\le10^{-4}\\quad(N\\ge99)",
+        "rubric": [
+          "Use the next omitted magnitude.",
+          "Solve for an integer number of terms.",
+          "State that the result is a guaranteed bound."
+        ]
       }
     ]
   },
@@ -12597,7 +13214,216 @@
         "Treat $C$'s two endpoints independently and distinguish conditional convergence."
       ],
       "solutionTex": "A<\\infty,\\quad\\lim_{n\\to\\infty}\\frac{(n+1)/3^{n+1}}{n/3^n}=\\frac13,\\quad I_C=[1,3)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch05-ratio-test-criteria-statement",
+        "title": "Ratio Test",
+        "statement": "If $\\lim_{n\\to\\infty}|a_{n+1}/a_n|=\\rho$, then $\\rho<1$ gives absolute convergence, while $\\rho>1$ (including an infinite limit) gives divergence. At $\\rho=1$, the test is inconclusive.",
+        "hypotheses": [
+          "The ratio is defined eventually and the limit exists.",
+          "Use absolute values even when the terms have signs.",
+          "A ratio above one forces terms not to tend to zero; a ratio equal to one has no verdict."
+        ],
+        "prerequisites": ["Geometric series", "Term test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-ratio-test-criteria-worked",
+        "title": "Compare factorial and exponential examples",
+        "strategy": "Compute neighboring-term ratios; a strict limit below one yields a geometric tail, while a limit above one violates the zero-term condition.",
+        "setup": "Use Examples 5.15–5.17 from the notes.",
+        "steps": [
+          {
+            "label": "Factorial denominator",
+            "text": "The ratio tends to zero.",
+            "equation": "\\frac{1/(n+1)!}{1/n!}=\\frac1{n+1}\\to0"
+          },
+          {
+            "label": "Polynomial over exponential",
+            "text": "The polynomial factor contributes a ratio tending to one, leaving the exponential factor.",
+            "equation": "\\frac{(n+1)^2/2^{n+1}}{n^2/2^n}=\\frac12\\left(1+\\frac1n\\right)^2\\to\\frac12"
+          },
+          {
+            "label": "Factorial growth",
+            "text": "For the signed example, apply the ratio test to magnitudes.",
+            "equation": "\\frac{(n+1)!/100^{n+1}}{n!/100^n}=\\frac{n+1}{100}\\to\\infty"
+          }
+        ],
+        "result": "The first two series converge absolutely; the factorial-growth series diverges because its terms fail to approach zero.",
+        "verification": "The ratio test is applied to absolute values; the infinite ratio in the last case also implies the term test fails."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-test-limit-one-statement",
+        "title": "Ratio and Root Test boundary",
+        "statement": "A ratio limit or root limit of $1$ gives no convergence verdict by these tests; use another argument such as comparison, the Integral Test, or the term test.",
+        "hypotheses": [
+          "The limit-one case is explicitly inconclusive.",
+          "Do not infer either convergence or divergence from this test result alone.",
+          "Examples with the same test limit can have different behavior."
+        ],
+        "prerequisites": ["Ratio Test", "Root Test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-test-limit-one-worked",
+        "title": "Contrast the two series in Example 5.14",
+        "strategy": "Compute the same ratio limit, then use the term test for one series and the p-series criterion for the other.",
+        "setup": "Compare $\\sum n^2$ with $\\sum 1/n^2$.",
+        "steps": [
+          {
+            "label": "Find each ratio limit",
+            "text": "Both neighboring-term ratios tend to one.",
+            "equation": "\\frac{(n+1)^2}{n^2}\\to1,\\qquad\\frac{n^2}{(n+1)^2}\\to1"
+          },
+          {
+            "label": "Use a separate test",
+            "text": "The terms of the first series do not tend to zero; the second is a p-series with exponent 2.",
+            "equation": "n^2\\not\\to0,\\qquad\\sum\\frac1{n^2}<\\infty"
+          },
+          {
+            "label": "Check the root boundary too",
+            "text": "The same two positive series also have nth-root limits equal to one, so the Root Test cannot distinguish them either.",
+            "equation": "\\sqrt[n]{1/n}=n^{-1/n}\\to1,\\qquad\\sqrt[n]{1/n^2}=n^{-2/n}\\to1"
+          }
+        ],
+        "result": "The first diverges and the second converges, despite the shared ratio limit of one.",
+        "verification": "The ratio test itself classifies neither series at this boundary; the distinct verdicts come from other valid tests."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch05-root-test-criteria-statement",
+        "title": "Root Test",
+        "statement": "If $\\lim_{n\\to\\infty}\\sqrt[n]{|a_n|}=L$, then $L<1$ gives absolute convergence, $L>1$ (including infinity) gives divergence, and $L=1$ is inconclusive.",
+        "hypotheses": [
+          "The nth-root limit exists for this limit form of the test.",
+          "Take the root of the absolute value.",
+          "At limit one, use a different test."
+        ],
+        "prerequisites": ["Geometric series", "Term test"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-root-test-criteria-worked",
+        "title": "Use roots on the source nth-power series",
+        "strategy": "The nth root removes the outer nth power; a strict limit below one compares with a geometric series.",
+        "setup": "For Example 5.18, $a_n=(n/(2n+3))^n$.",
+        "steps": [
+          {
+            "label": "Take nth roots",
+            "text": "The outer power cancels.",
+            "equation": "\\sqrt[n]{|a_n|}=\\frac{n}{2n+3}"
+          },
+          {
+            "label": "Evaluate the limit",
+            "text": "Divide numerator and denominator by $n$.",
+            "equation": "\\lim_{n\\to\\infty}\\frac{n}{2n+3}=\\frac12<1"
+          }
+        ],
+        "result": "The series converges absolutely by the Root Test.",
+        "verification": "A root limit strictly below one gives an eventual geometric bound; equality at one would not decide the series."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch05-test-selection-statement",
+        "title": "Match the test to the terms",
+        "text": "Factorials often simplify under a ratio, whole expressions raised to $n$ under a root, alternating signs require a separate signed-series check, and a limit of one calls for another method. Test any endpoint or boundary series separately."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch05-test-selection-worked",
+        "title": "Classify the piecewise series in Exercise 5.19",
+        "strategy": "The formula changes with parity, so take nth roots on each subsequence and verify the common limit.",
+        "setup": "Let $a_n=n/2^n$ for odd $n$ and $a_n=1/2^n$ for even $n$.",
+        "steps": [
+          {
+            "label": "Justify the logarithm and root limits",
+            "text": "For $x\\ge1$, compare $1/x$ with $1/\\sqrt{x}$, integrate, and divide by $n$. Exponentiating gives the root limit used below.",
+            "equation": "0\\le\\frac{\\ln n}{n}\\le\\frac{2(\\sqrt n-1)}n\\le\\frac2{\\sqrt n}\\to0,\\qquad n^{1/n}=e^{(\\ln n)/n}\\to1"
+          },
+          {
+            "label": "Odd indices",
+            "text": "The polynomial factor has nth root tending to one.",
+            "equation": "\\sqrt[n]{a_n}=\\frac{n^{1/n}}2\\to\\frac12"
+          },
+          {
+            "label": "Even indices",
+            "text": "The nth root is exactly constant.",
+            "equation": "\\sqrt[n]{a_n}=\\frac12"
+          },
+          {
+            "label": "Use the common root limit",
+            "text": "The full root sequence tends to one half.",
+            "equation": "\\lim_{n\\to\\infty}\\sqrt[n]{a_n}=\\frac12<1"
+          }
+        ],
+        "result": "The Root Test proves convergence of the positive piecewise series.",
+        "verification": "The parity subsequences have the same root limit. The supplied source exercise asks learners to establish $n^{1/n}\\to1$; the guide states that limit and maps it to the root-test decision."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch05-ratio-test-criteria-transfer",
+        "outcome": "Apply the ratio test to a changed factorial-exponential series.",
+        "kind": "computational",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}(n+1)/4^n$ with the Ratio Test.",
+        "hint": "Form the ratio of consecutive positive terms before taking the limit.",
+        "solution": "The ratio is $[(n+2)/4^{n+1}]/[(n+1)/4^n]=(n+2)/(4n+4)\\to1/4<1$. The series converges.",
+        "solutionTex": "\\lim_{n\\to\\infty}\\frac{(n+2)/4^{n+1}}{(n+1)/4^n}=\\frac14",
+        "rubric": [
+          "Use consecutive terms in the right order.",
+          "Take the limit after simplifying.",
+          "Connect a strict limit below one to convergence."
+        ]
+      },
+      {
+        "id": "ch05-test-limit-one-transfer",
+        "outcome": "Resolve a limit-one case by switching methods.",
+        "kind": "method-choice",
+        "prompt": "The Ratio Test gives limit 1 for $\\sum_{n=2}^{\\infty}1/[n(\\ln n)^3]$. Choose another valid test and classify it.",
+        "hint": "The term shape suggests the logarithmic Integral Test benchmark; verify its hypotheses.",
+        "solution": "The function $f(x)=1/[x(\\ln x)^2]$ is positive, continuous, and decreasing for $x\\ge2$. With $u=\\ln x$, the tail integral is $\\int_{\\ln2}^{\\infty}u^{-2}\\,du<\\infty$. The series converges by the Integral Test.",
+        "solutionTex": "\\lim_{n\\to\\infty}\\frac{a_{n+1}}{a_n}=1\\quad\\text{but}\\quad\\int_{\\ln2}^{\\infty}u^{-2}\\,du<\\infty",
+        "rubric": [
+          "Treat the ratio result as inconclusive.",
+          "Choose a test suited to the logarithmic factor.",
+          "Verify the replacement test hypotheses."
+        ]
+      },
+      {
+        "id": "ch05-root-test-criteria-transfer",
+        "outcome": "Apply the Root Test to a changed nth-power series.",
+        "kind": "computational",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}((3n+1)/(8n+2))^n$ using the Root Test.",
+        "hint": "Take the nth root of the magnitude before simplifying the limit.",
+        "solution": "The nth root is $(3n+1)/(8n+2)\\to3/8<1$. The series converges by the Root Test.",
+        "solutionTex": "\\lim_{n\\to\\infty}\\sqrt[n]{\\left|\\left(\\frac{3n+1}{8n+2}\\right)^n\\right|}=\\frac38",
+        "rubric": [
+          "Take the nth root of the whole term.",
+          "Evaluate the ratio of leading coefficients.",
+          "Use the strict less-than-one case."
+        ]
+      },
+      {
+        "id": "ch05-test-selection-transfer",
+        "outcome": "Select tests for factorial, nth-power, and alternating forms.",
+        "kind": "method-choice",
+        "prompt": "Choose an efficient test and classify each: $A=\\sum n!/5^n$, $B=\\sum(3n/(5n+2))^n$, and $C=\\sum(-1)^{n-1}/\\sqrt n$. Explain why a limit of one would not settle a result.",
+        "hint": "Use a ratio for the factorial, a root for the nth-power term, and the Alternating Series Test plus a separate absolute-series check for $C$.",
+        "solution": "For $A$, the absolute ratio is $(n+1)/5\\to\\infty$, so its terms do not tend to zero and the series diverges. For $B$, nth roots tend to $3/5<1$, so it converges. For $C$, magnitudes decrease to zero, so the signed series converges; its absolute series is a p-series with exponent $1/2$, so it diverges. Thus $C$ is conditional. A ratio or root limit of one is inconclusive and must be followed by another test.",
+        "solutionTex": "A:\\frac{|a_{n+1}|}{|a_n|}=\\frac{n+1}{5}\\to\\infty,\\quad B:\\sqrt[n]{b_n}\\to\\frac35,\\quad C:\\sum n^{-1/2}=\\infty",
+        "rubric": [
+          "Justify the test from term structure.",
+          "Check absolute convergence separately for the alternating series.",
+          "Explain the limit-one boundary."
+        ]
+      }
+    ]
   },
   "power-series-radius": {
     "prerequisites": ["ratio-root-tests"],
