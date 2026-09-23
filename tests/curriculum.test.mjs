@@ -186,6 +186,108 @@ test("workspace tools validate the whole layout request before changing state", 
   assert.equal(sidebar, false);
 });
 
+test("WebMCP concept read returns the same practice and source data as the visible lesson", async () => {
+  const { studyTools } = await vite.ssrLoadModule(
+    "/components/atlas/study-tools.ts",
+  );
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const concept = concepts.find(
+    (item) => item.id === "partials-do-not-make-a-plane",
+  );
+  const tool = studyTools(concepts, () => ({})).find(
+    (item) => item.name === "read_concept",
+  );
+  const result = tool.execute({ conceptId: concept.id });
+  assert.deepEqual(result.lesson.exercise, learningGuides[concept.id].exercise);
+  assert.ok(result.sources.every((source) => source.source.url));
+});
+
+test("WebMCP state includes the mathematical readout and its evidence limit", async () => {
+  const { studyTools } = await vite.ssrLoadModule(
+    "/components/atlas/study-tools.ts",
+  );
+  const state = {
+    visualLayout: "split",
+    sidebarOpen: false,
+    route: "lesson",
+    course: "MH2100",
+    search: "",
+    concept: concepts.find(
+      (item) => item.id === "partials-do-not-make-a-plane",
+    ),
+    activeScene: "differential",
+    p: 0,
+    info: { min: 0, max: 1, step: 0.1, readout: () => "Dᵤf(0)=1" },
+    noteTab: "intuition",
+    playing: false,
+    graph: {},
+  };
+  const tool = studyTools(concepts, () => state).find(
+    (item) => item.name === "get_study_state",
+  );
+  const result = tool.execute({});
+  assert.equal(result.mathematicalReadout, "Dᵤf(0)=1");
+  assert.match(result.representation, /Sampled illustration/);
+});
+
+test("WebMCP manual control stops animation and respects reduced motion", async () => {
+  const { studyTools } = await vite.ssrLoadModule(
+    "/components/atlas/study-tools.ts",
+  );
+  const oldWindow = globalThis.window;
+  const oldFrame = globalThis.requestAnimationFrame;
+  globalThis.window = {
+    matchMedia: () => ({ matches: true }),
+  };
+  globalThis.requestAnimationFrame = (callback) => setTimeout(callback, 0);
+  const state = {
+    route: "lesson",
+    concept: concepts.find((item) => item.id === "total-differentiability"),
+    info: { min: 0, max: 1, step: 0.1 },
+    playing: true,
+    p: 0.5,
+    setPlaying(value) {
+      this.playing = value;
+    },
+    setP(value) {
+      this.p = value;
+    },
+  };
+  try {
+    const tools = studyTools(concepts, () => state);
+    await assert.rejects(
+      tools
+        .find((tool) => tool.name === "set_experiment_animation")
+        .execute({
+          playing: true,
+        }),
+      /reduced motion/,
+    );
+    await tools
+      .find((tool) => tool.name === "set_visual_parameter")
+      .execute({
+        value: 0.7,
+      });
+    assert.equal(state.playing, false);
+    assert.equal(state.p, 0.7);
+  } finally {
+    globalThis.window = oldWindow;
+    globalThis.requestAnimationFrame = oldFrame;
+  }
+});
+
+test("the geometric first-N control exposes N=1 and shows its exact first term", async () => {
+  const { planarModel } = await vite.ssrLoadModule("/lib/curriculum/planar.ts");
+  const model = planarModel("plane-geometric", 1);
+  assert.equal(model.min, 1);
+  assert.equal(model.label, "Terms shown");
+  assert.match(model.formula, /N-1/);
+  assert.match(model.readout, /N=1/);
+  assert.match(model.readout, /1(?:\.0+)?/);
+});
+
 test("a stale graph frame cannot settle a superseding graph request", async () => {
   const { settleGraphRender } = await vite.ssrLoadModule(
     "/lib/atlas/render-completion.ts",

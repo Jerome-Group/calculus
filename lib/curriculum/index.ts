@@ -17,6 +17,13 @@ export type Source = {
   course: string;
   kind: string;
   sha256: string;
+  errata?: {
+    page: number;
+    printed: string;
+    correction: string;
+    justification: string;
+    provenance: string;
+  }[];
 };
 export const concepts = data as Concept[];
 export const sources: Record<string, Source> = sourceData;

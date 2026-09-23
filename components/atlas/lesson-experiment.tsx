@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useId, useState } from "react";
 import { Minus, Maximize2, Pause, Play, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Viewport } from "./viewport";
@@ -7,8 +8,15 @@ import { sceneTex, legendColors } from "@/lib/atlas/scenes";
 import { PlanarViewport } from "./planar-viewport";
 import { readoutTex, parameterTex } from "@/lib/curriculum/readouts";
 import { ExperimentModels } from "./experiment-models";
+import { RegionBoundsIllustration } from "./region-bounds-illustration";
+import { CapOrientationDecision } from "./cap-orientation-decision";
+import { ReviewExampleIdentities } from "./review-example-identities";
 import type { StudyController } from "./use-study-controller";
 export function LessonExperiment({ study }: { study: StudyController }) {
+  const sceneFormulaId = useId();
+  const sceneNoteId = useId();
+  const sceneValueId = useId();
+  const [reducedMotion, setReducedMotion] = useState(false);
   const {
     planar,
     visualLayout,
@@ -20,9 +28,30 @@ export function LessonExperiment({ study }: { study: StudyController }) {
     resetKey,
     setReset,
     concept,
+    readingMode,
     activeScene,
     info,
   } = study;
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      setReducedMotion(preference.matches);
+      if (preference.matches) setPlaying(false);
+    };
+    update();
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
+  }, [setPlaying]);
+  const relatedReviewScene =
+    concept.id === "review-total-differentiability" &&
+    activeScene === "differential";
+  const integralReviewTransfer =
+    concept.id === "review-integral-methods" && activeScene === "stokes";
+  const sceneDescription = relatedReviewScene
+    ? "Generic transfer model: h(x,y)=x³/(x²+y²) away from the origin, with h(0,0)=0. This is neither exact review function. Their separate diagrams and graph presets appear below."
+    : integralReviewTransfer
+      ? "Related Stokes transfer model: paraboloid cap and its boundary. The original review Green and potential problems have different fields and geometry, listed below."
+      : `${concept.title}. ${concept.subtitle}`;
   return (
     <section
       className={
@@ -64,20 +93,24 @@ export function LessonExperiment({ study }: { study: StudyController }) {
       {visualLayout !== "minimised" && (
         <div className="experience-content">
           <p className="model-status">
-            Sampled illustration · <MathText text={concept.subtitle} /> The
-            display window and clipping do not define the mathematical domain.
+            {relatedReviewScene || integralReviewTransfer
+              ? "Related model"
+              : "Sampled illustration"}{" "}
+            · <MathText text={sceneDescription} /> The display window and
+            clipping do not define the mathematical domain.
           </p>
           {activeScene.startsWith("plane-") ? (
             <PlanarViewport model={planar!} />
           ) : (
             <Viewport
-              description={`${concept.title}. ${concept.subtitle}`}
+              description={sceneDescription}
+              descriptionId={`${sceneFormulaId} ${sceneNoteId} ${sceneValueId}`}
               scene={activeScene}
               parameter={p}
               resetKey={resetKey}
             />
           )}
-          <div className="scene-equation">
+          <div className="scene-equation" id={sceneFormulaId}>
             <Formula>
               {activeScene.startsWith("plane-")
                 ? planar!.formula
@@ -96,9 +129,15 @@ export function LessonExperiment({ study }: { study: StudyController }) {
               </span>
             ))}
           </div>
-          <p className="scale-note">
+          <p className="scale-note" id={sceneNoteId}>
             <MathText text={info.note} />
           </p>
+          <RegionBoundsIllustration lessonId={concept.id} />
+          {concept.id === "review-integral-methods" && (
+            <ReviewExampleIdentities />
+          )}
+          {(concept.id === "flux-through-surfaces" ||
+            concept.id === "divergence-theorem") && <CapOrientationDecision />}
           <ExperimentModels study={study} />
           <div className="control-panel">
             <div className="control-heading">
@@ -112,9 +151,20 @@ export function LessonExperiment({ study }: { study: StudyController }) {
               </output>
               <button
                 title={
-                  playing ? "Pause parameter animation" : "Animate parameter"
+                  reducedMotion
+                    ? "Animation disabled by reduced motion preference"
+                    : playing
+                      ? "Pause parameter animation"
+                      : "Animate parameter"
                 }
-                aria-label={playing ? "Pause animation" : "Animate parameter"}
+                aria-label={
+                  reducedMotion
+                    ? "Animation disabled by reduced motion preference"
+                    : playing
+                      ? "Pause animation"
+                      : "Animate parameter"
+                }
+                disabled={reducedMotion}
                 onClick={() => setPlaying(!playing)}
               >
                 {playing ? <Pause size={17} /> : <Play size={17} />}
@@ -195,7 +245,11 @@ export function LessonExperiment({ study }: { study: StudyController }) {
                   </button>
                 ))}
             </div>
-            <p className="live-value" aria-live={playing ? "off" : "polite"}>
+            <p
+              className="live-value"
+              id={sceneValueId}
+              aria-live={playing ? "off" : "polite"}
+            >
               <Formula>
                 {activeScene.startsWith("plane-")
                   ? planar!.readout
@@ -204,10 +258,14 @@ export function LessonExperiment({ study }: { study: StudyController }) {
             </p>
           </div>
           <div className="experiment-prompt">
-            <span className="label">TRY THIS</span>
-            <p>
-              <MathText text={concept.task} />
-            </p>
+            {readingMode === "explore" && (
+              <>
+                <span className="label">TRY THIS</span>
+                <p>
+                  <MathText text={concept.task} />
+                </p>
+              </>
+            )}
             <details>
               <summary>What to notice</summary>
               <p>

@@ -4,15 +4,18 @@ import { learningGuide } from "@/lib/curriculum/learning";
 import { experimentPresets } from "@/lib/curriculum/experiment-presets";
 import { LessonPractice } from "./lesson-practice";
 import { SourceReferences } from "./source-references";
-import { Formula, MathText } from "./math-text";
+import { MathText } from "./math-text";
 import { IntegrationFramework } from "./integration-framework";
+import { RegionExperimentSequence } from "./region-experiment-sequence";
+import { StructuredLessonBlockView } from "./structured-lesson-block";
+import { ReviewDifferentiabilityExperiments } from "./review-differentiability-experiments";
 import type { StudyController } from "./use-study-controller";
 export function LessonContent({
   study,
 }: {
-  study: Pick<StudyController, "concept" | "open" | "plot">;
+  study: Pick<StudyController, "concept" | "openPrerequisite" | "plot">;
 }) {
-  const { concept, open } = study;
+  const { concept, openPrerequisite } = study;
   const guide = learningGuide(concept);
   return (
     <section className="rigor-panel" aria-label="Mathematical explanation">
@@ -21,40 +24,55 @@ export function LessonContent({
         <nav className="prerequisites" aria-label="Lesson prerequisites">
           <span>Builds on</span>
           {guide.prerequisites.map((id) => (
-            <button key={id} onClick={() => open(id)}>
+            <button key={id} onClick={() => openPrerequisite(id)}>
               {concepts.find((c) => c.id === id)?.title}
             </button>
           ))}
         </nav>
       )}
-      <Formula block>{concept.formula}</Formula>
-      <h2>Definition & meaning</h2>
-      <p>
-        <MathText text={concept.definition} />
-      </p>
-      <div className="hypotheses">
-        <span className="label">PRECISE HYPOTHESES</span>
-        <p>
-          <MathText text={concept.conditions} />
-        </p>
-      </div>
       <section className="lesson-narrative">
         <h2 id="notes-intuition" tabIndex={-1}>
           Reasoning
         </h2>
-        <p className="reasoning-status">
-          {guide?.reasoning || "Proof sketch"} · consult the hypotheses before
-          applying the result.
-        </p>
-        <p>
-          <MathText text={concept.proof} />
-        </p>
+        {guide?.contentBlocks?.some(
+          (block) => block.kind !== "worked-example",
+        ) ? (
+          guide.contentBlocks
+            .filter((block) => block.kind !== "worked-example")
+            .map((block) => (
+              <StructuredLessonBlockView key={block.id} block={block} />
+            ))
+        ) : (
+          <>
+            <p className="reasoning-status">
+              {guide?.reasoning || "Proof sketch"} · consult the hypotheses
+              before applying the result.
+            </p>
+            <p>
+              <MathText text={concept.proof} />
+            </p>
+          </>
+        )}
         <h2 id="notes-example" tabIndex={-1}>
           Worked application
         </h2>
-        <p>
-          <MathText text={concept.example} />
-        </p>
+        {guide?.contentBlocks?.some(
+          (block) => block.kind === "worked-example",
+        ) ? (
+          guide.contentBlocks
+            .filter((block) => block.kind === "worked-example")
+            .map((block) => (
+              <StructuredLessonBlockView key={block.id} block={block} />
+            ))
+        ) : (
+          <p>
+            <MathText text={concept.example} />
+          </p>
+        )}
+        {concept.id === "polar-regions" && <RegionExperimentSequence />}
+        {concept.id === "review-total-differentiability" && (
+          <ReviewDifferentiabilityExperiments />
+        )}
         <h2 id="notes-pitfall" tabIndex={-1}>
           Check the distinction
         </h2>
@@ -62,6 +80,9 @@ export function LessonContent({
           <MathText text={concept.pitfall} />
         </p>
       </section>
+      {guide?.supplementalBlocks?.map((block) => (
+        <StructuredLessonBlockView key={block.id} block={block} />
+      ))}
       {guide?.sections.map((section) => (
         <section className="lesson-extension" key={section.title}>
           <h2>{section.title}</h2>
@@ -77,12 +98,30 @@ export function LessonContent({
         "type-one-two-regions",
         "linearity-additivity",
       ].includes(concept.id) && <IntegrationFramework open={open} />}
-      {guide && (
-        <LessonPractice
-          key={concept.id}
-          id={concept.id}
-          exercise={guide.exercise}
-        />
+      {guide &&
+        [{ id: "core", ...guide.exercise }, ...(guide.exercises ?? [])].map(
+          (exercise) => (
+            <LessonPractice
+              key={`${concept.id}:${exercise.id}`}
+              id={concept.id}
+              exerciseId={exercise.id}
+              exercise={exercise}
+            />
+          ),
+        )}
+      {(guide?.nextStep || guide?.relatedStep) && (
+        <nav className="prerequisites" aria-label="Continue this proof path">
+          {guide.nextStep && (
+            <button onClick={() => open(guide.nextStep!.id)}>
+              Next: {guide.nextStep.label}
+            </button>
+          )}
+          {guide.relatedStep && (
+            <button onClick={() => open(guide.relatedStep!.id)}>
+              Compare: {guide.relatedStep.label}
+            </button>
+          )}
+        </nav>
       )}
       <details className="covered-topics">
         <summary>

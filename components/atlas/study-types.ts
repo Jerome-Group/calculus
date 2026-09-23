@@ -1,5 +1,6 @@
 import type { Concept, CourseId } from "@/lib/curriculum";
 import type { GraphSpec } from "@/lib/atlas/math";
+import type { LessonMode } from "@/lib/curriculum/learning-modes";
 export type StudyState = {
   visualLayout: "split" | "wide" | "minimised";
   sidebarOpen: boolean;
@@ -7,6 +8,8 @@ export type StudyState = {
   setSidebarOpen: (value: boolean) => void;
   concept: Concept;
   route: string;
+  readingMode: LessonMode;
+  setReadingMode: (mode: LessonMode) => void;
   course: CourseId;
   search: string;
   noteTab: string;
@@ -20,6 +23,7 @@ export type StudyState = {
     step: number;
     initial: number;
     label: string;
+    readout?: (parameter: number) => string;
   };
   open: (id: string) => void;
   show: (route: string) => void;

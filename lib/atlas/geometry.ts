@@ -90,6 +90,8 @@ export function builder(group: T.Group) {
     }
     const points: Vec[] = [];
     const valid: boolean[] = [];
+    let undefinedSamples = 0;
+    let clippedSamples = 0;
     for (let i = 0; i <= n; i++)
       for (let j = 0; j <= m; j++) {
         const p = fn(
@@ -97,10 +99,12 @@ export function builder(group: T.Group) {
           vmin + ((vmax - vmin) * j) / m,
         );
         points.push(p);
-        valid.push(
-          p.every((v) => Number.isFinite(v) && Math.abs(v) < 1e12) &&
-            Math.abs(p[2]) <= clip,
+        const defined = p.every(
+          (v) => Number.isFinite(v) && Math.abs(v) < 1e12,
         );
+        if (!defined) undefinedSamples++;
+        else if (Math.abs(p[2]) > clip) clippedSamples++;
+        valid.push(defined && Math.abs(p[2]) <= clip);
       }
     const pos: number[] = [];
     const indices: number[] = [];
@@ -168,6 +172,8 @@ export function builder(group: T.Group) {
       valid: valid.filter(Boolean).length,
       total: valid.length,
       triangles: indices.length / 3,
+      undefinedSamples,
+      clippedSamples,
     };
   };
   const sphere = (
@@ -1185,7 +1191,7 @@ export function buildGraph(spec: GraphSpec, g: T.Group) {
       64,
       spec.clip,
     );
-    return `${r.valid}/${r.total} finite samples in the clipping range · ${r.triangles} mesh triangles`;
+    return `${r.valid}/${r.total} sampled points displayed · ${r.triangles} approximate mesh triangles. ${r.undefinedSamples} undefined or nonfinite samples and ${r.clippedSamples} samples outside the height clip excluded. Large height jumps may also filter triangles. Finite sampling can miss features; the display window and clip do not define the mathematical domain.`;
   }
   if (spec.mode === "parametric") {
     const r = mesh(
@@ -1200,7 +1206,7 @@ export function buildGraph(spec: GraphSpec, g: T.Group) {
       56,
       spec.clip,
     );
-    return `${r.valid}/${r.total} finite parameter samples · ${r.triangles} triangles`;
+    return `${r.valid}/${r.total} parameter samples displayed · ${r.triangles} approximate mesh triangles. ${r.undefinedSamples} undefined or nonfinite samples and ${r.clippedSamples} samples outside the height clip excluded. A repeated parameter seam is not necessarily a geometric edge; finite sampling can miss features.`;
   }
   if (spec.mode === "curve") {
     const segments: Vec[][] = [];

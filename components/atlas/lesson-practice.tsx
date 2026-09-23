@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Formula, MathText } from "./math-text";
@@ -7,19 +7,69 @@ import {
   savePractice,
   type PracticeStatus,
 } from "@/lib/curriculum/progress-store";
+import {
+  deletePracticeDraft,
+  readPracticeDraft,
+  writePracticeDraft,
+  type PracticeDraft,
+} from "@/lib/curriculum/practice-drafts";
 import type { LearningGuide } from "@/lib/curriculum/learning";
 export function LessonPractice({
   id,
+  exerciseId = "core",
   exercise,
 }: {
   id: string;
+  exerciseId?: string;
   exercise: LearningGuide["exercise"];
 }) {
-  const [answer, setAnswer] = useState("");
+  const fieldId = `answer-${id}-${exerciseId}`;
+  const headingId = `practice-${id}-${exerciseId}`;
+  const progressId = exerciseId === "core" ? id : `${id}:${exerciseId}`;
+  const [draft, setDraft] = useState<PracticeDraft>({
+    answer: "",
+    hintOpen: false,
+    solutionOpen: false,
+  });
   const [status, setStatus] = useState("");
+  useEffect(() => {
+    let active = true;
+    queueMicrotask(() => {
+      if (!active) return;
+      const restored = readPracticeDraft(id, exerciseId);
+      setDraft(restored.draft);
+      setStatus(
+        restored.stored
+          ? restored.draft.answer
+            ? "Draft restored from this device."
+            : ""
+          : "Storage is unavailable. Your draft remains usable in this tab.",
+      );
+    });
+    return () => {
+      active = false;
+    };
+  }, [id, exerciseId]);
+  function update(patch: Partial<PracticeDraft>) {
+    const next = { ...draft, ...patch };
+    setDraft(next);
+    setStatus(
+      writePracticeDraft(id, next, exerciseId)
+        ? "Draft saved on this device."
+        : "Storage is unavailable. Your draft remains usable in this tab.",
+    );
+  }
+  function clear() {
+    setDraft({ answer: "", hintOpen: false, solutionOpen: false });
+    setStatus(
+      deletePracticeDraft(id, exerciseId)
+        ? "This draft was deleted. Other progress remains saved."
+        : "Storage is unavailable. This draft was cleared in this tab only.",
+    );
+  }
   function record(value: PracticeStatus) {
     try {
-      savePractice(id, value);
+      savePractice(progressId, value);
       setStatus(
         `${value} saved on this device. This is your self-assessment, not an automatic grade.`,
       );
@@ -30,28 +80,35 @@ export function LessonPractice({
     }
   }
   return (
-    <section className="lesson-practice" aria-labelledby={`practice-${id}`}>
+    <section className="lesson-practice" aria-labelledby={headingId}>
       <span className="label">TRANSFER · WITHOUT THE GRAPH</span>
-      <h2 id={`practice-${id}`}>Check your understanding</h2>
+      <h2 id={headingId}>Check your understanding</h2>
       <p>
         <MathText text={exercise.prompt} />
       </p>
-      <label htmlFor={`answer-${id}`}>
-        Your reasoning (kept here until you leave this lesson)
-      </label>
+      <label htmlFor={fieldId}>Your reasoning (saved on this device)</label>
       <Textarea
-        id={`answer-${id}`}
-        value={answer}
-        onChange={(event) => setAnswer(event.target.value)}
+        id={fieldId}
+        value={draft.answer}
+        onChange={(event) => update({ answer: event.target.value })}
         placeholder="State the method, check its assumptions, and justify your answer."
       />
-      <details>
+      <Button type="button" variant="outline" onClick={clear}>
+        Delete this draft
+      </Button>
+      <details
+        open={draft.hintOpen}
+        onToggle={(event) => update({ hintOpen: event.currentTarget.open })}
+      >
         <summary>First hint</summary>
         <p>
           <MathText text={exercise.hint} />
         </p>
       </details>
-      <details>
+      <details
+        open={draft.solutionOpen}
+        onToggle={(event) => update({ solutionOpen: event.currentTarget.open })}
+      >
         <summary>Compare with a solution</summary>
         <Formula block>{exercise.solutionTex}</Formula>
         <p>

@@ -124,6 +124,85 @@
   "limit-laws-squeeze": {
     "prerequisites": ["limits-one-sided"],
     "reasoning": "Proof sketch",
+    "supplementalBlocks": [
+      {
+        "kind": "derivation",
+        "id": "unit-circle-trig-limit",
+        "title": "Prove the basic trigonometric limit in radians",
+        "strategy": "Compare areas of an inscribed triangle, a unit-circle sector, and a tangent triangle, then squeeze the ratio.",
+        "setup": "Take $0<x<\\pi/2$ radians in a unit circle. The three areas are $\\sin x/2$, $x/2$, and $\\tan x/2$.",
+        "steps": [
+          {
+            "label": "Area order",
+            "text": "The inscribed triangle lies inside the sector, which lies inside the tangent triangle.",
+            "equation": "\\sin x < x < \\tan x",
+            "usesHypothesis": "Radian sector area is $x/2$; $0<x<\\pi/2$ keeps all areas positive."
+          },
+          {
+            "label": "Divide safely",
+            "text": "Since $\\sin x>0$, divide and rearrange to trap the quotient.",
+            "equation": "\\cos x < \\frac{\\sin x}{x} < 1",
+            "usesHypothesis": "$x$ and $\\sin x$ are nonzero in this punctured interval."
+          },
+          {
+            "label": "Both sides",
+            "text": "$\\cos x\\to1$; squeeze from the right. Since $\\sin(-x)/(-x)=\\sin x/x$, the left limit agrees."
+          }
+        ],
+        "result": "$\\lim_{x\\to0}\\sin x/x=1$.",
+        "verification": "The angle must be in radians; degrees change the sector-area normalization."
+      },
+      {
+        "kind": "worked-example",
+        "id": "rationalized-root-limit",
+        "title": "Rationalize before applying limit laws",
+        "strategy": "Replace a $0/0$ expression by an equal expression on the deleted domain.",
+        "setup": "Evaluate $\\lim_{h\\to0}(\\sqrt{1+h}-1)/h$ for $h>-1$, $h\\ne0$.",
+        "steps": [
+          {
+            "label": "Conjugate",
+            "text": "Multiply numerator and denominator by $\\sqrt{1+h}+1$.",
+            "equation": "\\frac{\\sqrt{1+h}-1}{h}=\\frac{1}{\\sqrt{1+h}+1}\\quad(h\\ne0)"
+          },
+          {
+            "label": "Pass to the limit",
+            "text": "The new denominator tends to 2, so its limit is nonzero."
+          }
+        ],
+        "result": "The limit is $1/2$.",
+        "verification": "The original expression is undefined at $h=0$; equality only on a deleted neighborhood suffices for the limit."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "trig-limit-transfer",
+        "outcome": "Use the proved sine limit and an identity to justify a new trigonometric limit.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to0}(1-\\cos x)/x^2=1/2$ in radians; name every nonzero denominator you introduce.",
+        "hint": "Use $1-\\cos x=\\sin^2x/(1+\\cos x)$ near zero.",
+        "solution": "For nonzero x sufficiently close to zero, 1+cos x>0. Then (1−cos x)/x²=(sin x/x)²/(1+cos x). The proved sine limit is 1 and cos x→1, yielding 1/2.",
+        "solutionTex": "\\frac{1-\\cos x}{x^2}=\\frac{(\\sin x/x)^2}{1+\\cos x}\\longrightarrow\\frac12",
+        "rubric": [
+          "Use an identity valid near zero.",
+          "Check x≠0 and 1+cos x≠0.",
+          "Apply the sine limit in radians."
+        ]
+      },
+      {
+        "id": "root-rationalization-transfer",
+        "outcome": "Rationalize a root limit while preserving its deleted domain.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{h\\to0}(\\sqrt{4+h}-2)/h$ and state where the original quotient is defined.",
+        "hint": "Multiply by the conjugate before taking the limit.",
+        "solution": "For h≥−4 and h≠0, the quotient equals 1/(√(4+h)+2). Its denominator tends to 4, so the limit is 1/4.",
+        "solutionTex": "\\frac{\\sqrt{4+h}-2}{h}=\\frac1{\\sqrt{4+h}+2}\\longrightarrow\\frac14",
+        "rubric": [
+          "State h≥−4 and h≠0.",
+          "Cancel only in the deleted domain.",
+          "Evaluate the nonzero limiting denominator."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Eligibility before arithmetic",
@@ -221,6 +300,49 @@
   "differentiability-corners": {
     "prerequisites": ["derivative-definition", "continuity-ivt"],
     "reasoning": "Proof sketch",
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "higher-derivatives-motion",
+        "title": "Higher derivatives track different rates",
+        "strategy": "Differentiate the position function successively; interpret each derivative with its own units.",
+        "setup": "Let $s(t)=t^3-3t^2+2$ metres, with $t$ in seconds.",
+        "steps": [
+          {
+            "label": "Velocity",
+            "text": "Differentiate position once.",
+            "equation": "v(t)=s'(t)=3t^2-6t"
+          },
+          {
+            "label": "Acceleration",
+            "text": "Differentiate velocity, not position again by a new rule.",
+            "equation": "a(t)=s''(t)=v'(t)=6t-6"
+          },
+          {
+            "label": "At one second",
+            "text": "$v(1)=-3$ m/s and $a(1)=0$ m/s². Zero acceleration at an instant does not mean zero velocity."
+          }
+        ],
+        "result": "At $t=1$, motion is in the negative direction at 3 m/s while acceleration vanishes.",
+        "verification": "$a(t)$ changes sign at 1; it is not identically zero near that time."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "higher-derivative-transfer",
+        "outcome": "Compute and interpret first and second derivatives separately.",
+        "kind": "computational",
+        "prompt": "A particle has position $s(t)=t^4-4t^3$ metres for $t\\ge0$. Find velocity and acceleration at $t=2$, and decide whether it is instantaneously at rest.",
+        "hint": "Differentiate once for velocity and twice for acceleration; rest means velocity zero.",
+        "solution": "$v(t)=4t^3-12t^2$, so $v(2)=32-48=-16$ m/s. $a(t)=12t^2-24t$, so $a(2)=0$ m/s². The particle is moving, not at rest.",
+        "solutionTex": "v(2)=4(2)^3-12(2)^2=-16,\\qquad a(2)=12(2)^2-24(2)=0",
+        "rubric": [
+          "Differentiate in the right order.",
+          "Keep units for each derivative.",
+          "Use velocity, not acceleration, to decide rest."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Three obstructions",
@@ -245,6 +367,73 @@
   "differentiation-rules": {
     "prerequisites": ["derivative-definition"],
     "reasoning": "Proof sketch",
+    "supplementalBlocks": [
+      {
+        "kind": "equation",
+        "id": "basic-rule-families",
+        "title": "Build the algebraic families",
+        "tex": "\\begin{aligned}(cf+g)'&=cf'+g' & (x^n)'&=nx^{n-1}\\\\(fg)'&=f'g+fg' & (f/g)'&=(f'g-fg')/g^2\\end{aligned}",
+        "note": "These formulas require the displayed derivatives to exist. The quotient also requires $g(x)\\ne0$; for general real powers use a domain where the power is differentiable."
+      },
+      {
+        "kind": "derivation",
+        "id": "product-rule-increments",
+        "title": "Why both factors contribute",
+        "strategy": "Add and subtract one mixed product before dividing by the input increment.",
+        "setup": "Let $f$ and $g$ be differentiable at $x$.",
+        "steps": [
+          {
+            "label": "Split",
+            "text": "Insert $f(x+h)g(x)$ into the numerator.",
+            "equation": "\\frac{f(x+h)g(x+h)-f(x)g(x)}h=f(x+h)\\frac{g(x+h)-g(x)}h+g(x)\\frac{f(x+h)-f(x)}h"
+          },
+          {
+            "label": "Limit",
+            "text": "Differentiability gives $f(x+h)\\to f(x)$ and both quotient limits.",
+            "usesHypothesis": "Differentiability of both factors at $x$ implies continuity there."
+          }
+        ],
+        "result": "$(fg)'=fg'+f'g$.",
+        "verification": "For $f=g=x$, the result gives $(x^2)'=x+x=2x$, unlike $f'g'=1$."
+      },
+      {
+        "kind": "equation",
+        "id": "trigonometric-rule-families",
+        "title": "Trigonometric derivatives in radians",
+        "tex": "\\begin{aligned}(\\sin x)'&=\\cos x &(\\cos x)'&=-\\sin x\\\\(\\tan x)'&=\\sec^2x &(\\cot x)'&=-\\csc^2x\\\\(\\sec x)'&=\\sec x\\tan x &(\\csc x)'&=-\\csc x\\cot x\\end{aligned}",
+        "note": "The sine and cosine derivatives use the radian sine limit. Tangent and secant require $\\cos x\\ne0$; cotangent and cosecant require $\\sin x\\ne0$. The quotient rule yields the latter four from sine and cosine."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "product-rule-transfer",
+        "outcome": "Differentiate a product while retaining both changing contributions.",
+        "kind": "computational",
+        "prompt": "Differentiate $x^2\\sin x$ and check the derivative at $x=\\pi$ without graphing.",
+        "hint": "Treat $x^2$ and $\\sin x$ as separate factors.",
+        "solution": "The derivative is $2x\\sin x+x^2\\cos x$. At $x=\\pi$ it is $-\\pi^2$ because sin π=0 and cos π=−1.",
+        "solutionTex": "\\frac d{dx}(x^2\\sin x)=2x\\sin x+x^2\\cos x,\\quad f'(\\pi)=-\\pi^2",
+        "rubric": [
+          "Differentiate both factors.",
+          "Keep the original companion factor in each term.",
+          "Evaluate the trig values in radians."
+        ]
+      },
+      {
+        "id": "trig-quotient-transfer",
+        "outcome": "Derive a trigonometric derivative with its domain rather than memorizing it.",
+        "kind": "proof",
+        "prompt": "Derive $(\\tan x)'=\\sec^2x$ from $\\tan x=\\sin x/\\cos x$. State its domain.",
+        "hint": "Use the quotient rule and $\\sin^2x+\\cos^2x=1$.",
+        "solution": "When cos x≠0, the quotient rule gives (cos²x+sin²x)/cos²x=1/cos²x=sec²x. The derivative is only defined where x≠π/2+kπ for integer k.",
+        "solutionTex": "(\\tan x)'=\\frac{\\cos^2x+\\sin^2x}{\\cos^2x}=\\sec^2x,\\quad\\cos x\\ne0",
+        "rubric": [
+          "Apply quotient numerator order correctly.",
+          "Use the Pythagorean identity.",
+          "Exclude zeros of cosine."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Choose the outer operation",
@@ -270,6 +459,50 @@
   "chain-rule-single": {
     "prerequisites": ["differentiation-rules", "linearization-differentials"],
     "reasoning": "Proof sketch",
+    "supplementalBlocks": [
+      {
+        "kind": "derivation",
+        "id": "chain-rule-remainder",
+        "title": "Keep the zero inner increment case",
+        "strategy": "Express both differentiability errors with coefficients that tend to zero; avoid dividing by the inner increment.",
+        "setup": "Put $u=g(a)$, $k=g(a+h)-g(a)$, and write $r_f(k)=k\\eta(k)$ with $\\eta(k)\\to0$ and $\\eta(0)=0$.",
+        "steps": [
+          {
+            "label": "Inner estimate",
+            "text": "$k=g'(a)h+o(h)$, so $k/h$ stays bounded as $h\\to0$.",
+            "usesHypothesis": "$g$ differentiable at $a$."
+          },
+          {
+            "label": "Outer estimate",
+            "text": "$f(u+k)-f(u)=f'(u)k+k\\eta(k)$, including $k=0$.",
+            "usesHypothesis": "$f$ differentiable at $u=g(a)$."
+          },
+          {
+            "label": "Combine",
+            "text": "The error divided by $h$ is $f'(u)(k/h-g'(a))+\\eta(k)(k/h)$; both terms tend to zero.",
+            "equation": "\\frac{f(g(a+h))-f(g(a))}{h}=f'(g(a))\\frac{k}{h}+\\eta(k)\\frac{k}{h}"
+          }
+        ],
+        "result": "$(f\\circ g)'(a)=f'(g(a))g'(a)$, even when $g'(a)=0$ or some nonzero $h$ gives $k=0$.",
+        "verification": "No step divides by $k$, so a locally flat inner function causes no gap."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "zero-inner-increment",
+        "outcome": "Apply the chain rule when the inner derivative vanishes without invalid division.",
+        "kind": "proof",
+        "prompt": "For $g(x)=x^2$ and differentiable $f$ at 0, find $(f\\circ g)'(0)$. Explain why dividing a difference quotient by $g(h)-g(0)$ is unsafe as a general proof step.",
+        "hint": "Use $f(k)=f(0)+f'(0)k+o(k)$ with $k=h^2$.",
+        "solution": "The increment is f(h²)−f(0)=f′(0)h²+o(h²). Dividing by h gives f′(0)h+o(h)→0. A general g can have g(a+h)=g(a) for some nonzero h, so dividing by its increment may be undefined; the remainder proof avoids it.",
+        "solutionTex": "\\frac{f(h^2)-f(0)}h=f'(0)h+o(h)\\longrightarrow0",
+        "rubric": [
+          "Use the outer differentiability at zero.",
+          "Obtain derivative zero.",
+          "Explain the zero-increment division issue."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Make little-o explicit",
@@ -319,6 +552,58 @@
   "linearization-differentials": {
     "prerequisites": ["derivative-definition"],
     "reasoning": "Proof sketch",
+    "supplementalBlocks": [
+      {
+        "kind": "assumption",
+        "id": "asymptotic-notation-assumptions",
+        "title": "Read the remainder notation precisely",
+        "items": [
+          "$R(h)=O(h^2)$ means there are $C,\\delta>0$ with $|R(h)|\\le C|h|^2$ whenever $0<|h|<\\delta$.",
+          "$R(h)=o(|h|)$ means $R(h)/|h|\\to0$ as $h\\to0$.",
+          "An $O(h^2)$ bound implies $o(|h|)$, but a bare $o(|h|)$ statement supplies no fixed quadratic constant."
+        ]
+      },
+      {
+        "kind": "worked-example",
+        "id": "quadratic-linearization-remainder",
+        "title": "One exact error, two kinds of control",
+        "strategy": "Subtract the affine model and compare the residual with powers of the step.",
+        "setup": "$f(x)=x^2$ at $a=1$; write $x=1+h$.",
+        "steps": [
+          {
+            "label": "Model",
+            "text": "$f(1)=1$ and $f'(1)=2$, so the affine approximation is $1+2h$."
+          },
+          {
+            "label": "Residual",
+            "text": "The exact remainder is $h^2$.",
+            "equation": "f(1+h)-(1+2h)=h^2"
+          },
+          {
+            "label": "Classify",
+            "text": "$|h^2|\\le1|h|^2$ gives $O(h^2)$; $h^2/|h|=|h|\\to0$ gives $o(|h|)$."
+          }
+        ],
+        "result": "$f(1+h)=1+2h+O(h^2)=1+2h+o(|h|)$ near zero.",
+        "verification": "For a specified tolerance $\\varepsilon$, $|h|<\\sqrt\\varepsilon$ ensures the exact error $h^2<\\varepsilon$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "big-o-little-o-transfer",
+        "outcome": "Distinguish a uniform quadratic bound from first-order asymptotic smallness.",
+        "kind": "conceptual",
+        "prompt": "For $R(h)=|h|^{3/2}$, decide whether $R(h)=o(|h|)$ and whether $R(h)=O(h^2)$ as $h\\to0$. Justify each answer from a ratio or bound.",
+        "hint": "Compare $R(h)/|h|$ and $R(h)/h^2$ separately.",
+        "solution": "R(h)/|h|=|h|^(1/2)→0, so R=o(|h|). But R(h)/h²=1/√|h| is unbounded near zero, so no fixed C gives R≤C h² on a deleted neighborhood; R is not O(h²).",
+        "solutionTex": "\\frac{|h|^{3/2}}{|h|}=|h|^{1/2}\\to0,\\qquad\\frac{|h|^{3/2}}{h^2}=|h|^{-1/2}\\to\\infty",
+        "rubric": [
+          "Check each notation by its own definition.",
+          "Use a deleted neighborhood.",
+          "Do not infer a quadratic bound from little-o of first order."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Linear versus affine",
@@ -368,6 +653,124 @@
   "rolle-mean-value": {
     "prerequisites": ["extrema-fermat", "continuity-ivt"],
     "reasoning": "Complete proof",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "rolle-theorem",
+        "title": "Rolle’s theorem",
+        "statement": "If $f(a)=f(b)$, some $c$ strictly between $a$ and $b$ has $f'(c)=0$.",
+        "hypotheses": [
+          "$a<b$ and $f$ is continuous on $[a,b]$.",
+          "$f$ is differentiable on $(a,b)$.",
+          "$f(a)=f(b)$."
+        ],
+        "prerequisites": [
+          "Extreme value theorem",
+          "Fermat’s theorem for interior extrema"
+        ],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "rolle-proof",
+        "title": "Why Rolle’s point exists",
+        "strategy": "Use an attained extremum; equal endpoint values force a nonconstant function’s relevant extremum inside.",
+        "setup": "Let $k=f(a)=f(b)$.",
+        "steps": [
+          {
+            "label": "Attainment",
+            "text": "Continuity on the closed interval gives both a maximum and a minimum.",
+            "usesHypothesis": "Continuity on $[a,b]$ and $a<b$."
+          },
+          {
+            "label": "Interior point",
+            "text": "If $f$ is constant, choose any $c\\in(a,b)$. Otherwise a value differs from $k$, so the maximum or minimum in that direction cannot occur at either endpoint.",
+            "usesHypothesis": "$f(a)=f(b)=k$."
+          },
+          {
+            "label": "Stationarity",
+            "text": "At that interior extremum, Fermat’s theorem gives $f'(c)=0$.",
+            "usesHypothesis": "Differentiability on $(a,b)$."
+          }
+        ],
+        "result": "There is $c\\in(a,b)$ with $f'(c)=0$.",
+        "verification": "The constant case also has derivative zero at every interior point."
+      },
+      {
+        "kind": "theorem",
+        "id": "mean-value-theorem",
+        "title": "Mean value theorem",
+        "statement": "Some $c\\in(a,b)$ satisfies $f'(c)=(f(b)-f(a))/(b-a)$.",
+        "hypotheses": [
+          "$a<b$ and $f$ is continuous on $[a,b]$.",
+          "$f$ is differentiable on $(a,b)$."
+        ],
+        "prerequisites": ["Rolle’s theorem"],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "mean-value-proof",
+        "title": "Subtract the secant",
+        "strategy": "Make an equal-endpoint function and apply Rolle’s theorem.",
+        "setup": "Write $m=(f(b)-f(a))/(b-a)$ and $g(x)=f(x)-f(a)-m(x-a)$.",
+        "steps": [
+          {
+            "label": "Endpoint check",
+            "text": "$g(a)=g(b)=0$ by the definition of $m$.",
+            "equation": "g(a)=0,\\qquad g(b)=f(b)-f(a)-m(b-a)=0"
+          },
+          {
+            "label": "Apply Rolle",
+            "text": "$g$ is continuous on $[a,b]$ and differentiable on $(a,b)$, so $g'(c)=0$ for some interior $c$.",
+            "usesHypothesis": "Both regularity hypotheses on $f$; subtracting a linear function preserves them."
+          },
+          {
+            "label": "Recover the slope",
+            "text": "Since $g'(c)=f'(c)-m$, its vanishing gives the required secant slope."
+          }
+        ],
+        "result": "$f'(c)=(f(b)-f(a))/(b-a)$ for some $a<c<b$.",
+        "verification": "When $f(a)=f(b)$, the formula reduces to Rolle’s zero-slope conclusion."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mean-value-worked-square",
+        "title": "Locate the matching tangent",
+        "strategy": "Compute the secant slope, then solve the derivative equation within the interval.",
+        "setup": "$f(x)=x^2$ on $[0,b]$ with $b>0$.",
+        "steps": [
+          {
+            "label": "Eligibility",
+            "text": "A polynomial is continuous and differentiable on the required intervals; $b>0$ makes this a nondegenerate interval."
+          },
+          {
+            "label": "Secant",
+            "text": "The average slope is $b$.",
+            "equation": "\\frac{f(b)-f(0)}{b-0}=\\frac{b^2}{b}=b"
+          },
+          { "label": "Tangent", "text": "Solve $2c=b$, giving $c=b/2$." }
+        ],
+        "result": "$c=b/2$.",
+        "verification": "$0<b/2<b$ and $f'(b/2)=b$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "zero-derivative-constant",
+        "outcome": "Use the mean value theorem to prove a global consequence from local slopes.",
+        "kind": "proof",
+        "prompt": "Let $f$ be continuous on $[a,b]$, differentiable on $(a,b)$, and $f'(x)=0$ throughout $(a,b)$. Prove $f$ is constant on $[a,b]$.",
+        "hint": "Choose arbitrary $u<v$ in the interval. Apply the theorem on $[u,v]$.",
+        "solution": "For any $u<v$ in $[a,b]$, MVT gives $c\\in(u,v)$ with $(f(v)-f(u))/(v-u)=f'(c)=0$. Thus $f(v)=f(u)$. Since the pair was arbitrary, $f$ is constant.",
+        "solutionTex": "\\forall u<v,\\quad\\frac{f(v)-f(u)}{v-u}=f'(c)=0\\implies f(v)=f(u)",
+        "rubric": [
+          "Apply MVT to arbitrary points, not only the original endpoints.",
+          "State continuity and differentiability on the chosen subinterval.",
+          "Conclude equality of all values."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Rolle’s theorem supplies the bridge",
@@ -514,6 +917,97 @@
   "inverse-functions": {
     "prerequisites": ["chain-rule-single", "continuity-ivt"],
     "reasoning": "Theorem used without proof",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "inverse-existence",
+        "title": "Existence of an inverse",
+        "statement": "A continuous strictly monotone function on an interval has an inverse on its range.",
+        "hypotheses": [
+          "The domain is an interval.",
+          "$f$ is continuous and strictly monotone on it."
+        ],
+        "prerequisites": ["Continuity and the intermediate value theorem"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "inverse-derivative-theorem",
+        "title": "Local inverse derivative theorem",
+        "statement": "Near $a$, the inverse exists and is differentiable near $f(a)$; at a corresponding input, $(f^{-1})'(f(a))=1/f'(a)$.",
+        "hypotheses": [
+          "$f$ is continuously differentiable near $a$.",
+          "$f'(a)\\ne0$.",
+          "Use a one-to-one local branch."
+        ],
+        "prerequisites": ["Local inverse theorem"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "inverse-derivative-identity",
+        "title": "Differentiate after existence is known",
+        "strategy": "Use the inverse identity only after the theorem supplies a differentiable inverse.",
+        "setup": "Let $y=f(x)$ on the local branch, so $x=f^{-1}(y)$.",
+        "steps": [
+          {
+            "label": "Identity",
+            "text": "On that branch $f(f^{-1}(y))=y$.",
+            "usesHypothesis": "A local inverse exists."
+          },
+          {
+            "label": "Chain rule",
+            "text": "Differentiate the identity where the inverse is differentiable.",
+            "equation": "f'(f^{-1}(y))(f^{-1})'(y)=1",
+            "usesHypothesis": "The imported local inverse derivative theorem; this calculation does not prove existence."
+          },
+          {
+            "label": "Divide",
+            "text": "The derivative at the corresponding input is nonzero, so division is valid.",
+            "usesHypothesis": "$f'(a)\\ne0$ locally."
+          }
+        ],
+        "result": "$(f^{-1})'(y)=1/f'(f^{-1}(y))$.",
+        "verification": "For $f(x)=x^3$, $f'(0)=0$ and its inverse cube root has no finite derivative at zero; the hypothesis matters."
+      },
+      {
+        "kind": "worked-example",
+        "id": "inverse-worked-cubic",
+        "title": "Differentiate an inverse at an output",
+        "strategy": "Find the input first, check the theorem’s conditions, then take the reciprocal slope.",
+        "setup": "$f(x)=x^3+x$; find $(f^{-1})'(2)$.",
+        "steps": [
+          { "label": "Input", "text": "$f(1)=2$, so $f^{-1}(2)=1$." },
+          {
+            "label": "Eligibility",
+            "text": "$f'(x)=3x^2+1>0$ everywhere, so $f$ is strictly increasing and the derivative is nonzero."
+          },
+          {
+            "label": "Reciprocal",
+            "text": "$f'(1)=4$; the inverse slope at output 2 is its reciprocal.",
+            "equation": "(f^{-1})'(2)=\\frac{1}{f'(1)}=\\frac14"
+          }
+        ],
+        "result": "$(f^{-1})'(2)=1/4$.",
+        "verification": "The reciprocal is evaluated at input 1, not at output 2."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "choose-inverse-branch",
+        "outcome": "Choose an inverse branch before using the derivative formula.",
+        "kind": "method-choice",
+        "prompt": "For $f(x)=x^2$ on all real numbers, a student writes $(f^{-1})'(4)=1/4$. Explain the problem. Give the inverse derivative at 4 on each monotone branch.",
+        "hint": "One output has two inputs. Restrict the domain to $[0,\\infty)$ or $(-\\infty,0]$ first.",
+        "solution": "There is no inverse function on all real inputs: 4 comes from both 2 and −2. On the nonnegative branch the inverse is $\\sqrt y$, with derivative $1/(2\\sqrt4)=1/4$. On the nonpositive branch the inverse is $-\\sqrt y$, with derivative $-1/4$ at 4.",
+        "solutionTex": "f^{-1}_{+}(y)=\\sqrt y,\\ (f^{-1}_{+})'(4)=\\tfrac14;\\quad f^{-1}_{-}(y)=-\\sqrt y,\\ (f^{-1}_{-})'(4)=-\\tfrac14",
+        "rubric": [
+          "Identify the lack of injectivity on the original domain.",
+          "Name each branch and its range.",
+          "Keep the negative branch’s derivative sign."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Existence precedes the derivative",
@@ -562,6 +1056,117 @@
   "lhopital": {
     "prerequisites": ["rolle-mean-value", "exponential-logarithmic"],
     "reasoning": "Theorem used without proof",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "cauchy-mean-value-theorem",
+        "title": "Cauchy’s mean value theorem (imported)",
+        "statement": "There is $c\\in(a,b)$ such that $(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)$.",
+        "hypotheses": [
+          "$a<b$.",
+          "$f$ and $g$ are continuous on $[a,b]$.",
+          "$f$ and $g$ are differentiable on $(a,b)$."
+        ],
+        "prerequisites": ["Rolle’s theorem"],
+        "status": "Theorem used without proof"
+      }
+    ],
+    "supplementalBlocks": [
+      {
+        "kind": "theorem",
+        "id": "lhopital-zero-zero-one-sided",
+        "title": "A one-sided 0/0 rule",
+        "statement": "If $f/g$ has 0/0 form at $a$ and $f'(x)/g'(x)\\to L$, then $f(x)/g(x)\\to L$ from the same side under the listed conditions.",
+        "hypotheses": [
+          "$f$ and $g$ are continuous to $a$ from that side, with $f(a)=g(a)=0$.",
+          "$f$ and $g$ are differentiable on a deleted one-sided interval.",
+          "$g'(x)\\ne0$ there and the derivative ratio has a finite or signed infinite limit $L$."
+        ],
+        "prerequisites": ["Cauchy’s mean value theorem"],
+        "status": "Proof sketch"
+      },
+      {
+        "kind": "derivation",
+        "id": "lhopital-cauchy-bridge",
+        "title": "Where Cauchy’s theorem enters",
+        "strategy": "Compare each nearby point with the endpoint at which both functions vanish.",
+        "setup": "For $x$ on the chosen side of $a$, apply Cauchy’s mean value theorem to $f,g$ on the interval between $a$ and $x$.",
+        "steps": [
+          {
+            "label": "Intermediate point",
+            "text": "There is $c_x$ between $a$ and $x$ with $f(x)g'(c_x)=g(x)f'(c_x)$.",
+            "usesHypothesis": "Continuity up to the endpoint and differentiability inside; both endpoint values are zero."
+          },
+          {
+            "label": "Divide",
+            "text": "$g'(c_x)\\ne0$; Cauchy’s relation and the mean value theorem for $g$ make $g(x)\\ne0$ for $x\\ne a$.",
+            "equation": "\\frac{f(x)}{g(x)}=\\frac{f'(c_x)}{g'(c_x)}"
+          },
+          {
+            "label": "Limit",
+            "text": "As $x\\to a$, $c_x\\to a$, so the derivative-ratio limit passes to the original quotient."
+          }
+        ],
+        "result": "$f(x)/g(x)\\to L$ from the chosen side.",
+        "verification": "This proves the endpoint 0/0 case; an infinity/infinity case needs a separate argument rather than setting infinite endpoint values."
+      },
+      {
+        "kind": "theorem",
+        "id": "lhopital-infinity-infinity-one-sided",
+        "title": "A one-sided ∞/∞ version (imported)",
+        "statement": "If $|f(x)|,|g(x)|\\to\\infty$ and $f'(x)/g'(x)\\to L$ for finite $L$, then $f(x)/g(x)\\to L$ under the listed conditions.",
+        "hypotheses": [
+          "$f,g$ are differentiable on a one-sided interval approaching the endpoint.",
+          "$g'(x)\\ne0$ there, and $|g(x)|\\to\\infty$.",
+          "The derivative ratio tends to a finite $L$."
+        ],
+        "prerequisites": [
+          "Cauchy’s mean value theorem plus a fixed interior comparison point"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lhopital-convert-product",
+        "title": "Convert a product before using the rule",
+        "strategy": "Identify the indeterminate form, rewrite as a quotient, then check the new quotient.",
+        "setup": "Find $\\lim_{x\\to0^+}x\\ln x$.",
+        "steps": [
+          {
+            "label": "Form",
+            "text": "$x\\to0^+$ and $\\ln x\\to-\\infty$, so the original expression is a product, not an eligible quotient."
+          },
+          {
+            "label": "Convert",
+            "text": "$x\\ln x=\\ln x/(1/x)$ has magnitude ∞/∞; both functions are differentiable for $x>0$, and the denominator derivative is nonzero."
+          },
+          {
+            "label": "Derivative ratio",
+            "text": "The ratio of derivatives tends to zero.",
+            "equation": "\\frac{(\\ln x)'}{(1/x)'}=\\frac{1/x}{-1/x^2}=-x\\longrightarrow0"
+          }
+        ],
+        "result": "$x\\ln x\\to0$ as $x\\to0^+$.",
+        "verification": "The quotient rule here concerns limits of ratios, not equality between the original quotient and its derivative quotient at each $x$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lhopital-form-choice",
+        "outcome": "Classify eligible, convertible, and ineligible expressions before applying L’Hôpital’s rule.",
+        "kind": "method-choice",
+        "prompt": "As $x\\to0^+$, classify $(e^x-1)/x$, $x^x$, and $(x+1)/x$ as directly eligible, convertible, or ineligible for L’Hôpital. Evaluate $x^x$ using a justified conversion.",
+        "hint": "Take a logarithm of the positive power, then rewrite $x\\ln x$ as a quotient.",
+        "solution": "(e^x−1)/x is direct 0/0. The positive power x^x is 0^0 and first requires ln(x^x)=x ln x=ln x/(1/x), an ∞/∞ quotient. Its derivative ratio is −x→0, so ln(x^x)→0 and x^x→1. (x+1)/x has numerator→1 and denominator→0, so neither rule applies; it diverges to +∞ from the right.",
+        "solutionTex": "\\ln(x^x)=\\frac{\\ln x}{1/x}\\xrightarrow{\\mathrm{L'H}}0,\\quad x^x\\to1",
+        "rubric": [
+          "Check the form of each original expression.",
+          "Use logarithms only for the positive power.",
+          "Check differentiability and nonzero denominator derivative after conversion.",
+          "Reject the ineligible nonindeterminate quotient."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "State a usable version",
@@ -757,14 +1362,22 @@
       {
         "title": "Measure from the actual axis",
         "text": "About y=−1 the same region has radii 1+x and 1+x². The volume becomes $\\pi\\int_0^1[(1+x)^2-(1+x^2)^2]\\,dx$=7π/15. Both radii are distances from the axis, not graph heights above zero."
+      },
+      {
+        "title": "The slice shape determines its area",
+        "text": "A volume built on the base 0≤x≤1, x²≤y≤x need not come from rotation. If every perpendicular section at x is a square, its side is x−x² and area is (x−x²)². Thus V=∫₀¹(x−x²)²dx=1/30. For an equilateral triangle with that side, multiply the squared side by √3/4. A disk or washer factor π belongs only to circular slices."
       }
     ],
     "exercise": {
-      "prompt": "A region has $1\\le y\\le 2$ on $0\\le x\\le 3$. Rotate it about $y=0$; find the volume.",
-      "hint": "Every slice is the same washer.",
-      "solution": "V=$\\int_0^3\\pi(2^2-1^2)\\,dx$=9π. Squaring the thickness would give only 3π and incorrectly discard part of the annulus.",
-      "rubric": ["Subtract squared radii.", "Use the axial interval length."],
-      "solutionTex": "V=\\int_0^3\\pi(2^2-1^2)\\,dx=9\\pi"
+      "prompt": "Over the base $0\\le x\\le1$, $x^2\\le y\\le x$, a solid has perpendicular cross-sections that are equilateral triangles. Find its volume and explain why no washer radius is needed.",
+      "hint": "The triangle side is the vertical width x−x²; its area is √3 times side squared divided by 4.",
+      "solution": "A(x)=√3(x−x²)²/4. Since ∫₀¹(x−x²)²dx=1/30, V=√3/120. The solid is specified by triangular sections, not by rotating the base region.",
+      "rubric": [
+        "Use the actual section shape and vertical base width.",
+        "Square the width before integrating over x.",
+        "Do not insert a circular π factor."
+      ],
+      "solutionTex": "V=\\frac{\\sqrt3}{4}\\int_0^1(x-x^2)^2\\,dx=\\frac{\\sqrt3}{120}"
     }
   },
   "cylindrical-shells": {
@@ -778,17 +1391,22 @@
       {
         "title": "Choose slices relative to the axis",
         "text": "Shell slices are parallel to the rotation axis; washer slices are perpendicular. Radii are nonnegative distances. If the region crosses the axis, naive shells from both sides may sweep the same volume twice; first describe the actual solid or split without overlap."
+      },
+      {
+        "title": "Hold the region and axis fixed when comparing methods",
+        "text": "For the SAME region 0≤x≤1, x²≤y≤x rotated about the x-axis, vertical washers use outer radius x and inner radius x²: π∫₀¹(x²−x⁴)dx=2π/15. Horizontal shells use radius y and height √y−y: 2π∫₀¹y(√y−y)dy=2π/15. The inversion x=y or x=√y comes from that same region; changing the axis would compare different solids."
       }
     ],
     "exercise": {
-      "prompt": "Rotate $0\\le y\\le 1-x$, $0\\le x\\le 1$, about the y-axis.",
-      "hint": "Shell radius is x and height is 1−x.",
-      "solution": "V=$2\\pi\\int_0^1x(1-x)\\,dx$=π/3, agreeing with a cone of radius 1 and height 1.",
+      "prompt": "For the fixed region $0\\le x\\le1$, $0\\le y\\le1-x$ rotated about the y-axis, set up both shells and perpendicular disks, and verify the same volume.",
+      "hint": "Vertical shells have radius x and height 1−x. Horizontal disks have radius 1−y.",
+      "solution": "Shells give 2π∫₀¹x(1−x)dx=π/3. Disks give π∫₀¹(1−y)²dy=π/3. Both descriptions use the same triangle and y-axis, and neither double-counts the solid.",
       "rubric": [
-        "Identify radius and height separately.",
-        "Check against the known solid."
+        "Keep the same region and y-axis in both setups.",
+        "Identify shell radius/height and disk radius with the correct variables.",
+        "Evaluate and reconcile both integrals."
       ],
-      "solutionTex": "V=2\\pi\\int_0^1x(1-x)\\,dx=\\frac\\pi3"
+      "solutionTex": "2\\pi\\int_0^1x(1-x)\\,dx=\\pi\\int_0^1(1-y)^2\\,dy=\\frac\\pi3"
     }
   },
   "integration-by-parts": {
@@ -802,17 +1420,22 @@
       {
         "title": "Definite terms and choice",
         "text": "For $\\int_0^1xe^x\\,dx$, choose u=x, dv=eˣdx. The boundary term [xeˣ]₀¹=e and the remaining integral is e−1, so the answer is 1. Choosing u=eˣ and dv=x dx creates an x²eˣ integral, increasing the polynomial degree instead of reducing it."
+      },
+      {
+        "title": "Stage the next method after parts",
+        "text": "For ∫x arctan x dx, choose u=arctan x and dv=x dx because differentiating the inverse tangent gives a rational function. Parts yields x² arctan x/2−(1/2)∫x²/(1+x²)dx. Divide x²/(1+x²)=1−1/(1+x²), then finish with x² arctan x/2−x/2+arctan x/2+C. The second method is chosen after seeing the simpler remainder."
       }
     ],
     "exercise": {
-      "prompt": "Evaluate $\\int_0^1x^2e^x\\,dx$.",
-      "hint": "Use the repeated-parts antiderivative and both endpoints.",
-      "solution": "The antiderivative is eˣ(x²−2x+2). Its endpoint values are e and 2, so the integral is e−2.",
+      "prompt": "Choose and justify the first method for $\\int_0^1 x\\arctan x\\,dx$, then identify the second method needed for the remainder and evaluate.",
+      "hint": "Let u=arctan x and dv=x dx. After parts, divide x² by 1+x² before integrating.",
+      "solution": "Parts is useful because d(arctan x)=dx/(1+x²). It gives [x² arctan x/2]₀¹−(1/2)∫₀¹x²/(1+x²)dx. Divide x²/(1+x²)=1−1/(1+x²); the result is π/4−1/2. Choosing u=x makes the antiderivative of arctan x the harder first step.",
       "rubric": [
-        "Reduce the polynomial degree twice.",
-        "Retain the lower boundary term."
+        "Justify the u,dv choice before calculating.",
+        "Use rational division for the remainder.",
+        "Apply both endpoint terms and simplify."
       ],
-      "solutionTex": "\\int_0^1x^2e^x\\,dx=[e^x(x^2-2x+2)]_0^1=e-2"
+      "solutionTex": "\\int_0^1x\\arctan x\\,dx=\\left[\\frac{x^2\\arctan x}{2}-\\frac{x}{2}+\\frac{\\arctan x}{2}\\right]_0^1=\\frac\\pi4-\\frac12"
     }
   },
   "trigonometric-integrals": {
@@ -847,14 +1470,26 @@
       {
         "title": "Include the differential",
         "text": "For ∫√(1−x²)dx, x=sin θ and dx=cos θ dθ give ∫cos²θ dθ. Substituting back gives (arcsin x+x√(1−x²))/2+C on the interior of [−1,1]. A diagram helps recover the factors but does not replace the branch choice."
+      },
+      {
+        "title": "The secant branch depends on the x-domain",
+        "text": "For √(x²−a²), a>0 and x≥a, take x=a sec θ with 0≤θ<π/2. Then tan θ≥0 and √(x²−a²)=a tan θ, not a|tan θ|. On x≤−a use x=−a sec θ on the same angle range and transform dx with its negative sign. One substitution formula cannot silently cross the gap (−a,a)."
+      },
+      {
+        "title": "The tangent branch keeps secant positive",
+        "text": "For √(x²+4), x=2tan θ with −π/2<θ<π/2 gives sec θ>0, so √(x²+4)=2sec θ. In ∫dx/(x²+4)^(3/2), dx=2sec²θ dθ reduces the integrand to cos θ/4. The result is x/[4√(x²+4)]+C. Without the angle range, replacing √(sec²θ) by sec θ could have the wrong sign."
       }
     ],
     "exercise": {
-      "prompt": "Evaluate $\\int_0^1\\frac{dx}{\\sqrt{4-x^2}}$.",
-      "hint": "Use x=2 sin θ with θ from 0 to π/6.",
-      "solution": "The differential and square root both contribute 2cos θ and cancel, leaving $\\int_0^{\\pi/6}d\\theta$=π/6.",
-      "rubric": ["Transform the endpoints.", "Justify cos θ≥0."],
-      "solutionTex": "\\int_0^1\\frac{dx}{\\sqrt{4-x^2}}=\\int_0^{\\pi/6}d\\theta=\\frac\\pi6"
+      "prompt": "Evaluate A=$\\int_2^4 dx/\\sqrt{x^2-4}$ and B=$\\int_0^3 dx/(x^2+9)^{3/2}$ by trigonometric substitutions. Choose secant or tangent for each, state the branches, and transform the bounds.",
+      "hint": "For A use x=2sec θ, 0≤θ≤π/3. For B use x=3tan θ, 0≤θ≤π/4. Check the sign of each square root on its chosen branch.",
+      "solution": "A: x=2sec θ gives √(x²−4)=2tan θ and dx=2sec θ tan θ dθ on 0≤θ≤π/3, so A=∫₀^{π/3}sec θ dθ=ln(2+√3). B: x=3tan θ gives √(x²+9)=3sec θ>0 and dx=3sec² θ dθ on 0≤θ≤π/4, so B=(1/9)∫₀^{π/4}cos θ dθ=√2/18. Both signs follow from the declared branches.",
+      "rubric": [
+        "Choose secant for the difference and tangent for the sum, with explicit branches.",
+        "Transform bounds, differentials, and square-root signs for both.",
+        "Evaluate both transformed integrals."
+      ],
+      "solutionTex": "A=\\int_0^{\\pi/3}\\sec\\theta\\,d\\theta=\\ln(2+\\sqrt3),\\quad B=\\frac19\\int_0^{\\pi/4}\\cos\\theta\\,d\\theta=\\frac{\\sqrt2}{18}"
     }
   },
   "partial-fractions": {
@@ -868,17 +1503,22 @@
       {
         "title": "Solve coefficients explicitly",
         "text": "For (x²+1)/(x(x−1)²), write A/x+B/(x−1)+C/(x−1)². Multiplying through gives x²+1=A(x−1)²+Bx(x−1)+Cx. Setting x=0 gives A=1, x=1 gives C=2, and the x² coefficient gives B=0. Integrating yields ln|x|−2/(x−1)+C₀ on each component. For (x+1)/(x²+1), split into a logarithmic derivative and an arctangent: (1/2)ln(x²+1)+arctan x."
+      },
+      {
+        "title": "Decide the algebra before integrating",
+        "text": "For a rational integrand, first compare polynomial degrees and divide if improper. Factor the remaining denominator over the reals, then include every power of a repeated linear factor and a linear numerator over each irreducible quadratic. Solve the coefficient identity and only then integrate. This algebraic route differs from parts, which is chosen for a product whose differentiated factor simplifies. Verify a proposed antiderivative by differentiation on each domain component."
       }
     ],
     "exercise": {
-      "prompt": "Integrate $x^2/(x-1)$.",
-      "hint": "Perform polynomial division before partial fractions.",
-      "solution": "x²/(x−1)=x+1+1/(x−1). The integral is x²/2+x+ln|x−1|+C on either side of 1.",
+      "prompt": "Choose the first algebraic step, then integrate $\\int(2x+3)/[x(x+1)^2]\\,dx$ on one interval avoiding its poles. Explain why a repeated-factor term is required.",
+      "hint": "The rational function is proper. Write A/x+B/(x+1)+C/(x+1)² before solving coefficients.",
+      "solution": "No division is needed. The repeated factor requires both 1/(x+1) and 1/(x+1)² terms. Solving 2x+3=A(x+1)²+Bx(x+1)+Cx gives A=3, B=−3, C=−1. Integrating gives 3ln|x|−3ln|x+1|+1/(x+1)+C on each interval separated by −1 and 0.",
       "rubric": [
-        "Make the rational remainder proper.",
-        "Keep the excluded point and absolute value."
+        "Check properness and factor structure before choosing the template.",
+        "Include both powers of the repeated factor and solve the identity.",
+        "Integrate with logarithm signs and domain components intact."
       ],
-      "solutionTex": "\\int\\frac{x^2}{x-1}\\,dx=\\frac{x^2}{2}+x+\\ln|x-1|+C"
+      "solutionTex": "\\int\\frac{2x+3}{x(x+1)^2}\\,dx=3\\ln|x|-3\\ln|x+1|+\\frac1{x+1}+C"
     }
   },
   "quadrature-midpoint-trapezoid": {
@@ -1028,7 +1668,7 @@
     "sections": [
       {
         "title": "Sum means a limit of partial sums",
-        "text": "For a series Σaₙ, define S_N as its first N terms. Convergence means S_N approaches a finite number, not merely aₙ→0. For Σ from n=0 of rⁿ, S_N=(1−r^(N+1))/(1−r) when r≠1; its infinite sum is 1/(1−r) only for |r|<1."
+        "text": "For a series starting at n=0, define S_N as its first N terms, from n=0 through n=N−1. Convergence means S_N approaches a finite number, not merely aₙ→0. For the geometric series, S_N=1+r+⋯+r^(N−1)=(1−r^N)/(1−r) when r≠1; at N=1 this is just 1. Its infinite sum is 1/(1−r) only for |r|<1. Some books instead use S_N for the sum through index N; that has N+1 terms and numerator 1−r^(N+1)."
       },
       {
         "title": "Keep the surviving boundary terms",
@@ -1077,6 +1717,10 @@
       {
         "title": "A comparison of positive tails",
         "text": "If f is positive, continuous and decreasing eventually, with aₙ=f(n), then Σaₙ and ∫f share convergence behavior. Finite initial exceptions do not affect convergence. This is not an equality between sum and integral."
+      },
+      {
+        "title": "A logarithmic benchmark",
+        "text": "For n≥2, compare Σ1/[n(log n)^p] with ∫₂^∞ dx/[x(log x)^p]. Positivity and eventual decrease hold for every fixed real p. Substituting u=log x gives ∫ from log 2 to ∞ of u^(−p) du: it converges exactly when p>1. The boundary p=1 diverges, despite the extra logarithm. This benchmark is useful when a plain p-series comparison loses the decisive log factor."
       },
       {
         "title": "Bound the remainder",
@@ -1153,17 +1797,22 @@
       {
         "title": "A limit of one is inconclusive",
         "text": "Both 1/n and 1/n² have ratio and nth-root limits equal to 1, yet one series diverges and the other converges. For ratio or root limit below 1, conclude absolute convergence; above 1, terms fail to tend to zero. More general limsup forms need their own statement."
+      },
+      {
+        "title": "Choose the test from the term's structure",
+        "text": "Before calculating a limit, ask what conclusion is needed. If terms do not approach zero, stop: the series diverges. For nonnegative terms resembling 1/[n(log n)^p], justify the integral test and check its positivity/decrease hypotheses. A factorial often favors the ratio test; a whole expression raised to n favors the root test. An alternating sign calls for separate absolute and signed convergence checks. If a ratio/root limit is 1, switch to a comparison or integral benchmark. For a power series, the ratio/root calculation only finds the open radius; test both endpoints as separate numerical series."
       }
     ],
     "exercise": {
-      "prompt": "Classify $\\sum_{n=1}^{\\infty}((3n+1)/(4n+2))^n$.",
-      "hint": "The nth root removes the outer nth power.",
-      "solution": "The root limit is 3/4<1, so the positive series converges absolutely.",
+      "prompt": "Choose a test before calculating for each: $A=\\sum_{n=2}^{\\infty}1/[n(\\log n)^2]$, $B=\\sum_{n=1}^{\\infty}n/3^n$, and $C=\\sum_{n=1}^{\\infty}(x-2)^n/n$. Classify A and B; find C's interval, checking both endpoints.",
+      "hint": "A has a logarithmic benchmark, B has an exponential/factor ratio, and C needs a radius followed by two separate endpoint series.",
+      "solution": "For A use the integral test: f(x)=1/[x(log x)²] is positive, continuous and eventually decreasing; u=log x makes the tail integral finite, so A converges. For B the ratio of successive positive terms tends to 1/3, so B converges. For C the ratio gives |x−2|<1. At x=1 the alternating harmonic series converges conditionally; at x=3 the harmonic series diverges. Its interval is [1,3). The ratio limit 1 at the endpoints alone proves neither result.",
       "rubric": [
-        "Take the absolute nth root.",
-        "Compare the limit with 1, not zero."
+        "Justify each test choice from the term structure before computing.",
+        "State the integral-test hypotheses for A and the ratio limit for B.",
+        "Treat C's two endpoints independently and distinguish conditional convergence."
       ],
-      "solutionTex": "\\lim_{n\\to\\infty}\\sqrt[n]{\\left(\\frac{3n+1}{4n+2}\\right)^n}=\\frac34<1"
+      "solutionTex": "A<\\infty,\\quad\\lim_{n\\to\\infty}\\frac{(n+1)/3^{n+1}}{n/3^n}=\\frac13,\\quad I_C=[1,3)"
     }
   },
   "power-series-radius": {
@@ -1217,6 +1866,19 @@
   "taylor-series": {
     "prerequisites": ["linearization-differentials", "power-series-radius"],
     "reasoning": "Theorem used without proof",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "taylor-finite-remainder-theorem",
+        "title": "Taylor’s finite remainder theorem (imported)",
+        "statement": "For $x$ near $a$, $f(x)=P_n(x)+f^{(n+1)}(\\xi)(x-a)^{n+1}/(n+1)!$ for some $\\xi$ between $a$ and $x$.",
+        "hypotheses": [
+          "$f$ has $n+1$ continuous derivatives on an interval containing $a$ and $x$."
+        ],
+        "prerequisites": ["Mean value theorem and repeated differentiation"],
+        "status": "Theorem used without proof"
+      }
+    ],
     "sections": [
       {
         "title": "A polynomial is not automatically an infinite expansion",
@@ -1225,17 +1887,22 @@
       {
         "title": "A smooth counterexample",
         "text": "Define f(0)=0 and f(x)=exp(−1/x²) for x≠0. Every derivative at zero vanishes (exponential decay dominates each inverse power), so its Taylor series is zero, yet f(x)>0 away from zero. For eˣ on a bounded interval, by contrast, the factorial remainder bound tends to zero."
+      },
+      {
+        "title": "Choose a nonzero center and certify a degree",
+        "text": "Center log x at a=1: Pₙ(x)=Σ from k=1 to n of (−1)^(k+1)(x−1)^k/k. For x=1.2, |f^(n+1)(t)|≤n! on [1,1.2], so Taylor's finite remainder obeys |Rₙ|≤0.2^(n+1)/(n+1). Degree 2 gives only a 0.00267 guarantee; degree 3 gives 0.0004<0.001 and P₃(1.2)=0.182666…. This finite accuracy claim follows from the derivative bound. Equality with an infinite series is a separate limit claim requiring Rₙ→0."
       }
     ],
     "exercise": {
-      "prompt": "Approximate $e^{0.1}$ by $1+0.1+0.1^2/2$ and bound the error.",
-      "hint": "Use a third-order remainder bounded by e^0.1(0.1)³/6; e^0.1<2 suffices.",
-      "solution": "The estimate is 1.105. The error is less than 2·0.001/6=1/3000. This bound certifies the finite approximation.",
+      "prompt": "Use a Taylor polynomial centered at $a=1$ to approximate $\\log(1.2)$ with certified error below $0.001$. Choose a degree from a remainder bound; state separately what would justify equality with the infinite Taylor series.",
+      "hint": "On [1,1.2], |(d^{n+1}/dx^{n+1}) log x|≤n!, hence |Rₙ|≤0.2^{n+1}/(n+1). Compare degrees 2 and 3.",
+      "solution": "Degree 3 suffices: P₃(1.2)=0.2−0.2²/2+0.2³/3≈0.182667 and |R₃|≤0.2⁴/4=0.0004. The degree-2 bound is 0.2³/3≈0.00267, so it does not certify the target. The infinite representation additionally needs proof that Rₙ→0 (which this bound provides at x=1.2).",
       "rubric": [
-        "Distinguish the polynomial from the exact value.",
-        "Bound the derivative over the interval."
+        "Center at 1 and compute the degree-3 polynomial.",
+        "Use a derivative bound to certify the requested error; do not infer it from a decimal approximation.",
+        "Separate finite accuracy from equality to the infinite series."
       ],
-      "solutionTex": "e^{0.1}\\approx1.105,\\quad |R_2|<\\frac1{3000}"
+      "solutionTex": "P_3(1.2)=\\frac15-\\frac1{50}+\\frac1{375},\\quad |R_3|\\le\\frac{(1/5)^4}{4}=\\frac1{2500}<10^{-3}"
     }
   },
   "binomial-series": {
@@ -1557,6 +2224,48 @@
   "partial-derivatives-as-slices": {
     "prerequisites": ["derivative-definition", "surfaces-and-level-sets"],
     "reasoning": "Proof sketch",
+    "nextStep": {
+      "id": "total-differentiability",
+      "label": "test one linear approximation"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "slice-to-candidate-map",
+        "title": "Slice slopes give only a candidate map",
+        "strategy": "Restrict the piecewise function to each coordinate axis before taking a quotient.",
+        "setup": "Let $q(x,y)=x^3/(x^2+y^2)$ off the origin and $q(0,0)=0$.",
+        "steps": [
+          {
+            "label": "Horizontal slice",
+            "text": "$q(h,0)=h$ for nonzero $h$, so $q_x(0,0)=1$."
+          },
+          { "label": "Vertical slice", "text": "$q(0,k)=0$, so $q_y(0,0)=0$." },
+          {
+            "label": "Candidate",
+            "text": "If a total derivative exists, it must send $(h,k)$ to $h$. This conclusion names the only possible map; it has not established a uniform remainder estimate."
+          }
+        ],
+        "result": "The candidate is $L(h,k)=h$.",
+        "verification": "The next step tests $|q(h,k)-L(h,k)|/\\sqrt{h^2+k^2}$ along all approaches."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "axes-hide-discontinuity",
+        "outcome": "Distinguish coordinate slice slopes from continuity and total differentiability.",
+        "kind": "counterexample",
+        "prompt": "Extend $u(x,y)=xy/(x^2+y^2)$ by $u(0,0)=0$. Find both partials at zero from the definition, then test continuity along $y=x$.",
+        "hint": "Both axis restrictions vanish, but the diagonal denominator is $2x^2$.",
+        "solution": "Both axis restrictions are zero, hence both partials at zero equal zero. Along $(t,t)$ for $t\\ne0$, $u(t,t)=1/2$, which does not tend to $u(0,0)=0$. It is discontinuous and cannot be totally differentiable there.",
+        "solutionTex": "u(h,0)=u(0,k)=0,\\quad u(t,t)=\\tfrac12\\ne u(0,0)",
+        "rubric": [
+          "Use the actual axis restrictions at the piecewise point.",
+          "Give an admissible diagonal path.",
+          "Do not infer continuity from two partials."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Hold the other input fixed",
@@ -1608,6 +2317,88 @@
       "linearization-differentials"
     ],
     "reasoning": "Complete proof",
+    "nextStep": {
+      "id": "partials-do-not-make-a-plane",
+      "label": "test a failing candidate"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "theorem",
+        "id": "partials-determine-candidate-map",
+        "title": "A derivative forces the slice slopes",
+        "statement": "If $f$ is totally differentiable at an interior point $a$, each coordinate partial exists and the derivative map is $Df(a)h=\\sum_i f_{x_i}(a)h_i$.",
+        "hypotheses": [
+          "$a$ is an interior point of the domain.",
+          "$f(a+h)=f(a)+Lh+o(\\|h\\|)$ for one linear map $L$."
+        ],
+        "prerequisites": [
+          "Definition of total differentiability",
+          "Coordinate basis vectors"
+        ],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "candidate-map-from-basis",
+        "title": "Restrict the approximation to basis directions",
+        "strategy": "Set the full increment to a coordinate direction and read off each coefficient of the linear map.",
+        "setup": "Write $f(a+h)=f(a)+Lh+r(h)$ with $r(h)/\\|h\\|\\to0$.",
+        "steps": [
+          {
+            "label": "First coordinate",
+            "text": "Use $h=te_1$ and divide by nonzero $t$; $r(te_1)/t\\to0$ because $|r(te_1)|/|t|\\to0$.",
+            "equation": "\\frac{f(a+te_1)-f(a)}t=L(e_1)+\\frac{r(te_1)}t"
+          },
+          {
+            "label": "Other coordinates",
+            "text": "Repeat with every basis vector $e_i$; each partial equals $L(e_i)$."
+          },
+          {
+            "label": "Linearity",
+            "text": "A linear map is determined by its basis values, so $Lh=\\sum_i f_{x_i}(a)h_i$."
+          }
+        ],
+        "result": "The partials force a unique candidate; they do not prove its residual is small.",
+        "verification": "This is a one-way implication. The next lesson supplies a continuous function with all direction slopes but no total derivative."
+      },
+      {
+        "kind": "derivation",
+        "id": "total-polynomial-remainder",
+        "title": "The full-radius remainder test",
+        "strategy": "Expand at an arbitrary base point and divide the residual by the full input distance.",
+        "setup": "$f(x,y)=x^2+y^2$ at $a=(a_1,a_2)$ with increment $(h,k)$.",
+        "steps": [
+          {
+            "label": "Expand",
+            "text": "The linear part is $2a_1h+2a_2k$ and the residual is $h^2+k^2$.",
+            "equation": "f(a_1+h,a_2+k)=f(a_1,a_2)+2a_1h+2a_2k+h^2+k^2"
+          },
+          {
+            "label": "Normalize",
+            "text": "For $r=\\sqrt{h^2+k^2}>0$, the residual divided by $r$ equals $r$, independently of direction.",
+            "equation": "\\frac{|h^2+k^2|}{\\sqrt{h^2+k^2}}=r\\longrightarrow0"
+          }
+        ],
+        "result": "$Df(a)(h,k)=2a_1h+2a_2k$ and the tangent plane is $z=f(a)+Df(a)(h,k)$.",
+        "verification": "The bound covers every nonzero increment in the disk $r<\\delta$, not selected lines alone."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "uniform-mixed-remainder",
+        "outcome": "Prove a candidate derivative with a full-radius bound.",
+        "kind": "proof",
+        "prompt": "For $f(x,y)=x^2+y^3$ at the origin, find the only candidate linear map and prove or disprove total differentiability using $r=\\sqrt{x^2+y^2}$.",
+        "hint": "Both partials vanish. Bound $|x^2+y^3|/r$ with $|x|,|y|\\le r$.",
+        "solution": "The coordinate partials at zero are both zero, so L=0. For 0<r<1, $|f|/r\\le x^2/r+|y|^3/r\\le r+r^2\\to0$. Thus f is totally differentiable at zero.",
+        "solutionTex": "\\frac{|x^2+y^3|}{r}\\le r+r^2\\longrightarrow0",
+        "rubric": [
+          "Identify the unique candidate map.",
+          "Use one norm bound valid for every direction.",
+          "Conclude from the normalized residual, not a plot."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "One linear map for all increments",
@@ -1635,30 +2426,126 @@
       "curved-paths-hide-obstructions"
     ],
     "reasoning": "Proof sketch",
+    "nextStep": {
+      "id": "certifying-differentiability-and-errors",
+      "label": "learn a sufficient theorem"
+    },
+    "relatedStep": {
+      "id": "review-total-differentiability",
+      "label": "two exact review functions"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "derivation",
+        "id": "directional-counterexample-obstruction",
+        "title": "One continuous function defeats its candidate plane",
+        "strategy": "Use axis slices to find the candidate, then one diagonal to disprove its full-radius remainder condition.",
+        "setup": "$q(x,y)=x^3/(x^2+y^2)$ off zero, extended by $q(0,0)=0$; this is distinct from the final-review numerator $x^3-xy^2$.",
+        "steps": [
+          {
+            "label": "Continuity",
+            "text": "$|q(x,y)|\\le|x|\\le r$, so $q\\to0$ as $r\\to0$."
+          },
+          {
+            "label": "Candidate",
+            "text": "The axis slices give $q_x(0)=1$, $q_y(0)=0$, forcing $L(x,y)=x$."
+          },
+          {
+            "label": "Diagonal obstruction",
+            "text": "At $(t,t)$, $q=t/2$ and $L=t$; normalize their difference by $\\sqrt2|t|$.",
+            "equation": "\\frac{|q(t,t)-L(t,t)|}{\\sqrt{2t^2}}=\\frac1{2\\sqrt2}\\not\\to0"
+          }
+        ],
+        "result": "$q$ is continuous with all directional derivatives, yet not totally differentiable at zero.",
+        "verification": "For $v=(a,b)\\ne0$, $D_vq(0)=a^3/(a^2+b^2)$ is not additive in $v$; a total derivative would be linear."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "candidate-plane-transfer",
+        "outcome": "Disprove total differentiability after computing the unique candidate and a normalized path residual.",
+        "kind": "counterexample",
+        "prompt": "Extend $p(x,y)=x^2y/(x^2+y^2)$ by zero at the origin. Find its coordinate partials and test total differentiability along $(t,t)$; also decide continuity.",
+        "hint": "Both axis slices vanish. Along the diagonal, $p(t,t)=t/2$. Bound $|p|$ by a constant times $r$ for continuity.",
+        "solution": "Both partials are zero, so L=0. For t>0, |p(t,t)|/√(2t²)=1/(2√2), so no total derivative exists. Since |p|=|y|x²/r²≤|y|≤r, p is continuous at zero.",
+        "solutionTex": "p_x(0)=p_y(0)=0,\\quad\\frac{|p(t,t)|}{\\sqrt{2t^2}}=\\frac1{2\\sqrt2}",
+        "rubric": [
+          "Use definitions on the axes.",
+          "Normalize the diagonal remainder by Euclidean distance.",
+          "Prove continuity with an all-direction bound."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Directional existence is weaker",
-        "text": "For g(x,y)=(x³−xy²)/(x²+y²), extended by zero, every directional derivative along v=(a,b) exists and equals (a³−ab²)/(a²+b²). This dependence on v is not linear, so it cannot be a total derivative."
+        "text": "For the displayed f(x,y)=x³/(x²+y²), extended by zero, every directional derivative along v=(a,b) exists and equals a³/(a²+b²). This dependence on v is not linear, so it cannot be a total derivative. The final-review lesson studies the distinct numerator x³−xy²."
       },
       {
         "title": "Test the only possible map",
-        "text": "Coordinate partials give L(x,y)=x. Along (t,t), g=0 while L=t, so |g−L|/√(2t²)=1/√2. The normalized error does not vanish. Yet |g|≤r, so g is continuous: continuity is another distinct property."
+        "text": "Coordinate partials give L(x,y)=x. Along (t,t), f=t/2 while L=t, so |f−L|/√(2t²)=1/(2√2). The normalized error does not vanish. Yet |f|≤r, so f is continuous: continuity is another distinct property."
       }
     ],
     "exercise": {
-      "prompt": "For this g, compare directional derivatives in $e_1$, $e_2$ and $e_1+e_2$.",
+      "prompt": "For the displayed $f$, compare directional derivatives in $e_1$, $e_2$ and $e_1+e_2$.",
       "hint": "A linear derivative must preserve addition.",
-      "solution": "They are 1, 0 and 0 respectively. Since 0≠1+0, the directional-derivative map is not additive, ruling out total differentiability.",
+      "solution": "They are 1, 0 and 1/2 respectively. Since 1/2≠1+0, the directional-derivative map is not additive, ruling out total differentiability.",
       "rubric": [
         "Use directional vectors consistently without silently normalizing.",
         "Test linearity explicitly."
       ],
-      "solutionTex": "D_{e_1}g=1,\\quad D_{e_2}g=0,\\quad D_{e_1+e_2}g=0\\ne1+0"
+      "solutionTex": "D_{e_1}f=1,\\quad D_{e_2}f=0,\\quad D_{e_1+e_2}f=\\tfrac12\\ne1+0"
     }
   },
   "certifying-differentiability-and-errors": {
     "prerequisites": ["total-differentiability"],
     "reasoning": "Theorem used without proof",
+    "nextStep": {
+      "id": "multivariable-chain-rule",
+      "label": "compose derivative maps"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "theorem",
+        "id": "continuous-partials-sufficient-theorem",
+        "title": "Continuous partials are sufficient (imported)",
+        "statement": "If every first partial derivative exists near $a$ and is continuous at $a$, then $f$ is totally differentiable at $a$.",
+        "hypotheses": [
+          "$a$ is an interior point.",
+          "All first partials exist on a neighborhood of $a$ and are continuous at $a$."
+        ],
+        "prerequisites": [
+          "Mean value theorem applied to coordinate increments"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "strategy",
+        "id": "criterion-versus-direct-remainder",
+        "title": "Choose the proof route",
+        "text": "The C¹ criterion is sufficient, not necessary. If its neighborhood hypotheses fail, it gives no verdict; compute the unique candidate from partials and test the normalized residual directly. The exact final-review pair lets you compare a successful all-direction bound with a failed diagonal bound."
+      }
+    ],
+    "relatedStep": {
+      "id": "review-total-differentiability",
+      "label": "exact residual comparison"
+    },
+    "exercises": [
+      {
+        "id": "criterion-not-necessary",
+        "outcome": "Distinguish a sufficient C¹ criterion from the definition of differentiability.",
+        "kind": "method-choice",
+        "prompt": "Let $f(x,y)=|xy|$. At the origin, show differentiability directly. Can you apply the theorem requiring first partials throughout a neighborhood?",
+        "hint": "Use $|xy|\\le(x^2+y^2)/2$. At nearby points on an axis, check the partial in the transverse direction.",
+        "solution": "Both coordinate partials at zero are zero, so L=0. Since |f|/r≤r/2→0, f is differentiable at zero. At (0,y) with y≠0, the x partial of |xy| does not exist, so the continuous-partials neighborhood theorem is unavailable. Its failure does not reverse the conclusion.",
+        "solutionTex": "\\frac{|xy|}{\\sqrt{x^2+y^2}}\\le\\frac{\\sqrt{x^2+y^2}}2\\longrightarrow0",
+        "rubric": [
+          "Prove differentiability with a uniform norm bound.",
+          "Identify a failed neighborhood hypothesis.",
+          "Do not treat a sufficient theorem as necessary."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "A useful sufficient theorem",
@@ -1683,6 +2570,53 @@
   "multivariable-chain-rule": {
     "prerequisites": ["total-differentiability", "vectors-and-coordinates"],
     "reasoning": "Proof sketch",
+    "nextStep": {
+      "id": "directional-derivatives-and-gradient",
+      "label": "restrict to a direction"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "derivation",
+        "id": "multivariable-chain-remainders",
+        "title": "Composition multiplies the linear parts",
+        "strategy": "Apply one differentiability expansion to the path and another to the field.",
+        "setup": "Let $r(t+h)=r(t)+r'(t)h+o(|h|)$ and $f(p+k)=f(p)+Df(p)k+o(\\|k\\|)$ at $p=r(t)$.",
+        "steps": [
+          {
+            "label": "Path increment",
+            "text": "$k=r(t+h)-r(t)$ is $O(|h|)$ because the path is differentiable.",
+            "usesHypothesis": "$r$ differentiable at $t$."
+          },
+          {
+            "label": "Field increment",
+            "text": "Substitute that $k$ into the field expansion. Since $\\|k\\|=O(|h|)$, the field remainder is $o(|h|)$.",
+            "usesHypothesis": "$f$ totally differentiable at $r(t)$; coordinate partials alone are insufficient."
+          },
+          {
+            "label": "Linear coefficient",
+            "text": "The remaining first-order term is $Df(r(t))r'(t)h$."
+          }
+        ],
+        "result": "$(f\\circ r)'(t)=Df(r(t))r'(t)=\\nabla f(r(t))\\cdot r'(t)$ for scalar $f$.",
+        "verification": "For $f=x^2+y^2$ and $r(t)=(t,t^2)$, both direct differentiation and the dot product give $2t+4t^3$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "nonconstant-path-transfer",
+        "outcome": "Compute a composed rate with both coordinate contributions and verify it directly.",
+        "kind": "computational",
+        "prompt": "For $f(x,y)=xy$ and $r(t)=(t^2,t^3)$, compute $(f\\circ r)'(t)$ by the multivariable chain rule and by first composing. Name the differentiability assumptions.",
+        "hint": "Use $\\nabla f=(y,x)$ and $r'=(2t,3t^2)$.",
+        "solution": "The dot product is (t³,t²)·(2t,3t²)=5t⁴. Directly, f(r(t))=t⁵ also differentiates to 5t⁴. Both f and r are polynomial maps, hence differentiable everywhere.",
+        "solutionTex": "(t^3,t^2)\\cdot(2t,3t^2)=2t^4+3t^4=5t^4=\\frac d{dt}t^5",
+        "rubric": [
+          "Evaluate the field derivative along the path.",
+          "Include both coordinate rates.",
+          "Check the composed expression and assumptions."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Do not hide cancellation",
@@ -1732,6 +2666,60 @@
   "directional-derivatives-and-gradient": {
     "prerequisites": ["total-differentiability", "vectors-and-coordinates"],
     "reasoning": "Proof sketch",
+    "nextStep": {
+      "id": "gradient-normals-and-steepest-ascent",
+      "label": "optimize unit slopes"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "theorem",
+        "id": "directional-from-total-derivative",
+        "title": "The gradient formula needs one linear map",
+        "statement": "If $f$ is totally differentiable at $p$, then $D_uf(p)=Df(p)u=\\nabla f(p)\\cdot u$ for any fixed vector $u$.",
+        "hypotheses": [
+          "$p$ is an interior point and $f$ is totally differentiable there.",
+          "$u$ is fixed; choose $\\|u\\|=1$ for rate per unit distance."
+        ],
+        "prerequisites": ["Total differentiability expansion"],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "directional-restriction-proof",
+        "title": "Restrict the full error to one line",
+        "strategy": "Substitute $h=tu$ in the full differentiability expansion.",
+        "setup": "$f(p+h)=f(p)+Df(p)h+r(h)$ with $r(h)/\\|h\\|\\to0$.",
+        "steps": [
+          {
+            "label": "Restriction",
+            "text": "$f(p+tu)-f(p)=tDf(p)u+r(tu)$ by linearity."
+          },
+          {
+            "label": "Divide",
+            "text": "$r(tu)/t$ tends to zero because $|r(tu)|/|t|=\\|u\\| |r(tu)|/\\|tu\\|\\to0$.",
+            "usesHypothesis": "The remainder condition holds for all small vectors, hence this line."
+          }
+        ],
+        "result": "$D_uf(p)=Df(p)u$. Unit normalization changes interpretation, not existence.",
+        "verification": "The reverse implication is false; the preceding counterexample has every directional derivative but no total derivative."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gradient-formula-eligibility",
+        "outcome": "Check total differentiability before replacing a directional limit by a gradient dot product.",
+        "kind": "method-choice",
+        "prompt": "For $q(x,y)=x^3/(x^2+y^2)$ off zero and $q(0)=0$, compare $D_{(1,1)}q(0)$ from its defining limit with $\\nabla q(0)\\cdot(1,1)$. Why may they differ?",
+        "hint": "Along $(t,t)$, $q(t,t)=t/2$; axis partials are (1,0).",
+        "solution": "The defining limit gives D_(1,1)q(0)=1/2. The axis partials form gradient (1,0), whose dot product with (1,1) is 1. The dot-product theorem requires total differentiability, which fails for this q.",
+        "solutionTex": "D_{(1,1)}q(0)=\\lim_{t\\to0}\\frac{q(t,t)}t=\\tfrac12\\ne(1,0)\\cdot(1,1)=1",
+        "rubric": [
+          "Use the unnormalized vector consistently.",
+          "Compute the directional limit directly.",
+          "Name the missing total-differentiability hypothesis."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "Normalize when measuring slope per distance",
@@ -1759,6 +2747,67 @@
       "implicit-functions-and-tangents"
     ],
     "reasoning": "Proof sketch",
+    "nextStep": {
+      "id": "review-total-differentiability",
+      "label": "compare exact residuals"
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "theorem",
+        "id": "steepest-unit-direction",
+        "title": "Maximal first-order slope",
+        "statement": "At a totally differentiable point, the largest directional derivative over unit $u$ is $\\|\\nabla f(p)\\|$.",
+        "hypotheses": [
+          "$f$ is totally differentiable at $p$.",
+          "$u$ has unit length; if $\\nabla f(p)\\ne0$, normalize the gradient to identify a maximizing direction."
+        ],
+        "prerequisites": [
+          "Directional derivative formula",
+          "Cauchy–Schwarz inequality"
+        ],
+        "status": "Complete proof"
+      },
+      {
+        "kind": "derivation",
+        "id": "steepest-cauchy-schwarz-proof",
+        "title": "Bound every unit direction",
+        "strategy": "Optimize the linear first-order response using Cauchy–Schwarz.",
+        "setup": "$D_uf(p)=\\nabla f(p)\\cdot u$ for $\\|u\\|=1$.",
+        "steps": [
+          {
+            "label": "Upper bound",
+            "text": "Cauchy–Schwarz gives $D_uf(p)\\le|D_uf(p)|\\le\\|\\nabla f(p)\\|$.",
+            "usesHypothesis": "Total differentiability supplies the dot product formula."
+          },
+          {
+            "label": "Equality",
+            "text": "If the gradient is nonzero, choose $u=\\nabla f/\\|\\nabla f\\|$; its dot product equals the norm."
+          },
+          {
+            "label": "Stationary case",
+            "text": "If the gradient vanishes, all first-order directional slopes are zero, with no distinguished maximizing direction."
+          }
+        ],
+        "result": "The maximal first-order slope is $\\|\\nabla f(p)\\|$.",
+        "verification": "This local linear statement does not promise globally increasing values along a finite step."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "zero-gradient-direction",
+        "outcome": "Interpret a zero gradient without inventing a unique ascent direction.",
+        "kind": "conceptual",
+        "prompt": "At the origin for $f(x,y)=x^2+y^2$, what is the maximum unit directional derivative and which unit directions attain it? Does that say nearby values cannot increase?",
+        "hint": "Compute the gradient at zero, then compare actual function values at nonzero nearby points.",
+        "solution": "The gradient is zero, so every unit direction has first-order directional derivative zero; the maximum is zero and every unit direction attains it. Yet f(x,y)=x²+y²>0 at every nonzero nearby point, a second-order increase.",
+        "solutionTex": "\\nabla f(0,0)=0,\\quad D_uf(0,0)=0\\ (\\|u\\|=1),\\quad f(h,k)=h^2+k^2>0",
+        "rubric": [
+          "State the maximum slope and all maximizing unit directions.",
+          "Separate first-order slope from finite nearby values.",
+          "Do not claim a unique direction at zero gradient."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "The maximum slope is a norm",
@@ -2301,7 +3350,7 @@
       },
       {
         "title": "Finite cells versus infinitesimal cells",
-        "text": "For [u,u+h]×[v,v+k], exact image area is hk(1+u+h/2). Dividing by hk gives finite scale 1+u+h/2, approaching the derivative factor 1+u as h→0. Location u and cell size h play different roles. The inverse v=y/(1+x) exists near this domain."
+        "text": "For T(u,v)=(u,(1+u)v), the exact image area of [u,u+h]×[v,v+k] is hk(1+u+h/2). Its finite scale approaches 1+u as h→0. The separate shrinking-cell experiment uses T(u,v)=(u,v+uv²). Its exact ratio is 1+2(u+h/2)(v+k/2), while det DT=1+2uv. With k fixed and h→0, bias uk remains: the cell diameter does not vanish. Shrinking h and k together makes diameter √(h²+k²) tend to zero and recovers the local determinant."
       }
     ],
     "exercise": {
@@ -2914,24 +3963,32 @@
     "reasoning": "Proof sketch",
     "sections": [
       {
-        "title": "Four fully specified practice problems",
-        "text": "These are self-contained replacements preserving the review’s methods and results, not a transcription of missing source statements. (1) Compute outward curl flux for F=(y,−x,z) on the cone z=√(x²+y²), 0≤z≤1, joined to the cylinder x²+y²=1,1≤z≤4. (2) Compute upward curl flux for F=(x+y²,y+z²,z+x²) on the first-octant triangle x+y+z=3. (3) Compute clockwise circulation of F=(0,xy) on the triangle (0,0),(0,12),(3,0). (4) For φ=x²y+$\\int_0^xe^{-s^2}\\,ds$+sin(πy²/2)/π, compute ∫∇φ·dr on r(t)=(0,1−t),0≤t≤1."
+        "title": "Keep the original review data",
+        "text": "The two Stokes tasks use outward curl flux for F=(y,−x,z) on the cone z=√(x²+y²), 0≤z≤1, joined to the cylinder x²+y²=1, 1≤z≤4; and upward curl flux for F=(x+y²,y+z²,z+x²) on the first-octant triangle x+y+z=3. The original Green task from Lecture 12, physical page 7, asks for clockwise circulation of P dx+Q dy around the triangle (0,0),(0,12),(3,0), where P=y cos x−xy sin x and Q=xy+x cos x. The original potential task on physical page 10 gives (2xy+e^(−x²)) dx+(x²+y cos(πy²/2)) dy along the oriented curve whose parametrization r(t)=(e^(t²−t)−cos(2πt), 2 sin(πt²/2)−t⁹), 0≤t≤1, runs opposite to the requested orientation. These original tasks are distinct from the simplified scaffolds below."
       },
       {
-        "title": "Strategy and independent checks",
-        "text": "For (1), the top boundary is clockwise under the outward side orientation; r=(cos t,−sin t,4) gives integrand 1 and answer 2π. Excluding a tiny cone-tip cap and taking its limit handles the apex. For (2), curl=(−2z,−2x,−2y); its dot product with (1,1,1) is −6, so flux is −27. For (3), Qₓ−Pᵧ=y and clockwise orientation gives −72. For (4), endpoint potential gives φ(0,0)−φ(0,1)=−1/π. The field is (2xy+e^(−x²),x²+y cos(πy²/2))."
+        "title": "Work the Stokes setups",
+        "text": "For the cone and cylinder, the top boundary is clockwise under the outward side orientation; r=(cos t,−sin t,4) gives integrand 1 and answer 2π. Excluding a tiny cone-tip cap and taking its limit handles the apex. For the first-octant triangle, curl=(−2z,−2x,−2y); its dot product with the upward area vector (1,1,1) is −6, so the flux is −27. Check the induced boundary orientation before using Stokes instead."
+      },
+      {
+        "title": "Original Green task: cancellation before integration",
+        "text": "Differentiate both components of the original field: Qₓ=y+cos x−x sin x, while Pᵧ=cos x−x sin x. Thus Qₓ−Pᵧ=y; the trigonometric terms cancel only after the full source field has been used. The triangle has 0≤x≤3 and 0≤y≤12−4x. Green’s theorem with clockwise orientation gives −∫₀³∫₀^(12−4x)y dy dx=−72. As a simpler, separately labelled scaffold, F=(0,xy) on the same triangle has the same curl and answer but does not teach that derivative cancellation."
+      },
+      {
+        "title": "Original potential task: endpoints and reversed orientation",
+        "text": "The original field has potential φ(x,y)=x²y+$\\int_0^xe^{-s^2}\\,ds$+sin(πy²/2)/π. Its derivatives reproduce both field components. The supplied complicated parametrization has r(0)=(0,0) and r(1)=(0,1), opposite to the requested curve orientation. Hence the requested integral is φ(0,0)−φ(0,1)=−1/π; no elementary antiderivative of e^(−x²) or direct path integration is needed. The straight segment r(t)=(0,1−t), 0≤t≤1, is a separately labelled scaffold with the desired direction, not the original parametrization."
       }
     ],
     "exercise": {
-      "prompt": "For problem (3), reverse the triangle direction and compute the new circulation by both Green and a boundary parametrization.",
-      "hint": "Only the diagonal edge contributes for the field (0,xy).",
-      "solution": "Counterclockwise circulation is 72. On the diagonal from (3,0) to (0,12), use x=3−3t,y=12t: Qdy=(3−3t)(12t)12dt, whose integral is 72; the other edges contribute zero.",
+      "prompt": "For the original Green field P=y cos x−xy sin x, Q=xy+x cos x, reverse the triangle direction and compute the new circulation by Green’s theorem.",
+      "hint": "Differentiate the full P and Q before cancelling terms; reversing clockwise orientation changes the sign.",
+      "solution": "Qₓ=y+cos x−x sin x and Pᵧ=cos x−x sin x, so Qₓ−Pᵧ=y. Counterclockwise circulation is ∫₀³∫₀^(12−4x)y dy dx=72. The simplified scaffold F=(0,xy) gives the same result, but skips the cancellation in the original field.",
       "rubric": [
-        "Specify the field and all path data.",
+        "Use both components of the original source field.",
         "Match orientation before integrating.",
-        "Check by a second method."
+        "Show the curl cancellation and bounds."
       ],
-      "solutionTex": "\\int_0^1(3-3t)(12t)(12)\\,dt=72"
+      "solutionTex": "\\int_0^3\\int_0^{12-4x}y\\,dy\\,dx=72"
     }
   },
   "review-change-of-variables": {
@@ -3014,6 +4071,30 @@
       "partials-do-not-make-a-plane"
     ],
     "reasoning": "Complete proof",
+    "supplementalBlocks": [
+      {
+        "kind": "strategy",
+        "id": "exact-review-comparison-route",
+        "title": "Use the exact inline pair",
+        "text": "The inline controls compare two distinct review functions with their own candidate planes and normalized residuals. The sampled meshes show shape, while the $r^2$ bound for the first function and the positive-diagonal obstruction for the second decide the claims. The generic side scene is a related illustration, not either exact proof."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "new-uniform-bound-transfer",
+        "outcome": "Transfer the full-radius remainder method to a new function without relying on sampled paths.",
+        "kind": "proof",
+        "prompt": "Let $u(x,y)=x^2y^2/\\sqrt{x^2+y^2}$ away from zero and $u(0,0)=0$. Prove total differentiability at zero and give a sufficient $\\delta(\\varepsilon)$ for the normalized error.",
+        "hint": "Use $2|xy|\\le x^2+y^2=r^2$ to bound $x^2y^2$.",
+        "solution": "Both partials are zero, so L=0. Since x²y²≤r⁴/4, $|u|/r=x²y²/r²≤r²/4→0$. Given ε>0, choosing δ=2√ε makes the normalized error <ε whenever 0<r<δ.",
+        "solutionTex": "\\frac{|u(x,y)|}{r}=\\frac{x^2y^2}{r^2}\\le\\frac{r^2}{4}\\longrightarrow0,\\quad\\delta=2\\sqrt\\varepsilon",
+        "rubric": [
+          "Identify the candidate linear map from the axis restrictions.",
+          "Give an inequality valid for all directions.",
+          "State δ as a function of ε with the puncture."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "A successful all-direction estimate",

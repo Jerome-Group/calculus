@@ -21,7 +21,14 @@ export function seriesModel(id: string, value?: number) {
     case "plane-comparison":
     case "plane-alternating":
     case "plane-ratio": {
-      p = config("Terms shown", "N", 2, 60, 12, 1);
+      p = config(
+        "Terms shown",
+        "N",
+        id === "plane-geometric" ? 1 : 2,
+        60,
+        12,
+        1,
+      );
       p = Math.round(p);
       m.bounds = [0, 61, -1.3, id === "plane-harmonic" ? 5.5 : 2.3];
       let fn: (n: number) => number = (n) => 1 + (-1) ** n / n;

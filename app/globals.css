@@ -2026,9 +2026,44 @@ body {
   line-height: 1.12;
 }
 .lesson-question {
-  margin-top: 1.5rem;
-  padding: 1rem 0;
+  margin-top: 1rem;
+  padding: 0.75rem 0;
   border-top: 1px solid #cecabe;
+}
+.lesson-question .label {
+  margin: 0 0 0.45rem;
+  line-height: 1.45;
+}
+.lesson-essentials {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0.25rem;
+}
+.lesson-essentials h3.label {
+  margin-top: 0.8rem;
+}
+.lesson-working-relation {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0.25rem;
+}
+.lesson-readiness {
+  margin-top: 1rem;
+  font:
+    0.875rem/1.5 Arial,
+    sans-serif;
+}
+.lesson-readiness summary {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lesson-readiness button {
+  display: block;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin: 0.5rem 0;
 }
 .lesson-question p {
   font-size: 1rem;
@@ -2156,9 +2191,12 @@ body {
   background: #171a17;
   color: white;
 }
-.reading-revise .lesson-narrative,
-.reading-revise .lesson-extension {
-  display: none;
+.revision-view > section {
+  margin-block: 1.25rem;
+}
+.revision-view button {
+  border: 1px solid currentColor;
+  padding: 0.55rem 0.85rem;
 }
 .study-progress {
   padding: 1.5rem;
