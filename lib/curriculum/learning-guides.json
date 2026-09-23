@@ -10768,6 +10768,38 @@
         ],
         "result": "$26/3$.",
         "verification": "Equivalently, $u=2x+1$ gives the same value with its factor $1/2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-definite-substitution-theorem-statement",
+        "title": "Keep the derivative and transformed endpoints together",
+        "text": "For $a<b$, differentiable $g:[a,b]\\to\\mathbb R$, and $f$ defined on $g([a,b])$, physical page 17 states that existence of $\\int_a^b g\\prime(x)\\,dx$ and $\\int_{g(a)}^{g(b)}f(u)\\,du$ implies existence of and equality $\\int_a^b f(g(x))g\\prime(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$. The signed factor and transformed endpoints preserve orientation."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-definite-substitution-theorem-worked",
+        "title": "Track orientation through a decreasing substitution",
+        "strategy": "Substitute the map, retain its signed derivative, and compare the transformed endpoints.",
+        "setup": "Use $g(x)=1-x$ and $f(u)=u$ on $0\\leq x\\leq1$.",
+        "steps": [
+          {
+            "label": "Differentiate the map",
+            "text": "The substitution reverses direction, so its derivative is negative.",
+            "equation": "g\\prime(x)=-1,\\qquad g(0)=1,\\quad g(1)=0"
+          },
+          {
+            "label": "Evaluate in the original variable",
+            "text": "The derivative sign is part of the integrand.",
+            "equation": "\\int_0^1 f(g(x))g\\prime(x)\\,dx=-\\int_0^1(1-x)\\,dx=-\\frac12"
+          },
+          {
+            "label": "Use transformed endpoints",
+            "text": "The upper endpoint is below the lower endpoint; the signed integral records that orientation.",
+            "equation": "\\int_{g(0)}^{g(1)}f(u)\\,du=\\int_1^0u\\,du=-\\frac12"
+          }
+        ],
+        "result": "Both sides equal $-1/2$; replacing $g\\prime$ by $|g\\prime|$ would lose the sign.",
+        "verification": "An antiderivative of $u$ is $u^2/2$, so its oriented change from $1$ to $0$ is $-1/2$; the original integrand has the same value."
       }
     ],
     "exercises": [
@@ -10782,6 +10814,19 @@
         "rubric": [
           "Use the full derivative $du=3x^2dx$.",
           "Transform both bounds."
+        ]
+      },
+      {
+        "id": "lecture08-definite-substitution-transfer",
+        "outcome": "Apply the definite one-variable substitution formula with its signed derivative and transformed bounds.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\int_0^1 3x^2\\cos(1+x^3)\\,dx$ by substitution.",
+        "hint": "Set $u=1+x^3$, then transform both endpoints and the differential.",
+        "solution": "With $u=1+x^3$, the endpoints are $1$ and $2$, and $du=3x^2\\,dx$. Thus the integral is $\\int_1^2\\cos u\\,du=\\sin2-\\sin1$.",
+        "solutionTex": "\\int_0^1 3x^2\\cos(1+x^3)\\,dx=\\int_1^2\\cos u\\,du=\\sin2-\\sin1",
+        "rubric": [
+          "Use $du=3x^2\\,dx$.",
+          "Transform the endpoints to $1$ and $2$."
         ]
       }
     ]
@@ -15189,23 +15234,159 @@
     "sections": [
       {
         "title": "Columns are transformed edges",
-        "text": "For $A=[[2,1],[0,3]]$, the unit square edges map to $(2,0)$ and $(1,3)$. Their parallelogram area is |det $A|=6$. Every cell has the same area scale because the map is linear."
+        "text": "For $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$, the unit-square edges map to $(2,0)$ and $(1,3)$. The image parallelogram has area $|\\det A|=6$. Every cell has the same area scale because the map is linear."
       },
       {
         "title": "Orientation and collapse",
-        "text": "A negative determinant reverses orientation while keeping positive area scale. A zero determinant collapses the plane into a line or point, so a two-dimensional inverse does not exist. The determinant is a number; the derivative matrix is a different object."
+        "text": "A negative determinant, such as $\\det A<0$, reverses orientation while keeping the ordinary area scale positive. If $\\det A=0$, the plane collapses into a line or point, so a two-dimensional inverse does not exist. The matrix $A$ and its determinant $\\det A$ are different objects."
       }
     ],
     "exercise": {
       "prompt": "Find signed and unsigned area factors for $T(u,v)=(u,-2v)$.",
       "hint": "Use the diagonal derivative matrix.",
-      "solution": "The signed determinant is $-2$ and area scale is 2. The map reverses orientation.",
+      "solution": "The signed determinant is $-2$ and the ordinary area scale is $2$. The map reverses orientation.",
       "rubric": [
-        "Keep sign for orientation.",
-        "Use absolute value for scalar area."
+        "Keep the sign for orientation.",
+        "Use absolute value for ordinary area."
       ],
       "solutionTex": "\\det DT=-2,\\quad |\\det DT|=2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-determinant-parallelogram-area-statement",
+        "title": "Read area and orientation from the determinant",
+        "text": "A linear map sends the standard basis vectors to its matrix columns, so it sends the unit square to the parallelogram spanned by those columns. The ordinary area scale is $|\\det A|$; the sign of $\\det A$ records whether orientation is preserved or reversed."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-determinant-parallelogram-area-worked",
+        "title": "Compute the image parallelogram from its edge vectors",
+        "strategy": "Use the images of the two standard basis vectors as adjacent edges; their determinant gives signed area.",
+        "setup": "Take $T(u,v)=(2u+v,3v)$ on the unit square.",
+        "steps": [
+          {
+            "label": "Read the columns",
+            "text": "The images of $(1,0)$ and $(0,1)$ are the adjacent edge vectors.",
+            "equation": "T(1,0)=(2,0),\\qquad T(0,1)=(1,3)"
+          },
+          {
+            "label": "Compute signed area",
+            "text": "The determinant is positive, so this map preserves the square's orientation.",
+            "equation": "\\det\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}=6"
+          },
+          {
+            "label": "Take ordinary area",
+            "text": "The image parallelogram therefore has area six.",
+            "equation": "\\operatorname{Area}(T(S))=|6|=6"
+          }
+        ],
+        "result": "The unit square maps to a parallelogram of area $6$ with the same orientation.",
+        "verification": "The four image vertices are $(0,0)$, $(2,0)$, $(3,3)$, and $(1,3)$; the base and height give area $2\\cdot3=6$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-three-dimensional-volume-scale-statement",
+        "title": "Use absolute determinant for ordinary volume",
+        "text": "A linear space map sends a box to a parallelepiped with signed volume scaled by $\\det A$. Ordinary volume uses $|\\det A|$; a negative determinant records orientation reversal, not negative physical volume."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-three-dimensional-volume-scale-worked",
+        "title": "Scale a box with a diagonal space map",
+        "strategy": "The three diagonal entries are the signed scale factors along the coordinate axes.",
+        "setup": "Apply $T(u,v,w)=(2u,-3v,4w)$ to the unit cube.",
+        "steps": [
+          {
+            "label": "Form the derivative matrix",
+            "text": "The coordinate directions stay parallel to the axes.",
+            "equation": "DT=\\begin{pmatrix}2&0&0\\\\0&-3&0\\\\0&0&4\\end{pmatrix}"
+          },
+          {
+            "label": "Multiply the signed scales",
+            "text": "One coordinate direction is reversed.",
+            "equation": "\\det DT=2(-3)(4)=-24"
+          },
+          {
+            "label": "Convert to ordinary volume",
+            "text": "The image cube's physical volume is positive.",
+            "equation": "\\operatorname{Vol}(T([0,1]^3))=|-24|=24"
+          }
+        ],
+        "result": "The map reverses orientation and multiplies ordinary volume by $24$.",
+        "verification": "The image edge lengths are $2$, $3$, and $4$, whose product is $24$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-linear-integral-substitution-statement",
+        "title": "Transform both the field and the area element",
+        "text": "For a linear map $T$ and a bounded source region $D$ with existing area, the transformed density is $f(T(u,v))|\\det T|$. In three dimensions, use $f(T(u,v,w))|\\det T|$ with volume measure. The determinant factor does not replace composition of the integrand."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-linear-integral-substitution-worked",
+        "title": "Check a linear change of variables on a rectangle",
+        "strategy": "Map the region, substitute the transformed coordinates into the density, and include the constant measure factor.",
+        "setup": "Let $T(u,v)=(2u,v)$ on $D=[0,1]\\times[0,1]$, and integrate $f(x,y)=x+y$ over $T[D]$.",
+        "steps": [
+          {
+            "label": "Find the image and factor",
+            "text": "The image is $0\\leq x\\leq2$, $0\\leq y\\leq1$, and the area factor is two.",
+            "equation": "|\\det DT|=2"
+          },
+          {
+            "label": "Compose the density",
+            "text": "Replace the physical coordinates by their expressions in the source variables.",
+            "equation": "f(T(u,v))=2u+v"
+          },
+          {
+            "label": "Evaluate the transformed integral",
+            "text": "Integrate over the source unit square.",
+            "equation": "\\int_0^1\\int_0^1 2(2u+v)\\,dv\\,du=3"
+          }
+        ],
+        "result": "Both the direct and transformed integrals equal $3$.",
+        "verification": "Directly, $\\int_0^2\\int_0^1(x+y)\\,dy\\,dx=3$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-determinant-parallelogram-area-transfer",
+        "outcome": "Use the absolute determinant of a linear plane map to find the image area of a unit square, while retaining its sign as orientation information.",
+        "kind": "computational",
+        "prompt": "For $A=\\begin{pmatrix}1&2\\\\3&1\\end{pmatrix}$, find the image area of the unit square and say whether orientation is preserved.",
+        "hint": "Compute the signed determinant first, then take its absolute value for area.",
+        "solution": "$\\det A=1-6=-5$, so the image area is $5$ and orientation is reversed.",
+        "rubric": [
+          "Compute the signed determinant as $-5$.",
+          "Use absolute value for area and retain the negative sign to describe orientation."
+        ],
+        "solutionTex": "\\det A=1\\cdot1-2\\cdot3=-5,\\qquad \\operatorname{Area}(T(S))=|-5|=5"
+      },
+      {
+        "id": "lecture08-three-dimensional-volume-scale-transfer",
+        "outcome": "Use the absolute determinant of a linear space map as its constant volume scale and distinguish this from signed orientation.",
+        "kind": "computational",
+        "prompt": "Find the ordinary volume scale and orientation behavior of $T(u,v,w)=(u+2v,\\,v+w,\\,-2w)$.",
+        "hint": "Write the triangular derivative matrix in the given input and output coordinate order.",
+        "solution": "The matrix is upper triangular with diagonal $1,1,-2$, so $\\det DT=-2$. The volume scale is $2$ and orientation is reversed.",
+        "rubric": [
+          "Keep the input coordinate order $(u,v,w)$.",
+          "Report both the signed determinant and its absolute value."
+        ],
+        "solutionTex": "DT=\\begin{pmatrix}1&2&0\\\\0&1&1\\\\0&0&-2\\end{pmatrix},\\qquad \\det DT=-2,\\qquad |\\det DT|=2"
+      },
+      {
+        "id": "lecture08-linear-integral-substitution-transfer",
+        "outcome": "Transform a double or triple integral under a linear map by composing the integrand with the map and multiplying by the constant absolute determinant.",
+        "kind": "computational",
+        "prompt": "Use $T(u,v)=(u+v,u-v)$ on the unit square to evaluate $\\iint_{T[D]}x\\,dA$.",
+        "hint": "The determinant is $-2$; the composed density is $u+v$.",
+        "solution": "The transformed integral is $\\int_0^1\\int_0^1 2(u+v)\\,dv\\,du=2$.",
+        "rubric": ["Compose $x$ as $u+v$.", "Multiply by $|\\det DT|=2$."],
+        "solutionTex": "\\int_0^1\\int_0^1 2(u+v)\\,dv\\,du=2"
+      }
+    ]
   },
   "plane-jacobian": {
     "prerequisites": ["linear-area-change", "partial-derivatives-as-slices"],
@@ -15213,23 +15394,112 @@
     "sections": [
       {
         "title": "A nonlinear map with variable scale",
-        "text": "Let $T(u,v)=(u,(1+u)v)$, $0\\leq u,v\\leq 1$. Its derivative columns are $(1,v)$ and $(0,1+u)$, so det $DT=1+u$. The image is $0\\leq x\\leq 1$, $0\\leq y\\leq 1+x$: a trapezoid with area $3/2$."
+        "text": "Let $T(u,v)=(u,(1+u)v)$ on $0\\leq u,v\\leq1$. Its derivative columns are $(1,v)$ and $(0,1+u)$, so $\\det DT=1+u$. The image is $0\\leq x\\leq1$, $0\\leq y\\leq1+x$, a trapezoid with area $3/2$."
       },
       {
         "title": "Finite cells versus infinitesimal cells",
-        "text": "For $T(u,v)=(u,(1+u)v)$, the exact image area of $[u,u+h]\\times [v,v+k]$ is $hk(1+u+h/2)$. Its finite scale approaches $1+u$ as $h\\to 0$. The separate shrinking-cell experiment uses $T(u,v)=(u,v+uv^{2})$. Its exact ratio is $1+2(u+h/2)(v+k/2)$, while det $DT=1+2uv$. With $k$ fixed and $h\\to 0$, bias uk remains: the cell diameter does not vanish. Shrinking $h$ and $k$ together makes diameter $\\sqrt{h^{2}+k^{2}}$ tend to zero and recovers the local determinant."
+        "text": "For $T(u,v)=(u,(1+u)v)$, the image area of $[u,u+h]\\times[v,v+k]$ is $hk(1+u+h/2)$. Its finite scale approaches $1+u$ as $h\\to0$. A separate map $T(u,v)=(u,v+uv^2)$ has exact ratio $1+2(u+h/2)(v+k/2)$ and $\\det DT=1+2uv$. With $k$ fixed and $h\\to0$, the bias $uk$ remains because the cell diameter does not vanish. Shrinking both $h$ and $k$ makes the diameter $\\sqrt{h^2+k^2}$ tend to zero and recovers the local determinant."
       }
     ],
     "exercise": {
-      "prompt": "Compute $\\iint_R y\\,dA$ over that trapezoid using $T$.",
-      "hint": "Replace $y$ by $(1+u)v$ and also include the Jacobian.",
-      "solution": "The transformed integrand is $(1+u)^{2}v$. Integrating $v$ from 0 to 1 gives $(1+u)^{2}/2$, and integrating $u$ gives $7/6$.",
+      "prompt": "Compute $\\iint_R y\\,dA$ over the image trapezoid from $T(u,v)=(u,(1+u)v)$ on the unit square.",
+      "hint": "Replace $y$ by $(1+u)v$ and include the Jacobian $1+u$.",
+      "solution": "The transformed integrand is $(1+u)^2v$. Integrating $v$ from $0$ to $1$ gives $(1+u)^2/2$, and integrating $u$ gives $7/6$.",
       "rubric": [
         "Transform the field as well as the measure.",
-        "Distinguish finite-cell scale from the derivative."
+        "Use the position-dependent Jacobian."
       ],
-      "solutionTex": "\\iint_R y\\,dA=\\int_0^1\\int_0^1(1+u)^2v\\,dv\\,du=\\frac76"
-    }
+      "solutionTex": "\\int_0^1\\int_0^1(1+u)^2v\\,dv\\,du=\\frac76"
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-plane-map-derivative-matrix-statement",
+        "title": "Build the plane Jacobian from component derivatives",
+        "text": "A plane map $T=(X,Y)$ sends parameter points $(u,v)$ to physical points $(x,y)$. Its Jacobian is $J_T=\\det\\begin{pmatrix}X_u&X_v\\\\Y_u&Y_v\\end{pmatrix}$, with columns ordered by the input variables. For a linear map this is the constant determinant from the area-scaling lesson."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-plane-map-derivative-matrix-worked",
+        "title": "Compute a Jacobian with a nonlinear component",
+        "strategy": "Differentiate each output component with respect to each input variable, then take the determinant in the declared order.",
+        "setup": "For $T(u,v)=(u^2+v,3u-v)$, compute $J_T$ and evaluate it at $(1,2)$.",
+        "steps": [
+          {
+            "label": "Differentiate the components",
+            "text": "Rows correspond to $X$ and $Y$; columns correspond to $u$ and $v$.",
+            "equation": "DT(u,v)=\\begin{pmatrix}2u&1\\\\3&-1\\end{pmatrix}"
+          },
+          {
+            "label": "Take the determinant",
+            "text": "The result is a position-dependent signed area factor.",
+            "equation": "J_T(u,v)=-2u-3"
+          },
+          {
+            "label": "Evaluate at the requested point",
+            "text": "Substitute $u=1$; the $v$ coordinate does not enter this determinant.",
+            "equation": "J_T(1,2)=-5"
+          }
+        ],
+        "result": "At $(1,2)$ the local signed area factor is $-5$, so the local ordinary area scale is $5$.",
+        "verification": "The determinant formula gives $2(1)(-1)-1(3)=-5$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-polar-jacobian-statement",
+        "title": "Derive the polar area factor",
+        "text": "For $T(r,\\theta)=(r\\cos\\theta,r\\sin\\theta)$, the ordered Jacobian is $J_T=r$. The change-of-variables application restricts to $r\\geq0$, so its ordinary area factor is $r$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-polar-jacobian-worked",
+        "title": "Differentiate the polar coordinate map",
+        "strategy": "Place the $r$ derivatives in the first column and the $\\theta$ derivatives in the second, then simplify with $\\sin^2\\theta+\\cos^2\\theta=1$.",
+        "setup": "Compute the signed Jacobian of $T(r,\\theta)=(r\\cos\\theta,r\\sin\\theta)$.",
+        "steps": [
+          {
+            "label": "Write the derivative matrix",
+            "text": "The column order matches $(r,\\theta)$.",
+            "equation": "DT=\\begin{pmatrix}\\cos\\theta&-r\\sin\\theta\\\\\\sin\\theta&r\\cos\\theta\\end{pmatrix}"
+          },
+          {
+            "label": "Take and simplify the determinant",
+            "text": "Use the Pythagorean identity.",
+            "equation": "J_T=r\\cos^2\\theta+r\\sin^2\\theta=r"
+          }
+        ],
+        "result": "The signed determinant is $r$; on $r\\geq0$ the area factor is $r$.",
+        "verification": "For $r=0$, the map collapses the angular coordinate to the origin and the determinant vanishes."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-plane-map-derivative-matrix-transfer",
+        "outcome": "Represent a plane transformation by its component functions and compute its Jacobian as the determinant of their ordered first-partial matrix.",
+        "kind": "computational",
+        "prompt": "For $S(u,v)=(u+v^2,2u-v)$, compute $J_S(2,1)$.",
+        "hint": "The derivative matrix has first row $(1,2v)$ and second row $(2,-1)$.",
+        "solution": "$J_S(u,v)=-1-4v$, so $J_S(2,1)=-5$.",
+        "rubric": [
+          "Differentiate both components in input order.",
+          "Evaluate the determinant at $(2,1)$."
+        ],
+        "solutionTex": "J_S(2,1)=\\det\\begin{pmatrix}1&2\\\\2&-1\\end{pmatrix}=-5"
+      },
+      {
+        "id": "lecture08-polar-jacobian-transfer",
+        "outcome": "Compute the signed Jacobian of the polar map and use its nonnegative value on the standard radial domain as the area factor.",
+        "kind": "computational",
+        "prompt": "For $S(s,t)=(3s\\cos t,3s\\sin t)$ with $s\\geq0$, find the signed Jacobian and area factor.",
+        "hint": "The constant radial scale contributes a factor of three in each planar coordinate.",
+        "solution": "$J_S=9s$, which is nonnegative on the stated domain, so the area factor is $9s$.",
+        "rubric": [
+          "Differentiate both output components.",
+          "Apply the absolute value and the restriction $s\\geq0$."
+        ],
+        "solutionTex": "J_S(s,t)=\\det\\begin{pmatrix}3\\cos t&-3s\\sin t\\\\3\\sin t&3s\\cos t\\end{pmatrix}=9s"
+      }
+    ]
   },
   "space-jacobians": {
     "prerequisites": ["plane-jacobian", "spherical-coordinates"],
@@ -15237,47 +15507,325 @@
     "sections": [
       {
         "title": "Volume is a triple product",
-        "text": "For $T(u,v,w)$, the signed determinant of its three derivative columns measures oriented volume scale. Scalar volume uses its absolute value. Swapping two parameter columns reverses the sign without changing the physical volume."
+        "text": "For a space map $T(u,v,w)$, the signed determinant of its three derivative columns measures oriented volume scale. Ordinary volume uses its absolute value. Swapping two parameter columns reverses the sign without changing physical volume."
       },
       {
         "title": "Order in spherical coordinates",
-        "text": "With columns ordered $(\\rho,\\varphi,\\theta)$ for $x=\\rho\\sin\\varphi\\cos\\theta$, $y=\\rho\\sin\\varphi\\sin\\theta$, $z=\\rho\\cos\\varphi$, the determinant is $\\rho^2\\sin\\varphi$. The order $(\\rho,\\theta,\\varphi)$ has its negative. Both give the same positive volume factor on the standard interior range."
+        "text": "With columns ordered $(\\rho,\\phi,\\theta)$ for $x=\\rho\\sin\\phi\\cos\\theta$, $y=\\rho\\sin\\phi\\sin\\theta$, and $z=\\rho\\cos\\phi$, the determinant is $\\rho^2\\sin\\phi$. The order $(\\rho,\\theta,\\phi)$ has the negative value. Both give the same positive volume factor on the standard interior range."
       }
     ],
     "exercise": {
       "prompt": "Find the volume scale for $T(u,v,w)=(2u,-3v,4w)$.",
-      "hint": "Multiply the diagonal entries.",
-      "solution": "The signed determinant is $-24$ and the volume scale is 24. The negative sign records orientation reversal.",
+      "hint": "Multiply the diagonal entries in the given coordinate order.",
+      "solution": "The signed determinant is $-24$ and the ordinary volume scale is $24$. The negative sign records orientation reversal.",
       "rubric": [
         "State the coordinate order.",
-        "Use absolute value for volume."
+        "Use absolute value for ordinary volume."
       ],
-      "solutionTex": "\\det DT=2(-3)(4)=-24,\\quad|\\det DT|=24"
-    }
+      "solutionTex": "\\det DT=2(-3)(4)=-24,\\quad |\\det DT|=24"
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-cylindrical-jacobian-statement",
+        "title": "Derive the cylindrical volume factor",
+        "text": "For $T(r,\\theta,z)=(r\\cos\\theta,r\\sin\\theta,z)$, form a $3\\times3$ derivative matrix whose columns follow $(r,\\theta,z)$. Its determinant is $r$; when $r\\geq0$, this is the ordinary volume factor."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-cylindrical-jacobian-worked",
+        "title": "Expand the cylindrical determinant",
+        "strategy": "Use the block structure: the $z$ coordinate contributes a final diagonal entry of one, leaving the polar $2\\times2$ determinant.",
+        "setup": "Compute the Jacobian of the cylindrical map.",
+        "steps": [
+          {
+            "label": "Differentiate the map",
+            "text": "The third row is zero except for its final entry.",
+            "equation": "DT=\\begin{pmatrix}\\cos\\theta&-r\\sin\\theta&0\\\\\\sin\\theta&r\\cos\\theta&0\\\\0&0&1\\end{pmatrix}"
+          },
+          {
+            "label": "Expand along the final row",
+            "text": "The remaining determinant is the polar determinant.",
+            "equation": "J_T=r\\cos^2\\theta+r\\sin^2\\theta=r"
+          }
+        ],
+        "result": "The cylindrical volume factor is $r$ on the usual domain $r\\geq0$.",
+        "verification": "The map leaves height unchanged and scales each horizontal polar slice by the factor $r$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-spherical-jacobian-order-sign-statement",
+        "title": "Keep the spherical parameter order attached to its sign",
+        "text": "With $x=\\rho\\sin\\phi\\cos\\theta$, $y=\\rho\\sin\\phi\\sin\\theta$, and $z=\\rho\\cos\\phi$, the source orders inputs as $(\\rho,\\theta,\\phi)$. That order gives $J_T=-\\rho^2\\sin\\phi$. Swapping the last two input columns changes the sign; ordinary volume uses $|J_T|$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-spherical-jacobian-order-sign-worked",
+        "title": "Check the spherical determinant sign",
+        "strategy": "Use the displayed column order before expanding; do not import a memorized sign from a different coordinate convention.",
+        "setup": "Follow the handout's map with inputs ordered $(\\rho,\\theta,\\phi)$.",
+        "steps": [
+          {
+            "label": "Write the ordered derivative columns",
+            "text": "The middle column differentiates with respect to $\\theta$, not $\\phi$.",
+            "equation": "DT=\\begin{pmatrix}\\sin\\phi\\cos\\theta&-\\rho\\sin\\phi\\sin\\theta&\\rho\\cos\\phi\\cos\\theta\\\\\\sin\\phi\\sin\\theta&\\rho\\sin\\phi\\cos\\theta&\\rho\\cos\\phi\\sin\\theta\\\\\\cos\\phi&0&-\\rho\\sin\\phi\\end{pmatrix}"
+          },
+          {
+            "label": "Evaluate the determinant",
+            "text": "Cofactor expansion gives the negative signed value for this order.",
+            "equation": "J_T=-\\rho^2\\sin\\phi"
+          },
+          {
+            "label": "Use the measure factor",
+            "text": "On $0\\leq\\phi\\leq\\pi$ and $\\rho\\geq0$, the ordinary volume factor is nonnegative.",
+            "equation": "|J_T|=\\rho^2\\sin\\phi"
+          }
+        ],
+        "result": "The order $(\\rho,\\theta,\\phi)$ has signed determinant $-\\rho^2\\sin\\phi$, while its ordinary volume factor is $\\rho^2\\sin\\phi$.",
+        "verification": "Swapping the $\\theta$ and $\\phi$ columns changes the determinant sign and leaves the same absolute volume factor."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-space-transform-domain-components-statement",
+        "title": "Separate a space map’s domain, range, and components",
+        "text": "A space transformation maps parameter triples $(u,v,w)$ to physical triples $(x,y,z)$. State its domain and range separately, and name its three scalar components $X$, $Y$, and $Z$; page 10 defines this map before the Jacobian calculations."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-space-transform-domain-components-worked",
+        "title": "Read the image of a nonlinear space map",
+        "strategy": "Find the input domain from the formula, identify each output component, then characterize which physical triples are reached.",
+        "setup": "Let $T(u,v,w)=(u^2,v+w,w)$ with domain $D=\\mathbb R^3$.",
+        "steps": [
+          {
+            "label": "State the input domain",
+            "text": "Every real parameter triple is allowed.",
+            "equation": "\\operatorname{Dom}(T)=\\mathbb R^3"
+          },
+          {
+            "label": "Name the component functions",
+            "text": "Each output coordinate is a scalar function of the parameters.",
+            "equation": "X(u,v,w)=u^2,\\quad Y(u,v,w)=v+w,\\quad Z(u,v,w)=w"
+          },
+          {
+            "label": "Characterize the range",
+            "text": "The first output is nonnegative, and every such triple has a preimage.",
+            "equation": "\\operatorname{Range}(T)=\\{(x,y,z)\\in\\mathbb R^3:x\\geq0\\}"
+          },
+          {
+            "label": "Verify a general image point",
+            "text": "Choose parameters from the requested physical coordinates.",
+            "equation": "T(\\sqrt{x},y-z,z)=(x,y,z),\\quad x\\geq0"
+          }
+        ],
+        "result": "The map has domain $\\mathbb R^3$ and range the half-space $x\\geq0$.",
+        "verification": "The parameter choice $(\\sqrt{x},y-z,z)$ reproduces each physical coordinate for any $x\\geq0$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-cylindrical-jacobian-transfer",
+        "outcome": "Compute the cylindrical coordinate Jacobian in the ordered variables $(r,\\theta,z)$ and obtain the volume factor $r$ on the standard domain.",
+        "kind": "computational",
+        "prompt": "For $S(s,t,z)=(2s\\cos t,2s\\sin t,z)$ with $s\\geq0$, compute its volume factor.",
+        "hint": "The planar scale of two contributes a factor of four to area before the radial factor.",
+        "solution": "The determinant is $4s$, so the ordinary volume factor is $4s$.",
+        "rubric": [
+          "Keep columns in the order $(s,t,z)$.",
+          "Simplify the determinant and use the nonnegative radial range."
+        ],
+        "solutionTex": "J_S=\\det\\begin{pmatrix}2\\cos t&-2s\\sin t&0\\\\2\\sin t&2s\\cos t&0\\\\0&0&1\\end{pmatrix}=4s"
+      },
+      {
+        "id": "lecture08-spherical-jacobian-order-sign-transfer",
+        "outcome": "Compute the signed spherical Jacobian for the stated parameter order and convert it to the nonnegative volume factor without erasing the orientation explanation.",
+        "kind": "conceptual",
+        "prompt": "Keep the same coordinate formulas but order the inputs as $(\\rho,\\phi,\\theta)$. What is the signed determinant and the standard-domain volume factor?",
+        "hint": "This order swaps the last two columns of the handout's matrix.",
+        "solution": "The determinant is $+\\rho^2\\sin\\phi$. For $\\rho\\geq0$ and $0\\leq\\phi\\leq\\pi$, the volume factor is also $\\rho^2\\sin\\phi$.",
+        "rubric": [
+          "Track the column swap's sign.",
+          "Use an absolute determinant for ordinary volume."
+        ],
+        "solutionTex": "J_{(\\rho,\\phi,\\theta)}=\\rho^2\\sin\\phi,\\qquad |J|=\\rho^2\\sin\\phi"
+      },
+      {
+        "id": "lecture08-space-transform-domain-components-transfer",
+        "outcome": "State the domain, component functions, and range of a space transformation from its formula.",
+        "kind": "conceptual",
+        "prompt": "For $S(u,v,w)=(e^u,v-w,w)$ on $\\mathbb R^3$, state its domain, its three component functions, and its range.",
+        "hint": "The first output is positive; for a target $(x,y,z)$ with $x>0$, solve for $u$, $v$, and $w$.",
+        "solution": "The domain is $\\mathbb R^3$, with $X=e^u$, $Y=v-w$, and $Z=w$. Its range is $(0,\\infty)\\times\\mathbb R^2$: for any $x>0$, take $(u,v,w)=(\\ln x,y+z,z)$.",
+        "solutionTex": "S(\\ln x,y+z,z)=(x,y,z),\\quad x>0",
+        "rubric": [
+          "State the parameter domain and all three output components.",
+          "Give the positive-$x$ range and verify a preimage."
+        ]
+      }
+    ]
   },
   "change-of-variables": {
     "prerequisites": ["plane-jacobian", "space-jacobians"],
     "reasoning": "Theorem used without proof",
     "sections": [
       {
-        "title": "State the map’s scope",
-        "text": "A sufficient change-of-variables setting is a one-to-one $C^1$ map on a neighborhood of a region with nonzero determinant, plus an integrable transformed field and ordinary negligible boundaries. The transformed integral uses $f(T(u))|\\det DT(u)|$."
+        "title": "State the map's scope",
+        "text": "The handout's sufficient setting requires a bounded region with existing measure, a continuously differentiable coordinate map and inverse on the interiors, and a one-to-one interior restriction. The transformed density must be defined on the image; the integrand uses $f(T(u))|\\det DT(u)|$ in two dimensions and the corresponding three-variable form in space."
       },
       {
         "title": "Local invertibility is not global injectivity",
-        "text": "The map $(u,v)\\mapsto(e^u\\cos v,e^u\\sin v)$ has nonzero determinant $e^{2u}$, but repeats whenever $v$ increases by $2\\pi$. Integrating over two full angle turns counts the image twice. Restrict the parameter range or explicitly account for multiplicity."
+        "text": "The map $(u,v)\\mapsto(e^u\\cos v,e^u\\sin v)$ has nonzero determinant $e^{2u}$, but repeats whenever $v$ increases by $2\\pi$. Integrating over two full angle turns counts almost every image point twice. Restrict the parameter range or account explicitly for multiplicity."
       }
     ],
     "exercise": {
-      "prompt": "Why does a polar integral over $\\theta\\in [0,4\\pi]$ double-count a disk?",
-      "hint": "Compare points at $\\theta$ and $\\theta +2\\pi$.",
-      "solution": "They have identical physical coordinates for each positive $r$, so almost every disk point is covered twice. Using the usual $r$ Jacobian over that interval computes twice the disk integral.",
+      "prompt": "Why does using the polar map over $0\\leq\\theta\\leq4\\pi$ count almost every disk point twice?",
+      "hint": "Compare the images of $(r,\\theta)$ and $(r,\\theta+2\\pi)$ for $r>0$.",
+      "solution": "The coordinates agree for every positive $r$, so almost every disk point is covered twice. Using the usual $r$ factor over two full turns doubles the disk integral.",
       "rubric": [
         "Check global coverage, not only the determinant.",
-        "Explain multiplicity away from negligible seams."
+        "Explain multiplicity away from boundary seams."
       ],
-      "solutionTex": "T(r,\\theta+2\\pi)=T(r,\\theta),\\quad\\int_0^{4\\pi}\\int_0^Rr\\,dr\\,d\\theta=2\\pi R^2"
-    }
+      "solutionTex": "T(r,\\theta+2\\pi)=T(r,\\theta),\\quad \\int_0^{4\\pi}\\int_0^Rr\\,dr\\,d\\theta=2\\pi R^2"
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-theorem-regularity-conditions-statement",
+        "title": "Check the theorem's map and region hypotheses",
+        "text": "The handout's two- and three-variable theorems require a bounded source region with existing measure, continuous first-partial entries for $T$ and its inverse on the relevant interiors, one-to-one behavior of the interior restriction, and a transformed density defined on the image. The formula uses $|J_T|$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-theorem-regularity-conditions-worked",
+        "title": "Verify the hypotheses for an invertible linear map",
+        "strategy": "Check region, smoothness, injectivity, inverse regularity, and density domain before changing variables.",
+        "setup": "Let $D=[0,1]^2$, $T(u,v)=(u+v,u-v)$, and $f(x,y)=1$.",
+        "steps": [
+          {
+            "label": "Check the region",
+            "text": "The source is a bounded rectangle with existing area.",
+            "equation": "D=[0,1]^2"
+          },
+          {
+            "label": "Check the map and inverse",
+            "text": "The constant nonzero determinant makes this linear map globally one-to-one with a smooth inverse.",
+            "equation": "J_T=\\det\\begin{pmatrix}1&1\\\\1&-1\\end{pmatrix}=-2"
+          },
+          {
+            "label": "Apply the formula",
+            "text": "The transformed density is the constant one times the absolute determinant.",
+            "equation": "\\iint_{T[D]}1\\,dA=\\int_0^1\\int_0^1 2\\,dv\\,du=2"
+          }
+        ],
+        "result": "All stated hypotheses hold, and the image region has area $2$.",
+        "verification": "The linear map has an everywhere-defined inverse and maps the unit square to a parallelogram with area $2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-coordinate-measure-factors-statement",
+        "title": "Match coordinate bounds with their Jacobian factors",
+        "text": "The standard coordinate maps use $r$ for planar polar area, $r$ for cylindrical volume, and $\\rho^2\\sin\\phi$ for spherical volume. The usual ranges $r,\\rho\\geq0$, $0\\leq\\theta<2\\pi$, and $0\\leq\\phi\\leq\\pi$ prevent repeated interior coverage; boundary seams are not extra volume."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-coordinate-measure-factors-worked",
+        "title": "Compute a cylinder's volume in cylindrical coordinates",
+        "strategy": "Describe the source box, verify the usual one-turn angle range, and multiply by the cylindrical factor.",
+        "setup": "Use $0\\leq r\\leq2$, $0\\leq\\theta\\leq2\\pi$, and $0\\leq z\\leq3$ for a solid cylinder.",
+        "steps": [
+          {
+            "label": "State the parameter region",
+            "text": "The radial coordinate is nonnegative and the angular interval covers one turn.",
+            "equation": "R=[0,2]\\times[0,2\\pi]\\times[0,3]"
+          },
+          {
+            "label": "Insert the Jacobian",
+            "text": "The integrand for volume is one, so only the cylindrical measure factor remains.",
+            "equation": "\\iiint_R r\\,dV=\\int_0^3\\int_0^{2\\pi}\\int_0^2 r\\,dr\\,d\\theta\\,dz"
+          },
+          {
+            "label": "Evaluate",
+            "text": "The radial, angular, and height factors multiply.",
+            "equation": "\\frac{2^2}{2}(2\\pi)(3)=12\\pi"
+          }
+        ],
+        "result": "The cylinder has volume $12\\pi$.",
+        "verification": "Its base area is $\\pi(2)^2$ and its height is $3$, giving the same volume."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-interior-injectivity-statement",
+        "title": "Check global injectivity, not only the Jacobian",
+        "text": "The change-of-variables theorem requires the map to be one-to-one on the source-region interior. A nonzero Jacobian gives local information; it does not prevent distinct parameter points from mapping to the same physical point."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-interior-injectivity-worked",
+        "title": "Find repeated images despite a nonzero determinant",
+        "strategy": "Compute the Jacobian and then test whether distinct inputs can have identical outputs.",
+        "setup": "Consider $T(u,v)=(e^u\\cos v,e^u\\sin v)$ on a region spanning two full angle turns.",
+        "steps": [
+          {
+            "label": "Compute local scale",
+            "text": "The determinant never vanishes.",
+            "equation": "J_T=e^{2u}>0"
+          },
+          {
+            "label": "Compare separated inputs",
+            "text": "The angle-period identities make these images equal.",
+            "equation": "T(u,v+2\\pi)=T(u,v)"
+          },
+          {
+            "label": "Decide injectivity",
+            "text": "The full two-turn domain is not one-to-one in its interior.",
+            "equation": "(u,v)\\ne(u,v+2\\pi),\\quad T(u,v)=T(u,v+2\\pi)"
+          }
+        ],
+        "result": "The map is locally nonsingular but globally noninjective on that domain.",
+        "verification": "Restricting the angle to a single turn restores one-to-one behavior away from boundary seams."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-theorem-regularity-conditions-transfer",
+        "outcome": "Check bounded-region, differentiability, interior injectivity, inverse regularity, and integrand-domain conditions before applying the multivariable change-of-variables theorem.",
+        "kind": "method-choice",
+        "prompt": "For $T(u,v)=(u+2v,3u-v)$ on $[0,1]^2$, decide whether the two-variable theorem applies and find the image area.",
+        "hint": "A constant nonzero determinant gives global injectivity here; compare the image measure with the source area factor.",
+        "solution": "$J_T=-7\\ne0$, so the linear map and its inverse are continuously differentiable and one-to-one. The image area is $7\\cdot1=7$.",
+        "rubric": [
+          "Verify a nonzero determinant and hence injectivity for this linear map.",
+          "Multiply the source area by $|J_T|$."
+        ],
+        "solutionTex": "J_T=\\det\\begin{pmatrix}1&2\\\\3&-1\\end{pmatrix}=-7,\\qquad \\operatorname{Area}(T[D])=7"
+      },
+      {
+        "id": "lecture08-coordinate-measure-factors-transfer",
+        "outcome": "Use the polar, cylindrical, and spherical coordinate formulas only on parameter ranges with the needed interior injectivity, and include their respective measure factors.",
+        "kind": "computational",
+        "prompt": "Use spherical coordinates to find the volume of the ball $0\\leq\\rho\\leq2$ with full standard angle ranges.",
+        "hint": "Integrate $\\rho^2\\sin\\phi$ with $0\\leq\\theta\\leq2\\pi$ and $0\\leq\\phi\\leq\\pi$.",
+        "solution": "$\\int_0^{2\\pi}\\int_0^\\pi\\int_0^2\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta=\\frac{8}{3}\\cdot2\\cdot2\\pi=\\frac{32\\pi}{3}$.",
+        "rubric": [
+          "Use the spherical factor $\\rho^2\\sin\\phi$.",
+          "Use each standard bound once and evaluate all three factors."
+        ],
+        "solutionTex": "\\int_0^{2\\pi}\\int_0^\\pi\\int_0^2\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta=\\frac{32\\pi}{3}"
+      },
+      {
+        "id": "lecture08-interior-injectivity-transfer",
+        "outcome": "Check injectivity before applying change of variables.",
+        "kind": "conceptual",
+        "prompt": "For $T(r,\\theta)=(r\\cos\\theta,r\\sin\\theta)$ on $1\\leq r\\leq3$, $0\\leq\\theta\\leq3\\pi$, identify the multiplicity of almost every image point.",
+        "hint": "Angles separated by $2\\pi$ have the same image.",
+        "solution": "Almost every point in the annulus has two preimages because the angle interval spans one and a half turns. The standard formula over this domain counts the covered annulus twice.",
+        "rubric": [
+          "Compare parameter points separated by $2\\pi$.",
+          "Check global multiplicity, not just the nonzero determinant."
+        ],
+        "solutionTex": "T(r,\\theta+2\\pi)=T(r,\\theta),\\qquad \\frac{3\\pi}{2\\pi}=\\frac32\\text{ turns}"
+      }
+    ]
   },
   "inverse-jacobian": {
     "prerequisites": ["change-of-variables"],
@@ -15285,23 +15833,272 @@
     "sections": [
       {
         "title": "Invert at corresponding points",
-        "text": "For an invertible differentiable map $S=T^{-1}$, $DS(T(u))DT(u)=I$. Thus $\\det DS(T(u))=1/\\det DT(u)$. The locations matter: reciprocal determinants are evaluated at points related by the map."
+        "text": "For an invertible differentiable map $S=T^{-1}$, the chain rule gives $DS(T(u))DT(u)=I$. Taking determinants gives $\\det DS(T(u))=1/\\det DT(u)$. The locations matter: reciprocal determinants are evaluated at corresponding points."
       },
       {
         "title": "A nonlinear example",
-        "text": "For $u=x$ and $v=y/(1+x)$, with $x>-1$, the forward determinant is $1/(1+x)$. The inverse is $x=u,y=(1+u)v$ and its determinant is $1+u$. When integrating in $u$,$v$, use the latter absolute factor."
+        "text": "For $u=x$ and $v=y/(1+x)$ with $x>-1$, the forward determinant is $1/(1+x)$. The inverse is $x=u$, $y=(1+u)v$, with determinant $1+u$. When integrating in $u,v$, use the absolute inverse factor $|1+u|$."
       }
     ],
     "exercise": {
-      "prompt": "For $u=2x$ and $v=3y$, what factor converts $du dv$ to $dx dy$?",
-      "hint": "Compute the inverse map, or reciprocate the nonzero determinant.",
-      "solution": "The inverse is $x=u/2,y=v/3$, so dx $dy=(1/6)du$ dv.",
+      "prompt": "For $u=2x$ and $v=3y$, what factor converts $du\\,dv$ to $dx\\,dy$?",
+      "hint": "Compute the inverse map or reciprocate the nonzero forward determinant.",
+      "solution": "The inverse is $x=u/2$, $y=v/3$, so $dx\\,dy=(1/6)\\,du\\,dv$.",
       "rubric": [
         "Identify the direction of substitution.",
-        "Do not insert the forward determinant 6."
+        "Do not insert the forward determinant $6$."
       ],
       "solutionTex": "dx\\,dy=\\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|du\\,dv=\\frac16du\\,dv"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-choose-inverse-coordinates-statement",
+        "title": "Choose coordinates that simplify the boundary",
+        "text": "When the handout gives $T^{-1}$, differentiate that inverse and use its absolute determinant to convert physical area or volume to parameter measure. Choose coordinates so the original boundary expressions become simple parameter bounds; still verify the map's coverage and multiplicity."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-choose-inverse-coordinates-worked",
+        "title": "Straighten four oblique boundaries",
+        "strategy": "Use the linear forms that appear in the boundary equations as the new variables, then solve for the inverse map.",
+        "setup": "Let $u=x+y$ and $v=x-y$ on the parallelogram $1\\leq x+y\\leq3$, $-1\\leq x-y\\leq1$.",
+        "steps": [
+          {
+            "label": "Read the bounds",
+            "text": "The chosen variables turn all four oblique sides into constant-coordinate boundaries.",
+            "equation": "1\\leq u\\leq3,\\qquad -1\\leq v\\leq1"
+          },
+          {
+            "label": "Solve for the inverse",
+            "text": "Add and subtract the defining equations.",
+            "equation": "x=\\frac{u+v}{2},\\qquad y=\\frac{u-v}{2}"
+          },
+          {
+            "label": "Compute inverse measure",
+            "text": "The absolute inverse determinant gives the physical area factor.",
+            "equation": "\\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\frac12"
+          }
+        ],
+        "result": "A constant density integrates to $\\frac12(2)(2)=2$ over this physical parallelogram.",
+        "verification": "The same area is base times height in the $(u,v)$ coordinates with the inverse-Jacobian factor."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-xy-ratio-region-statement",
+        "title": "Turn product and ratio bounds into a rectangle",
+        "text": "For positive $x,y$, the variables $u=xy$ and $v=y/x$ turn product-and-ratio bounds into independent intervals. The inverse map is $x=\\sqrt{u/v}$, $y=\\sqrt{uv}$, and its area factor is $1/(2v)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-xy-ratio-region-worked",
+        "title": "Reconstruct the product-ratio example",
+        "strategy": "Map the stated boundaries, solve for $(x,y)$, and compose the density before multiplying by the inverse determinant.",
+        "setup": "The handout asks for $\\iint_D(x^2+y^2)\\,dA$ where $x,y>0$, $1\\leq xy\\leq4$, and $1\\leq y/x\\leq4$. Continuation slides 26–27 are blank; the following is a checked guide derivation.",
+        "steps": [
+          {
+            "label": "Choose and invert",
+            "text": "The source inequalities become a rectangle in $(u,v)$.",
+            "equation": "u=xy,\\quad v=\\frac yx,\\quad 1\\leq u,v\\leq4,\\quad x=\\sqrt{\\frac uv},\\quad y=\\sqrt{uv}"
+          },
+          {
+            "label": "Find the inverse factor",
+            "text": "Differentiate the inverse map on the positive rectangle.",
+            "equation": "\\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\frac{1}{2v}"
+          },
+          {
+            "label": "Compose the integrand",
+            "text": "The two squares become $u/v$ and $uv$.",
+            "equation": "(x^2+y^2)\\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\frac u2\\left(1+\\frac1{v^2}\\right)"
+          },
+          {
+            "label": "Evaluate the product integral",
+            "text": "Separate the $u$ and $v$ factors.",
+            "equation": "\\left(\\int_1^4\\frac u2\\,du\\right)\\left(\\int_1^4\\left(1+\\frac1{v^2}\\right)dv\\right)=\\frac{225}{16}"
+          }
+        ],
+        "result": "The integral is $\\frac{225}{16}$.",
+        "verification": "The inverse determinant is positive on the rectangle; integrating the two separated factors gives $15/4$ and $15/4$, whose product is $225/16$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-affine-parallelogram-statement",
+        "title": "Map the parallelogram's parallel sides to coordinate lines",
+        "text": "For an affine parallelogram, select two independent linear forms that are constant on its pairs of parallel sides. Their inverse determinant scales the rectangular parameter area; the density must be composed with the inverse map."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-affine-parallelogram-worked",
+        "title": "Integrate over the handout's parallelogram",
+        "strategy": "Use the two line families in the source diagram to define rectangle coordinates.",
+        "setup": "The handout's vertices are $(1,2)$, $(3,4)$, $(4,3)$, and $(6,5)$, with integrand $x-y$. Continuation slide 30 is blank; page 29 supplies the boundary diagram.",
+        "steps": [
+          {
+            "label": "Define the boundary coordinates",
+            "text": "The two parallel-side families have constant values of these linear forms.",
+            "equation": "u=y-x,\\qquad v=3y-x"
+          },
+          {
+            "label": "Map the four vertices",
+            "text": "The parallelogram becomes a rectangle.",
+            "equation": "-1\\leq u\\leq1,\\qquad 5\\leq v\\leq9"
+          },
+          {
+            "label": "Invert and scale measure",
+            "text": "Solving for physical coordinates gives a constant absolute factor.",
+            "equation": "x=\\frac{v-3u}{2},\\quad y=\\frac{v-u}{2},\\quad \\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\frac12"
+          },
+          {
+            "label": "Integrate the odd density",
+            "text": "The transformed density is $x-y=-u$ on a symmetric interval.",
+            "equation": "\\int_5^9\\int_{-1}^1\\frac{-u}{2}\\,du\\,dv=0"
+          }
+        ],
+        "result": "The source integral is zero.",
+        "verification": "The rectangle is symmetric in $u$ and the composed integrand is odd in $u$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-trapezoid-boundary-map-statement",
+        "title": "Keep the slanted parameter bounds after substitution",
+        "text": "For the source trapezoid, $u=x-y$ makes its parallel slanted sides constant and $v=x+y$ simplifies the exponent. The transformed region is $1\\leq u\\leq2$, $-u\\leq v\\leq u$; it is not a rectangle."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-trapezoid-boundary-map-worked",
+        "title": "Evaluate the source trapezoid integral",
+        "strategy": "Transform each vertex and boundary before writing the bounds; use the inverse determinant only after finding the actual parameter region.",
+        "setup": "The handout asks for $\\iint_D e^{(x+y)/(x-y)}\\,dA$ over vertices $(1,0)$, $(2,0)$, $(0,-2)$, and $(0,-1)$. Continuation slide 33 is blank; page 32 shows the mapped region.",
+        "steps": [
+          {
+            "label": "Transform the vertices",
+            "text": "The four images identify a wedge between two radial lines.",
+            "equation": "(1,0)\\mapsto(1,1),\\ (2,0)\\mapsto(2,2),\\ (0,-2)\\mapsto(2,-2),\\ (0,-1)\\mapsto(1,-1)"
+          },
+          {
+            "label": "Invert the coordinates",
+            "text": "Solve the two linear equations for $x$ and $y$.",
+            "equation": "x=\\frac{u+v}{2},\\quad y=\\frac{v-u}{2},\\quad \\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\frac12"
+          },
+          {
+            "label": "Rewrite the exponent and bounds",
+            "text": "The ratio becomes $v/u$ and the wedge bounds remain dependent.",
+            "equation": "1\\leq u\\leq2,\\quad -u\\leq v\\leq u,\\quad \\frac{x+y}{x-y}=\\frac vu"
+          },
+          {
+            "label": "Integrate in the inner variable",
+            "text": "Substitute $w=v/u$ or integrate the exponential directly.",
+            "equation": "\\frac12\\int_1^2\\int_{-u}^{u}e^{v/u}\\,dv\\,du=\\frac34\\left(e-e^{-1}\\right)"
+          }
+        ],
+        "result": "The integral is $\\frac34(e-e^{-1})$.",
+        "verification": "The variable substitution $w=v/u$ gives the inner integral $u(e-e^{-1})$, then $\\int_1^2u\\,du=3/2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-three-plane-volume-statement",
+        "title": "Use plane equations as space coordinates",
+        "text": "When six bounding planes come in three parallel pairs, use their left-hand linear forms as coordinates. The source becomes a box in parameter space, and the absolute determinant of the inverse map converts its volume."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-three-plane-volume-worked",
+        "title": "Compute the source solid's volume",
+        "strategy": "Map the six planes to a rectangular box, then invert the $3\\times3$ linear determinant.",
+        "setup": "The handout bounds a solid by $1\\leq x+y+z\\leq2$, $0\\leq x+2y\\leq1$, and $2\\leq y+z\\leq4$. Continuation slide 35 is blank, so these steps supply an independently checked derivation.",
+        "steps": [
+          {
+            "label": "Choose coordinates",
+            "text": "Each pair of parallel planes fixes one new coordinate.",
+            "equation": "u=x+y+z,\\quad v=x+2y,\\quad w=y+z"
+          },
+          {
+            "label": "Read the parameter box",
+            "text": "The six source planes become the six faces of this box.",
+            "equation": "1\\leq u\\leq2,\\quad 0\\leq v\\leq1,\\quad 2\\leq w\\leq4"
+          },
+          {
+            "label": "Compute the inverse factor",
+            "text": "The forward determinant has absolute value two.",
+            "equation": "\\left|\\frac{\\partial(u,v,w)}{\\partial(x,y,z)}\\right|=2,\\qquad \\left|\\frac{\\partial(x,y,z)}{\\partial(u,v,w)}\\right|=\\frac12"
+          },
+          {
+            "label": "Scale the box volume",
+            "text": "The parameter box has volume two.",
+            "equation": "\\operatorname{Vol}=\\frac12(1)(1)(2)=1"
+          }
+        ],
+        "result": "The bounded solid has volume $1$.",
+        "verification": "Solving gives $x=u-w$, $y=(w+v-u)/2$, and $z=(w-v+u)/2$, confirming the inverse map and factor."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-choose-inverse-coordinates-transfer",
+        "outcome": "Choose parameter coordinates from the physical region's boundary expressions, then compute the inverse-Jacobian factor and transformed bounds.",
+        "kind": "method-choice",
+        "prompt": "A region is bounded by $2x+y=0$, $2x+y=4$, $x-y=1$, and $x-y=3$. Choose $u,v$ to make it a rectangle and find its area.",
+        "hint": "Use the left-hand linear forms as coordinates and compute $\\partial(x,y)/\\partial(u,v)$.",
+        "solution": "Take $u=2x+y$, $v=x-y$. The parameter rectangle has side lengths $4$ and $2$. Since $\\left|\\partial(x,y)/\\partial(u,v)\\right|=1/3$, its physical area is $8/3$.",
+        "rubric": [
+          "Use the boundary expressions as coordinate variables.",
+          "Include the absolute inverse determinant."
+        ],
+        "solutionTex": "\\left|\\frac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\frac13,\\qquad \\operatorname{Area}=4\\cdot2\\cdot\\frac13=\\frac83"
+      },
+      {
+        "id": "lecture08-xy-ratio-region-transfer",
+        "outcome": "Convert the source's positive-quadrant bounds on $xy$ and $y/x$ into a rectangle and use the inverse Jacobian in an integral.",
+        "kind": "computational",
+        "prompt": "For $x,y>0$ with $1\\leq xy\\leq9$ and $1\\leq y/x\\leq4$, evaluate $\\iint_Dxy\\,dA$.",
+        "hint": "Use $u=xy$, $v=y/x$ and the inverse area factor $1/(2v)$.",
+        "solution": "The transformed integral is $\\int_1^9\\int_1^4\\frac{u}{2v}\\,dv\\,du=20\\ln4$.",
+        "rubric": [
+          "Transform the bounds to $1\\leq u\\leq9$, $1\\leq v\\leq4$.",
+          "Use the inverse factor and integrate the composed density."
+        ],
+        "solutionTex": "\\int_1^9\\int_1^4\\frac{u}{2v}\\,dv\\,du=20\\ln4"
+      },
+      {
+        "id": "lecture08-affine-parallelogram-transfer",
+        "outcome": "Straighten the source parallelogram by two linear boundary coordinates, compute the inverse determinant, and integrate the transformed density.",
+        "kind": "computational",
+        "prompt": "Let $T(u,v)=(u+2v,3u-v)$ on $0\\leq u\\leq1$, $0\\leq v\\leq2$. Evaluate $\\iint_{T[D]}(x+y)\\,dA$.",
+        "hint": "Use $|\\det DT|=7$ and compose $x+y$ before integrating.",
+        "solution": "The composed density is $4u+v$, so the integral is $7\\int_0^1\\int_0^2(4u+v)\\,dv\\,du=42$.",
+        "rubric": [
+          "Compute the absolute determinant as $7$.",
+          "Compose the density and integrate over the stated rectangle."
+        ],
+        "solutionTex": "7\\int_0^1\\int_0^2(4u+v)\\,dv\\,du=42"
+      },
+      {
+        "id": "lecture08-trapezoid-boundary-map-transfer",
+        "outcome": "Choose sum-and-difference coordinates for the source trapezoid, retain its triangular parameter bounds, and transform the exponential density with the inverse determinant.",
+        "kind": "computational",
+        "prompt": "For $1\\leq u=x-y\\leq3$ and $-u\\leq v=x+y\\leq u$, evaluate $\\iint_E e^{(x+y)/(x-y)}\\,dA$.",
+        "hint": "Use $\\left|\\partial(x,y)/\\partial(u,v)\\right|=1/2$ and integrate $e^{v/u}$ first.",
+        "solution": "$\\frac12\\int_1^3\\int_{-u}^{u}e^{v/u}\\,dv\\,du=\\frac12\\int_1^3u(e-e^{-1})\\,du=2(e-e^{-1})$.",
+        "rubric": [
+          "Keep the bounds $-u\\leq v\\leq u$.",
+          "Include the inverse determinant $1/2$."
+        ],
+        "solutionTex": "\\frac12\\int_1^3\\int_{-u}^{u}e^{v/u}\\,dv\\,du=2(e-e^{-1})"
+      },
+      {
+        "id": "lecture08-three-plane-volume-transfer",
+        "outcome": "Use the three plane equations as linear coordinates, invert their map, and apply the inverse determinant to find a bounded solid's volume.",
+        "kind": "computational",
+        "prompt": "Find the volume bounded by $0\\leq x+y+z\\leq2$, $-1\\leq x-y\\leq1$, and $0\\leq z\\leq3$.",
+        "hint": "Set $p=x+y+z$, $q=x-y$, and $r=z$, then compute the inverse determinant.",
+        "solution": "$\\left|\\partial(x,y,z)/\\partial(p,q,r)\\right|=1/2$, and the parameter box has volume $2\\cdot2\\cdot3=12$, so the volume is $6$.",
+        "rubric": [
+          "Use the three plane expressions as coordinates.",
+          "Use the absolute inverse determinant and parameter-box volume."
+        ],
+        "solutionTex": "\\operatorname{Vol}=\\frac12(2)(2)(3)=6"
+      }
+    ]
   },
   "scalar-line-integrals": {
     "prerequisites": [
@@ -15312,23 +16109,162 @@
     "sections": [
       {
         "title": "Density accumulates with length",
-        "text": "For a parametrized curve $r(t)$, $\\int_C f\\,ds=\\int f(r(t))|r'(t)|\\,dt$. Reversing orientation preserves the value because speed is nonnegative. Repeated traversal repeats the accumulation."
+        "text": "For a smooth parametrization $r(t)$, $\\int_C f\\,ds=\\int_a^b f(r(t))|r'(t)|\\,dt$. Reversing orientation preserves the value because speed is nonnegative. Repeating a traversal counts each pass, although repeated tracing is outside the handout's nice-parametrization assumption."
       },
       {
         "title": "Non-unit speed is visible",
-        "text": "For $r(t)=(2\\cos t,2\\sin t)$, speed is $2$. With density $f=3$, one traversal has integral $\\int_0^{2\\pi}6\\,dt=12\\pi$. Using $dt$ alone would underestimate by a factor of two."
+        "text": "For $r(t)=(2\\cos t,2\\sin t)$, the speed is $2$. With density $f=3$, one traversal gives $\\int_0^{2\\pi}6\\,dt=12\\pi$. Using $dt$ alone would underestimate by a factor of two."
       }
     ],
     "exercise": {
-      "prompt": "Integrate density $f(x,y)=x$ along $r(t)=(t,2t)$, $0\\le t\\le 1$.",
-      "hint": "The speed is constant $\\sqrt{5}$.",
-      "solution": "The integral is $\\sqrt{5}\\int_0^1t\\,dt =\\sqrt{5}/2$. Reversing the traversal leaves the scalar line integral unchanged.",
+      "prompt": "Integrate density $f(x,y)=x$ along $r(t)=(t,2t)$, $0\\leq t\\leq1$.",
+      "hint": "The speed is constant $\\sqrt5$.",
+      "solution": "The integral is $\\sqrt5\\int_0^1t\\,dt=\\sqrt5/2$. Reversing traversal leaves the scalar line integral unchanged.",
       "rubric": [
-        "Evaluate density along the curve.",
+        "Evaluate the density along the curve.",
         "Include the speed factor."
       ],
       "solutionTex": "\\int_Cx\\,ds=\\sqrt5\\int_0^1t\\,dt=\\frac{\\sqrt5}{2}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-scalar-riemann-sum-statement",
+        "title": "Accumulate scalar density along arc length",
+        "text": "The scalar line integral sums sampled values of $f$ weighted by arc-length increments. Under the handout's nice-curve assumption, its value does not depend on the chosen nice parametrization; reversing direction does not change the unsigned arc-length accumulation. The area-under-a-curve picture on page 41 is an informal interpretation when $f\\geq0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-scalar-riemann-sum-worked",
+        "title": "Accumulate a constant density along a segment",
+        "strategy": "Evaluate the density and multiply it by the curve's total arc length.",
+        "setup": "Let $r(t)=(3t,4t)$ for $0\\leq t\\leq1$, with constant density $f=2$.",
+        "steps": [
+          {
+            "label": "Find the speed",
+            "text": "The derivative is constant, so the arc-length rate is constant.",
+            "equation": "|r'(t)|=|(3,4)|=5"
+          },
+          {
+            "label": "Integrate density times speed",
+            "text": "The scalar line integral uses the nonnegative speed.",
+            "equation": "\\int_C2\\,ds=\\int_0^1 2\\cdot5\\,dt=10"
+          },
+          {
+            "label": "Reverse the parameter",
+            "text": "Reversing direction changes velocity sign but not speed.",
+            "equation": "|(-r)'(t)|=|r'(t)|"
+          }
+        ],
+        "result": "Either orientation gives the scalar line integral $10$.",
+        "verification": "The segment has length $5$ and constant density $2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-scalar-existence-and-smooth-formula-statement",
+        "title": "Separate existence from the computation formula",
+        "text": "A continuous scalar field on a curve of existing finite length has a scalar line integral. If the curve has a smooth nice parametrization $r:[a,b]\\to\\mathbb R^n$, then $\\int_C f\\,ds=\\int_a^b f(r(t))|r'(t)|\\,dt$. Continuity and finite length guarantee existence; smoothness supplies this computation formula."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-scalar-existence-and-smooth-formula-worked",
+        "title": "Compute a density integral on a smooth segment",
+        "strategy": "Substitute the parametrization into the density and multiply by its speed before integrating.",
+        "setup": "Let $r(t)=(t,2t)$, $0\\leq t\\leq1$, and $f(x,y)=x$.",
+        "steps": [
+          {
+            "label": "Check the hypotheses",
+            "text": "The field is continuous and the segment is smooth with finite length.",
+            "equation": "f(x,y)=x,\\qquad r'(t)=(1,2)"
+          },
+          {
+            "label": "Substitute and compute speed",
+            "text": "The density along the path is $t$ and speed is constant.",
+            "equation": "f(r(t))=t,\\qquad |r'(t)|=\\sqrt5"
+          },
+          {
+            "label": "Evaluate",
+            "text": "The speed factor remains in the parameter integral.",
+            "equation": "\\int_Cx\\,ds=\\sqrt5\\int_0^1t\\,dt=\\frac{\\sqrt5}{2}"
+          }
+        ],
+        "result": "The integral exists and equals $\\sqrt5/2$.",
+        "verification": "Directly, the density grows linearly from zero to one along a segment of length $\\sqrt5$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-source-circle-density-statement",
+        "title": "Use the source circle's radius and constant coordinate",
+        "text": "The handout's circle lies in $y=4$, has center $(0,4,0)$ and radius $2$, and uses $f(x,y,z)=x^2y^2$. A correct scalar line integral evaluates $f$ on the circle and multiplies by its speed."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-circle-density-worked",
+        "title": "Reconstruct the circle example",
+        "strategy": "Parametrize the circle once, use its constant speed, and integrate the composed density.",
+        "setup": "The source problem is on page 44; continuation slide 45 is blank. Use $r(t)=(2\\cos t,4,2\\sin t)$ for $0\\leq t\\leq2\\pi$.",
+        "steps": [
+          {
+            "label": "Evaluate the field",
+            "text": "The plane fixes $y=4$.",
+            "equation": "f(r(t))=(2\\cos t)^2(4)^2=64\\cos^2t"
+          },
+          {
+            "label": "Find the speed",
+            "text": "The radius is two, so the parametrization moves at constant speed two.",
+            "equation": "|r'(t)|=2"
+          },
+          {
+            "label": "Integrate",
+            "text": "Multiply density by speed and use the full-period cosine-square integral.",
+            "equation": "\\int_Cf\\,ds=128\\int_0^{2\\pi}\\cos^2t\\,dt=128\\pi"
+          }
+        ],
+        "result": "The source circle integral is $128\\pi$.",
+        "verification": "The average of $x^2$ around a radius-two circle is $2$, its length is $4\\pi$, and $y^2=16$, giving $16\\cdot2\\cdot4\\pi=128\\pi$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-scalar-riemann-sum-transfer",
+        "outcome": "Interpret a scalar line integral as the limit of sampled density times small arc-length increments, independent of the chosen nice parametrization and curve orientation.",
+        "kind": "conceptual",
+        "prompt": "A semicircle of radius $3$ has constant density $1$. Find its scalar line integral in either traversal direction.",
+        "hint": "A scalar line integral of density one is the arc length.",
+        "solution": "The semicircle length is $3\\pi$, so both traversal directions give $\\int_C1\\,ds=3\\pi$.",
+        "rubric": [
+          "Use arc length rather than parameter interval length.",
+          "Explain why reversing orientation leaves the value unchanged."
+        ],
+        "solutionTex": "\\int_C1\\,ds=3\\pi"
+      },
+      {
+        "id": "lecture08-scalar-existence-and-smooth-formula-transfer",
+        "outcome": "Use continuity and finite curve length to guarantee existence, and evaluate a scalar line integral on a smooth curve with the speed formula.",
+        "kind": "computational",
+        "prompt": "For $r(t)=(t,2t)$, $0\\leq t\\leq1$, compute $\\int_C y\\,ds$.",
+        "hint": "Along the curve $y=2t$ and the speed is $\\sqrt5$.",
+        "solution": "$\\int_Cy\\,ds=\\sqrt5\\int_0^1 2t\\,dt=\\sqrt5$.",
+        "rubric": [
+          "Evaluate the field on the path.",
+          "Include the speed factor."
+        ],
+        "solutionTex": "\\int_Cy\\,ds=\\sqrt5\\int_0^1 2t\\,dt=\\sqrt5"
+      },
+      {
+        "id": "lecture08-source-circle-density-transfer",
+        "outcome": "Evaluate the handout's scalar density on a circle by composing the field with a parametrization and including speed.",
+        "kind": "computational",
+        "prompt": "Let $g(x,y,z)=x^2+y^2$ on the circle $r(t)=(3\\cos t,-2,3\\sin t)$, $0\\leq t\\leq2\\pi$. Find $\\int_Cg\\,ds$.",
+        "hint": "The density is constant on this circle; its speed is three.",
+        "solution": "$g(r(t))=9$ and $|r'(t)|=3$, so $\\int_Cg\\,ds=\\int_0^{2\\pi}27\\,dt=54\\pi$.",
+        "rubric": [
+          "Compose the density with the path.",
+          "Multiply by speed before integrating over one traversal."
+        ],
+        "solutionTex": "\\int_Cg\\,ds=\\int_0^{2\\pi}9\\cdot3\\,dt=54\\pi"
+      }
+    ]
   },
   "vector-fields": {
     "prerequisites": ["vectors-and-coordinates"],
@@ -15336,23 +16272,72 @@
     "sections": [
       {
         "title": "Components depend on position",
-        "text": "A vector field $F$ assigns a vector to each point of its domain. For $F=(-y,x)$, arrows are tangential to circles about zero; for $F=(x,y)$, arrows are radial. Arrow normalization improves legibility but hides magnitude unless a scale or readout supplies it."
+        "text": "A vector field $F$ assigns a vector to each point of its domain. For $F(x,y)=(-y,x)$, arrows are tangent to circles about the origin; for $G(x,y)=(x,y)$, arrows are radial. Arrow normalization improves legibility but hides magnitude unless a scale or readout supplies it."
       },
       {
         "title": "Domain is part of the field",
-        "text": "The field $(-y/(x^{2}+y^{2}),x/(x^{2}+y^{2}))$ excludes the origin. A plot that omits one arrow does not repair the missing domain point; theorem hypotheses must respect that puncture."
+        "text": "The field $F(x,y)=(-y/(x^2+y^2),x/(x^2+y^2))$ excludes the origin. Omitting one arrow from a plot does not add the missing domain point; theorem hypotheses must respect that puncture."
       }
     ],
     "exercise": {
-      "prompt": "At $(1,0)$, compare radial $F=(x,y)$ and rotational $G=(-y,x)$.",
+      "prompt": "At $(1,0)$, compare radial $F(x,y)=(x,y)$ and rotational $G(x,y)=(-y,x)$.",
       "hint": "Substitute the point into each component.",
-      "solution": "$F=(1,0)$ points outward and $G=(0,1)$ is tangent counterclockwise. Their dot product is zero.",
+      "solution": "$F(1,0)=(1,0)$ points outward and $G(1,0)=(0,1)$ is tangent counterclockwise. Their dot product is zero.",
       "rubric": [
         "Evaluate the field at the point.",
-        "Distinguish field vector from position vector when they differ."
+        "Distinguish the two field values and directions."
       ],
-      "solutionTex": "F(1,0)=(1,0),\\quad G(1,0)=(0,1),\\quad F\\cdot G=0"
-    }
+      "solutionTex": "F(1,0)=(1,0),\\quad G(1,0)=(0,1),\\quad F(1,0)\\cdot G(1,0)=0"
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-vector-field-domain-components-statement",
+        "title": "Treat domain and component functions as part of the field",
+        "text": "An $n$-dimensional vector field maps a subset of $\\mathbb R^n$ into $\\mathbb R^n$. It is smooth in the handout's sense when every component has continuous first-order partial derivatives throughout its domain. A missing or singular point changes the field's domain; a plot cannot fill it in."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-vector-field-domain-components-worked",
+        "title": "Evaluate a smooth field and inspect its domain",
+        "strategy": "Evaluate every component at the point, then check where each formula is defined.",
+        "setup": "Compare $F(x,y)=(x,2y)$ with $G(x,y)=(-y/(x^2+y^2),x/(x^2+y^2))$.",
+        "steps": [
+          {
+            "label": "Evaluate the smooth field",
+            "text": "The first field is defined everywhere and has continuous first partials.",
+            "equation": "F(1,-2)=(1,-4)"
+          },
+          {
+            "label": "Check the second domain",
+            "text": "Its denominator vanishes at the origin, which is excluded.",
+            "equation": "\\operatorname{Dom}(G)=\\mathbb R^2\\setminus\\{(0,0)\\}"
+          },
+          {
+            "label": "Keep objects distinct",
+            "text": "A field assigns vectors to points; an integral curve would be a separate parametrized object.",
+            "equation": "G(x,y)\\ne (x,y)\\text{ in general}"
+          }
+        ],
+        "result": "The value of $F$ at $(1,-2)$ is $(1,-4)$, while $G$ has no value at the origin.",
+        "verification": "Both components of $F$ are linear; the denominator in $G$ is zero exactly at the excluded point."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-vector-field-domain-components-transfer",
+        "outcome": "Read a vector field as a position-dependent vector map, state its domain, and distinguish component regularity from a plotted trajectory.",
+        "kind": "conceptual",
+        "prompt": "For $H(x,y)=(y,1/x)$, state its domain and evaluate $H(-2,3)$. Is it smooth on its domain?",
+        "hint": "Only the second component imposes a restriction; its partial derivatives are continuous wherever $x\\ne0$.",
+        "solution": "$\\operatorname{Dom}(H)=\\{(x,y):x\\ne0\\}$ and $H(-2,3)=(3,-1/2)$. Its components have continuous first partials on this domain, so it is smooth there.",
+        "rubric": [
+          "Exclude the line $x=0$.",
+          "Evaluate both components and state smoothness only on the stated domain."
+        ],
+        "solutionTex": "H(-2,3)=(3,-\\tfrac12)"
+      }
+    ]
   },
   "vector-line-integrals": {
     "prerequisites": ["scalar-line-integrals", "vector-fields"],
@@ -15360,23 +16345,212 @@
     "sections": [
       {
         "title": "Work uses a signed component",
-        "text": "Work is $\\int F(r(t))\\cdot r'(t)dt$. Parallel force and velocity contribute positively, opposed ones negatively, and perpendicular components contribute zero. Unlike a scalar length integral, reversing traversal reverses the sign."
+        "text": "Work is $\\int_C F(r(t))\\cdot r'(t)\\,dt$. Parallel field and velocity components contribute positively, opposed components negatively, and perpendicular components contribute zero. Unlike a scalar length integral, reversing traversal reverses the sign."
       },
       {
         "title": "A transverse component contributes nothing",
-        "text": "On $r(t)=(t,0)$, $0\\leq t\\leq 1$, $F=(1,5)$ has dot product 1 with $r'=(1,0)$. Work is 1 despite the large vertical force component. For $F=(-1,5)$, work is $-1$."
+        "text": "On $r(t)=(t,0)$ for $0\\leq t\\leq1$, the field $F=(1,5)$ has dot product $1$ with $r'=(1,0)$. Work is $1$ despite the vertical field component. For $F=(-1,5)$, work is $-1$."
       }
     ],
     "exercise": {
-      "prompt": "Find the work of $F=(2,3)$ along the segment from $(0,0)$ to $(1,2)$.",
-      "hint": "Use $r(t)=(t,2t)$.",
-      "solution": "The dot product $(2,3)\\cdot (1,2)=8$ is constant, so work is 8. The reverse path gives $-8$.",
+      "prompt": "Find the work of $F=(2,3)$ along the segment $r(t)=(t,2t)$, $0\\leq t\\leq1$.",
+      "hint": "Use $r'(t)=(1,2)$, not only a unit tangent.",
+      "solution": "The dot product $(2,3)\\cdot(1,2)=8$ is constant, so the work is $8$. The reverse path gives $-8$.",
       "rubric": [
-        "Use velocity rather than unit tangent alone.",
+        "Use velocity rather than only a unit tangent.",
         "Retain orientation and sign."
       ],
       "solutionTex": "W=\\int_0^1(2,3)\\cdot(1,2)\\,dt=8"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture08-vector-integral-riemann-sum-statement",
+        "title": "Pair each field value with the oriented displacement",
+        "text": "The vector line-integral Riemann sum pairs $F(r(t_i^*))$ with the directed chord displacement. For a smooth oriented parametrization, this becomes $\\int_C F\\cdot dr=\\int_a^bF(r(t))\\cdot r'(t)\\,dt$; velocity is not replaced by a unit tangent."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-vector-integral-riemann-sum-worked",
+        "title": "Compute work along a non-unit-speed segment",
+        "strategy": "Evaluate the field on the path, dot it with the actual velocity, and integrate over the parameter interval.",
+        "setup": "Let $F=(2,3)$ and $r(t)=(t,2t)$ for $0\\leq t\\leq1$.",
+        "steps": [
+          {
+            "label": "Find the velocity",
+            "text": "The path's speed is not one; retain the full derivative.",
+            "equation": "r'(t)=(1,2)"
+          },
+          {
+            "label": "Take the field-velocity dot product",
+            "text": "The result is constant along this path.",
+            "equation": "F(r(t))\\cdot r'(t)=(2,3)\\cdot(1,2)=8"
+          },
+          {
+            "label": "Integrate",
+            "text": "The parameter interval has length one.",
+            "equation": "\\int_C F\\cdot dr=\\int_0^1 8\\,dt=8"
+          }
+        ],
+        "result": "The work along the oriented segment is $8$.",
+        "verification": "The field is constant and its component along the displacement $(1,2)$ is exactly the full dot product $8$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-vector-integral-orientation-statement",
+        "title": "Reverse orientation to reverse the vector integral",
+        "text": "Two nice parametrizations that give the same orientation produce the same vector line integral. Reversing that orientation changes $\\int_C F\\cdot dr$ to its negative; unlike $ds$, the directed differential records travel direction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-vector-integral-orientation-worked",
+        "title": "Compare a path with its reverse",
+        "strategy": "Compute the forward integral from velocity, then use the reversal theorem rather than redoing the geometry.",
+        "setup": "Take $F=(1,0)$ on $r(t)=(t,t^2)$ for $0\\leq t\\leq1$.",
+        "steps": [
+          {
+            "label": "Compute the forward value",
+            "text": "The field pairs only with the horizontal velocity component.",
+            "equation": "F(r(t))\\cdot r'(t)=(1,0)\\cdot(1,2t)=1"
+          },
+          {
+            "label": "Integrate in the forward direction",
+            "text": "The interval runs from the initial endpoint to the final endpoint.",
+            "equation": "\\int_C F\\cdot dr=\\int_0^1 1\\,dt=1"
+          },
+          {
+            "label": "Reverse the orientation",
+            "text": "Every directed displacement changes sign.",
+            "equation": "\\int_{-C}F\\cdot dr=-1"
+          }
+        ],
+        "result": "The reversed path integral is $-1$.",
+        "verification": "The reverse parametrization traverses the same image with opposite velocity, so the integral changes sign."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-vector-integral-existence-formula-statement",
+        "title": "Check continuity and preserve the oriented velocity",
+        "text": "A continuous vector field on a curve of existing finite length has a vector line integral. For a smooth oriented parametrization $r:[a,b]\\to\\mathbb R^n$, compute it as $\\int_a^bF(r(t))\\cdot r'(t)\\,dt$. Continuity ensures existence; smoothness supplies the parameter formula."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-vector-integral-existence-formula-worked",
+        "title": "Evaluate a continuous field on a smooth curve",
+        "strategy": "Compose the field with the path, dot with the path derivative, and integrate with the declared orientation.",
+        "setup": "Let $F(x,y)=(x,y)$ and $r(t)=(t,2t)$ for $0\\leq t\\leq1$.",
+        "steps": [
+          {
+            "label": "Check the hypotheses",
+            "text": "The field is continuous and the path is a smooth finite segment.",
+            "equation": "r'(t)=(1,2)"
+          },
+          {
+            "label": "Compose and take the dot product",
+            "text": "Use the full velocity vector.",
+            "equation": "F(r(t))\\cdot r'(t)=(t,2t)\\cdot(1,2)=5t"
+          },
+          {
+            "label": "Integrate",
+            "text": "The orientation is from $t=0$ to $t=1$.",
+            "equation": "\\int_C F\\cdot dr=\\int_0^1 5t\\,dt=\\frac52"
+          }
+        ],
+        "result": "The line integral exists and equals $5/2$.",
+        "verification": "The radial field is the gradient of $(x^2+y^2)/2$, whose endpoint difference is $5/2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture08-source-vector-work-statement",
+        "title": "Retain all three components in source work",
+        "text": "The handout's space field is $F(x,y,z)=(e^{2x},z(y+1),z^3)$ and its oriented path is $r(t)=(t^3,1-3t,e^t)$ on $[0,2]$. The work integrand uses all three components of $F(r(t))$ dotted with $r'(t)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-vector-work-worked",
+        "title": "Reconstruct the source work example",
+        "strategy": "Substitute the path into each field component, differentiate all path components, and integrate term by term.",
+        "setup": "The problem is on page 50; continuation slide 51 is blank. The derivation below is original checked work.",
+        "steps": [
+          {
+            "label": "Compose the field",
+            "text": "Substitute $x=t^3$, $y=1-3t$, and $z=e^t$.",
+            "equation": "F(r(t))=(e^{2t^3},e^t(2-3t),e^{3t})"
+          },
+          {
+            "label": "Differentiate the path and dot",
+            "text": "Each coordinate contributes to work.",
+            "equation": "r'(t)=(3t^2,-3,e^t),\\quad F(r(t))\\cdot r'(t)=3t^2e^{2t^3}-6e^t+9te^t+e^{4t}"
+          },
+          {
+            "label": "Integrate the first term",
+            "text": "Use the derivative of $2t^3$.",
+            "equation": "\\int_0^2 3t^2e^{2t^3}\\,dt=\\frac{e^{16}-1}{2}"
+          },
+          {
+            "label": "Integrate the remaining terms",
+            "text": "An antiderivative of $(-6+9t)e^t$ is $(9t-15)e^t$.",
+            "equation": "\\int_0^2(-6+9t)e^t\\,dt=3e^2+15,\\quad \\int_0^2e^{4t}\\,dt=\\frac{e^8-1}{4}"
+          }
+        ],
+        "result": "The source line integral is $\\frac{e^{16}-1}{2}+3e^2+15+\\frac{e^8-1}{4}$.",
+        "verification": "Differentiating the displayed antiderivatives recovers the exact dot-product integrand."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-vector-integral-riemann-sum-transfer",
+        "outcome": "Interpret a vector line integral as sampled field vectors dotted with oriented curve displacements, and use the velocity formula on smooth parametrizations.",
+        "kind": "computational",
+        "prompt": "For $F=(1,-2)$ along $r(t)=(2t,t)$, $0\\leq t\\leq1$, compute the line integral.",
+        "hint": "Use $r'(t)=(2,1)$; do not normalize it.",
+        "solution": "$F\\cdot r'=(1,-2)\\cdot(2,1)=0$, so the line integral is zero.",
+        "rubric": [
+          "Use the oriented velocity.",
+          "Include both field components in the dot product."
+        ],
+        "solutionTex": "\\int_C F\\cdot dr=\\int_0^1(1,-2)\\cdot(2,1)\\,dt=0"
+      },
+      {
+        "id": "lecture08-vector-integral-orientation-transfer",
+        "outcome": "Use the curve orientation in a vector line integral and negate the result when the same curve is traversed in reverse.",
+        "kind": "conceptual",
+        "prompt": "Let $F=(x,0)$ on the segment $r(t)=(t,0)$, $0\\leq t\\leq2$. Find the forward and reverse line integrals.",
+        "hint": "The forward integrand is $t$; then apply the orientation rule.",
+        "solution": "The forward value is $\\int_0^2t\\,dt=2$. The reverse value is $-2$.",
+        "rubric": [
+          "Compute the forward integral with the stated orientation.",
+          "Negate it for the reverse path."
+        ],
+        "solutionTex": "\\int_C F\\cdot dr=2,\\qquad \\int_{-C}F\\cdot dr=-2"
+      },
+      {
+        "id": "lecture08-vector-integral-existence-formula-transfer",
+        "outcome": "Use continuity and finite curve length to guarantee a vector line integral, and evaluate it on a smooth oriented parametrization by the field-velocity dot product.",
+        "kind": "computational",
+        "prompt": "For $F(x,y)=(0,y)$ and $r(t)=(t,t^2)$, $0\\leq t\\leq1$, compute $\\int_C F\\cdot dr$.",
+        "hint": "The field along the path is $(0,t^2)$ and the velocity is $(1,2t)$.",
+        "solution": "$F(r(t))\\cdot r'(t)=2t^3$, so $\\int_C F\\cdot dr=\\int_0^1 2t^3\\,dt=1/2$.",
+        "rubric": [
+          "Compose the vector field with the curve.",
+          "Use the directed velocity in the dot product."
+        ],
+        "solutionTex": "\\int_C F\\cdot dr=\\int_0^1 2t^3\\,dt=\\frac12"
+      },
+      {
+        "id": "lecture08-source-vector-work-transfer",
+        "outcome": "Evaluate the handout's three-dimensional vector line integral by composing the field with its oriented curve and integrating all velocity contributions.",
+        "kind": "computational",
+        "prompt": "For $G(x,y,z)=(x,y,z)$ along $s(t)=(t,2t,-t)$, $0\\leq t\\leq1$, find $\\int_CG\\cdot dr$.",
+        "hint": "The field along the path is $(t,2t,-t)$ and the velocity is $(1,2,-1)$.",
+        "solution": "The dot product is $t+4t+t=6t$, so the integral is $\\int_0^1 6t\\,dt=3$.",
+        "rubric": [
+          "Compose all field components.",
+          "Use all velocity components with their signs."
+        ],
+        "solutionTex": "\\int_CG\\cdot dr=\\int_0^1 6t\\,dt=3"
+      }
+    ]
   },
   "coordinate-line-integrals": {
     "prerequisites": ["vector-line-integrals"],

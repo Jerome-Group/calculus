@@ -44,10 +44,12 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const lecture10 = /^MH1100_Lecture_10:0[1-4]$/.test(section.id);
       const lecture11 = /^MH1100_Lecture_11:0[1-3]$/.test(section.id);
       const lecture12 = /^MH1100_Lecture_12:0[12]$/.test(section.id);
+      const mh2100Lecture08 = /^MH2100_Lecture_08:0[1-5]$/.test(section.id);
       const mappedLecture =
         /^MH1100_Lecture_0[356]:/.test(section.id) ||
         lecture08 ||
         lecture11 ||
+        mh2100Lecture08 ||
         chapter04Notes;
       const pageVerified =
         /^MH1100_Lecture_0[3456]:/.test(section.id) ||
@@ -55,6 +57,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         lecture08 ||
         lecture11 ||
         lecture12 ||
+        mh2100Lecture08 ||
         chapter04Notes;
       const lecture04 = section.id.startsWith("MH1100_Lecture_04:");
       assert.equal(
@@ -252,6 +255,11 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
             (item) => item.id === guide[3],
           );
           assert.ok(block, locator);
+          if (guide[4] === ".title") {
+            assert.equal(state, "named", locator);
+            assert.ok(block.title, locator);
+            continue;
+          }
           assert.equal(
             state,
             ["derivation", "worked-example"].includes(block.kind)

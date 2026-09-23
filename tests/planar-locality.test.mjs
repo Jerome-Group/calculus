@@ -44,5 +44,8 @@ test("fixed-height strip retains bias; guide identifies the distinction", () => 
       new URL("../lib/curriculum/learning-guides.json", import.meta.url),
     ),
   );
-  assert.match(guides["plane-jacobian"].sections[1].text, /bias uk remains/);
+  assert.match(
+    guides["plane-jacobian"].sections[1].text,
+    /bias \$uk\$ remains/,
+  );
 });
