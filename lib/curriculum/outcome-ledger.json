@@ -2057,8 +2057,8 @@
         "function-shapes",
         "transform-compose"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'functions' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_mapping_partial",
+      "gap": "Source-specific atomic skills now have worked and transfer evidence. Full source-page exhaustive coverage, scene fit, and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2067,10 +2067,17 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
+      "depth": "source_and_guide_inspected",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "sets-functions-domains:function-rule",
+        "sets-functions-domains:representations",
+        "sets-functions-domains:graph-pairs",
+        "sets-functions-domains:vertical-line",
+        "sets-functions-domains:difference-quotient"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "inspected_physical_pages": "22–31"
     },
     {
       "id": "MH1100_Lecture_01:03",
@@ -2109,8 +2116,8 @@
         "function-shapes",
         "transform-compose"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'piecewise rules' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_mapping_partial",
+      "gap": "Source-specific atomic skills now have worked and transfer evidence. Full source-page exhaustive coverage, scene fit, and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2119,10 +2126,16 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
+      "depth": "source_and_guide_inspected",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "function-shapes:piecewise-endpoints",
+        "function-shapes:absolute-relu",
+        "function-shapes:leaky-relu",
+        "function-shapes:rational-indicator"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "inspected_physical_pages": "32–37"
     },
     {
       "id": "MH1100_Lecture_01:05",
@@ -2135,8 +2148,8 @@
         "function-shapes",
         "transform-compose"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'symmetry' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_mapping_partial",
+      "gap": "Source-specific atomic skills now have worked and transfer evidence. Full source-page exhaustive coverage, scene fit, and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2145,10 +2158,14 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
+      "depth": "source_and_guide_inspected",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "function-shapes:parity-test",
+        "function-shapes:parity-decomposition"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "inspected_physical_pages": "38–41"
     },
     {
       "id": "MH1100_Lecture_01:06",
@@ -2161,8 +2178,8 @@
         "function-shapes",
         "transform-compose"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'monotonicity' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_mapping_partial",
+      "gap": "Source-specific atomic skills now have worked and transfer evidence. Full source-page exhaustive coverage, scene fit, and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2171,10 +2188,14 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
+      "depth": "source_and_guide_inspected",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "function-shapes:strict-monotonicity",
+        "function-shapes:range-from-monotone"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "inspected_physical_pages": "42–44"
     },
     {
       "id": "MH1100_Lecture_01:07",
@@ -2187,8 +2208,8 @@
         "function-shapes",
         "transform-compose"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'elementary families' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_mapping_partial",
+      "gap": "Source-specific atomic skills now have worked and transfer evidence. Full source-page exhaustive coverage, scene fit, and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2197,10 +2218,18 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
+      "depth": "source_and_guide_inspected",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "function-shapes:polynomial-power",
+        "function-shapes:rational-algebraic",
+        "function-shapes:trigonometric-family",
+        "function-shapes:exponential-family",
+        "function-shapes:logarithmic-family",
+        "function-shapes:family-classification"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "inspected_physical_pages": "45–51"
     },
     {
       "id": "MH1100_Lecture_01:08",
@@ -2213,8 +2242,8 @@
         "function-shapes",
         "transform-compose"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'transformations and composition' at 14–63; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_mapping_partial",
+      "gap": "Source-specific atomic skills now have worked and transfer evidence. Full source-page exhaustive coverage, scene fit, and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2223,10 +2252,20 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
+      "depth": "source_and_guide_inspected",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "transform-compose:shifts",
+        "transform-compose:scales-reflections",
+        "transform-compose:arithmetic-domains",
+        "transform-compose:composition-domain",
+        "transform-compose:nested-composition",
+        "transform-compose:sign-sine-composition",
+        "transform-compose:trig-addition-identities",
+        "transform-compose:hyperbolic-addition-identities"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "inspected_physical_pages": "52–63"
     },
     {
       "id": "MH1100_Lecture_02:01",
@@ -12635,6 +12674,1653 @@
         "practiced": "not claimed",
         "visualized": "No outcome-specific scene verified.",
         "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "sets-functions-domains:function-rule",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Decide whether a rule assigns exactly one output to every declared input.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 22,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page defines a function as assigning exactly one element of E to each element of D."
+        },
+        "page_heading": "What is a function?"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#sets-functions-domains.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[mh1100-l01-function-rule]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[mh1100-l01-function-rule-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:02",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "sets-functions-domains:representations",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Translate a complete verbal rule into a numerical table and formula.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 23,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [23],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page lists verbal, numerical, visual, and algebraic descriptions, requiring an unambiguous value on the domain."
+        },
+        "page_heading": "Ways to represent a function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#sets-functions-domains.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[mh1100-l01-representations]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[mh1100-l01-representations-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:02",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "sets-functions-domains:graph-pairs",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Read graph points as ordered pairs and distinguish input from output.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 24,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [24],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page defines the graph as $\\{(x,f(x)):x\\in D\\}$."
+        },
+        "page_heading": "Visualizing a function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#sets-functions-domains.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[mh1100-l01-graph-pairs]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[mh1100-l01-graph-pairs-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:02",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "sets-functions-domains:vertical-line",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Apply the vertical line test and select a single-valued branch.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 29,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29, 30],
+          "method": "Both cited physical pages visually inspected as Poppler PNG renders and cross-checked with PDF text.",
+          "claim_observed": "The page states the vertical line test; page 30 splits $x=y^2-2$ into two branches."
+        },
+        "page_heading": "More about the graph of a function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#sets-functions-domains.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[mh1100-l01-vertical-line]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[mh1100-l01-vertical-line-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:02",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:piecewise-endpoints",
+      "concept_id": "function-shapes",
+      "outcome": "Choose the active piece at a boundary and mark open and closed graph endpoints.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 32,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [32],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page graphs $1-x$ for $x\\le-1$ and $x^2$ for $x>-1$ with distinct boundary heights."
+        },
+        "page_heading": "Piecewise defined functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-piecewise-endpoints]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-piecewise-endpoints-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:04",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:absolute-relu",
+      "concept_id": "function-shapes",
+      "outcome": "Convert absolute value and ReLU to piecewise rules and compare their negative inputs.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 33,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [33, 35],
+          "method": "Both cited physical pages visually inspected as Poppler PNG renders and cross-checked with PDF text.",
+          "claim_observed": "Page 33 defines absolute value by sign; page 35 gives $\\operatorname{ReLU}(x)=\\max(0,x)$."
+        },
+        "page_heading": "Piecewise defined functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-absolute-relu]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-absolute-relu-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:04",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:leaky-relu",
+      "concept_id": "function-shapes",
+      "outcome": "Use a leaky ReLU parameter to determine branch slope and junction value.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 36,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page defines LeLU as $x$ for $x>0$ and $\\alpha x$ for $x\\le0$, with positive $\\alpha$."
+        },
+        "page_heading": "Piecewise defined functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-leaky-relu]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-leaky-relu-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:04",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:rational-indicator",
+      "concept_id": "function-shapes",
+      "outcome": "Interpret a rational-indicator piecewise rule on its dense input classes.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 37,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [37],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page assigns value 1 on rational inputs and 0 otherwise."
+        },
+        "page_heading": "Piecewise defined functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-rational-indicator]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-rational-indicator-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:04",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:parity-test",
+      "concept_id": "function-shapes",
+      "outcome": "Classify a function as even, odd, or neither by substituting the negative input.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 40,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [40],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page works $x^5+x$ as odd, $1-x^4$ as even, and $2x-x^2$ as neither."
+        },
+        "page_heading": "Even and odd functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-parity-test]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-parity-test-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:05",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:parity-decomposition",
+      "concept_id": "function-shapes",
+      "outcome": "Decompose a function on a symmetric domain into unique even and odd parts.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 41,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [41],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page asks for a proof that any function on $[-a,a]$ is a sum of even and odd functions."
+        },
+        "page_heading": "Even and odd functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-parity-decomposition]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-parity-decomposition-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:05",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:strict-monotonicity",
+      "concept_id": "function-shapes",
+      "outcome": "Test strict increase or decrease using every ordered input pair on an interval.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 43,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [43],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page defines increasing with strict $<$ and decreasing with strict $>$ for every pair $x_1<x_2$."
+        },
+        "page_heading": "Increasing and decreasing functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-strict-monotonicity]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-strict-monotonicity-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:06",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:range-from-monotone",
+      "concept_id": "function-shapes",
+      "outcome": "Derive the range of a decreasing function from endpoint and limiting behavior.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 44,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [44],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page works $1/(1+\\sqrt{1+x})$ on $[-1,\\infty)$ with range $(0,1]$."
+        },
+        "page_heading": "Increasing and decreasing functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-range-from-monotone]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-range-from-monotone-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:06",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:polynomial-power",
+      "concept_id": "function-shapes",
+      "outcome": "Distinguish polynomial degree from a general power function and give natural domains.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 45,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [45, 46],
+          "method": "Both cited physical pages visually inspected as Poppler PNG renders and cross-checked with PDF text.",
+          "claim_observed": "Page 45 defines polynomials and degree; page 46 defines power functions $x^a$."
+        },
+        "page_heading": "A catalog of essential functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-polynomial-power]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-polynomial-power-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:07",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:rational-algebraic",
+      "concept_id": "function-shapes",
+      "outcome": "Classify rational and algebraic rules and retain restrictions after simplification.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 46,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [46],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page defines rational functions as polynomial ratios and algebraic functions as polynomial constructions with arithmetic and roots."
+        },
+        "page_heading": "A catalog of essential functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-rational-algebraic]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-rational-algebraic-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:07",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:trigonometric-family",
+      "concept_id": "function-shapes",
+      "outcome": "Distinguish bounded periodic sine and cosine from reciprocal trigonometric domain gaps.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 47,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [47, 48],
+          "method": "Both cited physical pages visually inspected as Poppler PNG renders and cross-checked with PDF text.",
+          "claim_observed": "Page 47 gives sine and cosine domain, range, and period; page 48 names their reciprocal functions."
+        },
+        "page_heading": "A catalog of essential functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-trigonometric-family]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-trigonometric-family-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:07",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:exponential-family",
+      "concept_id": "function-shapes",
+      "outcome": "Use the base to distinguish increasing and decreasing exponentials while keeping positive range.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 49,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [49],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page graphs $2^x$ and $(0.5)^x$, both with domain $\\mathbb R$ and range $(0,\\infty)$."
+        },
+        "page_heading": "A catalog of essential functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-exponential-family]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-exponential-family-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:07",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:logarithmic-family",
+      "concept_id": "function-shapes",
+      "outcome": "Use exponential inverse relation to determine logarithm domain and range.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 50,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [50],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page identifies logarithms as inverse exponentials and gives domain $(0,\\infty)$, range $\\mathbb R$."
+        },
+        "page_heading": "A catalog of essential functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-logarithmic-family]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-logarithmic-family-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:07",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:shifts",
+      "concept_id": "transform-compose",
+      "outcome": "Track vertical and horizontal shifts by mapping a known graph point.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 53,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [53],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page states $f(x)\\pm c$ shifts vertically and $f(x\\mp c)$ shifts horizontally."
+        },
+        "page_heading": "Transformations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-shifts]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-shifts-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:scales-reflections",
+      "concept_id": "transform-compose",
+      "outcome": "Track point coordinates under horizontal and vertical scaling and reflection.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 55,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [55],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page states $cf(x)$, $f(cx)$, $-f(x)$ and $f(-x)$ transformations."
+        },
+        "page_heading": "Transformations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-scales-reflections]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-scales-reflections-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:arithmetic-domains",
+      "concept_id": "transform-compose",
+      "outcome": "Derive domains of sum, product, and quotient from both input domains and zeros of the divisor.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 57,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [57],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page gives intersection domains for sums/products and additionally excludes zeros of the divisor for quotients."
+        },
+        "page_heading": "Combinations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-arithmetic-domains]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-arithmetic-domains-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:composition-domain",
+      "concept_id": "transform-compose",
+      "outcome": "Calculate composite values and reject inner outputs outside the outer domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 59,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [58, 59],
+          "method": "Both cited physical pages visually inspected as Poppler PNG renders and cross-checked with PDF text.",
+          "claim_observed": "Page 58 gives the composite-domain condition; page 59 works $f(x)=(x+1)/(x+2)$ with $g(x)=x+1/x$."
+        },
+        "page_heading": "Combinations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-composition-domain]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-composition-domain-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:nested-composition",
+      "concept_id": "transform-compose",
+      "outcome": "Evaluate nested composition from the innermost function outward.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 60,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [60],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "Page 58 states three-function order; page 60 asks for $f(f(f(x)))$ for a zero-one piecewise rule."
+        },
+        "page_heading": "Combinations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-nested-composition]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-nested-composition-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "sets-functions-domains:difference-quotient",
+      "concept_id": "sets-functions-domains",
+      "outcome": "Simplify a difference quotient before taking any limit.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 26,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page asks for the difference quotient of $2x^2-5x+1$ at $a$."
+        },
+        "page_heading": "Function examples"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#sets-functions-domains.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.contentBlocks[mh1100-l01-difference-quotient]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#sets-functions-domains.exercises[mh1100-l01-difference-quotient-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:02",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "function-shapes:family-classification",
+      "concept_id": "function-shapes",
+      "outcome": "Classify mixed function formulas by construction and natural domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 51,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [51],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page asks learners to classify exponential, power, algebraic, and polynomial formulas."
+        },
+        "page_heading": "A catalog of essential functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#function-shapes.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.contentBlocks[mh1100-l01-family-classification]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#function-shapes.exercises[mh1100-l01-family-classification-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:07",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:sign-sine-composition",
+      "concept_id": "transform-compose",
+      "outcome": "Compose a sign rule with sine using zeros and sign intervals.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 61,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [61],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page defines sign and asks for the graph of $\\operatorname{sgn}(\\sin x)$."
+        },
+        "page_heading": "Combinations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-sign-sine-composition]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-sign-sine-composition-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:trig-addition-identities",
+      "concept_id": "transform-compose",
+      "outcome": "Derive product-to-sum and half-angle identities from addition formulas.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 62,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [62],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page supplies sine and cosine addition formulas and asks for two derived identities."
+        },
+        "page_heading": "Combinations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-trig-addition-identities]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-trig-addition-identities-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "transform-compose:hyperbolic-addition-identities",
+      "concept_id": "transform-compose",
+      "outcome": "Derive hyperbolic product and square identities from supplied addition formulas.",
+      "core_source": {
+        "id": "MH1100_Lecture_01",
+        "physical_page": 63,
+        "sha256": "6a5e5849c8fb01ebb4afe9a687def9af66c17b13522f25c180516652b0fd0856",
+        "inspection": "Local canonical PDF hash matched source-manifest; physical page visually rendered and inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [63],
+          "method": "Poppler PNG render plus page text cross-check against local canonical PDF.",
+          "claim_observed": "The page supplies hyperbolic addition formulas and asks for product-to-sum and square identities."
+        },
+        "page_heading": "Combinations of functions"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#transform-compose.title",
+            "claim": "The parent concept is named in the catalog.",
+            "method": "Direct catalog inspection; the atomic skill is named by its worked block."
+          }
+        ],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.contentBlocks[mh1100-l01-hyperbolic-addition-identities]",
+            "claim": "The worked block derives this atomic skill and contrasts a common error.",
+            "method": "Compared the worked reasoning with the cited physical PDF page."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#transform-compose.exercises[mh1100-l01-hyperbolic-addition-identities-transfer]",
+            "claim": "A distinct transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Read the task against the source skill; learner performance has not been observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_worked_practice_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "A worked lesson and independent transfer task are present. No rendered scene has been verified for this exact outcome; no learner performance or independent outcome check is claimed.",
+      "source_section_id": "MH1100_Lecture_01:08",
+      "inspection_check": {
+        "method": "Compared the rendered source page with the worked block and transfer task; did not infer scene or learner evidence.",
+        "named": "parent concept title and atomic worked-block title",
+        "stated": "no separate theorem/definition block claimed",
+        "worked": "matched worked calculation",
+        "practiced": "distinct transfer task exists; learner performance unverified",
+        "visualized": "not verified",
+        "checked": "no independent outcome-level validation or learner performance check"
       }
     }
   ]
