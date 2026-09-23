@@ -15808,9 +15808,9 @@
         "inspection": "Canonical local PDF SHA-256 7250bc655e8850d1d212c66061b7504e172e7378578d5134a0de2a23bb4693bd; physical page rendered and layout/text cross-checked.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [15],
-          "method": "pdftoppm physical-page render plus pdftotext layout cross-check.",
-          "claim_observed": "Lagrange Multipliers — Example 2 (cont’d)"
+          "pages": [15, 16],
+          "method": "pdftoppm renders of physical pages 15–16 plus page-bounded text cross-check.",
+          "claim_observed": "Page 15 reduces the stationary equations to x=y=2z; page 16 applies the area constraint to obtain (2,2,1) and volume 4."
         },
         "page_heading": "Lagrange Multipliers — Example 2 (cont’d)"
       },
