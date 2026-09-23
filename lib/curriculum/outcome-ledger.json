@@ -3897,52 +3897,295 @@
       "source_id": "MH1100_Lecture_08",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Chain rule",
-      "physical_pages_from_audit": "2–56; applications 36–43",
+      "physical_pages_from_audit": "2–56; applications 36–43 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "chain-rule-single",
         "implicit-related-rates",
         "linearization-differentials"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Chain rule' at 2–56; applications 36–43; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 3 is an application divider. Pages 5–6 work the basic chain rule, page 7 contrasts composition order, pages 8–9 specialize to powers, pages 10–12 iterate layers, with page 11 requiring a positive secant radicand, and pages 13–15 prove the rule. Page 10 says “with respect to t” while differentiating in x; guide uses x. Repeated examples share the mapped decisions. Scene and learner-performance claims remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-chain-composition]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-composition-order]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-general-power]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-nested-chain]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-nested-real-domain]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-increment-proof]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-sine-quotient]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-sine-order]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-reciprocal-cuberoot]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-nested-sine-root]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-root-secant-domain]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.supplementalBlocks[chain-rule-remainder]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-chain-composition-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-composition-order-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-general-power-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-nested-chain-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-nested-domain-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[zero-inner-increment]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "chain-rule-single:composition-rule",
+        "chain-rule-single:composition-order",
+        "chain-rule-single:general-power",
+        "chain-rule-single:nested-chain",
+        "chain-rule-single:nested-real-domain",
+        "chain-rule-single:increment-proof"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "4–15"
     },
     {
       "id": "MH1100_Lecture_08:02",
       "source_id": "MH1100_Lecture_08",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "implicit differentiation",
-      "physical_pages_from_audit": "2–56; applications 36–43",
+      "physical_pages_from_audit": "2–56; applications 36–43 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "chain-rule-single",
         "implicit-related-rates",
         "linearization-differentials"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'implicit differentiation' at 2–56; applications 36–43; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 21 redoes the circle tangent on the explicit positive branch as a check of pages 19–20. Pages 22–24 vary the chain/product/trigonometric factors. Pages 25–26 divide by y0, valid only away from vertical endpoints; guide gives the tangent there without division. The related-rates material starts on page 27 under :03. Scene and learner-performance claims remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-branches]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-chain]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-product]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-trig]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-conic-tangent]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-circle-branches]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-circle-slope]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-cubic-product]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-trig-implicit]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-ellipse-tangent]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-branches-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-chain-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-product-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-trig-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-conic-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "implicit-related-rates:local-branches",
+        "implicit-related-rates:implicit-chain",
+        "implicit-related-rates:implicit-product",
+        "implicit-related-rates:implicit-trig",
+        "implicit-related-rates:conic-tangent"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "16–26"
     },
     {
       "id": "MH1100_Lecture_08:03",
@@ -22781,6 +23024,732 @@
         "practiced": "The transfer task has a hint, solved feedback, and rubric; learner performance remains unverified.",
         "visualized": "No rendered app scene was verified for this exact outcome.",
         "checked": "No independent learner assessment or performance evidence is claimed."
+      }
+    },
+    {
+      "id": "chain-rule-single:composition-rule",
+      "concept_id": "chain-rule-single",
+      "outcome": "Apply the single-composition chain rule with outer derivative evaluated at the inner output.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 4,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5, 6],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 4–6 state the chain rule and work sine of a rational inner function with quotient derivative."
+        },
+        "page_heading": "The Chain Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-chain-composition]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-sine-quotient]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-chain-composition-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "chain-rule-single:composition-order",
+      "concept_id": "chain-rule-single",
+      "outcome": "Distinguish compositions whose exponent placement changes the outside layer.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 7,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 7 contrasts sine of x squared with sine squared of x and obtains distinct derivatives."
+        },
+        "page_heading": "The Chain Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-composition-order]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-sine-order]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-composition-order-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "chain-rule-single:general-power",
+      "concept_id": "chain-rule-single",
+      "outcome": "Apply the power-chain rule for real exponents on the correct real domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 8,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8, 9],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 8–9 combine power and chain rules, including an integer power and reciprocal cube root of a positive quadratic."
+        },
+        "page_heading": "The Chain Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-general-power]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-reciprocal-cuberoot]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-general-power-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "chain-rule-single:nested-chain",
+      "concept_id": "chain-rule-single",
+      "outcome": "Differentiate three nested layers and retain every chain factor.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 10,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10, 11, 12],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 10–12 iterate the chain rule through three layers, including sine of a square root of one plus cosine squared."
+        },
+        "page_heading": "The Chain Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-nested-chain]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-nested-sine-root]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-nested-chain-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "chain-rule-single:nested-real-domain",
+      "concept_id": "chain-rule-single",
+      "outcome": "Check the real differentiability domain of a nested root-secant composition before applying all chain factors.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 11,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 11 differentiates the square root of secant of x cubed through root, secant, and cubic layers; the real expression requires secant positive."
+        },
+        "page_heading": "The Chain Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-nested-real-domain]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-source-root-secant-domain]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[lecture08-nested-domain-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source differentiates the nested expression; the guide makes its real-domain restriction explicit. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1100_Lecture_08:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "chain-rule-single:increment-proof",
+      "concept_id": "chain-rule-single",
+      "outcome": "Prove the chain rule using differentiability remainders, including a zero inner increment.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 13,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 15],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 13–15 prove the chain rule by writing each differentiability remainder as an increment times a vanishing coefficient."
+        },
+        "page_heading": "The Chain Rule"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#chain-rule-single.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.contentBlocks[lecture08-increment-proof]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.supplementalBlocks[chain-rule-remainder]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#chain-rule-single.exercises[zero-inner-increment]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "implicit-related-rates:local-branches",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Select a differentiable local branch of an implicit relation before assigning dy/dx.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 16,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17, 18],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 16–18 distinguish implicit relations from the two explicit circle branches and assume a differentiable local y(x)."
+        },
+        "page_heading": "Implicit Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-branches]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-circle-branches]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-branches-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "implicit-related-rates:implicit-chain",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Differentiate y(x) through the chain rule and compute a finite circle tangent.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 19,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20, 21],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 19–21 differentiate y squared with the chain factor and compare the circle tangent with its positive explicit branch."
+        },
+        "page_heading": "Implicit Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-chain]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-circle-slope]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-chain-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "implicit-related-rates:implicit-product",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Combine product and chain rules in an implicit relation before collecting y prime.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 22,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 22–23 differentiate the cubic relation with product and chain rules and find the tangent at (3,3)."
+        },
+        "page_heading": "Implicit Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-product]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-cubic-product]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-product-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "implicit-related-rates:implicit-trig",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Differentiate a trigonometric implicit identity with y on both sides.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 24,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [24],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 24 differentiates sine of x+y and y squared times cosine x before collecting y prime."
+        },
+        "page_heading": "Implicit Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-trig]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-trig-implicit]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-trig-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "implicit-related-rates:conic-tangent",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Derive an ellipse tangent equation and handle vertical points without dividing by y.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 25,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25, 26],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 25–26 derive the ellipse tangent identity after dividing by y0; the division excludes its vertical endpoints."
+        },
+        "page_heading": "Implicit Differentiation"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-implicit-conic-tangent]",
+            "claim": "Guide states the source conditions and decision.",
+            "method": "Compared rendered source pages with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-ellipse-tangent]",
+            "claim": "Source or source-linked reasoning inspected; guide-created contrasts are identified.",
+            "method": "Solved and reviewed the cited guide reasoning."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-implicit-conic-transfer]",
+            "claim": "Independent task includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:02",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
       }
     }
   ]

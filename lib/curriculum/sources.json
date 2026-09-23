@@ -17,7 +17,23 @@
     "pages": 56,
     "course": "MH1100",
     "kind": "lecture",
-    "sha256": "f81f07e967c22465bfe847444c2f0921aa36ce2a0aa0452a4fdbb1f2ebc5c8e1"
+    "sha256": "f81f07e967c22465bfe847444c2f0921aa36ce2a0aa0452a4fdbb1f2ebc5c8e1",
+    "errata": [
+      {
+        "page": 10,
+        "printed": "Page 10 says to differentiate $y$ with respect to $t$ while displaying $\\frac{dy}{dx}$ for a composition whose input is $x$.",
+        "correction": "Read the differentiation variable as $x$ throughout that chain-rule calculation.",
+        "justification": "The displayed layers end with $w=h(x)$ and the product includes $\\frac{dw}{dx}$.",
+        "provenance": "Direct visual inspection of the canonical PDF; the original file is unchanged."
+      },
+      {
+        "page": 25,
+        "printed": "Pages 25–26 solve for $y\\prime$ by dividing by $y_0$ without stating the condition $y_0\\ne0$.",
+        "correction": "The finite-slope derivation requires $y_0\\ne0$; at $(\\pm a,0)$ the tangent is vertical. The final normal-form tangent equation remains valid there.",
+        "justification": "At $y_0=0$, the equation $2x_0/a^2+2y_0y\\prime/b^2=0$ cannot be solved for a finite $y\\prime$; the ellipse has $x_0=\\pm a$.",
+        "provenance": "Direct visual inspection and algebraic check; the original file is unchanged."
+      }
+    ]
   },
   "MH1100_Lecture_11": {
     "id": "MH1100_Lecture_11",

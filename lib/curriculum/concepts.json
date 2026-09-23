@@ -1255,6 +1255,11 @@
       },
       {
         "sourceId": "MH1100_Lecture_08",
+        "pages": [5, 5],
+        "detail": "Sine of a rational function"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
         "pages": [6, 6],
         "detail": "Solution"
       },
@@ -1265,8 +1270,43 @@
       },
       {
         "sourceId": "MH1100_Lecture_08",
+        "pages": [8, 8],
+        "detail": "Power rule combined with chain rule"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [9, 9],
+        "detail": "Integer and fractional power examples"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [10, 10],
+        "detail": "Repeated chain rule and variable typo"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [11, 11],
+        "detail": "Nested root and secant example"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [12, 12],
+        "detail": "Nested sine-root exercise"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
         "pages": [13, 13],
         "detail": "Proof of The Chain Rule"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [14, 14],
+        "detail": "Differentiability remainder proof"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [15, 15],
+        "detail": "Chain rule proof conclusion"
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_02_Derivatives",
@@ -1302,6 +1342,56 @@
         "sourceId": "MH1100_Lecture_08",
         "pages": [16, 16],
         "detail": "Implicit Differentiation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [17, 17],
+        "detail": "Upper and lower circle branches"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [18, 18],
+        "detail": "Local differentiable branch assumption"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [19, 19],
+        "detail": "Circle chain-rule derivative"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [20, 20],
+        "detail": "Circle tangent at $(3,4)$"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [21, 21],
+        "detail": "Explicit branch check"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [22, 22],
+        "detail": "Cubic-product implicit differentiation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [23, 23],
+        "detail": "Cubic tangent at $(3,3)$"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [24, 24],
+        "detail": "Trigonometric implicit differentiation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [25, 25],
+        "detail": "Ellipse tangent derivation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [26, 26],
+        "detail": "Ellipse tangent identity"
       },
       {
         "sourceId": "MH1100_Lecture_08",
