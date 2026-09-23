@@ -7393,79 +7393,386 @@
       "id": "MH2100_Lecture_06:01",
       "source_id": "MH2100_Lecture_06",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Linearity/additivity",
-      "physical_pages_from_audit": "2–23; splitting 2–12; polar cells 13–18; polar regions 19–23",
-      "linked_concept_ids": [
-        "linearity-additivity",
-        "polar-rectangles",
-        "polar-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Linearity/additivity' at 2–23; splitting 2–12; polar cells 13–18; polar regions 19–23; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Linearity, restricted domains, finite additivity, and non-simple region decomposition",
+      "physical_pages_from_audit": "Physical pages 2–12; page 1 is only a week outline and develops no outcome.",
+      "linked_concept_ids": ["linearity-additivity"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Mapped source statements, checked worked derivations, and independent transfer tasks are provided for the reviewed pages. No outcome-specific scene alignment or learner performance is claimed; the route scenes are conceptual candidates only.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 3."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 4."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 5."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 6."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 7, 8, 9, 10, 11, 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 3."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 4."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 5."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 6."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 7, 8, 9, 10, 11, 12."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[linear-combination-integral-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[restricted-domain-integral-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[additivity-null-overlap-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[decompose-nonsimple-region-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[three-piece-integral-example-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "linearity-additivity:lecture06-linear-combination-integral",
+        "linearity-additivity:lecture06-restricted-domain-integral",
+        "linearity-additivity:lecture06-additivity-null-overlap",
+        "linearity-additivity:lecture06-decompose-nonsimple-region",
+        "linearity-additivity:lecture06-three-piece-integral-example"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–12",
+      "inspected_physical_pages": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Week outline only; it lists the double-integral topics but develops no distinct outcome."
+        }
+      ],
+      "source_review_notes": [
+        "Page 2 motivates decomposition of a non-simple bounded region but develops no separate rule; its distinct method is stated on page 6.",
+        "Pages 3–5 distinguish integrand linearity, domain restriction, and finite additivity; they have different hypotheses and are mapped separately.",
+        "The worked source example on pages 7–12 uses one Type I and two Type II pieces. Recomputed component values 40/3, 1664/35, and −1696/35 sum to 1304/105; shared edges and a point have zero area.",
+        "The canonical source has no errata record; the reviewed theorem hypotheses and source example showed no mathematical correction."
+      ]
     },
     {
       "id": "MH2100_Lecture_06:02",
       "source_id": "MH2100_Lecture_06",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "decomposing non-simple regions",
-      "physical_pages_from_audit": "2–23; splitting 2–12; polar cells 13–18; polar regions 19–23",
-      "linked_concept_ids": [
-        "linearity-additivity",
-        "polar-rectangles",
-        "polar-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'decomposing non-simple regions' at 2–23; splitting 2–12; polar cells 13–18; polar regions 19–23; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Polar rectangles, cell-area scale, integration theorem, and annular-sector example",
+      "physical_pages_from_audit": "Physical pages 13–18; page 1 is only a week outline and develops no outcome.",
+      "linked_concept_ids": ["polar-rectangles"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Mapped source statements, checked worked derivations, and independent transfer tasks are provided for the reviewed pages. No outcome-specific scene alignment or learner performance is claimed; the route scenes are conceptual candidates only.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 13."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 14, 15."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 16."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 17, 18."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-statement]",
+            "claim": "The guide states the nonnegative-height volume interpretation and its continuity hypothesis.",
+            "method": "Compared the complete statement with rendered physical page 15."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 13."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 14, 15."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 16."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 17, 18."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-worked]",
+            "claim": "The guide derives each polar volume contribution from the physical cell area and evaluates a changed-data example.",
+            "method": "Checked the sample-height composition, cell factor, and quarter-disk integral independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-rectangle-image-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[annular-cell-area-factor-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-rectangle-integration-theorem-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[annular-sector-integral-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-volume-riemann-sum-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent Riemann-sum task and checked the limiting volume integral."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "polar-rectangles:lecture06-polar-rectangle-image",
+        "polar-rectangles:lecture06-annular-cell-area-factor",
+        "polar-rectangles:lecture06-polar-volume-riemann-sum",
+        "polar-rectangles:lecture06-polar-rectangle-integration-theorem",
+        "polar-rectangles:lecture06-annular-sector-integral"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "13–18",
+      "inspected_physical_pages": [13, 14, 15, 16, 17, 18],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Page 13 defines the polar plane and its parameter-rectangle image; pages 14–15 derive the physical area weight from annular cells.",
+        "Page 14 derives the physical polar cell area; page 15 separately uses that area in a Riemann sum for volume below a continuous nonnegative graph, so this volume interpretation is mapped as its own outcome.",
+        "The page 15 volume-sum discussion assumes a continuous nonnegative integrand for volume interpretation; the general signed-integrand integration theorem is stated on page 16.",
+        "The annular-sector value −14/3 on pages 17–18 was independently recomputed using the stated angular orientation and signed integrand."
+      ]
     },
     {
       "id": "MH2100_Lecture_06:03",
       "source_id": "MH2100_Lecture_06",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "polar area and variable bounds",
-      "physical_pages_from_audit": "2–23; splitting 2–12; polar cells 13–18; polar regions 19–23",
-      "linked_concept_ids": [
-        "linearity-additivity",
-        "polar-rectangles",
-        "polar-regions"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'polar area and variable bounds' at 2–23; splitting 2–12; polar cells 13–18; polar regions 19–23; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Variable radial polar regions, integration theorem, and shifted-disk volume",
+      "physical_pages_from_audit": "Physical pages 19–23; page 1 is only a week outline and develops no outcome.",
+      "linked_concept_ids": ["polar-regions"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Mapped source statements, checked worked derivations, and independent transfer tasks are provided for the reviewed pages. No outcome-specific scene alignment or learner performance is claimed; the route scenes are conceptual candidates only.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 19."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 20."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 21, 22, 23."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 19."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 20."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 21, 22, 23."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[single-interval-polar-region-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[variable-radial-integration-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[shifted-disk-volume-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "polar-regions:lecture06-single-interval-polar-region",
+        "polar-regions:lecture06-variable-radial-integration",
+        "polar-regions:lecture06-shifted-disk-volume"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "19–23",
+      "inspected_physical_pages": [19, 20, 21, 22, 23],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Pages 19–20 distinguish the one-interval-per-ray region definition and the continuous-integrand integration theorem.",
+        "Pages 21–23 derive bounds for the disk centered at (1,0); dividing by r requires treating the origin separately. The source volume 5π/2 was independently recalculated.",
+        "The canonical source has no errata record; the reviewed region assumptions and volume calculation showed no mathematical correction."
+      ]
     },
     {
       "id": "MH2100_Lecture_07:01",
@@ -43805,6 +44112,1215 @@
         "practiced": "Changed-data task, hint, solution, and rubric checked; learner performance is unverified.",
         "visualized": "The plane-lhopital scene is a candidate only; source-specific alignment was not checked.",
         "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "linearity-additivity:lecture06-linear-combination-integral",
+      "concept_id": "linearity-additivity",
+      "outcome": "Use linearity for integrable functions on one fixed bounded region, with real scalar coefficients.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 3,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 3; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 3, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 3 support the mapped source skill: Use linearity for integrable functions on one fixed bounded region, with real scalar coefficients."
+        },
+        "page_heading": "Theorem (Linearity of the Double Integral)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 3."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 3."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[linear-combination-integral-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 3."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-linear-combination-integral-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[linear-combination-integral-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 3, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "linearity-additivity:lecture06-restricted-domain-integral",
+      "concept_id": "linearity-additivity",
+      "outcome": "Interpret integration over a bounded subregion through the restriction of the integrand to that domain.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 4,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 4; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 4, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 4 support the mapped source skill: Interpret integration over a bounded subregion through the restriction of the integrand to that domain."
+        },
+        "page_heading": "Definition (Double Integrals over Restricted Domains)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 4."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 4."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[restricted-domain-integral-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 4."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-restricted-domain-integral-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[restricted-domain-integral-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 4, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "linearity-additivity:lecture06-additivity-null-overlap",
+      "concept_id": "linearity-additivity",
+      "outcome": "Add finitely many component integrals only when the component integrals exist and every pairwise intersection has area zero.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 5,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 5; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 5, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 5 support the mapped source skill: Add finitely many component integrals only when the component integrals exist and every pairwise intersection has area zero."
+        },
+        "page_heading": "Theorem (Additivity of the Double Integral)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 5."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 5."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[additivity-null-overlap-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 5."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-additivity-null-overlap-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[additivity-null-overlap-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 5, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "linearity-additivity:lecture06-decompose-nonsimple-region",
+      "concept_id": "linearity-additivity",
+      "outcome": "Decompose a non-simple bounded region into finitely many Type I or Type II pieces whose pairwise overlaps have area zero.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 6,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 6; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 6, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 6 support the mapped source skill: Decompose a non-simple bounded region into finitely many Type I or Type II pieces whose pairwise overlaps have area zero."
+        },
+        "page_heading": "The Double Integral — Integration over Non-Type-I/II Regions in R2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 6."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 6."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[decompose-nonsimple-region-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 6."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-decompose-nonsimple-region-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[decompose-nonsimple-region-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 6, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "linearity-additivity:lecture06-three-piece-integral-example",
+      "concept_id": "linearity-additivity",
+      "outcome": "Represent the source region by one Type I and two Type II pieces, check their zero-area overlaps, and add their signed integrals.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 7,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 7, 8, 9, 10, 11, 12; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 8, 9, 10, 11, 12],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 7, 8, 9, 10, 11, 12, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 7, 8, 9, 10, 11, 12 support the mapped source skill: Represent the source region by one Type I and two Type II pieces, check their zero-area overlaps, and add their signed integrals."
+        },
+        "page_heading": "Example 1 — non-simple region split into three pieces"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 7, 8, 9, 10, 11, 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 7, 8, 9, 10, 11, 12."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[three-piece-integral-example-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "double",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 7, 8, 9, 10, 11, 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.contentBlocks[lecture06-three-piece-integral-example-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearity-additivity.exercises[three-piece-integral-example-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 7, 8, 9, 10, 11, 12, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-rectangles:lecture06-polar-rectangle-image",
+      "concept_id": "polar-rectangles",
+      "outcome": "Define the polar map and its polar-rectangle image, with nonnegative radial endpoints and angular width no greater than one turn.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 13,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 13; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 13, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 13 support the mapped source skill: Define the polar map and its polar-rectangle image, with nonnegative radial endpoints and angular width no greater than one turn."
+        },
+        "page_heading": "Definition (the Polar Plane); Definition (Polar Rectangles)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 13."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 13."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-rectangle-image-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "polar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 13."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-image-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-rectangle-image-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 13, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-rectangles:lecture06-annular-cell-area-factor",
+      "concept_id": "polar-rectangles",
+      "outcome": "Derive the radial area weight from the exact annular-sector cell and Riemann sums; distinguish area scaling from the nonnegative volume approximation.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 14,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page 14; cross-checked its page marker with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page 14, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page 14 derives the exact polar-cell area ΔAij = rij* Δr Δθ from the midpoint radius."
+        },
+        "page_heading": "Double Integrals in Polar Coordinates — Integration over Polar Rectangles"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the area-cell derivation with rendered physical page 14."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Checked the exact annular-sector area identity and midpoint-radius factor from physical page 14."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[annular-cell-area-factor-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "polar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-statement]",
+            "basis": "Guide statement compared with rendered source physical page 14."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-cell-area-factor-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[annular-cell-area-factor-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page 14, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-rectangles:lecture06-polar-rectangle-integration-theorem",
+      "concept_id": "polar-rectangles",
+      "outcome": "Integrate a continuous function on a polar rectangle in either iterated order, with Jacobian factor r.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 16,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 16; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 16, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 16 support the mapped source skill: Integrate a continuous function on a polar rectangle in either iterated order, with Jacobian factor r."
+        },
+        "page_heading": "Theorem (Double Integrals over Polar Rectangles)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 16."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-rectangle-integration-theorem-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "polar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-rectangle-integration-theorem-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-rectangle-integration-theorem-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 16, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-rectangles:lecture06-annular-sector-integral",
+      "concept_id": "polar-rectangles",
+      "outcome": "Convert the left half-annulus to polar limits and integrate the signed function x+y with the radial factor.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 17,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 17, 18; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [17, 18],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 17, 18, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 17, 18 support the mapped source skill: Convert the left half-annulus to polar limits and integrate the signed function x+y with the radial factor."
+        },
+        "page_heading": "Example 1 — integral over a left annular sector"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 17, 18."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 17, 18."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[annular-sector-integral-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "polar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 17, 18."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-annular-sector-integral-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[annular-sector-integral-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 17, 18, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-regions:lecture06-single-interval-polar-region",
+      "concept_id": "polar-regions",
+      "outcome": "Describe a polar region by continuous inner and outer radial bounds over an angle interval, with one radial interval per ray and endpoint compatibility for a full turn.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 19,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 19; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 19, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 19 support the mapped source skill: Describe a polar region by continuous inner and outer radial bounds over an angle interval, with one radial interval per ray and endpoint compatibility for a full turn."
+        },
+        "page_heading": "Definition (Polar Regions)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 19."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 19."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[single-interval-polar-region-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-shifted-disk",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 19."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-single-interval-polar-region-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[single-interval-polar-region-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 19, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-regions:lecture06-variable-radial-integration",
+      "concept_id": "polar-regions",
+      "outcome": "Apply the polar integration formula to continuous integrands over a region with variable radial bounds.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 20,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 20; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 20, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 20 support the mapped source skill: Apply the polar integration formula to continuous integrands over a region with variable radial bounds."
+        },
+        "page_heading": "Theorem (Integration over Polar Regions)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 20."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 20."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[variable-radial-integration-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-shifted-disk",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 20."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-variable-radial-integration-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[variable-radial-integration-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 20, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-regions:lecture06-shifted-disk-volume",
+      "concept_id": "polar-regions",
+      "outcome": "Derive the angular and radial bounds for the disk centered at (1,0), handle the origin, and evaluate the paraboloid volume.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 21,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page(s) 21, 22, 23; cross-checked the page markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 22, 23],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page(s) 21, 22, 23, then cross-checked headings and markers with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page(s) 21, 22, 23 support the mapped source skill: Derive the angular and radial bounds for the disk centered at (1,0), handle the origin, and evaluate the paraboloid volume."
+        },
+        "page_heading": "Example 2 — volume over a shifted disk"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-statement]",
+            "claim": "The guide states the source rule, method, or region description and its hypotheses.",
+            "method": "Compared the full statement with rendered physical page(s) 21, 22, 23."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-worked]",
+            "claim": "The guide supplies a worked derivation or transparent reconstruction of the source example; calculations were independently checked.",
+            "method": "Recomputed the displayed bounds, area factors, signs, and integral on the cited pages 21, 22, 23."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[shifted-disk-volume-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent transfer task and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-shifted-disk",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source skill, cited worked reasoning, and transfer solution were inspected. The related scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 21, 22, 23."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.contentBlocks[lecture06-shifted-disk-volume-worked]",
+            "basis": "Worked bounds and calculations were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-regions.exercises[shifted-disk-volume-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page(s) 21, 22, 23, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Source statement and hypotheses inspected.",
+        "worked": "Displayed derivation and calculation independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "polar-rectangles:lecture06-polar-volume-riemann-sum",
+      "concept_id": "polar-rectangles",
+      "outcome": "Approximate volume under a continuous nonnegative graph over a polar rectangle with a polar Riemann sum whose sampled heights are weighted by physical cell areas.",
+      "core_source": {
+        "id": "MH2100_Lecture_06",
+        "physical_page": 15,
+        "sha256": "653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec",
+        "inspection": "Canonical local 23-page Lecture 06 PDF SHA-256 matches sources.json and source-manifest.json; rendered at 130 dpi and visually inspected physical page 15; cross-checked its page marker with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15],
+          "method": "SHA-256 matched sources.json and source-manifest.json; rendered and visually checked physical page 15, then cross-checked its heading and marker with pdftotext -layout. SHA-256: 653b25f9e66353ab059fd79147c10030c975c802ad9951449b2eb7648f7014ec.",
+          "claim_observed": "Physical page 15 assumes a continuous, nonnegative, real-valued height and approximates volume below its graph by a polar Riemann sum whose cell weights are ΔAij = rij* Δr Δθ."
+        },
+        "page_heading": "Double Integrals in Polar Coordinates — Integration over Polar Rectangles"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-statement].title",
+            "claim": "A source-specific atomic skill title appears on the stable lesson route; the broader catalog title remains a parent-topic label.",
+            "method": "Compared this exact guide title with the page-verified skill; did not infer atomic naming from the catalog heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-statement]",
+            "claim": "The guide states the nonnegative-height volume interpretation and its continuity hypothesis.",
+            "method": "Compared the complete statement with rendered physical page 15."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-worked]",
+            "claim": "The guide derives each polar volume contribution from the physical cell area and evaluates a changed-data example.",
+            "method": "Checked the sample-height composition, cell factor, and quarter-disk integral independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-volume-riemann-sum-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance remains unverified.",
+            "method": "Solved the independent Riemann-sum task and checked the limiting volume integral."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "polar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The nonnegative-height volume interpretation, worked polar cell contribution, and transfer task were inspected. The polar scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_06:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-statement].title",
+            "basis": "This guide block has an explicit source-specific atomic-skill title; the parent catalog title is not used as atomic naming evidence."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-statement]",
+            "basis": "Guide statement compared with rendered source physical page 15."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.contentBlocks[lecture06-polar-volume-riemann-sum-worked]",
+            "basis": "Polar cell factor and independently recomputed volume were checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#polar-rectangles.exercises[polar-volume-riemann-sum-transfer]",
+            "basis": "Changed-data task and solution checked; learner performance remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared hash-matched physical page 15, exact stable guide blocks and transfer solution, and scene status.",
+        "named": "Exact source-specific atomic skill title inspected; parent catalog topic not counted.",
+        "stated": "Nonnegative volume-sum interpretation and continuity hypothesis inspected.",
+        "worked": "Sample-height composition, cell factor, and integral independently checked.",
+        "practiced": "Task and solution checked; learner performance unverified.",
+        "visualized": "Existing polar scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
       }
     }
   ]

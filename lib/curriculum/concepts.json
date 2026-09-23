@@ -5244,11 +5244,6 @@
     "sources": [
       {
         "sourceId": "MH2100_Lecture_06",
-        "pages": [2, 2],
-        "detail": "The Double Integral"
-      },
-      {
-        "sourceId": "MH2100_Lecture_06",
         "pages": [3, 3],
         "detail": "Theorem (Linearity of the Double Integral)"
       },
@@ -5269,13 +5264,8 @@
       },
       {
         "sourceId": "MH2100_Lecture_06",
-        "pages": [7, 7],
-        "detail": "The Double Integral — Example 1"
-      },
-      {
-        "sourceId": "MH2100_Lecture_06",
-        "pages": [8, 8],
-        "detail": "The Double Integral — Example 1 (cont’d)"
+        "pages": [7, 12],
+        "detail": "Example 1 — non-simple region split into three pieces"
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
@@ -5317,7 +5307,7 @@
       },
       {
         "sourceId": "MH2100_Lecture_06",
-        "pages": [14, 14],
+        "pages": [14, 15],
         "detail": "Double Integrals in Polar Coordinates — Integration over Polar Rectangles"
       },
       {
@@ -5327,13 +5317,8 @@
       },
       {
         "sourceId": "MH2100_Lecture_06",
-        "pages": [17, 17],
-        "detail": "Double Integrals in Polar Coordinates — Example 1"
-      },
-      {
-        "sourceId": "MH2100_Lecture_06",
-        "pages": [18, 18],
-        "detail": "Double Integrals in Polar Coordinates — Example 1 (cont’d)"
+        "pages": [17, 18],
+        "detail": "Example 1 — integral over a left annular sector"
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
@@ -5379,13 +5364,8 @@
       },
       {
         "sourceId": "MH2100_Lecture_06",
-        "pages": [21, 21],
-        "detail": "Double Integrals in Polar Coordinates — Example 2"
-      },
-      {
-        "sourceId": "MH2100_Lecture_06",
-        "pages": [22, 22],
-        "detail": "Double Integrals in Polar Coordinates — Example 2 (cont’d)"
+        "pages": [21, 23],
+        "detail": "Example 2 — volume over a shifted disk"
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
