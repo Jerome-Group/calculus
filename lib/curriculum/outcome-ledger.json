@@ -7034,151 +7034,746 @@
       "id": "MH2100_Lecture_08:01",
       "source_id": "MH2100_Lecture_08",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Linear area/volume",
-      "physical_pages_from_audit": "2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51",
-      "linked_concept_ids": [
-        "linear-area-change",
-        "plane-jacobian",
-        "space-jacobians",
-        "change-of-variables",
-        "inverse-jacobian",
-        "scalar-line-integrals",
-        "vector-fields"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Linear area/volume' at 2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Linear determinant area, volume, and integral scaling",
+      "physical_pages_from_audit": "Physical pages 2–8: linear maps and basis images (2–3); rectangle/parallelogram scaling (4); box/parallelepiped scaling (5); double and triple integral formulas (6–7); area and volume corollaries (8).",
+      "linked_concept_ids": ["linear-area-change"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 2–8 map determinant geometry, ordinary area/volume factors, and the linear integral substitution formula to separate lessons and transfer tasks. The determinant scene is only a candidate; no outcome-specific scene alignment or learner performance check is claimed.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 2, 3."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 5, 8."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 6, 7."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-determinant-parallelogram-area-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-three-dimensional-volume-scale-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-linear-integral-substitution-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "linear-area-change:lecture08-determinant-parallelogram-area",
+        "linear-area-change:lecture08-three-dimensional-volume-scale",
+        "linear-area-change:lecture08-linear-integral-substitution"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–8",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Week outline only; it lists the five topics but develops no skill."
+        }
+      ],
+      "source_review_notes": [
+        "Page 3's determinant gives signed parallelogram area; pages 4–8 use its absolute value for ordinary area and volume.",
+        "Page 8 reuses the symbol D for its space region after using D for the planar region. Guide prose calls the space region R to keep dimensions distinct; no mathematical correction is needed and sources.json has no Lecture08 errata entry."
+      ],
+      "inspected_physical_pages": [2, 3, 4, 5, 6, 7, 8]
     },
     {
       "id": "MH2100_Lecture_08:02",
       "source_id": "MH2100_Lecture_08",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "nonlinear Jacobians",
-      "physical_pages_from_audit": "2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51",
-      "linked_concept_ids": [
-        "linear-area-change",
-        "plane-jacobian",
-        "space-jacobians",
-        "change-of-variables",
-        "inverse-jacobian",
-        "scalar-line-integrals",
-        "vector-fields"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'nonlinear Jacobians' at 2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Plane and space Jacobians",
+      "physical_pages_from_audit": "Physical pages 9–16: plane and space map domains/components (9–10); plane Jacobian definition and linear case (11); polar determinant (12); space Jacobian definition and linear case (13); cylindrical determinant (14); spherical determinant expansion (15–16).",
+      "linked_concept_ids": ["plane-jacobian", "space-jacobians"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The plane and space map domains/components, and their determinant calculations, map to stable Jacobian lessons. Existing nonlinear-plane scenes do not represent every source coordinate map; no outcome-specific rendering or learner performance is claimed.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-statement].title",
+            "claim": "The source map/domain/range skill has a distinct title on its stable lesson route.",
+            "method": "Compared the title with the transformation definition on physical page 10."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 9, 11."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-statement]",
+            "claim": "The guide separates the parameter domain, physical range, and scalar component functions.",
+            "method": "Compared the three-map definition on the guide with physical page 10."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 12."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 13, 14."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 15, 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-worked]",
+            "claim": "The nonlinear example characterizes the image and verifies a general preimage.",
+            "method": "Solved the inverse constraints directly for all image points."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.exercises[lecture08-plane-map-derivative-matrix-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-space-transform-domain-components-transfer]",
+            "claim": "Changed-data transfer practice includes a checked range and preimage with rubric; learner performance is unverified.",
+            "method": "Solved the exponential-coordinate map independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.exercises[lecture08-polar-jacobian-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-cylindrical-jacobian-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-spherical-jacobian-order-sign-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "plane-jacobian:lecture08-plane-map-derivative-matrix",
+        "space-jacobians:lecture08-space-transform-domain-components",
+        "plane-jacobian:lecture08-polar-jacobian",
+        "space-jacobians:lecture08-cylindrical-jacobian",
+        "space-jacobians:lecture08-spherical-jacobian-order-sign"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "9–16",
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Page 10 defines a space transformation by its parameter domain, physical range, and three component functions; it is mapped separately from the Jacobian calculation on pages 13–16.",
+        "Page 12 computes the signed polar Jacobian as r for arbitrary real r; the coordinate substitution on page 20 restricts to r≥0.",
+        "Pages 15–16 use parameter order (rho, theta, phi), so the displayed signed determinant is negative. The volume factor is its absolute value."
+      ],
+      "inspected_physical_pages": [9, 10, 11, 12, 13, 14, 15, 16]
     },
     {
       "id": "MH2100_Lecture_08:03",
       "source_id": "MH2100_Lecture_08",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "change of variables",
-      "physical_pages_from_audit": "2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51",
+      "topic_from_audit_inventory": "Change of variables and inverse-map problem solving",
+      "physical_pages_from_audit": "Physical pages 17–35: one-variable review (17); two- and three-variable theorem hypotheses (18–19); polar, cylindrical, spherical substitutions (20–22); inverse-map strategy (23–24); nonlinear and affine region examples (25–33); three-plane volume problem (34–35).",
       "linked_concept_ids": [
-        "linear-area-change",
-        "plane-jacobian",
-        "space-jacobians",
+        "substitution-integral",
         "change-of-variables",
-        "inverse-jacobian",
-        "scalar-line-integrals",
-        "vector-fields"
+        "inverse-jacobian"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'change of variables'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The page-17 one-variable theorem, multivariable hypotheses, standard-coordinate factors, inverse-map strategy, and four distinct region problems map to separate outcomes. Pages 26–27, 30, 33, and 35 are blank continuation slides; the guide supplies independently checked derivations for the source problems rather than claiming the source contains those solutions. No outcome-specific scene alignment or learner performance check is claimed.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-statement].title",
+            "claim": "The one-variable substitution theorem has a distinct heading on its existing stable route.",
+            "method": "Compared the exact lesson title with the theorem heading on physical page 17."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-statement].title",
+            "claim": "The atomic skill has an explicit lesson heading.",
+            "method": "Compared its title with the one-to-one condition on physical page 18."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-statement]",
+            "claim": "The mapped lesson states the source hypotheses, signed derivative, and transformed endpoints.",
+            "method": "Compared the rule and its stated conditions with rendered physical page 17."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-statement]",
+            "claim": "The guide states that local nonsingularity does not ensure global injectivity.",
+            "method": "Compared the lesson statement with the page-18 one-to-one-interior hypothesis."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 18, 19."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 20, 21, 22."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 23, 24."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 25."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 28, 29."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 31, 32."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 34."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-worked]",
+            "claim": "The worked decreasing-map example retains the signed derivative and oriented endpoint order.",
+            "method": "Evaluated both displayed integrals independently as negative one-half."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-worked]",
+            "claim": "The guide checks a locally nonsingular map that repeats globally.",
+            "method": "Verified that the determinant is nonzero while the angle-period map repeats on the full domain."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[lecture08-definite-substitution-transfer]",
+            "claim": "Changed-data substitution practice includes checked steps and a rubric; learner performance is unverified.",
+            "method": "Solved the transformed integral independently and checked its endpoints and antiderivative."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-interior-injectivity-transfer]",
+            "claim": "Changed-data practice asks for the multiplicity of a different polar parameter range.",
+            "method": "Checked the task and solution; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-theorem-regularity-conditions-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-coordinate-measure-factors-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-choose-inverse-coordinates-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-xy-ratio-region-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-affine-parallelogram-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-trapezoid-boundary-map-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-three-plane-volume-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["change-of-variables:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "substitution-integral:lecture08-definite-substitution-theorem",
+        "change-of-variables:source-skill-1",
+        "change-of-variables:lecture08-theorem-regularity-conditions",
+        "change-of-variables:lecture08-coordinate-measure-factors",
+        "inverse-jacobian:lecture08-choose-inverse-coordinates",
+        "inverse-jacobian:lecture08-xy-ratio-region",
+        "inverse-jacobian:lecture08-affine-parallelogram",
+        "inverse-jacobian:lecture08-trapezoid-boundary-map",
+        "inverse-jacobian:lecture08-three-plane-volume"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "17–35",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 26,
+          "reason": "Blank continuation slide after Example 1; no displayed derivation or added claim."
+        },
+        {
+          "physical_page": 27,
+          "reason": "Blank continuation slide after Example 1; no displayed derivation or added claim."
+        },
+        {
+          "physical_page": 30,
+          "reason": "Blank continuation slide after Example 2; no displayed derivation or added claim."
+        },
+        {
+          "physical_page": 33,
+          "reason": "Blank continuation slide after Example 3; no displayed derivation or added claim."
+        },
+        {
+          "physical_page": 35,
+          "reason": "Blank continuation slide after the three-plane volume problem; no displayed solution."
+        },
+        {
+          "physical_page": 36,
+          "reason": "Capybara illustration and title only; no mathematical skill."
+        }
+      ],
+      "source_review_notes": [
+        "Page 17 states the differentiable-map substitution theorem with signed derivative, transformed endpoints, and existence conditions; it is mapped on the existing substitution-integral route as the one-variable bridge to the later multivariable theorem.",
+        "Pages 18–19 require an interior one-to-one restriction plus continuity of derivative entries for the map and its inverse; the lesson preserves those conditions.",
+        "Pages 25, 28, 31, and 34 state problems. Pages 29 and 32 add useful boundary-map diagrams; the other continuation slides listed in the gap are visually blank.",
+        "Page 36 is a nonmathematical capybara interlude between change-of-variables and line integrals, not a sixth skill."
+      ],
+      "inspected_physical_pages": [
+        17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+        35, 36
+      ]
     },
     {
       "id": "MH2100_Lecture_08:04",
       "source_id": "MH2100_Lecture_08",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "scalar line integrals",
-      "physical_pages_from_audit": "2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51",
-      "linked_concept_ids": [
-        "linear-area-change",
-        "plane-jacobian",
-        "space-jacobians",
-        "change-of-variables",
-        "inverse-jacobian",
-        "scalar-line-integrals",
-        "vector-fields"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'scalar line integrals' at 2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Scalar line integrals",
+      "physical_pages_from_audit": "Physical pages 37–45: motivation and curve assumptions (37–38); scalar Riemann-sum definition (39–40); nonnegative-density interpretation (41); length and existence (42); smooth-curve formula (43); circle problem (44–45).",
+      "linked_concept_ids": ["scalar-line-integrals"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The definition, existence/computation conditions, and source circle problem map to separate outcomes. Slide 45 is blank after the stated problem; the guide derivation is original checked work. The line-integral scene remains a candidate and learner performance is unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 38, 39, 40, 41."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 42, 43."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 44."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-scalar-riemann-sum-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-scalar-existence-and-smooth-formula-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-source-circle-density-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "scalar-line-integrals:lecture08-scalar-riemann-sum",
+        "scalar-line-integrals:lecture08-scalar-existence-and-smooth-formula",
+        "scalar-line-integrals:lecture08-source-circle-density"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "37–45",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 45,
+          "reason": "Blank continuation slide after the circle problem; no solution is displayed."
+        }
+      ],
+      "source_review_notes": [
+        "Page 38's nice parametrization is injective except possibly at endpoints; statements are scoped to the handout's blanket assumption.",
+        "Page 41 calls the nonnegative scalar integral an informal area-under-a-curve picture; the lesson does not generalize that interpretation to signed densities."
+      ],
+      "inspected_physical_pages": [37, 38, 39, 40, 41, 42, 43, 44, 45]
     },
     {
       "id": "MH2100_Lecture_08:05",
       "source_id": "MH2100_Lecture_08",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "vector fields",
-      "physical_pages_from_audit": "2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51",
-      "linked_concept_ids": [
-        "linear-area-change",
-        "plane-jacobian",
-        "space-jacobians",
-        "change-of-variables",
-        "inverse-jacobian",
-        "scalar-line-integrals",
-        "vector-fields"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'vector fields' at 2–51; determinants 2–8; maps/Jacobians 9–16; substitution 17–35; scalar lines 37–45; vector fields 46–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Vector fields and oriented line integrals",
+      "physical_pages_from_audit": "Physical pages 46–51: vector-field definition and smoothness (46); vector line-integral Riemann sum (47); parametrization independence and orientation reversal (48); existence and smooth-curve formula (49); three-dimensional work problem (50–51).",
+      "linked_concept_ids": ["vector-fields", "vector-line-integrals"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The field definition, oriented integral, reversal, and smooth-curve computation map to distinct outcomes. The source work problem is on page 50 but continuation slide 51 is blank; guide work is original and independently checked. Scene alignment and learner performance are unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 46."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 47."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 48."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 49."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 50."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.exercises[lecture08-vector-field-domain-components-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-riemann-sum-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-orientation-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-existence-formula-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-source-vector-work-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "vector-fields:lecture08-vector-field-domain-components",
+        "vector-line-integrals:lecture08-vector-integral-riemann-sum",
+        "vector-line-integrals:lecture08-vector-integral-orientation",
+        "vector-line-integrals:lecture08-vector-integral-existence-formula",
+        "vector-line-integrals:lecture08-source-vector-work"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "46–51",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 51,
+          "reason": "Blank continuation slide after the work problem; no solution is displayed."
+        }
+      ],
+      "source_review_notes": [
+        "Page 46 defines smooth vector fields using continuously differentiable components; pages 49's existence theorem only requires continuity.",
+        "Page 48's reversal theorem changes the vector integral's sign; scalar ds integrals remain orientation-independent."
+      ],
+      "inspected_physical_pages": [46, 47, 48, 49, 50, 51]
     },
     {
       "id": "MH2100_Lecture_09:01",
@@ -13243,40 +13838,47 @@
     {
       "id": "change-of-variables:source-skill-1",
       "concept_id": "change-of-variables",
-      "outcome": "Check whether a coordinate map is one-to-one on the integration domain.",
+      "outcome": "Check whether a coordinate map is one-to-one on the integration domain before applying the substitution theorem.",
       "core_source": {
         "id": "MH2100_Lecture_08",
         "physical_page": 18,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local Lecture 08 PDF SHA-256 matches sources.json and source-manifest.json; physical page 18 was visually checked and cross-checked with pdftotext -layout.",
         "page_validation": {
           "status": "page_verified",
           "pages": [18],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page includes one-to-one interior restriction among change-of-variables hypotheses."
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page 18, including its physical number, theorem heading, and one-to-one interior condition; cross-checked text extraction. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "The two-variable theorem requires the restriction to the source-region interior to be one-to-one."
         },
         "page_heading": "Theorem (Change of Variables in Two-Variable Integration)"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#change-of-variables.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-statement].title",
+            "claim": "The atomic skill has an explicit lesson heading.",
+            "method": "Compared its title with the one-to-one condition on physical page 18."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#change-of-variables.sections[Local invertibility is not global injectivity]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-statement]",
+            "claim": "The guide states that local nonsingularity does not ensure global injectivity.",
+            "method": "Compared the lesson statement with the page-18 one-to-one-interior hypothesis."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-worked]",
+            "claim": "The guide checks a locally nonsingular map that repeats globally.",
+            "method": "Verified that the determinant is nonzero while the angle-period map repeats on the full domain."
+          }
+        ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-interior-injectivity-transfer]",
+            "claim": "Changed-data practice asks for the multiplicity of a different polar parameter range.",
+            "method": "Checked the task and solution; learner performance is unverified."
           }
         ],
         "visualized": [],
@@ -13286,38 +13888,44 @@
         "scene_id": "plane-nonlinear-jacobian",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "The one-to-one hypothesis, worked noninjective contrast, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
       "source_section_id": "MH2100_Lecture_08:03",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#change-of-variables.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#change-of-variables.sections[Local invertibility is not global injectivity]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-statement]",
+            "basis": "Compared the global injectivity condition with physical page 18."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-interior-injectivity-worked]",
+            "basis": "Recomputed the determinant and identified the global repetition."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-interior-injectivity-transfer]",
+            "basis": "Changed-domain task and exact multiplicity checked; learner performance unverified."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Manual comparison of page 18, the new statement and worked contrast, and changed-data transfer exercise.",
+        "named": "exact atomic skill heading inspected",
+        "stated": "source hypothesis stated",
+        "worked": "nonzero determinant and global repetition independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level visual alignment check was performed.",
+        "checked": "No independent learner performance check was performed."
       }
     },
     {
@@ -33242,6 +33850,2238 @@
         "practiced": "task and solution checked; learner performance unverified",
         "visualized": "The stable concept scene is only a candidate; outcome-specific alignment was not checked.",
         "checked": "No independent learner response or performance measurement is claimed."
+      }
+    },
+    {
+      "id": "linear-area-change:lecture08-determinant-parallelogram-area",
+      "concept_id": "linear-area-change",
+      "outcome": "Use the absolute determinant of a linear plane map to find the image area of a unit square, while retaining its sign as orientation information.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 3,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 2, 3, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [2, 3],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 2, 3, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 3 supports the mapped source skill: Use the absolute determinant of a linear plane map to find the image area of a unit square, while retaining its sign as orientation information."
+        },
+        "page_heading": "The Geometrical Meaning of the Determinant"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 2, 3."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-determinant-parallelogram-area-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 2, 3."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-determinant-parallelogram-area-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-determinant-parallelogram-area-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 2, 3, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "linear-area-change:lecture08-three-dimensional-volume-scale",
+      "concept_id": "linear-area-change",
+      "outcome": "Use the absolute determinant of a linear space map as its constant volume scale and distinguish this from signed orientation.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 5,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 5, 8, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5, 8],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 5, 8, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 5 supports the mapped source skill: Use the absolute determinant of a linear space map as its constant volume scale and distinguish this from signed orientation."
+        },
+        "page_heading": "The Geometrical Meaning of the Determinant"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 5, 8."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-three-dimensional-volume-scale-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 5, 8."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-three-dimensional-volume-scale-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-three-dimensional-volume-scale-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 5, 8, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "linear-area-change:lecture08-linear-integral-substitution",
+      "concept_id": "linear-area-change",
+      "outcome": "Transform a double or triple integral under a linear map by composing the integrand with the map and multiplying by the constant absolute determinant.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 6,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 6, 7, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6, 7],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 6, 7, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 6 supports the mapped source skill: Transform a double or triple integral under a linear map by composing the integrand with the map and multiplying by the constant absolute determinant."
+        },
+        "page_heading": "Theorem (Transformation of a Double Integral Under a Linear Transformation)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 6, 7."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-linear-integral-substitution-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 6, 7."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.contentBlocks[lecture08-linear-integral-substitution-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linear-area-change.exercises[lecture08-linear-integral-substitution-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 6, 7, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "plane-jacobian:lecture08-plane-map-derivative-matrix",
+      "concept_id": "plane-jacobian",
+      "outcome": "Represent a plane transformation by its component functions and compute its Jacobian as the determinant of their ordered first-partial matrix.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 11,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 9, 11, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 11],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 9, 11, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 11 supports the mapped source skill: Represent a plane transformation by its component functions and compute its Jacobian as the determinant of their ordered first-partial matrix."
+        },
+        "page_heading": "Definition (Jacobian of a Plane Transformation)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 9, 11."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.exercises[lecture08-plane-map-derivative-matrix-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-nonlinear-jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 9, 11."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-plane-map-derivative-matrix-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.exercises[lecture08-plane-map-derivative-matrix-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 9, 11, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "plane-jacobian:lecture08-polar-jacobian",
+      "concept_id": "plane-jacobian",
+      "outcome": "Compute the signed Jacobian of the polar map and use its nonnegative value on the standard radial domain as the area factor.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 12,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 12, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 12, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 12 supports the mapped source skill: Compute the signed Jacobian of the polar map and use its nonnegative value on the standard radial domain as the area factor."
+        },
+        "page_heading": "The Jacobian of a Plane Transformation — Polar Coordinates"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.exercises[lecture08-polar-jacobian-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-nonlinear-jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 12."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.contentBlocks[lecture08-polar-jacobian-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#plane-jacobian.exercises[lecture08-polar-jacobian-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 12, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "space-jacobians:lecture08-cylindrical-jacobian",
+      "concept_id": "space-jacobians",
+      "outcome": "Compute the cylindrical coordinate Jacobian in the ordered variables $(r,\\theta,z)$ and obtain the volume factor $r$ on the standard domain.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 14,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 13, 14, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 13, 14, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 14 supports the mapped source skill: Compute the cylindrical coordinate Jacobian in the ordered variables $(r,\\theta,z)$ and obtain the volume factor $r$ on the standard domain."
+        },
+        "page_heading": "The Jacobian of a Space Transformation — Cylindrical Coordinates"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 13, 14."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-cylindrical-jacobian-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "spherical",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 13, 14."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-cylindrical-jacobian-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-cylindrical-jacobian-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 13, 14, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "space-jacobians:lecture08-spherical-jacobian-order-sign",
+      "concept_id": "space-jacobians",
+      "outcome": "Compute the signed spherical Jacobian for the stated parameter order and convert it to the nonnegative volume factor without erasing the orientation explanation.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 16,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 15, 16, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 15, 16, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 16 supports the mapped source skill: Compute the signed spherical Jacobian for the stated parameter order and convert it to the nonnegative volume factor without erasing the orientation explanation."
+        },
+        "page_heading": "The Jacobian of a Space Transformation — Spherical Coordinates (cont’d)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 15, 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-spherical-jacobian-order-sign-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "spherical",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 15, 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-spherical-jacobian-order-sign-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-spherical-jacobian-order-sign-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 15, 16, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "change-of-variables:lecture08-theorem-regularity-conditions",
+      "concept_id": "change-of-variables",
+      "outcome": "Check bounded-region, differentiability, interior injectivity, inverse regularity, and integrand-domain conditions before applying the multivariable change-of-variables theorem.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 18,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 18, 19, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18, 19],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 18, 19, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 18 supports the mapped source skill: Check bounded-region, differentiability, interior injectivity, inverse regularity, and integrand-domain conditions before applying the multivariable change-of-variables theorem."
+        },
+        "page_heading": "Theorem (Change of Variables in Two-Variable Integration)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 18, 19."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-theorem-regularity-conditions-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-nonlinear-jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 18, 19."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-theorem-regularity-conditions-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-theorem-regularity-conditions-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 18, 19, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "change-of-variables:lecture08-coordinate-measure-factors",
+      "concept_id": "change-of-variables",
+      "outcome": "Use the polar, cylindrical, and spherical coordinate formulas only on parameter ranges with the needed interior injectivity, and include their respective measure factors.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 20,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 20, 21, 22, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20, 21, 22],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 20, 21, 22, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 20 supports the mapped source skill: Use the polar, cylindrical, and spherical coordinate formulas only on parameter ranges with the needed interior injectivity, and include their respective measure factors."
+        },
+        "page_heading": "Change of Variables in Multivariable Integration — Polar Coordinates"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 20, 21, 22."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-coordinate-measure-factors-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-nonlinear-jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 20, 21, 22."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.contentBlocks[lecture08-coordinate-measure-factors-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#change-of-variables.exercises[lecture08-coordinate-measure-factors-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 20, 21, 22, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "inverse-jacobian:lecture08-choose-inverse-coordinates",
+      "concept_id": "inverse-jacobian",
+      "outcome": "Choose parameter coordinates from the physical region's boundary expressions, then compute the inverse-Jacobian factor and transformed bounds.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 24,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 23, 24, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [23, 24],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 23, 24, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 24 supports the mapped source skill: Choose parameter coordinates from the physical region's boundary expressions, then compute the inverse-Jacobian factor and transformed bounds."
+        },
+        "page_heading": "Change of Variables in Multivariable Integration — Problem Solving"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 23, 24."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-choose-inverse-coordinates-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 23, 24."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-choose-inverse-coordinates-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-choose-inverse-coordinates-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 23, 24, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "inverse-jacobian:lecture08-xy-ratio-region",
+      "concept_id": "inverse-jacobian",
+      "outcome": "Convert the source's positive-quadrant bounds on $xy$ and $y/x$ into a rectangle and use the inverse Jacobian in an integral.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 25,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 25, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 25, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 25 supports the mapped source skill: Convert the source's positive-quadrant bounds on $xy$ and $y/x$ into a rectangle and use the inverse Jacobian in an integral."
+        },
+        "page_heading": "Change of Variables in Multivariable Integration — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 25."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-xy-ratio-region-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 25."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-xy-ratio-region-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-xy-ratio-region-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 25, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "inverse-jacobian:lecture08-affine-parallelogram",
+      "concept_id": "inverse-jacobian",
+      "outcome": "Straighten the source parallelogram by two linear boundary coordinates, compute the inverse determinant, and integrate the transformed density.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 28,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 28, 29, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28, 29],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 28, 29, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 28 supports the mapped source skill: Straighten the source parallelogram by two linear boundary coordinates, compute the inverse determinant, and integrate the transformed density."
+        },
+        "page_heading": "Change of Variables in Multivariable Integration — Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 28, 29."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-affine-parallelogram-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 28, 29."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-affine-parallelogram-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-affine-parallelogram-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 28, 29, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "inverse-jacobian:lecture08-trapezoid-boundary-map",
+      "concept_id": "inverse-jacobian",
+      "outcome": "Choose sum-and-difference coordinates for the source trapezoid, retain its triangular parameter bounds, and transform the exponential density with the inverse determinant.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 31,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 31, 32, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31, 32],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 31, 32, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 31 supports the mapped source skill: Choose sum-and-difference coordinates for the source trapezoid, retain its triangular parameter bounds, and transform the exponential density with the inverse determinant."
+        },
+        "page_heading": "Change of Variables in Multivariable Integration — Example 3"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 31, 32."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-trapezoid-boundary-map-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 31, 32."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-trapezoid-boundary-map-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-trapezoid-boundary-map-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 31, 32, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "inverse-jacobian:lecture08-three-plane-volume",
+      "concept_id": "inverse-jacobian",
+      "outcome": "Use the three plane equations as linear coordinates, invert their map, and apply the inverse determinant to find a bounded solid's volume.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 34,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 34, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [34],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 34, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 34 supports the mapped source skill: Use the three plane equations as linear coordinates, invert their map, and apply the inverse determinant to find a bounded solid's volume."
+        },
+        "page_heading": "Change of Variables in Multivariable Integration — Example 4"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 34."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-three-plane-volume-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "jacobian",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 34."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.contentBlocks[lecture08-three-plane-volume-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#inverse-jacobian.exercises[lecture08-three-plane-volume-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 34, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "scalar-line-integrals:lecture08-scalar-riemann-sum",
+      "concept_id": "scalar-line-integrals",
+      "outcome": "Interpret a scalar line integral as the limit of sampled density times small arc-length increments, independent of the chosen nice parametrization and curve orientation.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 40,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 38, 39, 40, 41, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [38, 39, 40, 41],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 38, 39, 40, 41, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 40 supports the mapped source skill: Interpret a scalar line integral as the limit of sampled density times small arc-length increments, independent of the chosen nice parametrization and curve orientation."
+        },
+        "page_heading": "Line Integrals — Scalar Fields"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 38, 39, 40, 41."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-scalar-riemann-sum-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineScalar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 38, 39, 40, 41."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-riemann-sum-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-scalar-riemann-sum-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 38, 39, 40, 41, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "scalar-line-integrals:lecture08-scalar-existence-and-smooth-formula",
+      "concept_id": "scalar-line-integrals",
+      "outcome": "Use continuity and finite curve length to guarantee existence, and evaluate a scalar line integral on a smooth curve with the speed formula.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 43,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 42, 43, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42, 43],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 42, 43, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 43 supports the mapped source skill: Use continuity and finite curve length to guarantee existence, and evaluate a scalar line integral on a smooth curve with the speed formula."
+        },
+        "page_heading": "Theorem (Line Integrals of a Continuous Scalar Field Along a Smooth Curve)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 42, 43."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-scalar-existence-and-smooth-formula-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineScalar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 42, 43."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-scalar-existence-and-smooth-formula-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-scalar-existence-and-smooth-formula-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 42, 43, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "scalar-line-integrals:lecture08-source-circle-density",
+      "concept_id": "scalar-line-integrals",
+      "outcome": "Evaluate the handout's scalar density on a circle by composing the field with a parametrization and including speed.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 44,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 44, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [44],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 44, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 44 supports the mapped source skill: Evaluate the handout's scalar density on a circle by composing the field with a parametrization and including speed."
+        },
+        "page_heading": "Line Integrals — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 44."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-source-circle-density-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineScalar",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 44."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.contentBlocks[lecture08-source-circle-density-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-line-integrals.exercises[lecture08-source-circle-density-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 44, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "vector-fields:lecture08-vector-field-domain-components",
+      "concept_id": "vector-fields",
+      "outcome": "Read a vector field as a position-dependent vector map, state its domain, and distinguish component regularity from a plotted trajectory.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 46,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 46, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [46],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 46, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 46 supports the mapped source skill: Read a vector field as a position-dependent vector map, state its domain, and distinguish component regularity from a plotted trajectory."
+        },
+        "page_heading": "Definition (Vector Fields)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 46."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.exercises[lecture08-vector-field-domain-components-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineintegral",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 46."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.contentBlocks[lecture08-vector-field-domain-components-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-fields.exercises[lecture08-vector-field-domain-components-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 46, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "vector-line-integrals:lecture08-vector-integral-riemann-sum",
+      "concept_id": "vector-line-integrals",
+      "outcome": "Interpret a vector line integral as sampled field vectors dotted with oriented curve displacements, and use the velocity formula on smooth parametrizations.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 47,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 47, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [47],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 47, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 47 supports the mapped source skill: Interpret a vector line integral as sampled field vectors dotted with oriented curve displacements, and use the velocity formula on smooth parametrizations."
+        },
+        "page_heading": "Line Integrals — Vector Fields"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 47."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-riemann-sum-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineintegral",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 47."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-riemann-sum-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-riemann-sum-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 47, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "vector-line-integrals:lecture08-vector-integral-orientation",
+      "concept_id": "vector-line-integrals",
+      "outcome": "Use the curve orientation in a vector line integral and negate the result when the same curve is traversed in reverse.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 48,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 48, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [48],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 48, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 48 supports the mapped source skill: Use the curve orientation in a vector line integral and negate the result when the same curve is traversed in reverse."
+        },
+        "page_heading": "Theorem (Line Integrals of a Vector Field Are Affected by Curve Orientation)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 48."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-orientation-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineintegral",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 48."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-orientation-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-orientation-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 48, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "vector-line-integrals:lecture08-vector-integral-existence-formula",
+      "concept_id": "vector-line-integrals",
+      "outcome": "Use continuity and finite curve length to guarantee a vector line integral, and evaluate it on a smooth oriented parametrization by the field-velocity dot product.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 49,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 49, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [49],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 49, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 49 supports the mapped source skill: Use continuity and finite curve length to guarantee a vector line integral, and evaluate it on a smooth oriented parametrization by the field-velocity dot product."
+        },
+        "page_heading": "Theorem (Line Integrals of a Continuous Vector Field Along a Smooth Curve)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 49."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-existence-formula-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineintegral",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 49."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-vector-integral-existence-formula-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-vector-integral-existence-formula-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 49, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "vector-line-integrals:lecture08-source-vector-work",
+      "concept_id": "vector-line-integrals",
+      "outcome": "Evaluate the handout's three-dimensional vector line integral by composing the field with its oriented curve and integrating all velocity contributions.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 50,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; rendered pages at 900 px, visually inspected page(s) 50, and cross-checked physical markers with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [50],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page(s) 50, then cross-checked page headings and markers with pdftotext -layout. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 50 supports the mapped source skill: Evaluate the handout's three-dimensional vector line integral by composing the field with its oriented curve and integrating all velocity contributions."
+        },
+        "page_heading": "Line Integrals — Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-statement].title",
+            "claim": "The atomic skill has an explicit title on its stable lesson route.",
+            "method": "Checked the exact block title against the page-verified source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-statement]",
+            "claim": "The guide states the source rule or method and its scope.",
+            "method": "Compared the complete statement with rendered physical pages 50."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-worked]",
+            "claim": "The worked reasoning is mathematically checked; source examples with blank solution slides are identified as guide derivations.",
+            "method": "Recomputed the displayed derivatives, bounds, Jacobians, signs, and integrals independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-source-vector-work-transfer]",
+            "claim": "Changed-data transfer practice has a hint, checked solution, and rubric; learner performance is unverified.",
+            "method": "Solved the transfer task independently and checked its exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "lineintegral",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Statement, independently checked worked reasoning, and transfer task were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-statement]",
+            "basis": "Guide statement compared with rendered source physical page(s) 50."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.contentBlocks[lecture08-source-vector-work-worked]",
+            "basis": "The displayed derivative, bounds, Jacobian, sign, or integral were independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#vector-line-integrals.exercises[lecture08-source-vector-work-transfer]",
+            "basis": "Changed-data task and solution checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched physical page(s) 50, exact lesson blocks, transfer solution, and scene status.",
+        "named": "exact atomic-skill title inspected",
+        "stated": "source statement and its scope inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Existing scene is only a candidate; no outcome-specific render or alignment check.",
+        "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "substitution-integral:lecture08-definite-substitution-theorem",
+      "concept_id": "substitution-integral",
+      "outcome": "State and apply the definite one-variable substitution identity with a differentiable map, its signed derivative, and the mapped endpoints under the theorem’s existence conditions.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 17,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; physical page 17 was rendered, visually inspected, and cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [17],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page 17, including theorem heading, differentiability and existence conditions, signed derivative, and transformed endpoints; cross-checked text extraction. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 17 states the definite one-variable substitution theorem and then introduces the two- and three-variable generalizations."
+        },
+        "page_heading": "Theorem (Change of Variables in Single-Variable Integration)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-statement].title",
+            "claim": "The one-variable substitution theorem has a distinct heading on its existing stable route.",
+            "method": "Compared the exact lesson title with the theorem heading on physical page 17."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-statement]",
+            "claim": "The mapped lesson states the source hypotheses, signed derivative, and transformed endpoints.",
+            "method": "Compared the rule and its stated conditions with rendered physical page 17."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-worked]",
+            "claim": "The worked decreasing-map example retains the signed derivative and oriented endpoint order.",
+            "method": "Evaluated both displayed integrals independently as negative one-half."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[lecture08-definite-substitution-transfer]",
+            "claim": "Changed-data substitution practice includes checked steps and a rubric; learner performance is unverified.",
+            "method": "Solved the transformed integral independently and checked its endpoints and antiderivative."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-substitution",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source theorem, signed-orientation derivation, and changed-data practice were inspected. The existing substitution scene is only a candidate; no outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-statement].title",
+            "basis": "Exact atomic-skill title is visible on the existing stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-statement]",
+            "basis": "Hypotheses, signed derivative, and endpoint transformation compared with physical page 17."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.supplementalBlocks[lecture08-definite-substitution-theorem-worked]",
+            "basis": "Both oriented integrals independently evaluate to negative one-half."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#substitution-integral.exercises[lecture08-definite-substitution-transfer]",
+            "basis": "Changed-data problem, transformed bounds, exact answer, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered physical page 17, the stable-route theorem and worked example, transfer solution, and candidate scene status.",
+        "named": "exact theorem-skill title inspected",
+        "stated": "source differentiability and existence conditions stated",
+        "worked": "signed derivative and transformed endpoint calculation independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level visual alignment check was performed.",
+        "checked": "No independent learner performance check was performed."
+      }
+    },
+    {
+      "id": "space-jacobians:lecture08-space-transform-domain-components",
+      "concept_id": "space-jacobians",
+      "outcome": "Read a space transformation as a map between parameter and physical triples; state its domain and range and name its three component functions.",
+      "core_source": {
+        "id": "MH2100_Lecture_08",
+        "physical_page": 10,
+        "sha256": "7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8",
+        "inspection": "Canonical local 51-page Lecture 08 PDF SHA-256 matches both catalogs; physical page 10 was rendered, visually inspected, and cross-checked with pdftotext -layout.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10],
+          "method": "Hash-matched 51-page canonical PDF; rendered and visually checked physical page 10, including parameter/physical spaces, domain/range, and the three component functions; cross-checked text extraction. SHA-256: 7379c98f91701bde97dd1772f1270ee23aa814c5b6b75f322b1f7ee83bc25ac8.",
+          "claim_observed": "Physical page 10 defines a space transformation by its domain in parameter space, range in physical space, and three scalar component functions."
+        },
+        "page_heading": "Space Transformations"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-statement].title",
+            "claim": "The source map/domain/range skill has a distinct title on its stable lesson route.",
+            "method": "Compared the title with the transformation definition on physical page 10."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-statement]",
+            "claim": "The guide separates the parameter domain, physical range, and scalar component functions.",
+            "method": "Compared the three-map definition on the guide with physical page 10."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-worked]",
+            "claim": "The nonlinear example characterizes the image and verifies a general preimage.",
+            "method": "Solved the inverse constraints directly for all image points."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-space-transform-domain-components-transfer]",
+            "claim": "Changed-data transfer practice includes a checked range and preimage with rubric; learner performance is unverified.",
+            "method": "Solved the exponential-coordinate map independently."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "spherical",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The transformation definition, domain/range contrast, and changed-data practice were inspected. The existing space scene is only a candidate; no outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_08:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-statement].title",
+            "basis": "Exact atomic-skill title is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-statement]",
+            "basis": "Domain, range, and component definitions compared with physical page 10."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.contentBlocks[lecture08-space-transform-domain-components-worked]",
+            "basis": "The half-space image and preimage formula were checked for all target points."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#space-jacobians.exercises[lecture08-space-transform-domain-components-transfer]",
+            "basis": "Changed-data map, range, preimage, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared rendered physical page 10, stable-route definition and example, transfer solution, and scene candidate status.",
+        "named": "exact space-map skill title inspected",
+        "stated": "domain, range, and component functions stated",
+        "worked": "range characterization and preimage independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Candidate scene exists, but no outcome-level visual alignment check was performed.",
+        "checked": "No independent learner performance check was performed."
       }
     }
   ]

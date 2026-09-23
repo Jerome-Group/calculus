@@ -2126,6 +2126,11 @@
         "sourceId": "MH1101_Stewart_Chapter_04_Integrals",
         "pages": [49, 54],
         "detail": "Optional: Stewart, §4.5; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [17, 17],
+        "detail": "Single-variable substitution theorem and hypotheses preceding the multivariable extension."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5839,29 +5844,14 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [2, 2],
-        "detail": "The Geometrical Meaning of the Determinant"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [6, 6],
-        "detail": "Theorem (Transformation of a Double Integral Under a Linear Transformation)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [7, 7],
-        "detail": "Theorem (Transformation of a Triple Integral Under a Linear Transformation)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [8, 8],
-        "detail": "Corollary (Area Change Under a Linear Transformation); Corollary (Volume Change Under a Linear Transformation)"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [73, 82],
         "detail": "Optional: Stewart, §15.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [2, 8],
+        "detail": "Linear determinant geometry, area and volume scaling, and linear integral transformations."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5892,29 +5882,19 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [9, 9],
-        "detail": "Definition (Plane Transformations)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [10, 10],
-        "detail": "Definition (Space Transformations)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [11, 11],
-        "detail": "Definition (Jacobian of a Plane Transformation); Theorem (Jacobian of a Linear Plane Transformation)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [12, 12],
-        "detail": "The Jacobian of a Plane Transformation — Polar Coordinates"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [73, 82],
         "detail": "Optional: Stewart, §15.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [9, 9],
+        "detail": "Plane transformation definition."
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [11, 12],
+        "detail": "Plane Jacobian definition, linear case, and polar-coordinate determinant."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5945,29 +5925,19 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [13, 13],
-        "detail": "Definition (Jacobian of a Space Transformation); Theorem (Jacobian of a Linear Space Transformation)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [14, 14],
-        "detail": "The Jacobian of a Space Transformation — Cylindrical Coordinates"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [15, 15],
-        "detail": "The Jacobian of a Space Transformation — Spherical Coordinates"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [16, 16],
-        "detail": "The Jacobian of a Space Transformation — Spherical Coordinates (cont’d)"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [73, 82],
         "detail": "Optional: Stewart, §15.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [10, 10],
+        "detail": "Space transformation definition."
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [13, 16],
+        "detail": "Space Jacobian definition, cylindrical coordinates, and signed spherical determinant."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5999,44 +5969,14 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [17, 17],
-        "detail": "Theorem (Change of Variables in Single-Variable Integration)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [18, 18],
-        "detail": "Theorem (Change of Variables in Two-Variable Integration)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [19, 19],
-        "detail": "Theorem (Change of Variables in Three-Variable Integration)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [20, 20],
-        "detail": "Change of Variables in Multivariable Integration — Polar Coordinates"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [21, 21],
-        "detail": "Change of Variables in Multivariable Integration — Cylindrical Coordinates"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [22, 22],
-        "detail": "Change of Variables in Multivariable Integration — Spherical Coordinates"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [23, 23],
-        "detail": "Change of Variables in Multivariable Integration — Problem Solving"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [73, 82],
         "detail": "Optional: Stewart, §15.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [17, 24],
+        "detail": "Single-variable review, multivariable theorem hypotheses, standard coordinates, and substitution strategy."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6065,49 +6005,34 @@
     "course": "MH2100",
     "sources": [
       {
+        "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
+        "pages": [73, 82],
+        "detail": "Optional: Stewart, §15.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [23, 24],
+        "detail": "Choose coordinates from boundary expressions and invert the linear map."
+      },
+      {
         "sourceId": "MH2100_Lecture_08",
         "pages": [25, 25],
-        "detail": "Change of Variables in Multivariable Integration — Example 1"
+        "detail": "Positive-quadrant product-ratio example."
       },
       {
         "sourceId": "MH2100_Lecture_08",
-        "pages": [26, 26],
-        "detail": "Change of Variables in Multivariable Integration — Example 1 (cont’d)"
+        "pages": [28, 29],
+        "detail": "Affine parallelogram example and boundary diagram."
       },
       {
         "sourceId": "MH2100_Lecture_08",
-        "pages": [28, 28],
-        "detail": "Change of Variables in Multivariable Integration — Example 2"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [29, 29],
-        "detail": "Change of Variables in Multivariable Integration — Example 2 (cont’d)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [31, 31],
-        "detail": "Change of Variables in Multivariable Integration — Example 3"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [32, 32],
-        "detail": "Change of Variables in Multivariable Integration — Example 3 (cont’d)"
+        "pages": [31, 32],
+        "detail": "Trapezoid example and transformed-region diagram."
       },
       {
         "sourceId": "MH2100_Lecture_08",
         "pages": [34, 34],
-        "detail": "Change of Variables in Multivariable Integration — Example 4"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [35, 35],
-        "detail": "Change of Variables in Multivariable Integration — Example 4 (cont’d)"
-      },
-      {
-        "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
-        "pages": [73, 82],
-        "detail": "Optional: Stewart, §15.9; PDF pages within the supplied chapter extract"
+        "detail": "Three-plane volume problem; continuation page 35 is blank."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6140,39 +6065,14 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [37, 37],
-        "detail": "Line Integrals"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [39, 39],
-        "detail": "Line Integrals — Scalar Fields"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [42, 42],
-        "detail": "Definition (Length of a Curve); Theorem (Requirements for the Existence of Line Integrals of a Scalar Field)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [43, 43],
-        "detail": "Definition (Smooth Curves and Smooth Nice Parametrizations); Theorem (Line Integrals of a Continuous Scalar Field Along a Smooth Curve)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [44, 44],
-        "detail": "Line Integrals — Example 1"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [45, 45],
-        "detail": "Line Integrals — Example 1 (cont’d)"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [3, 18],
         "detail": "Optional: Stewart, §16.1–16.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [37, 44],
+        "detail": "Motivation, curve assumptions, scalar Riemann-sum definition, existence theorem, smooth-curve formula, and circle problem."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6203,24 +6103,14 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [46, 46],
-        "detail": "Definition (Vector Fields)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [48, 48],
-        "detail": "Theorem (Line Integrals of a Vector Field Are Affected by Curve Orientation)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [49, 49],
-        "detail": "Theorem (Requirements for the Existence of Line Integrals of a Vector Field); Theorem (Line Integrals of a Continuous Vector Field Along a Smooth Curve)"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [3, 18],
         "detail": "Optional: Stewart, §16.1–16.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [46, 46],
+        "detail": "Vector-field definition, component regularity, and domain."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6252,34 +6142,14 @@
     "course": "MH2100",
     "sources": [
       {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [46, 46],
-        "detail": "Definition (Vector Fields)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [48, 48],
-        "detail": "Theorem (Line Integrals of a Vector Field Are Affected by Curve Orientation)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [49, 49],
-        "detail": "Theorem (Requirements for the Existence of Line Integrals of a Vector Field); Theorem (Line Integrals of a Continuous Vector Field Along a Smooth Curve)"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [50, 50],
-        "detail": "Line Integrals — Example 2"
-      },
-      {
-        "sourceId": "MH2100_Lecture_08",
-        "pages": [51, 51],
-        "detail": "Line Integrals — Example 2 (cont’d)"
-      },
-      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [3, 18],
         "detail": "Optional: Stewart, §16.1–16.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_08",
+        "pages": [47, 50],
+        "detail": "Oriented vector Riemann sum, reversal theorem, smooth-curve formula, and three-dimensional work problem."
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
