@@ -3677,7 +3677,7 @@
         "surfaces-and-level-sets"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'surfaces and level sets' at 5–40; vectors 5–14; curves 15–25; tangents 26–33; surfaces 34–40; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Two page-verified atomic outcomes cover a domain restriction and hemisphere contours. Other graph, surface, and level-set subskills on pages 34–40 remain unmapped; no visual or learner-level verification is claimed.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3688,8 +3688,11 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "surfaces-and-level-sets:two-variable-domain",
+        "surfaces-and-level-sets:hemisphere-contours"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_02:01",
@@ -3797,7 +3800,7 @@
         "partial-derivatives-as-slices"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'open/closed sets' at 2–49; scalar limits 4–21; vector limits 22–24; continuity 25–36; infinity 37–41; sets 42–43; partials 44–49; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "One page-verified atomic outcome covers open/closed witnesses. Other set-topology examples and visual interpretations on pages 42–43 remain unmapped; no visual or learner-level verification is claimed.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3808,8 +3811,10 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "distance-and-neighborhoods:open-closed-witnesses"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_02:05",
@@ -9893,6 +9898,282 @@
         "practiced": "Independent task inspected; learner performance unverified.",
         "visualized": "No scene verified for this outcome.",
         "checked": "No independent learner-level outcome check."
+      }
+    },
+    {
+      "id": "surfaces-and-level-sets:two-variable-domain",
+      "concept_id": "surfaces-and-level-sets",
+      "outcome": "Intersect real-expression restrictions to find the natural domain of a two-variable function, excluding a zero denominator even when its numerator vanishes.",
+      "core_source": {
+        "id": "MH2100_Lecture_01",
+        "physical_page": 35,
+        "inspection": "Canonical local lecture PDF rendered and page text cross-checked against the exact source skill.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [34, 35],
+          "method": "Rendered physical PDF pages visually inspected alongside page-bounded text extraction.",
+          "claim_observed": "Page 35 asks for the domain of x/sqrt(y^2-x); page 34 defines a real-valued function on a subset of R^2."
+        },
+        "page_heading": "The Function Domain for an Expression"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#surfaces-and-level-sets.title",
+            "claim": "Concept named in the catalog.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[two-variable-expression-domain-rule]",
+            "claim": "Strategy block states the source-page skill.",
+            "method": "Direct semantic comparison with rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[mh2100-domain-radical-denominator]",
+            "claim": "Worked guide block carries a full example and verification.",
+            "method": "Inspected setup, steps, result, and verification."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.exercises[two-variable-domain-transfer]",
+            "claim": "Independent transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Direct comparison of transfer task with worked source case; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "surface",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and guide reasoning inspected; rendered scene alignment, independent learner transfer, and remaining source subskills are unverified.",
+      "source_section_id": "MH2100_Lecture_01:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#surfaces-and-level-sets.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[two-variable-expression-domain-rule]",
+            "basis": "current guide and source inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[mh2100-domain-radical-denominator]",
+            "basis": "worked steps and verification inspected"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.exercises[two-variable-domain-transfer]",
+            "basis": "transfer prompt and solution inspected; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Visually compare rendered canonical source pages with current catalog, structured guide block, and transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "worked computation or witness inspected",
+        "practiced": "independent transfer task inspected; learner performance unverified",
+        "visualized": "Candidate scene not verified for this exact outcome.",
+        "checked": "No independent learner outcome-level check."
+      }
+    },
+    {
+      "id": "surfaces-and-level-sets:hemisphere-contours",
+      "concept_id": "surfaces-and-level-sets",
+      "outcome": "Derive the planar level sets of a hemisphere by respecting the nonnegative height range, and recognize that its highest level is a singleton.",
+      "core_source": {
+        "id": "MH2100_Lecture_01",
+        "physical_page": 38,
+        "inspection": "Canonical local lecture PDF rendered and page text cross-checked against the exact source skill.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [37, 38, 39],
+          "method": "Rendered physical PDF pages visually inspected alongside page-bounded text extraction.",
+          "claim_observed": "Page 37 defines a level curve as a domain-restricted preimage; page 38 asks for levels 0 through 6 of sqrt(36-x^2-y^2); page 39 shows horizontal slices."
+        },
+        "page_heading": "Level Curves and Contour Plots"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#surfaces-and-level-sets.title",
+            "claim": "Concept named in the catalog.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[hemisphere-level-set-rule]",
+            "claim": "Strategy block states the source-page skill.",
+            "method": "Direct semantic comparison with rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[mh2100-hemisphere-contours]",
+            "claim": "Worked guide block carries a full example and verification.",
+            "method": "Inspected setup, steps, result, and verification."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.exercises[hemisphere-level-transfer]",
+            "claim": "Independent transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Direct comparison of transfer task with worked source case; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "surface",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and guide reasoning inspected; rendered scene alignment, independent learner transfer, and remaining source subskills are unverified.",
+      "source_section_id": "MH2100_Lecture_01:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#surfaces-and-level-sets.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[hemisphere-level-set-rule]",
+            "basis": "current guide and source inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.contentBlocks[mh2100-hemisphere-contours]",
+            "basis": "worked steps and verification inspected"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surfaces-and-level-sets.exercises[hemisphere-level-transfer]",
+            "basis": "transfer prompt and solution inspected; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Visually compare rendered canonical source pages with current catalog, structured guide block, and transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "worked computation or witness inspected",
+        "practiced": "independent transfer task inspected; learner performance unverified",
+        "visualized": "Candidate scene not verified for this exact outcome.",
+        "checked": "No independent learner outcome-level check."
+      }
+    },
+    {
+      "id": "distance-and-neighborhoods:open-closed-witnesses",
+      "concept_id": "distance-and-neighborhoods",
+      "outcome": "Classify a planar set by testing openness and closedness separately with an included boundary point and an excluded limit point.",
+      "core_source": {
+        "id": "MH2100_Lecture_02",
+        "physical_page": 42,
+        "inspection": "Canonical local lecture PDF rendered and page text cross-checked against the exact source skill.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42, 43],
+          "method": "Rendered physical PDF pages visually inspected alongside page-bounded text extraction.",
+          "claim_observed": "Page 42 defines openness by an interior ball at each member and closedness by inclusion of all limit points; page 43 asks classification of pictured boundary cases."
+        },
+        "page_heading": "Open and Closed Sets — a Formal Definition"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#distance-and-neighborhoods.title",
+            "claim": "Concept named in the catalog.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#distance-and-neighborhoods.contentBlocks[open-closed-separate-tests]",
+            "claim": "Strategy block states the source-page skill.",
+            "method": "Direct semantic comparison with rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#distance-and-neighborhoods.contentBlocks[mh2100-open-closed-boundary-witnesses]",
+            "claim": "Worked guide block carries a full example and verification.",
+            "method": "Inspected setup, steps, result, and verification."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#distance-and-neighborhoods.exercises[half-disk-topology-transfer]",
+            "claim": "Independent transfer prompt, hint, solution, and rubric apply the skill.",
+            "method": "Direct comparison of transfer task with worked source case; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "limits",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source page and guide reasoning inspected; rendered scene alignment, independent learner transfer, and remaining source subskills are unverified.",
+      "source_section_id": "MH2100_Lecture_02:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#distance-and-neighborhoods.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#distance-and-neighborhoods.contentBlocks[open-closed-separate-tests]",
+            "basis": "current guide and source inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#distance-and-neighborhoods.contentBlocks[mh2100-open-closed-boundary-witnesses]",
+            "basis": "worked steps and verification inspected"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#distance-and-neighborhoods.exercises[half-disk-topology-transfer]",
+            "basis": "transfer prompt and solution inspected; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Visually compare rendered canonical source pages with current catalog, structured guide block, and transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "worked computation or witness inspected",
+        "practiced": "independent transfer task inspected; learner performance unverified",
+        "visualized": "Candidate scene not verified for this exact outcome.",
+        "checked": "No independent learner outcome-level check."
       }
     }
   ]
