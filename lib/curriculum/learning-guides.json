@@ -324,6 +324,40 @@
   "infinite-limits": {
     "prerequisites": ["limits-one-sided"],
     "reasoning": "Complete proof",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "vertical-asymptote-one-sided-criterion",
+        "title": "One infinite side is enough",
+        "statement": "The line $x=a$ is a vertical asymptote of $y=f(x)$ if at least one of $\\lim_{x\\to a^-}f(x)$ or $\\lim_{x\\to a^+}f(x)$ is $+\\infty$ or $-\\infty$. A two-sided infinite limit also suffices.",
+        "hypotheses": [
+          "Approach $a$ through points in the domain on the side being claimed.",
+          "Show values eventually exceed every positive bound or fall below every negative bound on that side; a zero denominator alone is not enough."
+        ],
+        "prerequisites": ["one-sided infinite limits"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "tangent-vertical-asymptote",
+        "title": "Check tangent on each side",
+        "strategy": "Find candidate denominator zeros, then determine numerator and denominator signs separately on each side.",
+        "setup": "For $f(x)=\\tan x=\\sin x/\\cos x$, inspect $a=\\pi/2$.",
+        "steps": [
+          {
+            "label": "Numerator",
+            "text": "$\\sin x$ stays positive near $\\pi/2$ and tends to $1$."
+          },
+          {
+            "label": "Denominator",
+            "text": "$\\cos x$ tends to zero through positive values on the left and negative values on the right.",
+            "equation": "\\lim_{x\\to(\\pi/2)^-}\\tan x=+\\infty,\\qquad\\lim_{x\\to(\\pi/2)^+}\\tan x=-\\infty"
+          }
+        ],
+        "result": "$x=\\pi/2$ is a vertical asymptote; the two sides need not share one sign.",
+        "verification": "Translation by $\\pi$ repeats this sign pattern at $x=\\pi/2+n\\pi$ for every integer $n$."
+      }
+    ],
     "sections": [
       {
         "title": "Quantifiers and signs",
@@ -344,11 +378,95 @@
         "Reverse the reciprocal inequality correctly."
       ],
       "solutionTex": "\\delta=M^{-1/2},\\quad 0<|x|<\\delta\\implies x^{-2}>M"
-    }
+    },
+    "exercises": [
+      {
+        "id": "rational-asymptote-transfer",
+        "outcome": "Use one-sided signs to certify a vertical asymptote rather than relying on a zero denominator.",
+        "kind": "computational",
+        "prompt": "For $f(x)=(x+1)/(x^2-4)$, determine the left and right behaviour at $x=2$. Is $x=2$ a vertical asymptote?",
+        "hint": "Factor $x^2-4=(x-2)(x+2)$. Near 2, the numerator and $x+2$ are positive; only $x-2$ changes sign.",
+        "solution": "As $x\\to2^-$, $(x-2)<0$ tends to zero while $(x+1)/(x+2)\\to3/4>0$, so $f(x)\\to-\\infty$. As $x\\to2^+$, the same positive factor is divided by a positive number tending to zero, so $f(x)\\to+\\infty$. Either one-sided result certifies the vertical asymptote $x=2$.",
+        "rubric": [
+          "Factor and identify the signs of all nonzero factors near 2.",
+          "Give the correct sign of each one-sided infinite limit.",
+          "Apply the one-sided asymptote definition explicitly."
+        ],
+        "solutionTex": "\\lim_{x\\to2^-}f(x)=-\\infty,\\quad\\lim_{x\\to2^+}f(x)=+\\infty"
+      }
+    ]
   },
   "limit-laws-squeeze": {
     "prerequisites": ["limits-one-sided"],
     "reasoning": "Proof sketch",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "replacement-law-punctured-neighborhood",
+        "title": "Replace values away from the target",
+        "statement": "If $f(x)=g(x)$ for every allowed $x$ sufficiently near but unequal to $a$, then $f$ and $g$ have the same limit at $a$ whenever either limit exists; if one has no limit, neither does the other.",
+        "hypotheses": [
+          "Both expressions must be defined and equal throughout a common deleted neighborhood of $a$.",
+          "The values $f(a)$ and $g(a)$ may differ or be undefined."
+        ],
+        "prerequisites": [
+          "a limit depends on nearby input values, not the point value"
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "replacement-law-factor-cancellation",
+        "title": "Cancel only where the expression exists",
+        "strategy": "Factor first; establish equality on the deleted domain before applying direct substitution to the replacement.",
+        "setup": "Evaluate $\\lim_{x\\to1}(x^2-1)/(x-1)$; the original quotient is undefined at $x=1$.",
+        "steps": [
+          {
+            "label": "Factor and restrict",
+            "text": "For $x\\ne1$, the numerator is $(x-1)(x+1)$, so the quotient equals $x+1$ on a deleted neighborhood.",
+            "equation": "\\frac{x^2-1}{x-1}=x+1\\quad(x\\ne1)"
+          },
+          {
+            "label": "Take the replacement limit",
+            "text": "The replacement law transfers the finite limit of $x+1$ to the original quotient."
+          }
+        ],
+        "result": "$\\lim_{x\\to1}(x^2-1)/(x-1)=2$ even though the original point value is absent.",
+        "verification": "A denominator tending to zero does not prove an infinite limit; here the numerator shares the vanishing factor."
+      },
+      {
+        "kind": "theorem",
+        "id": "squeeze-theorem-hypotheses",
+        "title": "Check both bounds and their common limit",
+        "statement": "If $f(x)\\le g(x)\\le h(x)$ throughout a deleted neighborhood of $a$, and both outer limits exist and equal the same finite $L$, then $\\lim_{x\\to a}g(x)=L$.",
+        "hypotheses": [
+          "The inequalities hold for every sufficiently near allowed input, except possibly at $a$.",
+          "Both outer functions have finite limits and those limits agree."
+        ],
+        "prerequisites": ["finite limits and order of real numbers"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "squeeze-oscillating-factor",
+        "title": "Trap an oscillating factor",
+        "strategy": "Bound the oscillating factor uniformly; then check each outer function's limit.",
+        "setup": "For $x\\ne0$, evaluate $\\lim_{x\\to0}x\\sin(1/x)$.",
+        "steps": [
+          {
+            "label": "Build the bounds",
+            "text": "Since $|\\sin(1/x)|\\le1$, multiplication gives a bound valid on both sides of zero.",
+            "equation": "-|x|\\le x\\sin(1/x)\\le |x|"
+          },
+          {
+            "label": "Check outer limits",
+            "text": "Both $-|x|$ and $|x|$ tend to zero, so the squeeze theorem applies although $\\sin(1/x)$ itself has no limit."
+          }
+        ],
+        "result": "$\\lim_{x\\to0}x\\sin(1/x)=0$.",
+        "verification": "The inequalities hold for every nonzero $x$ near zero; no value at zero is required."
+      }
+    ],
     "supplementalBlocks": [
       {
         "kind": "derivation",
@@ -399,6 +517,34 @@
       }
     ],
     "exercises": [
+      {
+        "id": "replacement-law-transfer",
+        "outcome": "Use equality on a deleted neighborhood to transfer a finite limit despite a changed point value.",
+        "kind": "proof",
+        "prompt": "Let $f(x)=(x^2-4)/(x-2)$ for $x\\ne2$, but set $f(2)=7$. Find $\\lim_{x\\to2}f(x)$ and explain why neither cancellation at $x=2$ nor $f(2)$ gives the limit.",
+        "hint": "Factor for $x\\ne2$; compare the resulting function on the deleted neighborhood.",
+        "solution": "For every $x\\ne2$ near 2, $f(x)=(x-2)(x+2)/(x-2)=x+2$. The replacement law gives $\\lim_{x\\to2}f(x)=\\lim_{x\\to2}(x+2)=4$. Cancellation was only valid when $x\\ne2$, and the separately assigned value $f(2)=7$ does not affect the limit.",
+        "solutionTex": "f(x)=x+2\\ (x\\ne2),\\qquad\\lim_{x\\to2}f(x)=4\\ne f(2)",
+        "rubric": [
+          "State the deleted-domain equality rather than asserting equality at 2.",
+          "Use the replacement law and evaluate the replacement limit.",
+          "Distinguish the limit from the assigned point value."
+        ]
+      },
+      {
+        "id": "squeeze-bounds-transfer",
+        "outcome": "Verify a pair of shared finite bounds before applying squeeze to a new oscillatory expression.",
+        "kind": "proof",
+        "prompt": "Find $\\lim_{x\\to0}x^2(1+\\sin(1/x))$ and state the bounds that justify your answer for every nonzero nearby $x$.",
+        "hint": "Use $-1\\le\\sin(1/x)\\le1$ and note $x^2\\ge0$.",
+        "solution": "For $x\\ne0$, $0\\le1+\\sin(1/x)\\le2$, so $0\\le x^2(1+\\sin(1/x))\\le2x^2$. Both outer functions tend to zero at 0, and the inequalities hold throughout the punctured neighborhood. The squeeze theorem gives limit zero without assigning a limit to $\\sin(1/x)$.",
+        "solutionTex": "0\\le x^2(1+\\sin(1/x))\\le2x^2\\longrightarrow0",
+        "rubric": [
+          "Give both bounds and justify multiplication by nonnegative $x^2$.",
+          "Show both outer limits are the same finite number.",
+          "Conclude by the squeeze theorem, without inventing a sine limit."
+        ]
+      },
       {
         "id": "trig-limit-transfer",
         "outcome": "Use the proved sine limit and an identity to justify a new trigonometric limit.",
