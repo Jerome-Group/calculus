@@ -7323,6 +7323,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [73, 88],
         "detail": "Optional: Stewart, §16.8–16.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_12_Final_Exam_Review",
+        "pages": [4, 4],
+        "detail": "Original positively projected Stokes triangle problem"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
