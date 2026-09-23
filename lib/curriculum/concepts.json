@@ -897,8 +897,28 @@
       },
       {
         "sourceId": "MH1100_Lecture_06",
+        "pages": [4, 4],
+        "detail": "Tangent displacement form"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [5, 5],
+        "detail": "Instantaneous velocity definition"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
         "pages": [6, 6],
         "detail": "Definition: The derivative at a"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [7, 7],
+        "detail": "Equivalent quotient and rate interpretation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [8, 8],
+        "detail": "Cubic derivative exercise"
       },
       {
         "sourceId": "MH1100_Lecture_06",
@@ -914,6 +934,11 @@
         "sourceId": "MH1100_Lecture_06",
         "pages": [11, 11],
         "detail": "The derivative as a function"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [12, 12],
+        "detail": "Square-root and derivative graphs"
       },
       {
         "sourceId": "MH1100_Lecture_06",
@@ -958,6 +983,11 @@
       },
       {
         "sourceId": "MH1100_Lecture_06",
+        "pages": [15, 15],
+        "detail": "Proof differentiability implies continuity"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
         "pages": [16, 16],
         "detail": "The derivative as a function"
       },
@@ -968,8 +998,33 @@
       },
       {
         "sourceId": "MH1100_Lecture_06",
+        "pages": [18, 18],
+        "detail": "Absolute-value one-sided quotients"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [19, 19],
+        "detail": "Continuous corner contrast"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
         "pages": [20, 20],
         "detail": "Theorem 4 says that a function is differentiable at a, then it is continuous"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [21, 21],
+        "detail": "Corner failure type"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [22, 22],
+        "detail": "Vertical-tangent failure type"
+      },
+      {
+        "sourceId": "MH1100_Lecture_06",
+        "pages": [23, 23],
+        "detail": "Signed-root vertical-tangent exercise"
       },
       {
         "sourceId": "MH1100_Lecture_06",

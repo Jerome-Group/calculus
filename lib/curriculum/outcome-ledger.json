@@ -3256,102 +3256,360 @@
       "source_id": "MH1100_Lecture_06",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Derivative at a point and derivative function",
-      "physical_pages_from_audit": "2–27",
+      "physical_pages_from_audit": "2–27 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "derivative-definition",
         "differentiability-corners"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'Derivative at a point and derivative function'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 2 is a synopsis. Pages 3–7 repeat the same difference quotient in tangent, rate, and notation contexts; each distinct decision is mapped without duplicating the definition. Page 12 graphs the square-root example from page 11. No scene or learner-performance claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[finite-derivative-definition]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[tangent-and-velocity]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[derivative-function-domain]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[derivative-graph-reading]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[derivative-notation]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-cubic-difference-quotient]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-tangent-rate]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-square-root-domain]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-derivative-graph]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-notation-translation]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-definition-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[tangent-velocity-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-domain-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-graph-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-notation-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["derivative-definition:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "derivative-definition:source-skill-1",
+        "derivative-definition:tangent-and-velocity",
+        "derivative-definition:derivative-function-domain",
+        "derivative-definition:derivative-graph-reading",
+        "derivative-definition:derivative-notation"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "3–13"
     },
     {
       "id": "MH1100_Lecture_06:02",
       "source_id": "MH1100_Lecture_06",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "continuity implications",
-      "physical_pages_from_audit": "2–27",
+      "physical_pages_from_audit": "2–27 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "derivative-definition",
         "differentiability-corners"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'continuity implications' at 2–27; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 14 also defines differentiability across open intervals; this is the pointwise theorem applied at every interior point, not a separate calculation. Page 19 supplies the continuous-but-not-differentiable counterexample. No scene or learner-performance claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[derivative-implies-continuity]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-implication-and-converse]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[derivative-continuity-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "differentiability-corners:derivative-implies-continuity"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "14–15"
     },
     {
       "id": "MH1100_Lecture_06:03",
       "source_id": "MH1100_Lecture_06",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "failure types",
-      "physical_pages_from_audit": "2–27",
+      "physical_pages_from_audit": "2–27 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "derivative-definition",
         "differentiability-corners"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'failure types' at 2–27; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Page 21 prints f(x+a) where the corner quotient requires f(a+h), and page 18 has a side-limit marker typo. The guide uses the mathematically correct increments. Page 3 excludes non-finite tangent slopes by its finite-slope definition while pages 22–23 discuss geometric vertical tangents; the guide distinguishes these claims. No scene or learner-performance claim.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[discontinuity-obstruction]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[corner-one-sided-slopes]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[vertical-tangent-infinite-slope]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-jump-obstruction]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-absolute-value-derivative]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-signed-root-vertical]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[discontinuity-obstruction-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[corner-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[vertical-tangent-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "differentiability-corners:discontinuity-obstruction",
+        "differentiability-corners:corner-one-sided-slopes",
+        "differentiability-corners:vertical-tangent-infinite-slope"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "16–23"
     },
     {
       "id": "MH1100_Lecture_06:04",
       "source_id": "MH1100_Lecture_06",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "higher derivatives",
-      "physical_pages_from_audit": "2–27",
+      "physical_pages_from_audit": "2–27 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "derivative-definition",
         "differentiability-corners"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Second-derivative calculation from the first derivative is mapped on pages 24–25. Motion interpretation, third and later derivatives, visual fit, and learner performance remain separate gaps.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "The existing second-derivative outcome is preserved and strengthened; page 26 motion and page 27 iteration are mapped separately. Repeated prime and Leibniz symbols are notation for the same operations, not separate skills. No scene or learner-performance claim.",
       "evidence": {
         "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[higher-derivative-iteration]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[acceleration-second-rate]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[higher-derivative-iteration]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[second-derivative-from-definition]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-motion-interpretation]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-third-fourth-polynomial]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[second-derivative-definition-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[acceleration-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[higher-order-polynomial-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
       "atomic_outcome_ids": [
-        "differentiability-corners:second-derivative-definition"
+        "differentiability-corners:second-derivative-definition",
+        "differentiability-corners:acceleration-second-rate",
+        "differentiability-corners:higher-derivative-iteration"
       ],
-      "coverage_decision": "partial_atomic_mapping"
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "24–27"
     },
     {
       "id": "MH1100_Lecture_07:01",
@@ -8807,53 +9065,62 @@
     {
       "id": "differentiability-corners:second-derivative-definition",
       "concept_id": "differentiability-corners",
-      "outcome": "Compute a second derivative by taking the difference-quotient limit of the first derivative.",
+      "outcome": "Compute a second derivative by taking a new quotient limit of the first derivative.",
       "core_source": {
         "id": "MH1100_Lecture_06",
         "physical_page": 24,
-        "inspection": "Visually inspected physical pages 24–25 of the local canonical PDF; SHA-256 matches the source manifest.",
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [24, 25],
-          "method": "Rendered source pages and compared the definition, Example 6, and its solution with the guide.",
-          "claim_observed": "Page 24 defines the second derivative as the derivative of the first; page 25 applies a new difference quotient to f' for f(x)=x³−x and obtains f''(x)=6x."
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 24 defines the derivative of the derivative; page 25 derives f′′(x)=6x for f(x)=x³−x."
         },
-        "page_heading": "Higher derivatives; Example 6–Solution"
+        "page_heading": "Higher derivatives"
       },
       "evidence": {
         "named": [],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.sections[A second derivative requires a new limit]",
-            "claim": "The section states the second-derivative limit and its existence condition.",
-            "method": "Compared the section with the definition on page 24."
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[higher-derivative-iteration]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
           }
         ],
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[second-derivative-from-definition]",
-            "claim": "The worked block derives f' and then f'' from separate difference quotients for the source example.",
-            "method": "Compared every algebraic step with Example 6 on page 25."
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[second-derivative-definition-transfer]",
-            "claim": "The independent task requires the first derivative and the new quotient before its limit.",
-            "method": "Checked the prompt, hint, and solution against the exact outcome; learner performance unverified."
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
           }
         ],
         "visualized": [],
         "checked": []
       },
       "visual_candidate": {
-        "scene_id": "plane-secant",
+        "scene_id": "plane-corner",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Source and guide algebra inspected. No second-derivative visual or independent learner performance check is verified; other higher-derivative skills remain unmapped.",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
       "source_section_id": "MH1100_Lecture_06:04",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      },
       "candidate_blocks": {
         "stated": [
           {
@@ -8873,60 +9140,435 @@
             "basis": "current task and solution inspection; learner performance unverified"
           }
         ]
+      }
+    },
+    {
+      "id": "differentiability-corners:derivative-implies-continuity",
+      "concept_id": "differentiability-corners",
+      "outcome": "Prove finite differentiability implies point continuity, and reject its converse.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 14,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14, 15],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 14 states the one-way theorem; page 15 proves it with a finite quotient times a vanishing increment."
+        },
+        "page_heading": "Differentiability"
       },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[derivative-implies-continuity]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-implication-and-converse]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[derivative-continuity-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:02",
       "inspection_check": {
-        "method": "Manual semantic comparison of rendered PDF pages 24–25 with the guide statement, worked steps, and independent exercise solution.",
-        "named": "No dedicated catalog title for this atomic skill; named evidence not claimed.",
-        "stated": "match",
-        "worked": "source example reproduced with both quotients",
-        "practiced": "task directly applies outcome; learner performance unverified",
-        "visualized": "No second-derivative visual verified.",
-        "checked": "No independent learner performance check."
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "differentiability-corners:discontinuity-obstruction",
+      "concept_id": "differentiability-corners",
+      "outcome": "Use the contrapositive to rule out differentiability at a discontinuity.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 20,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 20 states noncontinuity as a differentiability obstruction by the theorem contrapositive."
+        },
+        "page_heading": "Differentiability"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[discontinuity-obstruction]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-jump-obstruction]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[discontinuity-obstruction-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "differentiability-corners:corner-one-sided-slopes",
+      "concept_id": "differentiability-corners",
+      "outcome": "Diagnose a corner by unequal finite one-sided difference quotients.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 16,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17, 18, 19, 21],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 16–19 calculate the absolute-value derivative off zero and unequal side quotients at zero; page 21 describes the corner failure."
+        },
+        "page_heading": "Differentiability"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[corner-one-sided-slopes]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-absolute-value-derivative]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[corner-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "differentiability-corners:vertical-tangent-infinite-slope",
+      "concept_id": "differentiability-corners",
+      "outcome": "Distinguish a geometric vertical tangent from a finite derivative using unbounded side slopes.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 22,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 22 describes unbounded secant slopes; page 23 asks for the signed-root vertical tangent at zero."
+        },
+        "page_heading": "Differentiability"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#differentiability-corners.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[vertical-tangent-infinite-slope]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-signed-root-vertical]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[vertical-tangent-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:03",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "differentiability-corners:acceleration-second-rate",
+      "concept_id": "differentiability-corners",
+      "outcome": "Interpret acceleration as the derivative of velocity and second derivative of position.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 26,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 26 identifies velocity as s′ and acceleration as v′=s′′ with units of successive rates."
+        },
+        "page_heading": "Higher derivatives"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[acceleration-second-rate]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-motion-interpretation]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[acceleration-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:04",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "differentiability-corners:higher-derivative-iteration",
+      "concept_id": "differentiability-corners",
+      "outcome": "Compute third and later derivatives by iteration and distinguish order notation from powers.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 27,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 27 defines third, fourth, and nth derivative iteration and notation."
+        },
+        "page_heading": "Higher derivatives"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[higher-derivative-iteration]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[source-third-fourth-polynomial]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[higher-order-polynomial-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-corner",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:04",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
       }
     },
     {
       "id": "derivative-definition:source-skill-1",
       "concept_id": "derivative-definition",
-      "outcome": "Derive a derivative from the difference quotient at a point.",
+      "outcome": "Derive a finite derivative from equivalent point difference quotients.",
       "core_source": {
         "id": "MH1100_Lecture_06",
         "physical_page": 6,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [6],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page defines the derivative at a point by a difference-quotient limit."
+          "pages": [6, 7, 8],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 6–7 give the equivalent point-derivative limits; page 8 asks for the cubic derivative at a."
         },
-        "page_heading": "Definition: The derivative at a"
+        "page_heading": "Derivative of a function"
       },
       "evidence": {
         "named": [
           {
             "locator": "lib/curriculum/concepts.json#derivative-definition.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#derivative-definition.sections[Derive before substituting]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[finite-derivative-definition]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#derivative-definition.sections[Derive before substituting]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-cubic-difference-quotient]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-definition-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
           }
         ],
         "visualized": [],
@@ -8936,10 +9578,19 @@
         "scene_id": "plane-secant",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
       "source_section_id": "MH1100_Lecture_06:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      },
       "candidate_blocks": {
         "named": [
           {
@@ -8965,15 +9616,270 @@
             "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
           }
         ]
+      }
+    },
+    {
+      "id": "derivative-definition:tangent-and-velocity",
+      "concept_id": "derivative-definition",
+      "outcome": "Interpret a finite derivative as tangent slope and instantaneous rate with units.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 3,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3, 4, 5, 7],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Pages 3–4 define tangent slope, page 5 defines instantaneous velocity, and page 7 interprets the derivative as a rate."
+        },
+        "page_heading": "Derivative of a function"
       },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[tangent-and-velocity]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-tangent-rate]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[tangent-velocity-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:01",
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
         "named": "match",
-        "stated": "match",
-        "worked": "worked instance in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "derivative-definition:derivative-function-domain",
+      "concept_id": "derivative-definition",
+      "outcome": "Form a derivative function and identify where its finite derivative exists.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 9,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 11, 12],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 9 defines the derivative function and domain; pages 11–12 derive and graph the square-root derivative, excluding zero."
+        },
+        "page_heading": "Derivative of a function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[derivative-function-domain]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-square-root-domain]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-domain-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "derivative-definition:derivative-graph-reading",
+      "concept_id": "derivative-definition",
+      "outcome": "Read derivative zeros and signs from tangent slopes on a paired function graph.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 10,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 10 pairs a function graph with its derivative and marks zero slopes at A, B, C and slope 3/2 at P."
+        },
+        "page_heading": "Derivative of a function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[derivative-graph-reading]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-derivative-graph]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-graph-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "derivative-definition:derivative-notation",
+      "concept_id": "derivative-definition",
+      "outcome": "Translate first-derivative notations and evaluate at a specified input.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 13,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13],
+          "method": "SHA-256 matched; physical PDF pages rendered with Poppler and visually checked.",
+          "claim_observed": "Page 13 lists prime, Leibniz, and operator notation and evaluation at a point."
+        },
+        "page_heading": "Derivative of a function"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#derivative-definition.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[derivative-notation]",
+            "claim": "The source hypotheses are stated in the guide.",
+            "method": "Compared rendered source pages and guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.contentBlocks[source-notation-translation]",
+            "claim": "Worked reasoning and contrast inspected; source and guide-created examples distinguished.",
+            "method": "Solved source calculation and reviewed guide."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-definition.exercises[derivative-notation-transfer]",
+            "claim": "Independent guide-created transfer includes hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved and reviewed transfer task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide evidence verified; scene alignment and learner performance not established.",
+      "source_section_id": "MH1100_Lecture_06:01",
+      "inspection_check": {
+        "method": "Manual comparison of rendered physical source pages, guide reasoning, and independent task feedback.",
+        "named": "match",
+        "stated": "hypotheses checked",
+        "worked": "reasoning checked",
+        "practiced": "feedback reviewed; learner performance unverified",
+        "visualized": "Scene not established as an outcome visualization.",
+        "checked": "No independent learner outcome check."
       }
     },
     {
