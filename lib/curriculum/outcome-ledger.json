@@ -9605,89 +9605,498 @@
       "id": "MH2100_Lecture_11:01",
       "source_id": "MH2100_Lecture_11",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Flux computations",
-      "physical_pages_from_audit": "1–33; flux examples 1–9; curl 11–14; divergence 15–20; identities 21; Stokes 22–29; Gauss 30–33",
-      "linked_concept_ids": [
-        "curl-and-local-rotation",
-        "divergence-and-local-flow",
-        "gradient-curl-divergence",
-        "stokes-theorem",
-        "divergence-theorem"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Flux computations' at 1–33; flux examples 1–9; curl 11–14; divergence 15–20; identities 21; Stokes 22–29; Gauss 30–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Flux examples 4–6",
+      "physical_pages_from_audit": "1–9; rendered physical-page boundaries inspected; blank continuations recorded",
+      "linked_concept_ids": ["flux-through-surfaces", "divergence-theorem"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Pages 1, 4, and 7 are prompts only; the intervening continuation slides are blank. Guide work is independently derived. No exact flux skill is outcome-specifically visualized or independently checked in a scene, and learner performance is unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#flux-through-surfaces.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#flux-through-surfaces.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#flux-through-surfaces.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-hemisphere-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-cone-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-semicylinder-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-hemisphere-worked]",
+            "claim": "Recomputed the half-ball volume and checked that the equatorial disk contributes zero.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-cone-worked]",
+            "claim": "Verified the intersection radius and used the zero divergence of (y,0,2).",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-semicylinder-worked]",
+            "claim": "Independently integrated 2x+2y+2z over the stated bounds and checked odd-term cancellation.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[mh2100-l11-hemisphere-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[mh2100-l11-cone-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[mh2100-l11-semicylinder-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "flux-through-surfaces:lecture11-top-hemisphere-flux",
+        "flux-through-surfaces:lecture11-cone-boundary-flux",
+        "flux-through-surfaces:lecture11-semicylinder-flux"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "1–9",
+      "inspected_physical_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 2,
+          "reason": "Blank continuation slide; it adds no prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 3,
+          "reason": "Blank continuation slide; it adds no prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 5,
+          "reason": "Blank continuation slide; it adds no prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 6,
+          "reason": "Blank continuation slide; it adds no prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 8,
+          "reason": "Blank continuation slide; it adds no prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 9,
+          "reason": "Blank continuation slide; it adds no prompt, solution step, or diagram."
+        }
+      ],
+      "source_review_notes": [
+        "Rendered canonical PDF: p1 Example 4 prompt; pp2–3 blank; p4 Example 5 prompt; pp5–6 blank; p7 Example 6 prompt; pp8–9 blank.",
+        "The three source slides show a Solution heading but provide no worked steps. Guide derivations are independently supplied; p30 introduces the divergence theorem used to solve the closed-boundary flux prompts."
+      ]
     },
     {
       "id": "MH2100_Lecture_11:02",
       "source_id": "MH2100_Lecture_11",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "curl/divergence/identities",
-      "physical_pages_from_audit": "1–33; flux examples 1–9; curl 11–14; divergence 15–20; identities 21; Stokes 22–29; Gauss 30–33",
+      "topic_from_audit_inventory": "Curl, divergence, and the divergence-of-curl identity",
+      "physical_pages_from_audit": "11–21; rendered physical-page boundaries inspected; blank continuations recorded",
       "linked_concept_ids": [
         "curl-and-local-rotation",
         "divergence-and-local-flow",
-        "gradient-curl-divergence",
-        "stokes-theorem",
-        "divergence-theorem"
+        "gradient-curl-divergence"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'curl/divergence/identities' at 1–33; flux examples 1–9; curl 11–14; divergence 15–20; identities 21; Stokes 22–29; Gauss 30–33; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Curl and divergence prompts on pages 14 and 20 have no source solutions. The guides show independently checked derivatives and hypotheses. No scene has been verified against these exact source outcomes; visualized/checked evidence and learner performance data remain absent.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#curl-and-local-rotation.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#curl-and-local-rotation.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#curl-and-local-rotation.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-and-local-flow.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-and-local-flow.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#gradient-curl-divergence.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-components-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-axis-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-conservative-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-sign-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#gradient-curl-divergence.contentBlocks[mh2100-l11-div-curl-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-components-worked]",
+            "claim": "Recomputed each cross-component derivative from the rendered source field.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-axis-worked]",
+            "claim": "Checked the sign reversal under the normal reversal using curl dot normal.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-conservative-worked]",
+            "claim": "Verified the punctured-axis example has zero curl but unit-circle circulation 2π.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-worked]",
+            "claim": "Recomputed the source value as 1−1+4=4.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-sign-worked]",
+            "claim": "Differentiated each pictured planar field and compared its sign with the source caption.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#gradient-curl-divergence.contentBlocks[mh2100-l11-div-curl-worked]",
+            "claim": "Expanded divergence of curl and paired all six mixed-partial terms.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.exercises[mh2100-l11-curl-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.exercises[mh2100-l11-curl-orientation-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.exercises[mh2100-l11-conservative-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.exercises[mh2100-l11-divergence-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.exercises[mh2100-l11-divergence-sign-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#gradient-curl-divergence.exercises[mh2100-l11-div-curl-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "curl-and-local-rotation:lecture11-curl-components",
+        "curl-and-local-rotation:lecture11-curl-orientation",
+        "curl-and-local-rotation:lecture11-conservative-domain-test",
+        "divergence-and-local-flow:lecture11-divergence-at-a-point",
+        "divergence-and-local-flow:lecture11-divergence-sign",
+        "gradient-curl-divergence:lecture11-divergence-of-curl"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "11–21",
+      "inspected_physical_pages": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 10,
+          "reason": "Week 11 topic outline is context before the first curl definition; it states no separate computational outcome."
+        }
+      ],
+      "source_review_notes": [
+        "Rendered canonical PDF: p11 defines the three-dimensional curl; p12 gives the paddlewheel interpretation; p13 states the open simply connected conservativeness test; p14 poses curl Example 1.",
+        "Pages 15–20 define n-dimensional divergence, show positive/negative/zero planar flow fields, and pose divergence Example 2. Page 21 states div(curl F)=0 under continuous second partials and names the gradient–curl–divergence cochain.",
+        "The PDF supplies no calculations for Examples 1 or 2. Guide calculations are independently derived; no source erratum was observed."
+      ]
     },
     {
       "id": "MH2100_Lecture_11:03",
       "source_id": "MH2100_Lecture_11",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Stokes and Gauss–Ostrogradsky",
-      "physical_pages_from_audit": "1–33; flux examples 1–9; curl 11–14; divergence 15–20; identities 21; Stokes 22–29; Gauss 30–33",
-      "linked_concept_ids": [
-        "curl-and-local-rotation",
-        "divergence-and-local-flow",
-        "gradient-curl-divergence",
-        "stokes-theorem",
-        "divergence-theorem"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 3 source-specific atomic outcomes mapped for Stokes and Gauss–Ostrogradsky. Remaining subskills, exact source examples/tasks and learner checks require review.",
+      "physical_pages_from_audit": "22–33; rendered physical-page boundaries inspected; blank continuations recorded",
+      "linked_concept_ids": ["stokes-theorem", "divergence-theorem"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The theorem slides and source prompts have no complete calculations; new guide derivations are independently checked. Existing and new generic scenes have not been verified for the exact tilted boundary, spherical cap, or parabolic solid. Visualized/checked evidence and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The concept is named in the current catalog.",
+            "method": "Direct catalog title inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The concept is named in the current catalog.",
+            "method": "Direct catalog title inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-theorem.title",
+            "claim": "The concept is named in the current catalog.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-hypotheses]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-hypotheses]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-hypotheses]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-bounds-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.sections[Boundary and normal are paired]",
+            "claim": "The cited lesson section states the source-page outcome.",
+            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.sections[A replacement surface needs the same edge]",
+            "claim": "The lesson states the edge, field-smoothness, and orientation eligibility checks.",
+            "method": "Read cited section against Lecture 11 pages 22–24."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.sections[The surface must close the region]",
+            "claim": "The cited lesson section states the source-page outcome.",
+            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-cap-worked]",
+            "claim": "Checked the source’s tilted disk and spherical cap against the edge and orientation conditions.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-cap-worked]",
+            "claim": "Computed curl, upward vector area and the symmetric disk integral; independently checked the boundary circulation.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-source-worked]",
+            "claim": "Checked closure and outward orientation; compared the exact source bounds with the boundary diagram on page 32.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-source-worked]",
+            "claim": "Independently derived div F=3y and integrated it over the rendered source bounds to 184/35.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[tilted-cylinder-plane-stokes]",
+            "claim": "The exact source tilted loop is worked using a compatible planar spanning disk and matching orientation.",
+            "method": "Recomputed the curl, area vector, disk integral, and direct line integral against rendered pages 22–24."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[tilted-cylinder-plane-stokes]",
+            "claim": "The exact source boundary and field are worked through a lawful tilted disk and induced orientation.",
+            "method": "Compared source page 24 and worked steps; recomputed curl, area flux, and direct parametrization."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-source-worked]",
+            "claim": "The exact source closed-solid example is integrated over its stated bounds.",
+            "method": "Recomputed div F=3y and the triple integral from rendered pages 30–32."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[mh2100-l11-stokes-singular-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[mh2100-l11-stokes-cap-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.exercises[mh2100-l11-gauss-closure-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.exercises[mh2100-l11-gauss-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercise",
+            "claim": "The exercise prompt and solution require applying the atomic outcome.",
+            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[tilted-stokes-eligibility-transfer]",
+            "claim": "An independent tilted-plane problem requires edge, smoothness, orientation, and curl-flux decisions.",
+            "method": "Compared prompt, hint, solution, and rubric with the atomic outcome; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.exercise",
+            "claim": "The exercise prompt and solution require applying the atomic outcome.",
+            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
       "atomic_outcome_ids": [
         "stokes-theorem:source-skill-1",
         "stokes-theorem:tilted-spanning-disk",
-        "divergence-theorem:source-skill-1"
+        "stokes-theorem:lecture11-hypotheses",
+        "stokes-theorem:lecture11-spherical-cap",
+        "divergence-theorem:source-skill-1",
+        "divergence-theorem:lecture11-hypotheses",
+        "divergence-theorem:lecture11-parabolic-solid"
       ],
-      "coverage_decision": "partial_atomic_mapping"
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "22–33",
+      "inspected_physical_pages": [
+        22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33
+      ],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 25,
+          "reason": "Blank continuation slide; the preceding prompt is not followed by additional solution content."
+        },
+        {
+          "physical_page": 26,
+          "reason": "Blank continuation slide; the preceding prompt is not followed by additional solution content."
+        },
+        {
+          "physical_page": 28,
+          "reason": "Blank continuation slide; the preceding prompt is not followed by additional solution content."
+        },
+        {
+          "physical_page": 29,
+          "reason": "Blank continuation slide; the preceding prompt is not followed by additional solution content."
+        },
+        {
+          "physical_page": 33,
+          "reason": "Blank continuation slide; the preceding prompt is not followed by additional solution content."
+        }
+      ],
+      "source_review_notes": [
+        "Rendered canonical PDF: pp22–23 state Stokes and its right-hand orientation; p24 poses the tilted cylinder–plane loop; pp25–26 are blank; p27 poses the upward spherical cap; pp28–29 are blank.",
+        "Page 30 states Gauss–Ostrogradsky hypotheses; p31 gives the closed parabolic solid and field; p32 supplies its boundary diagram; p33 is blank.",
+        "The source gives no written solution steps for either Stokes example or the Gauss example. Guide calculations are independently derived; the tilted-disk review repair remains intact."
+      ]
     },
     {
       "id": "MH2100_Lecture_12_Final_Exam_Review:01",
@@ -16938,14 +17347,15 @@
       "core_source": {
         "id": "MH2100_Lecture_11",
         "physical_page": 22,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [22],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
           "claim_observed": "Page pairs an oriented surface and positively induced boundary in the theorem."
         },
-        "page_heading": "Theorem (Stokes’ Theorem)"
+        "page_heading": "Theorem (Stokes’ Theorem)",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519"
       },
       "evidence": {
         "named": [
@@ -16962,7 +17372,13 @@
             "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[tilted-cylinder-plane-stokes]",
+            "claim": "The exact source tilted loop is worked using a compatible planar spanning disk and matching orientation.",
+            "method": "Recomputed the curl, area vector, disk integral, and direct line integral against rendered pages 22–24."
+          }
+        ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercise",
@@ -16977,9 +17393,9 @@
         "scene_id": "stokes",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "The source example and orientation work are mapped; the generic Stokes scene has not been verified for this exact tilted boundary, and learner performance is unverified.",
       "source_section_id": "MH2100_Lecture_11:03",
       "candidate_blocks": {
         "named": [
@@ -17005,10 +17421,11 @@
         "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
         "named": "match",
         "stated": "match",
-        "worked": "no worked instance established in cited section",
+        "worked": "Exact source tilted-disk calculation is independently checked in the guide.",
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "checked": "No independent outcome-level validation or learner performance check.",
+        "gap": "No outcome-specific scene alignment or learner performance result."
       }
     },
     {
@@ -17018,14 +17435,15 @@
       "core_source": {
         "id": "MH2100_Lecture_11",
         "physical_page": 24,
-        "inspection": "Lecture PDF physical pages 22–24 inspected for theorem hypotheses and the exact tilted cylinder–plane example.",
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [22, 23, 24],
-          "method": "Authenticated Drive PDF readable text for pages 22–24 and rendered page 24 checked against physical page numbers.",
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
           "claim_observed": "Page 22 requires an oriented spanning surface and smooth field on it; page 23 defines induced direction; page 24 poses the tilted cylinder–plane boundary and polynomial field."
         },
-        "page_heading": "Stokes’ Theorem — Example 1"
+        "page_heading": "Stokes’ Theorem — Example 1",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519"
       },
       "evidence": {
         "named": [
@@ -17063,7 +17481,7 @@
         "scene_id": "stokes",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
       "gap": "Source theorem and exact example checked; guide work and transfer task inspected. Scene does not yet establish this exact tilted-boundary decision, and no independent learner performance has been measured. Other Lecture 11 subskills remain unmapped.",
       "source_section_id": "MH2100_Lecture_11:03",
@@ -17110,14 +17528,15 @@
       "core_source": {
         "id": "MH2100_Lecture_11",
         "physical_page": 30,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [30],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
           "claim_observed": "Page requires a closed, edgeless boundary with positive outward orientation."
         },
-        "page_heading": "Theorem (The Gauss-Ostrogradsky Divergence Theorem)"
+        "page_heading": "Theorem (The Gauss-Ostrogradsky Divergence Theorem)",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519"
       },
       "evidence": {
         "named": [
@@ -17134,7 +17553,13 @@
             "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-source-worked]",
+            "claim": "The exact source closed-solid example is integrated over its stated bounds.",
+            "method": "Recomputed div F=3y and the triple integral from rendered pages 30–32."
+          }
+        ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#divergence-theorem.exercise",
@@ -17149,9 +17574,9 @@
         "scene_id": "divergence",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "The theorem and source example are mapped; the generic divergence scene has not been verified for this exact parabolic solid, and learner performance is unverified.",
       "source_section_id": "MH2100_Lecture_11:03",
       "candidate_blocks": {
         "named": [
@@ -17177,10 +17602,11 @@
         "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
         "named": "match",
         "stated": "match",
-        "worked": "no worked instance established in cited section",
+        "worked": "Exact source parabolic-solid computation is independently checked in the guide.",
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "checked": "No independent outcome-level validation or learner performance check.",
+        "gap": "No outcome-specific scene alignment or learner performance result."
       }
     },
     {
@@ -47538,6 +47964,877 @@
         "practiced": "changed-data task and solution checked; learner performance unverified",
         "visualized": "scene candidate identified; exact outcome alignment not verified",
         "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "flux-through-surfaces:lecture11-top-hemisphere-flux",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Close an upward hemisphere by its zero-flux base to use the divergence theorem.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 1,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1, 30],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 1 asks for upward flux through the radius-6 top hemisphere with field (0,0,z); page 30 supplies the divergence theorem used in the independent derivation."
+        },
+        "page_heading": "Surface Integrals — Example 4"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#flux-through-surfaces.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-hemisphere-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-hemisphere-worked]",
+            "claim": "Recomputed the half-ball volume and checked that the equatorial disk contributes zero.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[mh2100-l11-hemisphere-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Recomputed the half-ball volume and checked that the equatorial disk contributes zero.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "flux-through-surfaces:lecture11-cone-boundary-flux",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Recognize a joined spherical cap and cone as the full boundary before computing flux.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 4,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 30],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 4 gives a closed region between a sphere and cone; their common edge is at radius 2."
+        },
+        "page_heading": "Surface Integrals — Example 5"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#flux-through-surfaces.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-cone-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-cone-worked]",
+            "claim": "Verified the intersection radius and used the zero divergence of (y,0,2).",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[mh2100-l11-cone-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Verified the intersection radius and used the zero divergence of (y,0,2).",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "flux-through-surfaces:lecture11-semicylinder-flux",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Translate the half-cylinder bounds into a divergence integral over a closed surface.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 7,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 30],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 7 specifies the half-cylinder solid and asks for outward flux of (x²,y²,z²)."
+        },
+        "page_heading": "Surface Integrals — Example 6"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#flux-through-surfaces.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-semicylinder-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[mh2100-l11-semicylinder-worked]",
+            "claim": "Independently integrated 2x+2y+2z over the stated bounds and checked odd-term cancellation.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[mh2100-l11-semicylinder-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Independently integrated 2x+2y+2z over the stated bounds and checked odd-term cancellation.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "curl-and-local-rotation:lecture11-curl-components",
+      "concept_id": "curl-and-local-rotation",
+      "outcome": "Compute the three ordered curl components of a smooth space vector field.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 14,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 14],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 11 defines curl component order and page 14 poses a three-component field."
+        },
+        "page_heading": "Vector Fields — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#curl-and-local-rotation.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-components-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-components-worked]",
+            "claim": "Recomputed each cross-component derivative from the rendered source field.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.exercises[mh2100-l11-curl-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "field",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Recomputed each cross-component derivative from the rendered source field.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "curl-and-local-rotation:lecture11-curl-orientation",
+      "concept_id": "curl-and-local-rotation",
+      "outcome": "Interpret the curl component along a chosen normal as signed local circulation density.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 12,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 12 aligns a paddlewheel axis with curl and describes its spin direction."
+        },
+        "page_heading": "Vector Fields — Curl"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#curl-and-local-rotation.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-axis-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-curl-axis-worked]",
+            "claim": "Checked the sign reversal under the normal reversal using curl dot normal.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.exercises[mh2100-l11-curl-orientation-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "field",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Checked the sign reversal under the normal reversal using curl dot normal.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "curl-and-local-rotation:lecture11-conservative-domain-test",
+      "concept_id": "curl-and-local-rotation",
+      "outcome": "Use the curl criterion for conservativeness only on an open simply connected domain.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 13,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 13 requires an open simply connected domain and a smooth field for the curl-free iff criterion."
+        },
+        "page_heading": "Theorem (Test for Conservativeness of a Space Vector Field)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#curl-and-local-rotation.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-conservative-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.contentBlocks[mh2100-l11-conservative-worked]",
+            "claim": "Verified the punctured-axis example has zero curl but unit-circle circulation 2π.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#curl-and-local-rotation.exercises[mh2100-l11-conservative-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "field",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Verified the punctured-axis example has zero curl but unit-circle circulation 2π.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "divergence-and-local-flow:lecture11-divergence-at-a-point",
+      "concept_id": "divergence-and-local-flow",
+      "outcome": "Evaluate n-dimensional divergence by differentiating matching components.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 20,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 20],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 15 defines divergence in n dimensions and page 20 asks for its value at (0,2,-1)."
+        },
+        "page_heading": "Vector Fields — Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-and-local-flow.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-worked]",
+            "claim": "Recomputed the source value as 1−1+4=4.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.exercises[mh2100-l11-divergence-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "field",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Recomputed the source value as 1−1+4=4.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "divergence-and-local-flow:lecture11-divergence-sign",
+      "concept_id": "divergence-and-local-flow",
+      "outcome": "Interpret positive, negative, and zero divergence as local net flow.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 19,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17, 18, 19],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Pages 16–18 pair vector-field diagrams with divergence 2, −4, and 0; page 19 states the local outflow/inflow interpretation."
+        },
+        "page_heading": "Vector Fields — Divergence"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-and-local-flow.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-sign-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.contentBlocks[mh2100-l11-divergence-sign-worked]",
+            "claim": "Differentiated each pictured planar field and compared its sign with the source caption.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-and-local-flow.exercises[mh2100-l11-divergence-sign-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "field",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Differentiated each pictured planar field and compared its sign with the source caption.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "gradient-curl-divergence:lecture11-divergence-of-curl",
+      "concept_id": "gradient-curl-divergence",
+      "outcome": "Use continuous second partials to conclude that the divergence of curl is zero.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 21,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 21 assumes continuous second-order partials on open U and assigns the identity div(curl F)=0."
+        },
+        "page_heading": "Vector Fields — Gradient, Curl, and Divergence"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#gradient-curl-divergence.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#gradient-curl-divergence.contentBlocks[mh2100-l11-div-curl-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#gradient-curl-divergence.contentBlocks[mh2100-l11-div-curl-worked]",
+            "claim": "Expanded divergence of curl and paired all six mixed-partial terms.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#gradient-curl-divergence.exercises[mh2100-l11-div-curl-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "field",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Expanded divergence of curl and paired all six mixed-partial terms.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "stokes-theorem:lecture11-hypotheses",
+      "concept_id": "stokes-theorem",
+      "outcome": "Check Stokes surface, field-regularity, net-boundary, and induced-orientation hypotheses.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 22,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Pages 22–23 require an oriented piecewise-smooth surface, a simple positively oriented net edge, smooth field on the surface, and the right-hand orientation rule."
+        },
+        "page_heading": "Theorem (Stokes’ Theorem)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-hypotheses]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-cap-worked]",
+            "claim": "Checked the source’s tilted disk and spherical cap against the edge and orientation conditions.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[mh2100-l11-stokes-singular-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Checked the source’s tilted disk and spherical cap against the edge and orientation conditions.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "stokes-theorem:lecture11-spherical-cap",
+      "concept_id": "stokes-theorem",
+      "outcome": "Evaluate upward curl flux on the source spherical cap and agree with induced circulation.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 27,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 27],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 27 gives the radius-2 spherical cap inside the unit cylinder and the field (xz,yz,xy), oriented upward."
+        },
+        "page_heading": "Stokes’ Theorem — Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-hypotheses]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[mh2100-l11-stokes-cap-worked]",
+            "claim": "Computed curl, upward vector area and the symmetric disk integral; independently checked the boundary circulation.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[mh2100-l11-stokes-cap-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Computed curl, upward vector area and the symmetric disk integral; independently checked the boundary circulation.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "divergence-theorem:lecture11-hypotheses",
+      "concept_id": "divergence-theorem",
+      "outcome": "Verify bounded closure, an edgeless piecewise-smooth boundary, field regularity, and outward orientation.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 30,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 30 requires a bounded closed region, existing volume, piecewise-smooth boundary with no edge, a smooth field on E, and positive orientation."
+        },
+        "page_heading": "Theorem (The Gauss-Ostrogradsky Divergence Theorem)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-hypotheses]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-source-worked]",
+            "claim": "Checked closure and outward orientation; compared the exact source bounds with the boundary diagram on page 32.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.exercises[mh2100-l11-gauss-closure-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "divergence",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Checked closure and outward orientation; compared the exact source bounds with the boundary diagram on page 32.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
+      }
+    },
+    {
+      "id": "divergence-theorem:lecture11-parabolic-solid",
+      "concept_id": "divergence-theorem",
+      "outcome": "Compute the source parabolic-solid flux by integrating divergence over its full region.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "sha256": "eaf91ecc57b7fd0814686d598723bf376fee3cea3ce1cf579b2839241fb4d519",
+        "physical_page": 31,
+        "inspection": "Canonical SHA-matched PDF rendered; cited physical pages visually checked, with text extraction used only as a locating aid.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30, 31, 32],
+          "method": "Canonical source SHA-256 matched the manifest; physical PDF pages were rendered and visually checked.",
+          "claim_observed": "Page 31 gives the field and four bounding surfaces; page 32 identifies the vertices and surfaces in its diagram."
+        },
+        "page_heading": "The Gauss-Ostrogradsky Divergence Theorem — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#divergence-theorem.title",
+            "claim": "The current catalog names the parent topic for this page-verified source skill.",
+            "method": "Direct inspection of the stable concept title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-bounds-strategy]",
+            "claim": "The cited block states the conditions or method for this source skill.",
+            "method": "Read the guide statement against the physical source pages and the outcome wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.contentBlocks[mh2100-l11-gauss-source-worked]",
+            "claim": "Independently derived div F=3y and integrated it over the rendered source bounds to 184/35.",
+            "method": "Directly recomputed the derivation against the rendered, SHA-matched source pages and inspected the guide calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#divergence-theorem.exercises[mh2100-l11-gauss-transfer]",
+            "claim": "An independent exercise changes data or asks a contrasting eligibility decision.",
+            "method": "Compared the changed-data prompt, hint, solution and rubric with the atomic outcome; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "divergence",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The guide calculation was independently checked, but the existing generic scene is not outcome-specific and has not been verified for this skill. No learner performance check is recorded.",
+      "source_section_id": "MH2100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Manual semantic comparison of the SHA-matched rendered source pages with the cited catalog title, guide blocks, worked computation, and independent transfer exercise.",
+        "named": "match",
+        "stated": "match",
+        "worked": "Independently derived div F=3y and integrated it over the rendered source bounds to 184/35.",
+        "practiced": "Changed-data exercise inspected; learner performance is unverified.",
+        "visualized": "Generic candidate scene only; this source skill has not been visually verified in an outcome-specific scene.",
+        "checked": "No independent answer validator or learner-performance evidence."
       }
     }
   ]
