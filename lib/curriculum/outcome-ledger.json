@@ -2236,7 +2236,7 @@
       "physical_pages_from_audit": "2–49",
       "linked_concept_ids": ["limits-one-sided", "infinite-limits"],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Secant/velocity motivation' at 2–49; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Two page-verified atomic outcomes now cover the secant and velocity motivations. Other introductory and limit subskills, scene alignment, and learner validation remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2247,8 +2247,11 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "limits-one-sided:secant-slope-limit",
+        "limits-one-sided:instantaneous-velocity-limit"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_02:02",
@@ -2280,7 +2283,7 @@
       "physical_pages_from_audit": "2–49",
       "linked_concept_ids": ["limits-one-sided", "infinite-limits"],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'infinite limits' at 2–49; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "One page-verified outcome now covers the two-sided infinite-limit signs and threshold meaning. Other cases, one-sided variants, scene alignment, and learner checks remain to review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2291,8 +2294,8 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": ["infinite-limits:two-sided-threshold-definition"],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_02:04",
@@ -10814,6 +10817,246 @@
         "practiced": "independent task present; learner performance unverified",
         "visualized": "No outcome-level scene check.",
         "checked": "No independent learner check."
+      }
+    },
+    {
+      "id": "limits-one-sided:secant-slope-limit",
+      "concept_id": "limits-one-sided",
+      "outcome": "Build a secant slope for a nearby point distinct from the base point and take its limit to obtain the tangent slope.",
+      "core_source": {
+        "id": "MH1100_Lecture_02",
+        "physical_page": 14,
+        "inspection": "Canonical local course PDF inspected and source SHA checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14, 15, 16],
+          "method": "Rendered physical pages 14 and 16 visually checked; page 15 text checked within its physical boundary.",
+          "claim_observed": "Pages 14–16 form the x^2 secant at P=(1,1), show both-sided values approaching slope 2, then give tangent y=2x−1."
+        },
+        "page_heading": "Limit and the tangent to a curve — Example 1"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-secant-limit-rule]",
+            "claim": "The guide states the distinct-point secant quotient and finite tangent-slope limit.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-secant-tangent-motivation]",
+            "claim": "The exact lecture parabola, slope 2, and tangent line are derived with a punctured quotient.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.exercises[cubic-secant-tangent-transfer]",
+            "claim": "An independent cubic task repeats the method on a different curve and obtains slope 3.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-limit",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The limit route teaches this motivation, but its catalog title does not name secants. Scene behavior and learner responses remain unverified.",
+      "source_section_id": "MH1100_Lecture_02:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-secant-limit-rule]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-secant-tangent-motivation]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.exercises[cubic-secant-tangent-transfer]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual source-page, exact worked calculation, and independent task comparison.",
+        "named": "No catalog-title credit claimed for this atomic outcome.",
+        "stated": "match",
+        "worked": "source calculation or threshold proof checked",
+        "practiced": "independent task inspected; learner performance unverified",
+        "visualized": "No outcome-level scene check.",
+        "checked": "No independent learner response check."
+      }
+    },
+    {
+      "id": "limits-one-sided:instantaneous-velocity-limit",
+      "concept_id": "limits-one-sided",
+      "outcome": "Form average velocity on a nonzero time interval and take the shrinking-interval limit for instantaneous velocity with units and direction.",
+      "core_source": {
+        "id": "MH1100_Lecture_02",
+        "physical_page": 21,
+        "inspection": "Canonical local course PDF inspected and source SHA checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20, 21, 22],
+          "method": "Physical page 20 text extracted; rendered physical pages 21–22 visually checked against page-bounded text.",
+          "claim_observed": "Page 20 gives s(t)=4.9t² and the five-second ball question; page 21 simplifies the average to 49+4.9τ; page 22 defines instantaneous velocity as the time-increment quotient limit."
+        },
+        "page_heading": "Limit and the velocity of an object — Example 3 and Definition"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-instantaneous-velocity-rule]",
+            "claim": "The guide states the nonzero-interval average quotient and instantaneous limit.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-cn-tower-velocity-motivation]",
+            "claim": "The lecture’s dropped-ball law yields 49+4.9τ and 49 m/s downward at five seconds.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.exercises[cubic-position-velocity-transfer]",
+            "claim": "An independent cubic position task calculates a new average quotient and instantaneous rate.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-limit",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The catalog names approach rather than velocity; learner use of units and transfer remains unmeasured. The scene has not been verified for this outcome.",
+      "source_section_id": "MH1100_Lecture_02:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-instantaneous-velocity-rule]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[lecture02-cn-tower-velocity-motivation]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.exercises[cubic-position-velocity-transfer]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual source-page, exact worked calculation, and independent task comparison.",
+        "named": "No catalog-title credit claimed for this atomic outcome.",
+        "stated": "match",
+        "worked": "source calculation or threshold proof checked",
+        "practiced": "independent task inspected; learner performance unverified",
+        "visualized": "No outcome-level scene check.",
+        "checked": "No independent learner response check."
+      }
+    },
+    {
+      "id": "infinite-limits:two-sided-threshold-definition",
+      "concept_id": "infinite-limits",
+      "outcome": "Interpret positive and negative two-sided infinite limits as eventual threshold inequalities throughout a deleted neighborhood, not finite real values.",
+      "core_source": {
+        "id": "MH1100_Lecture_02",
+        "physical_page": 42,
+        "inspection": "Canonical local course PDF inspected and source SHA checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42, 43, 44],
+          "method": "Rendered physical pages 42–43 visually checked; page 44 text checked within its physical boundary.",
+          "claim_observed": "Pages 42–43 define positive and negative infinite behavior on both sides while stating infinity is not a real limit value; page 44 names one-sided variants."
+        },
+        "page_heading": "Infinite limits — intuitive definitions and one-sided variants"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[lecture02-infinite-limit-thresholds]",
+            "claim": "The guide gives threshold quantifiers for both signs and distinguishes infinity from a finite number.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[lecture02-two-sided-infinite-thresholds]",
+            "claim": "A punctured squared denominator proves both eventual positive and negative threshold inequalities.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.exercises[negative-infinite-threshold-transfer]",
+            "claim": "A new rational example requires a uniform numerator bound and an explicit negative-infinity distance.",
+            "method": "Compared guide content and mathematical argument with page-bounded source text and rendered pages; learner performance not inferred."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-improper",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The title names a consequence, vertical asymptotes, rather than the infinite-limit definition. One-sided variants are handled by another outcome; scene and learner checks are unverified.",
+      "source_section_id": "MH1100_Lecture_02:03",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[lecture02-infinite-limit-thresholds]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.contentBlocks[lecture02-two-sided-infinite-thresholds]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinite-limits.exercises[negative-infinite-threshold-transfer]",
+            "basis": "Current guide block inspected against the exact source page; no learner performance claim."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual source-page, exact worked calculation, and independent task comparison.",
+        "named": "No catalog-title credit claimed for this atomic outcome.",
+        "stated": "match",
+        "worked": "source calculation or threshold proof checked",
+        "practiced": "independent task inspected; learner performance unverified",
+        "visualized": "No outcome-level scene check.",
+        "checked": "No independent learner response check."
       }
     }
   ]

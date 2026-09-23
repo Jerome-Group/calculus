@@ -300,6 +300,23 @@ test("WebMCP concept read returns the same practice and source data as the visib
       (exercise) => exercise.id === "continuous-partials-neighborhood-transfer",
     ),
   );
+  const approaching = tool.execute({ conceptId: "limits-one-sided" });
+  assert.ok(
+    approaching.lesson.contentBlocks.some(
+      (block) => block.id === "lecture02-secant-tangent-motivation",
+    ),
+  );
+  assert.ok(
+    approaching.lesson.exercises.some(
+      (exercise) => exercise.id === "cubic-position-velocity-transfer",
+    ),
+  );
+  const infinite = tool.execute({ conceptId: "infinite-limits" });
+  assert.ok(
+    infinite.lesson.exercises.some(
+      (exercise) => exercise.id === "negative-infinite-threshold-transfer",
+    ),
+  );
 });
 
 test("WebMCP state includes the mathematical readout and its evidence limit", async () => {

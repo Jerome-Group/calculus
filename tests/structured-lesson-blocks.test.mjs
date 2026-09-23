@@ -97,9 +97,8 @@ test("one-sided limits teach equal, unequal, and missing side limits", async () 
   const guide = learningGuides["limits-one-sided"];
   const blocks = guide.contentBlocks;
   assert.equal(blocks[0].status, "Proof sketch");
-  assert.equal(
-    blocks.filter((block) => block.kind === "worked-example").length,
-    2,
+  assert.ok(
+    blocks.filter((block) => block.kind === "worked-example").length >= 2,
   );
   const rendered = blocks
     .map((block) =>

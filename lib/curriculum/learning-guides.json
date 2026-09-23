@@ -282,6 +282,64 @@
         ],
         "result": "The limits disagree, so $\\lim_{x\\to0}g(x)$ does not exist.",
         "verification": "Along $x=-1/n$, values tend to 1; along $x=1/n$, values tend to 0. Changing $g(0)$ cannot reconcile them."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture02-secant-limit-rule",
+        "title": "A secant uses two distinct points",
+        "text": "For $P=(a,f(a))$ and $Q=(x,f(x))$ with $x\\ne a$, the secant slope is $m_{PQ}=[f(x)-f(a)]/(x-a)$. If these slopes approach one finite value as $x\\to a$, that limit is the tangent slope. The quotient is not evaluated at $x=a$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture02-instantaneous-velocity-rule",
+        "title": "A velocity uses shrinking nonzero intervals",
+        "text": "For one-dimensional position $s(t)$, average velocity on a nonzero interval of length $h$ is $[s(t+h)-s(t)]/h$. Instantaneous velocity at $t$ is its finite limit as $h\\to0$, if that limit exists; the sign depends on the chosen position direction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture02-secant-tangent-motivation",
+        "title": "A tangent slope is a limit of secants",
+        "strategy": "Keep the nearby point distinct from the target, simplify the secant slope, then take the limit from both sides.",
+        "setup": "MH1100 Lecture 02 Example 1: find the tangent to $y=x^2$ at $P=(1,1)$ using $Q=(x,x^2)$ with $x\\ne1$.",
+        "steps": [
+          {
+            "label": "Form a secant",
+            "text": "The slope is $m_{PQ}=(x^2-1)/(x-1)$ for $x\\ne1$; it is undefined when $Q=P$.",
+            "equation": "m_{PQ}=\\frac{x^2-1}{x-1}=x+1\\quad(x\\ne1)"
+          },
+          {
+            "label": "Let the point approach",
+            "text": "As $x\\to1$ from either side, $m_{PQ}=x+1\\to2$. The tangent slope is the limit of these secant slopes, not the value of the original quotient at $x=1$.",
+            "equation": "\\lim_{x\\to1}m_{PQ}=2"
+          },
+          {
+            "label": "Use the base point",
+            "text": "The line through $(1,1)$ with slope $2$ is $y-1=2(x-1)$."
+          }
+        ],
+        "result": "The tangent is $y=2x-1$.",
+        "verification": "For $Q=(1.5,2.25)$ the source secant slope is $2.5$; on the left, $Q=(0.5,0.25)$ gives $1.5$. Both approach $2$ as $Q\\to P$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture02-cn-tower-velocity-motivation",
+        "title": "Average velocities approach one instantaneous rate",
+        "strategy": "Form a nonzero-time average rate, simplify it exactly, then let the interval shrink.",
+        "setup": "MH1100 Lecture 02 Example 3 models downward distance by $s(t)=4.9t^2$ metres. Find velocity after $5$ seconds.",
+        "steps": [
+          {
+            "label": "Average over a short interval",
+            "text": "For nonzero $\\tau$, use the interval from $5$ to $5+\\tau$ seconds.",
+            "equation": "\\frac{s(5+\\tau)-s(5)}{\\tau}=\\frac{4.9(5+\\tau)^2-4.9(5)^2}{\\tau}=49+4.9\\tau"
+          },
+          {
+            "label": "Shrink the interval",
+            "text": "The two-sided limit as $\\tau\\to0$ is $49$ metres per second; the quotient at $\\tau=0$ is never evaluated.",
+            "equation": "v(5)=\\lim_{\\tau\\to0}(49+4.9\\tau)=49\\,\\mathrm{m/s}"
+          }
+        ],
+        "result": "The velocity is $49\\,\\mathrm{m/s}$ downward because $s$ measures downward distance.",
+        "verification": "For $\\tau=0.1$, average velocity is $49.49\\,\\mathrm{m/s}$; for $\\tau=-0.1$, it is $48.51\\,\\mathrm{m/s}$. Both approach $49\\,\\mathrm{m/s}$."
       }
     ],
     "sections": [
@@ -318,6 +376,34 @@
           "Do not use the point value as evidence for a punctured limit."
         ],
         "solutionTex": "\\lim_{x\\to0^-}h(x)=2,\\quad h(x_n)=1,\\quad h(y_n)=-1\\ (x_n,y_n\\to0^+)"
+      },
+      {
+        "id": "cubic-secant-tangent-transfer",
+        "outcome": "Derive a tangent equation from a secant-slope limit for a new curve.",
+        "kind": "computational",
+        "prompt": "Use secants through $P=(1,1)$ on $y=x^3$ to find its tangent equation. State where the secant quotient is defined and why its limit gives the slope.",
+        "hint": "For $Q=(x,x^3)$ with $x\\ne1$, factor $x^3-1=(x-1)(x^2+x+1)$.",
+        "solution": "For $x\\ne1$, the secant slope is $(x^3-1)/(x-1)=x^2+x+1$. Its limit as $x\\to1$ is $3$ although the original quotient is undefined at $1$. The tangent through $(1,1)$ is $y-1=3(x-1)$, or $y=3x-2$.",
+        "solutionTex": "\\lim_{x\\to1}\\frac{x^3-1}{x-1}=3,\\qquad y=3x-2",
+        "rubric": [
+          "Define the secant for a distinct nearby point.",
+          "Simplify only for the punctured domain and take its limit.",
+          "Use the limiting slope and the correct base point."
+        ]
+      },
+      {
+        "id": "cubic-position-velocity-transfer",
+        "outcome": "Obtain instantaneous velocity from shrinking average rates for a new position function.",
+        "kind": "computational",
+        "prompt": "For position $s(t)=t^3$ metres with $t\\ge0$, find the average velocity on $[2,2+h]$ and the instantaneous velocity at $t=2$. Explain why $h=0$ is excluded from the quotient.",
+        "hint": "Expand $(2+h)^3-8$ before dividing by nonzero $h$.",
+        "solution": "For $h\\ne0$ with $2+h\\ge0$, the average velocity is $[(2+h)^3-8]/h=12+6h+h^2$ metres per second. Its limit as $h\\to0$ is $12\\,\\mathrm{m/s}$. The quotient at $h=0$ would divide by zero; only its nearby values define the instantaneous rate.",
+        "solutionTex": "\\frac{(2+h)^3-8}{h}=12+6h+h^2\\longrightarrow12\\,\\mathrm{m/s}",
+        "rubric": [
+          "Use displacement divided by a nonzero elapsed time.",
+          "Expand and simplify the average-rate expression correctly.",
+          "Take the limit with units and distinguish it from evaluation at zero."
+        ]
       }
     ]
   },
@@ -356,6 +442,33 @@
         ],
         "result": "$x=\\pi/2$ is a vertical asymptote; the two sides need not share one sign.",
         "verification": "Translation by $\\pi$ repeats this sign pattern at $x=\\pi/2+n\\pi$ for every integer $n$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture02-infinite-limit-thresholds",
+        "title": "Infinity describes eventual bounds",
+        "text": "For a function defined on both sides of $a$ near but possibly not at $a$, $\\lim_{x\\to a}f(x)=+\\infty$ means that every threshold $M>0$ is exceeded whenever $0<|x-a|<\\delta$ for some $\\delta>0$. For $-\\infty$, every value is below $-M$ in such a deleted neighborhood. These are not finite real limits: $\\infty$ is not a number. A one-sided statement restricts the inputs to the named side."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture02-two-sided-infinite-thresholds",
+        "title": "Prove both infinite signs by a threshold",
+        "strategy": "Solve the output inequality for the input distance, keeping the puncture and both sides.",
+        "setup": "For $x\\ne2$, let $f_+(x)=1/(x-2)^2$ and $f_-(x)=-1/(x-2)^2$.",
+        "steps": [
+          {
+            "label": "Choose a distance",
+            "text": "Given any $M>0$, choose $\\delta=M^{-1/2}$. If $0<|x-2|<\\delta$, then $1/(x-2)^2>M$.",
+            "equation": "0<|x-2|<M^{-1/2}\\implies f_+(x)>M"
+          },
+          {
+            "label": "Reverse the sign",
+            "text": "For the same punctured neighborhood, $f_-(x)=-f_+(x)<-M$. The condition covers both sides of $2$.",
+            "equation": "\\lim_{x\\to2}f_+(x)=+\\infty,\\qquad\\lim_{x\\to2}f_-(x)=-\\infty"
+          }
+        ],
+        "result": "These functions diverge with specified signs; neither has a finite real limit at $2$.",
+        "verification": "The proof handles every $M>0$ and every allowed $x$ sufficiently close to $2$; a clipped graph or selected samples would not establish either claim."
       }
     ],
     "sections": [
@@ -393,6 +506,20 @@
           "Apply the one-sided asymptote definition explicitly."
         ],
         "solutionTex": "\\lim_{x\\to2^-}f(x)=-\\infty,\\quad\\lim_{x\\to2^+}f(x)=+\\infty"
+      },
+      {
+        "id": "negative-infinite-threshold-transfer",
+        "outcome": "Prove a negative infinite limit with a bound valid throughout a deleted neighborhood.",
+        "kind": "proof",
+        "prompt": "For $g(x)=-(x+3)^2/(x+1)^2$ with $x\\ne-1$, prove $\\lim_{x\\to-1}g(x)=-\\infty$ using the threshold definition. Give a valid $\\delta$ for any $M>0$.",
+        "hint": "If $0<|x+1|<1$, then $x+3>1$ and hence $g(x)<-1/(x+1)^2$.",
+        "solution": "Given $M>0$, take $\\delta=\\min\\{1,M^{-1/2}\\}$. When $0<|x+1|<\\delta$, we have $x\\in(-2,0)$ and $x+3>1$, so $g(x)=-(x+3)^2/(x+1)^2<-1/(x+1)^2<-M$. This holds on both sides of $-1$, proving the negative infinite limit. It does not assert a finite real limit.",
+        "solutionTex": "0<|x+1|<\\min\\{1,M^{-1/2}\\}\\implies g(x)<-M",
+        "rubric": [
+          "State an arbitrary positive threshold and a valid positive distance.",
+          "Bound the numerator and denominator throughout the deleted neighborhood.",
+          "Use the eventual negative inequality on both sides, without treating infinity as a number."
+        ]
       }
     ]
   },
