@@ -4564,11 +4564,12 @@
       "id": "MH1100_Lecture_10:01",
       "source_id": "MH1100_Lecture_10",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Derivative tests",
-      "physical_pages_from_audit": "2–51",
-      "linked_concept_ids": ["derivative-tests", "infinity-curve-sketching"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Derivative tests' at 2–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Derivative tests and graph shape",
+      "physical_page_span": "4–21",
+      "physical_pages_from_audit": "Physical pages 4–21: derivative signs and monotonicity (4–8); first-derivative test and local extrema (9–11); concavity (12–14); inflection and second-derivative tests (15–18); nondifferentiable candidates and vertical tangents (19–21).",
+      "linked_concept_ids": ["derivative-tests"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct source skills on pages 4–21 are mapped to a named guide statement, checked worked reasoning, and independent transfer task. No outcome-specific scene alignment or learner performance check is recorded.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4577,20 +4578,48 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "derivative-tests:lecture10-increasing-decreasing-sign-intervals",
+        "derivative-tests:lecture10-first-derivative-extremum-test",
+        "derivative-tests:lecture10-same-sign-no-extremum",
+        "derivative-tests:lecture10-concavity-sign-test",
+        "derivative-tests:lecture10-inflection-requires-concavity-change",
+        "derivative-tests:lecture10-second-derivative-test-hypotheses",
+        "derivative-tests:lecture10-second-derivative-inconclusive",
+        "derivative-tests:lecture10-nondifferentiable-candidates-and-vertical-tangents"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Cover page only; it identifies the handout but contains no derivative instruction."
+        },
+        {
+          "physical_page": 2,
+          "reason": "Synopsis lists topic headings but no mathematical statement or worked skill."
+        },
+        {
+          "physical_page": 3,
+          "reason": "Application and further-reading overview; source instruction begins on physical page 4."
+        }
+      ],
+      "source_review_notes": [
+        "The page-9 first-derivative test is kept with continuity at the candidate; the route retains the previously corrected interval continuity and punctured-side differentiability condition.",
+        "The simplified derivative on page 47 is negative: its displayed sign and sign chart agree with an independent quotient-rule calculation."
+      ]
     },
     {
       "id": "MH1100_Lecture_10:02",
       "source_id": "MH1100_Lecture_10",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "limits at infinity",
-      "physical_pages_from_audit": "2–51",
-      "linked_concept_ids": ["derivative-tests", "infinity-curve-sketching"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'limits at infinity' at 2–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Limits at infinity",
+      "physical_page_span": "22–23; 25; 27–30; 35–39",
+      "physical_pages_from_audit": "Physical pages 22–23, 25, 27–30 and 35–39: finite tail limits; reciprocal-power decay; rational-function limits; signed infinite limits; epsilon–N and M–N definitions.",
+      "linked_concept_ids": ["infinity-curve-sketching"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct limit definitions and methods on these pages are mapped to checked guide statements, worked reasoning, and independent transfer tasks. No outcome-specific scene alignment or learner performance check is recorded.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4599,20 +4628,33 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "infinity-curve-sketching:lecture10-finite-limits-at-either-tail",
+        "infinity-curve-sketching:lecture10-reciprocal-power-decay",
+        "infinity-curve-sketching:lecture10-rational-limit-degree-method",
+        "infinity-curve-sketching:lecture10-signed-infinite-tail-limits",
+        "infinity-curve-sketching:lecture10-epsilon-n-tail-proof",
+        "infinity-curve-sketching:lecture10-m-n-infinite-tail-definition"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Physical page 24 and 26 horizontal-asymptote statements are assigned to section :03; page 25 remains the negative-tail limit definition in this section.",
+        "The precise epsilon–N proof and the M–N unbounded-limit definition are distinct outcomes."
+      ]
     },
     {
       "id": "MH1100_Lecture_10:03",
       "source_id": "MH1100_Lecture_10",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "horizontal/slant asymptotes",
-      "physical_pages_from_audit": "2–51",
-      "linked_concept_ids": ["derivative-tests", "infinity-curve-sketching"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'horizontal/slant asymptotes' at 2–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Horizontal, vertical, and slant asymptotes",
+      "physical_page_span": "24; 26; 31–34; 40–41",
+      "physical_pages_from_audit": "Physical pages 24, 26, 31–34 and 40–41: horizontal-asymptote definition; distinct radical tail limits; one-sided vertical behavior; slant-asymptote definition and polynomial division.",
+      "linked_concept_ids": ["infinity-curve-sketching"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Distinct asymptote tests on these pages are mapped to checked guide statements, worked reasoning, and independent transfer tasks. The existing scene illustrates only one positive-tail horizontal case; no outcome-specific scene alignment or learner performance check is recorded.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4621,20 +4663,31 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "infinity-curve-sketching:lecture10-horizontal-asymptote-tail-condition",
+        "infinity-curve-sketching:lecture10-radical-tail-sign",
+        "infinity-curve-sketching:lecture10-vertical-asymptote-one-sided-sign",
+        "infinity-curve-sketching:lecture10-slant-asymptote-remainder"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "No authoritative errata document accompanies the local canonical PDF. The rendered formulas were checked directly and no mathematical erratum was identified.",
+        "Pages 40 and 43 give the slant-asymptote criterion for x→+∞; page 41 verifies the worked line at both tails. The guide makes any negative-tail claim direction-specific."
+      ]
     },
     {
       "id": "MH1100_Lecture_10:04",
       "source_id": "MH1100_Lecture_10",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "curve sketching",
-      "physical_pages_from_audit": "2–51",
-      "linked_concept_ids": ["derivative-tests", "infinity-curve-sketching"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'curve sketching' at 2–51; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Curve sketching",
+      "physical_page_span": "42–51",
+      "physical_pages_from_audit": "Physical pages 42–51: checklist A–H and the complete worked sketches of 2x²/(x²−1) (46–48) and x³/(x²+1) (49–51).",
+      "linked_concept_ids": ["infinity-curve-sketching"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Checklist skills and both completed source sketches are mapped to checked guide statements, worked reasoning, and independent transfer tasks. No outcome-specific scene alignment or learner performance check is recorded.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4643,10 +4696,23 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "infinity-curve-sketching:lecture10-domain-and-intercepts",
+        "infinity-curve-sketching:lecture10-symmetry-and-domain-invariance",
+        "infinity-curve-sketching:lecture10-asymptotes-in-sketch-checklist",
+        "infinity-curve-sketching:lecture10-monotonicity-in-curve-sketch",
+        "infinity-curve-sketching:lecture10-local-extrema-in-sketch",
+        "infinity-curve-sketching:lecture10-concavity-in-curve-sketch",
+        "infinity-curve-sketching:lecture10-assemble-curve-sketch"
+      ],
+      "coverage_decision": "partial_atomic_mapping",
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "Page 47’s simplified f′ retains the negative sign; the source expression and sign chart were compared on the rendered page.",
+        "Points excluded from the domain are never listed as critical points or inflection points."
+      ]
     },
     {
       "id": "MH1100_Lecture_11:01",
@@ -27239,6 +27305,2331 @@
         "practiced": "Task solved and reviewed; learner performance unverified.",
         "visualized": "No aligned scene established.",
         "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-increasing-decreasing-sign-intervals",
+      "concept_id": "derivative-tests",
+      "outcome": "Use derivative signs on intervals to determine where a function increases or decreases.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 5,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Use derivative signs on intervals to determine where a function increases or decreases.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5, 6, 7],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "What Does f′ Say About f on physical pages 4, 5, 6, 7 supports this outcome; build the polynomial sign chart records the worked evidence."
+        },
+        "page_heading": "What Does f′ Say About f"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-increasing-decreasing-sign-intervals-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-increasing-decreasing-sign-intervals-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 4, 5, 6, 7."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-increasing-decreasing-sign-intervals]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-increasing-decreasing-sign-intervals-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-increasing-decreasing-sign-intervals-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-increasing-decreasing-sign-intervals-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-increasing-decreasing-sign-intervals]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-increasing-decreasing-sign-intervals-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 4, 5, 6, 7, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-first-derivative-extremum-test",
+      "concept_id": "derivative-tests",
+      "outcome": "Classify a continuous function’s local maximum or minimum when its derivative changes sign at a critical number.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 9,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Classify a continuous function’s local maximum or minimum when its derivative changes sign at a critical number.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 10, 11],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "The First Derivative Test on physical pages 9, 10, 11 supports this outcome; track both sign changes records the worked evidence."
+        },
+        "page_heading": "The First Derivative Test"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-first-derivative-extremum-test-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-first-derivative-extremum-test-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 9, 10, 11."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-first-derivative-extremum-test]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-first-derivative-extremum-test-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-first-derivative-extremum-test-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-first-derivative-extremum-test-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-first-derivative-extremum-test]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-first-derivative-extremum-test-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 9, 10, 11, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-same-sign-no-extremum",
+      "concept_id": "derivative-tests",
+      "outcome": "Conclude that a critical point is neither a local maximum nor a local minimum when the derivative keeps the same nonzero sign on both sides.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 9,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Conclude that a critical point is neither a local maximum nor a local minimum when the derivative keeps the same nonzero sign on both sides.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8, 9],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "The First Derivative Test on physical pages 8, 9 supports this outcome; a stationary point without a turn records the worked evidence."
+        },
+        "page_heading": "The First Derivative Test"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-same-sign-no-extremum-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-same-sign-no-extremum-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 8, 9."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-same-sign-no-extremum]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-same-sign-no-extremum-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-same-sign-no-extremum-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-same-sign-no-extremum-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-same-sign-no-extremum]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-same-sign-no-extremum-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 8, 9, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-concavity-sign-test",
+      "concept_id": "derivative-tests",
+      "outcome": "Determine intervals of concavity from the sign of the second derivative.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 14,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Determine intervals of concavity from the sign of the second derivative.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12, 13, 14, 16, 17],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "What Does f′′ Say About f? on physical pages 12, 13, 14, 16, 17 supports this outcome; partition at second-derivative zeros records the worked evidence."
+        },
+        "page_heading": "What Does f′′ Say About f?"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-concavity-sign-test-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-concavity-sign-test-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 12, 13, 14, 16, 17."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-concavity-sign-test]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-concavity-sign-test-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-concavity-sign-test-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-concavity-sign-test-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-concavity-sign-test]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-concavity-sign-test-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 12, 13, 14, 16, 17, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-inflection-requires-concavity-change",
+      "concept_id": "derivative-tests",
+      "outcome": "Identify an inflection point only where a continuous curve changes concavity.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 15,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Identify an inflection point only where a continuous curve changes concavity.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16, 17],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "The Second Derivative Test on physical pages 15, 16, 17 supports this outcome; track concavity across each candidate records the worked evidence."
+        },
+        "page_heading": "The Second Derivative Test"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-inflection-requires-concavity-change-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-inflection-requires-concavity-change-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 15, 16, 17."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-inflection-requires-concavity-change]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-inflection-requires-concavity-change-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-inflection-requires-concavity-change-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-inflection-requires-concavity-change-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-inflection-requires-concavity-change]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-inflection-requires-concavity-change-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 15, 16, 17, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-second-derivative-test-hypotheses",
+      "concept_id": "derivative-tests",
+      "outcome": "Use the second derivative at a stationary point as a sufficient test for a strict local extremum.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 15,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Use the second derivative at a stationary point as a sufficient test for a strict local extremum.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [15, 16],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "The Second Derivative Test on physical pages 15, 16 supports this outcome; confirm the minimum at x = 3 records the worked evidence."
+        },
+        "page_heading": "The Second Derivative Test"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-test-hypotheses-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-test-hypotheses-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 15, 16."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-second-derivative-test-hypotheses]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-second-derivative-test-hypotheses-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-test-hypotheses-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-test-hypotheses-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-second-derivative-test-hypotheses]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-second-derivative-test-hypotheses-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 15, 16, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-second-derivative-inconclusive",
+      "concept_id": "derivative-tests",
+      "outcome": "Recognize that a zero or unavailable second derivative does not classify an extremum and switch to a sign or value comparison.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 18,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Recognize that a zero or unavailable second derivative does not classify an extremum and switch to a sign or value comparison.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17, 18],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "The Second Derivative Test on physical pages 16, 17, 18 supports this outcome; three outcomes with the same second-derivative value records the worked evidence."
+        },
+        "page_heading": "The Second Derivative Test"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-inconclusive-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-inconclusive-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 16, 17, 18."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-second-derivative-inconclusive]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-second-derivative-inconclusive-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-inconclusive-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-second-derivative-inconclusive-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-second-derivative-inconclusive]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-second-derivative-inconclusive-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 16, 17, 18, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "derivative-tests:lecture10-nondifferentiable-candidates-and-vertical-tangents",
+      "concept_id": "derivative-tests",
+      "outcome": "Include in-domain points where the derivative does not exist among critical candidates, distinguish domain exclusions, and recognize derivative blow-up at vertical tangents.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 19,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Include in-domain points where the derivative does not exist among critical candidates, distinguish domain exclusions, and recognize derivative blow-up at vertical tangents.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20, 21],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "The Second Derivative Test on physical pages 19, 20, 21 supports this outcome; separate three candidates from three behaviors records the worked evidence."
+        },
+        "page_heading": "The Second Derivative Test"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-nondifferentiable-candidates-and-vertical-tangents-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-nondifferentiable-candidates-and-vertical-tangents-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 19, 20, 21."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-nondifferentiable-candidates-and-vertical-tangents]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-nondifferentiable-candidates-and-vertical-tangents-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-extrema",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-nondifferentiable-candidates-and-vertical-tangents-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-nondifferentiable-candidates-and-vertical-tangents-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.contentBlocks[lecture10-source-nondifferentiable-candidates-and-vertical-tangents]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#derivative-tests.exercises[lecture10-nondifferentiable-candidates-and-vertical-tangents-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 19, 20, 21, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-finite-limits-at-either-tail",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Interpret and calculate a finite limit as x tends independently to positive or negative infinity.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 22,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Interpret and calculate a finite limit as x tends independently to positive or negative infinity.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 25],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Limits at Infinity on physical pages 22, 23, 25 supports this outcome; compare both tails of a rational function records the worked evidence."
+        },
+        "page_heading": "Limits at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-finite-limits-at-either-tail-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-finite-limits-at-either-tail-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 22, 23, 25."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-finite-limits-at-either-tail]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-finite-limits-at-either-tail-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-finite-limits-at-either-tail-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-finite-limits-at-either-tail-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-finite-limits-at-either-tail]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-finite-limits-at-either-tail-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 22, 23, 25, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-reciprocal-power-decay",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Apply reciprocal-power decay for positive rational exponents, including the source’s real-domain condition at negative infinity.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 27,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Apply reciprocal-power decay for positive rational exponents, including the source’s real-domain condition at negative infinity.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Limits at Infinity on physical page 27 supports this outcome; keep the negative-tail domain visible records the worked evidence."
+        },
+        "page_heading": "Limits at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-reciprocal-power-decay-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-reciprocal-power-decay-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 27."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-reciprocal-power-decay]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-reciprocal-power-decay-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-reciprocal-power-decay-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-reciprocal-power-decay-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-reciprocal-power-decay]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-reciprocal-power-decay-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 27, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-rational-limit-degree-method",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Evaluate a rational-function tail limit by dividing numerator and denominator by the highest denominator power.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 28,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Evaluate a rational-function tail limit by dividing numerator and denominator by the highest denominator power.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28, 29, 30],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Limits at Infinity on physical pages 28, 29, 30 supports this outcome; divide by the denominator’s highest power records the worked evidence."
+        },
+        "page_heading": "Limits at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-rational-limit-degree-method-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-rational-limit-degree-method-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 28, 29, 30."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-rational-limit-degree-method]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-rational-limit-degree-method-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-rational-limit-degree-method-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-rational-limit-degree-method-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-rational-limit-degree-method]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-rational-limit-degree-method-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 28, 29, 30, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-signed-infinite-tail-limits",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Distinguish positive and negative infinite limits by tracking the sign of the function on each tail.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 35,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Distinguish positive and negative infinite limits by tracking the sign of the function on each tail.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [35],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Infinite Limits at Infinity on physical page 35 supports this outcome; check both tails of a cubic records the worked evidence."
+        },
+        "page_heading": "Infinite Limits at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-signed-infinite-tail-limits-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-signed-infinite-tail-limits-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 35."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-signed-infinite-tail-limits]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-signed-infinite-tail-limits-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-signed-infinite-tail-limits-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-signed-infinite-tail-limits-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-signed-infinite-tail-limits]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-signed-infinite-tail-limits-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 35, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-epsilon-n-tail-proof",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Use the quantified epsilon–N definition to prove a finite limit at positive infinity.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 36,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Use the quantified epsilon–N definition to prove a finite limit at positive infinity.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36, 37, 38],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Precise Definition of a Limit at Infinity on physical pages 36, 37, 38 supports this outcome; choose n from the error inequality records the worked evidence."
+        },
+        "page_heading": "Precise Definition of a Limit at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-epsilon-n-tail-proof-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-epsilon-n-tail-proof-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 36, 37, 38."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-epsilon-n-tail-proof]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-epsilon-n-tail-proof-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-epsilon-n-tail-proof-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-epsilon-n-tail-proof-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-epsilon-n-tail-proof]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-epsilon-n-tail-proof-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 36, 37, 38, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-m-n-infinite-tail-definition",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Use the quantified M–N definition to show that function values grow beyond every positive bound at a tail.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 39,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Use the quantified M–N definition to show that function values grow beyond every positive bound at a tail.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [39],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Precise Definition of an Infinite Limit at Infinity on physical page 39 supports this outcome; verify cubic growth against every m records the worked evidence."
+        },
+        "page_heading": "Precise Definition of an Infinite Limit at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-m-n-infinite-tail-definition-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-m-n-infinite-tail-definition-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 39."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-m-n-infinite-tail-definition]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-m-n-infinite-tail-definition-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-m-n-infinite-tail-definition-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-m-n-infinite-tail-definition-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-m-n-infinite-tail-definition]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-m-n-infinite-tail-definition-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 39, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-horizontal-asymptote-tail-condition",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Identify a horizontal asymptote from either finite tail limit and keep the two ends separate.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 26,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Identify a horizontal asymptote from either finite tail limit and keep the two ends separate.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [24, 26],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Limits at Infinity on physical pages 24, 26 supports this outcome; find and interpret a horizontal asymptote records the worked evidence."
+        },
+        "page_heading": "Limits at Infinity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-horizontal-asymptote-tail-condition-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-horizontal-asymptote-tail-condition-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 24, 26."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-horizontal-asymptote-tail-condition]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-horizontal-asymptote-tail-condition-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-horizontal-asymptote-tail-condition-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-horizontal-asymptote-tail-condition-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-horizontal-asymptote-tail-condition]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-horizontal-asymptote-tail-condition-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 24, 26, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-radical-tail-sign",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Evaluate radical quotients at both infinities by using |x|=x on the positive tail and |x|=-x on the negative tail.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 31,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Evaluate radical quotients at both infinities by using |x|=x on the positive tail and |x|=-x on the negative tail.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31, 32],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Horizontal Asymptotes on physical pages 31, 32 supports this outcome; compute distinct limits of a radical quotient records the worked evidence."
+        },
+        "page_heading": "Horizontal Asymptotes"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-radical-tail-sign-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-radical-tail-sign-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 31, 32."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-radical-tail-sign]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-radical-tail-sign-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-radical-tail-sign-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-radical-tail-sign-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-radical-tail-sign]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-radical-tail-sign-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 31, 32, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-vertical-asymptote-one-sided-sign",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Confirm a vertical asymptote by checking whether at least one one-sided limit diverges.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 33,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Confirm a vertical asymptote by checking whether at least one one-sided limit diverges.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [33, 34],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Horizontal Asymptotes on physical pages 33, 34 supports this outcome; track each side of x = 5/3 records the worked evidence."
+        },
+        "page_heading": "Horizontal Asymptotes"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-vertical-asymptote-one-sided-sign-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-vertical-asymptote-one-sided-sign-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 33, 34."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-vertical-asymptote-one-sided-sign]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-vertical-asymptote-one-sided-sign-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-vertical-asymptote-one-sided-sign-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-vertical-asymptote-one-sided-sign-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-vertical-asymptote-one-sided-sign]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-vertical-asymptote-one-sided-sign-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 33, 34, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-slant-asymptote-remainder",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Find and verify a slant asymptote by showing that the difference between the curve and a line tends to zero.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 40,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Find and verify a slant asymptote by showing that the difference between the curve and a line tends to zero.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [40, 41],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Slant Asymptotes on physical pages 40, 41 supports this outcome; use polynomial division and check both tails records the worked evidence."
+        },
+        "page_heading": "Slant Asymptotes"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-slant-asymptote-remainder-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-slant-asymptote-remainder-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 40, 41."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-slant-asymptote-remainder]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-slant-asymptote-remainder-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-slant-asymptote-remainder-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-slant-asymptote-remainder-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-slant-asymptote-remainder]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-slant-asymptote-remainder-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 40, 41, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-domain-and-intercepts",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Determine the real domain and coordinate-axis intercepts before analyzing the rest of a curve.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 42,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Determine the real domain and coordinate-axis intercepts before analyzing the rest of a curve.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42, 46, 49],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 42, 46, 49 supports this outcome; find the domain and intercepts first records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-domain-and-intercepts-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-domain-and-intercepts-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 42, 46, 49."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-domain-and-intercepts]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-domain-and-intercepts-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-domain-and-intercepts-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-domain-and-intercepts-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-domain-and-intercepts]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-domain-and-intercepts-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 42, 46, 49, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-symmetry-and-domain-invariance",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Check even or odd symmetry only when the function domain is invariant under x ↦ -x.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 42,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Check even or odd symmetry only when the function domain is invariant under x ↦ -x.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42, 46, 49],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 42, 46, 49 supports this outcome; compare an even and an odd source example records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-symmetry-and-domain-invariance-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-symmetry-and-domain-invariance-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 42, 46, 49."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-symmetry-and-domain-invariance]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-symmetry-and-domain-invariance-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-symmetry-and-domain-invariance-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-symmetry-and-domain-invariance-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-symmetry-and-domain-invariance]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-symmetry-and-domain-invariance-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 42, 46, 49, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-asymptotes-in-sketch-checklist",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Use the appropriate tail or one-sided limit to distinguish horizontal, vertical, and slant asymptotes while assembling a sketch.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 43,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Use the appropriate tail or one-sided limit to distinguish horizontal, vertical, and slant asymptotes while assembling a sketch.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [43, 46, 49],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 43, 46, 49 supports this outcome; compare the two complete source sketches records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-asymptotes-in-sketch-checklist-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-asymptotes-in-sketch-checklist-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 43, 46, 49."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-asymptotes-in-sketch-checklist]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-asymptotes-in-sketch-checklist-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-asymptotes-in-sketch-checklist-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-asymptotes-in-sketch-checklist-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-asymptotes-in-sketch-checklist]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-asymptotes-in-sketch-checklist-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 43, 46, 49, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-monotonicity-in-curve-sketch",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Partition the domain at in-domain critical candidates and asymptotes, then use derivative signs to determine each curve branch’s direction.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 44,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Partition the domain at in-domain critical candidates and asymptotes, then use derivative signs to determine each curve branch’s direction.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [44, 47, 49],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 44, 47, 49 supports this outcome; read direction on each domain component records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-monotonicity-in-curve-sketch-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-monotonicity-in-curve-sketch-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 44, 47, 49."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-monotonicity-in-curve-sketch]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-monotonicity-in-curve-sketch-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-monotonicity-in-curve-sketch-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-monotonicity-in-curve-sketch-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-monotonicity-in-curve-sketch]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-monotonicity-in-curve-sketch-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 44, 47, 49, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-local-extrema-in-sketch",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Classify local extrema from neighboring derivative signs, not merely from stationary or excluded points.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 44,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Classify local extrema from neighboring derivative signs, not merely from stationary or excluded points.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [44, 47, 50],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 44, 47, 50 supports this outcome; contrast a turning point with a stationary non-extremum records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-local-extrema-in-sketch-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-local-extrema-in-sketch-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 44, 47, 50."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-local-extrema-in-sketch]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-local-extrema-in-sketch-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-local-extrema-in-sketch-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-local-extrema-in-sketch-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-local-extrema-in-sketch]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-local-extrema-in-sketch-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 44, 47, 50, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-concavity-in-curve-sketch",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Determine concavity intervals and inflection points from a second-derivative sign chart, excluding points outside the domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 45,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Determine concavity intervals and inflection points from a second-derivative sign chart, excluding points outside the domain.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [45, 47, 50],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 45, 47, 50 supports this outcome; locate concavity changes on the odd rational curve records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-concavity-in-curve-sketch-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-concavity-in-curve-sketch-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 45, 47, 50."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-concavity-in-curve-sketch]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-concavity-in-curve-sketch-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-concavity-in-curve-sketch-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-concavity-in-curve-sketch-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-concavity-in-curve-sketch]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-concavity-in-curve-sketch-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 45, 47, 50, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "infinity-curve-sketching:lecture10-assemble-curve-sketch",
+      "concept_id": "infinity-curve-sketching",
+      "outcome": "Construct a coherent curve sketch by combining domain, intercepts, symmetry, asymptotes, monotonicity, extrema, and concavity.",
+      "core_source": {
+        "id": "MH1100_Lecture_10",
+        "physical_page": 45,
+        "sha256": "0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e",
+        "inspection": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. Claim observed: Construct a coherent curve sketch by combining domain, intercepts, symmetry, asymptotes, monotonicity, extrema, and concavity.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [45, 48, 49, 50, 51],
+          "method": "Hash-matched 51-page canonical handout; rendered the cited physical pages at 1200 px and compared headings, displayed mathematics and page numbers with pdftotext -layout. SHA-256: 0c7e98f04190c1c37ead08918d6ce215d42e5187618bb7baa63d925d4dc4c39e.",
+          "claim_observed": "Guidelines for Sketching a Curve on physical pages 45, 48, 49, 50, 51 supports this outcome; assemble the odd rational curve records the worked evidence."
+        },
+        "page_heading": "Guidelines for Sketching a Curve"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-assemble-curve-sketch-statement].title",
+            "claim": "This atomic source skill has an explicit lesson heading.",
+            "method": "Compared the exact heading with the source claim and the broader catalog title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-assemble-curve-sketch-statement]",
+            "claim": "The lesson states the source method or condition in full.",
+            "method": "Compared with hash-matched physical pages 45, 48, 49, 50, 51."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-assemble-curve-sketch]",
+            "claim": "A source example or clearly identified guide instance has its reasoning worked and checked.",
+            "method": "Recomputed each derivative, sign, limit, or algebraic claim independently."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-assemble-curve-sketch-transfer]",
+            "claim": "Changed-data transfer practice includes a hint, checked solution, and rubric; learner performance is not claimed.",
+            "method": "Solved the task independently and checked the exact result."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-asymptote",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source statement, worked reasoning and independent transfer were inspected. No outcome-specific scene alignment or learner performance check is recorded.",
+      "source_section_id": "MH1100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-assemble-curve-sketch-statement].title",
+            "basis": "Exact source-skill heading is visible on the stable lesson route."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-assemble-curve-sketch-statement]",
+            "basis": "Conditions or method compared with its verified source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.contentBlocks[lecture10-source-assemble-curve-sketch]",
+            "basis": "The worked result was independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#infinity-curve-sketching.exercises[lecture10-assemble-curve-sketch-transfer]",
+            "basis": "Changed-data task and solution were checked; learner response remains unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Hash-matched rendered source pages 45, 48, 49, 50, 51, exact lesson blocks, changed-data practice, and evidence states were compared.",
+        "named": "exact atomic lesson heading inspected",
+        "stated": "source statement and conditions inspected",
+        "worked": "calculation or argument independently checked",
+        "practiced": "task and solution checked; learner performance unverified",
+        "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
+        "checked": "No independent learner response or performance measurement."
       }
     }
   ]
