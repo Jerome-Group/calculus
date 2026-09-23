@@ -6697,7 +6697,344 @@
         "Supply a direct inequality or valid sign test."
       ],
       "solutionTex": "x\\ne0\\implies x^4>0=f(0)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-increasing-decreasing-sign-intervals-statement",
+        "title": "Read derivative signs as monotonicity",
+        "text": "If $f'(x)>0$ throughout an interval, then $f$ is increasing there; if $f'(x)<0$, it is decreasing. For any $x_1<x_2$ in that interval, the mean value theorem gives $f(x_2)-f(x_1)=f'(c)(x_2-x_1)$ for some interior $c$, so the sign follows from both factors."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-increasing-decreasing-sign-intervals",
+        "title": "Build the polynomial sign chart",
+        "strategy": "Factor the derivative, partition at every zero, and combine factor signs on each open interval.",
+        "setup": "Follow the handout example $f(x)=3x^4-4x^3-12x^2+5$.",
+        "steps": [
+          {
+            "label": "Differentiate and factor",
+            "text": "The critical numbers split the real line into four intervals.",
+            "equation": "f'(x)=12x^3-12x^2-24x=12x(x-2)(x+1)"
+          },
+          {
+            "label": "Combine signs",
+            "text": "The signs of $f'$ on $(-\\infty,-1),(-1,0),(0,2),(2,\\infty)$ are $-,+,-,+$.",
+            "equation": "(-1,0):(-)(-)(+) = +,\\qquad (0,2):(+)(-)(+) = -"
+          }
+        ],
+        "result": "$f$ decreases on $(-\\infty,-1)$ and $(0,2)$, and increases on $(-1,0)$ and $(2,\\infty)$.",
+        "verification": "The sign chart changes only at the derivative zeros; the mean value theorem applies on every closed subinterval contained in one of these intervals."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-first-derivative-extremum-test-statement",
+        "title": "Classify extrema from a sign change",
+        "text": "Suppose $f$ is continuous throughout an open interval containing $c$ and differentiable at every point of that interval except possibly $c$. If $f'$ changes from positive to negative at $c$, then $f(c)$ is a local maximum; a negative-to-positive change gives a local minimum. These are sufficient conditions, not necessary ones."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-first-derivative-extremum-test",
+        "title": "Track both sign changes",
+        "strategy": "Solve the derivative equation, use its signs on the resulting intervals, then evaluate the original function at each point.",
+        "setup": "For $g(x)=x+2\\sin x$ on $[0,2\\pi]$, find the interior local extrema.",
+        "steps": [
+          {
+            "label": "Find candidates",
+            "text": "The derivative is zero when $\\cos x=-1/2$.",
+            "equation": "g'(x)=1+2\\cos x,\\qquad c_1=\\frac{2\\pi}{3},\\quad c_2=\\frac{4\\pi}{3}"
+          },
+          {
+            "label": "Read the signs",
+            "text": "$g'$ changes from positive to negative at $c_1$, then negative to positive at $c_2$."
+          },
+          {
+            "label": "Evaluate the function",
+            "text": "Use $\\sin(2\\pi/3)=\\sqrt3/2$ and $\\sin(4\\pi/3)=-\\sqrt3/2$.",
+            "equation": "g(c_1)=\\frac{2\\pi}{3}+\\sqrt3,\\qquad g(c_2)=\\frac{4\\pi}{3}-\\sqrt3"
+          }
+        ],
+        "result": "There is a local maximum at $x=2\\pi/3$ and a local minimum at $x=4\\pi/3$; their values are $2\\pi/3+\\sqrt3$ and $4\\pi/3-\\sqrt3$.",
+        "verification": "The signs are checked on both sides of each candidate. The function values come from $g$, not from the derivative."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-same-sign-no-extremum-statement",
+        "title": "Recognize when a critical point is not an extremum",
+        "text": "If $f'$ has the same positive sign immediately to the left and right of $c$, or the same negative sign on both sides, then $c$ is neither a local maximum nor a local minimum. Continuity at $c$ remains part of the test."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-same-sign-no-extremum",
+        "title": "A stationary point without a turn",
+        "strategy": "Check the derivative sign on both sides instead of treating a horizontal tangent as an extremum.",
+        "setup": "Consider the guide contrast $p(x)=x^3$ at $c=0$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "The candidate is stationary because $p'(0)=0$.",
+            "equation": "p'(x)=3x^2"
+          },
+          {
+            "label": "Compare the sides",
+            "text": "For every $x\\ne0$, $p'(x)>0$ on both sides of zero; the graph keeps increasing."
+          }
+        ],
+        "result": "At $x=0$, $p$ has neither a local maximum nor a local minimum.",
+        "verification": "A zero derivative is only a candidate; the same-sign test distinguishes this point from a turn."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-concavity-sign-test-statement",
+        "title": "Use the second derivative to determine concavity",
+        "text": "If $f''(x)>0$ throughout an interval, the graph is concave upward there; if $f''(x)<0$, it is concave downward. Equivalently, the slopes of the tangent lines increase or decrease."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-concavity-sign-test",
+        "title": "Partition at second-derivative zeros",
+        "strategy": "Differentiate twice, partition at zeros or undefined points of $f''$, and test the sign on each interval.",
+        "setup": "For the handout curve $f(x)=x^4-4x^3$, determine its concavity.",
+        "steps": [
+          {
+            "label": "Compute the second derivative",
+            "text": "Factor it to expose the sign-changing candidates.",
+            "equation": "f'(x)=4x^2(x-3),\\qquad f''(x)=12x(x-2)"
+          },
+          {
+            "label": "Read each interval",
+            "text": "The sign is positive for $x<0$ and $x>2$, and negative for $0<x<2$."
+          }
+        ],
+        "result": "The curve is concave upward on $(-\\infty,0)$ and $(2,\\infty)$, and concave downward on $(0,2)$.",
+        "verification": "The zeros 0 and 2 partition the real line; continuity of $f''$ means the sign is constant between them."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-inflection-requires-concavity-change-statement",
+        "title": "Require a change of concavity for an inflection point",
+        "text": "An inflection point lies on a continuous curve where concavity changes from upward to downward or downward to upward. A zero or undefined value of $f''$ supplies a candidate, not a conclusion by itself."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-inflection-requires-concavity-change",
+        "title": "Track concavity across each candidate",
+        "strategy": "Check the sign of $f''$ on both sides, then evaluate $f$ at each candidate where the sign changes.",
+        "setup": "For $f(x)=x^4-4x^3$, use its second derivative to locate inflection points.",
+        "steps": [
+          {
+            "label": "Find candidates",
+            "text": "The second derivative is zero at 0 and 2.",
+            "equation": "f''(x)=12x(x-2)"
+          },
+          {
+            "label": "Check sign changes",
+            "text": "The signs are $+,-,+$ on $(-\\infty,0),(0,2),(2,\\infty)$, so both candidates change concavity."
+          },
+          {
+            "label": "Evaluate the curve",
+            "text": "The points on the graph are $f(0)=0$ and $f(2)=-16$."
+          }
+        ],
+        "result": "The inflection points are $(0,0)$ and $(2,-16)$.",
+        "verification": "Both points are on the continuous polynomial curve, and the concavity changes at each. The first is stationary but is not a local extremum."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-second-derivative-test-hypotheses-statement",
+        "title": "Apply the second derivative test with its hypotheses",
+        "text": "If $f$ is twice continuously differentiable near $c$ and $f'(c)=0$, then $f''(c)>0$ implies a strict local minimum and $f''(c)<0$ implies a strict local maximum. These are sufficient conditions."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-second-derivative-test-hypotheses",
+        "title": "Confirm the minimum at $x=3$",
+        "strategy": "Check stationarity first, then evaluate the curvature and the original function value.",
+        "setup": "Use the handout’s $f(x)=x^4-4x^3$ example.",
+        "steps": [
+          {
+            "label": "Check stationarity",
+            "text": "The derivative factors and vanishes at 3.",
+            "equation": "f'(x)=4x^2(x-3),\\qquad f'(3)=0"
+          },
+          {
+            "label": "Check curvature and height",
+            "text": "The second derivative is positive at 3, and the function value supplies the extremum value.",
+            "equation": "f''(3)=36>0,\\qquad f(3)=-27"
+          }
+        ],
+        "result": "The test gives a strict local minimum at $(3,-27)$.",
+        "verification": "The polynomial is twice continuously differentiable near 3, so the hypotheses hold. The point $x=0$ has $f''(0)=0$ and needs a different test."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-second-derivative-inconclusive-statement",
+        "title": "Treat zero or missing second derivatives as inconclusive",
+        "text": "When $f'(c)=0$ and $f''(c)=0$, the second derivative test gives no verdict: a maximum, a minimum, or neither is possible. If $f''(c)$ does not exist, this test also does not apply; use the first derivative test or compare function values."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-second-derivative-inconclusive",
+        "title": "Three outcomes with the same second-derivative value",
+        "strategy": "Show that matching derivative data can lead to different behavior; then check the original functions or first-derivative signs.",
+        "setup": "Compare $p(x)=x^4$, $q(x)=-x^4$, and $r(x)=x^3$ at zero.",
+        "steps": [
+          {
+            "label": "Check the derivative data",
+            "text": "All three have first and second derivatives zero at the candidate.",
+            "equation": "p'(0)=q'(0)=r'(0)=0,\\qquad p''(0)=q''(0)=r''(0)=0"
+          },
+          {
+            "label": "Compare nearby values",
+            "text": "$x^4>0$, $-x^4<0$ and $x^3$ changes sign as $x$ crosses zero."
+          }
+        ],
+        "result": "$p$ has a strict minimum, $q$ a strict maximum, and $r$ neither at zero; the zero second derivative alone decides none of them.",
+        "verification": "Each function is continuous and twice differentiable. A test failure means inconclusive, not that no extremum exists."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-nondifferentiable-candidates-and-vertical-tangents-statement",
+        "title": "Check in-domain derivative failures and vertical tangents",
+        "text": "A critical number is in the domain and has derivative zero or no derivative. A point outside the domain is not a critical number. A vertical tangent can occur when $|f'(x)|\\to\\infty$ as $x$ approaches the point, but that alone does not imply a local extremum."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-nondifferentiable-candidates-and-vertical-tangents",
+        "title": "Separate three candidates from three behaviors",
+        "strategy": "Keep the function domain, derivative-zero candidates, and derivative-undefined candidates separate; then check signs and derivative magnitude.",
+        "setup": "Use the handout curve $f(x)=x^{2/3}(6-x)^{1/3}$ and its displayed derivative and sign chart.",
+        "steps": [
+          {
+            "label": "Locate candidates",
+            "text": "The curve is defined for every real $x$. Its derivative vanishes at 4 and fails to exist at 0 and 6.",
+            "equation": "f'(x)=\\frac{4-x}{x^{1/3}(6-x)^{2/3}}"
+          },
+          {
+            "label": "Use one-sided signs",
+            "text": "The signs on $(-\\infty,0),(0,4),(4,6),(6,\\infty)$ are $-,+,-,-$. Thus 0 is a minimum, 4 a maximum, and 6 neither."
+          },
+          {
+            "label": "Check tangent and concavity behavior",
+            "text": "The source also shows $|f'(x)|\\to\\infty$ at 0 and 6; its second derivative changes sign only across 6."
+          }
+        ],
+        "result": "Both 0 and 6 have vertical tangents, but only 0 is an extremum. The concavity change at 6 makes it an inflection as a consequence of the earlier definition.",
+        "verification": "The inferred inflection at 6 combines the source’s page-15 definition with its page-21 concavity signs. The points are in the function domain, unlike a denominator zero."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-derivative-scene-limits",
+        "title": "What the derivative scene can show",
+        "text": "The existing $f(x)=x^3-3x$ scene illustrates a smooth cubic’s turning points and changing slope. It does not encode the handout’s nondifferentiable candidates, vertical tangents, or exact sign charts; use the displayed analytic checks for those claims. No scene has been independently aligned to each atomic outcome."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-increasing-decreasing-sign-intervals-transfer",
+        "outcome": "Use derivative signs on intervals to determine where a function increases or decreases.",
+        "kind": "computational",
+        "prompt": "Find the increasing and decreasing intervals of $h(x)=x^3-6x$.",
+        "hint": "Factor $h'(x)$, then test one point in each interval.",
+        "solution": "$h'(x)=3(x^2-2)$ vanishes at $x=\\pm\\sqrt2$. It is positive outside these numbers and negative between them, so $h$ increases on $(-\\infty,-\\sqrt2)$ and $(\\sqrt2,\\infty)$ and decreases on $(-\\sqrt2,\\sqrt2)$.",
+        "solutionTex": "h'(x)=3(x-\\sqrt2)(x+\\sqrt2)",
+        "rubric": [
+          "Find both derivative zeros.",
+          "Give the sign and monotonicity on each interval."
+        ]
+      },
+      {
+        "id": "lecture10-first-derivative-extremum-test-transfer",
+        "outcome": "Classify a continuous function’s local maximum or minimum when its derivative changes sign at a critical number.",
+        "kind": "computational",
+        "prompt": "Classify the interior critical points of $u(x)=x+3\\sin x$ on $[0,2\\pi]$ using the First Derivative Test.",
+        "hint": "Let $\\alpha=\\arccos(-1/3)$ and $\\beta=2\\pi-\\alpha$.",
+        "solution": "$u'(x)=1+3\\cos x$ vanishes at $\\alpha$ and $\\beta$. It changes positive-to-negative at $\\alpha$ and negative-to-positive at $\\beta$, so $u(\\alpha)=\\alpha+2\\sqrt2$ is a local maximum and $u(\\beta)=\\beta-2\\sqrt2$ is a local minimum.",
+        "solutionTex": "u'(x)=1+3\\cos x,\\quad u(\\alpha)=\\alpha+2\\sqrt2,\\quad u(\\beta)=\\beta-2\\sqrt2",
+        "rubric": [
+          "Locate both derivative zeros in the interval.",
+          "Match each sign change to the correct extremum and evaluate $u$."
+        ]
+      },
+      {
+        "id": "lecture10-same-sign-no-extremum-transfer",
+        "outcome": "Conclude that a critical point is neither a local maximum nor a local minimum when the derivative keeps the same nonzero sign on both sides.",
+        "kind": "conceptual",
+        "prompt": "Does $q(x)=x^5$ have a local maximum or minimum at $x=0$? Use derivative signs.",
+        "hint": "Factor the first derivative and compare its signs for negative and positive $x$.",
+        "solution": "$q'(x)=5x^4>0$ for $x\\ne0$ on either side of zero. The derivative keeps the same sign, so $q$ has neither a local maximum nor a local minimum at zero.",
+        "solutionTex": "q'(x)=5x^4>0\\quad(x\\ne0)",
+        "rubric": [
+          "Check both sides of zero.",
+          "Do not infer an extremum from $q'(0)=0$ alone."
+        ]
+      },
+      {
+        "id": "lecture10-concavity-sign-test-transfer",
+        "outcome": "Determine intervals of concavity from the sign of the second derivative.",
+        "kind": "computational",
+        "prompt": "Find the concavity intervals of $r(x)=x^4-2x^2$.",
+        "hint": "Use the second derivative formula $r''(x)=12x^2-4$ and solve where it is zero.",
+        "solution": "$r''(x)=4(3x^2-1)$ vanishes at $x=\\pm1/\\sqrt3$. It is negative for $|x|<1/\\sqrt3$ and positive for $|x|>1/\\sqrt3$, so $r$ is concave down between the candidates and concave up outside them.",
+        "solutionTex": "r''(x)=12x^2-4=4(3x^2-1)",
+        "rubric": [
+          "Find both zeros of $r''$.",
+          "Report the concavity on all three intervals."
+        ]
+      },
+      {
+        "id": "lecture10-inflection-requires-concavity-change-transfer",
+        "outcome": "Identify an inflection point only where a continuous curve changes concavity.",
+        "kind": "computational",
+        "prompt": "Find every inflection point of $q(x)=x^3+x^4$.",
+        "hint": "Factor $q''(x)$ and check signs on the three intervals it creates.",
+        "solution": "$q''(x)=6x(1+2x)$ changes sign at $x=-1/2$ and $x=0$. The corresponding values are $q(-1/2)=-1/16$ and $q(0)=0$, so the inflection points are $(-1/2,-1/16)$ and $(0,0)$.",
+        "solutionTex": "q''(x)=6x(1+2x),\\quad q(-1/2)=-1/16,\\quad q(0)=0",
+        "rubric": [
+          "Verify a sign change at each candidate.",
+          "Give the corresponding points, not just the $x$-coordinates."
+        ]
+      },
+      {
+        "id": "lecture10-second-derivative-test-hypotheses-transfer",
+        "outcome": "Use the second derivative at a stationary point as a sufficient test for a strict local extremum.",
+        "kind": "computational",
+        "prompt": "Apply the second derivative test to $s(x)=2x^2+4x+7$ at its stationary point.",
+        "hint": "Solve $s'(x)=0$ before evaluating $s''$.",
+        "solution": "$s'(x)=4x+4$ vanishes at $x=-1$, and $s''(x)=4>0$. Thus $s(-1)=5$ is a strict local minimum.",
+        "solutionTex": "s'(-1)=0,\\quad s''(-1)=4>0,\\quad s(-1)=5",
+        "rubric": [
+          "Verify the first derivative is zero.",
+          "Use the sign of $s''$ and report the function value."
+        ]
+      },
+      {
+        "id": "lecture10-second-derivative-inconclusive-transfer",
+        "outcome": "Recognize that a zero or unavailable second derivative does not classify an extremum and switch to a sign or value comparison.",
+        "kind": "counterexample",
+        "prompt": "Classify $h(x)=x^6$ at $x=0$ even though the second derivative test is inconclusive.",
+        "hint": "Compare $h(x)$ with $h(0)$ for every nonzero $x$.",
+        "solution": "$h'(0)=h''(0)=0$, so the second derivative test is inconclusive. But $x^6>0=h(0)$ for every $x\\ne0$, so zero is a strict local (and global) minimum.",
+        "solutionTex": "x^6>0=h(0)\\quad(x\\ne0)",
+        "rubric": [
+          "State why the second derivative test has no verdict.",
+          "Give a valid nearby-value or first-derivative argument."
+        ]
+      },
+      {
+        "id": "lecture10-nondifferentiable-candidates-and-vertical-tangents-transfer",
+        "outcome": "Include in-domain points where the derivative does not exist among critical candidates, distinguish domain exclusions, and recognize derivative blow-up at vertical tangents.",
+        "kind": "conceptual",
+        "prompt": "For $u(x)=\\sqrt[3]{x-1}$, determine whether $x=1$ is an extremum and whether the graph has a vertical tangent there.",
+        "hint": "Differentiate on both sides and compare the signs and magnitude of $u'$.",
+        "solution": "$u'(x)=1/(3(x-1)^{2/3})$ is positive on both sides of 1, so there is no local extremum. Its magnitude tends to infinity as $x$ approaches 1, giving a vertical tangent. The curve is continuous and its concavity changes there.",
+        "solutionTex": "u'(x)=\\frac{1}{3(x-1)^{2/3}},\\qquad |u'(x)|\\to\\infty",
+        "rubric": [
+          "Use the derivative signs to classify extrema.",
+          "Use derivative magnitude, not just undefinedness, to identify the vertical tangent."
+        ]
+      }
+    ]
   },
   "infinity-curve-sketching": {
     "prerequisites": ["derivative-tests", "infinite-limits"],
@@ -6721,7 +7058,703 @@
         "Keep the finite-domain restriction separate."
       ],
       "solutionTex": "\\frac{x^2+1}{x-1}=x+1+\\frac2{x-1},\\quad y=x+1"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-finite-limits-at-either-tail-statement",
+        "title": "Read finite limits at the positive and negative tails",
+        "text": "The statement $\\lim_{x\\to\\infty}f(x)=L$ means that $f(x)$ can be made arbitrarily close to $L$ by taking $x$ sufficiently large and positive. The limit at $-\\infty$ describes a separate, sufficiently negative tail and must be checked independently."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-finite-limits-at-either-tail",
+        "title": "Compare both tails of a rational function",
+        "strategy": "Rewrite the expression so that the terms vanishing on each tail are explicit.",
+        "setup": "For $f(x)=(x^2-1)/(x^2+1)$, evaluate the limits at both infinities.",
+        "steps": [
+          {
+            "label": "Expose the decaying term",
+            "text": "Subtract the candidate limit 1.",
+            "equation": "f(x)=1-\\frac{2}{x^2+1}"
+          },
+          {
+            "label": "Check each direction",
+            "text": "The correction tends to zero for large positive and large negative inputs.",
+            "equation": "\\lim_{x\\to\\infty}f(x)=1,\\qquad\\lim_{x\\to-\\infty}f(x)=1"
+          }
+        ],
+        "result": "Both tails approach 1, though the behavior near finite inputs does not determine either limit.",
+        "verification": "The same finite value occurs at both ends in this example; the radical quotient later in the handout has different tail limits."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-reciprocal-power-decay-statement",
+        "title": "Use reciprocal-power decay with its domain condition",
+        "text": "For rational $r>0$, $1/x^r$ tends to zero as $x$ tends to positive infinity. The same holds at negative infinity only when $x^r$ is defined for all negative $x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-reciprocal-power-decay",
+        "title": "Keep the negative-tail domain visible",
+        "strategy": "Use the reciprocal-power theorem only on tails where the expression is real-valued.",
+        "setup": "Evaluate the tails of $1/x^3$.",
+        "steps": [
+          {
+            "label": "Check the exponent domain",
+            "text": "The odd denominator makes $x^3$ defined for positive and negative $x$."
+          },
+          {
+            "label": "Apply the theorem",
+            "text": "The denominator magnitude grows without bound at either tail.",
+            "equation": "\\lim_{x\\to\\infty}\\frac1{x^3}=0,\\qquad\\lim_{x\\to-\\infty}\\frac1{x^3}=0"
+          }
+        ],
+        "result": "Both tail limits are zero.",
+        "verification": "For an even-root power such as $1/\\sqrt{x}$, there is no real-valued negative tail, so the second statement would not apply."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-rational-limit-degree-method-statement",
+        "title": "Evaluate rational limits by the highest denominator power",
+        "text": "For a rational function, divide numerator and denominator by the largest power of $x$ in the denominator. If the numerator degree is lower, the limit is zero; if the degrees match, it is the ratio of leading coefficients. If the numerator degree is higher, a positive power remains and the limit is not finite."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-rational-limit-degree-method",
+        "title": "Divide by the denominator’s highest power",
+        "strategy": "Divide every numerator and denominator term by $x^{2}$, then take limits term by term.",
+        "setup": "Evaluate the handout limit of $(3x^2-x-2)/(5x^2+4x+1)$.",
+        "steps": [
+          {
+            "label": "Normalize",
+            "text": "The denominator has degree two.",
+            "equation": "\\frac{3x^2-x-2}{5x^2+4x+1}=\\frac{3-1/x-2/x^2}{5+4/x+1/x^2}"
+          },
+          {
+            "label": "Take the tail limit",
+            "text": "Every reciprocal-power term tends to zero at either infinity.",
+            "equation": "\\lim_{x\\to\\pm\\infty}\\frac{3-1/x-2/x^2}{5+4/x+1/x^2}=\\frac35"
+          }
+        ],
+        "result": "The limit is $3/5$ at both positive and negative infinity.",
+        "verification": "The denominator’s leading coefficient is nonzero, so the normalized denominator tends to 5 rather than zero."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-signed-infinite-tail-limits-statement",
+        "title": "Keep the sign when a tail limit diverges",
+        "text": "The notation $f(x)\\to\\infty$ at a tail means the values grow beyond every positive bound there; $f(x)\\to-\\infty$ means they fall below every negative bound. The direction of $x$ and the sign of the dominant term both matter."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-signed-infinite-tail-limits",
+        "title": "Check both tails of a cubic",
+        "strategy": "Track the sign of the dominant power separately as $x$ becomes large positive and large negative.",
+        "setup": "Use the sign of $x^3$ to evaluate its two infinite limits.",
+        "steps": [
+          {
+            "label": "Positive tail",
+            "text": "For $x>0$, $x^3$ grows without bound."
+          },
+          {
+            "label": "Negative tail",
+            "text": "For $x<0$, $x^3$ is negative and its magnitude grows without bound.",
+            "equation": "\\lim_{x\\to\\infty}x^3=\\infty,\\qquad\\lim_{x\\to-\\infty}x^3=-\\infty"
+          }
+        ],
+        "result": "The two signed limits are $+\\infty$ and $-\\infty$, respectively.",
+        "verification": "These are unbounded limits, not finite horizontal-asymptote values."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-epsilon-n-tail-proof-statement",
+        "title": "Prove a finite tail limit with an epsilon–$N$ choice",
+        "text": "The limit $\\lim_{x\\to\\infty}f(x)=L$ means that for every $\\varepsilon>0$ there is an $N$ such that $x>N$ implies $|f(x)-L|<\\varepsilon$. For the negative tail, the source uses a threshold with $x<N$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-epsilon-n-tail-proof",
+        "title": "Choose $N$ from the error inequality",
+        "strategy": "Solve the desired error inequality for $x$, then choose a threshold that makes it true for every larger input.",
+        "setup": "Prove from the definition that $\\lim_{x\\to\\infty}1/x=0$.",
+        "steps": [
+          {
+            "label": "Start from the target",
+            "text": "For positive $x$, the error is $|1/x-0|=1/x$."
+          },
+          {
+            "label": "Choose the threshold",
+            "text": "Given $\\varepsilon>0$, take $N=1/\\varepsilon$. Then $x>N$ gives $1/x<\\varepsilon$.",
+            "equation": "x>N=\\frac1\\varepsilon\\quad\\Longrightarrow\\quad\\left|\\frac1x-0\\right|<\\varepsilon"
+          }
+        ],
+        "result": "The definition is satisfied, so $\\lim_{x\\to\\infty}1/x=0$.",
+        "verification": "The strict condition $x>N$ and positivity of $x$ make reciprocation reverse the inequality as used."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-m-n-infinite-tail-definition-statement",
+        "title": "State and use the $M$–$N$ definition of an infinite tail limit",
+        "text": "The statement $\\lim_{x\\to\\infty}f(x)=\\infty$ means that for every positive $M$ there is an $N$ such that $x>N$ implies $f(x)>M$. Negative infinite limits and negative tails use the corresponding reversed inequalities."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-m-n-infinite-tail-definition",
+        "title": "Verify cubic growth against every $M$",
+        "strategy": "Given an arbitrary positive bound, choose a threshold whose cube is that bound.",
+        "setup": "Show from the definition that $\\lim_{x\\to\\infty}x^3=\\infty$.",
+        "steps": [
+          {
+            "label": "Choose $N$",
+            "text": "For any $M>0$, let $N=\\sqrt[3]{M}$."
+          },
+          {
+            "label": "Check the implication",
+            "text": "If $x>N$, then $x>0$ and cubing gives $x^3>M$.",
+            "equation": "x>N=\\sqrt[3]{M}\\quad\\Longrightarrow\\quad x^3>M"
+          }
+        ],
+        "result": "Every positive $M$ has a corresponding threshold $N$, so the limit is positive infinity.",
+        "verification": "The choice depends on $M$, exactly as required; it does not claim a finite limiting value."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-horizontal-asymptote-tail-condition-statement",
+        "title": "Define a horizontal asymptote by a finite tail limit",
+        "text": "The line $y=L$ is a horizontal asymptote if $f(x)$ tends to $L$ as $x$ tends to positive infinity or negative infinity. The two ends may have different limits, and a graph may cross a horizontal asymptote at finite $x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-horizontal-asymptote-tail-condition",
+        "title": "Find and interpret a horizontal asymptote",
+        "strategy": "Calculate each finite tail limit; treat the result as behavior far along that tail, not as a barrier the graph cannot cross.",
+        "setup": "For $f(x)=(x^2-1)/(x^2+1)$, identify its horizontal asymptote.",
+        "steps": [
+          {
+            "label": "Rewrite relative to 1",
+            "text": "The correction term decays at either tail.",
+            "equation": "f(x)=1-\\frac2{x^2+1}"
+          },
+          {
+            "label": "Take both limits",
+            "text": "Both tail limits are 1, so the horizontal line is $y=1$."
+          }
+        ],
+        "result": "The graph has horizontal asymptote $y=1$ at both ends.",
+        "verification": "The source’s page-24 diagrams include curves crossing their limiting horizontal lines; asymptotes describe limits, not forbidden intersections."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-radical-tail-sign-statement",
+        "title": "Keep the absolute-value sign in radical tail limits",
+        "text": "When extracting $x$ from $\\sqrt{x^2}$, use $|x|$, not $x$ unconditionally. Thus $\\sqrt{x^2}/x$ is 1 at positive infinity and -1 at negative infinity; the two horizontal limits can differ."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-radical-tail-sign",
+        "title": "Compute distinct limits of a radical quotient",
+        "strategy": "Factor $|x|$ from the radical and compare it with the signed denominator separately on each tail.",
+        "setup": "For $f(x)=\\sqrt{2x^2+1}/(3x-5)$, compute both tail limits.",
+        "steps": [
+          {
+            "label": "Positive tail",
+            "text": "For $x>0$, $\\sqrt{2x^2+1}=x\\sqrt{2+1/x^2}$.",
+            "equation": "\\lim_{x\\to\\infty}f(x)=\\frac{\\sqrt2}{3}"
+          },
+          {
+            "label": "Negative tail",
+            "text": "For $x<0$, $\\sqrt{2x^2+1}=(-x)\\sqrt{2+1/x^2}$.",
+            "equation": "\\lim_{x\\to-\\infty}f(x)=-\\frac{\\sqrt2}{3}"
+          }
+        ],
+        "result": "The curve has horizontal asymptotes $y=\\sqrt2/3$ on the right and $y=-\\sqrt2/3$ on the left.",
+        "verification": "The sign difference comes from $|x|/x$; replacing the radical by $x$ on both tails would give a false left limit."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-vertical-asymptote-one-sided-sign-statement",
+        "title": "Test vertical asymptotes with one-sided signs",
+        "text": "The line $x=a$ is a vertical asymptote when at least one one-sided limit at a is positive or negative infinity. Check numerator and denominator signs on each side; a zero denominator alone is only a candidate."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-vertical-asymptote-one-sided-sign",
+        "title": "Track each side of $x = 5/3$",
+        "strategy": "The numerator stays positive; the denominator changes sign at its zero.",
+        "setup": "For the handout function $f(x)=\\sqrt{2x^2+1}/(3x-5)$, classify the behavior at $x=5/3$.",
+        "steps": [
+          {
+            "label": "Approach from the right",
+            "text": "For $x>5/3$ close to $5/3$, the denominator is positive and tends to zero.",
+            "equation": "\\lim_{x\\to(5/3)^+}f(x)=\\infty"
+          },
+          {
+            "label": "Approach from the left",
+            "text": "For $x<5/3$ close to it, the denominator is negative and tends to zero.",
+            "equation": "\\lim_{x\\to(5/3)^-}f(x)=-\\infty"
+          }
+        ],
+        "result": "The vertical asymptote is $x=5/3$, with opposite signed behavior on its two sides.",
+        "verification": "The numerator is nonzero at $x=5/3$, so the denominator’s sign determines the unbounded behavior."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-slant-asymptote-remainder-statement",
+        "title": "Verify a slant asymptote by a vanishing remainder",
+        "text": "A line $y=mx+b$ with $m\\ne0$ is a slant asymptote on a specified tail if $f(x)-(mx+b)\\to0$ there. For rational functions with numerator degree one greater than denominator degree, division gives a candidate; verify the remainder at each tail being claimed."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-slant-asymptote-remainder",
+        "title": "Use polynomial division and check both tails",
+        "strategy": "Divide first, then test whether the remainder term tends to zero in the stated direction.",
+        "setup": "For $f(x)=x^3/(x^2+1)$, verify the handout’s slant asymptote.",
+        "steps": [
+          {
+            "label": "Divide",
+            "text": "The quotient is $x$ and the remainder is $-x$.",
+            "equation": "f(x)=\\frac{x^3}{x^2+1}=x-\\frac{x}{x^2+1}"
+          },
+          {
+            "label": "Check the difference",
+            "text": "The remainder divided by the denominator tends to zero at both ends.",
+            "equation": "f(x)-x=-\\frac{x}{x^2+1}\\longrightarrow0\\quad(x\\to\\pm\\infty)"
+          }
+        ],
+        "result": "The line $y=x$ is a slant asymptote at both positive and negative infinity.",
+        "verification": "Division identifies the candidate; the limiting difference proves the asymptote. The direction of the limit remains explicit."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-domain-and-intercepts-statement",
+        "title": "Start a sketch with domain and intercepts",
+        "text": "The sketch checklist starts with the domain, then finds the $y$-intercept from $f(0)$ and $x$-intercepts by solving $f(x)=0$. Values excluded from the domain are not intercepts or critical numbers."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-domain-and-intercepts",
+        "title": "Find the domain and intercepts first",
+        "strategy": "Find denominator restrictions, solve the numerator equation within the domain, then evaluate at zero.",
+        "setup": "For $f(x)=2x^2/(x^2-1)$, complete the first checklist items.",
+        "steps": [
+          {
+            "label": "Domain",
+            "text": "The denominator vanishes at $x=\\pm1$, so both values are excluded.",
+            "equation": "D=\\mathbb R\\setminus\\{-1,1\\}"
+          },
+          {
+            "label": "Intercepts",
+            "text": "The numerator vanishes at zero, and $f(0)=0$.",
+            "equation": "(0,0)"
+          }
+        ],
+        "result": "The domain is all real numbers except $\\pm 1$, and the only $x$- and $y$-intercept is $(0,0)$.",
+        "verification": "The excluded points have no function values and cannot be plotted as intercepts."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-symmetry-and-domain-invariance-statement",
+        "title": "Test symmetry on a domain closed under reflection",
+        "text": "On a domain $D$ invariant under reflection, $f$ is even if $f(-x)=f(x)$ for all $x$ in $D$, and odd if $f(-x)=-f(x)$. If $-x$ is not in $D$ for some $x$ in $D$, neither symmetry test is established on that domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-symmetry-and-domain-invariance",
+        "title": "Compare an even and an odd source example",
+        "strategy": "Check domain invariance first, then substitute $-x$ into the formula.",
+        "setup": "The handout sketches $f(x)=2x^2/(x^2-1)$ and $g(x)=x^3/(x^2+1)$.",
+        "steps": [
+          {
+            "label": "First curve",
+            "text": "Its domain excludes both 1 and -1, and substitution leaves its value unchanged.",
+            "equation": "f(-x)=\\frac{2(-x)^2}{(-x)^2-1}=f(x)"
+          },
+          {
+            "label": "Second curve",
+            "text": "Its domain is all real numbers, and substitution reverses the sign.",
+            "equation": "g(-x)=\\frac{(-x)^3}{(-x)^2+1}=-g(x)"
+          }
+        ],
+        "result": "The first graph is symmetric about the $y$-axis; the second is symmetric about the origin.",
+        "verification": "Both domains are invariant under $x ↦ -x$, so each identity is meaningful for every domain input."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-asymptotes-in-sketch-checklist-statement",
+        "title": "Keep horizontal, vertical, and slant asymptotes distinct",
+        "text": "A horizontal line comes from a finite tail limit, a vertical line from a divergent one-sided limit, and a slant line from a difference tending to zero on a specified tail. These are separate tests; a denominator zero alone does not establish the vertical case."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-asymptotes-in-sketch-checklist",
+        "title": "Compare the two complete source sketches",
+        "strategy": "Apply the three limit tests independently instead of inferring one asymptote type from another.",
+        "setup": "Use the handout sketches of $2x^2/(x^2-1)$ and $x^3/(x^2+1)$.",
+        "steps": [
+          {
+            "label": "First curve",
+            "text": "For $f=2x^2/(x^2-1)$, the tail ratio is 2 and the denominator zeros are $\\pm 1$.",
+            "equation": "y=2,\\qquad x=-1,\\quad x=1"
+          },
+          {
+            "label": "Second curve",
+            "text": "For $g=x^3/(x^2+1)$, there is no denominator zero on the real domain; its difference from $x$ tends to zero.",
+            "equation": "g(x)-x=-\\frac{x}{x^2+1}\\longrightarrow0"
+          }
+        ],
+        "result": "The first curve has horizontal asymptote $y=2$ and vertical asymptotes $x=\\pm1$. The second has the slant asymptote $y=x$.",
+        "verification": "Each line is supported by its defining limit and then used as a separate sketch guide."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-monotonicity-in-curve-sketch-statement",
+        "title": "Use derivative signs to set the curve’s direction",
+        "text": "For a sketch, compute $f'$ and split at derivative zeros, in-domain derivative failures, and domain boundaries. On each domain interval, use the derivative sign to mark increasing or decreasing behavior; excluded points are boundaries, not critical numbers."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-monotonicity-in-curve-sketch",
+        "title": "Read direction on each domain component",
+        "strategy": "Preserve the negative sign in the quotient-rule simplification, then combine it with the positive squared denominator.",
+        "setup": "For $f(x)=2x^2/(x^2-1)$, use the handout derivative.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "The denominator is squared and positive wherever the function is defined.",
+            "equation": "f'(x)=-\\frac{4x}{(x^2-1)^2}"
+          },
+          {
+            "label": "Read signs",
+            "text": "The derivative is positive for $x<0$ and negative for $x>0$, excluding the domain boundaries at $\\pm 1$."
+          }
+        ],
+        "result": "The curve increases on $(-\\infty,-1)$ and $(-1,0)$, and decreases on $(0,1)$ and $(1,\\infty)$.",
+        "verification": "The derivative’s negative numerator sign agrees with the source sign chart on page 47; the excluded values split the intervals."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-local-extrema-in-sketch-statement",
+        "title": "Mark extrema only after checking derivative signs",
+        "text": "The sketch checklist treats points where $f'=0$ or $f'$ does not exist as candidates only when they lie in the domain. A positive-to-negative sign change gives a local maximum; a negative-to-positive change gives a local minimum; no sign change gives neither."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-local-extrema-in-sketch",
+        "title": "Contrast a turning point with a stationary non-extremum",
+        "strategy": "Use derivative signs at a candidate, then keep domain exclusions out of the critical-number set.",
+        "setup": "The handout’s rational sketches include $2x^2/(x^2-1)$ and $x^3/(x^2+1)$.",
+        "steps": [
+          {
+            "label": "First sketch",
+            "text": "For $2x^2/(x^2-1)$, $f'$ changes positive-to-negative at zero.",
+            "equation": "f(0)=0"
+          },
+          {
+            "label": "Second sketch",
+            "text": "For $x^3/(x^2+1)$, $f'$ is positive except it is zero at zero; there is no sign change."
+          }
+        ],
+        "result": "The first curve has a local maximum at $(0,0)$. The second has no local extremum at its stationary point $(0,0)$.",
+        "verification": "The two cases show why the sign chart is required after locating a derivative zero."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-concavity-in-curve-sketch-statement",
+        "title": "Use second-derivative signs to shape each branch",
+        "text": "For the sketch, compute $f''$ and use its sign on each interval. Concavity changes can create an inflection only at a point on the continuous curve; a domain exclusion cannot be an inflection point."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-concavity-in-curve-sketch",
+        "title": "Locate concavity changes on the odd rational curve",
+        "strategy": "Find the zeros of $f''$, check signs between them, then evaluate the original curve at each sign change.",
+        "setup": "For $f(x)=x^3/(x^2+1)$, analyze its second derivative.",
+        "steps": [
+          {
+            "label": "Differentiate twice",
+            "text": "The denominator is positive on the whole real domain.",
+            "equation": "f''(x)=\\frac{2x(3-x^2)}{(x^2+1)^3}"
+          },
+          {
+            "label": "Track the sign",
+            "text": "The signs change at $x=-\\sqrt3,0,\\sqrt3$, giving the ordered pattern $+,-,+,-$."
+          },
+          {
+            "label": "Evaluate heights",
+            "text": "Substitution gives the ordinates for all three inflection points.",
+            "equation": "f(\\pm\\sqrt3)=\\pm\\frac{3\\sqrt3}{4},\\qquad f(0)=0"
+          }
+        ],
+        "result": "The inflection points are $(-\\sqrt3,-3\\sqrt3/4)$, $(0,0)$ and $(\\sqrt3,3\\sqrt3/4)$.",
+        "verification": "The function is continuous everywhere and $f''$ changes sign at each listed $x$-coordinate."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-assemble-curve-sketch-statement",
+        "title": "Assemble the curve from domain, limits, and derivatives",
+        "text": "A curve sketch is the final assembly of domain, intercepts, symmetry, both-tail and one-sided asymptotes, derivative signs, local extrema, and concavity. Respect disconnected domain components; analytic checks establish the features while a scene or hand sketch only illustrates them."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-assemble-curve-sketch",
+        "title": "Assemble the odd rational curve",
+        "strategy": "Build the global picture from individually verified properties before drawing the branches.",
+        "setup": "Use the handout’s $f(x)=x^3/(x^2+1)$ example and its checklist A–H.",
+        "steps": [
+          {
+            "label": "Domain and symmetry",
+            "text": "The domain is all real numbers; $f$ is odd and passes through the origin."
+          },
+          {
+            "label": "End behavior",
+            "text": "There are no denominator zeros. Division shows slant asymptote $y=x$ at both tails.",
+            "equation": "f(x)-x=-\\frac{x}{x^2+1}\\longrightarrow0"
+          },
+          {
+            "label": "Direction and turning",
+            "text": "$f'(x)=x^2(x^2+3)/(x^2+1)^2$ is positive except at zero, so the curve keeps increasing and has no local extremum."
+          },
+          {
+            "label": "Concavity",
+            "text": "The second derivative changes sign at $-\\sqrt3,0,\\sqrt3$, producing the three inflection points already evaluated."
+          }
+        ],
+        "result": "The assembled sketch is an increasing odd curve through the origin, approaching the slant line $y=x$ and changing concavity at $-\\sqrt3,0,\\sqrt3$.",
+        "verification": "The source’s page-51 graph shows this shape; the listed limits and derivatives, rather than pixels, establish the properties."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-asymptote-scene-limits",
+        "title": "What the asymptote scene can show",
+        "text": "The existing scene plots $f(x)=1+1/x^2$ only for positive $x$ and illustrates one horizontal asymptote. It does not verify negative-tail limits, the handout’s radical or slant examples, vertical behavior, or a full curve sketch. Use the direction-specific limits and derivative sign charts; no scene has been independently aligned to each atomic outcome."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-finite-limits-at-either-tail-transfer",
+        "outcome": "Interpret and calculate a finite limit as x tends independently to positive or negative infinity.",
+        "kind": "computational",
+        "prompt": "Find both limits at infinity of $g(x)=(2x^2+3)/(x^2+4)$.",
+        "hint": "Divide numerator and denominator by $x^2$.",
+        "solution": "After division, $g(x)=(2+3/x^2)/(1+4/x^2)$. The reciprocal-square terms vanish in either direction, so both limits are 2.",
+        "solutionTex": "\\lim_{x\\to\\pm\\infty}\\frac{2x^2+3}{x^2+4}=2",
+        "rubric": [
+          "Use the same highest power in numerator and denominator.",
+          "State the positive and negative tail conclusions."
+        ]
+      },
+      {
+        "id": "lecture10-reciprocal-power-decay-transfer",
+        "outcome": "Apply reciprocal-power decay for positive rational exponents, including the source’s real-domain condition at negative infinity.",
+        "kind": "method-choice",
+        "prompt": "Find both tail limits of $v(x)=1/x^{2/3}$ and explain why the negative-tail theorem applies.",
+        "hint": "The cube root is real for negative $x$; then square it.",
+        "solution": "$x^{2/3}=(\\sqrt[3]{x})^2$ is positive and defined for every nonzero real $x$. Its magnitude grows at both tails, so both limits of its reciprocal are zero.",
+        "solutionTex": "\\lim_{x\\to\\pm\\infty}\\frac1{x^{2/3}}=0",
+        "rubric": [
+          "Check that the expression is real on the negative tail.",
+          "Apply reciprocal-power decay in both directions."
+        ]
+      },
+      {
+        "id": "lecture10-rational-limit-degree-method-transfer",
+        "outcome": "Evaluate a rational-function tail limit by dividing numerator and denominator by the highest denominator power.",
+        "kind": "computational",
+        "prompt": "Evaluate both tail limits of $r(x)=(4x^3-x)/(2x^3+5x^2+1)$.",
+        "hint": "Divide every term by $x^{3}$.",
+        "solution": "Dividing by $x^3$ gives $(4-1/x^2)/(2+5/x+1/x^3)$. Both tails give $4/2=2$.",
+        "solutionTex": "\\lim_{x\\to\\pm\\infty}\\frac{4x^3-x}{2x^3+5x^2+1}=2",
+        "rubric": [
+          "Normalize by the denominator’s highest power.",
+          "Evaluate the surviving coefficient ratio."
+        ]
+      },
+      {
+        "id": "lecture10-signed-infinite-tail-limits-transfer",
+        "outcome": "Distinguish positive and negative infinite limits by tracking the sign of the function on each tail.",
+        "kind": "conceptual",
+        "prompt": "Find the signed limits of $p(x)=-x^5$ as $x$ tends to each infinity.",
+        "hint": "An odd power preserves the sign of $x$; the leading coefficient is negative.",
+        "solution": "As $x$ tends to positive infinity, $-x^5$ tends to negative infinity. As $x$ tends to negative infinity, $x^5$ is negative, so $-x^5$ tends to positive infinity.",
+        "solutionTex": "\\lim_{x\\to\\infty}(-x^5)=-\\infty,\\qquad\\lim_{x\\to-\\infty}(-x^5)=\\infty",
+        "rubric": [
+          "Track the sign of x⁵ at both tails.",
+          "Include the negative leading coefficient."
+        ]
+      },
+      {
+        "id": "lecture10-epsilon-n-tail-proof-transfer",
+        "outcome": "Use the quantified epsilon–N definition to prove a finite limit at positive infinity.",
+        "kind": "proof",
+        "prompt": "Prove directly that $\\lim_{x\\to\\infty}5/x=0$.",
+        "hint": "Given $\\varepsilon>0$, solve $5/x<\\varepsilon$ for a positive input.",
+        "solution": "Given $\\varepsilon>0$, choose $N=5/\\varepsilon$. If $x>N$, then $x>0$ and $|5/x|=5/x<\\varepsilon$. This is the epsilon–$N$ definition.",
+        "solutionTex": "N=\\frac5\\varepsilon,\\qquad x>N\\Longrightarrow\\left|\\frac5x\\right|<\\varepsilon",
+        "rubric": [
+          "Choose $N$ as a function of $\\varepsilon$.",
+          "Verify the implication for every input satisfying $x>N$."
+        ]
+      },
+      {
+        "id": "lecture10-m-n-infinite-tail-definition-transfer",
+        "outcome": "Use the quantified M–N definition to show that function values grow beyond every positive bound at a tail.",
+        "kind": "proof",
+        "prompt": "Use the $M$–$N$ definition to prove that $\\lim_{x\\to\\infty}x^2=\\infty$.",
+        "hint": "For $M>0$, choose $N=\\sqrt M$.",
+        "solution": "Given $M>0$, choose $N=\\sqrt M$. If $x>N$, then $x$ is positive and squaring gives $x^2>M$. Thus the $M$–$N$ condition holds.",
+        "solutionTex": "M>0,\\quad N=\\sqrt M,\\quad x>N\\Longrightarrow x^2>M",
+        "rubric": [
+          "Choose a threshold for an arbitrary $M>0$.",
+          "Check that all inputs beyond it satisfy the target inequality."
+        ]
+      },
+      {
+        "id": "lecture10-horizontal-asymptote-tail-condition-transfer",
+        "outcome": "Identify a horizontal asymptote from either finite tail limit and keep the two ends separate.",
+        "kind": "conceptual",
+        "prompt": "For $g(x)=1+(x-1)/(x^2+1)$, find its horizontal asymptote and check whether the graph crosses it.",
+        "hint": "The added rational term tends to zero; set its numerator to zero for a crossing.",
+        "solution": "The added term tends to zero at both infinities, so $y=1$ is a horizontal asymptote on both tails. At $x=1$ the added term is zero, so the graph crosses the line at $(1,1)$.",
+        "solutionTex": "\\lim_{x\\to\\pm\\infty}g(x)=1,\\qquad g(1)=1",
+        "rubric": [
+          "Compute both tail limits.",
+          "Check a finite input for an intersection with the asymptote."
+        ]
+      },
+      {
+        "id": "lecture10-radical-tail-sign-transfer",
+        "outcome": "Evaluate radical quotients at both infinities by using |x|=x on the positive tail and |x|=-x on the negative tail.",
+        "kind": "computational",
+        "prompt": "Find both horizontal tail limits of $g(x)=\\sqrt{9x^2+4}/(2x+1)$.",
+        "hint": "Factor $|x|$ from the numerator and use the sign of $x$.",
+        "solution": "For positive $x$, the numerator behaves like $3x$ and the denominator like $2x$, giving $3/2$. For negative $x$, the numerator behaves like $-3x$ while the denominator behaves like $2x$, giving $-3/2$.",
+        "solutionTex": "\\lim_{x\\to\\infty}g(x)=\\frac32,\\qquad\\lim_{x\\to-\\infty}g(x)=-\\frac32",
+        "rubric": [
+          "Use $|x|$ when extracting a factor from the radical.",
+          "State the signed limit at each tail."
+        ]
+      },
+      {
+        "id": "lecture10-vertical-asymptote-one-sided-sign-transfer",
+        "outcome": "Confirm a vertical asymptote by checking whether at least one one-sided limit diverges.",
+        "kind": "computational",
+        "prompt": "Find the vertical asymptote and one-sided behavior of $g(x)=(2x+1)/(x-4)$.",
+        "hint": "The numerator is positive near 4; inspect the denominator on both sides.",
+        "solution": "The denominator vanishes at $x=4$ and the numerator is 9 there. From the right the denominator is positive and small, so the limit is positive infinity; from the left it is negative and small, so the limit is negative infinity.",
+        "solutionTex": "\\lim_{x\\to4^+}g(x)=\\infty,\\qquad\\lim_{x\\to4^-}g(x)=-\\infty",
+        "rubric": [
+          "Check that the numerator does not also vanish.",
+          "Determine the sign on both sides of the candidate."
+        ]
+      },
+      {
+        "id": "lecture10-slant-asymptote-remainder-transfer",
+        "outcome": "Find and verify a slant asymptote by showing that the difference between the curve and a line tends to zero.",
+        "kind": "computational",
+        "prompt": "Find the slant asymptote of $g(x)=(2x^3+x)/(2x^2-1)$ at both tails.",
+        "hint": "Divide to write $g(x)=x+\\frac{2x}{2x^2-1}$.",
+        "solution": "Division gives $g(x)=x+2x/(2x^2-1)$. The difference from $x$ tends to zero at either infinity, so the slant asymptote is $y=x$ on both tails.",
+        "solutionTex": "g(x)-x=\\frac{2x}{2x^2-1}\\longrightarrow0\\quad(x\\to\\pm\\infty)",
+        "rubric": [
+          "Show the quotient and remainder.",
+          "Verify the difference tends to zero at each claimed tail."
+        ]
+      },
+      {
+        "id": "lecture10-domain-and-intercepts-transfer",
+        "outcome": "Determine the real domain and coordinate-axis intercepts before analyzing the rest of a curve.",
+        "kind": "computational",
+        "prompt": "Find the domain and all intercepts of $g(x)=(x^2-4)/(x^2-1)$.",
+        "hint": "Factor numerator and denominator separately; exclude denominator zeros.",
+        "solution": "The domain excludes $x=\\pm1$. The zeros $x=\\pm2$ are in the domain, giving $x$-intercepts $(-2,0)$ and $(2,0)$. Since $g(0)=4$, the $y$-intercept is $(0,4)$.",
+        "solutionTex": "D=\\mathbb R\\setminus\\{-1,1\\},\\qquad g(0)=4,\\qquad g(\\pm2)=0",
+        "rubric": [
+          "Exclude denominator zeros from the domain.",
+          "List all $x$-intercepts and the $y$-intercept."
+        ]
+      },
+      {
+        "id": "lecture10-symmetry-and-domain-invariance-transfer",
+        "outcome": "Check even or odd symmetry only when the function domain is invariant under x ↦ -x.",
+        "kind": "method-choice",
+        "prompt": "Classify the symmetry of $p(x)=x/(x^2+1)$. Can $q(x)=1/(x-1)$ be classified as even or odd on its domain?",
+        "hint": "Check each domain under $x ↦ -x$ before comparing formulas.",
+        "solution": "$p$ has domain $\\mathbb R$ and $p(-x)=-p(x)$, so it is odd. $q$ has domain $\\mathbb R$ excluding 1, which is not invariant under reflection because $-1$ is in the domain but 1 is not. The stated even/odd identities therefore do not classify $q$ on its full domain.",
+        "solutionTex": "p(-x)=-p(x),\\qquad D_q=\\mathbb R\\setminus\\{1\\}",
+        "rubric": [
+          "Check domain invariance.",
+          "Use the correct identity for any valid classification."
+        ]
+      },
+      {
+        "id": "lecture10-asymptotes-in-sketch-checklist-transfer",
+        "outcome": "Use the appropriate tail or one-sided limit to distinguish horizontal, vertical, and slant asymptotes while assembling a sketch.",
+        "kind": "method-choice",
+        "prompt": "Classify the asymptotes of $h(x)=(x^2+1)/(x^2-4)$.",
+        "hint": "Find the domain first, then check one-sided behavior at excluded values and both tail limits.",
+        "solution": "The domain excludes $\\pm2$. The numerator is positive and the denominator changes sign at each excluded value, so $x=-2$ and $x=2$ are vertical asymptotes. Equal degrees give tail limit 1 at both ends, so $y=1$ is horizontal; there is no slant asymptote.",
+        "solutionTex": "x=\\pm2,\\qquad\\lim_{x\\to\\pm\\infty}h(x)=1",
+        "rubric": [
+          "Check both excluded denominator zeros one-sidedly.",
+          "Find tail behavior and name the correct line type."
+        ]
+      },
+      {
+        "id": "lecture10-monotonicity-in-curve-sketch-transfer",
+        "outcome": "Partition the domain at in-domain critical candidates and asymptotes, then use derivative signs to determine each curve branch’s direction.",
+        "kind": "computational",
+        "prompt": "Find the increasing and decreasing intervals of $g(x)=x^2/(x^2-4)$.",
+        "hint": "Differentiate and partition at $x=0$ and the excluded values $\\pm 2$.",
+        "solution": "$g'(x)=-8x/(x^2-4)^2$. It is positive when $x<0$ and negative when $x>0$. Therefore $g$ increases on $(-\\infty,-2)$ and $(-2,0)$, and decreases on $(0,2)$ and $(2,\\infty)$.",
+        "solutionTex": "g'(x)=-\\frac{8x}{(x^2-4)^2}",
+        "rubric": [
+          "Find derivative sign, including its negative factor.",
+          "Split the answer at both domain exclusions."
+        ]
+      },
+      {
+        "id": "lecture10-local-extrema-in-sketch-transfer",
+        "outcome": "Classify local extrema from neighboring derivative signs, not merely from stationary or excluded points.",
+        "kind": "computational",
+        "prompt": "Classify every local extremum of $p(x)=x^3-3x$.",
+        "hint": "Factor $p'$ and check signs on the three intervals.",
+        "solution": "$p'(x)=3(x-1)(x+1)$. The signs are positive, negative, positive across the intervals cut by $-1$ and 1. Thus $p$ has a local maximum $p(-1)=2$ and a local minimum $p(1)=-2$.",
+        "solutionTex": "p'(x)=3(x-1)(x+1),\\quad p(-1)=2,\\quad p(1)=-2",
+        "rubric": [
+          "Find all in-domain critical numbers.",
+          "Match both sign changes to extrema and evaluate $p$."
+        ]
+      },
+      {
+        "id": "lecture10-concavity-in-curve-sketch-transfer",
+        "outcome": "Determine concavity intervals and inflection points from a second-derivative sign chart, excluding points outside the domain.",
+        "kind": "computational",
+        "prompt": "Find the concavity intervals and inflection points of $q(x)=x^4-4x^2$.",
+        "hint": "Solve $q''=0$ and compare signs; substitute each root into $q$.",
+        "solution": "$q''(x)=12x^2-8$ vanishes at $x=\\pm\\sqrt{2/3}$. It is positive outside and negative between, so concavity changes at both values. Since $q(\\pm\\sqrt{2/3})=-20/9$, the inflection points are $(\\pm\\sqrt{2/3},-20/9)$.",
+        "solutionTex": "q''(x)=12x^2-8,\\qquad q(\\pm\\sqrt{2/3})=-20/9",
+        "rubric": [
+          "Report the concavity on each interval.",
+          "Evaluate $q$ at each sign-changing candidate."
+        ]
+      },
+      {
+        "id": "lecture10-assemble-curve-sketch-transfer",
+        "outcome": "Construct a coherent curve sketch by combining domain, intercepts, symmetry, asymptotes, monotonicity, extrema, and concavity.",
+        "kind": "method-choice",
+        "prompt": "Sketch $f(x)=2x^2/(x^2-4)$ from a complete feature list: domain, intercepts, symmetry, asymptotes, monotonicity, extrema, and concavity.",
+        "hint": "Use the domain components split by $\\pm 2$; compute $f'$ and $f''$ before drawing.",
+        "solution": "The domain excludes $\\pm 2$; the only intercept is $(0,0)$, and $f$ is even. There are vertical asymptotes $x=\\pm 2$ and horizontal asymptote $y=2$. Since $f'=-16x/(x^2-4)^2$, $f$ increases on $(-\\infty,-2)$ and $(-2,0)$ and decreases on $(0,2)$ and $(2,\\infty)$, giving a local maximum at $(0,0)$. Since $f''=16(3x^2+4)/(x^2-4)^3$, it is concave up for $|x|>2$ and down for $|x|<2$. There is no inflection point because the concavity changes only across excluded points.",
+        "solutionTex": "f'(x)=-\\frac{16x}{(x^2-4)^2},\\qquad f''(x)=\\frac{16(3x^2+4)}{(x^2-4)^3}",
+        "rubric": [
+          "Keep all three domain components separate.",
+          "Support each asymptote with its defining limit.",
+          "Use $f'$ and $f''$ signs for direction and concavity.",
+          "Do not mark excluded points as extrema or inflections."
+        ]
+      }
+    ]
   },
   "optimization-single": {
     "prerequisites": ["extrema-fermat", "derivative-tests"],

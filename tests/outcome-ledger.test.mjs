@@ -41,12 +41,14 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const chapter04Notes = /^MH1101_Chapter_04_Notes:0[1-4]$/.test(
         section.id,
       );
+      const lecture10 = /^MH1100_Lecture_10:0[1-4]$/.test(section.id);
       const mappedLecture =
         /^MH1100_Lecture_0[356]:/.test(section.id) ||
         lecture08 ||
         chapter04Notes;
       const pageVerified =
         /^MH1100_Lecture_0[3456]:/.test(section.id) ||
+        lecture10 ||
         lecture08 ||
         chapter04Notes;
       const lecture04 = section.id.startsWith("MH1100_Lecture_04:");
@@ -57,9 +59,11 @@ test("every core source has an explicit section inventory and honest gap", () =>
       assert.ok(section.gap);
       assert.ok(section.physical_pages_from_audit);
       assert.ok(
-        (pageVerified
-          ? ["mapped_with_reasoned_exclusions"]
-          : ["partial_atomic_mapping", "explicit_gap"]
+        (lecture10
+          ? ["mapped_with_reasoned_exclusions", "partial_atomic_mapping"]
+          : pageVerified
+            ? ["mapped_with_reasoned_exclusions"]
+            : ["partial_atomic_mapping", "explicit_gap"]
         ).includes(section.coverage_decision),
       );
       assert.deepEqual(
@@ -213,7 +217,7 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
           continue;
         }
         const guide = locator.match(
-          /^lib\/curriculum\/learning-guides\.json#([^.]+)\.(sections|contentBlocks|supplementalBlocks|exercises|exercise)(?:\[([^\]]+)\])?$/,
+          /^lib\/curriculum\/learning-guides\.json#([^.]+)\.(sections|contentBlocks|supplementalBlocks|exercises|exercise)(?:\[([^\]]+)\])?(\.title)?$/,
         );
         assert.ok(guide, locator);
         const lesson = guides[guide[1]];
@@ -228,6 +232,11 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
             (item) => item.id === guide[3],
           );
           assert.ok(block, locator);
+          if (guide[4] === ".title") {
+            assert.equal(state, "named", locator);
+            assert.ok(block.title, locator);
+            continue;
+          }
           assert.equal(
             state,
             block.kind === "worked-example" ? "worked" : "stated",
