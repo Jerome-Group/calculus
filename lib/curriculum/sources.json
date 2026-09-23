@@ -542,6 +542,22 @@
     "pages": 1,
     "course": "MH2100",
     "kind": "lecture",
-    "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc"
+    "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+    "errata": [
+      {
+        "page": 1,
+        "printed": "Under GENERALLY FALSE, the notes say that partial derivatives existing and continuous at p do not imply total differentiability.",
+        "correction": "State the derivative-domain hypothesis. If both partials exist throughout an open neighborhood and are continuous at p, total differentiability follows. The claim can fail when the partial functions are only defined on sparse domains and are continuous there at p.",
+        "justification": "The coordinate-segment mean-value proof establishes the neighborhood version. The guide's line-supported example shows failure under relative continuity on partial-derivative domains that omit a line. The PDF does not specify which interpretation its bullet intends.",
+        "provenance": "Canonical SHA-matched page visually inspected; proof and counterexample independently checked; source file unchanged."
+      },
+      {
+        "page": 1,
+        "printed": "The notes call the normalized-remainder characterization a complete algorithm for deciding total differentiability.",
+        "correction": "Call it a necessary-and-sufficient limit criterion. It is not an effective terminating algorithm for arbitrary functions unless a representation and a procedure for evaluating the limit are supplied.",
+        "justification": "The two-step test requires evaluating a multivariable limit and provides no method or termination guarantee for arbitrary f.",
+        "provenance": "Canonical SHA-matched page visually inspected; mathematical scope checked; source file unchanged."
+      }
+    ]
   }
 }

@@ -13504,6 +13504,38 @@
         "text": "When $f_x(a,b)$ and $f_y(a,b)$ exist, the supplement calls $L_{f,(a,b)}(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$ the tangent plane function. This formula defines the only possible affine first-order model. It is a proven linear approximation only if $|f(x,y)-L_{f,(a,b)}(x,y)|/\\|(x-a,y-b)\\|\\to0$ as $(x,y)\\to(a,b)$ through the domain."
       },
       {
+        "kind": "strategy",
+        "id": "supplement-necessary-consequences-statement",
+        "title": "Read the arrows from total differentiability",
+        "text": "The source lists three necessary consequences: total differentiability at $p$ implies continuity, both coordinate partials exist, and the tangent-plane function is the unique linear approximation. It separately lists neighborhood existence and continuity of the partials as sufficient. The following derivation proves the three consequences without reversing any arrow."
+      },
+      {
+        "kind": "derivation",
+        "id": "supplement-necessary-consequences",
+        "title": "A total derivative forces its necessary properties",
+        "strategy": "Start from one full-radius remainder expansion; then restrict to continuity, coordinate slices, and competing linear maps.",
+        "setup": "At an interior point $p$, write $f(p+h)=f(p)+L(h)+r(h)$, where $L$ is linear and $r(h)/\\|h\\|\\to0$.",
+        "steps": [
+          {
+            "label": "Continuity",
+            "text": "A linear map is bounded, so its contribution and the normalized remainder both vanish as $h\\to0$.",
+            "equation": "|f(p+h)-f(p)|\\le\\|L\\|\\,\\|h\\|+|r(h)|=\\bigl(\\|L\\|+o(1)\\bigr)\\|h\\|\\longrightarrow0"
+          },
+          {
+            "label": "Coordinate partials",
+            "text": "Set $h=te_i$ and divide by $t$. The remainder quotient tends to zero because $\\|te_i\\|=|t|$.",
+            "equation": "\\frac{f(p+te_i)-f(p)}{t}=L(e_i)+\\frac{r(te_i)}{t}\\longrightarrow L(e_i)"
+          },
+          {
+            "label": "Unique linear approximation",
+            "text": "If $M$ is another linear approximation, then $(L-M)(h)=o(\\|h\\|)$. Put $h=tv$ for each fixed $v$; linearity makes the quotient constant, so it must be zero.",
+            "equation": "\\frac{|(L-M)(tv)|}{\\|tv\\|}=\\frac{|(L-M)(v)|}{\\|v\\|}\\longrightarrow0\\quad(v\\ne0)"
+          }
+        ],
+        "result": "Total differentiability implies continuity, existence of both coordinate partials, and uniqueness of the first-order linear map. These are necessary consequences, not converses.",
+        "verification": "The source page states each implication but gives no proof. The derivation uses its full-distance remainder definition; the guide checks the three consequences independently."
+      },
+      {
         "kind": "theorem",
         "id": "partials-determine-candidate-map",
         "title": "A derivative forces the slice slopes",
@@ -13578,6 +13610,34 @@
           "Use one norm bound valid for every direction.",
           "Conclude from the normalized residual, not a plot."
         ]
+      },
+      {
+        "id": "derivative-consequences-transfer",
+        "outcome": "Use a verified total derivative to infer continuity and recover coordinate partials.",
+        "kind": "proof",
+        "prompt": "For $F(x,y)=1+2x-3y+(x^2+y^2)^{3/4}$ at the origin, verify total differentiability from its remainder, then use the necessary-consequences argument to state continuity and both partial derivatives.",
+        "hint": "With $r=\\sqrt{x^2+y^2}$, the nonlinear remainder is $r^{3/2}$, so its quotient by $r$ tends to zero.",
+        "solution": "$DF(0)(h,k)=2h-3k$ because $r^{3/2}/r=\\sqrt r\\to0$. Thus $F$ is totally differentiable and therefore continuous at zero. Restricting the linear map to the coordinate axes gives $F_x(0)=2$ and $F_y(0)=-3$.",
+        "solutionTex": "\\frac{(x^2+y^2)^{3/4}}{\\sqrt{x^2+y^2}}=\\sqrt{r}\\longrightarrow0,\\qquad F_x(0)=2,\\quad F_y(0)=-3",
+        "rubric": [
+          "Normalize the nonlinear remainder by the full Euclidean distance.",
+          "Use the verified total derivative to conclude continuity.",
+          "Read both partials from the coordinate directions."
+        ]
+      },
+      {
+        "id": "unique-linear-approximation-transfer",
+        "outcome": "Prove that two first-order linear approximations at one point must coincide.",
+        "kind": "proof",
+        "prompt": "At the origin let $G(x,y)=4+3x-2y+x^2+y^2$. Verify that $A(h,k)=3h-2k$ is a linear approximation, then prove that any other linear approximation $B$ equals $A$.",
+        "hint": "The residual of $A$ is $h^2+k^2$. Subtract the two small remainders, then test the difference on $(t,0)$ and $(0,t)$.",
+        "solution": "$G(h,k)-G(0,0)-A(h,k)=h^2+k^2$, whose quotient by $\\sqrt{h^2+k^2}$ tends to zero. If $B$ is also an approximation, then $(A-B)(h,k)=o(\\sqrt{h^2+k^2})$. Restricting to $(t,0)$ and $(0,t)$ shows both coefficients of $A-B$ vanish; hence $B=A$.",
+        "solutionTex": "\\frac{h^2+k^2}{\\sqrt{h^2+k^2}}=\\sqrt{h^2+k^2}\\longrightarrow0,\\qquad B=A",
+        "rubric": [
+          "Verify the first candidate with its normalized remainder.",
+          "Subtract the two approximation conditions.",
+          "Use coordinate directions to prove equality of linear maps."
+        ]
       }
     ],
     "sections": [
@@ -13620,7 +13680,7 @@
         "kind": "strategy",
         "id": "supplement-failed-implications",
         "title": "Keep the implications one-way",
-        "text": "The supplement warns that continuity at $p$ alone does not imply total differentiability. Existence of $f_x(p)$ and $f_y(p)$ does not imply continuity or prove that the candidate $L_{f,p}$ is a linear approximation. Even continuity of the partial-derivative functions merely at $p$ is not the neighborhood-existence hypothesis of the sufficient theorem. The continuous counterexample below defeats differentiability and approximation; the discontinuous zero extension in the concept card defeats continuity. The next lesson states the stronger neighborhood condition."
+        "text": "The one-page supplement lists four failed implications: continuity at $p$ does not force total differentiability; two partials at $p$ do not force continuity or make their candidate a linear approximation; and partial derivatives continuous at $p$ do not suffice without clarifying where they exist. The continuous example below separates continuity from differentiability and refutes the candidate. A zero extension supplies a distinct discontinuous example with two existing partials. The pointwise-continuity bullet needs a domain qualification: if both partials exist throughout an open neighborhood and are continuous at $p$, the MVT proof in the next route makes differentiability follow. The supplement does not state a counterexample or resolve this wording."
       },
       {
         "kind": "derivation",
@@ -13645,6 +13705,58 @@
         ],
         "result": "$q$ is continuous with all directional derivatives, yet not totally differentiable at zero.",
         "verification": "For $v=(a,b)\\ne0$, $D_vq(0)=a^3/(a^2+b^2)$ is not additive in $v$; a total derivative would be linear."
+      },
+      {
+        "kind": "derivation",
+        "id": "supplement-partials-without-continuity",
+        "title": "Two existing partials do not force continuity",
+        "strategy": "Use the axis slices to find both partials, then test the diagonal.",
+        "setup": "$u(x,y)=\\frac{xy}{x^2+y^2}$ away from the origin and $u(0,0)=0$.",
+        "steps": [
+          {
+            "label": "Find the coordinate partials",
+            "text": "Both coordinate-axis slices vanish, so $u_x(0,0)=u_y(0,0)=0$ and the candidate affine model is zero.",
+            "equation": "u(t,0)=u(0,t)=0"
+          },
+          {
+            "label": "Approach diagonally",
+            "text": "For every nonzero $t$, the diagonal value is $1/2$, while the value at the origin is zero.",
+            "equation": "u(t,t)=\\frac12\\quad(t\\ne0)"
+          },
+          {
+            "label": "Separate continuity from approximation",
+            "text": "The function is discontinuous, and its candidate residual divided by distance grows without bound on this path.",
+            "equation": "\\frac{|u(t,t)|}{\\sqrt{2t^2}}=\\frac{1}{2\\sqrt2|t|}\\longrightarrow\\infty"
+          }
+        ],
+        "result": "Existence of both coordinate partials at one point gives neither continuity nor a linear approximation there.",
+        "verification": "This distinct zero extension complements the continuous counterexample: together they separate the two failed implications listed on source page 1."
+      },
+      {
+        "kind": "derivation",
+        "id": "supplement-partial-domain-continuity",
+        "title": "Continuity on a partial's domain is not neighborhood existence",
+        "strategy": "Make the derivative functions continuous on their actual domains while leaving a line where the partials do not exist.",
+        "setup": "$w(x,y)=|x|$ when $y=x\\ne0$, and $w(x,y)=0$ otherwise.",
+        "steps": [
+          {
+            "label": "Find where the partials exist",
+            "text": "At the origin both axis slices are zero. Off the line $y=x$, the function is locally zero. At a nonzero point of that line, each coordinate slice has a jump, so neither partial exists. Thus both partial functions are defined on $D=\\mathbb R^2\\setminus\\{(t,t):t\\ne0\\}$.",
+            "equation": "w_x|_D=w_y|_D=0"
+          },
+          {
+            "label": "Check relative continuity",
+            "text": "Each partial function is identically zero on its domain, hence continuous at the origin relative to $D$.",
+            "equation": "\\lim_{(x,y)\\to(0,0),\\,(x,y)\\in D}w_x(x,y)=w_x(0,0)=0"
+          },
+          {
+            "label": "Check the function itself",
+            "text": "Along the omitted line, $w(t,t)=|t|\\to0$, so $w$ is continuous at the origin. Its candidate is zero, but the normalized residual stays nonzero; the partials also fail to exist on any full neighborhood.",
+            "equation": "\\frac{|w(t,t)-w(0,0)|}{\\sqrt{2t^2}}=\\frac{1}{\\sqrt2}"
+          }
+        ],
+        "result": "The source pointwise-partial-continuity warning is valid when partial derivatives are continuous only on sparse domains that omit nearby points. With both partials defined on an open neighborhood and continuous at the point, the standard sufficient theorem applies.",
+        "verification": "The one-page source labels this implication false but gives no witness. This counterexample uses continuity on the derivative functions' domains; it does not contradict the neighborhood theorem stated in section :03."
       }
     ],
     "exercises": [
@@ -13660,6 +13772,34 @@
           "Use definitions on the axes.",
           "Normalize the diagonal remainder by Euclidean distance.",
           "Prove continuity with an all-direction bound."
+        ]
+      },
+      {
+        "id": "partial-discontinuity-transfer",
+        "outcome": "Disprove the implication from existence of two coordinate partials to continuity.",
+        "kind": "counterexample",
+        "prompt": "Define $v(x,y)=\\frac{2xy}{x^2+3y^2}$ away from the origin and $v(0,0)=0$. Find both partials at the origin, then test continuity along $y=x$.",
+        "hint": "Restrict to each coordinate axis for the partials. On the diagonal, simplify before taking the limit.",
+        "solution": "Both axis restrictions are zero, so $v_x(0,0)=v_y(0,0)=0$. But $v(t,t)=1/2$ for $t\\ne0$, so $v$ is not continuous at the origin. The partials at the point do not imply continuity.",
+        "solutionTex": "v_x(0,0)=v_y(0,0)=0,\\qquad v(t,t)=\\frac12\\not\\longrightarrow v(0,0)",
+        "rubric": [
+          "Compute each partial from its coordinate slice.",
+          "Use a path limit to decide continuity.",
+          "Separate pointwise partial existence from continuity of the function."
+        ]
+      },
+      {
+        "id": "partial-domains-transfer",
+        "outcome": "Distinguish continuity of partial functions on their domains from their existence throughout a neighborhood.",
+        "kind": "counterexample",
+        "prompt": "Let $g(x,y)=2|x|$ when $y=2x\\ne0$, and $g(x,y)=0$ otherwise. At the origin, determine where $g_x$ and $g_y$ exist, whether each partial function is continuous there on its domain, and whether $g$ is continuous or totally differentiable.",
+        "hint": "Check the axes, an off-line point, a nonzero point on $y=2x$, and then the path $(t,2t)$.",
+        "solution": "Both partials at the origin are zero. At every point off $y=2x$, the function is locally zero; at each nonzero point on the line, the coordinate slices jump, so the partials do not exist. Their domains omit that line except the origin, and both partial functions are zero on those domains, hence continuous at the origin relative to their domains. The function is also continuous at the origin because $g(t,2t)=2|t|\\to0$. However, $|g(t,2t)|/\\sqrt{t^2+4t^2}=2/\\sqrt5$, so it is not totally differentiable.",
+        "solutionTex": "g_x(0,0)=g_y(0,0)=0,\\qquad\\frac{|g(t,2t)|}{\\sqrt{t^2+(2t)^2}}=\\frac{2}{\\sqrt5}\\not\\to0",
+        "rubric": [
+          "Find the natural domains of both partial-derivative functions.",
+          "State the topology used for continuity at the origin.",
+          "Use the missing neighborhood and the diagonal path to reject differentiability."
         ]
       }
     ],
@@ -13711,6 +13851,37 @@
         "id": "criterion-versus-direct-remainder",
         "title": "Choose the proof route",
         "text": "The $C^1$ criterion is sufficient, not necessary. If its neighborhood hypotheses fail, it gives no verdict; compute the unique candidate from partials and test the normalized residual directly. The exact final-review pair lets you compare a successful all-direction bound with a failed diagonal bound."
+      },
+      {
+        "kind": "derivation",
+        "id": "supplement-neighborhood-partials-mvt-proof",
+        "title": "Why the neighborhood criterion works",
+        "strategy": "Split the increment into coordinate moves, apply the one-variable mean-value theorem, and normalize the remainder.",
+        "setup": "Assume both partial derivatives exist on an open neighborhood of $p=(a,b)$ and are continuous at $p$. Let $r=\\sqrt{h^2+k^2}$.",
+        "steps": [
+          {
+            "label": "Split the increment",
+            "text": "For small increments, both axis-parallel segments stay inside the neighborhood.",
+            "equation": "f(a+h,b+k)-f(a,b)=\\bigl[f(a+h,b+k)-f(a,b+k)\\bigr]+\\bigl[f(a,b+k)-f(a,b)\\bigr]"
+          },
+          {
+            "label": "Apply the mean-value theorem",
+            "text": "For some $\\theta,\\eta\\in(0,1)$, the two changes use partial derivatives at points that approach $p$.",
+            "equation": "f(a+h,b+k)-f(a,b)=f_x(a+\\theta h,b+k)h+f_y(a,b+\\eta k)k"
+          },
+          {
+            "label": "Subtract the candidate linear map",
+            "text": "The candidate is $Df(p)(h,k)=f_x(p)h+f_y(p)k$. Continuity at $p$ makes both coefficient errors tend to zero.",
+            "equation": "R(h,k)=\\bigl(f_x(a+\\theta h,b+k)-f_x(p)\\bigr)h+\\bigl(f_y(a,b+\\eta k)-f_y(p)\\bigr)k"
+          },
+          {
+            "label": "Bound every direction",
+            "text": "Cauchy–Schwarz bounds the error by the Euclidean size of its two coefficient errors, uniformly over all increments.",
+            "equation": "\\frac{|R(h,k)|}{r}\\le\\sqrt{\\bigl|f_x(a+\\theta h,b+k)-f_x(p)\\bigr|^2+\\bigl|f_y(a,b+\\eta k)-f_y(p)\\bigr|^2}\\longrightarrow0"
+          }
+        ],
+        "result": "The neighborhood existence plus continuity-at-$p$ hypothesis proves total differentiability. Continuity throughout the whole neighborhood is stronger than necessary.",
+        "verification": "The source states the sufficient criterion but supplies no proof. This guide derivation fills that gap and explains why the adjacent pointwise-continuity claim needs its partial-derivative domains stated."
       }
     ],
     "relatedStep": {
@@ -13765,7 +13936,7 @@
     "sections": [
       {
         "title": "A useful sufficient theorem",
-        "text": "If all first partial derivatives exist on a neighborhood and are continuous at a, then $f$ is differentiable at a. This $C^1$ criterion is sufficient, not necessary. Partial derivatives existing only at a do not satisfy it."
+        "text": "If both first partials exist throughout an open neighborhood and are continuous at $a$, then $f$ is differentiable at $a$. This is sufficient, not necessary. Partial functions continuous on sparse domains do not meet the existence hypothesis, while neighborhood existence makes continuity at $a$ alone sufficient."
       },
       {
         "title": "Finite versus asymptotic error",

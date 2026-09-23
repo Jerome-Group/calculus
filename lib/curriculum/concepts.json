@@ -4130,6 +4130,11 @@
         "detail": "Total Differentiability — Example 1 (cont’d)"
       },
       {
+        "sourceId": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "pages": [1, 1],
+        "detail": "Candidate tangent-plane function and full-distance differentiability criterion"
+      },
+      {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives",
         "pages": [43, 72],
         "detail": "Optional: Stewart, §14.4–14.6; PDF pages within the supplied chapter extract"
@@ -4200,7 +4205,7 @@
       {
         "sourceId": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
         "pages": [1, 1],
-        "detail": "Counterexamples to implications between partial derivatives, continuity and total differentiability"
+        "detail": "Page lists implications among partial derivatives, continuity and total differentiability; it supplies no counterexamples and one implication needs a derivative-domain qualification."
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives",
@@ -4260,6 +4265,11 @@
         "sourceId": "MH2100_Lecture_03",
         "pages": [26, 26],
         "detail": "Total Differentiability — Example 3"
+      },
+      {
+        "sourceId": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "pages": [1, 1],
+        "detail": "Neighborhood partial-derivative criterion; page states theorem without proof"
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives",

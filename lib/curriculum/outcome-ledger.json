@@ -8312,8 +8312,8 @@
       "topic_from_audit_inventory": "Candidate tangent-plane function",
       "physical_pages_from_audit": "1",
       "linked_concept_ids": ["total-differentiability"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "One source-specific atomic outcome is mapped. The candidate formula is stated and a polynomial residual is worked; the source does not prove that every candidate is a genuine approximation. Scene and learner checks remain unverified; this section is not certified complete.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_added_with_evidence_limits",
+      "gap": "Physical page 1 states the affine candidate formula under existence of both partials. It gives no worked residual or proof that the candidate is an approximation; guide work supplies a checked quadratic illustration and a different transfer task. The named scene is unverified for this outcome, and learner performance is unobserved.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -8322,8 +8322,8 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
       "atomic_outcome_ids": [
         "total-differentiability:candidate-plane-function"
       ],
@@ -8333,11 +8333,11 @@
       "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
       "source_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
       "kind": "core_supplement",
-      "topic_from_audit_inventory": "failed implications",
+      "topic_from_audit_inventory": "generally-false and always-true implications",
       "physical_pages_from_audit": "1",
       "linked_concept_ids": ["partials-do-not-make-a-plane"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "One source-specific atomic outcome is mapped. The continuous counterexample and task verify some failed converses. The source’s pointwise-continuity-of-partials warning is stated but lacks a worked counterexample here. Scene and learner checks remain unverified; this section is not certified complete.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_added_with_evidence_limits",
+      "gap": "Physical page 1 lists four generally-false and four always-true implications. The guide adds checked counterexample contrasts plus proofs and transfer tasks for the true consequences. The partial-continuity bullet needs a derivative-domain qualification: continuity at p with neighborhood existence is sufficient, while relative continuity on sparse derivative domains is not; the neighborhood theorem is mapped in section :03. The source supplies no counterexample or proof, and no outcome-level scene or learner performance is verified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -8346,10 +8346,16 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
       "atomic_outcome_ids": [
-        "partials-do-not-make-a-plane:failed-implications"
+        "partials-do-not-make-a-plane:failed-implications",
+        "partials-do-not-make-a-plane:partials-do-not-imply-continuity",
+        "partials-do-not-make-a-plane:partials-do-not-imply-approximation",
+        "certifying-differentiability-and-errors:partial-domain-neighborhood-condition",
+        "total-differentiability:supplement-derivative-implies-continuity",
+        "total-differentiability:supplement-derivative-implies-coordinate-partials",
+        "total-differentiability:supplement-unique-linear-approximation"
       ],
       "coverage_decision": "partial_atomic_mapping"
     },
@@ -8360,8 +8366,8 @@
       "topic_from_audit_inventory": "sufficient differentiability criterion",
       "physical_pages_from_audit": "1",
       "linked_concept_ids": ["certifying-differentiability-and-errors"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "One source-specific atomic outcome is mapped. The imported sufficient theorem and independent application are present; this supplement gives no proof or worked numeric example, and neither is attributed to it. Scene and learner checks remain unverified; this section is not certified complete.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_added_with_evidence_limits",
+      "gap": "Physical page 1 states the sufficient criterion but provides no proof or worked application. The guide adds a coordinate-segment MVT proof and independent transfer tasks; a direct remainder example shows the criterion is sufficient rather than necessary. No scene or learner performance is verified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -8370,8 +8376,8 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
       "atomic_outcome_ids": [
         "certifying-differentiability-and-errors:neighborhood-partials-criterion"
       ],
@@ -8384,8 +8390,8 @@
       "topic_from_audit_inventory": "normalized-remainder algorithm",
       "physical_pages_from_audit": "1",
       "linked_concept_ids": ["total-differentiability"],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "One source-specific atomic outcome is mapped. The successful all-direction bound is worked and practiced. A failed diagonal is taught in the next lesson; no learner performance check is recorded. Scene and learner checks remain unverified; this section is not certified complete.",
+      "outcome_status": "source_pages_reviewed_atomic_mapping_added_with_evidence_limits",
+      "gap": "Physical page 1 gives the full-distance normalized-remainder criterion but no worked calculation. The guide checks one all-direction success and a different transfer problem; a failed diagonal appears on the adjacent route. The printed phrase “complete algorithm” is documented as a limit criterion, not a terminating procedure for every function. Scene and learner checks remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -8394,8 +8400,8 @@
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
       "atomic_outcome_ids": [
         "total-differentiability:normalized-remainder-decision"
       ],
@@ -15171,27 +15177,22 @@
     {
       "id": "total-differentiability:candidate-plane-function",
       "concept_id": "total-differentiability",
-      "outcome": "Construct the source-defined candidate tangent plane function from two existing coordinate partials, without claiming differentiability.",
+      "outcome": "Construct the source-defined affine candidate from both coordinate partials without asserting that its normalized residual tends to zero.",
       "core_source": {
         "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
         "physical_page": 1,
-        "inspection": "Canonical local PDF text and rendered physical page 1 visually checked.",
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [1],
-          "method": "pdftotext -layout and visual inspection of rendered PDF physical page 1.",
-          "claim_observed": "The page explicitly gives the candidate plane formula, false implications, sufficient neighborhood criterion, and full-distance normalized-remainder algorithm."
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
         },
         "page_heading": "Notes on Partial Derivatives and Total Differentiability"
       },
       "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#total-differentiability.title",
-            "claim": "The total-differentiability route names the target concept.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[candidate-plane-is-not-yet-approximation]",
@@ -15203,14 +15204,14 @@
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[total-polynomial-remainder]",
             "claim": "A quadratic’s exact residual is normalized by full input distance.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Independently checked the guide quadratic expansion as an illustration; the source states the candidate formula but gives no worked residual example."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[uniform-mixed-remainder]",
             "claim": "A different polynomial asks for the candidate and an all-direction bound.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Checked that the different polynomial task requires constructing the candidate and proving a full-radius bound; learner performance is unobserved."
           }
         ],
         "visualized": [],
@@ -15222,15 +15223,10 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "The candidate formula is stated and a polynomial residual is worked; the source does not prove that every candidate is a genuine approximation. Scene behavior and independent learner performance remain unverified.",
+      "gap": "The source states the candidate formula but provides no worked example. The guide supplies a quadratic illustration and a different polynomial transfer task. The source does not prove that every candidate is a genuine approximation. The route title names only the parent topic; scene alignment and learner performance remain unverified.",
       "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:01",
       "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#total-differentiability.title",
-            "basis": "Current catalog or guide inspection against source physical page 1."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[candidate-plane-is-not-yet-approximation]",
@@ -15240,54 +15236,49 @@
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[total-polynomial-remainder]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Guide-authored quadratic illustration independently checked against the source candidate and remainder criterion; not attributed as source work."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[uniform-mixed-remainder]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Independent polynomial task checked for all-direction reasoning; learner performance unobserved."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual source-page, guide, and mathematical claim comparison.",
-        "named": "match",
-        "stated": "match",
-        "worked": "guide derivation inspected",
-        "practiced": "independent task present; learner performance unverified",
-        "visualized": "No outcome-level scene check.",
-        "checked": "No independent learner check."
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "The guide quadratic residual was independently recalculated; no source example is claimed.",
+        "practiced": "The exercise uses a different polynomial and a full-radius proof; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
       }
     },
     {
       "id": "partials-do-not-make-a-plane:failed-implications",
       "concept_id": "partials-do-not-make-a-plane",
-      "outcome": "Reject converses from continuity or pointwise partial derivatives to total differentiability or a genuine approximation.",
+      "outcome": "Use a continuous function to reject continuity as a sufficient condition for total differentiability.",
       "core_source": {
         "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
         "physical_page": 1,
-        "inspection": "Canonical local PDF text and rendered physical page 1 visually checked.",
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [1],
-          "method": "pdftotext -layout and visual inspection of rendered PDF physical page 1.",
-          "claim_observed": "The page explicitly gives the candidate plane formula, false implications, sufficient neighborhood criterion, and full-distance normalized-remainder algorithm."
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
         },
         "page_heading": "Notes on Partial Derivatives and Total Differentiability"
       },
       "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#partials-do-not-make-a-plane.title",
-            "claim": "The route names the partial-derivative obstruction.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
-            "claim": "The lesson names the supplement’s false converses and the missing neighborhood condition.",
+            "claim": "The guide records the page’s claim that continuity at p does not imply total differentiability.",
             "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
           }
         ],
@@ -15295,14 +15286,14 @@
           {
             "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[directional-counterexample-obstruction]",
             "claim": "A continuous function with partials has a nonvanishing diagonal normalized residual.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Independently checked the continuous function, its candidate map and diagonal residual; the page itself gives no counterexample."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[candidate-plane-transfer]",
             "claim": "A distinct rational counterexample tests partials, continuity, and the candidate residual.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Checked that an independent rational function task requires a continuity proof and a normalized path test; learner performance is unobserved."
           }
         ],
         "visualized": [],
@@ -15314,15 +15305,10 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "The continuous counterexample and task verify some failed converses. The source’s pointwise-continuity-of-partials warning is stated but lacks a worked counterexample here. Scene behavior and independent learner performance remain unverified.",
+      "gap": "The source lists continuity at p as insufficient but gives no witness. The guide checks a continuous counterexample with a nonzero diagonal normalized residual. No scene or independent learner check is verified.",
       "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
       "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#partials-do-not-make-a-plane.title",
-            "basis": "Current catalog or guide inspection against source physical page 1."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
@@ -15332,24 +15318,24 @@
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[directional-counterexample-obstruction]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Guide-authored continuous counterexample independently checked; source only lists the failed implication."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[candidate-plane-transfer]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Independent transfer problem checked; learner performance unobserved."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual source-page, guide, and mathematical claim comparison.",
-        "named": "match",
-        "stated": "match",
-        "worked": "guide derivation inspected",
-        "practiced": "independent task present; learner performance unverified",
-        "visualized": "No outcome-level scene check.",
-        "checked": "No independent learner check."
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "The continuous counterexample and its residual were independently recomputed; source gives no worked witness.",
+        "practiced": "The distinct rational function task requires deciding continuity and testing a path residual; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
       }
     },
     {
@@ -15359,36 +15345,37 @@
       "core_source": {
         "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
         "physical_page": 1,
-        "inspection": "Canonical local PDF text and rendered physical page 1 visually checked.",
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [1],
-          "method": "pdftotext -layout and visual inspection of rendered PDF physical page 1.",
-          "claim_observed": "The page explicitly gives the candidate plane formula, false implications, sufficient neighborhood criterion, and full-distance normalized-remainder algorithm."
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
         },
         "page_heading": "Notes on Partial Derivatives and Total Differentiability"
       },
       "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#certifying-differentiability-and-errors.title",
-            "claim": "The certification route names a sufficient criterion.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.supplementalBlocks[continuous-partials-sufficient-theorem]",
-            "claim": "The imported theorem requires partials throughout a neighborhood and continuity at the point.",
+            "claim": "The source states that neighborhood existence of both partials plus continuity around p is sufficient; the guide makes explicit that continuity at p suffices when neighborhood existence is given.",
             "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.supplementalBlocks[supplement-neighborhood-partials-mvt-proof]",
+            "claim": "A coordinate-segment mean-value proof derives the sufficient criterion and normalizes the remainder over every increment.",
+            "method": "Independently derived the proof from the one-variable mean-value theorem; the source states the criterion but supplies no proof."
+          }
+        ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.exercises[continuous-partials-neighborhood-transfer]",
             "claim": "A smooth nonpolynomial task computes the plane and explicitly checks the neighborhood hypothesis.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Checked that a smooth nonpolynomial transfer task computes the plane and verifies neighborhood existence; learner performance is unobserved."
           }
         ],
         "visualized": [],
@@ -15400,15 +15387,10 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "The imported sufficient theorem and independent application are present; this supplement gives no proof or worked numeric example, and neither is attributed to it. Scene behavior and independent learner performance remain unverified.",
+      "gap": "The page states a sufficient criterion but gives no proof or worked application. The guide now supplies a coordinate mean-value proof, a smooth transfer task, and a differentiable example where the criterion is unavailable, showing it is not necessary. No outcome scene or independent learner check is verified.",
       "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:03",
       "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#certifying-differentiability-and-errors.title",
-            "basis": "Current catalog or guide inspection against source physical page 1."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.supplementalBlocks[continuous-partials-sufficient-theorem]",
@@ -15418,44 +15400,45 @@
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.exercises[continuous-partials-neighborhood-transfer]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Independent smooth-function task checks the theorem hypotheses; learner performance unobserved."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#certifying-differentiability-and-errors.supplementalBlocks[supplement-neighborhood-partials-mvt-proof]",
+            "basis": "New guide proof derived from MVT under the source theorem’s neighborhood and pointwise-continuity assumptions."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual source-page, guide, and mathematical claim comparison.",
-        "named": "match",
-        "stated": "match",
-        "worked": "No worked evidence attributed to this source outcome.",
-        "practiced": "independent task present; learner performance unverified",
-        "visualized": "No outcome-level scene check.",
-        "checked": "No independent learner check."
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "A new mean-value proof was derived and checked; it is guide-authored, not source work.",
+        "practiced": "A smooth transfer task checks the neighborhood hypothesis; a second task demonstrates sufficiency is not necessity; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
       }
     },
     {
       "id": "total-differentiability:normalized-remainder-decision",
       "concept_id": "total-differentiability",
-      "outcome": "Decide total differentiability by computing coordinate partials and then testing the candidate error divided by the full input distance.",
+      "outcome": "Decide total differentiability by forming the candidate and testing its error divided by the full input distance over all approaches.",
       "core_source": {
         "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
         "physical_page": 1,
-        "inspection": "Canonical local PDF text and rendered physical page 1 visually checked.",
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
         "page_validation": {
           "status": "page_verified",
           "pages": [1],
-          "method": "pdftotext -layout and visual inspection of rendered PDF physical page 1.",
-          "claim_observed": "The page explicitly gives the candidate plane formula, false implications, sufficient neighborhood criterion, and full-distance normalized-remainder algorithm."
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
         },
         "page_heading": "Notes on Partial Derivatives and Total Differentiability"
       },
       "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#total-differentiability.title",
-            "claim": "The total-differentiability route names the decision.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.sections[One linear map for all increments]",
@@ -15467,14 +15450,14 @@
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[total-polynomial-remainder]",
             "claim": "An exact quadratic expansion gives a direction-independent normalized error tending to zero.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Independently expanded the guide quadratic and verified its full-radius bound; the source states the criterion but has no worked residual example."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[uniform-mixed-remainder]",
             "claim": "A different polynomial asks for coordinate partials and a uniform normalized bound.",
-            "method": "Compared the current catalog or guide block with the rendered source page 1; learner performance not inferred."
+            "method": "Checked a different polynomial transfer task for a direction-independent bound; learner performance is unobserved."
           }
         ],
         "visualized": [],
@@ -15486,15 +15469,10 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "The successful all-direction bound is worked and practiced. A failed diagonal is taught in the next lesson; no learner performance check is recorded. Scene behavior and independent learner performance remain unverified.",
+      "gap": "The source supplies a necessary-and-sufficient full-distance limit criterion, not an effective terminating algorithm for arbitrary functions. The guide checks one successful all-direction bound and a distinct transfer task; a failed diagonal appears in the adjacent route. No scene or learner performance is verified.",
       "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:04",
       "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#total-differentiability.title",
-            "basis": "Current catalog or guide inspection against source physical page 1."
-          }
-        ],
+        "named": [],
         "stated": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.sections[One linear map for all increments]",
@@ -15504,24 +15482,24 @@
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[total-polynomial-remainder]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Guide-authored quadratic example checked as an illustration of the source test, not source-provided worked work."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[uniform-mixed-remainder]",
-            "basis": "Current catalog or guide inspection against source physical page 1."
+            "basis": "Different polynomial exercise checked; learner performance unobserved."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual source-page, guide, and mathematical claim comparison.",
-        "named": "match",
-        "stated": "match",
-        "worked": "guide derivation inspected",
-        "practiced": "independent task present; learner performance unverified",
-        "visualized": "No outcome-level scene check.",
-        "checked": "No independent learner check."
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "The quadratic residual bound was independently checked; the source has no worked example.",
+        "practiced": "The independent polynomial task requires a bound valid in all directions; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
       }
     },
     {
@@ -36082,6 +36060,498 @@
         "practiced": "task and solution checked; learner performance unverified",
         "visualized": "Candidate scene exists, but no outcome-level visual alignment check was performed.",
         "checked": "No independent learner performance check was performed."
+      }
+    },
+    {
+      "id": "partials-do-not-make-a-plane:partials-do-not-imply-continuity",
+      "concept_id": "partials-do-not-make-a-plane",
+      "outcome": "Use two existing coordinate partials and a path limit to reject continuity as a consequence of partial existence at one point.",
+      "core_source": {
+        "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "physical_page": 1,
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1],
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
+        },
+        "page_heading": "Notes on Partial Derivatives and Total Differentiability"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
+            "claim": "The guide records the source’s false implication from two coordinate partials at p to continuity at p.",
+            "method": "Compared the source page statement with the guide explanation; no source learner result inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-partials-without-continuity]",
+            "claim": "A zero extension has both partials equal to zero at the origin but diagonal values equal to one half.",
+            "method": "Independently calculated the axis partials and diagonal limit; source lists the false implication but gives no counterexample."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[partial-discontinuity-transfer]",
+            "claim": "A distinct rational transfer problem asks for both partials and a path-based continuity decision.",
+            "method": "Recomputed the task’s axis and diagonal values; learner performance is unobserved."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "differential",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source lists the failed implication without a witness. The guide adds an independently checked zero extension and a different rational practice task. The parent concept title is not counted as an atomic name; no scene or learner check is verified.",
+      "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
+      "candidate_blocks": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
+            "basis": "Source page 1 claim compared with the cited guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-partials-without-continuity]",
+            "basis": "Independently calculated the axis partials and diagonal limit; source lists the false implication but gives no counterexample."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[partial-discontinuity-transfer]",
+            "basis": "Recomputed the task’s axis and diagonal values; learner performance is unobserved."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "The guide counterexample was independently recalculated; source gives no worked witness.",
+        "practiced": "A distinct rational function task requires both partial calculations and a path test; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
+      }
+    },
+    {
+      "id": "partials-do-not-make-a-plane:partials-do-not-imply-approximation",
+      "concept_id": "partials-do-not-make-a-plane",
+      "outcome": "Reject the claim that the affine function determined by two partials must be a linear approximation.",
+      "core_source": {
+        "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "physical_page": 1,
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1],
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
+        },
+        "page_heading": "Notes on Partial Derivatives and Total Differentiability"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
+            "claim": "The guide records the source’s false implication from two partials to a genuine linear approximation.",
+            "method": "Compared the source page statement with the guide explanation; no source learner result inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[directional-counterexample-obstruction]",
+            "claim": "A continuous function has candidate L(x,y)=x, but its diagonal normalized residual is the nonzero constant 1/(2√2).",
+            "method": "Recomputed its axis partials, candidate, continuity bound and diagonal residual; source lists the failure but gives no example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[candidate-plane-transfer]",
+            "claim": "A different continuous rational function asks for its partials and normalized diagonal error.",
+            "method": "Independently checked the transfer’s partials and residual; learner performance is unobserved."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "differential",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source states that the candidate need not be an approximation but supplies no example. The guide supplies a continuous counterexample and independent rational transfer. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
+      "candidate_blocks": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
+            "basis": "Source page 1 claim compared with the cited guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[directional-counterexample-obstruction]",
+            "basis": "Recomputed its axis partials, candidate, continuity bound and diagonal residual; source lists the failure but gives no example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[candidate-plane-transfer]",
+            "basis": "Independently checked the transfer’s partials and residual; learner performance is unobserved."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "Candidate and full-distance residual were independently checked; source provides no witness.",
+        "practiced": "A distinct function asks for partials, continuity and a normalized path residual; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
+      }
+    },
+    {
+      "id": "certifying-differentiability-and-errors:partial-domain-neighborhood-condition",
+      "concept_id": "certifying-differentiability-and-errors",
+      "outcome": "Distinguish partial functions continuous at p on sparse domains from the sufficient condition that both partials exist throughout an open neighborhood.",
+      "core_source": {
+        "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "physical_page": 1,
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1],
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
+        },
+        "page_heading": "Notes on Partial Derivatives and Total Differentiability"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
+            "claim": "The guide records the source’s pointwise partial-continuity warning and explains that its derivative-domain hypothesis is unstated.",
+            "method": "Compared the source page statement with the guide explanation; no source learner result inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-partial-domain-continuity]",
+            "claim": "A line-supported function has zero partial functions continuous at the origin on their domains, yet is itself continuous but not differentiable and lacks neighborhood partial existence.",
+            "method": "Checked the natural domains of both partials, their relative continuity, and the omitted-line path; source gives no witness."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[partial-domains-transfer]",
+            "claim": "A different line-supported function asks learners to identify partial domains, relative continuity, and differentiability.",
+            "method": "Independently checked its domains and path residual; learner performance is unobserved."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "tangent",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source labels pointwise continuity of partials insufficient but does not define the domains or provide a witness. The guide states both readings, proves the neighborhood theorem in section :03, and adds checked examples. The route title names only the parent topic; no scene or learner check is verified.",
+      "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
+      "candidate_blocks": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-failed-implications]",
+            "basis": "Source page 1 claim compared with the cited guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.supplementalBlocks[supplement-partial-domain-continuity]",
+            "basis": "Continuous sparse-domain counterexample checked; it clarifies ambiguity without contradicting the stronger neighborhood theorem."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partials-do-not-make-a-plane.exercises[partial-domains-transfer]",
+            "basis": "Independently checked its domains and path residual; learner performance is unobserved."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical rendered source page with the cited route blocks and independently checked their mathematical claims.",
+        "named": "The route names the parent topic only; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source statement and guide explanation were checked against the same physical page.",
+        "worked": "The guide counterexample is continuous but not differentiable; its partials are zero and continuous on domains that omit a line.",
+        "practiced": "A different line-supported task tests domain versus neighborhood hypotheses; learner performance is unobserved.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
+      }
+    },
+    {
+      "id": "total-differentiability:supplement-derivative-implies-continuity",
+      "concept_id": "total-differentiability",
+      "outcome": "Use the total-differentiability remainder to prove continuity at the point.",
+      "core_source": {
+        "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "physical_page": 1,
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1],
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
+        },
+        "page_heading": "Notes on Partial Derivatives and Total Differentiability"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences-statement]",
+            "claim": "The source states that total differentiability implies continuity.",
+            "method": "Compared the printed implication on physical page 1 with its guide restatement; no learner performance inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences]",
+            "claim": "The guide bounds the function increment by the bounded linear term plus a vanishing normalized remainder.",
+            "method": "Independently checked the definition-based proof; the source states this consequence without a proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[derivative-consequences-transfer]",
+            "claim": "The transfer exercise verifies a remainder condition and infers continuity.",
+            "method": "Checked that the independent exercise requires the stated inference; learner performance is unobserved."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "tangent",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page states this always-true consequence but supplies no proof. The guide adds a checked definition-based derivation and an independent transfer exercise. The route title names only the parent topic; no outcome scene or learner performance is verified.",
+      "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
+      "candidate_blocks": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences-statement]",
+            "basis": "The source implication was matched to the route derivation."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences]",
+            "basis": "The guide proof was independently checked; the PDF provides no proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[derivative-consequences-transfer]",
+            "basis": "The exercise transfers this consequence to a separate function; learner performance is unobserved."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical rendered source page with the cited guide block and independently checked the proof and task.",
+        "named": "The route title names only the parent topic; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source states that total differentiability implies continuity.",
+        "worked": "The guide bounds the function increment by the bounded linear term plus a vanishing normalized remainder.",
+        "practiced": "The transfer exercise verifies a remainder condition and infers continuity.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
+      }
+    },
+    {
+      "id": "total-differentiability:supplement-derivative-implies-coordinate-partials",
+      "concept_id": "total-differentiability",
+      "outcome": "Recover each coordinate partial from the total derivative by restricting to its basis direction.",
+      "core_source": {
+        "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "physical_page": 1,
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1],
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
+        },
+        "page_heading": "Notes on Partial Derivatives and Total Differentiability"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences-statement]",
+            "claim": "The source states that total differentiability implies existence of both coordinate partials.",
+            "method": "Compared the printed implication on physical page 1 with its guide restatement; no learner performance inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences]",
+            "claim": "The guide restricts the normalized expansion to h=te_i and recovers L(e_i) as the coordinate partial.",
+            "method": "Independently checked the definition-based proof; the source states this consequence without a proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[derivative-consequences-transfer]",
+            "claim": "The transfer exercise recovers both coordinate partials from the verified linear map.",
+            "method": "Checked that the independent exercise requires the stated inference; learner performance is unobserved."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "tangent",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page states this always-true consequence but supplies no proof. The guide adds a checked definition-based derivation and an independent transfer exercise. The route title names only the parent topic; no outcome scene or learner performance is verified.",
+      "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
+      "candidate_blocks": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences-statement]",
+            "basis": "The source implication was matched to the route derivation."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences]",
+            "basis": "The guide proof was independently checked; the PDF provides no proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[derivative-consequences-transfer]",
+            "basis": "The exercise transfers this consequence to a separate function; learner performance is unobserved."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical rendered source page with the cited guide block and independently checked the proof and task.",
+        "named": "The route title names only the parent topic; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source states that total differentiability implies existence of both coordinate partials.",
+        "worked": "The guide restricts the normalized expansion to h=te_i and recovers L(e_i) as the coordinate partial.",
+        "practiced": "The transfer exercise recovers both coordinate partials from the verified linear map.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
+      }
+    },
+    {
+      "id": "total-differentiability:supplement-unique-linear-approximation",
+      "concept_id": "total-differentiability",
+      "outcome": "Prove that the first-order linear approximation at a point is unique.",
+      "core_source": {
+        "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability",
+        "physical_page": 1,
+        "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
+        "inspection": "Canonical Google Drive PDF downloaded by file ID; SHA-256 matched sources.json; pdfinfo confirmed one physical page; rendered physical page 1 visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1],
+          "method": "Canonical source SHA-256 matched sources.json; pdfinfo confirmed one page; pdftotext extraction and visual inspection of rendered physical page 1.",
+          "claim_observed": "Page 1 defines the candidate tangent-plane function when both coordinate partials exist; lists four GENERALLY FALSE and four ALWAYS TRUE implications; states the normalized full-distance remainder test. It supplies no worked counterexample or proof and calls the limit criterion a complete algorithm."
+        },
+        "page_heading": "Notes on Partial Derivatives and Total Differentiability"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences-statement]",
+            "claim": "The source states that the tangent-plane function is the one and only linear approximation.",
+            "method": "Compared the printed implication on physical page 1 with its guide restatement; no learner performance inferred."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences]",
+            "claim": "The guide subtracts two small remainders and tests their linear difference on each fixed direction.",
+            "method": "Independently checked the definition-based proof; the source states this consequence without a proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[unique-linear-approximation-transfer]",
+            "claim": "The transfer exercise compares two candidate maps after verifying one normalized remainder.",
+            "method": "Checked that the independent exercise requires the stated inference; learner performance is unobserved."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "tangent",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The page states this always-true consequence but supplies no proof. The guide adds a checked definition-based derivation and an independent transfer exercise. The route title names only the parent topic; no outcome scene or learner performance is verified.",
+      "source_section_id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:02",
+      "candidate_blocks": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences-statement]",
+            "basis": "The source implication was matched to the route derivation."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.supplementalBlocks[supplement-necessary-consequences]",
+            "basis": "The guide proof was independently checked; the PDF provides no proof."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#total-differentiability.exercises[unique-linear-approximation-transfer]",
+            "basis": "The exercise transfers this consequence to a separate function; learner performance is unobserved."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the canonical rendered source page with the cited guide block and independently checked the proof and task.",
+        "named": "The route title names only the parent topic; no exact title names this atomic skill, so named evidence is not counted.",
+        "stated": "The source states that the tangent-plane function is the one and only linear approximation.",
+        "worked": "The guide subtracts two small remainders and tests their linear difference on each fixed direction.",
+        "practiced": "The transfer exercise compares two candidate maps after verifying one normalized remainder.",
+        "visualized": "No scene has been verified for this outcome.",
+        "checked": "No independent learner performance check."
       }
     }
   ]
