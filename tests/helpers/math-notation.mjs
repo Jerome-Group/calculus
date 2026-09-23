@@ -9,6 +9,8 @@ const pseudoTex =
 
 export function inspectTexSemantics(tex, locator, failures) {
   if (typeof tex !== "string") return;
+  if (/\p{Cc}/u.test(tex))
+    failures.push(`${locator}: control character in TeX`);
   katex.renderToString(tex, {
     throwOnError: true,
     strict: "error",

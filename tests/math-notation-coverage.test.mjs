@@ -155,6 +155,28 @@ test("semantic notation guard rejects math that KaTeX would parse as ordinary le
   }
 });
 
+test("parsed JSON TeX commands retain their backslashes", () => {
+  for (const corrupted of ["\text{on}", "\nabla\\times F", "P_y\ne Q_x"]) {
+    const failures = [];
+    inspectTexSemantics(corrupted, "corrupted", failures);
+    assert.match(failures.join("\n"), /control character in TeX/);
+  }
+
+  const exercise = guides["integral-antiderivatives"].exercises.find(
+    (item) => item.id === "ch1-constant-family-transfer",
+  );
+  assert.ok(exercise);
+  assert.ok(exercise.solutionTex.includes(String.raw`\text{on }`));
+  assert.ok(exercise.solutionTex.includes(String.raw`\text{there}`));
+  const mathml = katex.renderToString(exercise.solutionTex, {
+    output: "mathml",
+    throwOnError: true,
+    strict: "error",
+  });
+  assert.match(mathml, /<mtext>[^<]*on[^<]*<\/mtext>/);
+  assert.match(mathml, /<mtext>[^<]*there[^<]*<\/mtext>/);
+});
+
 test("derivative notation is a fraction in rendered MathML", () => {
   const notation = guides["derivative-definition"].contentBlocks.find(
     (block) => block.id === "derivative-notation",

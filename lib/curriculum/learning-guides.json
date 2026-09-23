@@ -10341,7 +10341,7 @@
         "prompt": "Let $F$ and $G$ both differentiate to $3x^2$ on $(-2,4)$. Prove that $G-F$ is one constant there. Would the same conclusion force one shared constant on $(-2,0)\\cup(0,4)$?",
         "hint": "Apply the mean value theorem to $H=G-F$ between any two points in the same interval.",
         "solution": "On $(-2,4)$, $H'=G'-F'=0$. For any $u<v$ in that interval, the mean value theorem gives $H(v)-H(u)=H'(c)(v-u)=0$, so $H=C$. On the disconnected domain, the argument works separately on each component but cannot compare their constants; two independent constants are possible.",
-        "solutionTex": "H'=0\\ \text{on }(-2,4)\\implies H=C\\ \text{there}",
+        "solutionTex": "H'=0\\ \\text{on }(-2,4)\\implies H=C\\ \\text{there}",
         "rubric": [
           "Use the derivative of the difference.",
           "Apply the mean value theorem to arbitrary points in one interval.",
