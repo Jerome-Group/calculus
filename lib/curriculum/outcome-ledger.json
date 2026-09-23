@@ -9602,122 +9602,6 @@
       "inspected_physical_pages": [49, 50, 51, 52]
     },
     {
-      "id": "MH2100_Lecture_10:01",
-      "source_id": "MH2100_Lecture_10",
-      "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Surface charts",
-      "physical_pages_from_audit": "2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40",
-      "linked_concept_ids": [
-        "surface-charts",
-        "surface-tangent-vectors",
-        "surface-area-element",
-        "scalar-surface-integrals",
-        "surface-orientation",
-        "flux-through-surfaces"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Surface charts' at 2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40; inspect its source pages and split every distinct skill before claiming coverage.",
-      "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
-        "visualized": [],
-        "checked": []
-      },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
-    },
-    {
-      "id": "MH2100_Lecture_10:02",
-      "source_id": "MH2100_Lecture_10",
-      "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "tangent vectors/area",
-      "physical_pages_from_audit": "2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40",
-      "linked_concept_ids": [
-        "surface-charts",
-        "surface-tangent-vectors",
-        "surface-area-element",
-        "scalar-surface-integrals",
-        "surface-orientation",
-        "flux-through-surfaces"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'tangent vectors/area' at 2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40; inspect its source pages and split every distinct skill before claiming coverage.",
-      "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
-        "visualized": [],
-        "checked": []
-      },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
-    },
-    {
-      "id": "MH2100_Lecture_10:03",
-      "source_id": "MH2100_Lecture_10",
-      "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "scalar integration",
-      "physical_pages_from_audit": "2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40",
-      "linked_concept_ids": [
-        "surface-charts",
-        "surface-tangent-vectors",
-        "surface-area-element",
-        "scalar-surface-integrals",
-        "surface-orientation",
-        "flux-through-surfaces"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'scalar integration' at 2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40; inspect its source pages and split every distinct skill before claiming coverage.",
-      "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
-        "visualized": [],
-        "checked": []
-      },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
-    },
-    {
-      "id": "MH2100_Lecture_10:04",
-      "source_id": "MH2100_Lecture_10",
-      "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "orientability and flux",
-      "physical_pages_from_audit": "2–40; charts 2–10; scalar/area 11–20; orientation 22–29; flux 30–40",
-      "linked_concept_ids": [
-        "surface-charts",
-        "surface-tangent-vectors",
-        "surface-area-element",
-        "scalar-surface-integrals",
-        "surface-orientation",
-        "flux-through-surfaces"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'orientability and flux'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
-      "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
-        "visualized": [],
-        "checked": []
-      },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["surface-orientation:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
-    },
-    {
       "id": "MH2100_Lecture_11:01",
       "source_id": "MH2100_Lecture_11",
       "kind": "core_lecture_or_notes",
@@ -10046,6 +9930,280 @@
         "total-differentiability:normalized-remainder-decision"
       ],
       "coverage_decision": "partial_atomic_mapping"
+    },
+    {
+      "id": "MH2100_Lecture_10:01",
+      "source_id": "MH2100_Lecture_10",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Surface charts",
+      "physical_pages_from_audit": "2–9: charts p3–6; smoothness/tangents p7–9",
+      "linked_concept_ids": ["surface-charts", "surface-tangent-vectors"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The mapped chart and tangent outcomes are source-checked. The app scene candidate is not verified for these individual outcomes; learner performance is unobserved.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-statement].title",
+            "claim": "7 mapped skills have dedicated named lesson blocks.",
+            "method": "Direct inspection of each mapped outcome title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has its own source-page claim and lesson statement.",
+            "method": "Compared each claim with the visually reviewed PDF page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has a multi-step checked derivation.",
+            "method": "Guide-authored calculations independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has changed-data transfer with answer and rubric; learner attempts unobserved.",
+            "method": "Reviewed prompts and solutions."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "surface-charts:interior-chart-is-a-homeomorphism",
+        "surface-charts:surface-interior-and-edge",
+        "surface-charts:source-radius-two-cylinder-chart",
+        "surface-charts:source-hemisphere-chart-boundary",
+        "surface-tangent-vectors:smooth-chart-rank-two-condition",
+        "surface-tangent-vectors:piecewise-smooth-patch-union",
+        "surface-tangent-vectors:two-unit-normals-from-tangent-cross-product"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–9",
+      "inspected_physical_pages": [2, 3, 4, 5, 6, 7, 8, 9],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 2,
+          "reason": "Introductory list and scope note only; no distinct parametrization or integration operation is taught."
+        }
+      ]
+    },
+    {
+      "id": "MH2100_Lecture_10:02",
+      "source_id": "MH2100_Lecture_10",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "tangent vectors/area",
+      "physical_pages_from_audit": "10–20: nice charts p10; scalar integrals p11–17; area p18–20",
+      "linked_concept_ids": [
+        "scalar-surface-integrals",
+        "surface-area-element"
+      ],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The source states the Example 1 and 2 problems but shows no solutions on pp14–15 or p20; the mapped derivations are independently calculated in the guide. The scene candidate and learner performance are unverified.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-statement].title",
+            "claim": "6 mapped skills have dedicated named lesson blocks.",
+            "method": "Direct inspection of each mapped outcome title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has its own source-page claim and lesson statement.",
+            "method": "Compared each claim with the visually reviewed PDF page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has a multi-step checked derivation.",
+            "method": "Guide-authored calculations independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has changed-data transfer with answer and rubric; learner attempts unobserved.",
+            "method": "Reviewed prompts and solutions."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "surface-area-element:nice-parametrization-hypotheses",
+        "scalar-surface-integrals:parametric-scalar-density-integral",
+        "scalar-surface-integrals:piecewise-scalar-integral-additivity",
+        "scalar-surface-integrals:source-closed-surface-z-density",
+        "scalar-surface-integrals:graph-surface-jacobian",
+        "surface-area-element:source-paraboloid-area"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "10–20",
+      "inspected_physical_pages": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 14,
+          "reason": "Continuation slide contains no rendered work after the Example 1 prompt on p13."
+        },
+        {
+          "physical_page": 15,
+          "reason": "Continuation slide contains no rendered work after the Example 1 prompt on p13."
+        },
+        {
+          "physical_page": 20,
+          "reason": "Continuation slide contains no rendered work after the Example 2 prompt on p19."
+        }
+      ]
+    },
+    {
+      "id": "MH2100_Lecture_10:03",
+      "source_id": "MH2100_Lecture_10",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "surface orientation",
+      "physical_pages_from_audit": "21–29: Week 11 boundary p21; orientability and choices p22–29",
+      "linked_concept_ids": ["surface-orientation"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The Möbius example and orientation conventions are source-checked. The app scene candidate has not been checked against the global-normal or seam-reversal outcomes; learner performance is unobserved.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-statement].title",
+            "claim": "5 mapped skills have dedicated named lesson blocks.",
+            "method": "Direct inspection of each mapped outcome title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has its own source-page claim and lesson statement.",
+            "method": "Compared each claim with the visually reviewed PDF page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has a multi-step checked derivation.",
+            "method": "Guide-authored calculations independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has changed-data transfer with answer and rubric; learner attempts unobserved.",
+            "method": "Reviewed prompts and solutions."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "surface-orientation:source-skill-1",
+        "surface-orientation:mobius-strip-seam-reverses-normal",
+        "surface-orientation:choose-normal-sign-from-chart",
+        "surface-orientation:graph-upward-and-downward-normal",
+        "surface-orientation:positive-outward-boundary-orientation"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "21–29",
+      "inspected_physical_pages": [21, 22, 23, 24, 25, 26, 27, 28, 29],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 21,
+          "reason": "Week 11 topic outline marks a scope boundary; it contains no separate orientation operation."
+        }
+      ]
+    },
+    {
+      "id": "MH2100_Lecture_10:04",
+      "source_id": "MH2100_Lecture_10",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "surface flux",
+      "physical_pages_from_audit": "30–40: flux definition/formula p30–31; examples p32–40",
+      "linked_concept_ids": ["flux-through-surfaces"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The source gives the flux rule and three closed/open-surface prompts; pp33–34, 36–37, and 39–40 show no worked answers. Guide derivations are independent; the flux scene is a candidate only, and learner performance is unverified.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-statement].title",
+            "claim": "5 mapped skills have dedicated named lesson blocks.",
+            "method": "Direct inspection of each mapped outcome title."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has its own source-page claim and lesson statement.",
+            "method": "Compared each claim with the visually reviewed PDF page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has a multi-step checked derivation.",
+            "method": "Guide-authored calculations independently recomputed."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/outcome-ledger.json#atomic_outcomes",
+            "claim": "Each mapped skill has changed-data transfer with answer and rubric; learner attempts unobserved.",
+            "method": "Reviewed prompts and solutions."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "flux-through-surfaces:flux-is-normal-component",
+        "flux-through-surfaces:orientation-respecting-flux-parametrization",
+        "flux-through-surfaces:source-paraboloid-boundary-flux",
+        "flux-through-surfaces:source-hemisphere-flux",
+        "flux-through-surfaces:source-cone-hemisphere-closed-flux"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "30–40",
+      "inspected_physical_pages": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 33,
+          "reason": "Continuation slide after Example 3 contains no rendered solution."
+        },
+        {
+          "physical_page": 34,
+          "reason": "Continuation slide after Example 3 contains no rendered solution."
+        },
+        {
+          "physical_page": 36,
+          "reason": "Continuation slide after Example 4 contains no rendered solution."
+        },
+        {
+          "physical_page": 37,
+          "reason": "Continuation slide after Example 4 contains no rendered solution."
+        },
+        {
+          "physical_page": 39,
+          "reason": "Continuation slide after Example 5 contains no rendered solution."
+        },
+        {
+          "physical_page": 40,
+          "reason": "Continuation slide after Example 5 contains no rendered solution."
+        }
+      ]
     }
   ],
   "textbook_sections": [
@@ -16771,86 +16929,6 @@
         "practiced": "changed-data task and solution checked; learner performance unverified",
         "visualized": "scene candidate identified; exact outcome alignment not verified",
         "checked": "no independent learner performance check"
-      }
-    },
-    {
-      "id": "surface-orientation:source-skill-1",
-      "concept_id": "surface-orientation",
-      "outcome": "Choose a continuous unit normal field to orient a smooth surface.",
-      "core_source": {
-        "id": "MH2100_Lecture_10",
-        "physical_page": 22,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
-        "page_validation": {
-          "status": "page_verified",
-          "pages": [22],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page defines orientability by the existence of a continuous unit normal field."
-        },
-        "page_heading": "Definition (Orientation)"
-      },
-      "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#surface-orientation.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
-          }
-        ],
-        "stated": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#surface-orientation.sections[Orientation is a continuous choice]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
-          }
-        ],
-        "worked": [],
-        "practiced": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
-          }
-        ],
-        "visualized": [],
-        "checked": []
-      },
-      "visual_candidate": {
-        "scene_id": "parametric",
-        "verified_for_outcome": false
-      },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
-      "source_section_id": "MH2100_Lecture_10:04",
-      "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#surface-orientation.title",
-            "basis": "current code inspection"
-          }
-        ],
-        "stated": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#surface-orientation.sections[Orientation is a continuous choice]",
-            "basis": "current guide inspection"
-          }
-        ],
-        "practiced": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
-          }
-        ]
-      },
-      "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
       }
     },
     {
@@ -45321,6 +45399,2145 @@
         "practiced": "Task and solution checked; learner performance unverified.",
         "visualized": "Existing polar scene is only a candidate; no outcome-specific render or alignment check.",
         "checked": "No independent learner response or performance measure."
+      }
+    },
+    {
+      "id": "surface-orientation:source-skill-1",
+      "concept_id": "surface-orientation",
+      "outcome": "Decide whether a smooth surface is orientable by the existence of a continuous unit normal field on its surface interior.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 22,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 24],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines orientability by a continuous unit normal field and illustrates the two local choices and a globally consistent assignment."
+        },
+        "page_heading": "Surface Integrals — Surface Orientation; Definition (Orientation)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-source-skill-1-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-source-skill-1-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-source-skill-1-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-charts:interior-chart-is-a-homeomorphism",
+      "concept_id": "surface-charts",
+      "outcome": "Check that a surface parametrization is continuous on its domain and one-to-one with continuous inverse on the connected, nonempty parameter interior.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 3,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The definition requires a connected nonempty D°, a continuous r on D, and a bijection r|D° onto r[D°] with continuous inverse."
+        },
+        "page_heading": "Parametric Surfaces — Definition"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-interior-chart-is-a-homeomorphism-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-interior-chart-is-a-homeomorphism-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-interior-chart-is-a-homeomorphism-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-charts:surface-interior-and-edge",
+      "concept_id": "surface-charts",
+      "outcome": "Classify a point as surface interior when some surface chart places it over the parameter interior; classify the remaining surface points as edge.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 4,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "Surface interior is defined by membership in r[D°] for at least one parametrization of S; the edge is its complement in S."
+        },
+        "page_heading": "Parametric Surfaces — Surface Interior and Edge"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-surface-interior-and-edge-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-surface-interior-and-edge-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-surface-interior-and-edge-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-surface-interior-and-edge-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-surface-interior-and-edge-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-surface-interior-and-edge-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-surface-interior-and-edge-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-surface-interior-and-edge-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-charts:source-radius-two-cylinder-chart",
+      "concept_id": "surface-charts",
+      "outcome": "Recognize the image of $r(u,v)=(2\\cos u,v,2\\sin u)$ on $[0,2\\pi]\\times\\mathbb R$ as the radius-two cylinder and explain its seam.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 5,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5, 6],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source gives the radius-two cylinder parametrization and a restricted quarter-cylinder patch on the next page."
+        },
+        "page_heading": "Parametric Surfaces — Example 1; More Examples"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-radius-two-cylinder-chart-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-radius-two-cylinder-chart-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-radius-two-cylinder-chart-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-source-radius-two-cylinder-chart-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-radius-two-cylinder-chart-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-radius-two-cylinder-chart-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-radius-two-cylinder-chart-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-source-radius-two-cylinder-chart-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-charts:source-hemisphere-chart-boundary",
+      "concept_id": "surface-charts",
+      "outcome": "Verify the source chart $r(u,v)=(u\\cos v,u\\sin v,\\sqrt{1-u^2})$ covers the unit top hemisphere and locate its parameter-boundary duplications.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 6,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source identifies this map on $[0,1]\\times[0,2\\pi]$ as a chart of the unit top hemisphere."
+        },
+        "page_heading": "Parametric Surfaces — More Examples"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-hemisphere-chart-boundary-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-hemisphere-chart-boundary-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-hemisphere-chart-boundary-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-source-hemisphere-chart-boundary-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-hemisphere-chart-boundary-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-hemisphere-chart-boundary-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.contentBlocks[lecture10-source-hemisphere-chart-boundary-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-charts.exercises[lecture10-source-hemisphere-chart-boundary-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-tangent-vectors:smooth-chart-rank-two-condition",
+      "concept_id": "surface-tangent-vectors",
+      "outcome": "Test smoothness of a surface parametrization by continuous first partials and a nonzero cross product throughout the parameter interior.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 7,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source requires defined continuous $r_u,r_v$ on $D^\\circ$ and $(r_u\\times r_v)(u,v)\\ne0$ there."
+        },
+        "page_heading": "Parametric Surfaces — Smooth Surface Parametrizations"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-smooth-chart-rank-two-condition-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-smooth-chart-rank-two-condition-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-smooth-chart-rank-two-condition-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.exercises[lecture10-smooth-chart-rank-two-condition-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-smooth-chart-rank-two-condition-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-smooth-chart-rank-two-condition-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-smooth-chart-rank-two-condition-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.exercises[lecture10-smooth-chart-rank-two-condition-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-tangent-vectors:piecewise-smooth-patch-union",
+      "concept_id": "surface-tangent-vectors",
+      "outcome": "Recognize a surface as piecewise smooth when it is a finite union of smooth patches whose pairwise intersections lie only along patch edges.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 8,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines a piecewise-smooth surface as a finite union of smooth parametric surfaces intersecting only along their edges."
+        },
+        "page_heading": "Parametric Surfaces — Piecewise-Smooth Surfaces"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-piecewise-smooth-patch-union-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-piecewise-smooth-patch-union-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-piecewise-smooth-patch-union-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.exercises[lecture10-piecewise-smooth-patch-union-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-piecewise-smooth-patch-union-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-piecewise-smooth-patch-union-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-piecewise-smooth-patch-union-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.exercises[lecture10-piecewise-smooth-patch-union-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-tangent-vectors:two-unit-normals-from-tangent-cross-product",
+      "concept_id": "surface-tangent-vectors",
+      "outcome": "Construct the two unit normals to a smooth parametric surface from the cross product of its nonparallel tangent vectors.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 9,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "At an interior point, $r_u$ and $r_v$ are nonparallel nonzero tangents; the only unit normals are the two signs of their normalized cross product."
+        },
+        "page_heading": "Parametric Surfaces — Normal Vectors"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-two-unit-normals-from-tangent-cross-product-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-two-unit-normals-from-tangent-cross-product-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-two-unit-normals-from-tangent-cross-product-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.exercises[lecture10-two-unit-normals-from-tangent-cross-product-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-two-unit-normals-from-tangent-cross-product-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-two-unit-normals-from-tangent-cross-product-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.contentBlocks[lecture10-two-unit-normals-from-tangent-cross-product-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-tangent-vectors.exercises[lecture10-two-unit-normals-from-tangent-cross-product-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-area-element:nice-parametrization-hypotheses",
+      "concept_id": "surface-area-element",
+      "outcome": "Check the source’s hypotheses for a nice parametrization: smoothness, a bounded parameter region with zero-area boundary, and bounded parameter tangents.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 10,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines a nice chart by smoothness, bounded region with zero-area boundary, and bounded $r_u,r_v$ on $D^\\circ$."
+        },
+        "page_heading": "Surface Integrals — Nice Parametric Surfaces"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.exercises[lecture10-nice-parametrization-hypotheses-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-nice-parametrization-hypotheses-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.exercises[lecture10-nice-parametrization-hypotheses-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "scalar-surface-integrals:parametric-scalar-density-integral",
+      "concept_id": "scalar-surface-integrals",
+      "outcome": "Evaluate a scalar surface integral by multiplying the scalar density by the chart’s cross-product magnitude, independent of orientation.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 11,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "For a nice chart the source defines $\\iint_S f\\,dS=\\iint_{D^\\circ} f(r(u,v))\\|r_u\\times r_v\\|\\,dA$ and states parametrization independence."
+        },
+        "page_heading": "Surface Integrals — Scalar Fields"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-parametric-scalar-density-integral-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-parametric-scalar-density-integral-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-parametric-scalar-density-integral-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-parametric-scalar-density-integral-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-parametric-scalar-density-integral-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-parametric-scalar-density-integral-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-parametric-scalar-density-integral-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-parametric-scalar-density-integral-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "scalar-surface-integrals:piecewise-scalar-integral-additivity",
+      "concept_id": "scalar-surface-integrals",
+      "outcome": "Add scalar surface integrals over finitely many nice smooth patches that meet only along edges.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 12,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines the piecewise-smooth scalar integral as the sum of the integrals over its nice smooth patches."
+        },
+        "page_heading": "Surface Integrals — Scalar Fields"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-piecewise-scalar-integral-additivity-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-piecewise-scalar-integral-additivity-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-piecewise-scalar-integral-additivity-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-piecewise-scalar-integral-additivity-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-piecewise-scalar-integral-additivity-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-piecewise-scalar-integral-additivity-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-piecewise-scalar-integral-additivity-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-piecewise-scalar-integral-additivity-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "scalar-surface-integrals:source-closed-surface-z-density",
+      "concept_id": "scalar-surface-integrals",
+      "outcome": "Evaluate the source’s $z$-density integral by splitting the closed boundary into its bottom disk, cylindrical side, and sloped planar top.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 13,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 15],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "Page 13 asks for $\\iint_S z\\,dS$ on the boundary bounded by $z=0$, $x^2+y^2=1$, and $z=x+1$; pp14–15 show no solution. The indicated continuation slides render blank, so no source solution is claimed."
+        },
+        "page_heading": "Surface Integrals — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-source-closed-surface-z-density-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-source-closed-surface-z-density-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-source-closed-surface-z-density-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-source-closed-surface-z-density-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-source-closed-surface-z-density-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-source-closed-surface-z-density-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-source-closed-surface-z-density-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-source-closed-surface-z-density-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "scalar-surface-integrals:graph-surface-jacobian",
+      "concept_id": "scalar-surface-integrals",
+      "outcome": "Convert a scalar surface integral on $z=g(x,y)$ to a planar integral using $\\sqrt{1+g_x^2+g_y^2}$ under the source’s boundedness conditions.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 16,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source states a graph formula for continuous $g$ with continuous bounded gradient on a bounded parameter region with zero-area boundary."
+        },
+        "page_heading": "Surface Integrals — Graph Surfaces"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-graph-surface-jacobian-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-graph-surface-jacobian-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-graph-surface-jacobian-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-graph-surface-jacobian-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-graph-surface-jacobian-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-graph-surface-jacobian-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.contentBlocks[lecture10-graph-surface-jacobian-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#scalar-surface-integrals.exercises[lecture10-graph-surface-jacobian-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-area-element:source-paraboloid-area",
+      "concept_id": "surface-area-element",
+      "outcome": "Set $f=1$ in the surface integral and evaluate the source’s area problem for $z=x^2+y^2$ below $z=9$.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 18,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18, 19, 20],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "Page 18 defines surface area as $\\iint_S1\\,dS$; p19 asks for the paraboloid area, and p20 shows no calculation. The indicated continuation slides render blank, so no source solution is claimed."
+        },
+        "page_heading": "Surface Integrals — Surface Area; Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-source-paraboloid-area-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-source-paraboloid-area-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-source-paraboloid-area-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.exercises[lecture10-source-paraboloid-area-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-source-paraboloid-area-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-source-paraboloid-area-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.contentBlocks[lecture10-source-paraboloid-area-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-area-element.exercises[lecture10-source-paraboloid-area-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-orientation:mobius-strip-seam-reverses-normal",
+      "concept_id": "surface-orientation",
+      "outcome": "Explain the source’s Möbius-strip example by showing that its seam identification reverses the transverse parameter direction.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 25,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source gives a width-one Möbius parametrization and states that the strip is nonorientable because it has only one side."
+        },
+        "page_heading": "Surface Integrals — Surface Orientation; Example (A Non-Orientable Nice and Smooth Parametric Surface)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-mobius-strip-seam-reverses-normal-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-mobius-strip-seam-reverses-normal-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-mobius-strip-seam-reverses-normal-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-mobius-strip-seam-reverses-normal-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-mobius-strip-seam-reverses-normal-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-mobius-strip-seam-reverses-normal-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-mobius-strip-seam-reverses-normal-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-mobius-strip-seam-reverses-normal-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-orientation:choose-normal-sign-from-chart",
+      "concept_id": "surface-orientation",
+      "outcome": "Construct either orientation of a smooth surface by normalizing $r_u\\times r_v$ and selecting the sign required by the problem.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 26,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 27],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines an oriented smooth surface as an orientable smooth surface with a chosen orientation and warns that $n$ is defined on $S$, not $D^\\circ$."
+        },
+        "page_heading": "Surface Integrals — Surface Orientation; Oriented Smooth Parametric Surfaces"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-choose-normal-sign-from-chart-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-choose-normal-sign-from-chart-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-choose-normal-sign-from-chart-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-choose-normal-sign-from-chart-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-choose-normal-sign-from-chart-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-choose-normal-sign-from-chart-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-choose-normal-sign-from-chart-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-choose-normal-sign-from-chart-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-orientation:graph-upward-and-downward-normal",
+      "concept_id": "surface-orientation",
+      "outcome": "Write upward and downward area vectors for a graph $z=g(x,y)$ using $(-g_x,-g_y,1)$ and its negative.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 28,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines upward graph orientation as the normalized vector $(-g_x,-g_y,1)$ and downward as its opposite."
+        },
+        "page_heading": "Surface Integrals — Surface Orientation (Upward and Downward)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-graph-upward-and-downward-normal-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-graph-upward-and-downward-normal-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-graph-upward-and-downward-normal-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-graph-upward-and-downward-normal-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-graph-upward-and-downward-normal-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-graph-upward-and-downward-normal-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-graph-upward-and-downward-normal-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-graph-upward-and-downward-normal-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "surface-orientation:positive-outward-boundary-orientation",
+      "concept_id": "surface-orientation",
+      "outcome": "Assign positive orientation to the boundary of a region by choosing outward normals on each smooth patch; negative orientation reverses them all.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 29,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines positive orientation of a piecewise-smooth boundary by outward normals and negative orientation by inward normals."
+        },
+        "page_heading": "Surface Integrals — Surface Orientation (Positive and Negative)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-positive-outward-boundary-orientation-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-positive-outward-boundary-orientation-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-positive-outward-boundary-orientation-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-positive-outward-boundary-orientation-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "parametric",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'parametric' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-positive-outward-boundary-orientation-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-positive-outward-boundary-orientation-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.contentBlocks[lecture10-positive-outward-boundary-orientation-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#surface-orientation.exercises[lecture10-positive-outward-boundary-orientation-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "flux-through-surfaces:flux-is-normal-component",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Interpret flux as the surface integral of the vector field’s signed component along the chosen unit normal.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 30,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source defines $\\iint_S F\\cdot dS=\\iint_S F\\cdot n\\,dS$ for an oriented nice smooth surface and describes perpendicular flow."
+        },
+        "page_heading": "Surface Integrals — Vector Fields; Definition (Surface Integral of a Vector Field)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-flux-is-normal-component-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'flux' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-flux-is-normal-component-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-flux-is-normal-component-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "flux-through-surfaces:orientation-respecting-flux-parametrization",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Evaluate parametrized flux with $\\mathbf F(r)\\cdot(r_u\\times r_v)$ only when the parameter order respects the chosen orientation.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 31,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "The source derives the oriented cross-product formula and cautions that the parametrization must respect orientation."
+        },
+        "page_heading": "Surface Integrals — Vector Fields"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-orientation-respecting-flux-parametrization-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-orientation-respecting-flux-parametrization-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-orientation-respecting-flux-parametrization-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-orientation-respecting-flux-parametrization-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'flux' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-orientation-respecting-flux-parametrization-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-orientation-respecting-flux-parametrization-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-orientation-respecting-flux-parametrization-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-orientation-respecting-flux-parametrization-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "flux-through-surfaces:source-paraboloid-boundary-flux",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Evaluate the source’s positive flux through the boundary of $0\\le z\\le1-x^2-y^2$ for $\\mathbf F=(y,x,z)$ by summing its top and bottom patches.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 32,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [32, 33, 34],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "Page 32 states the closed paraboloid problem; pp33–34 show no worked calculation. The indicated continuation slides render blank, so no source solution is claimed."
+        },
+        "page_heading": "Surface Integrals — Example 3"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-paraboloid-boundary-flux-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-paraboloid-boundary-flux-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-paraboloid-boundary-flux-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-source-paraboloid-boundary-flux-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'flux' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-paraboloid-boundary-flux-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-paraboloid-boundary-flux-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-paraboloid-boundary-flux-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-source-paraboloid-boundary-flux-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "flux-through-surfaces:source-hemisphere-flux",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Evaluate upward flux of $\\mathbf F=(0,0,z)$ through the source’s radius-six top hemisphere.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 35,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [35, 36, 37],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "Page 35 specifies the radius-six top hemisphere, upward orientation, and field; pp36–37 show no worked calculation. The indicated continuation slides render blank, so no source solution is claimed."
+        },
+        "page_heading": "Surface Integrals — Example 4"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-hemisphere-flux-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-hemisphere-flux-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-hemisphere-flux-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-source-hemisphere-flux-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'flux' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-hemisphere-flux-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-hemisphere-flux-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-hemisphere-flux-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-source-hemisphere-flux-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
+      }
+    },
+    {
+      "id": "flux-through-surfaces:source-cone-hemisphere-closed-flux",
+      "concept_id": "flux-through-surfaces",
+      "outcome": "Compute positive flux through the source’s closed boundary between a spherical cap and cone by integrating both outward-oriented patches.",
+      "core_source": {
+        "id": "MH2100_Lecture_10",
+        "sha256": "2808e65d5eaf3aa2c3fbfa566c98514df21a6cda438193c8896f520685faa32e",
+        "physical_page": 38,
+        "inspection": "Canonical Drive PDF SHA-256 matched the catalog; all 40 pages rendered and visually reviewed; cited pages were checked against their headings, diagrams, and claims.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [38, 39, 40],
+          "method": "Canonical SHA-256 verified; cited physical pages rendered and visually checked against their headings and claims.",
+          "claim_observed": "Page 38 specifies the sphere $z=\\sqrt{8-x^2-y^2}$, cone $z=\\sqrt{x^2+y^2}$ and $\\mathbf F=(y,0,2)$; pp39–40 show no solution. The indicated continuation slides render blank, so no source solution is claimed."
+        },
+        "page_heading": "Surface Integrals — Example 5"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-cone-hemisphere-closed-flux-statement].title",
+            "claim": "This atomic outcome has a dedicated lesson-block title.",
+            "method": "Compared the exact block title with the source skill and page heading."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-cone-hemisphere-closed-flux-statement]",
+            "claim": "The block states the source operation and its relevant conditions.",
+            "method": "Checked against the visually reviewed physical page(s) listed below."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-cone-hemisphere-closed-flux-worked]",
+            "claim": "A multi-step derivation applies the source skill and verifies its result.",
+            "method": "Recomputed independently from the source definition or example setup; source-only prompts are identified as unsolved."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-source-cone-hemisphere-closed-flux-transfer]",
+            "claim": "Changed-data transfer includes a hint, worked answer, and rubric; no learner attempt is claimed.",
+            "method": "Checked its data and solution against this atomic outcome."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "flux",
+        "verified_for_outcome": false
+      },
+      "depth": "source_and_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Guide statement, derivation, and independent transfer are present. Candidate scene 'flux' was not rendered and checked for this outcome; learner performance is unverified.",
+      "source_section_id": "MH2100_Lecture_10:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-cone-hemisphere-closed-flux-statement].title",
+            "basis": "Direct title inspection against the atomic source skill."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-cone-hemisphere-closed-flux-statement]",
+            "basis": "Compared with the cited rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.contentBlocks[lecture10-source-cone-hemisphere-closed-flux-worked]",
+            "basis": "Guide-authored calculation independently recomputed; source worked-solution pages were blank where applicable."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#flux-through-surfaces.exercises[lecture10-source-cone-hemisphere-closed-flux-transfer]",
+            "basis": "Changed-data task and solution checked; no learner response observed."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical source pages, guide blocks, changed-data solution, and route scene candidate.",
+        "named": "distinct outcome has a dedicated named lesson block",
+        "stated": "source claim and applicable conditions stated",
+        "worked": "guide derivation independently checked",
+        "practiced": "changed-data task and solution checked; learner performance unverified",
+        "visualized": "scene candidate identified; exact outcome alignment not verified",
+        "checked": "no independent learner-performance check"
       }
     }
   ]

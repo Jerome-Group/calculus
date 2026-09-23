@@ -20876,7 +20876,191 @@
         "Explain seam duplication and distinguish the cylinder caps."
       ],
       "solutionTex": "\\mathbf r(\\theta,z)=(2\\cos\\theta,2\\sin\\theta,z),\\quad0\\le\\theta\\le2\\pi,\\ 0\\le z\\le3"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-interior-chart-is-a-homeomorphism-statement",
+        "title": "A surface chart is one-to-one in its interior",
+        "text": "For the source definition, $D^\\circ$ is connected and nonempty, $r$ is continuous on $D$, and $r|_{D^\\circ}$ is a homeomorphism onto its image. Boundary points may repeat without violating the interior condition."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-interior-chart-is-a-homeomorphism-worked",
+        "title": "Verify a graph chart from its first two coordinates",
+        "strategy": "Test the domain, continuity, injectivity, and inverse on the interior in that order.",
+        "setup": "Let $r(u,v)=(u,v,u^2+v^2)$ on $D=[-1,1]^2$.",
+        "steps": [
+          {
+            "label": "Domain",
+            "text": "The interior $(-1,1)^2$ is nonempty and connected.",
+            "equation": "D^\\circ=(-1,1)^2"
+          },
+          {
+            "label": "Injectivity",
+            "text": "Equal image points have equal first and second coordinates, so their parameters agree.",
+            "equation": "r(u_1,v_1)=r(u_2,v_2)\\Rightarrow(u_1,v_1)=(u_2,v_2)"
+          },
+          {
+            "label": "Inverse",
+            "text": "On the graph image, the inverse is the continuous projection $(x,y,z)\\mapsto(x,y)$.",
+            "equation": "r^{-1}(x,y,z)=(x,y)"
+          }
+        ],
+        "result": "This pair $(r,D)$ parametrizes its graph once on the interior.",
+        "verification": "The parameter inverse is explicit and continuous; the boundary of D is not part of the injectivity condition."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-surface-interior-and-edge-statement",
+        "title": "Interior and edge belong to the surface",
+        "text": "The source tests whether a point of $S$ lies in $r[D^\\circ]$ for at least one parametrization of that same surface. The edge is the set of surface points that are not interior; it is not the boundary of the parameter drawing in space."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-surface-interior-and-edge-worked",
+        "title": "Locate the edge of a parametrized disk",
+        "strategy": "Use the disk graph chart and compare the parameter point with the disk interior.",
+        "setup": "Let $r(u,v)=(u,v,0)$ on $D=\\{(u,v):u^2+v^2\\le1\\}$.",
+        "steps": [
+          {
+            "label": "Interior point",
+            "text": "The origin has parameters strictly inside the disk.",
+            "equation": "(0,0)=r(0,0),\\quad 0^2+0^2<1"
+          },
+          {
+            "label": "Edge point",
+            "text": "The point $(1,0,0)$ has parameter $(1,0)$ on the disk boundary.",
+            "equation": "(1,0,0)=r(1,0),\\quad 1^2+0^2=1"
+          },
+          {
+            "label": "Classification",
+            "text": "The open disk maps to the surface interior; the circle maps to the edge.",
+            "equation": "r[D^\\circ]=\\{(x,y,0):x^2+y^2<1\\}"
+          }
+        ],
+        "result": "The interior is the open planar disk and the edge is its unit circle.",
+        "verification": "The chart is injective, so the parameter classification transfers directly to the planar disk."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-radius-two-cylinder-chart-statement",
+        "title": "Angle and height parametrize the source cylinder",
+        "text": "The source chart $r(u,v)=(2\\cos u,v,2\\sin u)$ uses angle $u$ and height $v$. Its image satisfies $x^2+z^2=4$; the endpoints $u=0$ and $u=2\\pi$ identify the same seam."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-radius-two-cylinder-chart-worked",
+        "title": "Recover the cylinder and a one-to-one interior",
+        "strategy": "Eliminate the angle, then restrict it to an open interval to test the chart interior.",
+        "setup": "Use the source parametrization on $[0,2\\pi]\\times[-1,1]$.",
+        "steps": [
+          {
+            "label": "Surface equation",
+            "text": "Square the first and third coordinates and add.",
+            "equation": "x^2+z^2=4\\cos^2u+4\\sin^2u=4"
+          },
+          {
+            "label": "Height",
+            "text": "The second coordinate is the free parameter.",
+            "equation": "y=v\\in[-1,1]"
+          },
+          {
+            "label": "Seam",
+            "text": "On the interior $0<u<2\\pi$, each angle is unique; the two outer edges represent one physical seam.",
+            "equation": "r(0,v)=r(2\\pi,v)"
+          }
+        ],
+        "result": "The full source domain traces the radius-two cylindrical side between heights $-1$ and $1$, with a repeated boundary seam.",
+        "verification": "The radius equation is independent of $v$ and the angular coordinate wraps once around the circle."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-hemisphere-chart-boundary-statement",
+        "title": "Radial distance and angle chart the top hemisphere",
+        "text": "The source uses $u$ as distance from the $z$-axis and $v$ as azimuth. The image satisfies $x^2+y^2+z^2=1$ with $z\\ge0$; the pole and angular seam lie on the parameter boundary."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-hemisphere-chart-boundary-worked",
+        "title": "Check the sphere equation and boundary",
+        "strategy": "Substitute the three coordinates into the unit-sphere equation and inspect the parameter edges.",
+        "setup": "Take the source map $r(u,v)=(u\\cos v,u\\sin v,\\sqrt{1-u^2})$.",
+        "steps": [
+          {
+            "label": "Sphere equation",
+            "text": "The squared horizontal radius is $u^2$.",
+            "equation": "x^2+y^2+z^2=u^2+(1-u^2)=1"
+          },
+          {
+            "label": "Upper half",
+            "text": "The square root is nonnegative.",
+            "equation": "z=\\sqrt{1-u^2}\\ge0"
+          },
+          {
+            "label": "Boundary",
+            "text": "At $u=0$ every $v$ gives the north pole; $v=0$ and $2\\pi$ give the same seam.",
+            "equation": "r(0,v)=(0,0,1),\\quad r(u,0)=r(u,2\\pi)"
+          }
+        ],
+        "result": "The map covers the unit top hemisphere; repeated values occur on parameter-boundary points, not the open interior.",
+        "verification": "On $0<u<1$ and $0<v<2\\pi$, the radius determines $u$ and the angle determines $v$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-interior-chart-is-a-homeomorphism-transfer",
+        "outcome": "Check that a surface parametrization is continuous on its domain and one-to-one with continuous inverse on the connected, nonempty parameter interior.",
+        "kind": "computational",
+        "prompt": "For $r(u,v)=(u,v,2u-v)$ on $[-2,2]\\times[-1,1]$, verify the interior chart conditions and give its inverse.",
+        "hint": "Recover $u$ and $v$ from the first two image coordinates.",
+        "solution": "The rectangle interior is connected and nonempty; $r$ is continuous. Its first two coordinates recover $(u,v)$, so the inverse on the graph is $(x,y,z)\\mapsto(x,y)$ and is continuous.",
+        "solutionTex": "r^{-1}(x,y,z)=(x,y),\\qquad D^\\circ=(-2,2)\\times(-1,1)",
+        "rubric": [
+          "Check the connected, nonempty interior and continuity.",
+          "Show injectivity and state a continuous inverse."
+        ]
+      },
+      {
+        "id": "lecture10-surface-interior-and-edge-transfer",
+        "outcome": "Classify a point as surface interior when some surface chart places it over the parameter interior; classify the remaining surface points as edge.",
+        "kind": "computational",
+        "prompt": "For the graph patch $r(u,v)=(u,v,u+v)$ over $u^2+v^2\\le4$, classify $r(0,0)$ and $r(0,2)$.",
+        "hint": "Compare each parameter radius with $2$.",
+        "solution": "The point $r(0,0)$ lies over the disk interior since $0<4$. The point $r(0,2)$ lies over its edge since $0^2+2^2=4$.",
+        "solutionTex": "r(0,0)=(0,0,0)\\in S^\\circ,\\qquad r(0,2)=(0,2,2)\\in\\partial S",
+        "rubric": [
+          "Use the parameter-domain interior test.",
+          "Translate the classification to the surface points."
+        ]
+      },
+      {
+        "id": "lecture10-source-radius-two-cylinder-chart-transfer",
+        "outcome": "Recognize the image of $r(u,v)=(2\\cos u,v,2\\sin u)$ on $[0,2\\pi]\\times\\mathbb R$ as the radius-two cylinder and explain its seam.",
+        "kind": "computational",
+        "prompt": "Parametrize the side of $x^2+z^2=9$ between $y=1$ and $y=4$, and identify its repeated seam.",
+        "hint": "Replace radius $2$ by $3$ and use $y$ as the height parameter.",
+        "solution": "Take $r(u,v)=(3\\cos u,v,3\\sin u)$ for $0\\le u\\le2\\pi$ and $1\\le v\\le4$. The edges $u=0$ and $u=2\\pi$ coincide.",
+        "solutionTex": "\\mathbf r(u,v)=(3\\cos u,v,3\\sin u),\\quad0\\le u\\le2\\pi,\\ 1\\le v\\le4",
+        "rubric": [
+          "Verify $x^2+z^2=9$ and the stated height interval.",
+          "Explain the angular seam duplication."
+        ]
+      },
+      {
+        "id": "lecture10-source-hemisphere-chart-boundary-transfer",
+        "outcome": "Verify the source chart $r(u,v)=(u\\cos v,u\\sin v,\\sqrt{1-u^2})$ covers the unit top hemisphere and locate its parameter-boundary duplications.",
+        "kind": "computational",
+        "prompt": "Use $r(s,\\theta)=(3s\\cos\\theta,3s\\sin\\theta,3\\sqrt{1-s^2})$ to describe the upper hemisphere of radius $3$.",
+        "hint": "Compute the squared distance from the origin and note the sign of $z$.",
+        "solution": "The image obeys $x^2+y^2+z^2=9$ with $z\\ge0$. The pole occurs at $s=0$ for every angle, while $\\theta=0$ and $2\\pi$ repeat the seam.",
+        "solutionTex": "x^2+y^2+z^2=9s^2+9(1-s^2)=9,\\qquad z\\ge0",
+        "rubric": [
+          "Verify the sphere radius and upper-half condition.",
+          "Identify the pole and seam duplications as boundary values."
+        ]
+      }
+    ]
   },
   "surface-tangent-vectors": {
     "prerequisites": ["surface-charts"],
@@ -20900,7 +21084,146 @@
         "Verify the normal is perpendicular to both tangents."
       ],
       "solutionTex": "\\mathbf r_u=(1,0,2),\\quad\\mathbf r_v=(0,1,1),\\quad\\mathbf r_u\\times\\mathbf r_v=(-2,-1,1)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-smooth-chart-rank-two-condition-statement",
+        "title": "A smooth chart has rank two",
+        "text": "The source’s regularity test is $r_u\\times r_v\\ne0$ at each interior parameter point, together with continuous first partials. Nonvanishing makes the two parameter velocities linearly independent."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-smooth-chart-rank-two-condition-worked",
+        "title": "Test a paraboloid graph chart",
+        "strategy": "Differentiate with respect to each parameter, then test whether their cross product can vanish.",
+        "setup": "Let $r(u,v)=(u,v,u^2+v^2)$ on $(-1,1)^2$.",
+        "steps": [
+          {
+            "label": "Tangents",
+            "text": "Differentiate each coordinate in turn.",
+            "equation": "r_u=(1,0,2u),\\quad r_v=(0,1,2v)"
+          },
+          {
+            "label": "Rank test",
+            "text": "Compute the cross product.",
+            "equation": "r_u\\times r_v=(-2u,-2v,1)"
+          },
+          {
+            "label": "Nonvanishing",
+            "text": "Its third coordinate is always $1$.",
+            "equation": "\\|r_u\\times r_v\\|=\\sqrt{1+4u^2+4v^2}>0"
+          }
+        ],
+        "result": "The chart has continuous first derivatives and rank two everywhere on its interior.",
+        "verification": "The cross product cannot be zero because its third component is nonzero."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-piecewise-smooth-patch-union-statement",
+        "title": "Piecewise smoothness joins finitely many smooth patches",
+        "text": "The source condition has two parts: finitely many smooth parametric patches cover $S$, and any pair intersects only along its edges. A corner between patches does not require one smooth chart for the entire union."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-piecewise-smooth-patch-union-worked",
+        "title": "Join a disk to a paraboloid cap",
+        "strategy": "Verify the two smooth patches and identify their common circle as an edge.",
+        "setup": "Let $S_1$ be $z=0$ over the unit disk and $S_2$ be $z=1-x^2-y^2$ over the same disk.",
+        "steps": [
+          {
+            "label": "Smooth patches",
+            "text": "The disk is planar; the paraboloid is a smooth graph.",
+            "equation": "S_1:\\ z=0,\\qquad S_2:\\ z=1-x^2-y^2"
+          },
+          {
+            "label": "Intersection",
+            "text": "They meet when $1-x^2-y^2=0$.",
+            "equation": "S_1\\cap S_2=\\{z=0,\\ x^2+y^2=1\\}"
+          },
+          {
+            "label": "Finite union",
+            "text": "The common unit circle is the boundary edge of both patches.",
+            "equation": "S=S_1\\cup S_2"
+          }
+        ],
+        "result": "Their union is piecewise smooth under the source definition.",
+        "verification": "There are exactly two smooth patches and their intersection is only their shared edge."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-two-unit-normals-from-tangent-cross-product-statement",
+        "title": "Two tangent directions determine two normals",
+        "text": "At an interior point of a smooth chart, $r_u$ and $r_v$ span the tangent plane. Their cross product is perpendicular to both, so normalizing it gives one unit normal and changing its sign gives the other."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-two-unit-normals-from-tangent-cross-product-worked",
+        "title": "Normalize the normal to a saddle graph",
+        "strategy": "Evaluate both tangent vectors at the parameter, cross them, and divide by the cross-product length.",
+        "setup": "Use $r(u,v)=(u,v,uv)$ at $(u,v)=(1,2)$.",
+        "steps": [
+          {
+            "label": "Tangents",
+            "text": "Differentiate and substitute $(1,2)$.",
+            "equation": "r_u=(1,0,2),\\quad r_v=(0,1,1)"
+          },
+          {
+            "label": "Normal direction",
+            "text": "Take their cross product.",
+            "equation": "r_u\\times r_v=(-2,-1,1)"
+          },
+          {
+            "label": "Unit choices",
+            "text": "The length is $\\sqrt6$, giving exactly two signs.",
+            "equation": "\\mathbf n=\\pm\\frac{(-2,-1,1)}{\\sqrt6}"
+          }
+        ],
+        "result": "The chart point is $(1,2,2)$ and its two unit normals are $\\pm(-2,-1,1)/\\sqrt6$.",
+        "verification": "The dot products of $(-2,-1,1)$ with both tangent vectors are zero."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-smooth-chart-rank-two-condition-transfer",
+        "outcome": "Test smoothness of a surface parametrization by continuous first partials and a nonzero cross product throughout the parameter interior.",
+        "kind": "computational",
+        "prompt": "Check whether $r(u,v)=(u,v,u^2-3v^2)$ is regular on $[-1,1]^2$.",
+        "hint": "The first two coordinates of $r_u\\times r_v$ determine whether it vanishes.",
+        "solution": "Here $r_u=(1,0,2u)$ and $r_v=(0,1,-6v)$, so $r_u\\times r_v=(-2u,6v,1)$; its third component prevents vanishing.",
+        "solutionTex": "r_u\\times r_v=(-2u,6v,1)\\ne(0,0,0)",
+        "rubric": [
+          "Compute both parameter derivatives and their cross product.",
+          "Use a component that never vanishes to justify regularity."
+        ]
+      },
+      {
+        "id": "lecture10-piecewise-smooth-patch-union-transfer",
+        "outcome": "Recognize a surface as piecewise smooth when it is a finite union of smooth patches whose pairwise intersections lie only along patch edges.",
+        "kind": "computational",
+        "prompt": "Join the disk $z=0$, $x^2+y^2\\le4$, to the graph $z=4-x^2-y^2$ over the same disk. Verify the source’s piecewise-smooth criterion.",
+        "hint": "Solve for the intersection and compare it with each patch boundary.",
+        "solution": "Both patches are smooth. They intersect where $4-x^2-y^2=0$, exactly the boundary circle $x^2+y^2=4$, so their union is piecewise smooth.",
+        "solutionTex": "S_1\\cap S_2=\\{z=0,\\ x^2+y^2=4\\}=\\partial S_1=\\partial S_2",
+        "rubric": [
+          "Identify each smooth patch.",
+          "Show that the intersection lies exactly on both patch edges."
+        ]
+      },
+      {
+        "id": "lecture10-two-unit-normals-from-tangent-cross-product-transfer",
+        "outcome": "Construct the two unit normals to a smooth parametric surface from the cross product of its nonparallel tangent vectors.",
+        "kind": "computational",
+        "prompt": "Find both unit normals to $r(u,v)=(u,v,u^2+2v)$ at $(1,0)$.",
+        "hint": "Compute $r_u\\times r_v$ before normalizing.",
+        "solution": "At $(1,0)$, $r_u=(1,0,2)$ and $r_v=(0,1,2)$. Their cross product is $(-2,-2,1)$ with length $3$, so the normals are its two signs divided by $3$.",
+        "solutionTex": "\\mathbf n=\\pm\\frac{(-2,-2,1)}{3}",
+        "rubric": [
+          "Evaluate the two parameter tangents at the given parameters.",
+          "Normalize the cross product and include both signs."
+        ]
+      }
+    ]
   },
   "surface-area-element": {
     "prerequisites": ["surface-tangent-vectors", "linear-area-change"],
@@ -20924,7 +21247,106 @@
         "Keep the factor under the square root."
       ],
       "solutionTex": "A=\\int_0^2\\int_0^1\\sqrt{10}\\,dy\\,dx=2\\sqrt{10}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-nice-parametrization-hypotheses-statement",
+        "title": "A nice chart controls both domain and distortion",
+        "text": "Before using a surface-integral formula, check that the chart is smooth, $D$ is bounded with boundary of zero area, and both parameter derivatives are bounded on $D^\\circ$. These are the source’s stated “nice” conditions."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-nice-parametrization-hypotheses-worked",
+        "title": "Check a plane over a square",
+        "strategy": "Verify each source condition separately for the chart and its parameter region.",
+        "setup": "Let $r(u,v)=(u,v,u+2v)$ on $D=[0,1]^2$.",
+        "steps": [
+          {
+            "label": "Smoothness",
+            "text": "Both partial derivatives are constant.",
+            "equation": "r_u=(1,0,1),\\quad r_v=(0,1,2)"
+          },
+          {
+            "label": "Parameter region",
+            "text": "The square is bounded and its boundary has planar area zero.",
+            "equation": "D=[0,1]^2"
+          },
+          {
+            "label": "Bounded tangents",
+            "text": "The constant tangent vectors are bounded on the interior.",
+            "equation": "\\sup_{D^\\circ}\\|r_u\\|=\\sqrt2,\\quad\\sup_{D^\\circ}\\|r_v\\|=\\sqrt5"
+          }
+        ],
+        "result": "This is a nice parametrization under the lecture’s definition.",
+        "verification": "Each of the three listed conditions is checked directly."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-paraboloid-area-statement",
+        "title": "Surface area is the scalar integral of one",
+        "text": "The source defines area by $\\operatorname{Area}(S)=\\iint_S1\\,dS$. In Example 2 the projected disk is $x^2+y^2\\le9$ and the graph factor comes from $g_x=2x$, $g_y=2y$; p20 is blank after the prompt."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-paraboloid-area-worked",
+        "title": "Independently calculate the source paraboloid area",
+        "strategy": "Use polar coordinates on the projected disk and integrate the graph area factor.",
+        "setup": "For $z=x^2+y^2$, the plane $z=9$ cuts the graph at $r=3$.",
+        "steps": [
+          {
+            "label": "Graph factor",
+            "text": "The gradient is $(2x,2y)$, so in polar coordinates the factor is $\\sqrt{1+4r^2}$.",
+            "equation": "dS=\\sqrt{1+4r^2}\\,r\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Set up area",
+            "text": "Integrate over $0\\le r\\le3$ and $0\\le\\theta\\le2\\pi$.",
+            "equation": "A=2\\pi\\int_0^3r\\sqrt{1+4r^2}\\,dr"
+          },
+          {
+            "label": "Substitute",
+            "text": "Let $w=1+4r^2$, so $r\\,dr=dw/8$.",
+            "equation": "A=\\frac\\pi4\\int_1^{37}\\sqrt w\\,dw"
+          },
+          {
+            "label": "Evaluate",
+            "text": "Use the antiderivative $2w^{3/2}/3$.",
+            "equation": "A=\\frac\\pi6(37^{3/2}-1)"
+          }
+        ],
+        "result": "The guide-derived area is $\\pi(37\\sqrt{37}-1)/6$; the source does not show the solution.",
+        "verification": "The cutoff circle is $r^2=9$ because the graph height equals $9$ there."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-nice-parametrization-hypotheses-transfer",
+        "outcome": "Check the source’s hypotheses for a nice parametrization: smoothness, a bounded parameter region with zero-area boundary, and bounded parameter tangents.",
+        "kind": "computational",
+        "prompt": "Check whether $r(u,v)=(u,v,3u-v)$ on $D=[-1,1]\\times[0,2]$ is a nice parametrization.",
+        "hint": "The domain is a bounded rectangle and the partial derivatives are constant.",
+        "solution": "The rectangle is bounded with zero-area boundary. The chart is smooth and $r_u=(1,0,3)$, $r_v=(0,1,-1)$ are bounded and have nonzero cross product, so it is nice.",
+        "solutionTex": "r_u\\times r_v=(-3,1,1)\\ne0",
+        "rubric": [
+          "Check smoothness and nonzero cross product.",
+          "Check bounded domain, zero-area boundary, and bounded tangents."
+        ]
+      },
+      {
+        "id": "lecture10-source-paraboloid-area-transfer",
+        "outcome": "Set $f=1$ in the surface integral and evaluate the source’s area problem for $z=x^2+y^2$ below $z=9$.",
+        "kind": "computational",
+        "prompt": "Find the area of the part of $z=x^2+y^2$ below $z=4$.",
+        "hint": "The projected disk has radius $2$; keep the same graph factor and change the upper limit.",
+        "solution": "The area is $2\\pi\\int_0^2r\\sqrt{1+4r^2}\\,dr=\\frac\\pi6(17^{3/2}-1)$.",
+        "solutionTex": "A=2\\pi\\int_0^2r\\sqrt{1+4r^2}\\,dr=\\frac\\pi6(17\\sqrt{17}-1)",
+        "rubric": [
+          "Find the projected radius from the height constraint.",
+          "Use the graph area factor and evaluate the integral."
+        ]
+      }
+    ]
   },
   "scalar-surface-integrals": {
     "prerequisites": ["surface-area-element", "scalar-line-integrals"],
@@ -20948,7 +21370,196 @@
         "Use area, not enclosed volume."
       ],
       "solutionTex": "\\iint_S2\\,dS=2(4\\pi R^2)=8\\pi R^2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-parametric-scalar-density-integral-statement",
+        "title": "Scalar density is multiplied by actual area",
+        "text": "The source integrates $f(r(u,v))\\|r_u\\times r_v\\|$ over parameter area. The norm is essential and discards orientation sign; reversing the chart order leaves a scalar surface integral unchanged."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-parametric-scalar-density-integral-worked",
+        "title": "Integrate a density on a unit disk",
+        "strategy": "For a horizontal graph the cross-product magnitude is one; substitute the density and integrate over the disk.",
+        "setup": "Let $S$ be $z=0$, $x^2+y^2\\le1$, and let $f=x^2$.",
+        "steps": [
+          {
+            "label": "Chart factor",
+            "text": "Use $r(u,v)=(u,v,0)$, whose cross product has unit length.",
+            "equation": "\\|r_u\\times r_v\\|=1"
+          },
+          {
+            "label": "Polar density",
+            "text": "Substitute $x=r\\cos\\theta$ and $dA=r\\,dr\\,d\\theta$.",
+            "equation": "\\iint_S x^2dS=\\int_0^{2\\pi}\\int_0^1r^3\\cos^2\\theta\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Integrate",
+            "text": "The radial integral is $1/4$ and the angular integral is $\\pi$.",
+            "equation": "\\iint_Sx^2dS=\\frac14\\cdot\\pi=\\frac\\pi4"
+          }
+        ],
+        "result": "The scalar surface integral is $\\pi/4$, with the same value for either orientation.",
+        "verification": "Changing $r_u\\times r_v$ to its negative leaves its norm unchanged."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-piecewise-scalar-integral-additivity-statement",
+        "title": "Add scalar integrals patch by patch",
+        "text": "For the source’s finite patch union, the scalar integral over $S=S_1\\cup\\cdots\\cup S_k$ is the sum over each patch. Shared edges do not supply an extra area term."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-piecewise-scalar-integral-additivity-worked",
+        "title": "Add the area of two joined patches",
+        "strategy": "Compute each patch measure separately and add; the common circle has surface area zero.",
+        "setup": "Take a unit disk $S_1$ in $z=0$ and a unit-radius graph cap $S_2:z=1-x^2-y^2$. Set $f=1$.",
+        "steps": [
+          {
+            "label": "Disk",
+            "text": "Its area is the area of the unit disk.",
+            "equation": "\\iint_{S_1}1\\,dS=\\pi"
+          },
+          {
+            "label": "Cap",
+            "text": "Its graph factor is $\\sqrt{1+4r^2}$.",
+            "equation": "\\iint_{S_2}1\\,dS=2\\pi\\int_0^1r\\sqrt{1+4r^2}\\,dr=\\frac\\pi6(5\\sqrt5-1)"
+          },
+          {
+            "label": "Add patches",
+            "text": "Their intersection is only the rim circle.",
+            "equation": "\\operatorname{Area}(S)=\\pi+\\frac\\pi6(5\\sqrt5-1)"
+          }
+        ],
+        "result": "The scalar integral of $1$ over the union is $\\pi(5+5\\sqrt5)/6$.",
+        "verification": "The shared circle is one-dimensional and contributes no surface-area integral."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-closed-surface-z-density-statement",
+        "title": "Split the source boundary into three scalar patches",
+        "text": "The source problem has a bottom disk, a cylindrical side, and a top graph $z=x+1$. Because this is a scalar integral, each patch uses its positive area factor; the source gives the setup but no displayed calculation on pp14–15."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-closed-surface-z-density-worked",
+        "title": "Independently derive the source Example 1 value",
+        "strategy": "Integrate separately on the bottom disk, cylinder, and graph, then add the three scalar contributions.",
+        "setup": "Use the exact source boundary: $z=0$, $x^2+y^2=1$, and $z=x+1$.",
+        "steps": [
+          {
+            "label": "Bottom",
+            "text": "The density vanishes on $z=0$.",
+            "equation": "\\iint_{S_2}z\\,dS=0"
+          },
+          {
+            "label": "Cylinder",
+            "text": "Parametrize by $(\\cos\\theta,\\sin\\theta,z)$ with $0\\le z\\le1+\\cos\\theta$; $dS=d\\theta\\,dz$.",
+            "equation": "\\iint_{S_1}z\\,dS=\\frac12\\int_0^{2\\pi}(1+\\cos\\theta)^2d\\theta=\\frac{3\\pi}{2}"
+          },
+          {
+            "label": "Top plane",
+            "text": "For $z=x+1$, the graph factor is $\\sqrt2$ over the unit disk.",
+            "equation": "\\iint_{S_3}z\\,dS=\\sqrt2\\iint_{x^2+y^2\\le1}(x+1)dA=\\sqrt2\\pi"
+          },
+          {
+            "label": "Add",
+            "text": "Use symmetry to remove the disk integral of $x$.",
+            "equation": "\\iint_Sz\\,dS=\\frac{3\\pi}{2}+\\sqrt2\\pi"
+          }
+        ],
+        "result": "The guide-derived value is $\\pi(3/2+\\sqrt2)$; the source slides do not display this solution.",
+        "verification": "The side height is nonnegative on the unit disk, and the top graph density is integrated with its $\\sqrt2$ area factor."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-graph-surface-jacobian-statement",
+        "title": "A graph stretches projected area by its gradient",
+        "text": "For $r(x,y)=(x,y,g(x,y))$, the source graph factor is $\\sqrt{1+g_x^2+g_y^2}$. The formula assumes the stated domain and gradient conditions and evaluates the density at $(x,y,g(x,y))$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-graph-surface-jacobian-worked",
+        "title": "Integrate a density over an inclined graph",
+        "strategy": "Compute the constant graph factor, substitute the height into the density, and integrate over the projected region.",
+        "setup": "Let $z=2x-y$ over $D=\\{x,y\\ge0:x+y\\le1\\}$ and let $f=x+y+1$.",
+        "steps": [
+          {
+            "label": "Area factor",
+            "text": "The gradient is $(2,-1)$, so the factor is constant.",
+            "equation": "\\sqrt{1+g_x^2+g_y^2}=\\sqrt6"
+          },
+          {
+            "label": "Substitute density",
+            "text": "The scalar density is $x+y+1$ on the graph.",
+            "equation": "\\iint_Sf\\,dS=\\sqrt6\\iint_D(x+y+1)dA"
+          },
+          {
+            "label": "Triangle integral",
+            "text": "On this unit right triangle, $\\iint_Dx=\\iint_Dy=1/6$ and area is $1/2$.",
+            "equation": "\\iint_D(x+y+1)dA=\\frac16+\\frac16+\\frac12=\\frac56"
+          }
+        ],
+        "result": "The surface integral is $5\\sqrt6/6$.",
+        "verification": "The graph is smooth with bounded constant gradient on the bounded triangular region."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-parametric-scalar-density-integral-transfer",
+        "outcome": "Evaluate a scalar surface integral by multiplying the scalar density by the chart’s cross-product magnitude, independent of orientation.",
+        "kind": "computational",
+        "prompt": "Integrate $f=x^2+y^2$ over the horizontal disk $x^2+y^2\\le4$.",
+        "hint": "In polar coordinates, use density $r^2$ and area element $r\\,dr\\,d\\theta$.",
+        "solution": "The integral is $\\int_0^{2\\pi}\\int_0^2r^3\\,dr\\,d\\theta=2\\pi(4)=8\\pi$.",
+        "solutionTex": "\\iint_S(x^2+y^2)\\,dS=\\int_0^{2\\pi}\\int_0^2r^3\\,dr\\,d\\theta=8\\pi",
+        "rubric": [
+          "Include the surface-area factor.",
+          "Use the disk’s radius and integrate the changed density."
+        ]
+      },
+      {
+        "id": "lecture10-piecewise-scalar-integral-additivity-transfer",
+        "outcome": "Add scalar surface integrals over finitely many nice smooth patches that meet only along edges.",
+        "kind": "computational",
+        "prompt": "For density $f=2$, add the integral over a radius-two disk and a separate flat annulus with radii $2$ and $3$, joined only on their boundary circle.",
+        "hint": "Multiply the total area of both patches by the constant density.",
+        "solution": "The disk and annulus areas add to $4\\pi+\\pi(9-4)=9\\pi$. Thus the integral is $2(9\\pi)=18\\pi$.",
+        "solutionTex": "\\iint_S2\\,dS=2\\bigl(4\\pi+\\pi(3^2-2^2)\\bigr)=18\\pi",
+        "rubric": [
+          "Compute the integral on each patch.",
+          "Add the patch values once and do not add the seam separately."
+        ]
+      },
+      {
+        "id": "lecture10-source-closed-surface-z-density-transfer",
+        "outcome": "Evaluate the source’s $z$-density integral by splitting the closed boundary into its bottom disk, cylindrical side, and sloped planar top.",
+        "kind": "computational",
+        "prompt": "Repeat the source setup with the top plane $z=x+2$ over the unit cylinder and disk. Find $\\iint_S z\\,dS$.",
+        "hint": "The side height is $2+\\cos\\theta$; the top graph still has area factor $\\sqrt2$.",
+        "solution": "The cylinder contributes $\\tfrac12\\int_0^{2\\pi}(2+\\cos\\theta)^2d\\theta=\\tfrac{9\\pi}{2}$. The top contributes $\\sqrt2\\iint_D(x+2)dA=2\\sqrt2\\pi$; the bottom contributes zero.",
+        "solutionTex": "\\iint_Sz\\,dS=\\frac{9\\pi}{2}+2\\sqrt2\\pi",
+        "rubric": [
+          "Parametrize and integrate over each of the three patches.",
+          "Include the top graph factor and use disk symmetry."
+        ]
+      },
+      {
+        "id": "lecture10-graph-surface-jacobian-transfer",
+        "outcome": "Convert a scalar surface integral on $z=g(x,y)$ to a planar integral using $\\sqrt{1+g_x^2+g_y^2}$ under the source’s boundedness conditions.",
+        "kind": "computational",
+        "prompt": "For $z=3x+4y$ over $0\\le x,y\\le1$, integrate the density $f=z+1$ over the graph.",
+        "hint": "The graph factor is $\\sqrt{26}$; then integrate $3x+4y+1$ on the square.",
+        "solution": "The factor is $\\sqrt{1+3^2+4^2}=\\sqrt{26}$. The square integral of $3x+4y+1$ is $3/2+2+1=9/2$, so the surface integral is $9\\sqrt{26}/2$.",
+        "solutionTex": "\\iint_S(z+1)\\,dS=\\sqrt{26}\\int_0^1\\int_0^1(3x+4y+1)\\,dy\\,dx=\\frac{9\\sqrt{26}}2",
+        "rubric": [
+          "Compute the graph area factor from both partial derivatives.",
+          "Substitute the density and integrate over the projected domain."
+        ]
+      }
+    ]
   },
   "surface-orientation": {
     "prerequisites": ["surface-tangent-vectors"],
@@ -20972,7 +21583,236 @@
         "Do not discard the area magnitude when integrating flux."
       ],
       "solutionTex": "\\mathbf n\\,dS=(2x,2y,-1)\\,dx\\,dy\\quad\\text{(downward)}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-skill-1-statement",
+        "title": "Orientation is a continuous global choice",
+        "text": "Every smooth interior point has two local unit normals, but orientability requires choosing one continuously over the entire surface interior. The source illustrates that continuity—not a pointwise choice alone—is the condition."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-skill-1-worked",
+        "title": "Orient the sphere consistently",
+        "strategy": "Use the radial unit vector field and check its norm and continuity on the sphere.",
+        "setup": "Consider the sphere $x^2+y^2+z^2=R^2$ with $R>0$.",
+        "steps": [
+          {
+            "label": "Normal length",
+            "text": "At each sphere point define $n=(x,y,z)/R$.",
+            "equation": "\\|n\\|=\\frac{\\sqrt{x^2+y^2+z^2}}R=1"
+          },
+          {
+            "label": "Normal direction",
+            "text": "The radial vector is perpendicular to tangent directions of the level set.",
+            "equation": "\\nabla(x^2+y^2+z^2)=(2x,2y,2z)"
+          },
+          {
+            "label": "Continuity",
+            "text": "The formula varies continuously at every point on the sphere.",
+            "equation": "n(p)=p/R"
+          }
+        ],
+        "result": "The sphere admits a continuous outward unit normal, so it is orientable.",
+        "verification": "The same formula is defined everywhere on the sphere and has constant norm one."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-mobius-strip-seam-reverses-normal-statement",
+        "title": "The Möbius seam reverses a local side",
+        "text": "The source parametrizes the Möbius strip over $0\\le u\\le2\\pi$, $-1\\le v\\le1$. At the seam, $(0,v)$ is identified with $(2\\pi,-v)$, reversing the transverse coordinate; a normal transported once around returns with opposite sign."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-mobius-strip-seam-reverses-normal-worked",
+        "title": "Track the parameter orientation through the seam",
+        "strategy": "Use the seam coordinate change and its Jacobian sign to determine how a local normal changes.",
+        "setup": "Compare parameter coordinates $(u,v)$ near $u=0$ and $(u_1,v_1)=(u+2\\pi,-v)$ near $u=2\\pi$.",
+        "steps": [
+          {
+            "label": "Seam identification",
+            "text": "The two boundary points represent the same physical point.",
+            "equation": "(0,v)\\sim(2\\pi,-v)"
+          },
+          {
+            "label": "Transition determinant",
+            "text": "The coordinate transition has derivative matrix with diagonal entries $1$ and $-1$.",
+            "equation": "\\det\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}=-1"
+          },
+          {
+            "label": "Normal sign",
+            "text": "A negative transition determinant reverses the ordered tangent pair and its cross product.",
+            "equation": "r_{u'}\\times r_{v'}=-(r_u\\times r_v)"
+          }
+        ],
+        "result": "One circuit reverses the normal, so no globally continuous unit normal exists.",
+        "verification": "A global orientation would have to return to its original sign at the same seam point, contradicting the computed sign reversal."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-choose-normal-sign-from-chart-statement",
+        "title": "Choose the cross-product sign on the surface",
+        "text": "A chart supplies the local unit normal $\\pm(r_u\\times r_v)/\\|r_u\\times r_v\\|$. The problem selects the sign. The normal field is a function on the surface points, not on the parameter domain; this is explicitly cautioned on p27."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-choose-normal-sign-from-chart-worked",
+        "title": "Orient a cylindrical side outward",
+        "strategy": "Compute the ordered cross product, normalize it, and compare its direction with the requested outward side.",
+        "setup": "Parametrize a radius-$R$ cylinder by $r(u,v)=(R\\cos u,R\\sin u,v)$.",
+        "steps": [
+          {
+            "label": "Tangents",
+            "text": "Differentiate the angle and height parameters.",
+            "equation": "r_u=(-R\\sin u,R\\cos u,0),\\quad r_v=(0,0,1)"
+          },
+          {
+            "label": "Cross product",
+            "text": "Their ordered cross product points radially outward.",
+            "equation": "r_u\\times r_v=(R\\cos u,R\\sin u,0)"
+          },
+          {
+            "label": "Normalize",
+            "text": "Divide by its length $R$.",
+            "equation": "n=(\\cos u,\\sin u,0)"
+          }
+        ],
+        "result": "The chart order gives outward orientation; reversing the parameter order gives inward orientation.",
+        "verification": "The dot product of this normal with the radial position $(R\\cos u,R\\sin u,0)$ is $R>0$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-graph-upward-and-downward-normal-statement",
+        "title": "The third component fixes graph orientation",
+        "text": "For a graph, the source’s upward unit normal is $(-g_x,-g_y,1)/\\sqrt{1+g_x^2+g_y^2}$. Its area vector is $(-g_x,-g_y,1)\\,dx\\,dy$; downward uses the negative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-graph-upward-and-downward-normal-worked",
+        "title": "Find both orientations of a sloped graph",
+        "strategy": "Differentiate the height function and use the sign of the third component to choose orientation.",
+        "setup": "Let $z=g(x,y)=x^2+3y$.",
+        "steps": [
+          {
+            "label": "Gradient",
+            "text": "Differentiate the height.",
+            "equation": "g_x=2x,\\quad g_y=3"
+          },
+          {
+            "label": "Upward area vector",
+            "text": "Insert the derivatives in the source formula.",
+            "equation": "n_{\\rm up}\\,dS=(-2x,-3,1)\\,dx\\,dy"
+          },
+          {
+            "label": "Downward choice",
+            "text": "Reverse all three components.",
+            "equation": "n_{\\rm down}\\,dS=(2x,3,-1)\\,dx\\,dy"
+          }
+        ],
+        "result": "The positive third component selects upward orientation; the negative selects downward.",
+        "verification": "Each vector is perpendicular to the graph tangents $(1,0,2x)$ and $(0,1,3)$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-positive-outward-boundary-orientation-statement",
+        "title": "Positive boundary orientation points out of the solid",
+        "text": "For a piecewise-smooth boundary $S=\\partial E$, the source calls the choice with all patch normals pointing outward positive. Reversing every normal gives negative orientation; local choices must not be mixed."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-positive-outward-boundary-orientation-worked",
+        "title": "Set orientations on a cylinder boundary",
+        "strategy": "Identify the solid’s top, bottom, and side, then point each normal away from the interior.",
+        "setup": "Consider the closed cylinder $x^2+y^2\\le1$, $0\\le z\\le2$.",
+        "steps": [
+          {
+            "label": "Top disk",
+            "text": "Outward points in the positive vertical direction.",
+            "equation": "n_{\\rm top}=(0,0,1)"
+          },
+          {
+            "label": "Bottom disk",
+            "text": "Outward points below the solid.",
+            "equation": "n_{\\rm bottom}=(0,0,-1)"
+          },
+          {
+            "label": "Side",
+            "text": "Outward is radially away from the axis.",
+            "equation": "n_{\\rm side}=(x,y,0)\\quad(x^2+y^2=1)"
+          }
+        ],
+        "result": "The positive orientation uses all three outward choices; the negative orientation reverses all three.",
+        "verification": "Each listed direction has nonnegative dot product with a vector from the solid toward the exterior."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-source-skill-1-transfer",
+        "outcome": "Decide whether a smooth surface is orientable by the existence of a continuous unit normal field on its surface interior.",
+        "kind": "computational",
+        "prompt": "Give a continuous unit normal field for the plane $2x-y+2z=5$ and verify it is unit length.",
+        "hint": "Normalize the constant gradient of the plane equation.",
+        "solution": "The normal $(2,-1,2)$ has length $3$, so $n=(2,-1,2)/3$ is a continuous unit normal field.",
+        "solutionTex": "\\mathbf n=\\frac{(2,-1,2)}{3},\\qquad\\|\\mathbf n\\|=1",
+        "rubric": [
+          "Give a normal defined at every surface point.",
+          "Verify continuity and unit length."
+        ]
+      },
+      {
+        "id": "lecture10-mobius-strip-seam-reverses-normal-transfer",
+        "outcome": "Explain the source’s Möbius-strip example by showing that its seam identification reverses the transverse parameter direction.",
+        "kind": "computational",
+        "prompt": "On the width-one band $-1\\le v\\le1$, the seam identifies $(0,v)$ with $(2\\pi,-v)$. State its transverse effect and orientation.",
+        "hint": "The transverse coordinate map is $v\\mapsto-v$; compute its derivative and the full transition determinant.",
+        "solution": "The interval $[-1,1]$ maps onto itself. The transverse derivative is $-1$, so the transition matrix has determinant $-1$; the seam reverses orientation and a transported normal returns negated.",
+        "solutionTex": "v\\mapsto-v,\\qquad\\det\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}=-1",
+        "rubric": [
+          "State the seam map on the fixed-width interval and its transverse derivative.",
+          "Compute the transition determinant and conclude that the normal reverses."
+        ]
+      },
+      {
+        "id": "lecture10-choose-normal-sign-from-chart-transfer",
+        "outcome": "Construct either orientation of a smooth surface by normalizing $r_u\\times r_v$ and selecting the sign required by the problem.",
+        "kind": "computational",
+        "prompt": "For $r(u,v)=(4\\cos u,4\\sin u,v)$, find the inward unit normal using the reversed parameter order.",
+        "hint": "Use $r_v\\times r_u=-(r_u\\times r_v)$.",
+        "solution": "The outward normal is $(\\cos u,\\sin u,0)$, so reversing the order gives inward $(-\\cos u,-\\sin u,0)$.",
+        "solutionTex": "\\mathbf n_{\\rm in}=\\frac{r_v\\times r_u}{\\|r_v\\times r_u\\|}=(-\\cos u,-\\sin u,0)",
+        "rubric": [
+          "Compute the cross product in the stated order.",
+          "Choose and normalize the sign that points inward."
+        ]
+      },
+      {
+        "id": "lecture10-graph-upward-and-downward-normal-transfer",
+        "outcome": "Write upward and downward area vectors for a graph $z=g(x,y)$ using $(-g_x,-g_y,1)$ and its negative.",
+        "kind": "computational",
+        "prompt": "For $z=5x-12y$, give the upward and downward unit normals.",
+        "hint": "The graph factor is $\\sqrt{1+25+144}=\\sqrt{170}$.",
+        "solution": "The vector $(-5,12,1)$ has length $\\sqrt{25+144+1}=\\sqrt{170}$. The upward unit normal is $(-5,12,1)/\\sqrt{170}$ and the downward normal is its negative.",
+        "solutionTex": "\\mathbf n_{\\rm up}=\\frac{(-5,12,1)}{\\sqrt{170}},\\qquad\\mathbf n_{\\rm down}=\\frac{(5,-12,-1)}{\\sqrt{170}}",
+        "rubric": [
+          "Use both graph partial derivatives with the correct signs.",
+          "Normalize and state opposite directions."
+        ]
+      },
+      {
+        "id": "lecture10-positive-outward-boundary-orientation-transfer",
+        "outcome": "Assign positive orientation to the boundary of a region by choosing outward normals on each smooth patch; negative orientation reverses them all.",
+        "kind": "computational",
+        "prompt": "State the outward normals on the top, bottom, and side of the cylinder $x^2+y^2\\le9$, $-1\\le z\\le1$.",
+        "hint": "Only the side radius changes; the vertical directions do not.",
+        "solution": "The top normal is $(0,0,1)$, the bottom is $(0,0,-1)$, and the side unit normal is $(x/3,y/3,0)$.",
+        "solutionTex": "\\mathbf n_{\\rm top}=(0,0,1),\\quad\\mathbf n_{\\rm bottom}=(0,0,-1),\\quad\\mathbf n_{\\rm side}=\\left(\\frac x3,\\frac y3,0\\right)",
+        "rubric": [
+          "Choose normals independently on each smooth patch.",
+          "Check that each points away from the solid."
+        ]
+      }
+    ]
   },
   "flux-through-surfaces": {
     "prerequisites": ["surface-area-element", "vector-fields"],
@@ -20993,7 +21833,246 @@
       "solution": "The dot product is 3, so flux is 3. Horizontal components contribute zero. Downward orientation gives $-3$.",
       "rubric": ["Choose the normal.", "Multiply normal component by area."],
       "solutionTex": "\\iint_S(1,2,3)\\cdot(0,0,1)\\,dS=3"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture10-flux-is-normal-component-statement",
+        "title": "Flux keeps the signed normal component",
+        "text": "The source defines flux by $\\iint_S\\mathbf F\\cdot\\mathbf n\\,dS$. Components tangent to the surface contribute zero; components along the chosen normal contribute with sign."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-flux-is-normal-component-worked",
+        "title": "Compute flux through a sloped plane patch",
+        "strategy": "Use the upward graph area vector so the dot product already includes the area factor.",
+        "setup": "Let $z=3x+y$ over the unit square and let $\\mathbf F=(2,-1,4)$.",
+        "steps": [
+          {
+            "label": "Area vector",
+            "text": "For the graph the upward area vector is $(-3,-1,1)dxdy$.",
+            "equation": "n\\,dS=(-3,-1,1)\\,dx\\,dy"
+          },
+          {
+            "label": "Normal component",
+            "text": "Take its dot product with the constant field.",
+            "equation": "(2,-1,4)\\cdot(-3,-1,1)=-6+1+4=-1"
+          },
+          {
+            "label": "Integrate",
+            "text": "The projected square has area one.",
+            "equation": "\\iint_S\\mathbf F\\cdot d\\mathbf S=\\int_0^1\\int_0^1(-1)\\,dy\\,dx=-1"
+          }
+        ],
+        "result": "The upward flux is $-1$; the field crosses partly against the chosen normal.",
+        "verification": "Reversing the orientation changes the answer to $+1$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-orientation-respecting-flux-parametrization-statement",
+        "title": "Use the ordered cross product in flux",
+        "text": "Substituting $\\mathbf n=(r_u\\times r_v)/\\|r_u\\times r_v\\|$ into the flux definition cancels the normalization against $dS$. The resulting formula uses the signed cross product, so parameter order must respect the chosen orientation."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-orientation-respecting-flux-parametrization-worked",
+        "title": "Check orientation on a sloped square",
+        "strategy": "Compute the cross product in parameter order, compare its vertical sign with “upward,” then integrate.",
+        "setup": "Let $r(u,v)=(u,v,u+v)$ on the unit square and $\\mathbf F=(0,0,1)$.",
+        "steps": [
+          {
+            "label": "Cross product",
+            "text": "Differentiate and cross in the stated order.",
+            "equation": "r_u=(1,0,1),\\quad r_v=(0,1,1),\\quad r_u\\times r_v=(-1,-1,1)"
+          },
+          {
+            "label": "Orientation",
+            "text": "The positive third component agrees with upward.",
+            "equation": "(-1,-1,1)_z=1>0"
+          },
+          {
+            "label": "Flux",
+            "text": "The dot product is one throughout the square.",
+            "equation": "\\iint_S\\mathbf F\\cdot d\\mathbf S=\\int_0^1\\int_0^1 1\\,dv\\,du=1"
+          }
+        ],
+        "result": "The upward flux is $1$. Reversing the parameter order would give $-1$.",
+        "verification": "The cross product has positive vertical component, which is the graph’s upward choice."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-paraboloid-boundary-flux-statement",
+        "title": "Split the source paraboloid boundary before integrating",
+        "text": "The source boundary has the graph $z=1-x^2-y^2$ and its bottom unit disk. Positive orientation means outward on both patches. Page 32 gives $\\mathbf F=(y,x,z)$; the two continuation pages are blank."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-paraboloid-boundary-flux-worked",
+        "title": "Independently derive the source Example 3 flux",
+        "strategy": "Use the upward graph area vector on the top and the downward normal on the bottom.",
+        "setup": "The solid is $0\\le z\\le1-r^2$, $0\\le r\\le1$, with positive boundary orientation.",
+        "steps": [
+          {
+            "label": "Top graph",
+            "text": "For $g=1-x^2-y^2$, the outward/upward area vector is $(2x,2y,1)dA$.",
+            "equation": "\\mathbf F\\cdot n\\,dS=(y,x,1-r^2)\\cdot(2x,2y,1)dA=(4xy+1-r^2)dA"
+          },
+          {
+            "label": "Top integral",
+            "text": "The $xy$ term integrates to zero by disk symmetry.",
+            "equation": "\\iint_D(1-r^2)dA=2\\pi\\int_0^1(1-r^2)r\\,dr=\\frac\\pi2"
+          },
+          {
+            "label": "Bottom disk",
+            "text": "On $z=0$, the field has zero vertical component, so its dot product with the downward normal is zero.",
+            "equation": "(y,x,0)\\cdot(0,0,-1)=0"
+          },
+          {
+            "label": "Sum",
+            "text": "Add the patch fluxes.",
+            "equation": "\\iint_S\\mathbf F\\cdot d\\mathbf S=\\frac\\pi2+0"
+          }
+        ],
+        "result": "The guide-derived outward flux is $\\pi/2$; the source slides do not display a solution.",
+        "verification": "The top uses the outward graph area vector and the lower disk contributes zero."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-hemisphere-flux-statement",
+        "title": "The source hemisphere uses upward orientation",
+        "text": "The source asks for the upward flux through the top hemisphere of radius $6$ for $\\mathbf F=(0,0,z)$. On this upper hemisphere, upward agrees with outward; the prompt is followed by blank solution slides."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-hemisphere-flux-worked",
+        "title": "Independently integrate the source hemisphere flux",
+        "strategy": "Use spherical coordinates and integrate the field’s normal component over the upper half-sphere.",
+        "setup": "Set $x=6\\sin\\phi\\cos\\theta$, $y=6\\sin\\phi\\sin\\theta$, $z=6\\cos\\phi$, with $0\\le\\phi\\le\\pi/2$.",
+        "steps": [
+          {
+            "label": "Normal component",
+            "text": "The upward unit normal is radial, so $\\mathbf F\\cdot n=z^2/6$.",
+            "equation": "\\mathbf F\\cdot n=6\\cos^2\\phi"
+          },
+          {
+            "label": "Area element",
+            "text": "For radius six the element is $36\\sin\\phi\\,d\\phi\\,d\\theta$.",
+            "equation": "dS=36\\sin\\phi\\,d\\phi\\,d\\theta"
+          },
+          {
+            "label": "Integrate",
+            "text": "Integrate $216\\cos^2\\phi\\sin\\phi$ over the upper hemisphere.",
+            "equation": "\\int_0^{2\\pi}\\int_0^{\\pi/2}216\\cos^2\\phi\\sin\\phi\\,d\\phi\\,d\\theta=144\\pi"
+          }
+        ],
+        "result": "The guide-derived upward flux is $144\\pi$; the source does not display the calculation.",
+        "verification": "The field is vertical and nonnegative on the top hemisphere, so the flux must be positive."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture10-source-cone-hemisphere-closed-flux-statement",
+        "title": "The source solid has a spherical top and conical side",
+        "text": "The cap and cone meet where $r=z$ and $r^2+z^2=8$, hence at $r=z=2$. Positive orientation points outward on the cap and down/outward on the cone. The source’s continuation slides are blank."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture10-source-cone-hemisphere-closed-flux-worked",
+        "title": "Independently sum the source cap and cone flux",
+        "strategy": "Parametrize both patches with outward orientation; use symmetry on the cap and a downward area vector on the cone.",
+        "setup": "The sphere has radius $\\sqrt8$ and cap angle $0\\le\\phi\\le\\pi/4$; the cone is $r=z$ for $0\\le r\\le2$.",
+        "steps": [
+          {
+            "label": "Intersection",
+            "text": "Solve the sphere and cone equations.",
+            "equation": "r^2+r^2=8\\Rightarrow r=z=2"
+          },
+          {
+            "label": "Spherical cap",
+            "text": "The $y$-component term integrates to zero over a full revolution; the constant vertical component contributes.",
+            "equation": "\\iint_{S_{\\rm cap}}\\mathbf F\\cdot d\\mathbf S=8\\pi"
+          },
+          {
+            "label": "Cone",
+            "text": "Use $r(s,\\theta)=(s\\cos\\theta,s\\sin\\theta,s)$ with outward area vector $(s\\cos\\theta,s\\sin\\theta,-s)$.",
+            "equation": "\\iint_{S_{\\rm cone}}\\mathbf F\\cdot d\\mathbf S=\\int_0^{2\\pi}\\int_0^2(s^2\\sin\\theta\\cos\\theta-2s)\\,ds\\,d\\theta=-8\\pi"
+          },
+          {
+            "label": "Closed boundary",
+            "text": "Add the two patch contributions.",
+            "equation": "\\iint_S\\mathbf F\\cdot d\\mathbf S=8\\pi-8\\pi=0"
+          }
+        ],
+        "result": "The guide-derived outward flux is zero; the opposing patch contributions cancel.",
+        "verification": "The field has zero divergence, consistent with the direct cancellation, but the calculation above uses only the source surface integral formula."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture10-flux-is-normal-component-transfer",
+        "outcome": "Interpret flux as the surface integral of the vector field’s signed component along the chosen unit normal.",
+        "kind": "computational",
+        "prompt": "Find upward flux of $\\mathbf F=(1,3,-2)$ across $z=2x-2y$ over $[0,2]\\times[0,1]$.",
+        "hint": "Dot the field with $(-2,2,1)$ and multiply by the rectangle area.",
+        "solution": "The dot product is $-2+6-2=2$. The projected rectangle has area $2$, so the upward flux is $4$.",
+        "solutionTex": "\\iint_S\\mathbf F\\cdot d\\mathbf S=2\\cdot(2\\cdot1)=4",
+        "rubric": [
+          "Use the specified orientation and graph area vector.",
+          "Multiply the normal component by projected area."
+        ]
+      },
+      {
+        "id": "lecture10-orientation-respecting-flux-parametrization-transfer",
+        "outcome": "Evaluate parametrized flux with $\\mathbf F(r)\\cdot(r_u\\times r_v)$ only when the parameter order respects the chosen orientation.",
+        "kind": "computational",
+        "prompt": "Use $r(u,v)=(u,v,2u+v)$ on $0\\le u\\le2$, $0\\le v\\le1$ to find upward flux of $\\mathbf F=(0,0,3)$.",
+        "hint": "The cross product is $(-2,-1,1)$; integrate its dot product with the field over a parameter rectangle of area two.",
+        "solution": "The chart order points upward. The integrand is $3$, so the flux is $3(2)(1)=6$.",
+        "solutionTex": "\\mathbf F\\cdot(r_u\\times r_v)=3,\\qquad\\text{flux}=3\\cdot2=6",
+        "rubric": [
+          "Verify the cross-product sign agrees with upward orientation.",
+          "Integrate the signed dot product over the parameter region."
+        ]
+      },
+      {
+        "id": "lecture10-source-paraboloid-boundary-flux-transfer",
+        "outcome": "Evaluate the source’s positive flux through the boundary of $0\\le z\\le1-x^2-y^2$ for $\\mathbf F=(y,x,z)$ by summing its top and bottom patches.",
+        "kind": "computational",
+        "prompt": "For the solid $0\\le z\\le4-x^2-y^2$ and $\\mathbf F=(y,x,z)$, find outward flux through its entire boundary.",
+        "hint": "The base contributes zero. On the top, the graph area vector is $(2x,2y,1)dA$ over $r\\le2$.",
+        "solution": "The top integrand is $4xy+4-r^2$. Symmetry removes $4xy$, and $\\int_0^{2\\pi}\\int_0^2(4-r^2)r\\,dr\\,d\\theta=8\\pi$. The base contributes zero.",
+        "solutionTex": "\\iint_S\\mathbf F\\cdot d\\mathbf S=2\\pi\\int_0^2(4-r^2)r\\,dr=8\\pi",
+        "rubric": [
+          "Use outward area vectors on the top and bottom.",
+          "Evaluate the disk integral and account for symmetry."
+        ]
+      },
+      {
+        "id": "lecture10-source-hemisphere-flux-transfer",
+        "outcome": "Evaluate upward flux of $\\mathbf F=(0,0,z)$ through the source’s radius-six top hemisphere.",
+        "kind": "computational",
+        "prompt": "Find upward flux of $\\mathbf F=(0,0,z)$ through the top hemisphere of radius $3$.",
+        "hint": "Use $\\mathbf F\\cdot n=z^2/3$ and $dS=9\\sin\\phi\\,d\\phi\\,d\\theta$.",
+        "solution": "The integral is $\\int_0^{2\\pi}\\int_0^{\\pi/2}27\\cos^2\\phi\\sin\\phi\\,d\\phi\\,d\\theta=18\\pi$.",
+        "solutionTex": "\\iint_S\\mathbf F\\cdot d\\mathbf S=2\\pi\\cdot27\\cdot\\frac13=18\\pi",
+        "rubric": [
+          "Use the correct hemisphere radius and upward normal.",
+          "Integrate the normal component over $0\\le\\phi\\le\\pi/2$."
+        ]
+      },
+      {
+        "id": "lecture10-source-cone-hemisphere-closed-flux-transfer",
+        "outcome": "Compute positive flux through the source’s closed boundary between a spherical cap and cone by integrating both outward-oriented patches.",
+        "kind": "computational",
+        "prompt": "For the cap $z=\\sqrt{18-r^2}$ joined to cone $z=r$ and field $\\mathbf F=(y,0,3)$, determine the positive flux through the closed surface.",
+        "hint": "The intersection radius is $3$. Compute top-cap and cone contributions with outward orientation.",
+        "solution": "The sphere radius is $3\\sqrt2$ and the cap angle ends at $\\pi/4$. The cap contributes $27\\pi$ from the constant vertical field component, and the cone contributes $-27\\pi$; the total is zero.",
+        "solutionTex": "\\iint_{S_{\\rm cap}}\\mathbf F\\cdot d\\mathbf S=27\\pi,\\quad\\iint_{S_{\\rm cone}}\\mathbf F\\cdot d\\mathbf S=-27\\pi,\\quad\\iint_S=0",
+        "rubric": [
+          "Find the cap/cone intersection and choose outward orientations.",
+          "Evaluate both patch fluxes and add with their signs."
+        ]
+      }
+    ]
   },
   "curl-and-local-rotation": {
     "prerequisites": ["greens-theorem", "vector-fields"],

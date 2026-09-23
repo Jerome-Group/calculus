@@ -6856,6 +6856,16 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [49, 72],
         "detail": "Optional: Stewart, §16.6–16.7; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [15, 15],
+        "detail": "Lecture 10 Example 1 continuation (blank worked-solution slide)"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [17, 17],
+        "detail": "Lecture 10 graph scalar-integral formula continuation"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6908,6 +6918,16 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [49, 72],
         "detail": "Optional: Stewart, §16.6–16.7; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [23, 25],
+        "detail": "Lecture 10 local normal figures and Möbius-strip seam"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [27, 27],
+        "detail": "Lecture 10 choosing the normal sign from an ordered chart"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -6974,6 +6994,26 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",
         "pages": [49, 72],
         "detail": "Optional: Stewart, §16.6–16.7; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [31, 31],
+        "detail": "Lecture 10 orientation-respecting flux formula"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [34, 34],
+        "detail": "Lecture 10 Example 3 blank worked-solution continuation"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [37, 37],
+        "detail": "Lecture 10 Example 4 blank worked-solution continuation"
+      },
+      {
+        "sourceId": "MH2100_Lecture_10",
+        "pages": [40, 40],
+        "detail": "Lecture 10 Example 5 blank worked-solution continuation"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
