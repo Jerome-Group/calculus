@@ -17378,7 +17378,236 @@
         "Do not invent multiplicativity."
       ],
       "solutionTex": "\\iint_D(3f-2g)\\,dA=3(2)-2(-1)=8"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture06-linear-combination-integral-statement",
+        "title": "Keep linearity on one fixed region",
+        "text": "For integrable $f$ and $g$ on the same bounded region $D$ and real scalars $a,b$, integration preserves sums and scalar multiples. The region stays fixed; this rule does not make integration multiplicative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-linear-combination-integral-worked",
+        "title": "Apply linearity without changing the domain",
+        "strategy": "Compute each integral on the common domain, then combine the results with the same coefficients.",
+        "setup": "On the unit square $D=[0,1]\\times[0,1]$, let $f(x,y)=1+x$ and $g(x,y)=y$.",
+        "steps": [
+          {
+            "label": "Integrate each function",
+            "text": "The two component integrals are evaluated on the same unit square.",
+            "equation": "\\iint_D f\\,dA=\\frac32,\\quad\\iint_D g\\,dA=\\frac12"
+          },
+          {
+            "label": "Combine linearly",
+            "text": "Use the coefficients from the integrand; no product rule is involved.",
+            "equation": "\\iint_D(2f-3g)\\,dA=2\\left(\\frac32\\right)-3\\left(\\frac12\\right)=\\frac32"
+          }
+        ],
+        "result": "The common-domain integral is $3/2$.",
+        "verification": "Directly, $2f-3g=2+2x-3y$; its integral over the unit square is $2+1-3/2=3/2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-restricted-domain-integral-statement",
+        "title": "Restrict the integrand to the subregion",
+        "text": "If $D$ is a bounded subregion of an ambient region $R$, the restricted-domain integral uses only the values of $f$ on $D$. The domain restriction preserves the original integrand values wherever the smaller region lies inside the larger one."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-restricted-domain-integral-worked",
+        "title": "Restrict a unit-square integral to a triangle",
+        "strategy": "Keep the same function values on the chosen subset and integrate only over that subset.",
+        "setup": "Let $D=\\{(x,y):0\\le x\\le1,\\ 0\\le y\\le x\\}$ inside $R=[0,1]^2$, with $f(x,y)=1$.",
+        "steps": [
+          {
+            "label": "Read the restricted domain",
+            "text": "The triangle occupies half of the ambient unit square.",
+            "equation": "D\\subset R,\\quad 0\\le x\\le1,\\quad0\\le y\\le x"
+          },
+          {
+            "label": "Integrate over the subset",
+            "text": "Only points in D contribute to the restricted integral.",
+            "equation": "\\iint_D1\\,dA=\\int_0^1\\int_0^x1\\,dy\\,dx=\\frac12"
+          }
+        ],
+        "result": "The integral of one over this triangle is its area, $1/2$.",
+        "verification": "The ambient square has area one; the diagonal divides it into two congruent right triangles."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-additivity-null-overlap-statement",
+        "title": "Add pieces when their overlaps have zero area",
+        "text": "For finitely many bounded regions, finite additivity requires existing component integrals and pairwise intersections of area zero. A shared boundary is allowed; overlapping interiors would count positive area more than once."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-additivity-null-overlap-worked",
+        "title": "Check a shared edge before adding",
+        "strategy": "Verify the intersection has area zero, then sum the integrals on the two pieces.",
+        "setup": "Split $D=[0,2]\\times[0,1]$ into $D_1=[0,1]\\times[0,1]$ and $D_2=[1,2]\\times[0,1]$, with $f(x,y)=1+x$.",
+        "steps": [
+          {
+            "label": "Check the intersection",
+            "text": "The pieces meet on one vertical segment, which has planar area zero.",
+            "equation": "D_1\\cap D_2=\\{1\\}\\times[0,1],\\quad\\operatorname{Area}(D_1\\cap D_2)=0"
+          },
+          {
+            "label": "Add the integrals",
+            "text": "The boundaries do not contribute a duplicate area term.",
+            "equation": "\\iint_Df\\,dA=\\frac32+\\frac52=4"
+          }
+        ],
+        "result": "The integral over the union is 4.",
+        "verification": "Directly, $\\int_0^2(1+x)\\,dx=4$; the shared edge changes no area integral."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-decompose-nonsimple-region-statement",
+        "title": "Split a non-simple region into simple pieces",
+        "text": "A bounded region that is not Type I or Type II can still be integrated by a finite union of Type I/II pieces, provided every pairwise overlap has area zero and each piece integral exists. Choose cuts that make each piece have a single simple-slice description."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-decompose-nonsimple-region-worked",
+        "title": "Split a diamond into two Type I regions",
+        "strategy": "Use a vertical cut so each half has one lower and one upper graph.",
+        "setup": "Let $D=\\{(x,y):|x|+|y|\\le2\\}$. Split at $x=0$ into left and right halves.",
+        "steps": [
+          {
+            "label": "Write the left fibers",
+            "text": "For each x from −2 to 0, y runs between the two edges.",
+            "equation": "-2\\le x\\le0,\\quad-(x+2)\\le y\\le x+2"
+          },
+          {
+            "label": "Write the right fibers",
+            "text": "For each x from 0 to 2, use the symmetric upper and lower edges.",
+            "equation": "0\\le x\\le2,\\quad-(2-x)\\le y\\le2-x"
+          },
+          {
+            "label": "Check the cut and total area",
+            "text": "The halves share only a line; each triangle has area four.",
+            "equation": "\\operatorname{Area}(D)=4+4=8"
+          }
+        ],
+        "result": "The split replaces a non-simple description by two Type I integrals.",
+        "verification": "The diamond has diagonals of length four, so its area is $(4\\cdot4)/2=8$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-three-piece-integral-example-statement",
+        "title": "Account for all three source pieces",
+        "text": "The Lecture 06 example integrates $2x+5y$ over a non-simple region by describing one Type I part and two Type II parts. Its three shared intersections are boundary segments or a point, so finite additivity applies."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-three-piece-integral-example-worked",
+        "title": "Reconstruct the three-piece source calculation",
+        "strategy": "List each piece with its own slicing direction, retain the signed component values, and verify the intersections before summing.",
+        "setup": "The source example splits the target region into the following pieces.",
+        "steps": [
+          {
+            "label": "Write the vertical piece",
+            "text": "The first source component is Type I, with vertical slices below the parabolic boundary.",
+            "equation": "D_1:\\quad -2\\le x\\le0,\\quad0\\le y\\le(x+2)^2"
+          },
+          {
+            "label": "Write the upper horizontal piece",
+            "text": "The second component uses y as the outer variable.",
+            "equation": "D_2:\\quad0\\le y\\le4,\\quad0\\le x\\le y-\\frac{y^3}{16}"
+          },
+          {
+            "label": "Write the lower horizontal piece",
+            "text": "The third component has negative y-values and keeps its signed integral.",
+            "equation": "D_3:\\quad-4\\le y\\le0,\\quad-2\\le x\\le y-\\frac{y^3}{16}"
+          },
+          {
+            "label": "Evaluate the first two pieces",
+            "text": "The bounds give these component values.",
+            "equation": "\\iint_{D_1}(2x+5y)\\,dA=\\frac{40}{3},\\quad\\iint_{D_2}(2x+5y)\\,dA=\\frac{1664}{35}"
+          },
+          {
+            "label": "Evaluate the lower piece",
+            "text": "The lower contribution is negative.",
+            "equation": "\\iint_{D_3}(2x+5y)\\,dA=-\\frac{1696}{35}"
+          },
+          {
+            "label": "Check overlaps and sum",
+            "text": "The pieces meet only on boundary curves or a point, hence on sets of area zero.",
+            "equation": "\\iint_D(2x+5y)\\,dA=\\frac{40}{3}+\\frac{1664}{35}-\\frac{1696}{35}=\\frac{1304}{105}"
+          }
+        ],
+        "result": "The source integral is $1304/105$, or $12\\,44/105$.",
+        "verification": "The three source values were independently recomputed from the displayed bounds. Their signed sum is $1304/105$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "linear-combination-integral-transfer",
+        "outcome": "For integrable $f$ and $g$ on the same bounded region $D$ and real scalars $a,b$, integration preserves sums and scalar multiples. The region stays fixed; this rule does not make integration multiplicative.",
+        "kind": "computational",
+        "prompt": "For integrable $f,g$ on the same region, suppose $\\iint_Df\\,dA=5$ and $\\iint_Dg\\,dA=-1$. Find $\\iint_D(3f+2g)\\,dA$.",
+        "hint": "Keep both integrals on D and apply the given coefficients.",
+        "solution": "The value is $3(5)+2(-1)=13$. No information about $\\iint_Dfg\\,dA$ follows.",
+        "rubric": [
+          "Use linearity on the common region.",
+          "Retain the negative value of the second integral."
+        ],
+        "solutionTex": "\\iint_D(3f+2g)\\,dA=3(5)+2(-1)=13"
+      },
+      {
+        "id": "restricted-domain-integral-transfer",
+        "outcome": "If $D$ is a bounded subregion of an ambient region $R$, the integral over $D$ uses only the values of $f$ on $D$. A zero extension on $R$ is an equivalent bookkeeping device when the restricted-domain integral is defined.",
+        "kind": "computational",
+        "prompt": "Inside the square $[0,2]^2$, let $D=\\{0\\le x\\le2,\\ 0\\le y\\le x/2\\}$. Find $\\iint_D1\\,dA$.",
+        "hint": "Use the restriction to D, then integrate along vertical slices.",
+        "solution": "The integral is the triangular area: $\\int_0^2\\int_0^{x/2}1\\,dy\\,dx=1$.",
+        "rubric": [
+          "Use the subregion bounds.",
+          "Interpret the integral of one as area."
+        ],
+        "solutionTex": "\\iint_D1\\,dA=\\int_0^2\\int_0^{x/2}1\\,dy\\,dx=1"
+      },
+      {
+        "id": "additivity-null-overlap-transfer",
+        "outcome": "For finitely many bounded regions, finite additivity requires existing component integrals and pairwise intersections of area zero. A shared boundary is allowed; overlapping interiors would count positive area more than once.",
+        "kind": "computational",
+        "prompt": "Let two unit squares be $D_1=[0,1]\\times[0,1]$ and $D_2=[1,2]\\times[0,1]$. Find the integral of $x$ over their union by additivity.",
+        "hint": "Their only overlap is the common vertical edge.",
+        "solution": "The component values are $1/2$ and $3/2$. Their sum is 2; the shared edge has zero area.",
+        "rubric": [
+          "State why the intersection has zero area.",
+          "Add both component integrals."
+        ],
+        "solutionTex": "\\iint_{D_1\\cup D_2}x\\,dA=\\frac12+\\frac32=2"
+      },
+      {
+        "id": "decompose-nonsimple-region-transfer",
+        "outcome": "A bounded region that is not Type I or Type II can still be integrated by a finite union of Type I/II pieces, provided every pairwise overlap has area zero and each piece integral exists. Choose cuts that make each piece have a single simple-slice description.",
+        "kind": "computational",
+        "prompt": "Find the area of $\\{(x,y):|x|+|y|\\le3\\}$ by splitting it into left and right Type I pieces.",
+        "hint": "Use the cut $x=0$ and write the upper and lower y-bounds on each side.",
+        "solution": "The two pieces are congruent triangles of area $9$ each; total area is 18.",
+        "rubric": [
+          "Give bounds for each simple piece.",
+          "Note the common cut has zero area."
+        ],
+        "solutionTex": "\\operatorname{Area}(D)=\\int_{-3}^0\\int_{-(x+3)}^{x+3}1\\,dy\\,dx+\\int_0^3\\int_{-(3-x)}^{3-x}1\\,dy\\,dx=9+9=18"
+      },
+      {
+        "id": "three-piece-integral-example-transfer",
+        "outcome": "The Lecture 06 example integrates $2x+5y$ over a non-simple region by describing one Type I part and two Type II parts. Its three shared intersections are boundary segments or a point, so finite additivity applies.",
+        "kind": "computational",
+        "prompt": "An L-shaped region is $[0,3]\\times[0,2]$ with $[2,3]\\times[1,2]$ removed. Split it into $D_1=[0,2]\\times[0,2]$ and $D_2=[2,3]\\times[0,1]$. Find $\\iint_D(x+y)\\,dA$.",
+        "hint": "These pieces share only one vertical segment. Integrate separately.",
+        "solution": "The first contribution is 8 and the second is 3; the union integral is 11.",
+        "rubric": [
+          "Preserve the L-shaped region exactly.",
+          "Use additivity after verifying the overlap."
+        ],
+        "solutionTex": "\\iint_D(x+y)\\,dA=\\int_0^2\\int_0^2(x+y)\\,dy\\,dx+\\int_2^3\\int_0^1(x+y)\\,dy\\,dx=8+3=11"
+      }
+    ]
   },
   "polar-rectangles": {
     "prerequisites": ["double-riemann-sums", "vectors-and-coordinates"],
@@ -17402,7 +17631,214 @@
         "Distinguish parameter-rectangle area from physical area."
       ],
       "solutionTex": "A=\\int_0^{\\pi/3}\\int_1^2r\\,dr\\,d\\theta=\\pi/2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture06-polar-rectangle-image-statement",
+        "title": "Separate the parameter rectangle from its image",
+        "text": "The polar map is $(r,\\theta)\\mapsto(r\\cos\\theta,r\\sin\\theta)$ with $r\\ge0$. A polar rectangle is the image of $[a,b]\\times[\\alpha,\\beta]$, with $0\\le a\\le b$ and $0\\le\\beta-\\alpha\\le2\\pi$; its image is generally an annular sector, not a Cartesian rectangle."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-polar-rectangle-image-worked",
+        "title": "Describe a quarter-annulus from its parameter bounds",
+        "strategy": "Map the radius and angle intervals to locate the physical region.",
+        "setup": "Take $1\\le r\\le3$ and $0\\le\\theta\\le\\pi/2$.",
+        "steps": [
+          {
+            "label": "Apply the polar map",
+            "text": "The radial interval sets the inner and outer circles; the angular interval selects the first quadrant.",
+            "equation": "x=r\\cos\\theta,\\quad y=r\\sin\\theta"
+          },
+          {
+            "label": "Identify the image",
+            "text": "Every image point lies in the first-quadrant annular sector.",
+            "equation": "1\\le\\sqrt{x^2+y^2}\\le3,\\quad x\\ge0,\\quad y\\ge0"
+          }
+        ],
+        "result": "The image is a quarter of an annulus between radii one and three.",
+        "verification": "The angular span is $\\pi/2$ and the nonnegative radial interval does not wrap around or repeat positive area."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-annular-cell-area-factor-statement",
+        "title": "Derive the polar area weight from one cell",
+        "text": "An annular cell from $r_-$ to $r_+$ and angle width $\\Delta\\theta$ has exact area $\\frac12(r_+^2-r_-^2)\\Delta\\theta=r_*\\Delta r\\Delta\\theta$, where $r_*=(r_-+r_+)/2$. Refining these cells produces the area factor $r$; page 15 separately interprets nonnegative weighted sums as volumes."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-annular-cell-area-factor-worked",
+        "title": "Compare equal angular cells at different radii",
+        "strategy": "Use the exact annular-sector formula before taking a fine-partition limit.",
+        "setup": "Let $\\Delta r=0.2$ and $\\Delta\\theta=0.1$. Compare cells with mid-radii 1 and 4.",
+        "steps": [
+          {
+            "label": "Factor the exact cell area",
+            "text": "The area is midpoint radius times radial width and angular width.",
+            "equation": "\\frac{(r_*+\\Delta r/2)^2-(r_* -\\Delta r/2)^2}{2}\\Delta\\theta=r_*\\Delta r\\Delta\\theta"
+          },
+          {
+            "label": "Compare the two radii",
+            "text": "The outer cell is four times as wide in area for equal parameter steps.",
+            "equation": "A_1=1(0.2)(0.1)=0.02,\\quad A_4=4(0.2)(0.1)=0.08"
+          }
+        ],
+        "result": "The local area scale is r, not a constant parameter-rectangle scale.",
+        "verification": "The exact difference-of-squares formula gives both cell areas without a small-cell approximation."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-polar-rectangle-integration-theorem-statement",
+        "title": "Integrate on a polar rectangle with the factor r",
+        "text": "For continuous $f$ on the image of a polar rectangle, the double integral becomes an iterated integral of $f(r\\cos\\theta,r\\sin\\theta)r$. Either order is permitted under the stated continuity hypothesis."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-polar-rectangle-integration-theorem-worked",
+        "title": "Integrate x on a quarter-annulus",
+        "strategy": "Compose the integrand with the polar map and multiply by the area factor.",
+        "setup": "Use $1\\le r\\le2$, $0\\le\\theta\\le\\pi/2$, and $f(x,y)=x$.",
+        "steps": [
+          {
+            "label": "Transform the integrand",
+            "text": "The coordinate satisfies $x=r\\cos\\theta$, and the area measure contributes another $r$.",
+            "equation": "f(r\\cos\\theta,r\\sin\\theta)r=r^2\\cos\\theta"
+          },
+          {
+            "label": "Evaluate either iterated integral",
+            "text": "The radial and angular integrals separate here.",
+            "equation": "\\int_0^{\\pi/2}\\int_1^2r^2\\cos\\theta\\,dr\\,d\\theta=\\frac73"
+          }
+        ],
+        "result": "The integral is $7/3$.",
+        "verification": "The radial integral is $7/3$ and the angular cosine integral is one."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-annular-sector-integral-statement",
+        "title": "Use signed polar contributions on an annular sector",
+        "text": "The source region is the left half-annulus $x\\le0$ and $1\\le x^2+y^2\\le4$. Its polar bounds are $1\\le r\\le2$ and $\\pi/2\\le\\theta\\le3\\pi/2$. Preserve the sign of $x+y$ when applying the polar area factor."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-annular-sector-integral-worked",
+        "title": "Recompute the source integral over the left half-annulus",
+        "strategy": "Convert both the domain and integrand, then integrate r times the transformed function.",
+        "setup": "Evaluate $\\iint_D(x+y)\\,dA$ over the source region.",
+        "steps": [
+          {
+            "label": "Transform the domain and density",
+            "text": "The half-annulus has fixed radial bounds and a left-facing angular interval.",
+            "equation": "x+y=r(\\cos\\theta+\\sin\\theta),\\quad dA=r\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Evaluate",
+            "text": "The cosine term is negative over the left half and the sine term cancels by symmetry.",
+            "equation": "\\int_{\\pi/2}^{3\\pi/2}\\int_1^2r^2(\\cos\\theta+\\sin\\theta)\\,dr\\,d\\theta=-\\frac{14}{3}"
+          }
+        ],
+        "result": "The source integral equals $-14/3$.",
+        "verification": "The radial integral is 7/3; the angular integral of cosine plus sine is −2."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-polar-volume-riemann-sum-statement",
+        "title": "Build volume sums from polar cell areas",
+        "text": "For a continuous nonnegative height $f$ over a polar rectangle $R$, approximate the volume between $R\\times\\{0\\}$ and the graph of $f$ by summing sampled heights times physical polar-cell areas. The page 15 Riemann sum uses $\\Delta A_{ij}=r_{ij}^*\\Delta r\\Delta\\theta$; continuity and mesh refinement lead to the polar integral."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-polar-volume-riemann-sum-worked",
+        "title": "Turn a sampled polar height into a volume contribution",
+        "strategy": "Multiply the sampled height by the physical area of its polar cell before summing.",
+        "setup": "Let the height be $f(x,y)=x+3$ above the quarter-disk $0\\le r\\le2$, $0\\le\\theta\\le\\pi/2$.",
+        "steps": [
+          {
+            "label": "Find the physical cell area",
+            "text": "At sample radius $r_{ij}^*$, an angular step covers a longer arc farther from the origin.",
+            "equation": "\\Delta A_{ij}=r_{ij}^*\\Delta r\\Delta\\theta"
+          },
+          {
+            "label": "Multiply by the sampled height",
+            "text": "Compose the height function $f$ with the polar map, then weight the sample by its cell area.",
+            "equation": "\\Delta V_{ij}=(r_{ij}^*\\cos\\theta_{ij}^*+3)r_{ij}^*\\Delta r\\Delta\\theta"
+          },
+          {
+            "label": "Pass from sums to the volume integral",
+            "text": "The source assumes a continuous, nonnegative height so the Riemann sums approximate volume.",
+            "equation": "V=\\int_0^{\\pi/2}\\int_0^2(r\\cos\\theta+3)r\\,dr\\,d\\theta=3\\pi+\\frac83"
+          }
+        ],
+        "result": "The volume is $3\\pi+8/3$.",
+        "verification": "The $x$ contribution integrates to $8/3$ over the quarter-disk; the constant height $3$ contributes three times its area, $3\\pi$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "polar-rectangle-image-transfer",
+        "outcome": "The polar map is $(r,\\theta)\\mapsto(r\\cos\\theta,r\\sin\\theta)$ with $r\\ge0$. A polar rectangle is the image of $[a,b]\\times[\\alpha,\\beta]$, with $0\\le a\\le b$ and $0\\le\\beta-\\alpha\\le2\\pi$; its image is generally an annular sector, not a Cartesian rectangle.",
+        "kind": "computational",
+        "prompt": "Describe the polar image of $2\\le r\\le5$, $-\\pi\\le\\theta\\le0$. State whether it is a full annulus.",
+        "hint": "Map the angle interval to the lower half-plane; compare its width with $2\\pi$.",
+        "solution": "It is the lower half-annulus between radii 2 and 5. The angular width is $\\pi$, so it is not a full annulus.",
+        "rubric": [
+          "Translate both radius endpoints.",
+          "Use the angle width to distinguish a half-annulus from a full annulus."
+        ],
+        "solutionTex": "2\\le\\sqrt{x^2+y^2}\\le5,\\quad y\\le0"
+      },
+      {
+        "id": "annular-cell-area-factor-transfer",
+        "outcome": "An annular cell from $r_-$ to $r_+$ and angle width $\\Delta\\theta$ has exact area $\\frac12(r_+^2-r_-^2)\\Delta\\theta=r_*\\Delta r\\Delta\\theta$, where $r_*=(r_-+r_+)/2$. Refining these cells produces the area factor $r$; page 15 separately interprets nonnegative weighted sums as volumes.",
+        "kind": "computational",
+        "prompt": "Find the area of an annular sector with $1\\le r\\le4$ and $0\\le\\theta\\le\\pi/3$.",
+        "hint": "Integrate the radial factor r over the parameter rectangle.",
+        "solution": "The area is $\\int_0^{\\pi/3}\\int_1^4r\\,dr\\,d\\theta=5\\pi/2$.",
+        "rubric": ["Include the factor r.", "Use the actual angular width."],
+        "solutionTex": "A=\\int_0^{\\pi/3}\\int_1^4r\\,dr\\,d\\theta=\\frac{15}{2}\\cdot\\frac{\\pi}{3}=\\frac{5\\pi}{2}"
+      },
+      {
+        "id": "polar-rectangle-integration-theorem-transfer",
+        "outcome": "For continuous $f$ on the image of a polar rectangle, the double integral becomes an iterated integral of $f(r\\cos\\theta,r\\sin\\theta)r$. Either order is permitted under the stated continuity hypothesis.",
+        "kind": "computational",
+        "prompt": "Compute $\\iint_D y\\,dA$ on the quarter-disk $0\\le r\\le3$, $0\\le\\theta\\le\\pi/2$.",
+        "hint": "Under the polar map, $y=r\\sin\\theta$; multiply by the area factor.",
+        "solution": "The integral is $\\int_0^{\\pi/2}\\int_0^3r^2\\sin\\theta\\,dr\\,d\\theta=9$.",
+        "rubric": [
+          "Compose y with the polar map.",
+          "Include the second factor of r from dA."
+        ],
+        "solutionTex": "\\iint_Dy\\,dA=\\int_0^{\\pi/2}\\int_0^3r^2\\sin\\theta\\,dr\\,d\\theta=9"
+      },
+      {
+        "id": "annular-sector-integral-transfer",
+        "outcome": "The source region is the left half-annulus $x\\le0$ and $1\\le x^2+y^2\\le4$. Its polar bounds are $1\\le r\\le2$ and $\\pi/2\\le\\theta\\le3\\pi/2$. Preserve the sign of $x+y$ when applying the polar area factor.",
+        "kind": "computational",
+        "prompt": "Compute $\\iint_D y\\,dA$ on the first-quadrant annular sector $1\\le r\\le2$, $0\\le\\theta\\le\\pi/2$.",
+        "hint": "Transform y and include the area weight.",
+        "solution": "The value is $\\int_0^{\\pi/2}\\int_1^2r^2\\sin\\theta\\,dr\\,d\\theta=7/3$.",
+        "rubric": [
+          "Use the correct radial bounds.",
+          "Check the angular integral of sine."
+        ],
+        "solutionTex": "\\iint_Dy\\,dA=\\int_0^{\\pi/2}\\int_1^2r^2\\sin\\theta\\,dr\\,d\\theta=\\frac73"
+      },
+      {
+        "id": "polar-volume-riemann-sum-transfer",
+        "outcome": "For a continuous nonnegative height $f$ over a polar rectangle $R$, approximate the volume between $R\\times\\{0\\}$ and the graph of $f$ by summing sampled heights times physical polar-cell areas. The page 15 Riemann sum uses $\\Delta A_{ij}=r_{ij}^*\\Delta r\\Delta\\theta$; continuity and mesh refinement lead to the polar integral.",
+        "kind": "computational",
+        "prompt": "Over the quarter-disk $0\\le r\\le2$, $0\\le\\theta\\le\\pi/2$, use $f(x,y)=x+3$. Write one polar Riemann-sum volume contribution at sample $(r_{ij}^*,\\theta_{ij}^*)$, then give the limiting volume integral.",
+        "hint": "The sampled height is $r_{ij}^*\\cos\\theta_{ij}^*+3$. Multiply it by the physical cell area.",
+        "solution": "One cell contributes $\\Delta V_{ij}=(r_{ij}^*\\cos\\theta_{ij}^*+3)r_{ij}^*\\Delta r\\Delta\\theta$. In the limit, $V=\\int_0^{\\pi/2}\\int_0^2(r\\cos\\theta+3)r\\,dr\\,d\\theta=3\\pi+8/3$.",
+        "rubric": [
+          "Compose the height using the polar map.",
+          "Use $r_{ij}^*\\Delta r\\Delta\\theta$ for physical cell area.",
+          "Retain nonnegativity and continuity as the volume-sum hypotheses."
+        ],
+        "solutionTex": "\\Delta V_{ij}=(r_{ij}^*\\cos\\theta_{ij}^*+3)r_{ij}^*\\Delta r\\Delta\\theta,\\quad V=\\lim_{\\|\\Delta\\|\\to0}\\sum_{i,j}\\Delta V_{ij}=\\int_0^{\\pi/2}\\int_0^2(r\\cos\\theta+3)r\\,dr\\,d\\theta=3\\pi+\\frac{8}{3}"
+      }
+    ]
   },
   "polar-regions": {
     "prerequisites": ["polar-rectangles", "type-one-two-regions"],
@@ -17420,13 +17856,142 @@
     "exercise": {
       "prompt": "Write polar bounds for $(x-2)^2+y^2\\le 4$.",
       "hint": "Repeat the algebra with center and radius 2.",
-      "solution": "The bounds are $-\\pi /2\\leq \\theta \\leq \\pi /2$ and $0\\leq r\\leq 4cos \\theta$. The area is $4\\pi$, matching the disk radius 2.",
+      "solution": "The bounds are $-\\pi /2\\leq\\theta\\leq\\pi /2$ and $0\\leq r\\leq4\\cos\\theta$. The area is $4\\pi$, matching a disk of radius 2.",
       "rubric": [
         "Derive the angular range from nonnegative radius.",
         "Handle the origin without dividing by zero."
       ],
       "solutionTex": "-\\pi/2\\le\\theta\\le\\pi/2,\\quad0\\le r\\le4\\cos\\theta,\\quad A=4\\pi"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture06-single-interval-polar-region-statement",
+        "title": "Require one radial interval on each ray",
+        "text": "A polar region has angles in $[\\alpha,\\beta]$ and radii between continuous functions $0\\le h_1(\\theta)\\le h_2(\\theta)$. Thus each included ray meets the region in one interval. The angle span is at most $2\\pi$; for a full turn, each radial boundary must match at its two endpoint values."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-single-interval-polar-region-worked",
+        "title": "Check a variable-bound annular region",
+        "strategy": "Check radial ordering, continuity, angular span, and full-turn seam conditions before applying the theorem.",
+        "setup": "On $0\\le\\theta\\le\\pi/2$, take $1+\\cos\\theta\\le r\\le2+\\cos\\theta$.",
+        "steps": [
+          {
+            "label": "Check the radial order",
+            "text": "The outer bound exceeds the inner bound by one throughout the interval.",
+            "equation": "(2+\\cos\\theta)-(1+\\cos\\theta)=1"
+          },
+          {
+            "label": "Find the area",
+            "text": "Integrating one over each radial interval gives the area of this curved sector.",
+            "equation": "A=\\frac12\\int_0^{\\pi/2}\\left((2+\\cos\\theta)^2-(1+\\cos\\theta)^2\\right)d\\theta=1+\\frac{3\\pi}{4}"
+          }
+        ],
+        "result": "The region has a single annular interval on every ray in the chosen angle range.",
+        "verification": "The area integrand simplifies to $(3+2\\cos\\theta)/2$, whose integral is $3\\pi/4+1$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-variable-radial-integration-statement",
+        "title": "Integrate over variable radial bounds",
+        "text": "For continuous $f$ on a polar region bounded by $h_1(\\theta)$ and $h_2(\\theta)$, integrate $f(r\\cos\\theta,r\\sin\\theta)r$ first across the radial interval and then over the angle interval. For $f=1$, the formula reduces to one half the integral of the difference of squared radial bounds."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-variable-radial-integration-worked",
+        "title": "Find the area under a cosine radial bound",
+        "strategy": "Use the polar-region theorem with inner radius zero and integrate r exactly.",
+        "setup": "Let $0\\le r\\le1+\\cos\\theta$ and $0\\le\\theta\\le\\pi/2$.",
+        "steps": [
+          {
+            "label": "Set up the polar integral",
+            "text": "The radial upper endpoint depends on angle, while the Jacobian contributes r.",
+            "equation": "A=\\int_0^{\\pi/2}\\int_0^{1+\\cos\\theta}r\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Integrate in r",
+            "text": "The radial integral is half the square of its upper endpoint.",
+            "equation": "A=\\frac12\\int_0^{\\pi/2}(1+\\cos\\theta)^2\\,d\\theta=1+\\frac{3\\pi}{8}"
+          }
+        ],
+        "result": "The area is $1+3\\pi/8$.",
+        "verification": "Expand the square; the cosine and cosine-squared integrals are $1$ and $\\pi/4$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture06-shifted-disk-volume-statement",
+        "title": "Derive the shifted-disk radial bound before dividing",
+        "text": "The source disk $(x-1)^2+y^2\\le1$ becomes $r^2-2r\\cos\\theta\\le0$. For $r>0$, division gives $r\\le2\\cos\\theta$ and requires $\\cos\\theta\\ge0$, so one convenient interval is $-\\pi/2\\le\\theta\\le\\pi/2$. The origin is included separately."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture06-shifted-disk-volume-worked",
+        "title": "Set up and evaluate the source paraboloid volume",
+        "strategy": "Derive the disk domain, transform the height, multiply by the area factor, and integrate.",
+        "setup": "Find the volume under $z=4-x^2-y^2$ above the disk $(x-1)^2+y^2\\le1$.",
+        "steps": [
+          {
+            "label": "Derive the radial bound",
+            "text": "Substitute $x=r\\cos\\theta$ and $y=r\\sin\\theta$; do not lose the origin when dividing by $r$.",
+            "equation": "r^2-2r\\cos\\theta\\le0,\\quad -\\frac\\pi2\\le\\theta\\le\\frac\\pi2,\\quad0\\le r\\le2\\cos\\theta"
+          },
+          {
+            "label": "Transform height and area",
+            "text": "The vertical height is positive on this disk and the polar area element contributes r.",
+            "equation": "(4-r^2)r"
+          },
+          {
+            "label": "Evaluate",
+            "text": "Integrate the radial polynomial, then use evenness of the cosine powers.",
+            "equation": "V=\\int_{-\\pi/2}^{\\pi/2}\\int_0^{2\\cos\\theta}(4-r^2)r\\,dr\\,d\\theta=\\frac{5\\pi}{2}"
+          }
+        ],
+        "result": "The volume is $5\\pi/2$.",
+        "verification": "The radial integral is $8\\cos^2\\theta-4\\cos^4\\theta$; its integral over a half-turn interval is $4\\pi-3\\pi/2=5\\pi/2$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "single-interval-polar-region-transfer",
+        "outcome": "A polar region has angles in $[\\alpha,\\beta]$ and radii between continuous functions $0\\le h_1(\\theta)\\le h_2(\\theta)$. Thus each included ray meets the region in one interval. The angle span is at most $2\\pi$; for a full turn, each radial boundary must match at its two endpoint values.",
+        "kind": "computational",
+        "prompt": "Check whether $1+\\cos\\theta\\le r\\le3+\\cos\\theta$, $0\\le\\theta\\le2\\pi$, describes a valid full-turn polar region.",
+        "hint": "Check continuity, ordering, and both endpoint values of each radial function.",
+        "solution": "The radial bounds are continuous, nonnegative, and ordered. Both have matching values $h_1(0)=h_1(2\\pi)=2$ and $h_2(0)=h_2(2\\pi)=4$, so they describe one interval on every ray with a compatible full-turn seam.",
+        "rubric": [
+          "Verify $h_1\\le h_2$ throughout.",
+          "Check both radial functions agree at the angular seam."
+        ],
+        "solutionTex": "h_1(0)=h_1(2\\pi)=2,\\quad h_2(0)=h_2(2\\pi)=4"
+      },
+      {
+        "id": "variable-radial-integration-transfer",
+        "outcome": "For continuous $f$ on a polar region bounded by $h_1(\\theta)$ and $h_2(\\theta)$, integrate $f(r\\cos\\theta,r\\sin\\theta)r$ first across the radial interval and then over the angle interval. For $f=1$, the formula reduces to one half the integral of the difference of squared radial bounds.",
+        "kind": "computational",
+        "prompt": "Find the area enclosed by $0\\le r\\le2+\\sin\\theta$, $0\\le\\theta\\le\\pi$.",
+        "hint": "Use one half the integral of the squared outer radius.",
+        "solution": "The area is $\\frac12\\int_0^\\pi(2+\\sin\\theta)^2\\,d\\theta=4+\\frac{9\\pi}{4}$.",
+        "rubric": [
+          "Square the variable upper bound.",
+          "Integrate the sine and sine-squared terms over the stated angle interval."
+        ],
+        "solutionTex": "A=\\frac12\\int_0^\\pi(2+\\sin\\theta)^2\\,d\\theta=4+\\frac{9\\pi}{4}"
+      },
+      {
+        "id": "shifted-disk-volume-transfer",
+        "outcome": "The source disk $(x-1)^2+y^2\\le1$ becomes $r^2-2r\\cos\\theta\\le0$. For $r>0$, division gives $r\\le2\\cos\\theta$ and requires $\\cos\\theta\\ge0$, so one convenient interval is $-\\pi/2\\le\\theta\\le\\pi/2$. The origin is included separately.",
+        "kind": "computational",
+        "prompt": "Find the volume under $z=9-x^2-y^2$ above the same disk $(x-1)^2+y^2\\le1$.",
+        "hint": "Reuse the correctly derived disk bounds and replace only the height.",
+        "solution": "The polar integral is $\\int_{-\\pi/2}^{\\pi/2}\\int_0^{2\\cos\\theta}(9-r^2)r\\,dr\\,d\\theta=15\\pi/2$.",
+        "rubric": [
+          "Keep the same shifted-disk bounds.",
+          "Multiply the transformed height by r."
+        ],
+        "solutionTex": "V=\\int_{-\\pi/2}^{\\pi/2}\\int_0^{2\\cos\\theta}(9-r^2)r\\,dr\\,d\\theta=\\frac{15\\pi}{2}"
+      }
+    ]
   },
   "triple-riemann-sums": {
     "prerequisites": ["double-riemann-sums"],
