@@ -126,7 +126,16 @@
     "pages": 31,
     "course": "MH1100",
     "kind": "lecture",
-    "sha256": "a1d14b5a5528b49dc3775dd0963ea215a0945ee97ff9015b999f6ff97b6ad05b"
+    "sha256": "a1d14b5a5528b49dc3775dd0963ea215a0945ee97ff9015b999f6ff97b6ad05b",
+    "errata": [
+      {
+        "page": 24,
+        "printed": "Imaging fix the curve (by ion metal)",
+        "correction": "The intended physical instruction is unclear; do not infer a correction. The adjacent secant-slope and tangent-slope equations remain legible and are used directly.",
+        "justification": "Visual inspection of the hash-matched physical page confirms the malformed wording. The mathematical statement on the same page is independently readable.",
+        "provenance": "Audit-derived source note; canonical PDF unchanged."
+      }
+    ]
   },
   "MH1100_Lecture_07": {
     "id": "MH1100_Lecture_07",
