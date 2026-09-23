@@ -5668,6 +5668,18 @@
       {
         "title": "A singular constraint can hide candidates",
         "text": "For $g(x,y)=x^{3}-y^{2}=0$ at zero, $\\nabla g=0$. The usual regular multiplier condition cannot be assumed there. Keep such feasible singular points as separate candidates instead of dividing by a gradient component."
+      },
+      {
+        "title": "Regularity gives a necessary equation",
+        "text": "On an open neighborhood of the feasible level curve, continuous gradients and $\\nabla g\\ne0$ imply that a constrained extremum, if it exists, satisfies $\\nabla f=\\lambda\\nabla g$. The equation alone neither proves existence nor selects a maximum or minimum."
+      },
+      {
+        "title": "Candidates need a global certificate",
+        "text": "Solve $g=k$ together with both component equations, retaining branches where a coordinate is zero. Compare all resulting $f$ values. On a closed bounded feasible curve, continuity and the Extreme Value Theorem certify the largest and smallest candidate values as global extrema."
+      },
+      {
+        "title": "Do not divide away a branch",
+        "text": "For $f=x^2+2y^2$ on $x^2+y^2=1$, the equations are $x=\\lambda x$ and $2y=\\lambda y$. The $x=0$ and $y=0$ branches both matter; dividing by $xy$ would lose every answer."
       }
     ],
     "exercise": {
@@ -5679,7 +5691,77 @@
         "Compare all candidates and justify globality."
       ],
       "solutionTex": "\\min f=-\\sqrt2,\\quad\\max f=\\sqrt2,\\quad (x,y)=\\pm(1,1)/\\sqrt2"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l05-circle-theorem",
+        "title": "Tangency is necessary, not existence",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "On $g(x,y)=x^2+y^2=1$, let $f=x^2+2y^2$.",
+        "steps": [
+          {
+            "label": "Regularity",
+            "text": "$\\nabla g=(2x,2y)\\ne0$ at every feasible point, and both gradients are continuous on $\\mathbb R^2$."
+          },
+          {
+            "label": "Condition",
+            "text": "At any constrained extremum, tangential derivatives vanish, so $\\nabla f$ lies in the span of $\\nabla g$ and $\\nabla f=\\lambda\\nabla g$."
+          }
+        ],
+        "result": "The multiplier system supplies candidates; compactness and value comparison supply the global verdict.",
+        "verification": "Physical page 7 states the hypotheses and the conditional theorem."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l05-circle-example",
+        "title": "Keep both branches of the circle system",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "Maximize and minimize $f=x^2+2y^2$ subject to $x^2+y^2=1$.",
+        "steps": [
+          {
+            "label": "Equations",
+            "text": "$2x=2\\lambda x$ and $4y=2\\lambda y$, hence $x=0$ or $\\lambda=1$, and $y=0$ or $\\lambda=2$."
+          },
+          {
+            "label": "Branches",
+            "text": "The circle gives $(0,\\pm1)$ with $\\lambda=2$ and $(\\pm1,0)$ with $\\lambda=1$."
+          },
+          {
+            "label": "Compare",
+            "text": "The objective is $2$ at $(0,\\pm1)$ and $1$ at $(\\pm1,0)$. The circle is compact, so these are the global maximum and minimum."
+          }
+        ],
+        "result": "Global maximum $2$ at $(0,\\pm1)$; global minimum $1$ at $(\\pm1,0)$.",
+        "verification": "Matches physical pages 9–11; no zero-coordinate branch was divided away."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l05-circle-theorem-transfer",
+        "outcome": "Check regularity before using one multiplier.",
+        "kind": "computational",
+        "prompt": "For $g=x^2+y^2=4$ and $f=3x^2+y^2$, check the theorem hypotheses at feasible points and state what the multiplier equation can conclude.",
+        "hint": "Compute $\\nabla g$ on the circle and distinguish candidates from existence.",
+        "solution": "$\\nabla g=(2x,2y)\\ne0$ on the radius-two circle; both gradients are continuous. Any constrained extremum must satisfy $\\nabla f=\\lambda\\nabla g$. The equation only identifies candidates; the compact circle and continuity guarantee extrema.",
+        "rubric": [
+          "Check the nonzero constraint gradient.",
+          "Separate necessity from existence."
+        ]
+      },
+      {
+        "id": "l05-circle-transfer",
+        "outcome": "Compare all multiplier branches on a new circle.",
+        "kind": "computational",
+        "prompt": "Find the global extrema of $3x^2+y^2$ on $x^2+y^2=4$ using the multiplier branches.",
+        "hint": "$6x=2\\lambda x$ and $2y=2\\lambda y$; keep $x=0$ and $y=0$.",
+        "solution": "Candidates are $(\\pm2,0)$ with $\\lambda=3$ and value $12$, and $(0,\\pm2)$ with $\\lambda=1$ and value $4$. The circle is compact, so the maximum is $12$ and minimum $4$ at the listed points.",
+        "rubric": [
+          "Retain zero-coordinate branches.",
+          "Compare values and cite compactness."
+        ]
+      }
+    ]
   },
   "lagrange-sphere": {
     "prerequisites": ["lagrange-circle"],
@@ -5692,6 +5774,22 @@
       {
         "title": "Linear objective on a sphere",
         "text": "For $f=x+2y+2z$ on the unit sphere, $\\nabla f=(1,2,2)$ and $\\nabla g=2(x,y,z)$. The candidates are $\\pm (1,2,2)/3$, giving values $\\pm 3$. Norm comparison proves these are global extrema."
+      },
+      {
+        "title": "A surface condition is necessary only",
+        "text": "For a regular level surface $g=k$ in $\\mathbb R^3$, continuous gradients and $\\nabla g\\ne0$ make $\\nabla f=\\lambda\\nabla g$ necessary at a constrained extremum. An open or unbounded feasible set needs a separate global bound."
+      },
+      {
+        "title": "Model the open-top box",
+        "text": "With positive length $x$, width $y$, and height $z$, the volume is $V=xyz$ and cardboard area is $A=xy+2xz+2yz$. Positivity is part of the domain; a zero dimension is not a feasible box."
+      },
+      {
+        "title": "Solve without losing positivity",
+        "text": "For $A=12$, the multiplier equations imply $x=y=2z$ and then $(x,y,z)=(2,2,1)$ with volume $4$. This is a candidate, not yet a global maximum."
+      },
+      {
+        "title": "Certify the open-domain maximum",
+        "text": "The positive feasible set is neither closed nor bounded, so the Extreme Value Theorem does not certify the candidate. AM–GM on $xy$, $2xz$, and $2yz$ gives $(4V^2)^{1/3}\\le4$, hence $V\\le4$. Equality requires all three area terms equal, giving the unique maximizer $(2,2,1)$."
       }
     ],
     "exercise": {
@@ -5703,7 +5801,85 @@
         "Check the point satisfies the constraint."
       ],
       "solutionTex": "\\max f=6,\\quad (x,y,z)=(4/3,-2/3,4/3)"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l05-box-method",
+        "title": "Model and check the regular surface",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "Use $V=xyz$ and $A=xy+2xz+2yz=12$ on $x,y,z>0$.",
+        "steps": [
+          {
+            "label": "Gradients",
+            "text": "$\\nabla V=(yz,xz,xy)$ and $\\nabla A=(y+2z,x+2z,2x+2y)$."
+          },
+          {
+            "label": "Regularity",
+            "text": "Every component of $\\nabla A$ is positive in the domain, so the regular one-constraint condition applies to any attained extremum."
+          }
+        ],
+        "result": "At an attained constrained extremum, solve $\\nabla V=\\lambda\\nabla A$ together with $A=12$.",
+        "verification": "Physical pages 12–14 give the regularity theorem and open-top area model."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l05-box-candidate",
+        "title": "Solve the positive box equations",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "On $xy+2xz+2yz=12$ with $x,y,z>0$, solve $\\nabla V=\\lambda\\nabla A$.",
+        "steps": [
+          {
+            "label": "System",
+            "text": "$yz=\\lambda(y+2z)$, $xz=\\lambda(x+2z)$, and $xy=2\\lambda(x+y)$."
+          },
+          {
+            "label": "Eliminate",
+            "text": "Positivity implies $\\lambda>0$. Multiply the first two equations by $x$ and $y$ to get $x(y+2z)=y(x+2z)$, hence $x=y$. Compare with the third equation to get $x=2z$."
+          },
+          {
+            "label": "Substitute",
+            "text": "$xy+2xz+2yz=3x^2=12$, so $(x,y,z)=(2,2,1)$ and $V=4$."
+          }
+        ],
+        "result": "The only positive multiplier candidate is $(2,2,1)$; its global status still needs proof.",
+        "verification": "Physical pages 15–16 give this candidate; all divisions use positive quantities."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l05-box-amgm",
+        "title": "A global bound without compactness",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "For every positive feasible box with $xy+2xz+2yz=12$, bound $V=xyz$.",
+        "steps": [
+          {
+            "label": "AM–GM",
+            "text": "$(4V^2)^{1/3}=((xy)(2xz)(2yz))^{1/3}\\le(xy+2xz+2yz)/3=4$."
+          },
+          {
+            "label": "Equality",
+            "text": "$V\\le4$. Equality requires $xy=2xz=2yz=4$, giving uniquely $x=y=2$, $z=1$."
+          }
+        ],
+        "result": "$V$ has global maximum $4$ at the unique box $(2,2,1)$ despite the noncompact feasible set.",
+        "verification": "Physical pages 16–17 show nonclosed/unbounded witnesses and this AM–GM certificate."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l05-box-transfer",
+        "outcome": "Transfer open-box modeling and global certification.",
+        "kind": "computational",
+        "prompt": "An open-top box has base-material cost $1$ per unit area and side-material cost $3/2$ per unit area. With budget $18$, maximize its volume over positive dimensions. Use multipliers for candidates, then a separate global certificate.",
+        "hint": "The budget is $A=xy+3xz+3yz=18$. Solve the positive multiplier equations; then apply AM–GM to $xy$, $3xz$, $3yz$.",
+        "solution": "$\\nabla A=(y+3z,x+3z,3x+3y)$ is nonzero on the positive domain. The positive multiplier equations are $yz=\\lambda(y+3z)$, $xz=\\lambda(x+3z)$, and $xy=3\\lambda(x+y)$. Multiplying the first two by $x$ and $y$ gives $x=y$; then the third gives $\\lambda=x/6$, and the first gives $x=3z$. Thus $3x^2=18$ and the candidate is $(x,y,z)=(\\sqrt6,\\sqrt6,\\sqrt6/3)$. For every feasible box, $(9V^2)^{1/3}=((xy)(3xz)(3yz))^{1/3}\\le18/3=6$, hence $V\\le2\\sqrt6$. Equality requires $xy=3xz=3yz=6$, reached uniquely at that candidate.",
+        "rubric": [
+          "Model the higher side-material cost correctly.",
+          "Check regularity and solve every positive candidate.",
+          "Use equality in AM–GM to certify the global maximum."
+        ]
+      }
+    ]
   },
   "lagrange-two-constraints": {
     "prerequisites": ["lagrange-sphere", "cross-products-and-planes"],
@@ -5716,6 +5892,14 @@
       {
         "title": "Reduce when possible",
         "text": "On $x^{2}+y^{2}+z^{2}=1$ and $z=0$, maximizing $x+y$ reduces to the unit circle in the xy-plane. The two gradients $(2x,2y,0)$ and $(0,0,1)$ are independent everywhere on the feasible circle, so the multiplier method is legitimate."
+      },
+      {
+        "title": "Two gradients must have rank two",
+        "text": "For two equality constraints in $\\mathbb R^3$, the regular theorem needs $\\nabla g$ and $\\nabla h$ linearly independent at the feasible extremum. Physical page 18 states only a nonzero-gradient pair; that is insufficient. If the gradients are dependent, inspect the feasible geometry directly before using $\\nabla f=\\lambda\\nabla g+\\mu\\nabla h$."
+      },
+      {
+        "title": "The source gives a prompt only",
+        "text": "Physical page 19 asks for extrema of $x^2+y^2+z^2$ on the cone $z^2=x^2+y^2$ intersected with $x+y-z+1=0$. Physical pages 20–23 carry continuation headings but no readable worked solution. The calculation below is an independent derivation, not a transcription of source answers."
       }
     ],
     "exercise": {
@@ -5727,7 +5911,81 @@
         "Identify the regularity assumption when using multipliers."
       ],
       "solutionTex": "-1\\le x\\le1,\\quad(\\pm1,0,0)\\text{ are feasible}"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l05-rank-counterexample",
+        "title": "Nonzero gradients can still be dependent",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "Let $g=x$, $h=x+y^2+z^2$, and $f=y$ in $\\mathbb R^3$, with $g=h=0$.",
+        "steps": [
+          {
+            "label": "Feasible set",
+            "text": "$x=0$ and $y^2+z^2=0$ leave only the origin, so $f$ has both a constrained minimum and maximum there."
+          },
+          {
+            "label": "Rank failure",
+            "text": "At the origin, $\\nabla g=\\nabla h=(1,0,0)$: both are nonzero but dependent. $\\nabla f=(0,1,0)$ is not in their span."
+          }
+        ],
+        "result": "The source page’s nonzero condition cannot imply the two-multiplier conclusion; rank two is required.",
+        "verification": "Independent counterexample to the insufficient condition printed on physical page 18."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l05-cone-plane-derived",
+        "title": "Derive the cone-plane answer independently",
+        "strategy": "Check regularity and domain, solve the constraint system, then justify the global conclusion separately.",
+        "setup": "For $f=x^2+y^2+z^2$, require $z^2=x^2+y^2$ and $x+y-z+1=0$.",
+        "steps": [
+          {
+            "label": "Reduce",
+            "text": "Put $u=x+1$, $v=y+1$. Eliminating $z=x+y+1=u+v-1$ gives $uv=1/2$ and $f=2(u+v-1)^2$."
+          },
+          {
+            "label": "Compare branches",
+            "text": "$u,v$ have the same sign. On the positive branch, $u+v\\ge\\sqrt2$, with equality at $u=v=1/\\sqrt2$. On the negative branch, $u+v\\le-\\sqrt2$, giving larger $|z|$."
+          },
+          {
+            "label": "Global verdict",
+            "text": "The minimum is $2(\\sqrt2-1)^2$ at $x=y=1/\\sqrt2-1$, $z=\\sqrt2-1$. As $u\\to\\infty$ with $v=1/(2u)$, $f\\to\\infty$, so no maximum exists."
+          },
+          {
+            "label": "Regularity",
+            "text": "For $g=z^2-x^2-y^2$ and $h=x+y-z+1$, dependent $\\nabla g$ and $\\nabla h$ on the cone would force the apex $(0,0,0)$, which is not on the plane; rank two holds on this feasible set."
+          }
+        ],
+        "result": "The source prompt has a unique global minimum and no maximum; this solution is derived here, because source pages 20–23 show none.",
+        "verification": "Checked algebra and feasible points independently against the page 19 prompt; no source solution claimed."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l05-rank-transfer",
+        "outcome": "Decide whether nonzero constraint gradients justify two multipliers.",
+        "kind": "computational",
+        "prompt": "At the origin, take $g=x$, $h=2x+y^2+z^2$, and $f=z$, with $g=h=0$. Does the two-multiplier necessary condition apply?",
+        "hint": "Find the feasible set and compare the two constraint gradients at the origin.",
+        "solution": "The feasible set is only the origin, so it is a constrained extremum of $f$. Yet $\\nabla g=(1,0,0)$ and $\\nabla h=(2,0,0)$ are nonzero but dependent; $\\nabla f=(0,0,1)$ lies outside their span. The regular two-multiplier theorem does not apply.",
+        "rubric": [
+          "Check linear independence, not mere nonzero status.",
+          "Show the feasible geometry and failed span conclusion."
+        ]
+      },
+      {
+        "id": "l05-two-transfer",
+        "outcome": "Solve a regular two-constraint problem independently.",
+        "kind": "computational",
+        "prompt": "Find both extrema of $f=z$ on $x^2+y^2+z^2=1$ and $x+y=0$, checking regularity.",
+        "hint": "Use $x=-y$ and $z^2=1-2x^2$; check the two constraint gradients are independent on the feasible circle.",
+        "solution": "$-1\\le z\\le1$, with maximum $1$ at $(0,0,1)$ and minimum $-1$ at $(0,0,-1)$. The gradients $(2x,2y,2z)$ and $(1,1,0)$ cannot be parallel on the feasible set: parallelism plus $x+y=0$ would force $x=y=z=0$, contradicting the sphere.",
+        "rubric": [
+          "Identify both feasible equality points.",
+          "Justify rank two on the full feasible set."
+        ]
+      }
+    ]
   },
   "double-riemann-sums": {
     "prerequisites": ["riemann-integral"],
