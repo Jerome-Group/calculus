@@ -13,6 +13,7 @@ import { CapOrientationDecision } from "./cap-orientation-decision";
 import { ReviewExampleIdentities } from "./review-example-identities";
 import type { StudyController } from "./use-study-controller";
 export function LessonExperiment({ study }: { study: StudyController }) {
+  const sceneDescriptionId = useId();
   const sceneFormulaId = useId();
   const sceneNoteId = useId();
   const sceneValueId = useId();
@@ -92,7 +93,7 @@ export function LessonExperiment({ study }: { study: StudyController }) {
       </div>
       {visualLayout !== "minimised" && (
         <div className="experience-content">
-          <p className="model-status">
+          <p className="model-status" id={sceneDescriptionId}>
             {relatedReviewScene || integralReviewTransfer
               ? "Related model"
               : "Sampled illustration"}{" "}
@@ -100,11 +101,14 @@ export function LessonExperiment({ study }: { study: StudyController }) {
             clipping do not define the mathematical domain.
           </p>
           {activeScene.startsWith("plane-") ? (
-            <PlanarViewport model={planar!} />
+            <PlanarViewport
+              model={planar!}
+              descriptionId={`${sceneDescriptionId} ${sceneFormulaId} ${sceneNoteId} ${sceneValueId}`}
+            />
           ) : (
             <Viewport
-              description={sceneDescription}
-              descriptionId={`${sceneFormulaId} ${sceneNoteId} ${sceneValueId}`}
+              description="3D graph"
+              descriptionId={`${sceneDescriptionId} ${sceneFormulaId} ${sceneNoteId} ${sceneValueId}`}
               scene={activeScene}
               parameter={p}
               resetKey={resetKey}
@@ -239,7 +243,10 @@ export function LessonExperiment({ study }: { study: StudyController }) {
                       setP(Number(value));
                       setPlaying(false);
                     }}
-                    aria-label={"Set parameter to " + label}
+                    aria-label={
+                      "Set parameter to " +
+                      String(label).replaceAll("\\pi", "π")
+                    }
                   >
                     <Formula>{String(label)}</Formula>
                   </button>

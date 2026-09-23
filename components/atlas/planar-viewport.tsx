@@ -2,7 +2,13 @@
 import { Formula, MathText } from "./math-text";
 import { useId } from "react";
 import type { PlanarModel, Point } from "@/lib/curriculum/planar";
-export function PlanarViewport({ model: m }: { model: PlanarModel }) {
+export function PlanarViewport({
+  model: m,
+  descriptionId,
+}: {
+  model: PlanarModel;
+  descriptionId?: string;
+}) {
   const clip = useId().replace(/:/g, "");
   let [xmin, xmax, ymin, ymax] = m.bounds;
   if (m.equalAspect) {
@@ -30,7 +36,7 @@ export function PlanarViewport({ model: m }: { model: PlanarModel }) {
       {m.comparison && (
         <div className="comparison-panel">
           <h3>Parameter domain</h3>
-          <PlanarViewport model={m.comparison} />
+          <PlanarViewport model={m.comparison} descriptionId={descriptionId} />
           <h3>Physical image</h3>
         </div>
       )}
@@ -38,7 +44,8 @@ export function PlanarViewport({ model: m }: { model: PlanarModel }) {
         <svg
           viewBox="0 0 710 420"
           role="img"
-          aria-label={`Two-dimensional experiment: ${m.traces.map((t) => t.label).join("; ")}. ${m.note}`}
+          aria-label={`Two-dimensional experiment: ${m.traces.map((t) => t.label).join("; ")}.`}
+          aria-describedby={descriptionId}
         >
           <title>Interactive two-dimensional plot</title>
           <desc>Move the labelled parameter control to explore the graph.</desc>

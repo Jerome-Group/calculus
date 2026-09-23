@@ -17,6 +17,14 @@ function dispose(g: T.Object3D) {
     }
   });
 }
+export function viewportAccessibleLabel(
+  scene: string,
+  graph?: GraphSpec,
+  description?: string,
+) {
+  const name = description || (graph ? "Graph studio visualization" : scene);
+  return `${name}. Sampled 3D illustration. Drag to orbit; arrow keys rotate; plus and minus zoom. Formulas and current values follow the graph.`;
+}
 export function Viewport({
   scene,
   parameter,
@@ -253,7 +261,7 @@ export function Viewport({
     else canvas?.removeAttribute("aria-describedby");
     canvas?.setAttribute(
       "aria-label",
-      `${description || (graph ? `Graph of ${graph.expressions.join("; ")}` : scene)}. Sampled 3D illustration. Drag to orbit; arrow keys rotate; plus and minus zoom. Formulas and current values follow the graph.`,
+      viewportAccessibleLabel(scene, graph, description),
     );
   }, [description, descriptionId, scene, graph, preferCompatibility]);
 

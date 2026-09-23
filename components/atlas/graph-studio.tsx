@@ -1,4 +1,5 @@
 "use client";
+import { useId } from "react";
 import { ArrowRight, Box } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -77,6 +78,8 @@ const presets = [
   },
 ] as const;
 export function GraphStudio({ study }: { study: StudyController }) {
+  const renderedGraphId = useId();
+  const graphStatusId = useId();
   const {
     status,
     graph,
@@ -131,8 +134,13 @@ export function GraphStudio({ study }: { study: StudyController }) {
             parameter={graph.a}
             graph={graph}
             onStatus={rendered}
+            description="Graph studio visualization"
+            descriptionId={`${renderedGraphId} ${graphStatusId}`}
           />
-          <div className="graph-status" role="status">
+          <div className="sr-only" id={renderedGraphId}>
+            Rendered graph: <ExpressionPreview graph={graph} />
+          </div>
+          <div className="graph-status" role="status" id={graphStatusId}>
             {status}
           </div>
           <div className="control-panel">
