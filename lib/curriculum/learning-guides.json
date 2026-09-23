@@ -4276,11 +4276,15 @@
     "sections": [
       {
         "title": "Boundary and normal are paired",
-        "text": "Stokes relates $\\oint_{\\partial S}F\\cdot d\\mathbf r$ to $\\iint_S(\\nabla\\times F)\\cdot n\\,dS$ for a suitable oriented piecewise smooth surface and $C^1$ field on a neighborhood. Viewed along the chosen positive normal, the positive boundary runs counterclockwise. Across glued patches, shared edges cancel."
+        "text": "Stokes relates $\\oint_{\\partial S}F\\cdot d\\mathbf r$ to $\\iint_S(\\nabla\\times F)\\cdot n\\,dS$ for a suitable oriented piecewise smooth surface and $C^1$ field on a neighborhood. Point the right thumb along the chosen normal: curled fingers give the induced boundary direction. For a surface with an upward normal and a simple projected boundary, this is counterclockwise when viewed from above. Across glued patches, shared edges cancel."
       },
       {
         "title": "Choose the easier surface lawfully",
         "text": "For $F=(-y/2,x/2,0)$, curl is $(0,0,1)$. Around a unit horizontal circle counterclockwise, the flat disk gives flux $\\pi$. Another admissible spanning surface with the same induced boundary has the same curl flux, provided the field remains smooth near it."
+      },
+      {
+        "title": "A replacement surface needs the same edge",
+        "text": "A tilted loop can bound its tilted planar disk. Before replacing a curved spanning surface, check that the new surface has exactly the same oriented boundary and that $F$ is smooth on a neighborhood of the whole replacement surface. If the requested traversal is opposite to the disk’s induced direction, reverse the normal or negate the resulting integral."
       }
     ],
     "exercise": {
@@ -4292,7 +4296,51 @@
         "Check the field on a neighborhood of the spanning surface."
       ],
       "solutionTex": "\\oint_C F\\cdot d\\mathbf r=\\iint_D(0,0,2)\\cdot(0,0,-1)\\,dA=-2\\pi"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "tilted-cylinder-plane-stokes",
+        "title": "A tilted boundary and a lawful flat spanning disk",
+        "strategy": "Identify the boundary, choose the planar disk it encloses, check the field and orientation, then integrate curl on that disk.",
+        "setup": "MH2100 Lecture 11, physical pages 24–26: $C$ is $x^2+y^2=1$ in the plane $y+z=2$, counterclockwise when viewed from above; $F=(-y^2,x,z^2)$ is defined on $\\mathbb R^3$. Evaluate $\\oint_C F\\cdot d\\mathbf r$.",
+        "steps": [
+          {
+            "label": "Choose an admissible surface",
+            "text": "The tilted planar disk $S=\\{(x,y,2-y):x^2+y^2\\le1\\}$ is smooth with the required edge $C$. The polynomial field is smooth on a neighborhood of the entire disk; Stokes therefore applies.",
+            "equation": "\\mathbf r(x,y)=(x,y,2-y),\\qquad x^2+y^2\\le1"
+          },
+          {
+            "label": "Match the boundary orientation",
+            "text": "The parameter order $(x,y)$ gives $\\mathbf r_x\\times\\mathbf r_y=(0,1,1)$, whose vertical component is positive. Seen from above, its induced boundary is counterclockwise, as requested.",
+            "equation": "\\mathbf r_x\\times\\mathbf r_y=(0,1,1)"
+          },
+          {
+            "label": "Integrate the actual curl",
+            "text": "Here $\\nabla\\times F=(0,0,1+2y)$. The vertical component of the oriented area vector is $1$, and the $2y$ term integrates to zero by symmetry of the unit disk.",
+            "equation": "\\oint_C F\\cdot d\\mathbf r=\\iint_{x^2+y^2\\le1}(1+2y)\\,dx\\,dy=\\pi"
+          }
+        ],
+        "result": "The circulation is $\\pi$. A tilted boundary need not use a horizontal disk: the disk must actually have edge $C$.",
+        "verification": "Directly, $\\mathbf r(t)=(\\cos t,\\sin t,2-\\sin t)$ for $0\\le t\\le2\\pi$ gives $F\\cdot\\mathbf r'(t)=\\sin^3 t+\\cos^2 t-(2-\\sin t)^2\\cos t$; only $\\cos^2 t$ has nonzero integral, again $\\pi$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "tilted-stokes-eligibility-transfer",
+        "outcome": "Choose a lawful tilted spanning disk and match its induced boundary orientation before using Stokes.",
+        "kind": "method-choice",
+        "prompt": "Let $C$ be $x^2+y^2=4$ in the plane $z=1+x$, traversed clockwise when viewed from above, and let $F=(-y,x,z^2)$ on $\\mathbb R^3$. Decide whether its tilted planar disk is an admissible Stokes surface; choose its normal orientation and evaluate $\\oint_C F\\cdot d\\mathbf r$. Explain why the horizontal disk $z=1$ cannot simply be substituted.",
+        "hint": "Parametrize the tilted disk by $\\mathbf r(x,y)=(x,y,1+x)$ over $x^2+y^2\\le4$. Determine the upward cross product, then reverse it for the requested traversal. Check the field on the whole disk.",
+        "solution": "The tilted disk has edge $C$ and the polynomial field is smooth on all of $\\mathbb R^3$. Its upward area vector is $(-1,0,1)\\,dx\\,dy$, inducing counterclockwise travel viewed from above; use $(1,0,-1)$ for the requested clockwise direction. Since $\\nabla\\times F=(0,0,2)$, the flux is $-2$ times the disk area $4\\pi$, hence $-8\\pi$. The horizontal disk has a different boundary, so Stokes does not equate its flux directly with this circulation.",
+        "rubric": [
+          "Verify the replacement disk has exactly the given edge and that the field is smooth on it.",
+          "Relate the upward area vector to counterclockwise travel and reverse for clockwise travel.",
+          "Use the actual curl and account for the disk area; reject the horizontal disk as a different boundary."
+        ],
+        "solutionTex": "\\oint_C F\\cdot d\\mathbf r=\\iint_{x^2+y^2\\le4}(0,0,2)\\cdot(1,0,-1)\\,dx\\,dy=-8\\pi"
+      }
+    ]
   },
   "divergence-theorem": {
     "prerequisites": [

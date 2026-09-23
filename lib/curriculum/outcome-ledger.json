@@ -5002,7 +5002,7 @@
         "divergence-theorem"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 2 source-specific atomic outcome(s) mapped for audit inventory topic 'Stokes and Gauss–Ostrogradsky'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "gap": "Only 3 source-specific atomic outcomes mapped for Stokes and Gauss–Ostrogradsky. Remaining subskills, exact source examples/tasks and learner checks require review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -5015,6 +5015,7 @@
       "verification": "pending",
       "atomic_outcome_ids": [
         "stokes-theorem:source-skill-1",
+        "stokes-theorem:tilted-spanning-disk",
         "divergence-theorem:source-skill-1"
       ],
       "coverage_decision": "partial_atomic_mapping"
@@ -9253,6 +9254,98 @@
         "worked": "no worked instance established in cited section",
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
+        "checked": "No independent outcome-level validation or learner performance check."
+      }
+    },
+    {
+      "id": "stokes-theorem:tilted-spanning-disk",
+      "concept_id": "stokes-theorem",
+      "outcome": "Choose a tilted planar disk as a Stokes surface by checking its exact boundary and field smoothness.",
+      "core_source": {
+        "id": "MH2100_Lecture_11",
+        "physical_page": 24,
+        "inspection": "Lecture PDF physical pages 22–24 inspected for theorem hypotheses and the exact tilted cylinder–plane example.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 24],
+          "method": "Authenticated Drive PDF readable text for pages 22–24 and rendered page 24 checked against physical page numbers.",
+          "claim_observed": "Page 22 requires an oriented spanning surface and smooth field on it; page 23 defines induced direction; page 24 poses the tilted cylinder–plane boundary and polynomial field."
+        },
+        "page_heading": "Stokes’ Theorem — Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "claim": "The concept is named in the current catalog.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.sections[A replacement surface needs the same edge]",
+            "claim": "The lesson states the edge, field-smoothness, and orientation eligibility checks.",
+            "method": "Read cited section against Lecture 11 pages 22–24."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[tilted-cylinder-plane-stokes]",
+            "claim": "The exact source boundary and field are worked through a lawful tilted disk and induced orientation.",
+            "method": "Compared source page 24 and worked steps; recomputed curl, area flux, and direct parametrization."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[tilted-stokes-eligibility-transfer]",
+            "claim": "An independent tilted-plane problem requires edge, smoothness, orientation, and curl-flux decisions.",
+            "method": "Compared prompt, hint, solution, and rubric with the atomic outcome; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source theorem and exact example checked; guide work and transfer task inspected. Scene does not yet establish this exact tilted-boundary decision, and no independent learner performance has been measured. Other Lecture 11 subskills remain unmapped.",
+      "source_section_id": "MH2100_Lecture_11:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#stokes-theorem.title",
+            "basis": "current catalog inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.sections[A replacement surface needs the same edge]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.contentBlocks[tilted-cylinder-plane-stokes]",
+            "basis": "exact source example and guide steps inspected"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#stokes-theorem.exercises[tilted-stokes-eligibility-transfer]",
+            "basis": "current independent prompt/hint/solution inspected; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of Lecture 11 physical pages 22–24 with the current guide section, exact worked example, transfer exercise and scene source.",
+        "named": "match",
+        "stated": "match",
+        "worked": "exact source geometry and field; computation independently recomputed",
+        "practiced": "aligned transfer task; learner performance unverified",
+        "visualized": "Candidate scene does not verify this tilted-boundary outcome.",
         "checked": "No independent outcome-level validation or learner performance check."
       }
     },
