@@ -37,6 +37,20 @@ from `Jerome-Group/public-template`; it contains a source snapshot, not the Site
 Existing `.openai/hosting.json` identifies the original Site. GitHub pushes do not automatically
 publish a new Sites version.
 
+For a Sites release, build the merged commit and archive the complete `dist` tree plus
+`.openai/hosting.json`:
+
+```sh
+npx vinext build
+tar -czf /tmp/calculus-site-build.tar.gz dist .openai/hosting.json
+tar -tzf /tmp/calculus-site-build.tar.gz | rg '^dist/client/assets/.*\.js$' | head
+```
+
+Push that commit to the existing Site source repository, then save and deploy a version with the
+same full commit SHA and archive. After deployment, open the public URL and confirm a lesson or
+Graph Studio hydrates without missing asset or console errors. Including only `dist/server` leaves
+the HTML visible but prevents the client from loading.
+
 Owned source and documentation are MIT licensed. Dependencies and vendored assets retain their
 own licences and notices. Course PDFs and other course files are excluded and ignored. References
 to access-controlled notes remain; access is governed by the Owner's Drive sharing permissions.
