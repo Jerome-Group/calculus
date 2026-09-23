@@ -223,7 +223,27 @@
     "pages": 28,
     "course": "MH1101",
     "kind": "lecture",
-    "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f"
+    "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+    "errata": [
+      {
+        "page": 22,
+        "printed": "The final sentence says the sine Taylor series equals the function by Theorem 3.",
+        "correction": "The conclusion follows from Theorem 4 after the preceding proof that the Taylor remainder tends to zero.",
+        "justification": "Theorem 3 gives coefficient uniqueness only under an existing power-series representation; Theorem 4 is the remainder-to-zero criterion used in this example."
+      },
+      {
+        "page": 27,
+        "printed": "The summary table lists radius $R=1$ for $(1+x)^k$ without an exponent exception.",
+        "correction": "For nonnegative integer $k$ the series terminates as a polynomial and has infinite radius; for other real $k$ the ratio test gives radius $1$.",
+        "justification": "Printed page 24 explicitly says nonnegative integer powers terminate, while the table's unqualified $R=1$ contradicts polynomial convergence on all real inputs."
+      },
+      {
+        "page": 28,
+        "printed": "The final display for Example 6.19 starts its sum at $n=0$ although the summand contains $1/n$.",
+        "correction": "The lower index is $n=1$.",
+        "justification": "The $n=0$ term is undefined, and both the original series and the preceding sigma-notation line start at $n=1$."
+      }
+    ]
   },
   "MH1101_Chapter_05_Notes": {
     "id": "MH1101_Chapter_05_Notes",

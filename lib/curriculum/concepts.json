@@ -3002,13 +3002,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [2, 2],
-        "detail": "Definition 1. (Power Series); Definition 2. (Power series at $x=a$)"
-      },
-      {
-        "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [4, 4],
-        "detail": "Theorem 1. For any given power series $\\sum_{n=0}^{\\infty}c_n(x-a)^n$, there are only three"
+        "pages": [2, 7],
+        "detail": "Chapter 6 §6.1: power-series definition, three convergence patterns, ratio-test radii, and separate endpoint tests."
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
@@ -3042,13 +3037,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [8, 8],
-        "detail": "6.2      Representation of Function as Power Series"
-      },
-      {
-        "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [11, 11],
-        "detail": "Theorem 2. (Term-by-Term Differentiation and Integration of Power"
+        "pages": [8, 12],
+        "detail": "Chapter 6 §6.2: geometric substitutions, recentering, multiplication/reindexing, and termwise calculus examples."
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
@@ -3084,23 +3074,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [13, 13],
-        "detail": "6.3       Taylor and Maclaurin Series"
-      },
-      {
-        "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [14, 14],
-        "detail": "Theorem 3. (Uniqueness of the Power Series Expansion)"
-      },
-      {
-        "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [16, 16],
-        "detail": "Theorem 4. If; Theorem 5. (Taylor’s Theorem)"
-      },
-      {
-        "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [18, 18],
-        "detail": "Theorem 6. (Error Bound for Taylor Series)"
+        "pages": [13, 22],
+        "detail": "Chapter 6 §6.3: coefficient uniqueness, finite Taylor polynomials and remainders, error bounds, Maclaurin series, and a nonzero center."
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
@@ -3133,13 +3108,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [23, 23],
-        "detail": "6.4 The Binomial Series | To answer this question, we first look at the Maclaurin series for $(1+x)^k$"
-      },
-      {
-        "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [25, 25],
-        "detail": "Theorem 7. (The Binomial Series)"
+        "pages": [23, 26],
+        "detail": "Chapter 6 §6.4: generalized binomial coefficients, the open convergence interval, endpoint caveat, and the scaled square-root example."
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
@@ -3173,8 +3143,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_06_Notes",
-        "pages": [27, 27],
-        "detail": "6.5       Finding limits using power series"
+        "pages": [27, 28],
+        "detail": "Chapter 6 §6.5: the standard-series table, logarithmic sum, and two series-limit prompts (the second is unsolved in the notes)."
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",

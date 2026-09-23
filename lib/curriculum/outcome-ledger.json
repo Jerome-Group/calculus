@@ -6163,29 +6163,418 @@
       "id": "MH1101_Chapter_06_Notes:01",
       "source_id": "MH1101_Chapter_06_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Power series, endpoint tests, operations, Taylor approximation, binomial series, limits",
-      "physical_pages_from_audit": "2–28; radius 2–7; operations 8–12; Taylor 13–22; binomial 23–26; limits 27–28",
-      "linked_concept_ids": [
-        "power-series-radius",
-        "power-series-operations",
-        "taylor-series",
-        "binomial-series",
-        "limits-with-series"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'Power series, endpoint tests, operations, Taylor approximation, binomial series, limits'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "topic_from_audit_inventory": "Power series, radii, and endpoint behavior",
+      "physical_pages_from_audit": "Canonical 28-page notes; inspected printed pages 2–7; page 1 is contents.",
+      "linked_concept_ids": ["power-series-radius"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Printed pages 2–7 cover the power-series definition, the three convergence patterns, ratio-test radii, and independent endpoint tests. Page 1 is the contents page, not an instructional skill. Scene alignment and learner checks remain unverified.",
       "evidence": {
         "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-convergence-patterns]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-ratio-radius-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-endpoint-protocol]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-convergence-patterns-work]",
+            "claim": "The source's factorial example and geometric boundary are checked against the pages; the guide's all-real exponential-coefficient example is explicitly guide-created and checked by its ratio.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-ratio-radius-work]",
+            "claim": "The shifted series in Example 6.5 is re-derived with ratio limit |x+2|/3, giving center -2 and radius 3.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-endpoint-casework]",
+            "claim": "All three source endpoint classifications are recomputed: alternating harmonic, p=1/2 and alternating-p tests, and nth-term divergence.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-convergence-patterns-transfer]",
+            "claim": "A separate three-series classification task has been solved and checked; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-ratio-radius-transfer]",
+            "claim": "A new series centered at 4 is solved from its successive-term ratio; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-endpoint-transfer]",
+            "claim": "A shifted square-root-denominator series gives one divergent and one conditionally convergent endpoint; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["taylor-series:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "power-series-radius:convergence-patterns",
+        "power-series-radius:ratio-radius",
+        "power-series-radius:endpoint-convergence"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–7",
+      "inspected_physical_pages": [2, 3, 4, 5, 6, 7],
+      "reviewed_exclusions": []
+    },
+    {
+      "id": "MH1101_Chapter_06_Notes:02",
+      "source_id": "MH1101_Chapter_06_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Geometric representations and termwise calculus",
+      "physical_pages_from_audit": "Canonical 28-page notes; inspected printed pages 8–12; page 1 is contents.",
+      "linked_concept_ids": ["power-series-operations"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Printed pages 8–12 cover geometric substitution, recentering, reindexing, termwise operations, and the arctangent example. Endpoint behavior after termwise operations remains a separate check; scene alignment and learner checks are unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-geometric-substitution-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-multiply-reindex-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-termwise-calculus-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-arctangent-series-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-geometric-substitution-work]",
+            "claim": "The recentered expansion is recomputed with ratio -3(x-1)/4 and interval (-1/3,7/3).",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-multiply-reindex-work]",
+            "claim": "The coefficient after setting m=n+3 is checked as (-1)^(m-3)/2^(m-2); boundary terms fail the nth-term test.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-termwise-calculus-work]",
+            "claim": "Example 6.9 is differentiated from the geometric series to obtain 1/(1-x)^2 for |x|<1.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-arctangent-series-work]",
+            "claim": "The guide recomputes the alternating odd-power series and its zero constant from the derivative and center value.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-geometric-substitution-transfer]",
+            "claim": "A separate expansion of 1/(2-x) is solved and its endpoints are checked; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-multiply-reindex-transfer]",
+            "claim": "A distinct x^2/(3+x) expansion is derived and checked on the open radius; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-termwise-calculus-transfer]",
+            "claim": "A separate derivative and antiderivative of the geometric series are solved on their open interval; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-arctangent-transfer]",
+            "claim": "The series for arctan(2x) is a guide-created transfer with open interval |x|<1/2; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "power-series-operations:geometric-transformations",
+        "power-series-operations:multiply-reindex",
+        "power-series-operations:termwise-calculus",
+        "power-series-operations:arctangent-integration"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "8–12",
+      "inspected_physical_pages": [8, 9, 10, 11, 12],
+      "reviewed_exclusions": []
+    },
+    {
+      "id": "MH1101_Chapter_06_Notes:03",
+      "source_id": "MH1101_Chapter_06_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Taylor coefficients, polynomials, and remainder",
+      "physical_pages_from_audit": "Canonical 28-page notes; inspected printed pages 13–22; page 1 is contents.",
+      "linked_concept_ids": ["taylor-series"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Printed pages 13–22 cover coefficient uniqueness, the representation caveat, finite Taylor polynomials, integral and bounded remainders, representation proofs, trigonometric operations, and the nonzero center example. The p22 theorem-reference erratum is recorded. Scene alignment and learner checks remain unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-coefficient-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-theorems]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-criterion]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-trig-series-operations-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-nonzero-center-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-polynomial-vs-series]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-coefficient-work]",
+            "claim": "The candidate Maclaurin coefficients for e^x and their infinite ratio-test radius are recomputed without treating convergence as equality.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-bound-work]",
+            "claim": "A cosine degree-two error is bounded using |f^(3)|<=1 on the whole segment, then evaluated at x=1/2.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-exponential-series-proof]",
+            "claim": "The exponential remainder is bounded on each arbitrary |x|<=d interval and the factorial limit establishes equality on all of R.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-trig-series-operations-work]",
+            "claim": "The cosine coefficients and shifted powers for x cos x are independently checked from the source series.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-nonzero-center-work]",
+            "claim": "All six coefficients and the bound |R_5(x)|<=|x-pi/3|^6/6! are recalculated; equality follows from Theorem 4's criterion.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-remainder-contrast-work]",
+            "claim": "The guide separates a fixed-degree exponential error guarantee from the separate all-degree remainder limit that proves equality.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-taylor-coefficient-transfer]",
+            "claim": "A Taylor polynomial for e^(2x) centered at 1 is computed; the task explicitly asks what more proves equality. Learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-remainder-bound-transfer]",
+            "claim": "A degree is selected for approximating e^0.3 from a certified derivative bound; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-remainder-proof-transfer]",
+            "claim": "A separate proof task applies the same remainder argument to cosine; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-trig-series-operations-transfer]",
+            "claim": "A separate x^2 cos x multiplication task is solved from the cosine series; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-nonzero-center-transfer]",
+            "claim": "A distinct cubic polynomial centered at pi/6 and its fourth-derivative error bound are solved; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-taylor-finite-vs-infinite-transfer]",
+            "claim": "A transfer task asks for a finite error guarantee and whether it proves the infinite identity; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "taylor-series:coefficient-uniqueness",
+        "taylor-series:source-skill-1",
+        "taylor-series:remainder-formula-bound",
+        "taylor-series:remainder-to-series-equality",
+        "taylor-series:trigonometric-series-operations",
+        "taylor-series:nonzero-center-sine"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "13–22",
+      "inspected_physical_pages": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "reviewed_exclusions": []
+    },
+    {
+      "id": "MH1101_Chapter_06_Notes:04",
+      "source_id": "MH1101_Chapter_06_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Generalized binomial series",
+      "physical_pages_from_audit": "Canonical 28-page notes; inspected printed pages 23–26; page 1 is contents.",
+      "linked_concept_ids": ["binomial-series"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Printed pages 23–26 cover generalized coefficients, the open interval, the k-dependent endpoint caution, and a radius-four substitution example. The source gives no general endpoint criteria; its p27 summary radius exception is recorded separately. Scene alignment and learner checks remain unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-general-binomial-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-scaled-binomial-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-general-binomial-work]",
+            "claim": "For k=1/2 the first coefficients and ratio-limit radius one are independently checked; no endpoint result is inferred.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-scaled-binomial-work]",
+            "claim": "The first coefficients 1/2, 1/16, 3/256, 5/2048 and the strict radius are checked; source endpoints are not evaluated.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.exercises[ch06-general-binomial-transfer]",
+            "claim": "A k=3/2 coefficient calculation is solved with the two endpoints explicitly left for separate testing; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.exercises[ch06-scaled-binomial-transfer]",
+            "claim": "A separate 1/sqrt(9+2x) expansion and radius 9/2 are solved; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "binomial-series:generalized-binomial",
+        "binomial-series:scaled-binomial-radius"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "23–26",
+      "inspected_physical_pages": [23, 24, 25, 26],
+      "reviewed_exclusions": []
+    },
+    {
+      "id": "MH1101_Chapter_06_Notes:05",
+      "source_id": "MH1101_Chapter_06_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Known series, sums, and limits",
+      "physical_pages_from_audit": "Canonical 28-page notes; inspected printed pages 27–28; page 1 is contents.",
+      "linked_concept_ids": ["limits-with-series"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Printed pages 27–28 cover the standard-series table, a logarithmic sum, and one worked limit. Example 6.21 is only a prompt; its new guide solution is not source-work evidence. The p28 index erratum is recorded. Scene alignment and learner checks remain unverified.",
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-known-series-table]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-limit-series-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-log-series-sum-work]",
+            "claim": "The sum is recomputed as ln(3/2); the source's final n=0 lower index is corrected to n=1 because its summand contains 1/n.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-limit-exp-work]",
+            "claim": "Example 6.20 is recomputed. A separate guide block solves the page-28 Example 6.21 prompt but explicitly does not attribute that solution to the source.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.exercises[ch06-log-series-sum-transfer]",
+            "claim": "A distinct logarithmic series at x=1/3 is evaluated; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.exercises[ch06-limit-transfer]",
+            "claim": "A sine-series quotient is independently solved through its first surviving x^5 term; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "limits-with-series:known-series-sum",
+        "limits-with-series:limit-cancellation"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "27–28",
+      "inspected_physical_pages": [27, 28],
+      "reviewed_exclusions": []
     },
     {
       "id": "MH2100_Lecture_01:01",
@@ -14645,37 +15034,38 @@
       "outcome": "Distinguish a finite Taylor remainder bound from equality with an infinite expansion.",
       "core_source": {
         "id": "MH1101_Chapter_06_Notes",
-        "physical_page": 16,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 15,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [16, 18],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page 16 distinguishes finite polynomial from representation by its limit; page 18 gives a finite error bound."
+          "pages": [15, 16, 18],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Page 15 warns that a candidate Taylor series need not represent the function; page 16 defines the Taylor polynomial and remainder; page 18 bounds finite error."
         },
-        "page_heading": "Taylor polynomial and remainder"
+        "page_heading": "Taylor-series caveat, polynomial remainder, and error bound"
       },
       "evidence": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#taylor-series.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
-          }
-        ],
+        "named": [],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#taylor-series.sections[A polynomial is not automatically an infinite expansion]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-polynomial-vs-series]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-remainder-contrast-work]",
+            "claim": "The guide separates a fixed-degree exponential error guarantee from the separate all-degree remainder limit that proves equality.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-taylor-finite-vs-infinite-transfer]",
+            "claim": "A transfer task asks for a finite error guarantee and whether it proves the infinite identity; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
           }
         ],
         "visualized": [],
@@ -14685,38 +15075,29 @@
         "scene_id": "plane-taylor",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
+      "depth": "source_page_and_cited_guide_inspected",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
-      "source_section_id": "MH1101_Chapter_06_Notes:01",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:03",
       "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#taylor-series.title",
-            "basis": "current code inspection"
-          }
-        ],
         "stated": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#taylor-series.sections[A polynomial is not automatically an infinite expansion]",
-            "basis": "current guide inspection"
-          }
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-polynomial-vs-series]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-remainder-contrast-work]"
         ],
         "practiced": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
-          }
+          "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-taylor-finite-vs-infinite-transfer]"
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
       }
     },
     {
@@ -37774,6 +38155,1158 @@
         "practiced": "The transfer exercise compares two candidate maps after verifying one normalized remainder.",
         "visualized": "No scene has been verified for this outcome.",
         "checked": "No independent learner performance check."
+      }
+    },
+    {
+      "id": "power-series-radius:convergence-patterns",
+      "concept_id": "power-series-radius",
+      "outcome": "Classify the three convergence patterns for a power series and distinguish its finite partial polynomials from the infinite series.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 2,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [2, 3, 4],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Printed page 2 defines a power series and contrasts it with a finite polynomial; page 3 Example 6.2 converges only at x=0; page 4 states the three possible convergence patterns and separately describes endpoint choices."
+        },
+        "page_heading": "6.1 Power Series; Theorem 1 (convergence patterns)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-convergence-patterns]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-convergence-patterns-work]",
+            "claim": "The source's factorial example and geometric boundary are checked against the pages; the guide's all-real exponential-coefficient example is explicitly guide-created and checked by its ratio.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-convergence-patterns-transfer]",
+            "claim": "A separate three-series classification task has been solved and checked; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:01",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-convergence-patterns]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-convergence-patterns-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-convergence-patterns-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "power-series-radius:ratio-radius",
+      "concept_id": "power-series-radius",
+      "outcome": "Use a ratio-test limit to determine the radius and open convergence interval around a power-series center.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 3,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3, 5, 6, 7],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "The notes apply the Ratio Test to centered series and convert strict magnitude inequalities into radii and open intervals."
+        },
+        "page_heading": "Examples 6.3–6.5 (Ratio Test)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-ratio-radius-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-ratio-radius-work]",
+            "claim": "The shifted series in Example 6.5 is re-derived with ratio limit |x+2|/3, giving center -2 and radius 3.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-ratio-radius-transfer]",
+            "claim": "A new series centered at 4 is solved from its successive-term ratio; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:01",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-ratio-radius-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-ratio-radius-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-ratio-radius-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "power-series-radius:endpoint-convergence",
+      "concept_id": "power-series-radius",
+      "outcome": "Test each endpoint separately after finding a radius, and identify conditional convergence or divergence where justified.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 3,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [3, 4, 5, 6, 7],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "The notes explicitly leave ratio-test boundary cases unresolved until substituted into the series and display endpoint outcomes [2,4), (-1/3,1/3], and (-5,1)."
+        },
+        "page_heading": "Examples 6.3–6.5 (separate endpoint tests)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-endpoint-protocol]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-endpoint-casework]",
+            "claim": "All three source endpoint classifications are recomputed: alternating harmonic, p=1/2 and alternating-p tests, and nth-term divergence.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-endpoint-transfer]",
+            "claim": "A shifted square-root-denominator series gives one divergent and one conditionally convergent endpoint; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:01",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-endpoint-protocol]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-radius.contentBlocks[ch06-endpoint-casework]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-radius.exercises[ch06-endpoint-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "power-series-operations:geometric-transformations",
+      "concept_id": "power-series-operations",
+      "outcome": "Substitute a shifted or scaled expression into the geometric series and solve the resulting strict convergence interval.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 8,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8, 9],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Printed pages 8–9 use the geometric series to expand 1/(1+x^2) and recenter 1/(3x+1) at x=1."
+        },
+        "page_heading": "6.2 Representation of Function as Power Series; Examples 6.6–6.7"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-geometric-substitution-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-geometric-substitution-work]",
+            "claim": "The recentered expansion is recomputed with ratio -3(x-1)/4 and interval (-1/3,7/3).",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-geometric-substitution-transfer]",
+            "claim": "A separate expansion of 1/(2-x) is solved and its endpoints are checked; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:02",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-geometric-substitution-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-geometric-substitution-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-geometric-substitution-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "power-series-operations:multiply-reindex",
+      "concept_id": "power-series-operations",
+      "outcome": "Multiply a power-series representation by a polynomial and reindex the shifted exponents without changing its radius.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 9,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 10],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Printed pages 9–10 derive x^3/(x+2) from a geometric representation, shift the exponents, and retain the open radius condition |x|<2."
+        },
+        "page_heading": "Example 6.8 (multiplication and reindexing)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-multiply-reindex-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-multiply-reindex-work]",
+            "claim": "The coefficient after setting m=n+3 is checked as (-1)^(m-3)/2^(m-2); boundary terms fail the nth-term test.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-multiply-reindex-transfer]",
+            "claim": "A distinct x^2/(3+x) expansion is derived and checked on the open radius; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:02",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-multiply-reindex-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-multiply-reindex-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-multiply-reindex-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "power-series-operations:termwise-calculus",
+      "concept_id": "power-series-operations",
+      "outcome": "Differentiate or integrate a power series term by term inside its radius; retain the radius and recheck endpoints.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 11,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Theorem 2 states the derivative and antiderivative formulas and says both new series have the same radius R, with validity inside (a-R,a+R)."
+        },
+        "page_heading": "Theorem 2 (Term-by-Term Differentiation and Integration)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-termwise-calculus-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-termwise-calculus-work]",
+            "claim": "Example 6.9 is differentiated from the geometric series to obtain 1/(1-x)^2 for |x|<1.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-termwise-calculus-transfer]",
+            "claim": "A separate derivative and antiderivative of the geometric series are solved on their open interval; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:02",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-termwise-calculus-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-termwise-calculus-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-termwise-calculus-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "power-series-operations:arctangent-integration",
+      "concept_id": "power-series-operations",
+      "outcome": "Integrate the geometric expansion of 1/(1+x^2) term by term and determine the constant from the value at zero.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 12,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [12],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Example 6.10 substitutes -x^2 into the geometric series, integrates inside |x|<1, and uses arctan(0)=0 to set the integration constant."
+        },
+        "page_heading": "Example 6.10 (integrating a geometric expansion)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-arctangent-series-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-arctangent-series-work]",
+            "claim": "The guide recomputes the alternating odd-power series and its zero constant from the derivative and center value.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-arctangent-transfer]",
+            "claim": "The series for arctan(2x) is a guide-created transfer with open interval |x|<1/2; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-power",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:02",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-arctangent-series-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#power-series-operations.contentBlocks[ch06-arctangent-series-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#power-series-operations.exercises[ch06-arctangent-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "taylor-series:coefficient-uniqueness",
+      "concept_id": "taylor-series",
+      "outcome": "When a power-series representation exists around a center, recover its unique coefficients as f^(n)(a)/n! and distinguish Maclaurin from centered Taylor series.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 13,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 15],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Printed pages 13–14 derive c_n=f^(n)(a)/n! from termwise differentiation; page 15 warns this theorem assumes an existing power-series representation."
+        },
+        "page_heading": "Theorem 3 (Uniqueness of the Power Series Expansion)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-coefficient-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-coefficient-work]",
+            "claim": "The candidate Maclaurin coefficients for e^x and their infinite ratio-test radius are recomputed without treating convergence as equality.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-taylor-coefficient-transfer]",
+            "claim": "A Taylor polynomial for e^(2x) centered at 1 is computed; the task explicitly asks what more proves equality. Learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-taylor",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-coefficient-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-taylor-coefficient-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-taylor-coefficient-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "taylor-series:remainder-formula-bound",
+      "concept_id": "taylor-series",
+      "outcome": "Apply Taylor's integral remainder and the derivative error bound with their stated interval hypotheses.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 16,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17, 18],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Page 16 states the integral remainder; pages 17–18 prove it and derive |R_n(x)|<=M|x-a|^(n+1)/(n+1)! under a segment-wide derivative bound."
+        },
+        "page_heading": "Theorems 5–6 (Taylor remainder and error bound)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-theorems]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-bound-work]",
+            "claim": "A cosine degree-two error is bounded using |f^(3)|<=1 on the whole segment, then evaluated at x=1/2.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-remainder-bound-transfer]",
+            "claim": "A degree is selected for approximating e^0.3 from a certified derivative bound; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-taylor",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-theorems]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-bound-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-remainder-bound-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "taylor-series:remainder-to-series-equality",
+      "concept_id": "taylor-series",
+      "outcome": "Prove that a Taylor series represents its function by showing the remainder tends to zero.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 19,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Theorem 4 gives the remainder-to-zero criterion; Examples 6.12–6.13 use bounded derivatives and the factorial limit to prove the e^x and sin x series for all real x."
+        },
+        "page_heading": "Examples 6.12–6.13 (remainder tends to zero)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-criterion]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-exponential-series-proof]",
+            "claim": "The exponential remainder is bounded on each arbitrary |x|<=d interval and the factorial limit establishes equality on all of R.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-remainder-proof-transfer]",
+            "claim": "A separate proof task applies the same remainder argument to cosine; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-taylor",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-remainder-criterion]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-exponential-series-proof]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-remainder-proof-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "taylor-series:trigonometric-series-operations",
+      "concept_id": "taylor-series",
+      "outcome": "Derive the cosine and x-cosine Maclaurin series by termwise differentiation and multiplication of the sine/cosine series.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 20,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20, 21],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Printed pages 20–21 establish the sine series, differentiate it term by term to obtain cosine, then multiply by x for x cos x."
+        },
+        "page_heading": "Examples 6.13–6.15 (differentiate and multiply series)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-trig-series-operations-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-trig-series-operations-work]",
+            "claim": "The cosine coefficients and shifted powers for x cos x are independently checked from the source series.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-trig-series-operations-transfer]",
+            "claim": "A separate x^2 cos x multiplication task is solved from the cosine series; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-taylor",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-trig-series-operations-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-trig-series-operations-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-trig-series-operations-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "taylor-series:nonzero-center-sine",
+      "concept_id": "taylor-series",
+      "outcome": "Compute the first six Taylor terms of sin x at x=pi/3 and use a remainder bound to prove the series represents sin x.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 22,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Example 6.16 tabulates derivatives at pi/3, writes six terms, and bounds the remainder using |f^(n+1)|<=1; its closing Theorem 3 citation is logged as an erratum."
+        },
+        "page_heading": "Example 6.16 (Taylor series at pi/3)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-nonzero-center-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-nonzero-center-work]",
+            "claim": "All six coefficients and the bound |R_5(x)|<=|x-pi/3|^6/6! are recalculated; equality follows from Theorem 4's criterion.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-nonzero-center-transfer]",
+            "claim": "A distinct cubic polynomial centered at pi/6 and its fourth-derivative error bound are solved; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-taylor",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:03",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-nonzero-center-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#taylor-series.contentBlocks[ch06-nonzero-center-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#taylor-series.exercises[ch06-nonzero-center-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "binomial-series:generalized-binomial",
+      "concept_id": "binomial-series",
+      "outcome": "Form the real-exponent binomial coefficients and state the open interval and endpoint limitation of the generalized binomial series.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 23,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [23, 24, 25],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Pages 23–24 define falling-product coefficients and derive Taylor coefficients; page 25 states equality for |x|<1 and says endpoint behavior depends on k."
+        },
+        "page_heading": "Example 6.17 and Theorem 7 (generalized binomial series)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-general-binomial-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-general-binomial-work]",
+            "claim": "For k=1/2 the first coefficients and ratio-limit radius one are independently checked; no endpoint result is inferred.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.exercises[ch06-general-binomial-transfer]",
+            "claim": "A k=3/2 coefficient calculation is solved with the two endpoints explicitly left for separate testing; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-binomial",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:04",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-general-binomial-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-general-binomial-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#binomial-series.exercises[ch06-general-binomial-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "binomial-series:scaled-binomial-radius",
+      "concept_id": "binomial-series",
+      "outcome": "Apply the generalized binomial series to 1/sqrt(4-x) and find its radius after a scaled substitution.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 25,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25, 26],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Example 6.18 rewrites 1/sqrt(4-x) as one half times (1-x/4)^(-1/2) and concludes the radius is 4 from |x/4|<1."
+        },
+        "page_heading": "Example 6.18 (scaled binomial series)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-scaled-binomial-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-scaled-binomial-work]",
+            "claim": "The first coefficients 1/2, 1/16, 3/256, 5/2048 and the strict radius are checked; source endpoints are not evaluated.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#binomial-series.exercises[ch06-scaled-binomial-transfer]",
+            "claim": "A separate 1/sqrt(9+2x) expansion and radius 9/2 are solved; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-binomial",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:04",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-scaled-binomial-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#binomial-series.contentBlocks[ch06-scaled-binomial-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#binomial-series.exercises[ch06-scaled-binomial-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "limits-with-series:known-series-sum",
+      "concept_id": "limits-with-series",
+      "outcome": "Evaluate a convergent numerical series by matching its coefficients to a listed Maclaurin expansion.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 27,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 28],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Printed page 27 lists the ln(1+x) series for |x|<1; Example 6.19 substitutes x=1/2 to sum the alternating logarithmic series."
+        },
+        "page_heading": "Maclaurin table and Example 6.19"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-known-series-table]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-log-series-sum-work]",
+            "claim": "The sum is recomputed as ln(3/2); the source's final n=0 lower index is corrected to n=1 because its summand contains 1/n.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.exercises[ch06-log-series-sum-transfer]",
+            "claim": "A distinct logarithmic series at x=1/3 is evaluated; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-series-limit",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:05",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-known-series-table]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-log-series-sum-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#limits-with-series.exercises[ch06-log-series-sum-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
+      }
+    },
+    {
+      "id": "limits-with-series:limit-cancellation",
+      "concept_id": "limits-with-series",
+      "outcome": "Evaluate a limit by retaining the first nonzero series term after cancellation and controlling the remainder.",
+      "core_source": {
+        "id": "MH1101_Chapter_06_Notes",
+        "sha256": "acd8ab414ffd751e538a6104a40e83699eccac9a1e997909c4fdf0163999432f",
+        "physical_page": 28,
+        "inspection": "Canonical SHA-256 matched; cited printed pages were rendered and visually inspected.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28],
+          "method": "Canonical SHA-256 matched the source registry; listed physical PDF pages were rendered and visually inspected.",
+          "claim_observed": "Example 6.20 expands e^x through the first surviving x^2 term and obtains 1/2; Example 6.21 is only an unsolved prompt."
+        },
+        "page_heading": "Examples 6.20–6.21 (series limits)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-limit-series-rule]",
+            "claim": "The guide block states the mapped source skill and its relevant conditions.",
+            "method": "Compared with SHA-matched, visually inspected physical source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-limit-exp-work]",
+            "claim": "Example 6.20 is recomputed. A separate guide block solves the page-28 Example 6.21 prompt but explicitly does not attribute that solution to the source.",
+            "method": "The calculation or argument was independently recomputed and compared with the inspected source."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-with-series.exercises[ch06-limit-transfer]",
+            "claim": "A sine-series quotient is independently solved through its first surviving x^5 term; learner performance is unverified.",
+            "method": "Solved and reviewed the guide-created task; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-series-limit",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The parent concept title is not counted as an exact atomic name. Source pages and guide reasoning were inspected; no scene is verified for this outcome and no learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_06_Notes:05",
+      "candidate_blocks": {
+        "stated": [
+          "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-limit-series-rule]"
+        ],
+        "worked": [
+          "lib/curriculum/learning-guides.json#limits-with-series.contentBlocks[ch06-limit-exp-work]"
+        ],
+        "practiced": [
+          "lib/curriculum/learning-guides.json#limits-with-series.exercises[ch06-limit-transfer]"
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of visually inspected physical source pages, stated conditions, recomputed worked reasoning, and a solved independent transfer task.",
+        "named": "The catalog names the parent topic only; the exact atomic outcome title is absent, so no named match is claimed.",
+        "stated": "The guide statement was compared with the source claim and hypotheses.",
+        "worked": "Guide work was recomputed; source work and guide-created additions are identified in the page claim.",
+        "practiced": "Prompt, hint, solution, and rubric were reviewed; learner performance is unverified.",
+        "visualized": "The existing concept scene is only a candidate; rendered behavior and outcome alignment were not verified.",
+        "checked": "No learner outcome check."
       }
     }
   ]

@@ -13436,6 +13436,10 @@
       {
         "title": "The center shifts everything",
         "text": "For $\\sum a_{n}(x-c)^n$, the radius measures distance from $c$. A radius can be zero or infinite. Partial sums are polynomials; their limit is defined only on the convergence set, and may behave differently at its boundary."
+      },
+      {
+        "title": "The radius is not the interval",
+        "text": "The radius describes the open interval around the center. At the two boundary points, substitute into the original series and test separately. The chapter exhibits all four choices for endpoint inclusion and examples with conditional convergence, harmonic divergence, and terms that do not approach zero."
       }
     ],
     "exercise": {
@@ -13447,7 +13451,154 @@
         "Test each endpoint independently."
       ],
       "solutionTex": "R=3,\\quad I=[-1,5)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch06-convergence-patterns",
+        "title": "The three power-series convergence patterns",
+        "statement": "For a power series $\\sum_{n=0}^{\\infty}c_n(x-a)^n$, either it converges only at $x=a$, converges for every real $x$, or there is an $R>0$ for which it converges when $|x-a|<R$ and diverges when $|x-a|>R$.",
+        "hypotheses": [
+          "The radius statement does not decide convergence at $x=a-R$ or $x=a+R$; test each endpoint in the original series."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-convergence-patterns-work",
+        "title": "Classify the basic convergence patterns",
+        "strategy": "Compare the term ratio at a fixed input and remember that convergence requires terms to tend to zero.",
+        "setup": "Use the factorial, geometric, and exponential-coefficient series from the chapter.",
+        "steps": [
+          {
+            "label": "Factorial coefficients",
+            "text": "For $\\sum_{n=0}^{\\infty}n!x^n$, any fixed $x\\ne0$ makes successive term magnitudes grow without bound.",
+            "equation": "\\left|\\frac{a_{n+1}}{a_n}\\right|=(n+1)|x|\\to\\infty"
+          },
+          {
+            "label": "Exponential coefficients",
+            "text": "For $\\sum x^n/n!$, the ratio tends to zero at every fixed real input.",
+            "equation": "\\left|\\frac{a_{n+1}}{a_n}\\right|=\\frac{|x|}{n+1}\\to0"
+          },
+          {
+            "label": "Geometric boundary",
+            "text": "For $\\sum x^n$, the open interval is $(-1,1)$; at either endpoint the terms fail to tend to zero.",
+            "equation": "a_n(1)=1,\\qquad a_n(-1)=(-1)^n"
+          }
+        ],
+        "result": "The first series converges only at zero; the second converges for all real inputs; the geometric series has radius one with both endpoints excluded.",
+        "verification": "At the endpoints the geometric-series terms have magnitude one, so the nth-term test proves divergence."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-ratio-radius-rule",
+        "title": "Use the ratio test for the open interval",
+        "text": "For terms $a_n(x)=c_n(x-a)^n$, compute the ratio at a fixed $x$. When $\\lim_{n\\to\\infty}|c_{n+1}/c_n|=L$ exists, the ratio limit is $L|x-a|$; the ratio test gives the open region where this is below one. The boundary is then tested separately."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-ratio-radius-work",
+        "title": "Find the radius in a shifted series",
+        "strategy": "Apply the ratio test to the terms, then translate the strict inequality around the series center.",
+        "setup": "For the chapter's series $\\sum_{n=0}^{\\infty} n(x+2)^n/3^{n+1}$, the center is $a=-2$.",
+        "steps": [
+          {
+            "label": "Take the ratio",
+            "text": "For fixed $x\\ne-2$, simplify the ratio of successive terms.",
+            "equation": "\\left|\\frac{a_{n+1}}{a_n}\\right|=\\frac{n+1}{n}\\frac{|x+2|}{3}\\to\\frac{|x+2|}{3}"
+          },
+          {
+            "label": "Solve the strict test",
+            "text": "The ratio test gives absolute convergence strictly inside the radius.",
+            "equation": "\\frac{|x+2|}{3}<1\\iff |x+2|<3"
+          },
+          {
+            "label": "State the radius",
+            "text": "The distance is measured from the center $-2$.",
+            "equation": "R=3,\\qquad -5<x<1"
+          }
+        ],
+        "result": "The radius is $3$ and the open convergence interval is $(-5,1)$; endpoint status still needs its own check.",
+        "verification": "The inequality uses a strict ratio-test condition, so it does not include either endpoint."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-endpoint-protocol",
+        "title": "Test both endpoints from the original series",
+        "text": "After finding center $a$ and radius $R$, substitute $x=a-R$ and $x=a+R$ separately. Choose a convergence test for each resulting numerical series; do not carry the ratio-test conclusion to its boundary."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-endpoint-casework",
+        "title": "Three source examples with different endpoint behavior",
+        "strategy": "Find the open interval first, then substitute each boundary value into the original summand.",
+        "setup": "The chapter's Examples 6.3–6.5 show conditional convergence, p-series divergence, and nth-term divergence at endpoints.",
+        "steps": [
+          {
+            "label": "Harmonic endpoints",
+            "text": "For $\\sum_{n=1}^{\\infty}(x-3)^n/n$, the radius is $1$. At $x=2$ the alternating harmonic series converges conditionally; at $x=4$ the harmonic series diverges.",
+            "equation": "\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{n}\\text{ converges},\\qquad\\sum_{n=1}^{\\infty}\\frac1n\\text{ diverges}"
+          },
+          {
+            "label": "Square-root denominator",
+            "text": "For $\\sum_{n=0}^{\\infty}(-3)^nx^n/\\sqrt{n+1}$, the radius is $1/3$. At $x=-1/3$ it becomes a positive $p$-series with $p=1/2$; at $x=1/3$ it is alternating with terms decreasing to zero.",
+            "equation": "\\sum\\frac1{\\sqrt{n+1}}\\text{ diverges},\\qquad\\sum\\frac{(-1)^n}{\\sqrt{n+1}}\\text{ converges}"
+          },
+          {
+            "label": "Nth-term endpoints",
+            "text": "For $\\sum_{n=0}^{\\infty}n(x+2)^n/3^{n+1}$, substituting $x=-5$ or $x=1$ leaves terms whose magnitudes are $n/3$, so both endpoint series diverge.",
+            "equation": "\\left|a_n(-5)\\right|=\\left|a_n(1)\\right|=\\frac n3\\not\\to0"
+          }
+        ],
+        "result": "The intervals are $[2,4)$ for Example 6.3, $(-1/3,1/3]$ for Example 6.4, and $(-5,1)$ for Example 6.5.",
+        "verification": "The endpoint conclusions use the alternating-series test, the $p$-series test, and the nth-term test respectively; the radius alone supplies none of them."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch06-convergence-patterns-transfer",
+        "outcome": "Classify a power series by its convergence pattern.",
+        "kind": "conceptual",
+        "prompt": "Classify $\\sum_{n=0}^{\\infty}(n+1)!x^n$, $\\sum_{n=0}^{\\infty}x^n/(n+1)!$, and $\\sum_{n=0}^{\\infty}(x-2)^n$ as center-only, all-real, or finite-radius cases.",
+        "hint": "Use successive-term ratios for each fixed $x$, then check the geometric endpoints.",
+        "solution": "The first converges only at $x=0$ because its term ratio tends to infinity for nonzero $x$. The second converges for every real $x$ because the ratio tends to zero. The third has radius $1$ about $2$, and both endpoints diverge because its terms are $1$ or $(-1)^n$.",
+        "solutionTex": "\\text{center-only: }\\sum(n+1)!x^n;\\quad R=\\infty:\\sum\\frac{x^n}{(n+1)!};\\quad I=(1,3)",
+        "rubric": [
+          "Name the three possible patterns.",
+          "Use a ratio limit for the first two.",
+          "Test the geometric endpoints rather than closing its radius interval."
+        ]
+      },
+      {
+        "id": "ch06-ratio-radius-transfer",
+        "outcome": "Find a radius from the ratio test.",
+        "kind": "computational",
+        "prompt": "Find the radius and open interval for $\\sum_{n=0}^{\\infty} n(x-4)^n/2^{n+1}$.",
+        "hint": "Take the ratio of successive terms at fixed $x$ and isolate $|x-4|$.",
+        "solution": "The ratio tends to $|x-4|/2$, so the radius is $2$ about $4$ and the open interval is $(2,6)$. Endpoint behavior is a separate question.",
+        "solutionTex": "R=2,\\qquad (2,6)",
+        "rubric": [
+          "Use the center $4$.",
+          "Compute the limiting ratio.",
+          "State an open interval, not an endpoint claim."
+        ]
+      },
+      {
+        "id": "ch06-endpoint-transfer",
+        "outcome": "Classify two endpoint series independently.",
+        "kind": "method-choice",
+        "prompt": "Find the interval of convergence of $\\sum_{n=0}^{\\infty}(-2)^n(x-1)^n/\\sqrt{n+1}$.",
+        "hint": "First get the radius from the ratio test; then substitute $x=1\\pm R$.",
+        "solution": "The ratio limit is $2|x-1|$, so $R=1/2$. At $x=1/2$ the terms become $1/\\sqrt{n+1}$ and the series diverges. At $x=3/2$ the series is alternating with decreasing terms tending to zero, so it converges conditionally. The interval is $(1/2,3/2]$.",
+        "solutionTex": "R=\\frac12,\\qquad I=\\left(\\frac12,\\frac32\\right]",
+        "rubric": [
+          "Find the center and radius.",
+          "Write each endpoint series explicitly.",
+          "Use the p-series and alternating-series tests separately."
+        ]
+      }
+    ]
   },
   "power-series-operations": {
     "prerequisites": ["power-series-radius", "fundamental-theorem"],
@@ -13460,6 +13611,10 @@
       {
         "title": "Derive a logarithmic series",
         "text": "Integrating $\\sum_{n=0}^\\infty x^n=1/(1-x)$ from $0$ to $x$ gives $\\sum_{n=1}^\\infty x^n/n=-\\ln(1-x)$ for $|x|<1$. The integration constant is fixed by the zero value at $x=0$. At $x=-1$ an additional endpoint argument is needed; interior validity alone does not prove it."
+      },
+      {
+        "title": "Same radius, different endpoint behavior",
+        "text": "Termwise differentiation and integration preserve the radius, not necessarily endpoint convergence. For example, integrating $\\sum_{n=0}^{\\infty}x^n$ gives $\\sum_{n=1}^{\\infty}x^n/n$ on $|x|<1$; at $x=-1$ the latter converges conditionally even though the original geometric series diverges there."
       }
     ],
     "exercise": {
@@ -13471,7 +13626,203 @@
         "Recheck endpoints after differentiation."
       ],
       "solutionTex": "\\frac d{dx}\\sum_{n=1}^{\\infty}\\frac{x^n}{n}=\\sum_{n=1}^{\\infty}x^{n-1}=\\frac1{1-x}\\quad(|x|<1)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "ch06-geometric-substitution-rule",
+        "title": "Transform a geometric series without losing its domain",
+        "text": "Start from $1/(1-u)=\\sum_{n=0}^{\\infty}u^n$ for $|u|<1$. Substitute a shifted or scaled expression for $u$, solve the strict inequality, and keep track of any polynomial factor that shifts indices."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-geometric-substitution-work",
+        "title": "Recenter a geometric expansion",
+        "strategy": "Rewrite the denominator as a constant times $1-u$, then apply the geometric series in the new variable.",
+        "setup": "Expand $1/(3x+1)$ around the center $x=1$.",
+        "steps": [
+          {
+            "label": "Center the denominator",
+            "text": "Write $3x+1=4+3(x-1)$ and factor out $4$.",
+            "equation": "\\frac1{3x+1}=\\frac14\\frac1{1+\\frac{3(x-1)}4}"
+          },
+          {
+            "label": "Apply the geometric series",
+            "text": "Use $u=-3(x-1)/4$ in the geometric formula.",
+            "equation": "\\frac1{3x+1}=\\frac14\\sum_{n=0}^{\\infty}\\left(-\\frac{3(x-1)}4\\right)^n"
+          },
+          {
+            "label": "Find the interval",
+            "text": "Require the substituted ratio to have magnitude below one.",
+            "equation": "\\left|\\frac{3(x-1)}4\\right|<1\\iff -\\frac13<x<\\frac73"
+          }
+        ],
+        "result": "The power series is centered at $1$, has radius $4/3$, and converges on $(-1/3,7/3)$.",
+        "verification": "Substituting $x=1$ gives the first term $1/4=1/(3(1)+1)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-multiply-reindex-work",
+        "title": "Multiply by a polynomial and reindex",
+        "strategy": "Expand the rational factor geometrically, multiply each term by the polynomial, and reindex only after matching exponents.",
+        "setup": "Find a series for $x^3/(x+2)$.",
+        "steps": [
+          {
+            "label": "Expand the reciprocal",
+            "text": "The geometric ratio is $-x/2$, so the reciprocal series holds for $|x|<2$.",
+            "equation": "\\frac1{x+2}=\\frac12\\sum_{n=0}^{\\infty}\\left(-\\frac x2\\right)^n"
+          },
+          {
+            "label": "Multiply by $x^3$",
+            "text": "Multiplication shifts every exponent by three.",
+            "equation": "\\frac{x^3}{x+2}=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{n+3}}{2^{n+1}}"
+          },
+          {
+            "label": "Reindex",
+            "text": "Set $m=n+3$ and express the same coefficients with the new lower index.",
+            "equation": "\\frac{x^3}{x+2}=\\sum_{m=3}^{\\infty}\\frac{(-1)^{m-3}x^m}{2^{m-2}},\\qquad |x|<2"
+          }
+        ],
+        "result": "The series begins $x^3/2-x^4/4+x^5/8-\\cdots$ and has radius $2$.",
+        "verification": "For $|x|<2$ it equals $x^3/(x+2)$ by the geometric identity; at either boundary the terms do not tend to zero."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch06-termwise-calculus-rule",
+        "title": "Term-by-term differentiation and integration",
+        "statement": "If $f(x)=\\sum_{n=0}^{\\infty}c_n(x-a)^n$ has radius $R>0$, then inside $|x-a|<R$ its derivative and antiderivative are obtained term by term, and each resulting series has the same radius $R$.",
+        "hypotheses": [
+          "Use the formulas only inside the open interval of convergence.",
+          "Endpoint convergence can change after differentiation or integration and must be tested again."
+        ],
+        "prerequisites": [
+          "The source states the power-series termwise calculus theorem; this guide uses it without reproving the theorem."
+        ],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-termwise-calculus-work",
+        "title": "Differentiate the geometric series",
+        "strategy": "Differentiate only within the geometric series' open interval of convergence.",
+        "setup": "Start with $1/(1-x)=\\sum_{n=0}^{\\infty}x^n$ for $|x|<1$.",
+        "steps": [
+          {
+            "label": "Differentiate the function",
+            "text": "The derivative of the left side is the reciprocal square.",
+            "equation": "\\frac{d}{dx}\\frac1{1-x}=\\frac1{(1-x)^2}"
+          },
+          {
+            "label": "Differentiate termwise",
+            "text": "Apply the theorem to the power series inside its radius.",
+            "equation": "\\frac{d}{dx}\\sum_{n=0}^{\\infty}x^n=\\sum_{n=1}^{\\infty}nx^{n-1}=1+2x+3x^2+\\cdots"
+          },
+          {
+            "label": "Keep the domain",
+            "text": "The radius stays one, but this conclusion applies only in the open interval.",
+            "equation": "\\frac1{(1-x)^2}=\\sum_{n=1}^{\\infty}nx^{n-1},\\qquad |x|<1"
+          }
+        ],
+        "result": "The differentiated series represents $1/(1-x)^2$ for $-1<x<1$.",
+        "verification": "The derivative-series terms fail to tend to zero at both endpoints, so the interval remains open."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-arctangent-series-rule",
+        "title": "Integrate a geometric expansion",
+        "text": "Start from $1/(1-u)=\\sum_{n=0}^{\\infty}u^n$ for $|u|<1$. Substitute $u=-x^2$, integrate term by term only inside its radius, then determine the integration constant from a known function value."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-arctangent-series-work",
+        "title": "Integrate to obtain the arctangent series",
+        "strategy": "Expand the derivative first, integrate each term on the common interior interval, and use the value at zero to fix the constant.",
+        "setup": "Use $(\\arctan x)'=1/(1+x^2)$.",
+        "steps": [
+          {
+            "label": "Substitute into the geometric series",
+            "text": "Put $-x^2$ in place of the geometric variable.",
+            "equation": "\\frac1{1+x^2}=\\sum_{n=0}^{\\infty}(-1)^n x^{2n},\\qquad |x|<1"
+          },
+          {
+            "label": "Integrate term by term",
+            "text": "The theorem permits integration within the same radius.",
+            "equation": "\\arctan x=C+\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{2n+1}}{2n+1}"
+          },
+          {
+            "label": "Fix the constant",
+            "text": "Set $x=0$ and use $\\arctan 0=0$.",
+            "equation": "C=0"
+          }
+        ],
+        "result": "For $|x|<1$, $\\arctan x=x-x^3/3+x^5/5-x^7/7+\\cdots$.",
+        "verification": "Differentiating the resulting series recovers $1/(1+x^2)$ inside the radius, and the value at zero fixes its constant."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-multiply-reindex-rule",
+        "title": "Shift exponents and reindex",
+        "text": "Multiplying by $x^m$ shifts every exponent by $m$. Reindex only after matching old and new exponents, and carry the original geometric ratio's convergence restriction through the algebra."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch06-geometric-substitution-transfer",
+        "outcome": "Represent a rational function by a geometric series.",
+        "kind": "computational",
+        "prompt": "Expand $1/(2-x)$ about $x=0$ and give its interval of convergence.",
+        "hint": "Factor out $2$ and use the geometric ratio $x/2$.",
+        "solution": "The expansion is $\\frac12\\sum_{n=0}^{\\infty}(x/2)^n=\\sum x^n/2^{n+1}$ for $|x|<2$. At either endpoint the terms have constant magnitude $1/2$, so the interval is $(-2,2)$.",
+        "solutionTex": "\\frac1{2-x}=\\sum_{n=0}^{\\infty}\\frac{x^n}{2^{n+1}},\\qquad I=(-2,2)",
+        "rubric": [
+          "Identify the geometric ratio.",
+          "Solve its strict magnitude inequality.",
+          "Check the two endpoint terms."
+        ]
+      },
+      {
+        "id": "ch06-multiply-reindex-transfer",
+        "outcome": "Shift exponents after multiplying by a polynomial.",
+        "kind": "computational",
+        "prompt": "Find the power-series representation and radius of $x^2/(3+x)$.",
+        "hint": "Write $1/(3+x)$ as a geometric series in $-x/3$, then multiply by $x^2$.",
+        "solution": "The expansion is $\\sum_{n=0}^{\\infty}(-1)^n x^{n+2}/3^{n+1}$ for $|x|<3$, so its radius is $3$. Multiplication by $x^2$ does not change the open radius.",
+        "solutionTex": "\\frac{x^2}{3+x}=\\sum_{n=0}^{\\infty}\\frac{(-1)^n x^{n+2}}{3^{n+1}},\\qquad R=3",
+        "rubric": [
+          "Use the correct ratio $-x/3$.",
+          "Shift each exponent by two.",
+          "State the domain inherited from the geometric series."
+        ]
+      },
+      {
+        "id": "ch06-termwise-calculus-transfer",
+        "outcome": "Differentiate and integrate a series within its radius.",
+        "kind": "computational",
+        "prompt": "Differentiate and integrate $\\sum_{n=0}^{\\infty}x^n$ term by term on its open interval. State the two resulting functions.",
+        "hint": "Use the termwise theorem only for $|x|<1$; include an integration constant before evaluating it.",
+        "solution": "The derivative is $\\sum_{n=1}^{\\infty}nx^{n-1}=1/(1-x)^2$. An antiderivative is $C+\\sum_{n=0}^{\\infty}x^{n+1}/(n+1)=C-\\ln(1-x)$ for $|x|<1$. The differentiated and integrated series both keep radius one; endpoint convergence must be checked separately.",
+        "solutionTex": "\\sum_{n=1}^{\\infty}nx^{n-1}=\\frac1{(1-x)^2},\\quad\\int\\sum_{n=0}^{\\infty}x^n\\,dx=C+\\sum_{n=0}^{\\infty}\\frac{x^{n+1}}{n+1}",
+        "rubric": [
+          "Keep the domain open while applying the theorem.",
+          "Differentiate the power and coefficient correctly.",
+          "Find the antiderivative constant from a value if one is specified."
+        ]
+      },
+      {
+        "id": "ch06-arctangent-transfer",
+        "outcome": "Generate a series for a scaled arctangent.",
+        "kind": "computational",
+        "prompt": "Use the arctangent series to expand $\\arctan(2x)$ and state the open interval guaranteed by substitution.",
+        "hint": "Replace $x$ by $2x$ in the source expansion and solve $|2x|<1$.",
+        "solution": "The series is $\\sum_{n=0}^{\\infty}(-1)^n(2x)^{2n+1}/(2n+1)$ for $|x|<1/2$. The source theorem gives this open interval; it does not settle the endpoints.",
+        "solutionTex": "\\arctan(2x)=\\sum_{n=0}^{\\infty}\\frac{(-1)^n(2x)^{2n+1}}{2n+1},\\qquad |x|<\\frac12",
+        "rubric": [
+          "Substitute $2x$ consistently in every term.",
+          "Solve the strict radius inequality.",
+          "Do not claim endpoint behavior from the ratio alone."
+        ]
+      }
+    ]
   },
   "taylor-series": {
     "prerequisites": ["linearization-differentials", "power-series-radius"],
@@ -13487,6 +13838,221 @@
         ],
         "prerequisites": ["Mean value theorem and repeated differentiation"],
         "status": "Theorem used without proof"
+      },
+      {
+        "kind": "theorem",
+        "id": "ch06-taylor-coefficient-rule",
+        "title": "Taylor coefficients are unique when an expansion exists",
+        "statement": "If $f(x)=\\sum_{n=0}^{\\infty}c_n(x-a)^n$ on $|x-a|<R$ with $R>0$, then $c_n=f^{(n)}(a)/n!$. The Taylor series is the only candidate for that existing power-series representation; at $a=0$ it is called the Maclaurin series.",
+        "hypotheses": [
+          "The premise that a power-series representation exists is essential. Computing the coefficients alone does not prove the series converges to $f$."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-taylor-coefficient-work",
+        "title": "Find the candidate Maclaurin series for the exponential",
+        "strategy": "Differentiate repeatedly, evaluate at the center, and then test convergence without yet asserting equality to the function.",
+        "setup": "For $f(x)=e^x$, every derivative is $e^x$ and the center is zero.",
+        "steps": [
+          {
+            "label": "Evaluate the derivatives",
+            "text": "Every derivative has value one at zero.",
+            "equation": "f^{(n)}(0)=1"
+          },
+          {
+            "label": "Apply the coefficient formula",
+            "text": "Divide the $n$th derivative value by $n!$.",
+            "equation": "c_n=\\frac1{n!}"
+          },
+          {
+            "label": "Check convergence",
+            "text": "For each fixed $x$, the term ratio tends to zero.",
+            "equation": "\\left|\\frac{a_{n+1}}{a_n}\\right|=\\frac{|x|}{n+1}\\to0"
+          }
+        ],
+        "result": "The candidate Maclaurin series is $\\sum_{n=0}^{\\infty}x^n/n!$ and has infinite radius; convergence alone still does not prove it equals $e^x$.",
+        "verification": "The notes make that distinction explicitly before using a remainder estimate to prove equality."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-polynomial-vs-series",
+        "title": "Separate a finite polynomial from its infinite-series claim",
+        "text": "The degree-$n$ Taylor polynomial is a finite sum. Define $R_n(x)=f(x)-T_n(x)$. A finite bound certifies one approximation; an infinite-series representation additionally requires $R_n(x)\\to0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-taylor-remainder-contrast-work",
+        "title": "A finite error bound is not yet an infinite-series proof",
+        "strategy": "Use the source's exponential example to show the two claims in sequence.",
+        "setup": "For $f(x)=e^x$ centered at zero, the degree-$n$ polynomial is $T_n(x)=\\sum_{k=0}^{n}x^k/k!$.",
+        "steps": [
+          {
+            "label": "State the finite approximation",
+            "text": "The error bound with $M=e^d$ applies for $|x|\\le d$.",
+            "equation": "|R_n(x)|\\le\\frac{e^d|x|^{n+1}}{(n+1)!}"
+          },
+          {
+            "label": "Fix a bounded interval",
+            "text": "For any fixed $d>0$, the factorial denominator dominates the fixed power.",
+            "equation": "\\lim_{n\\to\\infty}\\frac{e^d|x|^{n+1}}{(n+1)!}=0"
+          },
+          {
+            "label": "Make the infinite claim",
+            "text": "Only after the remainder limit is established may the polynomial limit be identified with the function.",
+            "equation": "e^x=\\lim_{n\\to\\infty}T_n(x)=\\sum_{k=0}^{\\infty}\\frac{x^k}{k!}"
+          }
+        ],
+        "result": "For a chosen degree the first inequality is a finite accuracy guarantee; the last equality follows from proving the remainder tends to zero.",
+        "verification": "The second and third steps use the factorial limit and the Taylor-series remainder criterion, not merely the fact that the Taylor coefficients were computed."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch06-remainder-theorems",
+        "title": "Taylor remainder formula and error bound",
+        "statement": "If $f^{(n+1)}$ is continuous between $a$ and $x$, the integral remainder is $R_n(x)=\\frac1{n!}\\int_a^x(x-u)^nf^{(n+1)}(u)\\,du$. If $|f^{(n+1)}(u)|\\le M$ whenever $|u-a|\\le d$, then $|R_n(x)|\\le M|x-a|^{n+1}/(n+1)!$ for $|x-a|\\le d$.",
+        "hypotheses": [
+          "The integral formula needs continuity of the $(n+1)$st derivative on the interval between $a$ and $x$.",
+          "The error bound needs a uniform bound $M$ on that derivative over the segment, not only at the center."
+        ],
+        "prerequisites": [
+          "Integration by parts yields a recurrence for the integral remainder; repeated use gives the Taylor polynomial plus its remainder."
+        ],
+        "status": "Proof sketch"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-remainder-bound-work",
+        "title": "Certify a finite cosine approximation",
+        "strategy": "Bound the next derivative throughout the interval and substitute that bound into Taylor's error estimate.",
+        "setup": "Approximate $\\cos x$ near zero with $T_2(x)=1-x^2/2$.",
+        "steps": [
+          {
+            "label": "Set the integral remainder",
+            "text": "Let $I_n(x)$ be the integral in the Taylor remainder formula.",
+            "equation": "I_n(x)=\\frac1{n!}\\int_a^x(x-u)^nf^{(n+1)}(u)\\,du"
+          },
+          {
+            "label": "Integrate by parts",
+            "text": "The source proof obtains a recurrence that peels off the nth Taylor term.",
+            "equation": "I_{n-1}(x)=\\frac{f^{(n)}(a)}{n!}(x-a)^n+I_n(x)"
+          },
+          {
+            "label": "Recover the remainder",
+            "text": "Repeating the recurrence gives the Taylor polynomial plus the integral remainder.",
+            "equation": "f(x)=T_n(x)+I_n(x),\\qquad R_n(x)=I_n(x)"
+          },
+          {
+            "label": "Take absolute values",
+            "text": "If the next derivative is bounded by $M$ on the segment, integrate the kernel magnitude.",
+            "equation": "|R_n(x)|\\le\\frac{M}{n!}\\int_{\\min(a,x)}^{\\max(a,x)}|x-u|^n\\,du=\\frac{M|x-a|^{n+1}}{(n+1)!}"
+          },
+          {
+            "label": "Certify an example",
+            "text": "For cosine, every derivative is bounded by one; at $x=1/2$ use degree two.",
+            "equation": "|R_2(1/2)|\\le\\frac{(1/2)^3}{3!}=\\frac1{48}"
+          }
+        ],
+        "result": "The polynomial $1-x^2/2$ approximates $\\cos(1/2)$ with error no greater than $1/48$.",
+        "verification": "This is a finite-degree guarantee; it does not by itself identify the entire cosine series."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch06-remainder-criterion",
+        "title": "When Taylor polynomials converge to the function",
+        "statement": "If $R_n(x)=f(x)-T_n(x)$ tends to zero for every $|x-a|<R$, then $f$ equals its Taylor series throughout that interval.",
+        "hypotheses": [
+          "Prove the remainder limit at the point or on the domain in question. The coefficient formula alone is insufficient."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-exponential-series-proof",
+        "title": "Prove the exponential series represents the function",
+        "strategy": "On any bounded interval, bound every derivative and use the factorial remainder estimate.",
+        "setup": "Choose arbitrary $d>0$. For $|x|\\le d$, $|f^{(n+1)}(u)|=e^u\\le e^d$.",
+        "steps": [
+          {
+            "label": "Apply the bound",
+            "text": "The derivative bound is uniform on the whole segment from zero to $x$.",
+            "equation": "|R_n(x)|\\le\\frac{e^d|x|^{n+1}}{(n+1)!}"
+          },
+          {
+            "label": "Take the limit",
+            "text": "For each fixed real $x$, the factorial limit makes the bound vanish.",
+            "equation": "\\lim_{n\\to\\infty}\\frac{e^d|x|^{n+1}}{(n+1)!}=0"
+          },
+          {
+            "label": "Conclude equality",
+            "text": "The Taylor remainder criterion applies on every chosen bounded interval; $d$ was arbitrary.",
+            "equation": "e^x=\\sum_{n=0}^{\\infty}\\frac{x^n}{n!}\\qquad(x\\in\\mathbb R)"
+          }
+        ],
+        "result": "The Maclaurin series equals $e^x$ for every real $x$.",
+        "verification": "The arbitrary interval bound and the remainder limit justify the equality, beyond the ratio test's convergence claim."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-trig-series-operations-work",
+        "title": "Differentiate and multiply known trigonometric series",
+        "strategy": "Use the all-real sine series as the source series, differentiate term by term for cosine, then multiply by $x$.",
+        "setup": "The sine series is $\\sin x=\\sum_{n=0}^{\\infty}(-1)^n x^{2n+1}/(2n+1)!$ and has infinite radius.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "The termwise theorem preserves the infinite radius.",
+            "equation": "\\cos x=\\frac{d}{dx}(\\sin x)=\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n}}{(2n)!}"
+          },
+          {
+            "label": "Multiply by the variable",
+            "text": "Multiplication by $x$ shifts each exponent by one.",
+            "equation": "x\\cos x=\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n+1}}{(2n)!}"
+          }
+        ],
+        "result": "The cosine and $x\\cos x$ Maclaurin series follow from the sine series without recomputing derivatives.",
+        "verification": "Both operations preserve the convergence domain here because the source series has infinite radius."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-nonzero-center-work",
+        "title": "Write six Taylor terms for sine at a nonzero center",
+        "strategy": "Evaluate the repeating derivative cycle at $a=\\pi/3$, divide by factorials, and bound the remainder.",
+        "setup": "Let $h=x-\\pi/3$. The derivatives of sine have magnitude at most one everywhere.",
+        "steps": [
+          {
+            "label": "Evaluate the first six coefficients",
+            "text": "Use $f^{(j)}(a)/j!$ for $j=0,1,\\ldots,5$.",
+            "equation": "\\sin x=\\frac{\\sqrt3}{2}+\\frac12h-\\frac{\\sqrt3}{4}h^2-\\frac1{12}h^3+\\frac{\\sqrt3}{48}h^4+\\frac1{240}h^5+R_5(x)"
+          },
+          {
+            "label": "Bound the finite remainder",
+            "text": "The next derivative is bounded by one on every segment.",
+            "equation": "|R_5(x)|\\le\\frac{|h|^6}{6!}"
+          },
+          {
+            "label": "Pass to the series",
+            "text": "For each fixed real $x$, the factorial denominator makes the remainder tend to zero as the degree increases.",
+            "equation": "\\lim_{n\\to\\infty}\\frac{|x-\\pi/3|^{n+1}}{(n+1)!}=0"
+          }
+        ],
+        "result": "These are the first six terms of the Taylor series centered at $\\pi/3$, and the same remainder argument proves it represents $\\sin x$ for all real $x$.",
+        "verification": "The notes' last line cites Theorem 3, but the remainder argument invokes Theorem 4's criterion."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-trig-series-operations-rule",
+        "title": "Generate one trigonometric series from another",
+        "text": "Inside the common convergence interval, differentiate the sine series term by term to obtain cosine. Multiplication by $x$ then shifts each exponent by one; state the inherited radius."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-nonzero-center-rule",
+        "title": "Build a Taylor series away from zero",
+        "text": "At center $a$, evaluate each derivative at $a$ and use coefficient $f^{(n)}(a)/n!$ on $(x-a)^n$. To prove the full series represents the function, bound the remainder for general $n$ and show it tends to zero."
       }
     ],
     "sections": [
@@ -13501,6 +14067,14 @@
       {
         "title": "Choose a nonzero center and certify a degree",
         "text": "Center $\\log x$ at $a=1$: $P_n(x)=\\sum_{k=1}^n(-1)^{k+1}(x-1)^k/k$. For $x=1.2$, $|f^{(n+1)}(t)|\\leq n!$ on $[1,1.2]$, so Taylor's finite remainder obeys $|R_{n}|\\leq0.2^{n+1}/(n+1)$. Degree 2 gives only a 0.00267 guarantee; degree 3 gives $0.0004<0.001$ and $P_{3}(1.2)=0.182666…$. This finite accuracy claim follows from the derivative bound. Equality with an infinite series is a separate limit claim requiring $R_{n}\\to 0$."
+      },
+      {
+        "title": "Coefficients, convergence, and equality are separate claims",
+        "text": "The coefficient formula $c_n=f^{(n)}(a)/n!$ is guaranteed only if a power-series representation already exists. A ratio test may show that the candidate series converges, but equality with $f$ still needs a remainder argument. A finite error bound applies at one degree; the infinite claim requires $R_n(x)\\to0$."
+      },
+      {
+        "title": "Source correction at the nonzero center",
+        "text": "On printed page 22 the final sentence cites Theorem 3 after proving that the remainder tends to zero. The relevant implication is Theorem 4. The coefficient uniqueness theorem alone assumes a power-series representation and does not establish one."
       }
     ],
     "exercise": {
@@ -13513,7 +14087,93 @@
         "Separate finite accuracy from equality to the infinite series."
       ],
       "solutionTex": "P_3(1.2)=\\frac15-\\frac1{50}+\\frac1{375},\\quad |R_3|\\le\\frac{(1/5)^4}{4}=\\frac1{2500}<10^{-3}"
-    }
+    },
+    "exercises": [
+      {
+        "id": "ch06-taylor-coefficient-transfer",
+        "outcome": "Find Taylor coefficients at a nonzero center without claiming equality.",
+        "kind": "computational",
+        "prompt": "Find the first four Taylor terms for $f(x)=e^{2x}$ centered at $a=1$. What additional fact would establish equality with an infinite series?",
+        "hint": "Differentiate: $f^{(n)}(x)=2^ne^{2x}$. Evaluate at one and divide by $n!$.",
+        "solution": "The degree-three polynomial is $e^2[1+2(x-1)+2(x-1)^2+\\frac43(x-1)^3]$. These coefficients give the Taylor candidate. To claim equality with the infinite series, prove its remainder tends to zero on the domain.",
+        "solutionTex": "T_3(x)=e^2\\left(1+2h+2h^2+\\frac43h^3\\right),\\qquad h=x-1",
+        "rubric": [
+          "Use the derivative value at $1$.",
+          "Divide the third derivative by $3!$.",
+          "Separate the finite polynomial from the infinite representation claim."
+        ]
+      },
+      {
+        "id": "ch06-taylor-finite-vs-infinite-transfer",
+        "outcome": "Distinguish one finite Taylor guarantee from an infinite-series identity.",
+        "kind": "conceptual",
+        "prompt": "For the degree-two Maclaurin polynomial $1+x+x^2/2$ of $e^x$, state a valid remainder bound on $|x|\\le1$. Does that bound alone prove equality with the infinite series?",
+        "hint": "Use $M=e$ as a bound for the third derivative on $[-1,1]$.",
+        "solution": "The degree-two error satisfies $|R_2(x)|\\le e|x|^3/3!\\le e/6$ on $|x|\\le1$. This is a finite error guarantee. To prove the infinite-series identity, use the bound for general $n$ and show $e^d|x|^{n+1}/(n+1)!\\to0$.",
+        "solutionTex": "|R_2(x)|\\le\\frac{e|x|^3}{3!},\\quad |x|\\le1",
+        "rubric": [
+          "Give the bound for the stated finite degree.",
+          "Name the interval where the derivative bound holds.",
+          "Explain why an all-degree remainder limit is needed."
+        ]
+      },
+      {
+        "id": "ch06-remainder-bound-transfer",
+        "outcome": "Choose a Taylor degree from a certified error target.",
+        "kind": "method-choice",
+        "prompt": "Approximate $e^{0.3}$ by a Taylor polynomial centered at zero with certified error below $0.1$. Use the smallest degree certified by the standard bound with $M=e^{0.3}$ on $[0,0.3]$.",
+        "hint": "Compare $e^{0.3}(0.3)^{n+1}/(n+1)!$ for $n=0$ and $n=1$.",
+        "solution": "For $n=0$ the bound is $0.3e^{0.3}>0.1$. For $n=1$, $e^{0.3}(0.3)^2/2<0.0676<0.1$, so degree one is certified. The polynomial is $1+0.3=1.3$.",
+        "solutionTex": "T_1(0.3)=1.3,\\qquad |R_1(0.3)|\\le\\frac{e^{0.3}(0.3)^2}{2}<0.1",
+        "rubric": [
+          "Use a bound for the second derivative throughout the segment.",
+          "Compare consecutive degree bounds.",
+          "Report a guarantee rather than only a decimal approximation."
+        ]
+      },
+      {
+        "id": "ch06-remainder-proof-transfer",
+        "outcome": "Prove a trigonometric Taylor series represents its function.",
+        "kind": "proof",
+        "prompt": "Use the Taylor error bound to justify that the Maclaurin series for $\\cos x$ equals $\\cos x$ for every real $x$.",
+        "hint": "Every derivative of cosine is a signed sine or cosine, so it is bounded by one.",
+        "solution": "For every $n$ and fixed real $x$, $|R_n(x)|\\le |x|^{n+1}/(n+1)!\\to0$. The remainder criterion then gives $\\cos x=\\sum_{n=0}^{\\infty}(-1)^n x^{2n}/(2n)!$ for all real $x$.",
+        "solutionTex": "|R_n(x)|\\le\\frac{|x|^{n+1}}{(n+1)!}\\longrightarrow0,\\qquad \\cos x=\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n}}{(2n)!}",
+        "rubric": [
+          "Bound the next derivative on the full interval.",
+          "Take the limit for each fixed $x$.",
+          "Invoke the remainder criterion after proving the limit."
+        ]
+      },
+      {
+        "id": "ch06-trig-series-operations-transfer",
+        "outcome": "Generate a series by multiplying a known expansion.",
+        "kind": "computational",
+        "prompt": "Use the Maclaurin series for cosine to write the Maclaurin series for $x^2\\cos x$ and state its radius.",
+        "hint": "Multiply every cosine term by $x^2$.",
+        "solution": "The series is $\\sum_{n=0}^{\\infty}(-1)^n x^{2n+2}/(2n)!$. Its radius remains infinite because multiplication by a polynomial does not restrict convergence.",
+        "solutionTex": "x^2\\cos x=\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n+2}}{(2n)!},\\qquad R=\\infty",
+        "rubric": [
+          "Preserve the coefficient factorial.",
+          "Shift all exponents by two.",
+          "State the radius inherited from cosine."
+        ]
+      },
+      {
+        "id": "ch06-nonzero-center-transfer",
+        "outcome": "Compute a Taylor polynomial at a nonzero center.",
+        "kind": "computational",
+        "prompt": "Find the degree-three Taylor polynomial of $\\sin x$ centered at $a=\\pi/6$, and give a remainder bound.",
+        "hint": "Use $h=x-\\pi/6$ and the four-cycle of sine derivatives.",
+        "solution": "The polynomial is $1/2+(\\sqrt3/2)h-h^2/4-(\\sqrt3/12)h^3$. Since the fourth derivative has magnitude at most one, $|R_3(x)|\\le |h|^4/4!$.",
+        "solutionTex": "T_3(x)=\\frac12+\\frac{\\sqrt3}{2}h-\\frac14h^2-\\frac{\\sqrt3}{12}h^3,\\quad |R_3(x)|\\le\\frac{|h|^4}{4!},\\quad h=x-\\frac\\pi6",
+        "rubric": [
+          "Evaluate each derivative at $\\pi/6$.",
+          "Divide by $0!,1!,2!,3!$.",
+          "Use the fourth-derivative bound for the remainder."
+        ]
+      }
+    ]
   },
   "binomial-series": {
     "prerequisites": ["taylor-series"],
@@ -13526,6 +14186,10 @@
       {
         "title": "A concrete expansion",
         "text": "For $\\alpha =1/2$ the first terms are $1+x/2-x^{2}/8+x^{3}/16$. This approximates $\\sqrt{1+x}$ near zero. For $\\alpha =-1$ the coefficients alternate and recover $1/(1+x)=1-x+x^{2}-…$ inside the radius."
+      },
+      {
+        "title": "Do not universalize the endpoint behavior",
+        "text": "The source's binomial theorem states equality on $|x|<1$ and explicitly leaves endpoint convergence dependent on $k$. The printed summary table gives $R=1$ for every $k$, but for a nonnegative integer $k$ the series terminates as a polynomial and has infinite radius. The table's radius entry needs that exception."
       }
     ],
     "exercise": {
@@ -13537,7 +14201,108 @@
         "Do not treat the approximation as exact."
       ],
       "solutionTex": "(1+x)^{-2}=1-2x+3x^2+O(x^3)\\quad(x\\to0)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch06-general-binomial-rule",
+        "title": "Generalized binomial coefficients and the open interval",
+        "statement": "For real $k$, define $\\binom{k}{0}=1$ and $\\binom{k}{n}=k(k-1)\\cdots(k-n+1)/n!$ for $n\\ge1$. The binomial series $\\sum_{n=0}^{\\infty}\\binom{k}{n}x^n$ equals $(1+x)^k$ when $|x|<1$.",
+        "hypotheses": [
+          "If $k$ is a nonnegative integer, the series terminates and is a polynomial. For other exponents the notes establish the open interval $|x|<1$; endpoint behavior depends on $k$ and is not classified generally in these pages."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-general-binomial-work",
+        "title": "Build the square-root Maclaurin coefficients",
+        "strategy": "Differentiate $(1+x)^k$ repeatedly at zero and divide each derivative value by its factorial.",
+        "setup": "Use the source example with $k=1/2$.",
+        "steps": [
+          {
+            "label": "List the derivatives at zero",
+            "text": "The falling product gives each derivative value.",
+            "equation": "f^{(n)}(0)=\\frac12\\left(\\frac12-1\\right)\\cdots\\left(\\frac12-n+1\\right)"
+          },
+          {
+            "label": "Convert to binomial coefficients",
+            "text": "Divide by $n!$ and multiply by $x^n$.",
+            "equation": "\\binom{1/2}{0}=1,\\quad\\binom{1/2}{1}=\\frac12,\\quad\\binom{1/2}{2}=-\\frac18,\\quad\\binom{1/2}{3}=\\frac1{16}"
+          },
+          {
+            "label": "State the source interval",
+            "text": "The ratio test gives radius one for this nonterminating series.",
+            "equation": "\\sqrt{1+x}=1+\\frac x2-\\frac{x^2}8+\\frac{x^3}{16}-\\cdots,\\qquad |x|<1"
+          }
+        ],
+        "result": "The generalized coefficients are falling products divided by factorials; the source guarantees equality on the open interval.",
+        "verification": "At $k=1/2$ no coefficient terminates the series, so the ratio-limit radius is one; no endpoint conclusion follows from it."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-scaled-binomial-rule",
+        "title": "Scale the binomial variable before reading the radius",
+        "text": "Rewrite the target as a constant multiple of $(1+u)^k$, substitute the target expression for $u$, and solve $|u|<1$. A scale factor in $u$ rescales the radius in the original variable."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-scaled-binomial-work",
+        "title": "Expand the chapter's shifted square-root denominator",
+        "strategy": "Factor the constant inside the radical, use exponent $-1/2$, and substitute $u=-x/4$.",
+        "setup": "The target is $1/\\sqrt{4-x}$.",
+        "steps": [
+          {
+            "label": "Factor and identify the exponent",
+            "text": "Take the constant square root outside.",
+            "equation": "\\frac1{\\sqrt{4-x}}=\\frac12\\left(1-\\frac x4\\right)^{-1/2}"
+          },
+          {
+            "label": "Apply the binomial series",
+            "text": "The new variable is $u=-x/4$ and the open condition is $|u|<1$.",
+            "equation": "\\frac1{\\sqrt{4-x}}=\\frac12+\\frac{x}{16}+\\frac{3x^2}{256}+\\frac{5x^3}{2048}+\\cdots"
+          },
+          {
+            "label": "Read the radius",
+            "text": "Convert the strict inequality back to $x$.",
+            "equation": "\\left|\\frac x4\\right|<1\\iff |x|<4"
+          }
+        ],
+        "result": "The Maclaurin radius is $4$. The source does not test the two boundary points.",
+        "verification": "Substituting $x=0$ recovers the function value $1/2$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch06-general-binomial-transfer",
+        "outcome": "Use real-exponent binomial coefficients and state their endpoint limitation.",
+        "kind": "computational",
+        "prompt": "Write the first four terms of the binomial series for $(1+x)^{3/2}$. State the open interval given by the ratio test and what must still be checked.",
+        "hint": "Use the falling-product coefficient formula with $k=3/2$.",
+        "solution": "The first four terms are $1+3x/2+3x^2/8-x^3/16$. The ratio test gives the open interval $|x|<1$. The two endpoints require separate tests; the general theorem does not settle them.",
+        "solutionTex": "(1+x)^{3/2}=1+\\frac32x+\\frac38x^2-\\frac1{16}x^3+\\cdots,\\qquad |x|<1",
+        "rubric": [
+          "Compute each falling-product coefficient.",
+          "Use a strict radius inequality.",
+          "Do not infer endpoint convergence from the radius."
+        ]
+      },
+      {
+        "id": "ch06-scaled-binomial-transfer",
+        "outcome": "Scale a real-power expansion and compute its radius.",
+        "kind": "computational",
+        "prompt": "Find the first three terms and radius of $1/\\sqrt{9+2x}$.",
+        "hint": "Factor out $9$ and substitute $u=2x/9$ into $(1+u)^{-1/2}$.",
+        "solution": "The expansion begins $1/3-x/27+x^2/162+\\cdots$. The condition $|2x/9|<1$ gives radius $9/2$. The source method does not decide endpoint convergence.",
+        "solutionTex": "\\frac1{\\sqrt{9+2x}}=\\frac13-\\frac{x}{27}+\\frac{x^2}{162}+\\cdots,\\qquad R=\\frac92",
+        "rubric": [
+          "Factor the constant before applying the theorem.",
+          "Substitute the scaled variable in every term.",
+          "Solve its strict magnitude inequality."
+        ]
+      }
+    ]
   },
   "limits-with-series": {
     "prerequisites": ["taylor-series", "limit-laws-squeeze"],
@@ -13550,6 +14315,10 @@
       {
         "title": "Meaning of error symbols",
         "text": "$R(x)=O(x^k)$ means $|R(x)|\\le C|x|^k$ in a sufficiently small neighborhood for some fixed $C$. $R(x)=o(x^k)$ means its ratio to $x^k$ tends to zero. Dividing an expansion by $x^m$ also divides its error; retain enough orders to make the resulting error vanish."
+      },
+      {
+        "title": "A source prompt without a source solution",
+        "text": "Example 6.21 on printed page 28 says “Give it a try!” and gives no worked answer. The guide includes a separately checked solution with limit $-1$; it is guide-created practice, not source-work evidence."
       }
     ],
     "exercise": {
@@ -13561,7 +14330,129 @@
         "Track the remainder after division."
       ],
       "solutionTex": "\\frac{e^x-1-x-x^2/2}{x^3}=\\frac16+O(x)\\longrightarrow\\frac16"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "ch06-known-series-table",
+        "title": "Match a series to a known Maclaurin expansion",
+        "text": "Identify the function and input from the coefficient pattern. For example, $\\ln(1+x)=\\sum_{n=1}^{\\infty}(-1)^{n-1}x^n/n$ for $|x|<1$; check that the input lies inside the listed radius before evaluating its sum."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-log-series-sum-work",
+        "title": "Sum an alternating logarithmic series",
+        "strategy": "Match the coefficient pattern to the Maclaurin expansion of $\\ln(1+x)$ and substitute an input inside its radius.",
+        "setup": "The series is $\\sum_{n=1}^{\\infty}(-1)^{n-1}/(n2^n)$.",
+        "steps": [
+          {
+            "label": "Match the parameter",
+            "text": "The powers $2^{-n}$ mean use $x=1/2$ in the logarithm series.",
+            "equation": "\\ln(1+x)=\\sum_{n=1}^{\\infty}(-1)^{n-1}\\frac{x^n}{n},\\qquad |x|<1"
+          },
+          {
+            "label": "Substitute",
+            "text": "Since $|1/2|<1$, the series is in the open convergence interval.",
+            "equation": "\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n2^n}=\\ln\\left(1+\\frac12\\right)"
+          },
+          {
+            "label": "Correct the printed index",
+            "text": "The final display on source page 28 starts at $n=0$, but the term $1/n$ is undefined there; the derivation and original series both start at $n=1$.",
+            "equation": "\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n2^n}=\\ln\\frac32"
+          }
+        ],
+        "result": "The sum is $\\ln(3/2)$. The lower index is $n=1$.",
+        "verification": "The series converges absolutely because its logarithm input has magnitude less than one; page 28's lower index zero is a source typo."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch06-limit-series-rule",
+        "title": "Keep enough terms after cancellation",
+        "text": "For a quotient such as $\\lim_{x\\to0}(e^x-1-x)/x^2$, expand until the first uncancelled power matches the denominator's scale, then control the higher-order terms before taking the limit."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-limit-exp-work",
+        "title": "Use the exponential series to evaluate the source limit",
+        "strategy": "Subtract the terms canceled in the numerator, then divide by the first surviving power.",
+        "setup": "Evaluate $\\lim_{x\\to0}(e^x-1-x)/x^2$.",
+        "steps": [
+          {
+            "label": "Expand to the first surviving term",
+            "text": "The exponential series begins with $1+x+x^2/2+x^3/6+\\cdots$.",
+            "equation": "e^x-1-x=\\frac{x^2}{2}+\\frac{x^3}{3!}+\\cdots"
+          },
+          {
+            "label": "Divide by the denominator",
+            "text": "After division by $x^2$, all higher terms vanish as $x\\to0$.",
+            "equation": "\\frac{e^x-1-x}{x^2}=\\frac12+\\frac{x}{3!}+\\frac{x^2}{4!}+\\cdots"
+          },
+          {
+            "label": "Take the limit",
+            "text": "The constant term is the limit.",
+            "equation": "\\lim_{x\\to0}\\frac{e^x-1-x}{x^2}=\\frac12"
+          }
+        ],
+        "result": "The limit is $1/2$, as in Example 6.20.",
+        "verification": "Keeping only $e^x\\approx1+x$ would erase the first term that survives the subtraction."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch06-unsolved-limit-guide-work",
+        "title": "A guide solution for the source's unsolved limit prompt",
+        "strategy": "The notes end Example 6.21 with “Give it a try!”; this worked solution is added here and is not attributed as source work.",
+        "setup": "Evaluate $\\lim_{x\\to0}(1-\\cos x)/(1+x-e^x)$.",
+        "steps": [
+          {
+            "label": "Expand numerator and denominator",
+            "text": "Use the first nonzero term in each series.",
+            "equation": "1-\\cos x=\\frac{x^2}{2}+O(x^4),\\qquad 1+x-e^x=-\\frac{x^2}{2}+O(x^3)"
+          },
+          {
+            "label": "Divide the leading terms",
+            "text": "Both leading terms have order two and their coefficient ratio is $-1$.",
+            "equation": "\\frac{1-\\cos x}{1+x-e^x}=\\frac{\\frac12+O(x^2)}{-\\frac12+O(x)}"
+          },
+          {
+            "label": "Pass to the limit",
+            "text": "The error terms tend to zero, so the quotient tends to the ratio of the nonzero leading coefficients.",
+            "equation": "\\lim_{x\\to0}\\frac{1-\\cos x}{1+x-e^x}=-1"
+          }
+        ],
+        "result": "The guide-created solution gives $-1$; the source itself supplies only the prompt.",
+        "verification": "After factoring out $x^2$, the denominator factor tends to $-1/2$, which is nonzero."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch06-log-series-sum-transfer",
+        "outcome": "Sum a series by matching a known expansion.",
+        "kind": "computational",
+        "prompt": "Find $\\sum_{n=1}^{\\infty}(-1)^{n-1}/(n3^n)$.",
+        "hint": "Use the Maclaurin series for $\\ln(1+x)$ with $x=1/3$.",
+        "solution": "Since $|1/3|<1$, the sum is $\\ln(1+1/3)=\\ln(4/3)$.",
+        "solutionTex": "\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n3^n}=\\ln\\frac43",
+        "rubric": [
+          "Identify the matching function.",
+          "Substitute the correct input.",
+          "Check it is inside the listed radius."
+        ]
+      },
+      {
+        "id": "ch06-limit-transfer",
+        "outcome": "Keep the first uncancelled term in a limit.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\lim_{x\\to0}(\\sin x-x+x^3/6)/x^5$ using a justified series.",
+        "hint": "Keep terms through $x^5$ in the sine expansion.",
+        "solution": "The numerator is $x^5/5!+O(x^7)$, so division by $x^5$ gives $1/120+O(x^2)$ and the limit is $1/120$.",
+        "solutionTex": "\\frac{\\sin x-x+x^3/6}{x^5}=\\frac1{5!}+O(x^2)\\longrightarrow\\frac1{120}",
+        "rubric": [
+          "Retain terms through the first surviving order.",
+          "Track the remainder after division.",
+          "State the resulting limit."
+        ]
+      }
+    ]
   },
   "vectors-and-coordinates": {
     "prerequisites": ["sets-functions-domains"],
