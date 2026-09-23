@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { ArrowRight, Box } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -12,7 +11,8 @@ import {
 import { Viewport } from "./viewport";
 import { Formula } from "./math-text";
 import { type GraphSpec } from "@/lib/atlas/math";
-import { ExpressionPreview, expressionPreview } from "./expression-preview";
+import { ExpressionPreview } from "./expression-preview";
+import { QuickGraphExpression } from "./quick-graph-expression";
 import type { StudyController } from "./use-study-controller";
 const presets = [
   {
@@ -87,14 +87,6 @@ export function GraphStudio({ study }: { study: StudyController }) {
     plot,
     rendered,
   } = study;
-  const [editingGraph, setEditingGraph] = useState<GraphSpec | null>(null);
-  const editingQuickExpression = editingGraph === graph;
-  let quickExpressionTex = "";
-  try {
-    quickExpressionTex = `z=${expressionPreview(draft.expressions[0])}`;
-  } catch {
-    // Keep the editor available while an expression is incomplete.
-  }
   return (
     <>
       <div className="lesson-heading">
@@ -114,7 +106,6 @@ export function GraphStudio({ study }: { study: StudyController }) {
                 e.preventDefault();
                 try {
                   plot(draft);
-                  setEditingGraph(null);
                 } catch {}
               }}
             >
@@ -122,35 +113,12 @@ export function GraphStudio({ study }: { study: StudyController }) {
                 Function <Formula>{"z=f(x,y)"}</Formula>
               </span>
               <div className="quick-graph-controls">
-                {editingQuickExpression ? (
-                  <input
-                    id="quick-expression"
-                    aria-label="Quick graph expression"
-                    autoComplete="off"
-                    spellCheck={false}
-                    value={draft.expressions[0]}
-                    onChange={(e) =>
-                      setDraft((g) => ({
-                        ...g,
-                        expressions: [e.target.value],
-                      }))
-                    }
-                  />
-                ) : (
-                  <button
-                    type="button"
-                    className="quick-graph-expression"
-                    title="Edit graph expression"
-                    onClick={() => setEditingGraph(graph)}
-                  >
-                    {quickExpressionTex ? (
-                      <Formula>{quickExpressionTex}</Formula>
-                    ) : (
-                      <span>Finish editing the expression</span>
-                    )}
-                    <span className="quick-graph-edit">Edit</span>
-                  </button>
-                )}
+                <QuickGraphExpression
+                  value={draft.expressions[0]}
+                  onChange={(value) =>
+                    setDraft((g) => ({ ...g, expressions: [value] }))
+                  }
+                />
                 <button className="quick-graph-submit" type="submit">
                   Graph
                 </button>
@@ -354,13 +322,19 @@ export function GraphStudio({ study }: { study: StudyController }) {
             <p>
               Use <code>^</code> for powers, <code>*</code> for multiplication,
               and parentheses for grouping. Constants: <code>pi</code>,{" "}
-              <code>e</code>. Examples: <code>sqrt(x^2+y^2)</code>,{" "}
-              <code>exp(-x^2-y^2)</code>.
+              <code>e</code>. Syntax <code>sqrt(x^2+y^2)</code> renders as{" "}
+              <Formula>{"z=\\sqrt{x^2+y^2}"}</Formula>;{" "}
+              <code>exp(-x^2-y^2)</code> renders as{" "}
+              <Formula>{"z=e^{-x^2-y^2}"}</Formula>.
             </p>
             <p>
               Functions include sin, cos, tan, exp, log, abs, sqrt, min, max,
-              and inverse trigonometric functions. Piecewise expressions use{" "}
-              <code>x &gt; 0 ? x^2 : -x</code>.
+              and inverse trigonometric functions. Piecewise syntax{" "}
+              <code>x &gt; 0 ? x^2 : -x</code> renders as{" "}
+              <Formula>
+                {"f(x)=\\begin{cases}x^2,&x>0\\\\-x,&x\\le0\\end{cases}"}
+              </Formula>
+              .
             </p>
             <h2>What the graph can tell you</h2>
             <p>
