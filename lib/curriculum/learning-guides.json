@@ -17672,7 +17672,171 @@
         "Interpret the units of the integrand."
       ],
       "solutionTex": "\\iint_{[0,2]\\times[0,4]}3\\,dA=3(2)(4)=24"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture05-rectangular-mesh-cell-area-statement",
+        "title": "Each uniform cell has width product area",
+        "text": "For $R=[a,b]\\times[c,d]$ split into $m$ x-intervals and $n$ y-intervals, each cell has $\\Delta A=((b-a)/m)((d-c)/n)$. Page 27 prints the last y endpoint as $d+j\\Delta y$; the corrected endpoint is $c+j\\Delta y$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-rectangular-mesh-cell-area-worked",
+        "title": "Each uniform cell has width product area",
+        "strategy": "Divide each side by its subdivision count, then multiply the perpendicular widths.",
+        "setup": "Partition $[-1,3]\\times[2,5]$ into four columns and three rows.",
+        "steps": [
+          {
+            "label": "Find both widths",
+            "text": "Each side is divided uniformly.",
+            "equation": "\\Delta x=\\frac{3-(-1)}4=1,\\qquad\\Delta y=\\frac{5-2}3=1"
+          },
+          {
+            "label": "Check the cell areas",
+            "text": "Twelve cells must recover the whole rectangle.",
+            "equation": "\\Delta A=1,\\qquad12\\Delta A=12=(3-(-1))(5-2)"
+          }
+        ],
+        "result": "Every cell has area one; all twelve sum to area twelve.",
+        "verification": "Y intervals run from 2 to 3, 3 to 4, and 4 to 5."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-tagged-double-riemann-sum-statement",
+        "title": "A tagged sum weights every sampled cell",
+        "text": "For an $m\\times n$ grid, a tagged sum is $\\sum_{i=1}^m\\sum_{j=1}^n f(x^*_{ij},y^*_{ij})\\Delta A$, with one point from every cell."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-tagged-double-riemann-sum-worked",
+        "title": "A tagged sum weights every sampled cell",
+        "strategy": "List the tags, add sampled heights, and multiply by one cell area.",
+        "setup": "Use midpoints for $f=x+y$ on $[0,2]\\times[0,1]$ split into two parts per axis.",
+        "steps": [
+          {
+            "label": "List the tags",
+            "text": "The x midpoints are one half and three halves; the y midpoints are one quarter and three quarters.",
+            "equation": "\\Delta A=\\frac12"
+          },
+          {
+            "label": "Weight the sampled values",
+            "text": "Each x and y midpoint occurs twice in the four-cell sum.",
+            "equation": "S=\\frac12\\left(2(\\frac12+\\frac32)+2(\\frac14+\\frac34)\\right)=3"
+          }
+        ],
+        "result": "The tagged midpoint sum is three; one mesh alone does not define integrability.",
+        "verification": "All four cells contribute once."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-double-integral-tagged-limit-statement",
+        "title": "The integral is a sampling-independent limit",
+        "text": "The source defines $\\iint_R f\\,dA=L$ when tagged sums tend to the same finite $L$ for every sampling as $m,n\\to\\infty$. A finite sum is only an approximation; continuity is not part of this definition."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-double-integral-tagged-limit-worked",
+        "title": "The integral is a sampling-independent limit",
+        "strategy": "Factor out the constant height and use that the cell areas partition the rectangle.",
+        "setup": "Let $f=3$ on $[0,2]\\times[-1,1]$.",
+        "steps": [
+          {
+            "label": "Sample values are fixed",
+            "text": "No choice of tag changes the value of a constant function.",
+            "equation": "f(x^*_{ij},y^*_{ij})=3"
+          },
+          {
+            "label": "All cell areas add",
+            "text": "Every rectangular mesh partitions area four.",
+            "equation": "\\sum_{i=1}^m\\sum_{j=1}^n3\\Delta A=3(4)=12"
+          }
+        ],
+        "result": "Every mesh and every sampling gives 12, so the defining limit is 12.",
+        "verification": "This checks the full family of tagged partitions."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-nonnegative-graph-volume-statement",
+        "title": "Nonnegative heights accumulate volume",
+        "text": "For a nonnegative height on a closed standard rectangle, each sum term is a column height times base area. When the defining limit exists, it is the volume between the graph and the base. In symbols, $V=\\iint_R f\\,dA$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-nonnegative-graph-volume-worked",
+        "title": "Nonnegative heights accumulate volume",
+        "strategy": "Check the height is nonnegative, then integrate across the base.",
+        "setup": "Find the volume under $z=2+x$ over $[0,1]\\times[0,2]$.",
+        "steps": [
+          {
+            "label": "Check the height",
+            "text": "The height is positive on the whole base.",
+            "equation": "2+x\\geq2\\quad(0\\leq x\\leq1)"
+          },
+          {
+            "label": "Integrate height",
+            "text": "The y-width is two.",
+            "equation": "V=2\\int_0^1(2+x)\\,dx=2(\\frac52)=5"
+          }
+        ],
+        "result": "The volume is five cubic units.",
+        "verification": "The height is between two and three over base area two."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture05-rectangular-mesh-cell-area-transfer",
+        "outcome": "Compute every cell area in a uniform rectangular partition.",
+        "kind": "computational",
+        "prompt": "Partition $[0,6]\\times[-2,2]$ into three columns and eight rows. Find both widths, one cell area, and the total cell area.",
+        "hint": "Compute the x and y widths separately; multiply by 24 for the total.",
+        "solution": "The widths are $2$ and $1/2$, so each cell has area one. There are 24 cells and their total area is 24.",
+        "solutionTex": "\\Delta x=2,\\quad\\Delta y=\\frac12,\\quad\\Delta A=1,\\quad24\\Delta A=24",
+        "rubric": [
+          "Use the correct side length for each variable.",
+          "Check that all cell areas recover the rectangle area."
+        ]
+      },
+      {
+        "id": "lecture05-tagged-double-riemann-sum-transfer",
+        "outcome": "Form a tagged double sum by weighting each sampled value by its cell area.",
+        "kind": "computational",
+        "prompt": "For $f=2x-y$ on $[1,3]\\times[0,2]$, split each axis into two equal parts and use lower-left tags. Compute the double sum.",
+        "hint": "Use tags $(1,0),(1,1),(2,0),(2,1)$; every cell has area one.",
+        "solution": "The sampled values are $2,1,4,3$. Their sum times the cell area is ten.",
+        "solutionTex": "S=(2+1+4+3)(1)=10",
+        "rubric": [
+          "Use one lower-left tag in every cell.",
+          "Multiply all sampled values by the common cell area."
+        ]
+      },
+      {
+        "id": "lecture05-double-integral-tagged-limit-transfer",
+        "outcome": "Identify the integral as the unique sampling-independent limit of fine tagged sums.",
+        "kind": "conceptual",
+        "prompt": "For $f=2$ on $[1,4]\\times[-1,1]$, find the integral and explain why changing tags cannot change the sum.",
+        "hint": "The sampled height is always two and cell areas add to the rectangle area.",
+        "solution": "The rectangle area is six, so every tagged sum equals $2\\cdot6=12$ and every sampling has limit 12.",
+        "solutionTex": "\\iint_{[1,4]\\times[-1,1]}2\\,dA=2(3)(2)=12",
+        "rubric": [
+          "Compute both side lengths.",
+          "Explain independence from tags using the constant value."
+        ]
+      },
+      {
+        "id": "lecture05-nonnegative-graph-volume-transfer",
+        "outcome": "Interpret a nonnegative rectangular double integral as volume under its graph.",
+        "kind": "computational",
+        "prompt": "Find the volume under $z=1+2x$ above $[0,2]\\times[0,1]$.",
+        "hint": "The height is nonnegative and independent of y.",
+        "solution": "Integrating in y contributes width one; $V=\\int_0^2(1+2x)dx=6$.",
+        "solutionTex": "V=\\int_0^2\\int_0^1(1+2x)\\,dy\\,dx=6",
+        "rubric": [
+          "Integrate height over the whole rectangular base.",
+          "Do not substitute the maximum height for the varying height."
+        ]
+      }
+    ]
   },
   "general-double-integrals": {
     "prerequisites": ["double-riemann-sums"],
@@ -17696,7 +17860,338 @@
         "Invoke the appropriate extension theorem."
       ],
       "solutionTex": "\\widetilde f(x,y)=\\begin{cases}f(x,y)&(x,y)\\in D\\\\0&(x,y)\\notin D\\end{cases}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture05-zero-extension-definition-statement",
+        "title": "Zero extension keeps the original integrand",
+        "text": "Enclose bounded $D$ in a closed standard rectangle $R$ and set $F=f$ on D and zero on $R\\setminus D$. If $F$ is integrable on R, define $\\iint_D f\\,dA=\\iint_R F\\,dA$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-zero-extension-definition-worked",
+        "title": "Zero extension keeps the original integrand",
+        "strategy": "Preserve f on D and set only the remaining rectangle values to zero.",
+        "setup": "Let $D=[1,2]\\times[0,1]$ inside $R=[0,3]\\times[-1,2]$, with $f=x-y$ on D.",
+        "steps": [
+          {
+            "label": "Keep the inside formula",
+            "text": "The extension agrees with f at every point of D.",
+            "equation": "F(x,y)=x-y\\quad((x,y)\\in D)"
+          },
+          {
+            "label": "Set outside values",
+            "text": "All points in R but outside D receive zero.",
+            "equation": "F(x,y)=0\\quad((x,y)\\in R\\setminus D)"
+          },
+          {
+            "label": "Transfer the integral",
+            "text": "The rectangular extension defines the region integral when it is integrable.",
+            "equation": "\\iint_Df\\,dA=\\iint_RF\\,dA"
+          }
+        ],
+        "result": "This piecewise function is the zero extension; it does not extrapolate x-y outside D.",
+        "verification": "The nonzero branch is exactly D."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-enclosing-rectangle-independence-statement",
+        "title": "An enclosing rectangle is only a scaffold",
+        "text": "For two enclosing rectangles, if both zero extensions are integrable, the source theorem says both rectangular integrals exist together and are equal. In notation, $\\iint_{R_1}F\\,dA=\\iint_Df\\,dA=\\iint_{R_2}G\\,dA$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-enclosing-rectangle-independence-worked",
+        "title": "An enclosing rectangle is only a scaffold",
+        "strategy": "Define both extensions on their own rectangle, then apply consistency.",
+        "setup": "Let D be the disk $x^2+y^2\\leq4$, enclosed in $R_1=[-2,2]^2$ and $R_2=[-3,3]^2$, with $f=1$.",
+        "steps": [
+          {
+            "label": "Extend on each rectangle",
+            "text": "Both functions equal one on the disk and zero elsewhere in their respective squares.",
+            "equation": "F=\\mathbf1_D\\text{ on }R_1,\\qquad G=\\mathbf1_D\\text{ on }R_2"
+          },
+          {
+            "label": "Use the theorem",
+            "text": "The disk's area is the common integral.",
+            "equation": "\\iint_{R_1}F\\,dA=\\iint_D1\\,dA=\\iint_{R_2}G\\,dA=4\\pi"
+          }
+        ],
+        "result": "Both rectangles give $4\\pi$ because they extend the same integrand on the same region.",
+        "verification": "Both extensions are bounded and discontinuous only at the disk boundary."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-area-as-integral-of-one-statement",
+        "title": "Area integrates unit density",
+        "text": "When it exists, the area of a bounded region D is $\\operatorname{Area}(D)=\\iint_D1\\,dA$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-area-as-integral-of-one-worked",
+        "title": "Area integrates unit density",
+        "strategy": "Integrating one accumulates each vertical strip's height.",
+        "setup": "Find the area of $D:0\\leq x\\leq2$, $0\\leq y\\leq2-x$.",
+        "steps": [
+          {
+            "label": "Set up unit density",
+            "text": "Integrate one over all vertical fibers.",
+            "equation": "\\operatorname{Area}(D)=\\int_0^2\\int_0^{2-x}1\\,dy\\,dx"
+          },
+          {
+            "label": "Integrate the width",
+            "text": "The vertical length is 2-x.",
+            "equation": "\\int_0^2(2-x)dx=2"
+          }
+        ],
+        "result": "The triangle's area is two.",
+        "verification": "Its base and height are both two."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-boundary-zero-area-criterion-statement",
+        "title": "A zero-area boundary characterizes area existence",
+        "text": "The source states that a bounded region has an area if and only if its boundary has zero area; familiar disks and polygonal regions are named examples. The condition is $\\operatorname{Area}(\\partial D)=0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-boundary-zero-area-criterion-worked",
+        "title": "A zero-area boundary characterizes area existence",
+        "strategy": "Identify the boundary pieces and apply the stated iff criterion.",
+        "setup": "Take $D=[0,2]\\times[1,4]$.",
+        "steps": [
+          {
+            "label": "Describe the boundary",
+            "text": "It is a finite union of horizontal and vertical line segments.",
+            "equation": "\\partial D=([0,2]\\times\\{1,4\\})\\cup(\\{0,2\\}\\times[1,4])"
+          },
+          {
+            "label": "Apply the criterion",
+            "text": "Each segment has zero planar area.",
+            "equation": "\\operatorname{Area}(\\partial D)=0\\Longrightarrow\\operatorname{Area}(D)\\text{ exists}"
+          }
+        ],
+        "result": "The region has area six.",
+        "verification": "The iff theorem requires a zero-area boundary, not merely boundedness."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-riemann-integrability-criterion-statement",
+        "title": "Bounded and continuous almost everywhere",
+        "text": "For bounded D whose area exists, the slide states that $\\iint_Df\\,dA$ exists iff $f$ is bounded and continuous almost everywhere. This is the source's Riemann-integrability criterion, not an introduction to Lebesgue integration."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-riemann-integrability-criterion-worked",
+        "title": "Bounded and continuous almost everywhere",
+        "strategy": "Check boundedness, then locate the discontinuity set.",
+        "setup": "On $D=[0,1]^2$, set $f=1$ along $x=1/2$ and $f=x+y$ elsewhere.",
+        "steps": [
+          {
+            "label": "Check boundedness",
+            "text": "Values lie between zero and two.",
+            "equation": "0\\leq f(x,y)\\leq2"
+          },
+          {
+            "label": "Check continuity almost everywhere",
+            "text": "Any jump is on the zero-area vertical line $x=1/2$.",
+            "equation": "\\operatorname{Area}(\\{1/2\\}\\times[0,1])=0"
+          },
+          {
+            "label": "Conclude integrability",
+            "text": "The exceptional line has measure zero, so f is continuous almost everywhere.",
+            "equation": "\\iint_Df\\,dA\\text{ exists}"
+          }
+        ],
+        "result": "Changing values on the line does not change the integral; the value is one.",
+        "verification": "The domain has area and the function is bounded."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-volume-over-general-region-statement",
+        "title": "Integrate height over a general base",
+        "text": "For an area-bearing bounded D and bounded, continuous, nonnegative f, the source defines volume as $V=\\iint_Df\\,dA$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-volume-over-general-region-worked",
+        "title": "Integrate height over a general base",
+        "strategy": "Find the base area and multiply by the constant height.",
+        "setup": "Use constant height three above $D:0\\leq x\\leq2$, $0\\leq y\\leq2-x$.",
+        "steps": [
+          {
+            "label": "Find the base area",
+            "text": "The triangular base has area two.",
+            "equation": "\\operatorname{Area}(D)=\\int_0^2(2-x)dx=2"
+          },
+          {
+            "label": "Accumulate the height",
+            "text": "The roof is three units high everywhere.",
+            "equation": "V=\\iint_D3\\,dA=3(2)=6"
+          }
+        ],
+        "result": "The volume is six cubic units.",
+        "verification": "A constant roof forms a prism."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-mass-density-statement",
+        "title": "Mass integrates surface density",
+        "text": "The source defines a mass-density function $\\rho$ on an area-bearing bounded region and total mass $m=\\iint_D\\rho\\,dA$, with rho bounded, continuous, and nonnegative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-mass-density-worked",
+        "title": "Mass integrates surface density",
+        "strategy": "Integrate density over the whole sheet.",
+        "setup": "Let $D=[0,2]\\times[0,1]$ and $\\rho=1+x$.",
+        "steps": [
+          {
+            "label": "Check the density",
+            "text": "It is bounded, continuous, and nonnegative on D.",
+            "equation": "1\\leq\\rho\\leq3"
+          },
+          {
+            "label": "Integrate both dimensions",
+            "text": "The y interval has unit length.",
+            "equation": "m=\\int_0^2\\int_0^1(1+x)\\,dy\\,dx=4"
+          }
+        ],
+        "result": "The total mass is four units.",
+        "verification": "Mean density two times area two also gives four."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-joint-density-probability-statement",
+        "title": "Probability accumulates density over an event",
+        "text": "A joint density on $\\mathbb R^2$ is nonnegative and integrates to one; the source calls the whole-plane integral improper because the domain is unbounded. For bounded D, event probability is $\\iint_Df\\,dA$ when defined."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-joint-density-probability-worked",
+        "title": "Probability accumulates density over an event",
+        "strategy": "Normalize on the support, then integrate over the event.",
+        "setup": "Let $f=1/8$ on $[0,2]\\times[0,4]$ and zero elsewhere; event $D=[0,1]\\times[1,3]$.",
+        "steps": [
+          {
+            "label": "Check normalization",
+            "text": "The support area is eight.",
+            "equation": "\\iint_{\\mathbb R^2}f\\,dA=\\frac18(2)(4)=1"
+          },
+          {
+            "label": "Measure the event",
+            "text": "The event area is two.",
+            "equation": "\\operatorname{Prob}((X,Y)\\in D)=\\frac18(1)(2)=\\frac14"
+          }
+        ],
+        "result": "The event probability is one quarter.",
+        "verification": "The event is inside the support and the result lies between zero and one."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture05-zero-extension-definition-transfer",
+        "outcome": "Define a bounded-region integral by extending the integrand by zero to an enclosing rectangle.",
+        "kind": "conceptual",
+        "prompt": "Let $D=[1,3]\\times[2,4]$ lie in $R=[0,4]\\times[0,5]$, with $f=x+2y$ on D. Write the zero extension.",
+        "hint": "Separate membership in D from its complement in R.",
+        "solution": "Set $F=x+2y$ when $1\\leq x\\leq3$ and $2\\leq y\\leq4$, and set $F=0$ at all other points of R.",
+        "solutionTex": "F(x,y)=\\begin{cases}x+2y,&(x,y)\\in D,\\\\0,&(x,y)\\in R\\setminus D\\end{cases}",
+        "rubric": [
+          "Keep the given function on D.",
+          "Set the extension to zero everywhere else in R."
+        ]
+      },
+      {
+        "id": "lecture05-enclosing-rectangle-independence-transfer",
+        "outcome": "Use consistency of zero extension to show the value does not depend on the enclosing rectangle.",
+        "kind": "conceptual",
+        "prompt": "A disk D lies in $[-2,2]^2$ and $[-5,5]^2$. If both zero extensions of the same integrable f are Riemann integrable, what follows?",
+        "hint": "Check that both rectangles enclose the same D and both extensions are integrable.",
+        "solution": "The two rectangular integrals are equal; each extension agrees with f on D and vanishes outside.",
+        "solutionTex": "\\iint_{R_1}F\\,dA=\\iint_Df\\,dA=\\iint_{R_2}G\\,dA",
+        "rubric": [
+          "State the integrability condition for both extensions.",
+          "Conclude equality without changing f on D."
+        ]
+      },
+      {
+        "id": "lecture05-area-as-integral-of-one-transfer",
+        "outcome": "Compute area as the integral of the constant function one.",
+        "kind": "computational",
+        "prompt": "Find the area of $D:0\\leq x\\leq3$, $0\\leq y\\leq3-x$ by integrating one.",
+        "hint": "The vertical slice length is $3-x$.",
+        "solution": "The area is $\\int_0^3(3-x)dx=9/2$.",
+        "solutionTex": "\\operatorname{Area}(D)=\\int_0^3\\int_0^{3-x}1\\,dy\\,dx=\\frac92",
+        "rubric": [
+          "Use one as the integrand.",
+          "Integrate the slice length across the full interval."
+        ]
+      },
+      {
+        "id": "lecture05-boundary-zero-area-criterion-transfer",
+        "outcome": "Apply the boundary-zero-area criterion to decide whether a bounded region has an area.",
+        "kind": "conceptual",
+        "prompt": "Does $[0,1]\\times[0,2]$ satisfy the source's area criterion? Give its area.",
+        "hint": "Its boundary has four line segments.",
+        "solution": "Yes. The boundary has zero planar area, so the region has area; its area is two.",
+        "solutionTex": "\\operatorname{Area}(\\partial D)=0,\\qquad\\operatorname{Area}(D)=1\\cdot2",
+        "rubric": ["Use the boundary criterion.", "Compute the rectangle area."]
+      },
+      {
+        "id": "lecture05-riemann-integrability-criterion-transfer",
+        "outcome": "Apply boundedness and continuity almost everywhere as the source's iff criterion for a region's double Riemann integral.",
+        "kind": "conceptual",
+        "prompt": "On $[0,2]^2$, let $g=5$ when $x=1$ and $g=x+y$ elsewhere. Does the source criterion guarantee an integral?",
+        "hint": "Check boundedness and the area of the exceptional line.",
+        "solution": "Yes. $g$ is bounded and its possible discontinuities lie on $x=1$, a line of zero area; it is continuous almost everywhere.",
+        "solutionTex": "\\operatorname{Area}(\\{1\\}\\times[0,2])=0\\Longrightarrow g\\text{ is continuous almost everywhere}",
+        "rubric": [
+          "Give a finite bound.",
+          "Identify the exceptional set and its planar area."
+        ]
+      },
+      {
+        "id": "lecture05-volume-over-general-region-transfer",
+        "outcome": "Interpret the integral of a nonnegative continuous height over an area-bearing region as volume.",
+        "kind": "computational",
+        "prompt": "Find the volume under height three above the same triangular base.",
+        "hint": "Integrate one first to obtain its area.",
+        "solution": "The base area is two, so the volume is $3\\cdot2=6$.",
+        "solutionTex": "V=\\iint_D3\\,dA=3\\int_0^2(2-x)dx=6",
+        "rubric": [
+          "Use the bounded region's area.",
+          "Multiply by its constant nonnegative height."
+        ]
+      },
+      {
+        "id": "lecture05-mass-density-transfer",
+        "outcome": "Compute total mass by integrating a bounded, continuous, nonnegative density over its region.",
+        "kind": "computational",
+        "prompt": "A sheet fills $[0,1]\\times[0,3]$ and has density $\\rho=1+y$. Find its mass.",
+        "hint": "Integrate across the x-width first; it equals one.",
+        "solution": "The mass is $\\int_0^3(1+y)dy=15/2$.",
+        "solutionTex": "m=\\int_0^3\\int_0^1(1+y)\\,dx\\,dy=\\frac{15}{2}",
+        "rubric": [
+          "Integrate density over the full sheet.",
+          "Keep total mass distinct from pointwise density."
+        ]
+      },
+      {
+        "id": "lecture05-joint-density-probability-transfer",
+        "outcome": "Interpret a joint density's integral over a bounded event as its probability.",
+        "kind": "computational",
+        "prompt": "Let $f=1/12$ on $[0,3]\\times[0,4]$ and zero elsewhere. Find the probability of $[1,3]\\times[1,4]$.",
+        "hint": "Multiply the density by the event's area, then check support normalization.",
+        "solution": "The event area is six, so the probability is one half; the full support area twelve normalizes the density.",
+        "solutionTex": "\\operatorname{Prob}((X,Y)\\in D)=\\frac1{12}(2)(3)=\\frac12",
+        "rubric": [
+          "Use the event area, not the support area.",
+          "Check that the density normalizes on its support."
+        ]
+      }
+    ]
   },
   "fubini-double": {
     "prerequisites": ["double-riemann-sums"],
@@ -17720,7 +18215,176 @@
         "Keep each variable’s interval attached to it."
       ],
       "solutionTex": "\\int_0^1\\int_0^2(x+y)\\,dy\\,dx=\\int_0^2\\int_0^1(x+y)\\,dx\\,dy=3"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture05-iterated-orders-slices-statement",
+        "title": "The inner integral fixes one coordinate",
+        "text": "Over $[a,b]\\times[c,d]$, the two orders are $\\int_a^b[\\int_c^df\\,dy]dx$ and $\\int_c^d[\\int_a^bf\\,dx]dy$. Fix the outer coordinate and accumulate along its vertical or horizontal slice."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-iterated-orders-slices-worked",
+        "title": "The inner integral fixes one coordinate",
+        "strategy": "Do one inner slice integral at a time, keeping each interval on its variable.",
+        "setup": "Evaluate both orders of x+y on $[0,2]\\times[0,1]$.",
+        "steps": [
+          {
+            "label": "Vertical slices",
+            "text": "Fix x and integrate in y before integrating over x.",
+            "equation": "\\int_0^2\\int_0^1(x+y)\\,dy\\,dx=\\int_0^2(x+\\frac12)dx=3"
+          },
+          {
+            "label": "Horizontal slices",
+            "text": "Fix y and integrate in x before integrating over y.",
+            "equation": "\\int_0^1\\int_0^2(x+y)\\,dx\\,dy=\\int_0^1(2+2y)dy=3"
+          }
+        ],
+        "result": "Both rectangular orders give three.",
+        "verification": "The two slice families cover the same rectangle."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-source-monomial-either-order-statement",
+        "title": "A product integrand separates across a rectangle",
+        "text": "The source evaluates $x^2y$ on $[0,3]\\times[1,2]$ in both orders; each yields 27/2."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-source-monomial-either-order-worked",
+        "title": "A product integrand separates across a rectangle",
+        "strategy": "Integrate one factor per variable using the constant rectangular limits.",
+        "setup": "Evaluate the source's $\\int_1^2\\int_0^3x^2y\\,dx\\,dy$ and reverse the order.",
+        "steps": [
+          {
+            "label": "Integrate x first",
+            "text": "The x integral is nine times y.",
+            "equation": "\\int_1^2\\left[\\int_0^3x^2y\\,dx\\right]dy=\\int_1^2 9y\\,dy=\\frac{27}{2}"
+          },
+          {
+            "label": "Reverse the order",
+            "text": "Integrating y first gives 3x squared over two.",
+            "equation": "\\int_0^3\\left[\\int_1^2x^2y\\,dy\\right]dx=\\int_0^3\\frac{3x^2}{2}dx=\\frac{27}{2}"
+          }
+        ],
+        "result": "Both orders give 27/2, matching the source.",
+        "verification": "The polynomial is continuous on the closed rectangle."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-continuous-rectangle-hypotheses-statement",
+        "title": "Continuity on a closed rectangle licenses Fubini",
+        "text": "The source assumes f is continuous on a closed standard rectangle; then both iterated integrals exist and equal the double integral. It does not state this theorem for arbitrary regions or discontinuous functions. The conclusion is $\\iint_Rf\\,dA=\\int_a^b\\int_c^d f\\,dy\\,dx=\\int_c^d\\int_a^b f\\,dx\\,dy$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-continuous-rectangle-hypotheses-worked",
+        "title": "Continuity on a closed rectangle licenses Fubini",
+        "strategy": "Check regularity and domain before evaluating either order.",
+        "setup": "Use $f=x+2y$ on $[0,1]\\times[0,2]$.",
+        "steps": [
+          {
+            "label": "Check hypotheses",
+            "text": "The polynomial is continuous on this closed standard rectangle.",
+            "equation": "R=[0,1]\\times[0,2],\\qquad f\\text{ continuous on }R"
+          },
+          {
+            "label": "Evaluate and reverse",
+            "text": "The x contribution is one and the 2y contribution is four.",
+            "equation": "\\int_0^1\\int_0^2(x+2y)\\,dy\\,dx=5=\\int_0^2\\int_0^1(x+2y)\\,dx\\,dy"
+          }
+        ],
+        "result": "Both orders equal five, and the hypotheses justify the swap.",
+        "verification": "Only the continuous closed-rectangle version is used."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-source-oscillatory-integral-two-orders-statement",
+        "title": "Choose either order for the oscillatory integral",
+        "text": "The source integrates $y\\sin(xy)$ on $[1,2]\\times[0,\\pi]$ in both orders. Integrating x first gives cosine terms; integrating y first takes two integrations by parts."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-source-oscillatory-integral-two-orders-worked",
+        "title": "Choose either order for the oscillatory integral",
+        "strategy": "Use the elementary x antiderivative first; reduce the other inner integral to a boundary derivative.",
+        "setup": "Compute $\\iint_Ry\\sin(xy)\\,dA$ on $R=[1,2]\\times[0,\\pi]$.",
+        "steps": [
+          {
+            "label": "Integrate x first",
+            "text": "The inner antiderivative is negative cosine.",
+            "equation": "\\int_0^\\pi\\int_1^2y\\sin(xy)\\,dx\\,dy=\\int_0^\\pi(\\cos y-\\cos2y)dy=0"
+          },
+          {
+            "label": "Integrate y first",
+            "text": "Two integrations by parts produce the displayed inner integral.",
+            "equation": "\\int_0^\\pi y\\sin(xy)dy=-\\frac{\\pi\\cos(\\pi x)}x+\\frac{\\sin(\\pi x)}{x^2}"
+          },
+          {
+            "label": "Recognize the derivative",
+            "text": "The integrand in x is the negative derivative of the sine quotient.",
+            "equation": "-\\frac{d}{dx}\\left(\\frac{\\sin(\\pi x)}x\\right)=-\\frac{\\pi\\cos(\\pi x)}x+\\frac{\\sin(\\pi x)}{x^2}"
+          }
+        ],
+        "result": "The second order is $-[\\sin(\\pi x)/x]_1^2=0$, so both orders give zero.",
+        "verification": "The integrand is continuous on a closed rectangle."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture05-iterated-orders-slices-transfer",
+        "outcome": "Interpret a rectangular iterated integral's inner order as accumulation along one-coordinate slices.",
+        "kind": "computational",
+        "prompt": "Evaluate both orders of $x+2y$ on $[1,2]\\times[0,3]$.",
+        "hint": "Keep the $x$ interval $[1,2]$ and $y$ interval $[0,3]$ attached to their variables.",
+        "solution": "Each order gives $27/2$: integrating in y first gives $3x+9$; integrating in x first gives $3/2+2y$.",
+        "solutionTex": "\\int_1^2\\int_0^3(x+2y)\\,dy\\,dx=\\int_0^3\\int_1^2(x+2y)\\,dx\\,dy=\\frac{27}{2}",
+        "rubric": [
+          "Preserve the same rectangle in both orders.",
+          "Evaluate and compare both iterated integrals."
+        ]
+      },
+      {
+        "id": "lecture05-source-monomial-either-order-transfer",
+        "outcome": "Evaluate a rectangular monomial integral in either iterated order.",
+        "kind": "computational",
+        "prompt": "Evaluate $\\int_0^2\\int_1^3xy^2\\,dy\\,dx$ and reverse the order.",
+        "hint": "Separate the product into its x and y integrals.",
+        "solution": "The one-variable integrals are 2 and 26/3, so each order gives 52/3.",
+        "solutionTex": "\\int_0^2\\int_1^3xy^2\\,dy\\,dx=\\int_1^3\\int_0^2xy^2\\,dx\\,dy=\\frac{52}{3}",
+        "rubric": [
+          "Keep the same rectangular domain after swapping.",
+          "Multiply the two one-variable integrals."
+        ]
+      },
+      {
+        "id": "lecture05-continuous-rectangle-hypotheses-transfer",
+        "outcome": "Apply Fubini after checking continuity on a closed standard rectangle.",
+        "kind": "computational",
+        "prompt": "Use Fubini for $e^x(1+y)$ on $[0,1]\\times[0,2]$. Evaluate both orders and state why the swap is valid.",
+        "hint": "The function is continuous on the closed rectangle; factor the x and y terms.",
+        "solution": "Both orders equal $(e-1)\\cdot4=4(e-1)$.",
+        "solutionTex": "\\int_0^1\\int_0^2e^x(1+y)\\,dy\\,dx=\\int_0^2\\int_0^1e^x(1+y)\\,dx\\,dy=4(e-1)",
+        "rubric": [
+          "Verify continuity on the closed rectangle.",
+          "Evaluate both one-variable factors."
+        ]
+      },
+      {
+        "id": "lecture05-source-oscillatory-integral-two-orders-transfer",
+        "outcome": "Evaluate the source's oscillatory integral in both orders, using integration by parts in the y-first order.",
+        "kind": "computational",
+        "prompt": "Evaluate both orders for $y\\sin(xy)$ on the changed rectangle $[1,3]\\times[0,\\pi]$.",
+        "hint": "With x first the inner result is cos y minus cos 3y; with y first it is the negative derivative of sin(pi x)/x.",
+        "solution": "The x-first cosine integral vanishes. In the other order the endpoint values of $\\sin(\\pi x)/x$ vanish at one and three. Both orders give zero.",
+        "solutionTex": "\\int_0^\\pi(\\cos y-\\cos3y)dy=0,\\qquad-\\left[\\frac{\\sin(\\pi x)}x\\right]_1^3=0",
+        "rubric": [
+          "Use the changed x interval in both orders.",
+          "Show the antiderivative or boundary cancellation."
+        ]
+      }
+    ]
   },
   "type-one-two-regions": {
     "prerequisites": [
@@ -17748,7 +18412,291 @@
         "Preserve the region and integrand."
       ],
       "solutionTex": "\\int_0^1\\int_{x^2}^{x}f\\,dy\\,dx=\\int_0^1\\int_y^{\\sqrt y}f\\,dx\\,dy"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture05-source-skill-1-statement",
+        "title": "Vertical and horizontal fibers encode the same set",
+        "text": "Type I uses $a\\leq x\\leq b$ and continuous vertical bounds $g_1(x)\\leq y\\leq g_2(x)$. Type II uses $c\\leq y\\leq d$ and horizontal bounds $h_1(y)\\leq x\\leq h_2(y)$. Derive the inequalities from membership in D."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-source-skill-1-worked",
+        "title": "Vertical and horizontal fibers encode the same set",
+        "strategy": "Solve both boundary inequalities for the other coordinate.",
+        "setup": "Let $D$ satisfy $0\\leq x\\leq2$ and $x^2\\leq y\\leq2x$.",
+        "steps": [
+          {
+            "label": "Read vertical fibers",
+            "text": "For each $x$, the $y$ coordinate stays between the parabola and line.",
+            "equation": "0\\leq x\\leq2,\\qquad x^2\\leq y\\leq2x"
+          },
+          {
+            "label": "Reverse the inequalities",
+            "text": "The same set gives left bound $y/2$ and right bound $\\sqrt y$.",
+            "equation": "0\\leq y\\leq4,\\qquad\\frac y2\\leq x\\leq\\sqrt y"
+          }
+        ],
+        "result": "Both descriptions name the same region.",
+        "verification": "The curves meet at $(0,0)$ and $(2,4)$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-type-i-integral-bounds-statement",
+        "title": "Type I integrates between vertical bounds",
+        "text": "With continuous boundary functions $g_1\\leq g_2$ on a closed x interval, the source gives $\\iint_Df\\,dA=\\int_a^b\\int_{g_1(x)}^{g_2(x)}f\\,dy\\,dx$ when the integral exists."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-type-i-integral-bounds-worked",
+        "title": "Type I integrates between vertical bounds",
+        "strategy": "Integrate in y between the vertical boundaries first.",
+        "setup": "Use one over $D:0\\leq x\\leq2$, $x^2\\leq y\\leq2x$.",
+        "steps": [
+          {
+            "label": "Apply the formula",
+            "text": "The vertical bounds describe one slice for every x.",
+            "equation": "\\iint_D1\\,dA=\\int_0^2\\int_{x^2}^{2x}1\\,dy\\,dx"
+          },
+          {
+            "label": "Integrate slice length",
+            "text": "The height is 2x minus x squared.",
+            "equation": "\\int_0^2(2x-x^2)dx=\\frac43"
+          }
+        ],
+        "result": "The region's area is 4/3.",
+        "verification": "The upper curve exceeds the lower curve on $[0,2]$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-type-ii-integral-bounds-statement",
+        "title": "Type II integrates between horizontal bounds",
+        "text": "With continuous boundary functions $h_1\\leq h_2$ on a closed y interval, the source gives $\\iint_Df\\,dA=\\int_c^d\\int_{h_1(y)}^{h_2(y)}f\\,dx\\,dy$ when the integral exists."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-type-ii-integral-bounds-worked",
+        "title": "Type II integrates between horizontal bounds",
+        "strategy": "Fix y and integrate from the left x boundary to the right.",
+        "setup": "Use one over $D:0\\leq y\\leq2$, $y\\leq x\\leq3$.",
+        "steps": [
+          {
+            "label": "Apply the formula",
+            "text": "The horizontal bounds are continuous across the y interval.",
+            "equation": "\\iint_D1\\,dA=\\int_0^2\\int_y^3 1\\,dx\\,dy"
+          },
+          {
+            "label": "Integrate each width",
+            "text": "Each horizontal slice has width 3-y.",
+            "equation": "\\int_0^2(3-y)dy=4"
+          }
+        ],
+        "result": "The region's area is four.",
+        "verification": "The left boundary is no greater than the right boundary on $[0,2]$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-slice-orientation-choice-statement",
+        "title": "Choose the slice with simpler bounds",
+        "text": "Vertical slices test Type I and horizontal slices test Type II. Prefer a single continuous pair of bounds; if the other orientation needs splitting or extra branches, avoid it unless the integrand favors that work. The orders are $dy\\,dx$ for vertical slices and $dx\\,dy$ for horizontal slices."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-slice-orientation-choice-worked",
+        "title": "Choose the slice with simpler bounds",
+        "strategy": "Solve both curves for x and compare whether the region must be split.",
+        "setup": "For the source region bounded by $y=x-1$ and $y^2=2x+6$, compare horizontal and vertical descriptions.",
+        "steps": [
+          {
+            "label": "Use horizontal bounds",
+            "text": "The line gives $x=y+1$ and the parabola gives $x=y^2/2-3$.",
+            "equation": "-2\\leq y\\leq4,\\qquad\\frac{y^2}{2}-3\\leq x\\leq y+1"
+          },
+          {
+            "label": "Check the alternative",
+            "text": "Vertical slices split where the line meets the lower parabola branch, at $x=-1$.",
+            "equation": "\\text{Type II uses one interval; Type I requires a split at }x=-1"
+          }
+        ],
+        "result": "Type II is the simpler single-pair description used by the source.",
+        "verification": "The horizontal bounds meet at $y=-2$ and $y=4$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-source-type-i-parabola-integral-statement",
+        "title": "Integrate between the source's parabolas",
+        "text": "The source uses $-1\\leq x\\leq1$, $2x^2\\leq y\\leq1+x^2$, and asks for $\\iint_D(x+2y)\\,dA$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-source-type-i-parabola-integral-worked",
+        "title": "Integrate between the source's parabolas",
+        "strategy": "Integrate in y, expand, then cancel odd terms over a symmetric interval.",
+        "setup": "Recompute the integral on the source region.",
+        "steps": [
+          {
+            "label": "Integrate in y",
+            "text": "An antiderivative is xy+y squared.",
+            "equation": "\\int_{2x^2}^{1+x^2}(x+2y)dy=-3x^4-x^3+2x^2+x+1"
+          },
+          {
+            "label": "Integrate in x",
+            "text": "The odd terms integrate to zero from -1 to one.",
+            "equation": "\\int_{-1}^1(-3x^4+2x^2+1)dx=-\\frac65+\\frac43+2=\\frac{32}{15}"
+          }
+        ],
+        "result": "The source integral is 32/15.",
+        "verification": "The polynomial expansion matches the rendered continuation on p.55."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-source-type-ii-parabola-integral-statement",
+        "title": "Integrate the source's horizontal fibers",
+        "text": "The source uses $-2\\leq y\\leq4$, left boundary $x=y^2/2-3$, right boundary $x=y+1$, and integrand xy."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-source-type-ii-parabola-integral-worked",
+        "title": "Integrate the source's horizontal fibers",
+        "strategy": "Integrate xy in x, then integrate the resulting polynomial in y.",
+        "setup": "Recompute the source's Type II integral.",
+        "steps": [
+          {
+            "label": "Integrate in x",
+            "text": "The antiderivative is $x^2y/2$.",
+            "equation": "\\int_{y^2/2-3}^{y+1}xy\\,dx=-\\frac{y^5}{8}+2y^3+y^2-4y"
+          },
+          {
+            "label": "Evaluate in y",
+            "text": "Use the endpoints negative two and four.",
+            "equation": "\\left[-\\frac{y^6}{48}+\\frac{y^4}{2}+\\frac{y^3}{3}-2y^2\\right]_{-2}^4=36"
+          }
+        ],
+        "result": "The integral equals 36, matching the rendered page 58.",
+        "verification": "The boundaries intersect at $y=-2$ and $y=4$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture05-source-tetrahedron-projection-volume-statement",
+        "title": "Project the tetrahedron before integrating height",
+        "text": "The source tetrahedron has $x+2y+z=2$, $x=2y$, $x=0$, $z=0$. Its projection is $0\\leq x\\leq1$, $x/2\\leq y\\leq1-x/2$, with height $2-x-2y$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture05-source-tetrahedron-projection-volume-worked",
+        "title": "Project the tetrahedron before integrating height",
+        "strategy": "Apply the side-plane and z nonnegativity constraints, then integrate the height.",
+        "setup": "Recompute the source tetrahedron volume from its xy projection.",
+        "steps": [
+          {
+            "label": "Project to the base",
+            "text": "The side planes bound x and the top plane gives the upper y boundary.",
+            "equation": "0\\leq x\\leq1,\\qquad\\frac x2\\leq y\\leq1-\\frac x2"
+          },
+          {
+            "label": "Integrate the height",
+            "text": "The height vanishes at the sloping upper edge.",
+            "equation": "V=\\int_0^1\\int_{x/2}^{1-x/2}(2-x-2y)dy\\,dx=\\int_0^1(1-x)^2dx=\\frac13"
+          }
+        ],
+        "result": "The tetrahedron's volume is one third.",
+        "verification": "The derived vertical interval stays nonempty on $[0,1]$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture05-source-skill-1-transfer",
+        "outcome": "Translate vertical or horizontal fibers of a planar region into iterated bounds.",
+        "kind": "conceptual",
+        "prompt": "Reverse $\\int_0^3\\int_{x^2}^{3x}f(x,y)\\,dy\\,dx$.",
+        "hint": "Find the curve intersections, then solve both inequalities for x.",
+        "solution": "The y range is zero to nine, with $y/3\\leq x\\leq\\sqrt y$.",
+        "solutionTex": "\\int_0^3\\int_{x^2}^{3x}f\\,dy\\,dx=\\int_0^9\\int_{y/3}^{\\sqrt y}f\\,dx\\,dy",
+        "rubric": [
+          "Find the full y range.",
+          "Solve both inequalities for horizontal bounds."
+        ]
+      },
+      {
+        "id": "lecture05-type-i-integral-bounds-transfer",
+        "outcome": "Integrate over a Type I region using its vertical lower and upper bounds.",
+        "kind": "computational",
+        "prompt": "Find $\\iint_D2\\,dA$ for $D:0\\leq x\\leq3$, $x\\leq y\\leq3$.",
+        "hint": "The vertical slice height is 3-x.",
+        "solution": "The integral is $2\\int_0^3(3-x)dx=9$.",
+        "solutionTex": "\\int_0^3\\int_x^3 2\\,dy\\,dx=9",
+        "rubric": [
+          "Use lower then upper y bounds.",
+          "Integrate over the full x interval."
+        ]
+      },
+      {
+        "id": "lecture05-type-ii-integral-bounds-transfer",
+        "outcome": "Integrate over a Type II region using its horizontal left and right bounds.",
+        "kind": "computational",
+        "prompt": "Find the area of $D:-1\\leq y\\leq1$, $y-2\\leq x\\leq4-y$.",
+        "hint": "At fixed y the width is 6-2y.",
+        "solution": "Integrating the horizontal width gives $\\int_{-1}^1(6-2y)dy=12$.",
+        "solutionTex": "\\operatorname{Area}(D)=\\int_{-1}^1\\int_{y-2}^{4-y}1\\,dx\\,dy=12",
+        "rubric": [
+          "Use left then right x bounds.",
+          "Integrate over the full y interval."
+        ]
+      },
+      {
+        "id": "lecture05-slice-orientation-choice-transfer",
+        "outcome": "Choose an orientation that describes a region with one continuous pair of bounds when possible.",
+        "kind": "computational",
+        "prompt": "The region is bounded by $y=x+1$ and $y^2=2x+10$. Choose an orientation that avoids splitting and find its area.",
+        "hint": "Solve both curves for x; their y intersections are -2 and 4.",
+        "solution": "Type II bounds are $y^2/2-5\\leq x\\leq y-1$. Integrating the width $-y^2/2+y+4$ from -2 to 4 gives 18.",
+        "solutionTex": "\\int_{-2}^4\\int_{y^2/2-5}^{y-1}1\\,dx\\,dy=18",
+        "rubric": [
+          "Choose horizontal slices and solve for x.",
+          "Use the full y interval and integrate the enclosed width."
+        ]
+      },
+      {
+        "id": "lecture05-source-type-i-parabola-integral-transfer",
+        "outcome": "Evaluate the source's Type I integral between two parabolas and verify its exact value.",
+        "kind": "computational",
+        "prompt": "On the same source region, find its area by integrating one.",
+        "hint": "The vertical slice height is $1-x^2$.",
+        "solution": "The area is $\\int_{-1}^1(1-x^2)dx=4/3$.",
+        "solutionTex": "\\operatorname{Area}(D)=\\int_{-1}^1\\int_{2x^2}^{1+x^2}1\\,dy\\,dx=\\frac43",
+        "rubric": [
+          "Use lower and upper parabolic bounds in order.",
+          "Integrate the slice height on $[-1,1]$."
+        ]
+      },
+      {
+        "id": "lecture05-source-type-ii-parabola-integral-transfer",
+        "outcome": "Evaluate the source's Type II integral between a sideways parabola and a line.",
+        "kind": "computational",
+        "prompt": "On the source region, compute its area by integrating one.",
+        "hint": "The horizontal width is $y+1-(y^2/2-3)=-y^2/2+y+4$.",
+        "solution": "Integrating that width from -2 to 4 gives area 18.",
+        "solutionTex": "\\operatorname{Area}(D)=\\int_{-2}^4\\int_{y^2/2-3}^{y+1}1\\,dx\\,dy=18",
+        "rubric": [
+          "Subtract left from right to find slice width.",
+          "Integrate over the full y interval."
+        ]
+      },
+      {
+        "id": "lecture05-source-tetrahedron-projection-volume-transfer",
+        "outcome": "Project the source tetrahedron to the xy-plane, derive Type I bounds, and integrate height.",
+        "kind": "computational",
+        "prompt": "Find the volume in the wedge bounded by $x+y+z=3$, $x=2y$, $x=0$, and $z=0$.",
+        "hint": "The projection is $0\\leq x\\leq2$, $x/2\\leq y\\leq3-x$; height is $3-x-y$.",
+        "solution": "Integrating the height over the projected triangle gives volume three.",
+        "solutionTex": "V=\\int_0^2\\int_{x/2}^{3-x}(3-x-y)dy\\,dx=3",
+        "rubric": [
+          "Project all plane constraints before integrating.",
+          "Integrate the height over the whole projected region."
+        ]
+      }
+    ]
   },
   "linearity-additivity": {
     "prerequisites": ["general-double-integrals"],

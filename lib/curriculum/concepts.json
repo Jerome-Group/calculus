@@ -5002,6 +5002,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [3, 22],
         "detail": "Optional: Stewart, §15.1–15.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [27, 30],
+        "detail": "Uniform mesh cells, tagged double sums, and their defining limit"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5066,6 +5071,16 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [3, 22],
         "detail": "Optional: Stewart, §15.1–15.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [33, 33],
+        "detail": "Zero extension from a bounded region"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [39, 40],
+        "detail": "Mass-density and joint-probability applications"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5127,6 +5142,16 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [3, 22],
         "detail": "Optional: Stewart, §15.1–15.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [42, 42],
+        "detail": "Vertical and horizontal slice interpretation"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [48, 48],
+        "detail": "Second-order evaluation of the oscillatory example"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5214,6 +5239,16 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [3, 22],
         "detail": "Optional: Stewart, §15.1–15.2; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [51, 51],
+        "detail": "Horizontal-fiber diagrams"
+      },
+      {
+        "sourceId": "MH2100_Lecture_05",
+        "pages": [61, 61],
+        "detail": "Final projected-tetrahedron calculation"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
