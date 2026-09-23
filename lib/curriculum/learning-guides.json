@@ -4773,6 +4773,76 @@
     ],
     "exercises": [
       {
+        "id": "lecture08-chain-composition-transfer",
+        "outcome": "Differentiate a trigonometric outer layer over a rational inner layer.",
+        "kind": "proof",
+        "prompt": "Find the derivative of $q(x)=\\cos((x^2+1)/(x^2+2))$ and state its real domain.",
+        "hint": "Differentiate the quotient before multiplying by the derivative of cosine.",
+        "solution": "The inner quotient has derivative $2x/(x^2+2)^2$. Hence $q\\prime(x)=-[2x/(x^2+2)^2]\\sin((x^2+1)/(x^2+2))$. Since $x^2+2>0$, both $q$ and $q\\prime$ are defined on all real inputs.",
+        "solutionTex": "q\\prime(x)=-\\frac{2x}{(x^2+2)^2}\\sin\\!\\left(\\frac{x^2+1}{x^2+2}\\right)",
+        "rubric": [
+          "Identify both layers.",
+          "Compute the inner quotient derivative correctly.",
+          "State the domain and the complete product."
+        ]
+      },
+      {
+        "id": "lecture08-composition-order-transfer",
+        "outcome": "Distinguish two cosine compositions before differentiating.",
+        "kind": "proof",
+        "prompt": "Differentiate both $a(x)=\\cos(x^2)$ and $b(x)=\\cos^2x$. Explain which operation is outside in each case.",
+        "hint": "Rewrite $b(x)$ as $(\\cos x)^2$.",
+        "solution": "For $a$, cosine is outside, so $a\\prime(x)=-2x\\sin(x^2)$. For $b$, the square is outside, so $b\\prime(x)=-2\\sin x\\cos x$. They are different compositions.",
+        "solutionTex": "a\\prime(x)=-2x\\sin(x^2),\\qquad b\\prime(x)=-2\\sin x\\cos x",
+        "rubric": [
+          "Identify both outer functions.",
+          "Include each inner derivative.",
+          "Do not treat the exponent placements as interchangeable."
+        ]
+      },
+      {
+        "id": "lecture08-general-power-transfer",
+        "outcome": "Differentiate a negative fractional power on its real domain.",
+        "kind": "proof",
+        "prompt": "Find the real domain and derivative of $p(x)=(2x^2+1)^{-1/2}$.",
+        "hint": "The inner expression is positive; multiply the outer power derivative by $4x$.",
+        "solution": "Since $2x^2+1>0$ for all real $x$, the domain is $\\mathbb R$. The derivative is $p\\prime(x)=(-1/2)(2x^2+1)^{-3/2}(4x)=-2x(2x^2+1)^{-3/2}$.",
+        "solutionTex": "p\\prime(x)=-\\frac{2x}{(2x^2+1)^{3/2}}",
+        "rubric": [
+          "Check the real domain.",
+          "Differentiate outer and inner factors.",
+          "Simplify without dropping the inner derivative."
+        ]
+      },
+      {
+        "id": "lecture08-nested-chain-transfer",
+        "outcome": "Differentiate three nested layers and show every factor.",
+        "kind": "proof",
+        "prompt": "For $r(x)=e^{\\sin(x^2)}$, find $r\\prime(x)$ and identify the outer, middle, and inner functions.",
+        "hint": "Use exponential, sine, then square in that order.",
+        "solution": "The layers are exponential, sine, and square. Their factors are $e^{\\sin(x^2)}$, $\\cos(x^2)$, and $2x$, so $r\\prime(x)=2x\\cos(x^2)e^{\\sin(x^2)}$ for all real $x$.",
+        "solutionTex": "r\\prime(x)=e^{\\sin(x^2)}\\cos(x^2)(2x)",
+        "rubric": [
+          "Name all three layers.",
+          "Retain every chain factor.",
+          "Give the real domain."
+        ]
+      },
+      {
+        "id": "lecture08-nested-domain-transfer",
+        "outcome": "Check a nested root domain before differentiating.",
+        "kind": "proof",
+        "prompt": "For $q(x)=\\sqrt{\\sec(x^2)}$, state its real differentiability domain and find $q\\prime(x)$ there.",
+        "hint": "Require the secant radicand to be positive, then multiply root, secant, and square derivatives.",
+        "solution": "The real differentiability domain is $\\{x\\in\\mathbb R:\\cos(x^2)>0\\}$. On that domain, $q\\prime(x)=[1/(2\\sqrt{\\sec(x^2)})]\\,[\\sec(x^2)\\tan(x^2)]\\,(2x)=x\\sec(x^2)\\tan(x^2)/\\sqrt{\\sec(x^2)}$.",
+        "solutionTex": "q\\prime(x)=\\frac{x\\sec(x^2)\\tan(x^2)}{\\sqrt{\\sec(x^2)}},\\qquad x\\in\\{t\\in\\mathbb R:\\cos(t^2)>0\\}",
+        "rubric": [
+          "State the positive-radicand domain.",
+          "Include all three derivative factors.",
+          "Give the derivative only on the real differentiability domain."
+        ]
+      },
+      {
         "id": "zero-inner-increment",
         "outcome": "Apply the chain rule when the inner derivative vanishes without invalid division.",
         "kind": "proof",
@@ -4806,7 +4876,177 @@
         "Include the inner derivative."
       ],
       "solutionTex": "\\frac{d}{dx}(1+\\sin x)^3=3(1+\\sin x)^2\\cos x"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "lecture08-chain-composition",
+        "title": "Differentiate the outer function at the inner value",
+        "statement": "If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then $(f\\circ g)\\prime(x)=f\\prime(g(x))g\\prime(x)$. The derivative of the outer function is evaluated at the full inner value.",
+        "hypotheses": [
+          "The inner function is defined and differentiable at the chosen input.",
+          "The outer function is differentiable at the inner output."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-sine-quotient",
+        "title": "Work the source sine of a quotient",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical pages 5–6 ask for $h(x)=\\sin((x^2-1)/(x^2+1))$.",
+        "steps": [
+          {
+            "label": "Inner quotient",
+            "text": "With $u=(x^2-1)/(x^2+1)$, $u\\prime=[2x(x^2+1)-2x(x^2-1)]/(x^2+1)^2=4x/(x^2+1)^2$."
+          },
+          {
+            "label": "Outer sine",
+            "text": "$h\\prime(x)=\\cos(u)u\\prime=\\cos((x^2-1)/(x^2+1))\\,4x/(x^2+1)^2$."
+          }
+        ],
+        "result": "$h\\prime(x)=\\dfrac{4x}{(x^2+1)^2}\\cos\\!\\left(\\dfrac{x^2-1}{x^2+1}\\right)$ for every real $x$.",
+        "verification": "The denominator $x^2+1$ never vanishes; omitting the inner quotient derivative loses the factor $4x/(x^2+1)^2$."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-composition-order",
+        "title": "Read notation before choosing the outside layer",
+        "statement": "$\\sin(x^2)$ has sine outside the square, whereas $\\sin^2x=(\\sin x)^2$ has the square outside sine. The two compositions generally have different derivatives.",
+        "hypotheses": [
+          "Interpret the exponent position before applying the chain rule.",
+          "Preserve the full inner argument when differentiating the outside layer."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-sine-order",
+        "title": "Compare the paired source exercises",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical page 7 contrasts $y=\\sin(x^2)$ with $y=\\sin^2x$.",
+        "steps": [
+          {
+            "label": "Sine outside",
+            "text": "$\\frac{d}{dx}\\sin(x^2)=\\cos(x^2)\\cdot2x$."
+          },
+          {
+            "label": "Square outside",
+            "text": "$\\frac{d}{dx}(\\sin x)^2=2\\sin x\\cos x=\\sin(2x)$."
+          }
+        ],
+        "result": "The first derivative is $2x\\cos(x^2)$; the second is $2\\sin x\\cos x$.",
+        "verification": "The exponent on $x$ and the exponent on $\\sin$ specify different layer orders; moving it changes the function."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-general-power",
+        "title": "Combine power and chain rules with domain checks",
+        "statement": "For real $n$ and differentiable $u=g(x)$ at a point where $u^n$ is real and differentiable, $\\frac{d}{dx}(u^n)=nu^{n-1}u\\prime$. Fractional or negative powers also require the relevant root and denominator conditions.",
+        "hypotheses": [
+          "The inner function is differentiable.",
+          "The real power and its outer derivative are defined at the chosen inner value."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-reciprocal-cuberoot",
+        "title": "Use the source fractional-power example",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical page 9 writes $f(x)=1/\\sqrt[3]{x^2+x+1}=(x^2+x+1)^{-1/3}$.",
+        "steps": [
+          {
+            "label": "Domain",
+            "text": "$x^2+x+1=(x+1/2)^2+3/4>0$ for all real $x$."
+          },
+          {
+            "label": "Power chain",
+            "text": "$f\\prime(x)=-(1/3)(x^2+x+1)^{-4/3}(2x+1)$."
+          }
+        ],
+        "result": "$f\\prime(x)=-\\dfrac{2x+1}{3(x^2+x+1)^{4/3}}$ on $\\mathbb R$.",
+        "verification": "Page 9 also has the integer-power example $(x^3-1)^{100}$; its exponent uses the same chain factor."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-nested-chain",
+        "title": "Apply one chain factor per nested layer",
+        "statement": "For $y=f(g(h(x)))$, the derivative is $f\\prime(g(h(x)))g\\prime(h(x))h\\prime(x)$ wherever each layer is defined and differentiable. More than one inner layer means more than one chain factor.",
+        "hypotheses": [
+          "Each composition is real and defined at the chosen input.",
+          "All three component derivatives exist at their respective inputs."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-nested-sine-root",
+        "title": "Trace the source sine, root, and squared cosine layers",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical page 12 asks for $y=\\sin(\\sqrt{1+\\cos^2x})$.",
+        "steps": [
+          {
+            "label": "Outer two layers",
+            "text": "The outer sine contributes $\\cos(\\sqrt{1+\\cos^2x})$; the root contributes $1/(2\\sqrt{1+\\cos^2x})$."
+          },
+          {
+            "label": "Inner two layers",
+            "text": "$\\frac{d}{dx}(1+\\cos^2x)=2\\cos x(-\\sin x)$, so multiply all three nonconstant factors."
+          }
+        ],
+        "result": "$y\\prime=-\\cos(\\sqrt{1+\\cos^2x})\\,\\sin x\\cos x/\\sqrt{1+\\cos^2x}$.",
+        "verification": "$1+\\cos^2x\\ge1$, so the square-root denominator is positive for every real input. Page 10 says “with respect to t” while writing $\\frac{dy}{dx}$; $x$ is the differentiated variable."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-nested-real-domain",
+        "title": "Check the real domain at each nested layer",
+        "statement": "For $y=\\sqrt{\\sec(x^3)}$, the real square root requires $\\sec(x^3)>0$, equivalently $\\cos(x^3)>0$. On that open domain, each layer is differentiable and the chain rule applies.",
+        "hypotheses": [
+          "The inner secant is defined and strictly positive.",
+          "Differentiate only on intervals where the composite is real."
+        ],
+        "prerequisites": ["real function domains and the chain rule"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-root-secant-domain",
+        "title": "Differentiate the source root of secant with its domain",
+        "strategy": "Check the radicand before multiplying the square-root, secant, and cubic factors.",
+        "setup": "Physical page 11 asks for $y=\\sqrt{\\sec(x^3)}$.",
+        "steps": [
+          {
+            "label": "Domain",
+            "text": "$\\sec(x^3)>0$ exactly when $\\cos(x^3)>0$; equality cannot occur because secant has nonzero numerator."
+          },
+          {
+            "label": "Three factors",
+            "text": "$y\\prime=[1/(2\\sqrt{\\sec(x^3)})]\\,[\\sec(x^3)\\tan(x^3)]\\,(3x^2)$."
+          }
+        ],
+        "result": "$y\\prime=3x^2\\sec(x^3)\\tan(x^3)/(2\\sqrt{\\sec(x^3)})$ wherever $\\cos(x^3)>0$.",
+        "verification": "The source computes the three factors; the real-domain qualification makes explicit where that derivative represents the stated real function."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-increment-proof",
+        "title": "Use differentiability remainders to prove the chain rule",
+        "statement": "Pages 13–15 write $\\Delta u=[g\\prime(a)+\\varepsilon_1]\\Delta x$ and $\\Delta y=[f\\prime(g(a))+\\varepsilon_2]\\Delta u$, with both error coefficients tending to zero. Substitution gives the chain-rule product even when $\\Delta u=0$.",
+        "hypotheses": [
+          "The inner function is differentiable at $a$.",
+          "The outer function is differentiable at $g(a)$.",
+          "Extend the outer error coefficient by zero at $\\Delta u=0$ so no division by that increment is required."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Complete proof"
+      }
+    ]
   },
   "implicit-related-rates": {
     "prerequisites": ["chain-rule-single"],
@@ -4831,7 +5071,236 @@
         "Interpret sign and units."
       ],
       "solutionTex": "\\dot y=-\\frac{x}{y}\\dot x=-\\frac34(2)=-\\frac32\\ \\mathrm{m/s}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "lecture08-implicit-branches",
+        "title": "Choose a local branch before differentiating a relation",
+        "statement": "A relation such as $x^2+y^2=25$ can describe multiple branches $y=\\pm\\sqrt{25-x^2}$. Implicit differentiation assumes a differentiable local branch $y(x)$; a relation alone does not globally define one $y$ for every $x$.",
+        "hypotheses": [
+          "Select a point on the relation and a local branch through it.",
+          "Check the branch is differentiable at the point before assigning a finite $\\frac{dy}{dx}$."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-circle-branches",
+        "title": "Separate the upper and lower source semicircles",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical pages 16–18 use $x^2+y^2=25$.",
+        "steps": [
+          {
+            "label": "Solve locally",
+            "text": "For $-5<x<5$, the two branches are $y_+(x)=\\sqrt{25-x^2}$ and $y_-(x)=-\\sqrt{25-x^2}$."
+          },
+          {
+            "label": "Endpoint contrast",
+            "text": "At $(5,0)$ the two branches meet with a vertical tangent; neither yields a finite derivative as a local $y(x)$ graph there."
+          }
+        ],
+        "result": "At $(3,4)$ use the positive branch; at $(3,-4)$ use the negative branch.",
+        "verification": "Page 18 explicitly assumes $y$ is differentiable as a function of $x$ for its subsequent calculations."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-implicit-chain",
+        "title": "Differentiate both sides along a local branch",
+        "statement": "Along a differentiable branch of $x^2+y^2=25$, differentiating in $x$ gives $2x+2y\\,y\\prime=0$. Where $y\\ne0$, $y\\prime=-x/y$. The factor $y\\prime$ comes from the chain rule.",
+        "hypotheses": [
+          "The relation holds on a differentiable local branch.",
+          "Divide by $y$ only where $y\\ne0$."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-circle-slope",
+        "title": "Compute the source circle tangent through a point",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical pages 19–21 use $x^2+y^2=25$ at $(3,4)$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "$\\frac{d}{dx}(y^2)=2y\\,y\\prime$, so $2x+2y\\,y\\prime=0$."
+          },
+          {
+            "label": "Evaluate tangent",
+            "text": "$y\\prime=-x/y=-3/4$ at $(3,4)$, giving $y-4=-(3/4)(x-3)$ or $3x+4y=25$."
+          }
+        ],
+        "result": "The finite tangent slope is $-3/4$ at the point on the upper branch.",
+        "verification": "Page 21 explicitly checks the positive square-root branch and obtains the same slope; $y=0$ is excluded from the divided formula."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-implicit-product",
+        "title": "Combine product and chain rules before isolating y prime",
+        "statement": "When an implicit relation contains $xy(x)$, its derivative is $y+xy\\prime$. Differentiate every occurrence of $y$ through the chain rule, then collect the $y\\prime$ terms before dividing.",
+        "hypotheses": [
+          "The relation holds on a differentiable branch.",
+          "Any coefficient divided out when solving for $y\\prime$ must be nonzero."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-cubic-product",
+        "title": "Work the source cubic-product relation",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical pages 22–23 use $x^3+y^3=6xy$ and the point $(3,3)$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "$3x^2+3y^2y\\prime=6y+6xy\\prime$; the right side uses the product rule."
+          },
+          {
+            "label": "Collect and evaluate",
+            "text": "$(y^2-2x)y\\prime=2y-x^2$, so $y\\prime=(2y-x^2)/(y^2-2x)=-1$ at $(3,3)$."
+          }
+        ],
+        "result": "The tangent at $(3,3)$ is $y-3=-(x-3)$, equivalently $x+y=6$.",
+        "verification": "At the chosen point the coefficient $y^2-2x=3\\ne0$; the divided expression need not apply where it vanishes."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-implicit-trig",
+        "title": "Differentiate a trigonometric composite on both sides",
+        "statement": "For $\\sin(x+y)=y^2\\cos x$, treat $y$ as $y(x)$: the left derivative is $\\cos(x+y)(1+y\\prime)$; the right derivative is $2yy\\prime\\cos x-y^2\\sin x$. Collecting $y\\prime$ gives a quotient only when its denominator is nonzero.",
+        "hypotheses": [
+          "The identity holds on a differentiable local branch.",
+          "The coefficient of $y\\prime$ is nonzero before dividing."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-trig-implicit",
+        "title": "Recover the source trigonometric quotient",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical page 24 asks for $y\\prime$ if $\\sin(x+y)=y^2\\cos x$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "$\\cos(x+y)(1+y\\prime)=2yy\\prime\\cos x-y^2\\sin x$."
+          },
+          {
+            "label": "Collect",
+            "text": "$\\cos(x+y)+y^2\\sin x=[2y\\cos x-\\cos(x+y)]y\\prime$."
+          }
+        ],
+        "result": "$y\\prime=[\\cos(x+y)+y^2\\sin x]/[2y\\cos x-\\cos(x+y)]$ where the denominator is nonzero.",
+        "verification": "The factors $1+y\\prime$ and $2yy\\prime$ arise from separate applications of the chain rule."
+      },
+      {
+        "kind": "theorem",
+        "id": "lecture08-implicit-conic-tangent",
+        "title": "Use the conic tangent equation without dividing at vertical points",
+        "statement": "At a point $(x_0,y_0)$ on $x^2/a^2+y^2/b^2=1$, with $a,b>0$, the tangent is $x_0x/a^2+y_0y/b^2=1$. When $y_0\\ne0$, implicit slope is $-b^2x_0/(a^2y_0)$; the normal-form tangent equation also covers $y_0=0$.",
+        "hypotheses": [
+          "The point lies on the ellipse and $a,b>0$.",
+          "Use the finite-slope formula only when $y_0\\ne0$."
+        ],
+        "prerequisites": ["derivative rules and real domains"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture08-source-ellipse-tangent",
+        "title": "Derive and extend the source ellipse tangent",
+        "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
+        "setup": "Physical pages 25–26 use $x^2/a^2+y^2/b^2=1$ at $(x_0,y_0)$.",
+        "steps": [
+          {
+            "label": "Ordinary point",
+            "text": "$2x/a^2+2yy\\prime/b^2=0$. If $y_0\\ne0$, then $y\\prime=-b^2x_0/(a^2y_0)$. Substitution into point-slope form yields $x_0x/a^2+y_0y/b^2=1$."
+          },
+          {
+            "label": "Vertical endpoint",
+            "text": "At $(a,0)$ division by $y_0$ is invalid. The normal-form equation still gives $x=a$, the vertical tangent."
+          }
+        ],
+        "result": "The tangent equation is $x_0x/a^2+y_0y/b^2=1$ for every point of the ellipse.",
+        "verification": "The source divides by $y_0$ while deriving the line; that step is valid only for $y_0\\ne0$. The final line formula extends to the two vertical endpoints by direct geometric or normal-vector reasoning."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "lecture08-implicit-branches-transfer",
+        "outcome": "Choose local branches and detect an endpoint failure.",
+        "kind": "proof",
+        "prompt": "For $x^2+y^2=9$, identify the branch through $(0,-3)$ and decide whether a finite $\\frac{dy}{dx}$ exists at $(3,0)$.",
+        "hint": "Solve for both $y$ branches and inspect the endpoint quotient or graph tangent.",
+        "solution": "Through $(0,-3)$ the branch is $y=-\\sqrt{9-x^2}$ for $-3<x<3$. At $(3,0)$ the circle has a vertical tangent; there is no finite derivative of $y$ as a local function of $x$ there.",
+        "solutionTex": "y_-(x)=-\\sqrt{9-x^2},\\quad \\left.\\frac{dy}{dx}\\right|_{(3,0)}\\text{ is not finite}",
+        "rubric": [
+          "Choose the branch by the point sign.",
+          "State its open interval of differentiability.",
+          "Do not assign a finite slope at the vertical endpoint."
+        ]
+      },
+      {
+        "id": "lecture08-implicit-chain-transfer",
+        "outcome": "Differentiate a relation and evaluate a finite branch slope.",
+        "kind": "proof",
+        "prompt": "For $x^2+4y^2=20$, find $\\frac{dy}{dx}$ on a differentiable branch and the tangent at $(2,2)$.",
+        "hint": "Apply the chain rule to $4y^2$, then use the given point.",
+        "solution": "$2x+8y\\,y\\prime=0$, so $y\\prime=-x/(4y)$ when $y\\ne0$. At $(2,2)$ the slope is $-1/4$ and the tangent is $y-2=-(1/4)(x-2)$.",
+        "solutionTex": "y\\prime=-\\frac{x}{4y},\\qquad y-2=-\\frac14(x-2)",
+        "rubric": [
+          "Include the chain factor on $y^2$.",
+          "State the nonzero denominator condition.",
+          "Evaluate the slope and tangent at the given point."
+        ]
+      },
+      {
+        "id": "lecture08-implicit-product-transfer",
+        "outcome": "Combine product and chain factors in a new relation.",
+        "kind": "proof",
+        "prompt": "For $x^2y+y^2=5$, find $y\\prime$ on a differentiable branch and the tangent at $(2,1)$.",
+        "hint": "Differentiate $x^2y$ using the product rule.",
+        "solution": "$2xy+x^2y\\prime+2yy\\prime=0$, so $y\\prime=-2xy/(x^2+2y)$ where the denominator is nonzero. At $(2,1)$ this is $-4/6=-2/3$, giving $y-1=-(2/3)(x-2)$.",
+        "solutionTex": "y\\prime=-\\frac{2xy}{x^2+2y},\\qquad y-1=-\\frac23(x-2)",
+        "rubric": [
+          "Use product and chain rules.",
+          "Collect all derivative terms.",
+          "Check the denominator and tangent point."
+        ]
+      },
+      {
+        "id": "lecture08-implicit-trig-transfer",
+        "outcome": "Differentiate a new trigonometric implicit identity.",
+        "kind": "proof",
+        "prompt": "On a differentiable branch of $\\sin(x+y)=xy$ through $(0,0)$, find $y\\prime(0)$ and the tangent line.",
+        "hint": "Differentiate both sides, collect $y\\prime$, and evaluate at the point.",
+        "solution": "$\\cos(x+y)(1+y\\prime)=y+xy\\prime$. At $(0,0)$ this becomes $1+y\\prime=0$, so $y\\prime(0)=-1$ and the tangent is $y=-x$.",
+        "solutionTex": "\\left.\\frac{dy}{dx}\\right|_{(0,0)}=-1,\\qquad y=-x",
+        "rubric": [
+          "Use the chain rule on $x+y$.",
+          "Use the product rule on $xy$.",
+          "Evaluate and give the tangent."
+        ]
+      },
+      {
+        "id": "lecture08-implicit-conic-transfer",
+        "outcome": "Find both horizontal and vertical ellipse tangents.",
+        "kind": "proof",
+        "prompt": "For $x^2/9+y^2/4=1$, give the tangent equations at $(0,2)$ and $(3,0)$. Explain where the finite-slope quotient applies.",
+        "hint": "Use $x_0x/9+y_0y/4=1$ at each point, then check the slope denominator.",
+        "solution": "At $(0,2)$ the tangent is $y=2$ and the finite slope is 0. At $(3,0)$ the tangent is the vertical line $x=3$; the quotient $-4x/(9y)$ is undefined there, so it does not provide a finite slope.",
+        "solutionTex": "T_{(0,2)}:\\ y=2,\\qquad T_{(3,0)}:\\ x=3",
+        "rubric": [
+          "Use the conic tangent identity at both points.",
+          "Identify the horizontal and vertical lines.",
+          "Do not divide by zero at the vertical endpoint."
+        ]
+      }
+    ]
   },
   "linearization-differentials": {
     "prerequisites": ["derivative-definition"],
