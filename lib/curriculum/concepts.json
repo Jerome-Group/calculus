@@ -5586,6 +5586,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [47, 72],
         "detail": "Optional: Stewart, §15.6–15.8; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_07",
+        "pages": [26, 26],
+        "detail": "Cylindrical Coordinates: radial distance from the z-axis and azimuth definition"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -5707,6 +5712,11 @@
         "sourceId": "MH2100_Stewart_Calculus_Chapter_15_Multiple_Integrals",
         "pages": [47, 72],
         "detail": "Optional: Stewart, §15.6–15.8; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH2100_Lecture_07",
+        "pages": [39, 39],
+        "detail": "Spherical Coordinates: radial distance, azimuth, and inclination convention"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

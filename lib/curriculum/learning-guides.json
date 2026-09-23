@@ -18015,7 +18015,291 @@
         "Interpret the measure and units."
       ],
       "solutionTex": "\\iiint_V5\\,dV=5(2)(3)(4)=120"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture07-standard-box-partition-statement",
+        "title": "Build each triple-sum cell from three side lengths",
+        "text": "For $B=[a,b]\\times[c,d]\\times[e,f]$, subdivide each coordinate interval into equal parts. The indexed cell volume is $\\Delta V=\\Delta x\\,\\Delta y\\,\\Delta z$; one sample point is chosen in each cell."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-standard-box-partition-worked",
+        "title": "A tagged sum on the unit cube",
+        "strategy": "Compute one familiar sum, then distinguish its tags from the definition that permits arbitrary tags.",
+        "setup": "Take $f(x,y,z)=x+y+z$ on $[0,1]^3$ and use the midpoint in each cell of an $n\\times n\\times n$ partition.",
+        "steps": [
+          {
+            "label": "Form a cell contribution",
+            "text": "Multiply its sample value by the actual box volume.",
+            "equation": "\\Delta V=\\frac1n\\frac1n\\frac1n=\\frac1{n^3}"
+          },
+          {
+            "label": "Sum midpoint values",
+            "text": "The midpoint coordinates each average to one half.",
+            "equation": "S_n=\\frac1{n^3}\\sum_{i,j,k=1}^{n}\\left(\\frac{i-\\frac12}{n}+\\frac{j-\\frac12}{n}+\\frac{k-\\frac12}{n}\\right)=\\frac32"
+          }
+        ],
+        "result": "Every midpoint sum is three halves; the definition also asks what happens for every other choice of sample points.",
+        "verification": "On each cell the oscillation of $x+y+z$ is at most $3/n$, so any tagged sum differs from the integral by at most $3/n$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-sampling-independent-limit-statement",
+        "title": "The tag choice cannot change the limiting value",
+        "text": "The source definition requires one finite number $L$ for every sequence of sample-point choices while the subdivision counts $l,m,n$ all tend to infinity. A limit for midpoint tags alone is not enough."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-sampling-independent-limit-worked",
+        "title": "Bound all tagged sums for a continuous density",
+        "strategy": "Compare each tagged sum with the integral using the maximum oscillation within a cell.",
+        "setup": "Let $f(x,y,z)=xy+z$ on the unit cube, divided into equal $n$-cells in all three coordinates.",
+        "steps": [
+          {
+            "label": "Find the integral",
+            "text": "Separate the two coordinate terms on the box.",
+            "equation": "\\iiint_{[0,1]^3}(xy+z)\\,dV=\\frac14+\\frac12=\\frac34"
+          },
+          {
+            "label": "Control arbitrary tags",
+            "text": "Each cell changes each coordinate by at most one subdivision width.",
+            "equation": "\\left|S_n-\\frac34\\right|\\leq\\frac3n"
+          }
+        ],
+        "result": "The bound tends to zero for every tag selection, so the common limit is three quarters.",
+        "verification": "The inequality uses the cell oscillation bound, not a special symmetry of midpoint tags."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-fubini-six-orders-statement",
+        "title": "Fubini permits six orders on a standard box",
+        "text": "For continuous $f$ on $B=[a,b]\\times[c,d]\\times[e,f]$, the triple integral exists and equals each of the six iterated integrals obtained by ordering $dx$, $dy$, and $dz$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-fubini-six-orders-worked",
+        "title": "Evaluate a sum in a different coordinate order",
+        "strategy": "Choose one legal order, integrate the innermost variable first, and retain the same box.",
+        "setup": "Use $f(x,y,z)=x+y+z$ on $[0,1]^3$ with $z$ innermost.",
+        "steps": [
+          {
+            "label": "Integrate in z",
+            "text": "The x and y terms are constant with respect to z.",
+            "equation": "\\int_0^1(x+y+z)\\,dz=x+y+\\frac12"
+          },
+          {
+            "label": "Finish over the base",
+            "text": "The remaining two integrals cover the original unit square.",
+            "equation": "\\int_0^1\\int_0^1\\left(x+y+\\frac12\\right)\\,dy\\,dx=\\frac32"
+          }
+        ],
+        "result": "This order gives the same triple integral as each of the other five orders.",
+        "verification": "Each coordinate term contributes one half on the unit cube, independently of the order."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-product-box-integral-statement",
+        "title": "Separate a product integrand across a product box",
+        "text": "When the box is a Cartesian product and $f(x,y,z)=g(x)h(y)k(z)$, the iterated integral factors into the three one-variable integrals."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-product-box-integral-worked",
+        "title": "Solve the posed product-box integral",
+        "strategy": "Use a Fubini order and factor the independent coordinate contributions.",
+        "setup": "The source asks for $\\iiint_B xyz^2\\,dV$ on $B=[0,1]\\times[-1,2]\\times[0,3]$. Its continuation page is blank, so the computation below is an independent guide derivation.",
+        "steps": [
+          {
+            "label": "Separate the factors",
+            "text": "The integrand and box both separate by coordinate.",
+            "equation": "\\iiint_Bxyz^2\\,dV=\\left(\\int_0^1x\\,dx\\right)\\left(\\int_{-1}^{2}y\\,dy\\right)\\left(\\int_0^3z^2\\,dz\\right)"
+          },
+          {
+            "label": "Evaluate each factor",
+            "text": "The signed y-integral is positive because its upper endpoint has the larger square.",
+            "equation": "\\frac12\\cdot\\frac32\\cdot9=\\frac{27}{4}"
+          }
+        ],
+        "result": "The value of the source’s posed integral is twenty-seven quarters.",
+        "verification": "The middle factor is $\\frac12(2^2-(-1)^2)=\\frac32$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-zero-extension-general-region-statement",
+        "title": "Zero extension defines integration over a bounded region",
+        "text": "Place bounded $E$ inside a closed standard box $B$ and set $F=f$ on $E$ and $F=0$ on $B\\setminus E$. The source defines $\\iiint_E f\\,dV$ when this extension is Riemann integrable on $B$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-zero-extension-general-region-worked",
+        "title": "Integrate over a cylindrical solid by zero extension",
+        "strategy": "Enclose the region, extend its indicator by zero, and calculate the same integral using cylindrical bounds.",
+        "setup": "Let $E=\\{(x,y,z):x^2+y^2\\leq1,\\ 0\\leq z\\leq1\\}$ and $f=1$. Enclose E in $[-1,1]^2\\times[0,1]$.",
+        "steps": [
+          {
+            "label": "Form the extension",
+            "text": "The extended function is the indicator of the cylinder and is integrable because its boundary has zero volume.",
+            "equation": "F(x,y,z)=\\begin{cases}1&(x,y,z)\\in E\\\\0&(x,y,z)\\in B\\setminus E\\end{cases}"
+          },
+          {
+            "label": "Integrate the nonzero region",
+            "text": "Use polar coordinates in the disk base.",
+            "equation": "\\iiint_BF\\,dV=\\int_0^{2\\pi}\\int_0^1\\int_0^1r\\,dz\\,dr\\,d\\theta=\\pi"
+          }
+        ],
+        "result": "The zero-extension definition gives the cylinder volume $\\pi$.",
+        "verification": "Changing the enclosing box outside E adds only zeros to the extended function."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-volume-boundary-criterion-statement",
+        "title": "Boundary volume decides Jordan measurability",
+        "text": "For a bounded region $E$, volume is defined as $\\iiint_E1\\,dV$ when it exists. The source’s criterion is exact: $E$ has volume if and only if $\\partial E$ has zero three-dimensional volume."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-volume-boundary-criterion-worked",
+        "title": "Certify the volume of a unit cube",
+        "strategy": "Check the boundary separately; finitely many zero-volume faces still have zero volume as a union.",
+        "setup": "Take $E=[0,1]^3$. Its six faces are bounded planar graphs over bounded closed planar domains.",
+        "steps": [
+          {
+            "label": "Check the boundary",
+            "text": "Each face is a graph of a continuous function and has zero three-dimensional volume.",
+            "equation": "\\operatorname{Vol}_3(\\partial E)=0"
+          },
+          {
+            "label": "Apply the criterion",
+            "text": "The bounded region therefore has Jordan volume.",
+            "equation": "\\operatorname{Vol}(E)=\\iiint_E1\\,dV=1"
+          }
+        ],
+        "result": "The criterion certifies a unit cube of volume one.",
+        "verification": "Direct multiplication of side lengths gives the same result."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-graph-surface-zero-volume-statement",
+        "title": "A graph surface is not the solid beneath it",
+        "text": "If $D$ is bounded and closed and $g$ is continuous on $D$, its graph $\\{(x,y,g(x,y)):(x,y)\\in D\\}$ has zero three-dimensional volume. The solid between that graph and a base can still have positive volume."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-graph-surface-zero-volume-worked",
+        "title": "Compare a paraboloid graph with its solid",
+        "strategy": "Name the two sets before integrating: the graph is a surface; the subgraph is a three-dimensional region.",
+        "setup": "Let $g(x,y)=x^2+y^2$ on $D=[0,1]^2$.",
+        "steps": [
+          {
+            "label": "Measure the graph",
+            "text": "The source graph theorem applies on this compact planar base.",
+            "equation": "\\operatorname{Vol}_3\\{(x,y,x^2+y^2):(x,y)\\in D\\}=0"
+          },
+          {
+            "label": "Measure the subgraph",
+            "text": "Integrate its height over the base square.",
+            "equation": "\\int_0^1\\int_0^1(x^2+y^2)\\,dy\\,dx=\\frac23"
+          }
+        ],
+        "result": "The graph has zero volume while the region beneath it has volume two thirds.",
+        "verification": "These values refer to different sets with different dimensions."
+      }
+    ],
+    "exercises": [
+      {
+        "kind": "computational",
+        "outcome": "Compute a product-box triple integral by separating its coordinate contributions.",
+        "prompt": "Evaluate $\\iiint_{[0,2]\\times[0,1]\\times[0,1]}(x+y+z)\\,dV$ by integrating each coordinate term.",
+        "hint": "Multiply each one-variable integral by the lengths of the other two intervals.",
+        "solution": "The x, y, and z terms contribute $2$, $1$, and $1$, so the integral is $4$.",
+        "solutionTex": "\\iiint_{[0,2]\\times[0,1]\\times[0,1]}(x+y+z)\\,dV=2+1+1=4",
+        "rubric": [
+          "Use each interval length for the two unused variables.",
+          "Integrate every term over its own coordinate interval."
+        ],
+        "id": "lecture07-standard-box-partition-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Recognize that the triple-integral limit must be the same for every sampling as all partition sizes grow.",
+        "prompt": "Find the triple integral of $x^2+y$ on the unit cube and state why increasingly fine tagged sums have that common limit.",
+        "hint": "Use the one-variable integrals of $x^2$ and $y$; continuity on the closed box supplies Riemann integrability.",
+        "solution": "The integral is $\\frac13+\\frac12=\\frac56$. Since the density is continuous on the closed box, the Riemann integral exists and every tagged refinement converges to it.",
+        "solutionTex": "\\iiint_{[0,1]^3}(x^2+y)\\,dV=\\int_0^1x^2\\,dx+\\int_0^1y\\,dy=\\frac56",
+        "rubric": [
+          "Evaluate both coordinate contributions.",
+          "Relate the common limit to continuity and integrability."
+        ],
+        "id": "lecture07-sampling-independent-limit-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Apply the triple Fubini theorem to evaluate a continuous function on a closed standard box in any of the six coordinate orders.",
+        "prompt": "Evaluate $\\iiint_{[0,1]\\times[0,2]\\times[0,1]}(xz+y)\\,dV$ with $x$ innermost.",
+        "hint": "Integrate $xz+y$ in $x$ first; then integrate the resulting expression in $z$ and $y$.",
+        "solution": "The $xz$ term contributes $\\frac12$ and the $y$ term contributes $2$, so the integral is $\\frac52$.",
+        "solutionTex": "\\int_0^2\\int_0^1\\int_0^1(xz+y)\\,dx\\,dz\\,dy=\\frac52",
+        "rubric": [
+          "Follow the stated inner-to-outer order.",
+          "Keep the box bounds attached to the correct variables."
+        ],
+        "id": "lecture07-fubini-six-orders-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Evaluate the source’s product-box integral by separating a product integrand over coordinate intervals.",
+        "prompt": "Evaluate $\\iiint_{[0,2]\\times[0,1]\\times[0,1]}(1+x^2+y+z)\\,dV$ by separating the coordinate factors.",
+        "hint": "Keep the other two interval lengths as factors when integrating a term such as $x^2$.",
+        "solution": "The constant contributes $2$; the $x^2$, $y$, and $z$ terms contribute $\\frac83$, $1$, and $1$, giving $\\frac{20}{3}$.",
+        "solutionTex": "\\iiint_{[0,2]\\times[0,1]\\times[0,1]}(1+x^2+y+z)\\,dV=\\frac{20}{3}",
+        "rubric": [
+          "Factor the product integral into three one-variable integrals.",
+          "Keep the signed coordinate interval and endpoints correct."
+        ],
+        "id": "lecture07-product-box-integral-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Define an integral over a bounded region by extending the density as zero to an enclosing standard box when the extension is integrable.",
+        "prompt": "Set $f=1$ on $E=\\{x^2+y^2\\leq4,\\ 1\\leq z\\leq3\\}$ and zero elsewhere in an enclosing box. Find $\\iiint_E1\\,dV$.",
+        "hint": "The base is a disk of radius two and the prism has height two.",
+        "solution": "The zero extension integrates over the same region; its volume is $\\pi(2)^2(2)=8\\pi$.",
+        "solutionTex": "\\iiint_E1\\,dV=\\int_0^{2\\pi}\\int_0^2\\int_1^3r\\,dz\\,dr\\,d\\theta=8\\pi",
+        "rubric": [
+          "Define the extension only on the enclosing box.",
+          "Include the polar area factor and the full height."
+        ],
+        "id": "lecture07-zero-extension-general-region-transfer"
+      },
+      {
+        "kind": "proof",
+        "outcome": "Use the zero-volume boundary criterion to decide whether a bounded region has Jordan volume.",
+        "prompt": "Use the boundary criterion to justify the volume of $E=[-1,1]\\times[0,2]\\times[0,2]$.",
+        "hint": "The boundary is a finite union of six planar faces; integrate one over the box.",
+        "solution": "Each face has zero three-dimensional volume, so the finite union $\\partial E$ does too. The criterion applies and $\\operatorname{Vol}(E)=2\\cdot2\\cdot2=8$.",
+        "solutionTex": "\\operatorname{Vol}_3(\\partial E)=0\\implies\\operatorname{Vol}(E)=\\iiint_E1\\,dV=8",
+        "rubric": [
+          "Explain why each boundary face has zero volume.",
+          "Use the if-and-only-if criterion and calculate the box volume."
+        ],
+        "id": "lecture07-volume-boundary-criterion-transfer"
+      },
+      {
+        "kind": "conceptual",
+        "outcome": "Distinguish the zero volume of a continuous graph surface from the nonzero volume of the solid below it.",
+        "prompt": "For $g(x,y)=xy$ on $[0,2]^2$, state the graph’s three-dimensional volume and the volume below it.",
+        "hint": "The graph theorem gives the surface result; integrate $xy$ over the square for the subgraph.",
+        "solution": "The graph has zero three-dimensional volume. The subgraph volume is $\\int_0^2\\int_0^2xy\\,dy\\,dx=4$.",
+        "solutionTex": "\\operatorname{Vol}_3(\\operatorname{graph}g)=0,\\qquad\\int_0^2\\int_0^2xy\\,dy\\,dx=4",
+        "rubric": [
+          "Apply the continuous-graph result to the surface.",
+          "Integrate the height separately to find the subgraph volume."
+        ],
+        "id": "lecture07-graph-surface-zero-volume-transfer"
+      }
+    ]
   },
   "simple-solid-bounds": {
     "prerequisites": ["triple-riemann-sums", "type-one-two-regions"],
@@ -18039,7 +18323,291 @@
         "Keep an inner bound free of its own integration variable."
       ],
       "solutionTex": "\\int_0^1\\int_0^{1-z}\\int_0^{1-y-z}1\\,dx\\,dy\\,dz=\\frac16"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture07-project-solid-before-bounds-statement",
+        "title": "Project the solid before setting its fiber limits",
+        "text": "A Type I solid first projects to a bounded closed set $D$ in the $xy$-plane. Over each $(x,y)\\in D$, its vertical fiber is the single interval $u_1(x,y)\\leq z\\leq u_2(x,y)$, with continuous ordered boundary functions."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-project-solid-before-bounds-worked",
+        "title": "Project a tetrahedron onto the xy-plane",
+        "strategy": "Remove z from the inequality to find the base, then solve for the vertical endpoints.",
+        "setup": "Let $T=\\{x,y,z\\geq0:x+y+z\\leq1\\}$.",
+        "steps": [
+          {
+            "label": "Find the projection",
+            "text": "A point $(x,y)$ is in the base if some nonnegative $z$ satisfies the plane inequality.",
+            "equation": "D=\\{(x,y):x\\geq0,\\ y\\geq0,\\ x+y\\leq1\\}"
+          },
+          {
+            "label": "Write the fiber",
+            "text": "Solve the same inequality for z above each point of D.",
+            "equation": "0\\leq z\\leq1-x-y"
+          }
+        ],
+        "result": "The projection and vertical fiber give Type I bounds for the tetrahedron.",
+        "verification": "The upper bound is nonnegative throughout D and reaches zero on its sloping edge."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-type-one-fiber-theorem-statement",
+        "title": "Integrate a Type I solid along vertical fibers",
+        "text": "For a Type I region with bounded closed base $D$, continuous ordered bounds $u_1\\leq u_2$, and continuous $f$, the source theorem integrates $f$ from $u_1(x,y)$ to $u_2(x,y)$ in $z$, then integrates over $D$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-type-one-fiber-theorem-worked",
+        "title": "Integrate one over the tetrahedron using Type I bounds",
+        "strategy": "Use the projection from the preceding construction and integrate its vertical fiber length.",
+        "setup": "For $T=\\{x,y,z\\geq0:x+y+z\\leq1\\}$, the base is $x,y\\geq0$, $x+y\\leq1$ and $0\\leq z\\leq1-x-y$.",
+        "steps": [
+          {
+            "label": "Apply the theorem",
+            "text": "The inner integral is the fiber length.",
+            "equation": "\\iiint_T1\\,dV=\\int_0^1\\int_0^{1-x}(1-x-y)\\,dy\\,dx"
+          },
+          {
+            "label": "Evaluate the base integral",
+            "text": "Integrate the remaining polynomial over the triangle.",
+            "equation": "\\int_0^1\\frac{(1-x)^2}{2}\\,dx=\\frac16"
+          }
+        ],
+        "result": "The Type I bounds give the tetrahedron’s volume as one sixth.",
+        "verification": "The result is also one sixth of the unit cube, as expected for the unit simplex."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-type-two-fiber-theorem-statement",
+        "title": "Type II bounds follow x-fibers over the yz projection",
+        "text": "A Type II solid projects to a bounded closed set $D$ in the $yz$-plane; over each $(y,z)\\in D$, its x-fiber is one interval $u_1(y,z)\\leq x\\leq u_2(y,z)$. For continuous boundary functions and continuous $f$, integrate in x first."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-type-two-fiber-theorem-worked",
+        "title": "Use x-fibers to find the simplex volume",
+        "strategy": "Project the simplex onto yz and make x the inner coordinate.",
+        "setup": "For $T=\\{x,y,z\\geq0:x+y+z\\leq1\\}$, the base is $y,z\\geq0$, $y+z\\leq1$.",
+        "steps": [
+          {
+            "label": "Write the x-fiber",
+            "text": "The plane inequality gives the left and right x endpoints.",
+            "equation": "0\\leq x\\leq1-y-z"
+          },
+          {
+            "label": "Integrate its length",
+            "text": "The outer integral is over the triangular yz projection.",
+            "equation": "\\int_0^1\\int_0^{1-z}(1-y-z)\\,dy\\,dz=\\frac16"
+          }
+        ],
+        "result": "The Type II order gives the same simplex volume, one sixth.",
+        "verification": "The inner bound is nonnegative exactly on the stated projected triangle."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-type-three-fiber-theorem-statement",
+        "title": "Type III bounds follow y-fibers over the xz projection",
+        "text": "A Type III solid projects to a bounded closed set $D$ in the $xz$-plane; over each $(x,z)\\in D$, its y-fiber is one interval $u_1(x,z)\\leq y\\leq u_2(x,z)$. The theorem integrates in y first for continuous bounds and integrand."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-type-three-fiber-theorem-worked",
+        "title": "Use y-fibers to find the simplex volume",
+        "strategy": "Project the simplex onto xz and make y the inner coordinate.",
+        "setup": "For $T=\\{x,y,z\\geq0:x+y+z\\leq1\\}$, the base is $x,z\\geq0$, $x+z\\leq1$.",
+        "steps": [
+          {
+            "label": "Write the y-fiber",
+            "text": "Solve the plane inequality for y.",
+            "equation": "0\\leq y\\leq1-x-z"
+          },
+          {
+            "label": "Integrate its length",
+            "text": "The remaining integral is over the triangular xz projection.",
+            "equation": "\\int_0^1\\int_0^{1-z}(1-x-z)\\,dx\\,dz=\\frac16"
+          }
+        ],
+        "result": "The Type III order also gives volume one sixth.",
+        "verification": "Cyclically changing the fiber coordinate changes the projected triangle, not the solid."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-tetrahedron-density-integral-statement",
+        "title": "Choose a projection for the source tetrahedron integral",
+        "text": "The source asks for $\\iiint_T z\\,dV$ on $T=\\{x,y,z\\geq0:x+y+z\\leq1\\}$. Any valid simple-solid description must project the entire tetrahedron and keep its fiber inside the plane."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-tetrahedron-density-integral-worked",
+        "title": "Derive the tetrahedron’s density-z integral",
+        "strategy": "Use Type I bounds on the xy projection, integrate z first, then integrate the triangular base.",
+        "setup": "Page 16 gives the tetrahedron and density; pages 17–18 are blank, so this is an independently checked guide solution.",
+        "steps": [
+          {
+            "label": "Set the bounds",
+            "text": "The xy projection is the unit triangle and the top is the plane.",
+            "equation": "\\iiint_Tz\\,dV=\\int_0^1\\int_0^{1-x}\\int_0^{1-x-y}z\\,dz\\,dy\\,dx"
+          },
+          {
+            "label": "Integrate the fiber",
+            "text": "The inner integral is half the squared height.",
+            "equation": "\\int_0^1\\int_0^{1-x}\\frac{(1-x-y)^2}{2}\\,dy\\,dx=\\frac1{24}"
+          }
+        ],
+        "result": "The source’s posed integral equals one twenty-fourth.",
+        "verification": "By symmetry, the integral of x, y, or z over T is equal; their sum is the integral of x+y+z."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-paraboloid-projection-integral-statement",
+        "title": "Project the paraboloid problem onto its circular base",
+        "text": "For $y=x^2+z^2$ through $y=4$, the projection onto the $xz$-plane is the disk $r\\leq2$, where $r=\\sqrt{x^2+z^2}$. The y-fiber is $r^2\\leq y\\leq4$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-paraboloid-projection-integral-worked",
+        "title": "Use polar fibers in the xz-plane",
+        "strategy": "Rotate the base coordinates about the y-axis; the density r and the polar area factor r both remain.",
+        "setup": "The source integral is $\\iiint_E\\sqrt{x^2+z^2}\\,dV$, with $r^2\\leq y\\leq4$ and $0\\leq r\\leq2$.",
+        "steps": [
+          {
+            "label": "Write the converted integral",
+            "text": "The density is r and the base area element contributes a second r.",
+            "equation": "\\int_0^{2\\pi}\\int_0^2\\int_{r^2}^{4}r^2\\,dy\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Evaluate in y and r",
+            "text": "Integrate the vertical length, then the radial polynomial.",
+            "equation": "2\\pi\\int_0^2(4-r^2)r^2\\,dr=\\frac{128\\pi}{15}"
+          }
+        ],
+        "result": "The independently computed source-example value is one hundred twenty-eight pi over fifteen.",
+        "verification": "The result is positive; the upper plane lies above the paraboloid throughout $r\\leq2$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-parabolic-roof-volume-statement",
+        "title": "Separate the parabolic roof from the sloping wall",
+        "text": "In the source solid, $-2\\leq y\\leq2$, the roof gives $0\\leq z\\leq4-y^2$, and the plane $x+z=4$ gives $0\\leq x\\leq4-z$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-parabolic-roof-volume-worked",
+        "title": "Integrate the source roof volume",
+        "strategy": "Project onto the yz-plane so that the parabolic roof determines z and the sloping wall determines x.",
+        "setup": "The source asks for volume, so integrate the constant density one over its full solid.",
+        "steps": [
+          {
+            "label": "Write the fibers",
+            "text": "For each $y$, the height runs from the floor to the roof; each $(y,z)$ admits $x$ from zero to the wall.",
+            "equation": "\\operatorname{Vol}(E)=\\int_{-2}^2\\int_0^{4-y^2}\\int_0^{4-z}1\\,dx\\,dz\\,dy"
+          },
+          {
+            "label": "Integrate x and z",
+            "text": "The remaining polynomial simplifies before the final symmetric integral.",
+            "equation": "\\int_{-2}^2\\left(8-\\frac{y^4}{2}\\right)dy=\\frac{128}{5}"
+          }
+        ],
+        "result": "The guide’s independent derivation gives source-example volume one hundred twenty-eight fifths.",
+        "verification": "For every $|y|\\leq2$ the roof is nonnegative and the x-width $4-z$ is nonnegative."
+      }
+    ],
+    "exercises": [
+      {
+        "kind": "method-choice",
+        "outcome": "Project a three-dimensional solid before choosing bounds for an inner coordinate.",
+        "prompt": "For $x,y,z\\geq0$ and $x+y+z\\leq2$, project onto the $yz$-plane and give bounds with $x$ innermost.",
+        "hint": "Eliminate x to obtain the projection; then solve the plane inequality for x.",
+        "solution": "The projection is $y,z\\geq0$ with $y+z\\leq2$. The fiber is $0\\leq x\\leq2-y-z$; its volume is $\\frac43$.",
+        "solutionTex": "\\int_0^2\\int_0^{2-z}\\int_0^{2-y-z}1\\,dx\\,dy\\,dz=\\frac43",
+        "rubric": [
+          "Derive the projected triangle from the solid inequality.",
+          "Keep the inner endpoint independent of x."
+        ],
+        "id": "lecture07-project-solid-before-bounds-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Apply the Type I theorem by integrating over each vertical fiber and then over its planar base.",
+        "prompt": "Find the volume of $E=\\{(x,y,z): -1\\leq x,y\\leq1,\\ 0\\leq z\\leq1-x^2\\}$.",
+        "hint": "Use the square as D and integrate the height $1-x^2$ over y and x.",
+        "solution": "The volume is $2\\int_{-1}^1(1-x^2)\\,dx=\\frac83$.",
+        "solutionTex": "\\iiint_E1\\,dV=\\int_{-1}^1\\int_{-1}^1\\int_0^{1-x^2}1\\,dz\\,dy\\,dx=\\frac83",
+        "rubric": [
+          "Use the full planar projection.",
+          "Integrate the vertical height over that projection."
+        ],
+        "id": "lecture07-type-one-fiber-theorem-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Apply the Type II theorem by projecting onto the yz-plane and integrating along x-fibers.",
+        "prompt": "Find the volume of $E=\\{(x,y,z):y,z\\geq0,\\ y+z\\leq1,\\ 0\\leq x\\leq y+z\\}$ using x as the inner variable.",
+        "hint": "The yz projection is already given; integrate the x-fiber length $y+z$.",
+        "solution": "The volume is $\\int_0^1\\int_0^{1-z}(y+z)\\,dy\\,dz=\\frac13$.",
+        "solutionTex": "\\iiint_E1\\,dV=\\int_0^1\\int_0^{1-z}\\int_0^{y+z}1\\,dx\\,dy\\,dz=\\frac13",
+        "rubric": [
+          "Use the yz projection as the outer domain.",
+          "Put the x interval inside and integrate its length."
+        ],
+        "id": "lecture07-type-two-fiber-theorem-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Apply the Type III theorem by projecting onto the xz-plane and integrating along y-fibers.",
+        "prompt": "Find the volume of $E=\\{(x,y,z):x,z\\geq0,\\ x+z\\leq1,\\ 0\\leq y\\leq x+z\\}$.",
+        "hint": "Keep the xz triangle as the outer region and integrate the y-fiber length.",
+        "solution": "The volume is $\\int_0^1\\int_0^{1-z}(x+z)\\,dx\\,dz=\\frac13$.",
+        "solutionTex": "\\iiint_E1\\,dV=\\int_0^1\\int_0^{1-z}\\int_0^{x+z}1\\,dy\\,dx\\,dz=\\frac13",
+        "rubric": [
+          "Retain the xz projection bounds.",
+          "Use y as the inner integration variable."
+        ],
+        "id": "lecture07-type-three-fiber-theorem-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Evaluate the source’s density-z integral over the coordinate-plane tetrahedron using a justified projection.",
+        "prompt": "On $T=\\{x,y,z\\geq0:x+y+z\\leq1\\}$, evaluate $\\iiint_T \\frac{z}{2}\\,dV$.",
+        "hint": "Use the source problem’s bounds and scale its integrand by one half.",
+        "solution": "Linearity gives one half of $\\iiint_Tz\\,dV=\\frac1{24}$, so the value is $\\frac1{48}$.",
+        "solutionTex": "\\iiint_T\\frac{z}{2}\\,dV=\\frac12\\left(\\frac{1}{24}\\right)=\\frac{1}{48}",
+        "rubric": [
+          "Keep the tetrahedron bounds unchanged.",
+          "Apply scalar linearity to the density."
+        ],
+        "id": "lecture07-tetrahedron-integral-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Choose a circular projection and cylindrical fibers to evaluate the source integral between a paraboloid and a plane.",
+        "prompt": "Evaluate $\\iiint_E\\sqrt{x^2+z^2}\\,dV$ where $E$ is bounded by $y=x^2+z^2$ and $y=9$.",
+        "hint": "Use $r^2\\leq y\\leq9$, $0\\leq r\\leq3$, and the polar factor $r$.",
+        "solution": "The density and area factor give $2\\pi\\int_0^3(9-r^2)r^2\\,dr=\\frac{324\\pi}{5}$.",
+        "solutionTex": "\\iiint_E\\sqrt{x^2+z^2}\\,dV=2\\pi\\int_0^3(9-r^2)r^2\\,dr=\\frac{324\\pi}{5}",
+        "rubric": [
+          "Use the full circular projection of radius three.",
+          "Include both the radial density and the polar area factor."
+        ],
+        "id": "lecture07-paraboloid-projection-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Find a roofed solid’s volume from a projection and coordinate-dependent fiber bounds.",
+        "prompt": "Find the volume where $-1\\leq y\\leq1$, $0\\leq z\\leq1-y^2$, and $0\\leq x\\leq2-z$.",
+        "hint": "Integrate x first to obtain the width $2-z$, then integrate z to the parabolic roof.",
+        "solution": "The integral is $\\int_{-1}^1\\int_0^{1-y^2}(2-z)\\,dz\\,dy=\\frac{32}{15}$.",
+        "solutionTex": "\\operatorname{Vol}(E)=\\int_{-1}^1\\int_0^{1-y^2}(2-z)\\,dz\\,dy=\\frac{32}{15}",
+        "rubric": [
+          "Use the full y interval and the curved z ceiling.",
+          "Use the x-width supplied by the sloping plane."
+        ],
+        "id": "lecture07-parabolic-roof-volume-transfer"
+      }
+    ]
   },
   "cylindrical-coordinates": {
     "prerequisites": ["polar-rectangles"],
@@ -18063,7 +18631,131 @@
         "Use the factor $r$ for volume."
       ],
       "solutionTex": "0\\le r\\le2,\\quad0\\le\\theta\\le2\\pi,\\quad1\\le z\\le3"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture07-cylindrical-cartesian-conversion-statement",
+        "title": "Convert cylindrical coordinates with the z-axis exception",
+        "text": "The forward map is $(r,\\theta,z)\\mapsto(r\\cos\\theta,r\\sin\\theta,z)$ with $r\\geq0$ and $0\\leq\\theta<2\\pi$. The inverse uses $r=\\sqrt{x^2+y^2}$ and the unique azimuth only off the z-axis."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-cylindrical-cartesian-conversion-worked",
+        "title": "Convert a point with an unambiguous azimuth",
+        "strategy": "Find the planar radius, identify the quadrant from the signs, and retain z.",
+        "setup": "Convert $P=(-2,2\\sqrt3,3)$ to cylindrical coordinates.",
+        "steps": [
+          {
+            "label": "Find the radial distance",
+            "text": "The radius is the distance from the z-axis.",
+            "equation": "r=\\sqrt{(-2)^2+(2\\sqrt3)^2}=4"
+          },
+          {
+            "label": "Choose the azimuth",
+            "text": "The point is in quadrant II with reference angle pi/3.",
+            "equation": "\\theta=\\frac{2\\pi}{3},\\qquad z=3"
+          }
+        ],
+        "result": "One valid representation in the source range is $(4,2\\pi/3,3)$.",
+        "verification": "Substitution gives $x=4\\cos(2\\pi/3)=-2$ and $y=4\\sin(2\\pi/3)=2\\sqrt3$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-cylindrical-cone-surface-statement",
+        "title": "The equality $|z|=r$ makes a double cone",
+        "text": "Since $r=\\sqrt{x^2+y^2}$, the cylindrical equation $|z|=r$ is equivalent to $z^2=x^2+y^2$. It is a double cone around the z-axis with slope one."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-cylindrical-cone-surface-worked",
+        "title": "Translate the cone surface equation",
+        "strategy": "Replace r by its Cartesian distance and square both nonnegative sides.",
+        "setup": "Describe the surface $|z|=r$ in Cartesian coordinates.",
+        "steps": [
+          {
+            "label": "Substitute the radial distance",
+            "text": "The radius in the xy-plane is nonnegative.",
+            "equation": "|z|=\\sqrt{x^2+y^2}"
+          },
+          {
+            "label": "Square both sides",
+            "text": "Both sides are nonnegative, so squaring preserves equivalence.",
+            "equation": "z^2=x^2+y^2"
+          }
+        ],
+        "result": "The surface is the two-napped circular cone with axis z and slope one.",
+        "verification": "For fixed |z|, the horizontal cross-section has radius |z|."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-cylindrical-cylinder-surface-statement",
+        "title": "A fixed positive radius traces a cylinder",
+        "text": "For $c>0$, $r=c$ means $\\sqrt{x^2+y^2}=c$, hence $x^2+y^2=c^2$. The z-coordinate is unrestricted, so the surface is a vertical cylinder of radius c."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-cylindrical-cylinder-surface-worked",
+        "title": "Convert a radius-two cylinder",
+        "strategy": "Replace r by its Cartesian expression and square the positive-radius equality.",
+        "setup": "Take the cylindrical level surface $r=2$.",
+        "steps": [
+          {
+            "label": "Convert the equation",
+            "text": "The fixed distance from the z-axis is two.",
+            "equation": "\\sqrt{x^2+y^2}=2\\iff x^2+y^2=4"
+          },
+          {
+            "label": "Read the free coordinate",
+            "text": "No condition restricts z, so each horizontal cross-section is the same circle.",
+            "equation": "z\\in\\mathbb R"
+          }
+        ],
+        "result": "The surface is a radius-two cylinder parallel to the z-axis.",
+        "verification": "Its distance from the axis is two at every height."
+      }
+    ],
+    "exercises": [
+      {
+        "kind": "computational",
+        "outcome": "Convert between Cartesian and cylindrical coordinates using the source’s azimuth convention and axis restriction.",
+        "prompt": "Convert $(1,-\\sqrt3,5)$ to cylindrical coordinates with $0\\leq\\theta<2\\pi$.",
+        "hint": "The point lies in quadrant IV and has planar radius two.",
+        "solution": "The coordinates are $(r,\\theta,z)=(2,5\\pi/3,5)$.",
+        "solutionTex": "(r,\\theta,z)=\\left(2,\\frac{5\\pi}{3},5\\right)",
+        "rubric": [
+          "Compute r from both planar coordinates.",
+          "Use the unique azimuth in the stated interval."
+        ],
+        "id": "lecture07-cylindrical-cartesian-conversion-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Translate the cylindrical surface $|z|=r$ into a double cone and identify its axis and slope.",
+        "prompt": "Write $|z|=2r$ in Cartesian coordinates and identify both nappes.",
+        "hint": "Substitute $r=\\sqrt{x^2+y^2}$ before squaring.",
+        "solution": "The surface is $z^2=4(x^2+y^2)$, a double cone about the z-axis.",
+        "solutionTex": "z^2=4(x^2+y^2)",
+        "rubric": [
+          "Substitute the cylindrical radius correctly.",
+          "Preserve both positive and negative z branches."
+        ],
+        "id": "lecture07-cylindrical-cone-surface-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Translate the cylindrical level surface $r=c$ for $c>0$ into a vertical cylinder of radius c.",
+        "prompt": "Describe the surface $r=3$ in Cartesian coordinates.",
+        "hint": "Square $r=\\sqrt{x^2+y^2}$ and leave z unrestricted.",
+        "solution": "The equation is $x^2+y^2=9$, a vertical cylinder of radius three.",
+        "solutionTex": "x^2+y^2=9,\\qquad z\\in\\mathbb R",
+        "rubric": [
+          "Square the radius equation.",
+          "State the z-axis direction and radius."
+        ],
+        "id": "lecture07-cylindrical-cylinder-surface-transfer"
+      }
+    ]
   },
   "cylindrical-integration": {
     "prerequisites": ["cylindrical-coordinates", "simple-solid-bounds"],
@@ -18087,7 +18779,131 @@
         "Multiply by one volume Jacobian."
       ],
       "solutionTex": "\\int_0^{2\\pi}\\int_0^1\\int_0^2r^3\\,dz\\,dr\\,d\\theta=\\pi"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture07-cylindrical-region-theorem-statement",
+        "title": "A polar projection adds the cylindrical factor r",
+        "text": "For continuous ordered radial bounds $h_1(\\theta)\\leq r\\leq h_2(\\theta)$ over an azimuth span at most $2\\pi$, continuous ordered z-bounds, and continuous f, the theorem integrates with $dV=r\\,dz\\,dr\\,d\\theta$. Full-revolution radial bounds must match at the seam."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-cylindrical-region-theorem-worked",
+        "title": "Integrate over a slanted cylindrical wedge",
+        "strategy": "Translate the height ceiling into cylindrical coordinates and multiply by the volume factor r.",
+        "setup": "Let $0\\leq\\theta\\leq\\pi/2$, $0\\leq r\\leq2$, and $0\\leq z\\leq1+r$; integrate density one.",
+        "steps": [
+          {
+            "label": "Write the region integral",
+            "text": "The base is polar and the vertical endpoints are continuous.",
+            "equation": "\\int_0^{\\pi/2}\\int_0^2\\int_0^{1+r}r\\,dz\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Evaluate the radial integral",
+            "text": "Integrate the height times r.",
+            "equation": "\\frac{\\pi}{2}\\int_0^2(1+r)r\\,dr=\\frac{7\\pi}{3}"
+          }
+        ],
+        "result": "The cylindrical wedge has volume seven pi thirds.",
+        "verification": "The factor r comes from the polar base area, not from the density one."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-cylinder-paraboloid-integral-statement",
+        "title": "Keep density r separate from the volume factor r",
+        "text": "In cylindrical coordinates the source solid has $0\\leq r\\leq1$, $0\\leq\\theta\\leq2\\pi$, and $1-r^2\\leq z\\leq4$. Its density $\\sqrt{x^2+y^2}$ becomes r, then $dV$ contributes another r."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-cylinder-paraboloid-integral-worked",
+        "title": "Evaluate the source cylinder-paraboloid integral",
+        "strategy": "Multiply the radial density by the cylindrical volume factor before integrating the height.",
+        "setup": "The source asks for $\\iiint_E\\sqrt{x^2+y^2}\\,dV$ on the cylinder, plane, and paraboloid-bounded solid on page 32.",
+        "steps": [
+          {
+            "label": "Set cylindrical bounds",
+            "text": "The lower surface is the upward-opening paraboloid and the upper surface is $z=4$.",
+            "equation": "\\int_0^{2\\pi}\\int_0^1\\int_{1-r^2}^{4}r^2\\,dz\\,dr\\,d\\theta"
+          },
+          {
+            "label": "Integrate",
+            "text": "The vertical height is $3+r^2$.",
+            "equation": "2\\pi\\int_0^1(3+r^2)r^2\\,dr=\\frac{12\\pi}{5}"
+          }
+        ],
+        "result": "The source’s posed integral evaluates to twelve pi fifths; the guide computes it independently because pages 33–34 are blank.",
+        "verification": "One radial factor is the density and the other is the coordinate-volume factor."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-iterated-integral-conversion-statement",
+        "title": "Convert every bound and the integrand together",
+        "text": "The source’s xy-bounds describe the disk $x^2+y^2\\leq4$, while the z-fiber runs from $\\sqrt{x^2+y^2}$ to 2. Convert these together to $0\\leq r\\leq2$, $r\\leq z\\leq2$, and density $r^2$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-iterated-integral-conversion-worked",
+        "title": "Rewrite the given Cartesian order in cylindrical form",
+        "strategy": "Read the circular projection first, then translate its radius, azimuth, height limits, density, and volume factor.",
+        "setup": "Convert the iterated integral on page 35, whose density is $x^2+y^2$.",
+        "steps": [
+          {
+            "label": "Translate the region",
+            "text": "The disk has radius two and the lower z-surface is the cone $z=r$.",
+            "equation": "0\\leq r\\leq2,\\qquad0\\leq\\theta\\leq2\\pi,\\qquad r\\leq z\\leq2"
+          },
+          {
+            "label": "Convert and integrate",
+            "text": "The density becomes $r^2$ and the Jacobian contributes $r$.",
+            "equation": "2\\pi\\int_0^2r^3(2-r)\\,dr=\\frac{16\\pi}{5}"
+          }
+        ],
+        "result": "The cylindrical conversion preserves the Cartesian region and gives sixteen pi fifths.",
+        "verification": "At $r=2$ the vertical interval collapses, matching the edge of the original disk."
+      }
+    ],
+    "exercises": [
+      {
+        "kind": "computational",
+        "outcome": "Apply the cylindrical-coordinate triple-integral theorem with a polar projection and the Jacobian factor r.",
+        "prompt": "Find the volume for $0\\leq\\theta\\leq\\pi$, $0\\leq r\\leq1+\\frac12\\cos\\theta$, and $0\\leq z\\leq1$.",
+        "hint": "Integrate z first, then include r when integrating radially.",
+        "solution": "The volume is $\\frac12\\int_0^\\pi(1+\\frac12\\cos\\theta)^2\\,d\\theta=\\frac{9\\pi}{16}$.",
+        "solutionTex": "\\frac12\\int_0^\\pi\\left(1+\\frac12\\cos\\theta\\right)^2d\\theta=\\frac{9\\pi}{16}",
+        "rubric": [
+          "Use the theta-dependent upper radius.",
+          "Include the radial volume factor."
+        ],
+        "id": "lecture07-cylindrical-region-theorem-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Evaluate the source’s radial-density integral inside a cylinder and above a paraboloid.",
+        "prompt": "Integrate density $\\sqrt{x^2+y^2}$ over $r\\leq2$ between $z=r^2$ and $z=r^2+\\frac{12}{5}$.",
+        "hint": "The vertical thickness is constant; the transformed integrand includes r from the density and r from dV.",
+        "solution": "The value is $2\\pi\\cdot\\frac{12}{5}\\int_0^2r^2\\,dr=\\frac{64\\pi}{5}$.",
+        "solutionTex": "2\\pi\\int_0^2\\int_{r^2}^{r^2+\\frac{12}{5}}r^2\\,dz\\,dr=\\frac{64\\pi}{5}",
+        "rubric": [
+          "Use both radial factors.",
+          "Integrate over the constant vertical thickness and full revolution."
+        ],
+        "id": "lecture07-cylinder-paraboloid-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Convert a Cartesian iterated integral over a circular projection into cylindrical bounds without changing its region.",
+        "prompt": "Evaluate $\\int_{-1}^1\\int_{-\\sqrt{1-x^2}}^{\\sqrt{1-x^2}}\\int_0^{11/5}(x^2+y^2)\\,dz\\,dy\\,dx$ by converting the disk to cylindrical coordinates.",
+        "hint": "The disk becomes $0\\leq r\\leq1$ and the density is $r^2$.",
+        "solution": "The density becomes $r^2$ and the volume factor contributes r, so the value is $\\frac{11\\pi}{10}$.",
+        "solutionTex": "\\int_0^{2\\pi}\\int_0^1\\int_0^{11/5}r^3\\,dz\\,dr\\,d\\theta=\\frac{11\\pi}{10}",
+        "rubric": [
+          "Identify the full circular projection.",
+          "Convert the density and include the area factor r."
+        ],
+        "id": "lecture07-iterated-integral-transfer"
+      }
+    ]
   },
   "spherical-coordinates": {
     "prerequisites": ["cylindrical-coordinates"],
@@ -18111,7 +18927,171 @@
         "Allow nonunique coordinates on the axis."
       ],
       "solutionTex": "\\rho=2,\\quad\\varphi=\\pi,\\quad\\theta\\text{ arbitrary}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-cartesian-conversion-statement",
+        "title": "Use inclination from the positive z-axis",
+        "text": "The source convention is $x=\\rho\\sin\\phi\\cos\\theta$, $y=\\rho\\sin\\phi\\sin\\theta$, and $z=\\rho\\cos\\phi$, with $\\rho\\geq0$, $0\\leq\\theta<2\\pi$, and $0\\leq\\phi\\leq\\pi$. The inverse azimuth is unique only off the z-axis."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-cartesian-conversion-worked",
+        "title": "Convert a point below the xy-plane",
+        "strategy": "Find the radius, use z/rho to get inclination, and use the planar signs to select azimuth.",
+        "setup": "Convert $P=(0,-3,-3\\sqrt3)$ under the lecture’s convention.",
+        "steps": [
+          {
+            "label": "Find rho and phi",
+            "text": "The total distance is six and the cosine of the inclination is negative.",
+            "equation": "\\rho=6,\\qquad\\cos\\phi=\\frac{-3\\sqrt3}{6}=-\\frac{\\sqrt3}{2},\\qquad\\phi=\\frac{5\\pi}{6}"
+          },
+          {
+            "label": "Find theta",
+            "text": "The planar projection lies on the negative y-axis.",
+            "equation": "\\theta=\\frac{3\\pi}{2}"
+          }
+        ],
+        "result": "One source-range representation is $(6,3\\pi/2,5\\pi/6)$.",
+        "verification": "Substitution returns $x=0$, $y=-3$, and $z=-3\\sqrt3$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-radius-level-surface-statement",
+        "title": "A fixed spherical radius is a centered sphere",
+        "text": "For $c>0$, the locus $\\rho=c$ is $x^2+y^2+z^2=c^2$, a sphere centered at the origin with radius c."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-radius-level-surface-worked",
+        "title": "Translate a radius-two spherical level",
+        "strategy": "Square rho’s distance definition and read the resulting level set.",
+        "setup": "Take the surface $\\rho=2$.",
+        "steps": [
+          {
+            "label": "Convert the equation",
+            "text": "The spherical radius is the Euclidean distance from the origin.",
+            "equation": "\\rho=2\\iff\\sqrt{x^2+y^2+z^2}=2\\iff x^2+y^2+z^2=4"
+          },
+          {
+            "label": "Identify the surface",
+            "text": "The constant is positive, so the level set is a sphere rather than the origin alone.",
+            "equation": "\\text{center }(0,0,0),\\qquad\\text{radius }2"
+          }
+        ],
+        "result": "The level surface is the ordinary sphere of radius two.",
+        "verification": "Every point on it has the same distance two from the origin."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-azimuth-level-surface-statement",
+        "title": "A fixed azimuth gives a half-plane, not a full plane",
+        "text": "For fixed $\\theta=c$, the azimuthal surface is the closed vertical half-plane in that direction, with the z-axis as boundary. Its off-axis points all have that azimuth."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-azimuth-level-surface-worked",
+        "title": "Describe the azimuth pi/6 surface",
+        "strategy": "Project onto the xy-plane, retain the ray rather than the full line, and allow every z-height.",
+        "setup": "Take $\\theta=\\pi/6$.",
+        "steps": [
+          {
+            "label": "Write the planar ray",
+            "text": "The direction has slope tan(pi/6), with positive x-coordinate away from the axis.",
+            "equation": "y=\\frac{x}{\\sqrt3},\\qquad x\\geq0"
+          },
+          {
+            "label": "Extend vertically",
+            "text": "The z-coordinate is unrestricted and the ray’s endpoint traces the axis.",
+            "equation": "z\\in\\mathbb R"
+          }
+        ],
+        "result": "This is one closed half-plane, not both opposite rays of a full plane.",
+        "verification": "The boundary $x=y=0$ is the z-axis."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-inclination-level-surface-statement",
+        "title": "A fixed inclination gives one conical nappe",
+        "text": "For $0<c<\\pi$, the locus $\\phi=c$ is a half-cone with vertex at the origin and axis z. At $c=\\pi/2$, the limiting coordinate surface is the plane $z=0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-inclination-level-surface-worked",
+        "title": "Describe the inclination pi/3 surface",
+        "strategy": "Use $z=\\rho\\cos\\phi$ and planar radius $r=\\rho\\sin\\phi$ to find the cone’s slope and branch.",
+        "setup": "Take $\\phi=\\pi/3$.",
+        "steps": [
+          {
+            "label": "Relate height and radius",
+            "text": "The fixed angle fixes the ratio of z to planar distance.",
+            "equation": "z=r\\cot\\left(\\frac{\\pi}{3}\\right)=\\frac{r}{\\sqrt3}"
+          },
+          {
+            "label": "Convert the nappe",
+            "text": "Squaring the radial coordinate yields a cone equation, but retain $z\\geq0$ for this angle.",
+            "equation": "x^2+y^2=3z^2,\\qquad z\\geq0"
+          }
+        ],
+        "result": "The surface is the upper half-cone with vertex at the origin.",
+        "verification": "The excluded lower nappe corresponds to inclination $2\\pi/3$."
+      }
+    ],
+    "exercises": [
+      {
+        "kind": "computational",
+        "outcome": "Convert between Cartesian and spherical coordinates using the stated angle convention.",
+        "prompt": "Convert $(1,\\sqrt3,2)$ to spherical coordinates with the source’s angle ranges.",
+        "hint": "Compute $\\rho$ first; the point lies in quadrant I and $z/\\rho=1/\\sqrt2$.",
+        "solution": "The coordinates are $(\\rho,\\theta,\\phi)=(2\\sqrt2,\\pi/3,\\pi/4)$.",
+        "solutionTex": "(\\rho,\\theta,\\phi)=\\left(2\\sqrt2,\\frac{\\pi}{3},\\frac{\\pi}{4}\\right)",
+        "rubric": [
+          "Use rho as distance from the origin.",
+          "Measure phi from the positive z-axis."
+        ],
+        "id": "lecture07-spherical-cartesian-conversion-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Translate the spherical level surface $\\rho=c$ for $c>0$ into a sphere centered at the origin.",
+        "prompt": "Describe the level surface $\\rho=2$ in Cartesian coordinates.",
+        "hint": "Square the distance equation and state the center and radius.",
+        "solution": "It is $x^2+y^2+z^2=4$, a sphere of radius two centered at the origin.",
+        "solutionTex": "x^2+y^2+z^2=4",
+        "rubric": [
+          "Use the Euclidean distance formula for rho.",
+          "Identify the center and positive radius."
+        ],
+        "id": "lecture07-spherical-radius-level-surface-transfer"
+      },
+      {
+        "kind": "conceptual",
+        "outcome": "Interpret a fixed spherical azimuth as a closed vertical half-plane whose boundary is the z-axis.",
+        "prompt": "Describe the surface $\\theta=\\pi/4$ and state whether points on the z-axis have a unique azimuth.",
+        "hint": "Use the ray at angle pi/4 in the xy-plane and extend it through every z-height.",
+        "solution": "It is the closed vertical half-plane $y=x$, $x\\geq0$, with z unrestricted. The axis points have no unique azimuth.",
+        "solutionTex": "y=x,\\qquad x\\geq0,\\qquad z\\in\\mathbb R",
+        "rubric": [
+          "Keep only the ray in the prescribed azimuth direction.",
+          "State the axis boundary and coordinate singularity."
+        ],
+        "id": "lecture07-spherical-azimuth-level-surface-transfer"
+      },
+      {
+        "kind": "conceptual",
+        "outcome": "Interpret a fixed spherical inclination $0<c<\\pi$ as a half-cone around the z-axis, with the equatorial plane as the $c=\\pi/2$ case.",
+        "prompt": "Describe $\\phi=2\\pi/3$ by a Cartesian equation and identify its z-sign.",
+        "hint": "Use $\\cot(2\\pi/3)=-1/\\sqrt3$.",
+        "solution": "The surface satisfies $x^2+y^2=3z^2$ with $z\\leq0$; it is the lower half-cone.",
+        "solutionTex": "x^2+y^2=3z^2,\\qquad z\\leq0",
+        "rubric": [
+          "Use inclination measured down from +z.",
+          "Retain the correct sign to select one nappe."
+        ],
+        "id": "lecture07-spherical-inclination-level-surface-transfer"
+      }
+    ]
   },
   "spherical-integration": {
     "prerequisites": ["spherical-coordinates", "triple-riemann-sums"],
@@ -18142,6 +19122,93 @@
         ],
         "result": "The exact volume is $\\pi/8$; replacing $\\cos\\varphi$ by a fixed sphere radius changes the region.",
         "verification": "At $\\varphi=0$ the radial ceiling is $1$; at $\\varphi=\\pi/4$ it is $1/\\sqrt2$. The sphere is centered at $(0,0,1/2)$ with radius $1/2$, so a constant radial ceiling about the origin cannot describe it."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-nice-wedge-theorem-statement",
+        "title": "A spherical wedge carries the factor rho squared sine phi",
+        "text": "For a closed wedge with $0\\leq a\\leq\\rho\\leq b$, an azimuth span at most $2\\pi$, and $\\gamma\\leq\\phi\\leq\\delta$ in $[0,\\pi]$, continuous f integrates with $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi$. The source names the Jacobian but defers its formal theorem."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-nice-wedge-theorem-worked",
+        "title": "Compute a half-ball wedge volume",
+        "strategy": "Use the constant spherical bounds and integrate the Jacobian in rho, theta, then phi.",
+        "setup": "Take $0\\leq\\rho\\leq1$, $0\\leq\\theta\\leq\\pi$, and $0\\leq\\phi\\leq\\pi/2$ with density one.",
+        "steps": [
+          {
+            "label": "Set the spherical integral",
+            "text": "The angular ranges describe a half-ball wedge.",
+            "equation": "\\int_0^{\\pi/2}\\int_0^\\pi\\int_0^1\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi"
+          },
+          {
+            "label": "Evaluate the factors",
+            "text": "The radial, azimuthal, and inclination factors are one third, pi, and one.",
+            "equation": "\\frac13\\cdot\\pi\\cdot1=\\frac{\\pi}{3}"
+          }
+        ],
+        "result": "The wedge volume is pi thirds.",
+        "verification": "It is half the upper half-ball volume for unit radius because the azimuth spans half a revolution."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-type-two-wedge-theorem-statement",
+        "title": "Variable spherical radii depend on both angles",
+        "text": "A Type II spherical wedge uses continuous nonnegative functions $g_1(\\theta,\\phi)\\leq\\rho\\leq g_2(\\theta,\\phi)$ over a rectangular angular domain. For a full $2\\pi$ azimuth span, both radial bounds must agree at the seam; the integral still carries $\\rho^2\\sin\\phi$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-type-two-wedge-theorem-worked",
+        "title": "Integrate a sphere shifted up the z-axis",
+        "strategy": "Translate the sphere inequality to a radial upper bound, then restrict to directions where that bound is nonnegative.",
+        "setup": "For $x^2+y^2+z^2\\leq2z$, the spherical relation gives $\\rho^2\\leq2\\rho\\cos\\phi$.",
+        "steps": [
+          {
+            "label": "Find the variable bound",
+            "text": "Away from the origin divide by rho and require cos(phi) nonnegative.",
+            "equation": "0\\leq\\rho\\leq2\\cos\\phi,\\qquad0\\leq\\phi\\leq\\frac{\\pi}{2}"
+          },
+          {
+            "label": "Compute the volume",
+            "text": "The region has a full azimuth and the Type II spherical factor.",
+            "equation": "\\int_0^{2\\pi}\\int_0^{\\pi/2}\\int_0^{2\\cos\\phi}\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta=\\frac{4\\pi}{3}"
+          }
+        ],
+        "result": "The radial function describes the unit sphere centered at $(0,0,1)$, whose volume is $4\\pi/3$.",
+        "verification": "Completing the square gives $x^2+y^2+(z-1)^2\\leq1$."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-spherical-unit-ball-exponential-integral-statement",
+        "title": "A radial density reduces on the unit ball",
+        "text": "On the unit ball, $\\rho^2=x^2+y^2+z^2$ and $\\rho\\geq0$, so the source density $\\exp((x^2+y^2+z^2)^{3/2})$ becomes $e^{\\rho^3}$. The spherical factor remains $\\rho^2\\sin\\phi$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "lecture07-spherical-unit-ball-exponential-integral-worked",
+        "title": "Evaluate the unit-ball exponential density",
+        "strategy": "Use the full spherical bounds and the substitution $u=\\rho^3$ in the radial integral.",
+        "setup": "The source asks for $\\iiint_B e^{(x^2+y^2+z^2)^{3/2}}\\,dV$ on the unit ball; its continuation page is blank.",
+        "steps": [
+          {
+            "label": "Convert the density and region",
+            "text": "The density is radial and the unit ball uses the full angular ranges.",
+            "equation": "\\int_0^{2\\pi}\\int_0^\\pi\\int_0^1e^{\\rho^3}\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta"
+          },
+          {
+            "label": "Integrate",
+            "text": "The angular factors give $4\\pi$ and $u=\\rho^3$ gives the radial factor.",
+            "equation": "4\\pi\\int_0^1e^{\\rho^3}\\rho^2\\,d\\rho=\\frac{4\\pi(e-1)}{3}"
+          }
+        ],
+        "result": "The source’s posed integral is four pi times e minus one, divided by three.",
+        "verification": "The integrand is positive and bounded on the compact unit ball."
+      },
+      {
+        "kind": "strategy",
+        "id": "lecture07-variable-radial-bounds-statement",
+        "title": "Intersect the cone and shifted sphere along radial rays",
+        "text": "The source problem asks for the solid above $z=\\sqrt{x^2+y^2}$ and below $x^2+y^2+z^2=z$. With the lecture convention, the cone gives $0\\leq\\phi\\leq\\pi/4$ and the sphere gives $0\\leq\\rho\\leq\\cos\\phi$."
       }
     ],
     "sections": [
@@ -18182,6 +19249,45 @@
           "Transform the density and include the volume factor once."
         ],
         "solutionTex": "\\int_0^{2\\pi}\\int_0^{\\pi/4}\\int_0^{2\\cos\\varphi}\\rho^3\\cos\\varphi\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta=\\frac{7\\pi}{6}"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Apply the spherical integral theorem for a nice wedge with constant radial and angular bounds and Jacobian $\\rho^2\\sin\\phi$.",
+        "prompt": "Find the volume of the upper hemisphere $\\rho\\leq\\frac32$.",
+        "hint": "Use $0\\leq\\theta\\leq2\\pi$ and $0\\leq\\phi\\leq\\pi/2$.",
+        "solution": "The radial integral is $(3/2)^3/3=9/8$; multiplying by $2\\pi$ and the phi factor one gives $\\frac{9\\pi}{4}$.",
+        "solutionTex": "\\int_0^{\\pi/2}\\int_0^{2\\pi}\\int_0^{3/2}\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi=\\frac{9\\pi}{4}",
+        "rubric": [
+          "Use the correct upper-hemisphere angle interval.",
+          "Integrate rho squared and sine phi separately."
+        ],
+        "id": "lecture07-nice-wedge-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Apply the Type II spherical-wedge theorem when continuous radial bounds depend on azimuth and inclination.",
+        "prompt": "Find $\\iiint_E\\rho\\,dV$ for $E=\\{x^2+y^2+z^2\\leq2z\\}$.",
+        "hint": "Use $0\\leq\\rho\\leq2\\cos\\phi$ and integrate the density rho times the spherical volume factor.",
+        "solution": "The value is $2\\pi\\int_0^{\\pi/2}\\int_0^{2\\cos\\phi}\\rho^3\\sin\\phi\\,d\\rho\\,d\\phi=\\frac{8\\pi}{5}$.",
+        "solutionTex": "2\\pi\\int_0^{\\pi/2}\\frac{(2\\cos\\phi)^4}{4}\\sin\\phi\\,d\\phi=\\frac{8\\pi}{5}",
+        "rubric": [
+          "Use the variable radial upper bound.",
+          "Multiply rho by the Jacobian rho squared sine phi."
+        ],
+        "id": "lecture07-type-two-wedge-transfer"
+      },
+      {
+        "kind": "computational",
+        "outcome": "Convert the source’s radial exponential density on the unit ball and evaluate the spherical integral.",
+        "prompt": "Evaluate $\\iiint_B(1+\\rho^2)\\,dV$ over the unit ball.",
+        "hint": "Use $\\rho\\in[0,1]$ and the factor $\\rho^2\\sin\\phi$.",
+        "solution": "The radial integral is $\\int_0^1(\\rho^2+\\rho^4)\\,d\\rho=\\frac13+\\frac15=\\frac8{15}$; the angular factor is $4\\pi$, giving $\\frac{32\\pi}{15}$.",
+        "solutionTex": "4\\pi\\int_0^1(1+\\rho^2)\\rho^2\\,d\\rho=\\frac{32\\pi}{15}",
+        "rubric": [
+          "Include the spherical volume factor.",
+          "Integrate both radial powers over the unit ball."
+        ],
+        "id": "lecture07-unit-ball-exponential-integral-transfer"
       }
     ]
   },
