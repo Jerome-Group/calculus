@@ -6254,17 +6254,33 @@
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.sections[Four different failures]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[one-sided-limit-criterion]",
+            "claim": "The theorem states the finite two-sided criterion and its approach-domain conditions.",
+            "method": "Direct semantic reading against Lecture 02 physical page 40."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[one-sided-hole-example]",
+            "claim": "Both sides tend to 2 while the point value is absent.",
+            "method": "Checked the algebraic cancellation and both one-sided limits."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.contentBlocks[one-sided-jump-example]",
+            "claim": "Left limit 1 and right limit 0 block the two-sided claim.",
+            "method": "Checked each branch limit and the two sequence witnesses."
+          }
+        ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#limits-one-sided.exercise",
             "claim": "The exercise prompt and solution require applying the atomic outcome.",
             "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#limits-one-sided.exercises[oscillating-right-side]",
+            "claim": "The transfer task requires showing the right-hand limit fails, then denying a two-sided limit.",
+            "method": "Checked the two positive sequences and distinct sine outputs against the prompt and solution; learner performance unverified."
           }
         ],
         "visualized": [],
@@ -6276,7 +6292,7 @@
       },
       "depth": "partial_source_and_guide_inspection",
       "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "gap": "The theorem, two worked contrasts and two practice tasks cover this atomic criterion. Local rendered text and WebMCP exposure were checked; scene alignment, independent learner performance and remaining Lecture 02 subskills still need review.",
       "source_section_id": "MH1100_Lecture_02:02",
       "candidate_blocks": {
         "named": [
@@ -6296,8 +6312,8 @@
         "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
         "named": "match",
         "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
+        "worked": "two algebraically checked examples now distinguish equal and unequal one-sided limits",
+        "practiced": "removable-hole and oscillatory-side tasks require distinct applications; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
         "checked": "No independent outcome-level validation or learner performance check."
       }

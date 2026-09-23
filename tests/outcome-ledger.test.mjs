@@ -132,16 +132,37 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
           continue;
         }
         const guide = locator.match(
-          /^lib\/curriculum\/learning-guides\.json#(.+)\.(sections\[(.+)\]|exercise)$/,
+          /^lib\/curriculum\/learning-guides\.json#([^.]+)\.(sections|contentBlocks|exercises|exercise)(?:\[([^\]]+)\])?$/,
         );
         assert.ok(guide, locator);
         const lesson = guides[guide[1]];
         assert.ok(lesson, locator);
-        if (guide[3]) {
+        if (guide[2] === "sections") {
           assert.ok(
             lesson.sections.some((section) => section.title === guide[3]),
             locator,
           );
+        } else if (guide[2] === "contentBlocks") {
+          const block = lesson.contentBlocks?.find(
+            (item) => item.id === guide[3],
+          );
+          assert.ok(block, locator);
+          assert.equal(
+            state,
+            block.kind === "worked-example" ? "worked" : "stated",
+            locator,
+          );
+        } else if (guide[2] === "exercises") {
+          assert.ok(
+            lesson.exercises?.some(
+              (exercise) =>
+                exercise.id === guide[3] &&
+                exercise.prompt &&
+                exercise.solution,
+            ),
+            locator,
+          );
+          assert.equal(state, "practiced", locator);
         } else {
           assert.ok(
             lesson.exercise?.prompt && lesson.exercise?.solution,
