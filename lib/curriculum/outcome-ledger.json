@@ -2644,7 +2644,7 @@
         "differentiability-corners"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'higher derivatives' at 2–27; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Second-derivative calculation from the first derivative is mapped on pages 24–25. Motion interpretation, third and later derivatives, visual fit, and learner performance remain separate gaps.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -2655,8 +2655,10 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "differentiability-corners:second-derivative-definition"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1100_Lecture_07:01",
@@ -7090,6 +7092,86 @@
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
         "checked": "No independent outcome-level validation or learner performance check."
+      }
+    },
+    {
+      "id": "differentiability-corners:second-derivative-definition",
+      "concept_id": "differentiability-corners",
+      "outcome": "Compute a second derivative by taking the difference-quotient limit of the first derivative.",
+      "core_source": {
+        "id": "MH1100_Lecture_06",
+        "physical_page": 24,
+        "inspection": "Visually inspected physical pages 24–25 of the local canonical PDF; SHA-256 matches the source manifest.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [24, 25],
+          "method": "Rendered source pages and compared the definition, Example 6, and its solution with the guide.",
+          "claim_observed": "Page 24 defines the second derivative as the derivative of the first; page 25 applies a new difference quotient to f' for f(x)=x³−x and obtains f''(x)=6x."
+        },
+        "page_heading": "Higher derivatives; Example 6–Solution"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.sections[A second derivative requires a new limit]",
+            "claim": "The section states the second-derivative limit and its existence condition.",
+            "method": "Compared the section with the definition on page 24."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[second-derivative-from-definition]",
+            "claim": "The worked block derives f' and then f'' from separate difference quotients for the source example.",
+            "method": "Compared every algebraic step with Example 6 on page 25."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[second-derivative-definition-transfer]",
+            "claim": "The independent task requires the first derivative and the new quotient before its limit.",
+            "method": "Checked the prompt, hint, and solution against the exact outcome; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-secant",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide algebra inspected. No second-derivative visual or independent learner performance check is verified; other higher-derivative skills remain unmapped.",
+      "source_section_id": "MH1100_Lecture_06:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.sections[A second derivative requires a new limit]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.contentBlocks[second-derivative-from-definition]",
+            "basis": "source example and current guide inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#differentiability-corners.exercises[second-derivative-definition-transfer]",
+            "basis": "current task and solution inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered PDF pages 24–25 with the guide statement, worked steps, and independent exercise solution.",
+        "named": "No dedicated catalog title for this atomic skill; named evidence not claimed.",
+        "stated": "match",
+        "worked": "source example reproduced with both quotients",
+        "practiced": "task directly applies outcome; learner performance unverified",
+        "visualized": "No second-derivative visual verified.",
+        "checked": "No independent learner performance check."
       }
     },
     {
