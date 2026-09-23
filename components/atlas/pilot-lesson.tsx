@@ -77,7 +77,9 @@ export function PilotLessonView({
         <h3>Common errors</h3>
         <ul>
           {lesson.revise.errors.map((error) => (
-            <li key={error}>{error}</li>
+            <li key={error}>
+              <MathText text={error} />
+            </li>
           ))}
         </ul>
         <h3>Mixed check</h3>
@@ -158,7 +160,9 @@ export function PilotLessonView({
         <span>Builds on</span>
         {guide.prerequisites.map((id) => (
           <button key={id} onClick={() => study.open(id)}>
-            {concepts.find((item) => item.id === id)?.title}
+            <MathText
+              text={concepts.find((item) => item.id === id)?.title ?? ""}
+            />
           </button>
         ))}
       </nav>

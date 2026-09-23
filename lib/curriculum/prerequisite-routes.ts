@@ -7,12 +7,12 @@ export const forwardBridges: Record<
   "chain-rule-single": {
     prerequisite: "linearization-differentials",
     explanation:
-      "The chain-rule remainder uses the idea that a differentiable function is locally linear: f(a+h)=f(a)+f'(a)h+an error small relative to h. Use this approximation here; the later linearization lesson develops it in detail.",
+      "The chain-rule remainder uses the idea that a differentiable function is locally linear: $f(a+h)=f(a)+f'(a)h+o(h)$, where $o(h)$ is an error small relative to $h$. Use this approximation here; the later linearization lesson develops it in detail.",
   },
   "riemann-integral": {
     prerequisite: "sequence-limits",
     explanation:
-      "As partitions get finer, the Riemann sums form a sequence. Convergence means all sufficiently fine sums approach one value. This is the needed bridge; the later sequence lesson gives the formal epsilon-N language.",
+      "As partitions get finer, the Riemann sums form a sequence. Convergence means all sufficiently fine sums approach one value. This is the needed bridge; the later sequence lesson gives the formal $\\varepsilon$–$N$ language.",
   },
 };
 

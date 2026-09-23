@@ -30,9 +30,9 @@ export const integrationSteps: IntegrationStep[] = [
     id: "general-double-integrals",
     title: "3. General region by zero extension",
     hypothesis:
-      "The bounded function is defined on a bounded region D contained in a rectangle R.",
+      "The bounded function is defined on a bounded region $D$ contained in a rectangle $R$.",
     conclusion:
-      "Set the function to zero on R outside D. Define its integral over D only when that extension is Riemann integrable. Zero padding proves independence of the containing rectangle.",
+      "Set the function to zero on $R$ outside $D$. Define its integral over $D$ only when that extension is Riemann integrable. Zero padding proves independence of the containing rectangle.",
     boundary: "The definition alone does not guarantee existence.",
   },
   {
@@ -51,7 +51,7 @@ export const integrationSteps: IntegrationStep[] = [
     hypothesis:
       "Continuous ordered boundary functions on closed intervals and a continuous integrand on the resulting compact region.",
     conclusion:
-      "The region-specific slicing theorem gives inner bounds from the vertical or horizontal sections. If both descriptions cover the same D, both iterated expressions equal the integral over D.",
+      "The region-specific slicing theorem gives inner bounds from the vertical or horizontal sections. If both descriptions cover the same $D$, both iterated expressions equal the integral over $D$.",
     boundary:
       "A vertical or horizontal slice with two disjoint intervals needs a split; the continuous-rectangle theorem alone is insufficient.",
   },
@@ -63,9 +63,9 @@ export const integrationSteps: IntegrationStep[] = [
     conclusion:
       "Add the piece integrals. To reverse order, derive new section inequalities for the same region and check the applicable slice hypotheses.",
     boundary:
-      "Swapping dx and dy while leaving the old bounds unchanged generally changes the region.",
+      "Swapping $dx$ and $dy$ while leaving the old bounds unchanged generally changes the region.",
   },
 ];
 
 export const integrationFailure =
-  "Failure example: let D be the rational-coordinate points in [0,1]² and f=1 on D. Its zero extension is the Dirichlet indicator, discontinuous at every point of the square. It has no Riemann integral, so the general-region double integral does not exist in this framework. A plotted sample cannot prove otherwise.";
+  "Failure example: let $D$ be the rational-coordinate points in $[0,1]^2$ and $f=1$ on $D$. Its zero extension is the Dirichlet indicator, discontinuous at every point of the square. It has no Riemann integral, so the general-region double integral does not exist in this framework. A plotted sample cannot prove otherwise.";

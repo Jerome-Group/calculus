@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { concepts, courses, courseIds, type CourseId } from "@/lib/curriculum";
 import { matchesConcept } from "@/lib/curriculum/search";
 import { StudyProgress } from "./study-progress";
-import { Formula } from "./math-text";
+import { Formula, MathText } from "./math-text";
 export function CourseLibrary({
   course,
   query,
@@ -88,7 +88,9 @@ export function CourseLibrary({
                 <div className="unit-concepts">
                   {cs.map((c) => (
                     <button key={c.id} onClick={() => open(c.id)}>
-                      <span>{c.title}</span>
+                      <span>
+                        <MathText text={c.title} />
+                      </span>
                       <ArrowRight size={15} />
                     </button>
                   ))}

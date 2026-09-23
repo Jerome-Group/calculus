@@ -16,21 +16,23 @@ export function ReviewExampleIdentities() {
       {examples.map((example) => (
         <article key={example.id} data-example-id={example.id}>
           <h4>
-            {example.title} · {example.status}
+            <MathText text={example.title} /> · {example.status}
           </h4>
           <div style={{ overflowX: "auto" }}>
             <Formula block>{example.formula}</Formula>
           </div>
           <p>
-            {example.domain} {example.orientation}
+            <MathText text={`${example.domain} ${example.orientation}`} />
           </p>
           <p>
             <MathText text={example.annotation} />
           </p>
           <p>
-            {example.graph.kind === "none"
-              ? example.graph.reason
-              : "Exact graph preset available."}
+            {example.graph.kind === "none" ? (
+              <MathText text={example.graph.reason} />
+            ) : (
+              "Exact graph preset available."
+            )}
           </p>
         </article>
       ))}

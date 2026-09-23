@@ -38,6 +38,6 @@ export function capDecision({
       ? "The cap has an exposed circular edge. Add the disk before applying the divergence theorem."
       : !outward
         ? "The closed boundary points inward. Reverse the flux sign to compare with the divergence integral."
-        : "The field is C¹ throughout the solid; the boundary is closed, piecewise smooth, and outward oriented.",
+        : "The field is $C^1$ throughout the solid; the boundary is closed, piecewise smooth, and outward oriented.",
   };
 }

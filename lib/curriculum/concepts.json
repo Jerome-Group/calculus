@@ -546,12 +546,12 @@
       {
         "sourceId": "MH1100_Lecture_04",
         "pages": [7, 7],
-        "detail": "Use the ϵ-δ technique to prove lim x = a"
+        "detail": "Use the $\\varepsilon$–$\\delta$ technique to prove $\\lim_{x\\to a}x=a$"
       },
       {
         "sourceId": "MH1100_Lecture_04",
         "pages": [12, 12],
-        "detail": "Use the ϵ-δ technique to show that the limit does not exisit"
+        "detail": "Use the $\\varepsilon$–$\\delta$ technique to show that $\\lim_{x\\to0}f(x)$ does not exist"
       },
       {
         "sourceId": "MH1100_Lecture_04",
@@ -707,7 +707,7 @@
       {
         "sourceId": "MH1100_Lecture_05",
         "pages": [28, 28],
-        "detail": "Theorem 9, F is continuous on its domain, which is"
+        "detail": "Theorem 9, $F$ is continuous on its domain, which is"
       },
       {
         "sourceId": "MH1100_Lecture_05",
@@ -1216,10 +1216,10 @@
     "scene": "plane-extrema",
     "formula": "f\\prime>0\\Rightarrow\\text{increasing},\\qquad f\\prime\\prime>0\\Rightarrow\\text{concave up}",
     "definition": "The first derivative describes rise and fall. A sign change from positive to negative gives a local maximum; negative to positive gives a local minimum. The second derivative describes how the slope changes. An inflection point is where concavity changes.",
-    "conditions": "For the first-derivative test, f must be continuous on an interval containing c and differentiable on either side of c. If f′ is positive just left of c and negative just right, f(c) is a local maximum; reversing the signs gives a local minimum. These are sufficient conditions, not necessary ones. For the second-derivative test, a sufficient assumption is that f is twice continuously differentiable near c and f′(c)=0. A positive f″(c) gives a strict local minimum; a negative value gives a strict local maximum; zero is inconclusive.",
+    "conditions": "For the first-derivative test, $f$ must be continuous on an interval containing $c$ and differentiable on either side of $c$. If $f'$ is positive just left of $c$ and negative just right, $f(c)$ is a local maximum; reversing the signs gives a local minimum. These are sufficient conditions, not necessary ones. For the second-derivative test, a sufficient assumption is that $f$ is twice continuously differentiable near $c$ and $f'(c)=0$. A positive $f''(c)$ gives a strict local minimum; a negative value gives a strict local maximum; zero is inconclusive.",
     "proof": "The mean value theorem turns a positive derivative on an interval into positive differences of function values. Applying the same idea to $f\\prime$ explains concavity.",
     "example": "For $f=x^3-3x$, $f\\prime=3x^2-3$ gives a local maximum at $-1$ and local minimum at $1$. Since $f\\prime\\prime=6x$, concavity changes at zero.",
-    "pitfall": "$f\\prime\\prime(c)=0$ makes the second derivative test inconclusive. It does not automatically prove an inflection point. Continuity at the candidate is essential: set f(x)=−|x| for x≠0 and f(0)=−1. The derivative changes from positive to negative, but 0 is a strict local minimum because nearby values exceed −1.",
+    "pitfall": "$f\\prime\\prime(c)=0$ makes the second derivative test inconclusive. It does not automatically prove an inflection point. Continuity at the candidate is essential: set $f(x)=-|x|$ for $x\\ne0$ and $f(0)=-1$. The derivative changes from positive to negative, but $0$ is a strict local minimum because nearby values exceed $-1$.",
     "task": "Locate the stationary points and the separate concavity-change point.",
     "insight": "Slope and changing slope answer different questions about shape.",
     "topics": [
@@ -1233,7 +1233,7 @@
       {
         "sourceId": "MH1100_Lecture_10",
         "pages": [4, 4],
-        "detail": "What Does f 0 Say About f"
+        "detail": "What Does $f\\prime$ Say About $f$"
       },
       {
         "sourceId": "MH1100_Lecture_10",
@@ -1243,7 +1243,7 @@
       {
         "sourceId": "MH1100_Lecture_10",
         "pages": [12, 12],
-        "detail": "What Does f 00 Say About f ?"
+        "detail": "What Does $f\\prime\\prime$ Say About $f$?"
       },
       {
         "sourceId": "MH1100_Lecture_10",
@@ -1508,7 +1508,7 @@
     "topics": [
       "exponential",
       "natural logarithm",
-      "log laws",
+      "$\\log$ laws",
       "logarithmic differentiation",
       "variable powers"
     ],
@@ -1617,7 +1617,7 @@
       {
         "sourceId": "MH1101_Chapter_01_Notes",
         "pages": [3, 3],
-        "detail": "Theorem 1. All antiderivatives of f differ by a constant. That is, if F is an"
+        "detail": "Theorem 1. All antiderivatives of $f$ differ by a constant. That is, if $F$ is an"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_03_Differentiation_Applications",
@@ -1788,7 +1788,7 @@
     "topics": [
       "type 1 improper integral",
       "type 2 improper integral",
-      "p integral",
+      "$p$ integral",
       "singularities"
     ],
     "sources": [
@@ -2366,7 +2366,7 @@
       {
         "sourceId": "MH1101_Chapter_04_Notes",
         "pages": [30, 30],
-        "detail": "Theorem 7. If the series n=1 an is convergent, then limn→∞ an = 0.; Theorem 8. (The nth Term Test for Divergence)"
+        "detail": "Theorem 7. If the series $\\sum_{n=1}^{\\infty}a_n$ is convergent, then $\\lim_{n\\to\\infty}a_n=0$; Theorem 8. (The $n$th Term Test for Divergence)"
       },
       {
         "sourceId": "MH1101_Chapter_04_Notes",
@@ -2396,7 +2396,7 @@
     "pitfall": "The sum need not equal the integral. Positivity and eventual decrease are essential to this comparison.",
     "task": "Increase the cutoff and compare the remaining reciprocal-square tail bounds.",
     "insight": "Discrete rectangles and continuous area control one another.",
-    "topics": ["integral test", "p series", "remainder bounds"],
+    "topics": ["integral test", "$p$ series", "remainder bounds"],
     "sources": [
       {
         "sourceId": "MH1101_Chapter_05_Notes",
@@ -2411,7 +2411,7 @@
       {
         "sourceId": "MH1101_Chapter_05_Notes",
         "pages": [4, 4],
-        "detail": "Theorem 2. (p-series)"
+        "detail": "Theorem 2. ($p$-series)"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
@@ -2573,12 +2573,12 @@
       {
         "sourceId": "MH1101_Chapter_06_Notes",
         "pages": [2, 2],
-        "detail": "Definition 1. (Power Series); Definition 2. (Power series at x = a)"
+        "detail": "Definition 1. (Power Series); Definition 2. (Power series at $x=a$)"
       },
       {
         "sourceId": "MH1101_Chapter_06_Notes",
         "pages": [4, 4],
-        "detail": "Theorem 1. For any given power series cn (x − a)n , there are only three"
+        "detail": "Theorem 1. For any given power series $\\sum_{n=0}^{\\infty}c_n(x-a)^n$, there are only three"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_11_Sequence_Series_Power",
@@ -2704,7 +2704,7 @@
       {
         "sourceId": "MH1101_Chapter_06_Notes",
         "pages": [23, 23],
-        "detail": "6.4       The Binomial Series | Theorem? To answer this question, we first look at the Maclaurin series for (1 + x)k ,"
+        "detail": "6.4 The Binomial Series | To answer this question, we first look at the Maclaurin series for $(1+x)^k$"
       },
       {
         "sourceId": "MH1101_Chapter_06_Notes",
@@ -3132,7 +3132,7 @@
   {
     "id": "epsilon-delta-limits",
     "lecture": 2,
-    "title": "The ε–δ limit",
+    "title": "The $\\varepsilon$–$\\delta$ limit",
     "subtitle": "One radius must control every nearby input.",
     "scene": "epsilon",
     "formula": "\\begin{gathered}\\forall\\varepsilon>0\\ \\exists\\delta>0\\ \\forall\\mathbf x\\in D:\\\\0<\\|\\mathbf x-\\mathbf p\\|<\\delta\\Rightarrow\\|f(\\mathbf x)-L\\|<\\varepsilon\\end{gathered}",
@@ -3167,7 +3167,7 @@
       {
         "sourceId": "MH2100_Lecture_02",
         "pages": [6, 6],
-        "detail": "Definition (the \u000f-δ Definition of Real-Valued Limits)"
+        "detail": "Definition (the $\\varepsilon$–$\\delta$ Definition of Real-Valued Limits)"
       },
       {
         "sourceId": "MH2100_Lecture_02",
@@ -3360,7 +3360,7 @@
       {
         "sourceId": "MH2100_Lecture_02",
         "pages": [22, 22],
-        "detail": "Definition (the \u000f-δ Definition of Vector-Valued Limits)"
+        "detail": "Definition (the $\\varepsilon$–$\\delta$ Definition of Vector-Valued Limits)"
       },
       {
         "sourceId": "MH2100_Lecture_02",
@@ -3375,7 +3375,7 @@
       {
         "sourceId": "MH2100_Lecture_02",
         "pages": [25, 25],
-        "detail": "Definition (the \u000f-δ Definition of Real-Valued Continuity)"
+        "detail": "Definition (the $\\varepsilon$–$\\delta$ Definition of Real-Valued Continuity)"
       },
       {
         "sourceId": "MH2100_Lecture_02",
@@ -3415,7 +3415,7 @@
       {
         "sourceId": "MH2100_Lecture_02",
         "pages": [33, 33],
-        "detail": "Definition (the \u000f-δ Definition of Vector-Valued Continuity)"
+        "detail": "Definition (the $\\varepsilon$–$\\delta$ Definition of Vector-Valued Continuity)"
       },
       {
         "sourceId": "MH2100_Lecture_02",
@@ -3467,7 +3467,7 @@
       {
         "sourceId": "MH2100_Lecture_02",
         "pages": [37, 37],
-        "detail": "Definition (the \u000f-N Definition of Vector-Valued Limits at ∞)"
+        "detail": "Definition (the $\\varepsilon$–$N$ Definition of Vector-Valued Limits at $\\infty$)"
       },
       {
         "sourceId": "MH2100_Lecture_02",
@@ -3841,7 +3841,7 @@
     "proof": "Writing $g(p+h)=g(p)+Ah+o(\\|h\\|)$ and $f(q+k)=f(q)+Bk+o(\\|k\\|)$ gives $f(g(p+h))=f(g(p))+BAh+o(\\|h\\|)$. Coordinate multiplication of the two derivative matrices gives $\\partial_i(f\\circ g)=\\sum_j(\\partial_j f)\\,\\partial_i g_j$.",
     "example": "For the displayed path $\\mathbf r(t)=(t,t^2)$ on $f(x,y)=x^2+y^2$, the lifted height is $t^2+t^4$. The chain rule gives $(2t,2t^2)\\cdot(1,2t)=2t+4t^3$. The constant-height circle is available as a comparison; its two contributions cancel. For $g(u,v)=(u+v,u-v)$, $f\\circ g=2u^2+2v^2$ has derivatives $4u,4v$.",
     "pitfall": "Evaluate the outer partials at the intermediate point $g(p)$. Having outer partials alone does not satisfy the chain-rule hypotheses.",
-    "task": "Predict the sign of the output derivative before moving t. Compare the two partial contributions on the nonconstant path, then switch to the circle and explain the cancellation.",
+    "task": "Predict the sign of the output derivative before moving $t$. Compare the two partial contributions on the nonconstant path, then switch to the circle and explain the cancellation.",
     "insight": "The matrix product is the rigorous form of the dependency-tree mnemonic; it also handles longer composition chains.",
     "topics": [
       "single-variable chain rule",
@@ -3863,42 +3863,42 @@
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [28, 28],
-        "detail": "Theorem (the Multivariable Chain Rule (the (2, 1) Version))"
+        "detail": "Theorem (the Multivariable Chain Rule (the $(2,1)$ Version))"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [29, 29],
-        "detail": "The Multivariable Chain Rule (the (2, 1) Version) — Example 1"
+        "detail": "The Multivariable Chain Rule (the $(2,1)$ Version) — Example 1"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [30, 30],
-        "detail": "Theorem (the Multivariable Chain Rule (the (2, 2) Version))"
+        "detail": "Theorem (the Multivariable Chain Rule (the $(2,2)$ Version))"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [31, 31],
-        "detail": "The Multivariable Chain Rule (the (2, 2) Version) — a Mnemonic"
+        "detail": "The Multivariable Chain Rule (the $(2,2)$ Version) — a Mnemonic"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [33, 33],
-        "detail": "Theorem (the Multivariable Chain Rule (the (m, n) Version))"
+        "detail": "Theorem (the Multivariable Chain Rule (the $(m,n)$ Version))"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [34, 34],
-        "detail": "The Multivariable Chain Rule (the (m, n) Version) — Example 1"
+        "detail": "The Multivariable Chain Rule (the $(m,n)$ Version) — Example 1"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [35, 35],
-        "detail": "The Multivariable Chain Rule (the (m, n) Version) — Example 1 (cont’d)"
+        "detail": "The Multivariable Chain Rule (the $(m,n)$ Version) — Example 1 (cont’d)"
       },
       {
         "sourceId": "MH2100_Lecture_03",
         "pages": [36, 36],
-        "detail": "The Multivariable Chain Rule (the (m, n) Version) — Example 2"
+        "detail": "The Multivariable Chain Rule (the $(m,n)$ Version) — Example 2"
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_14_Partial_Derivatives",
@@ -4300,7 +4300,7 @@
       "definite and indefinite quadratic forms",
       "degenerate critical points",
       "inconclusive test",
-      "sin(xy) critical hyperbolas"
+      "$\\sin(xy)$ critical hyperbolas"
     ],
     "course": "MH2100",
     "sources": [
@@ -4934,7 +4934,7 @@
     "conditions": "Assume continuous functions $0\\le h_1\\le h_2$ and a continuous integrand on the compact image. Keep the angle span at most $2\\pi$. For a full revolution the course assumes the radial boundaries match at its ends. More complicated regions can be split into finitely many suitable pieces.",
     "proof": "The parameter domain is a Type II planar region in coordinates $(r,\\theta)$. Apply the polar area factor $r$, then integrate over its radial intervals. For $f=1$, integrating in $r$ gives the area formula $\\frac12\\int_\\alpha^\\beta(h_2^2-h_1^2)\\,d\\theta$.",
     "example": "The displayed disk is $(x-1)^2+y^2\\le1$. Substitution gives $r^2-2r\\cos\\theta\\le0$. Off the origin, the bounds are $-\\pi/2\\le\\theta\\le\\pi/2$ and $0<r\\le2\\cos\\theta$. Include $r=0$ separately. Its area is $\\int_{-\\pi/2}^{\\pi/2}2\\cos^2\\theta\\,d\\theta=\\pi$.",
-    "pitfall": "The current scene displays the shifted disk and its variable radial interval. Do not replace the bound 2 cos θ with a constant radius. When dividing $r^2\\le2r\\cos\\theta$ by $r$, handle $r=0$ separately and require a nonnegative upper radial bound.",
+    "pitfall": "The current scene displays the shifted disk and its variable radial interval. Do not replace the bound $2\\cos\\theta$ with a constant radius. When dividing $r^2\\le2r\\cos\\theta$ by $r$, handle $r=0$ separately and require a nonnegative upper radial bound.",
     "task": "Predict where the radial interval is longest, then sweep the ray across the disk. Derive its upper bound and explain why the endpoint angles leave only the origin.",
     "insight": "Choose coordinates that make intersections with coordinate lines simple; the resulting bounds become a readable description of the geometry.",
     "topics": [
@@ -5853,7 +5853,7 @@
     "id": "coordinate-line-integrals",
     "lecture": 9,
     "title": "Three differentials, one path",
-    "subtitle": "Understand what dx, dy and dz actually measure.",
+    "subtitle": "Understand what $dx$, $dy$ and $dz$ actually measure.",
     "scene": "lineintegral",
     "formula": "\\begin{gathered}\\int_C(P\\,dx+Q\\,dy+R\\,dz)\\\\=\\int_a^b F(r(t))\\cdot r^{\\prime}(t)\\,dt\\end{gathered}",
     "definition": "The coordinate integral $\\int_C f\\,dx$ sums $f$ times signed displacement in the $x$ coordinate. For $\\mathbf r=(X,Y,Z)$, it is $\\int_a^b f(\\mathbf r(t))X^{\\prime}(t)\\,dt$; replace $X^{\\prime}$ by $Y^{\\prime}$ or $Z^{\\prime}$ for $dy$ or $dz$. In these lectures, “first, second and third kinds” specifically refer to $dx,dy,dz$. Their sum with components $P,Q,R$ equals the vector line integral.",
@@ -5865,9 +5865,9 @@
     "insight": "The arrows show local direction; the dot product determines the signed contribution. The integral formula, rather than the appearance of the arrows, establishes its value.",
     "topics": [
       "coordinate line integrals",
-      "first kind dx",
-      "second kind dy",
-      "third kind dz",
+      "first kind $dx$",
+      "second kind $dy$",
+      "third kind $dz$",
       "scalar versus vector integrals",
       "orientation"
     ],
@@ -6745,7 +6745,7 @@
       {
         "sourceId": "MH2100_Lecture_11",
         "pages": [15, 15],
-        "detail": "Definition (Divergence of an n-Dimensional Vector Field)"
+        "detail": "Definition (Divergence of an $n$-Dimensional Vector Field)"
       },
       {
         "sourceId": "MH2100_Lecture_11",
@@ -6915,7 +6915,7 @@
     "definition": "The displayed paraboloid is a transfer model for Stokes’ Theorem, not a rendering of each exam-review geometry. The review sheet asks two Stokes problems, one Green problem and one conservative line integral. Their common first step is to identify the domain, the actual orientation and the correct differential expression.",
     "conditions": "For each theorem check the conditions in its lecture module. For an orientation-reversing parametrization, increasing the parameter travels opposite to the curve’s assigned direction. A boundary induced from an outward cylindrical side is clockwise at its top rim when viewed from above.",
     "proof": "For the cone $z^2=x^2+y^2$, $0\\le z\\le1$, joined to the cylinder $x^2+y^2=1$, $1\\le z\\le4$, take outward normals and $\\mathbf F=(y,-x,z)$. The seam cancels; the remaining top rim is clockwise. Parametrize it by $(\\cos t,-\\sin t,4)$ to obtain $\\mathbf F\\cdot\\mathbf r^{\\prime}=1$, hence curl flux $2\\pi$. For the triangle on $x+y+z=3$ with positive $xy$ projection and $\\mathbf F=(x+y^2,y+z^2,z+x^2)$, curl is $(-2z,-2x,-2y)$. The upward area vector is $(1,1,1)dx\\,dy$, so the integral is $-6\\cdot(9/2)=-27$.",
-    "example": "The original Green problem uses P=y cos x−xy sin x and Q=xy+x cos x around the clockwise triangle (0,0),(0,12),(3,0). Differentiation cancels the trigonometric terms: Qₓ−Pᵧ=y, giving −72. Its simpler scaffold F=(0,xy) has the same curl and answer. The original potential problem uses the field (2xy+$e^{-x^2}$,x²+y cos(πy²/2)) and parametrization r(t)=($e^{t^2-t}$−cos(2πt),2 sin(πt²/2)−t⁹), 0≤t≤1, opposite to the requested orientation. The endpoint difference is −1/π. Its straight-path scaffold r(t)=(0,1−t) keeps the answer but removes the orientation decision. Both original problems and scaffolds are worked separately in the guide.",
+    "example": "The original Green problem uses $P=y\\cos x-xy\\sin x$ and $Q=xy+x\\cos x$ around the clockwise triangle $(0,0),(0,12),(3,0)$. Differentiation cancels the trigonometric terms: $Q_x-P_y=y$, giving $-72$. Its simpler scaffold $\\mathbf F=(0,xy)$ has the same curl and answer. The original potential problem uses the field $(2xy+e^{-x^2},x^2+y\\cos(\\pi y^2/2))$ and parametrization $\\mathbf r(t)=(e^{t^2-t}-\\cos(2\\pi t),2\\sin(\\pi t^2/2)-t^9)$, $0\\le t\\le1$, opposite to the requested orientation. The endpoint difference is $-1/\\pi$. Its straight-path scaffold $\\mathbf r(t)=(0,1-t)$ keeps the answer but removes the orientation decision. Both original problems and scaffolds are worked separately in the guide.",
     "pitfall": "An outward surface need not induce counterclockwise travel when viewed from above. The cone-and-cylinder review gives the opposite at its top rim. Also, an antiderivative may be defined by an integral; $e^{-x^2}$ needs no elementary antiderivative for the endpoint method.",
     "task": "Before calculating, predict the signs of all four answers and justify every prediction from the orientation or the computed integrand.",
     "insight": "The exact review answers, in file order, are $2\\pi$, $-27$, $-72$ and $-1/\\pi$. They come from explicit computations with the stated orientations, not from the canonical scene.",

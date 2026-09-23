@@ -52,12 +52,15 @@ test("original review integrals retain their fields, paths and orientations", as
   const straight = exampleById("review-potential-scaffold");
   assert.match(green.formula, /y\\cos x-xy\\sin x/);
   assert.match(green.formula, /xy\+x\\cos x/);
-  assert.match(green.orientation, /Clockwise.*−72/);
+  assert.match(green.orientation, /Clockwise.*\$-72\$/);
   assert.match(greenScaffold.formula, /P=0/);
   assert.equal(greenScaffold.status, "scaffold");
   assert.match(potential.formula, /e\^\{t\^2-t\}-\\cos/);
   assert.match(potential.formula, /2\\sin\(\\pi t\^2\/2\)-t\^9/);
-  assert.match(potential.orientation, /opposite increasing t.*−1\/π/);
+  assert.match(
+    potential.orientation,
+    /opposite increasing \$t\$.*\$-1\/\\pi\$/,
+  );
   assert.match(straight.formula, /1-t/);
   assert.equal(straight.status, "scaffold");
   for (const identity of [green, greenScaffold, potential, straight]) {

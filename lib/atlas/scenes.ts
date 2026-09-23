@@ -35,7 +35,7 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "2x²+72y²+18z²=288",
       readout: (p) => `V=${f(384 * p * (1 - p * p))}`,
       legend: ["Exact ellipsoid", "Inscribed box"],
-      note: "Exact ellipsoid and a family of inscribed boxes with equal normalized Y and Z. The proof compares all boxes; this one-parameter family alone does not prove optimality.",
+      note: "Exact ellipsoid and a family of inscribed boxes with equal normalized $Y$ and $Z$. The proof compares all boxes; this one-parameter family alone does not prove optimality.",
     },
     reviewCritical: {
       label: "Stationary point index",
@@ -46,7 +46,7 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "f=x⁴−2x²+y³−3y",
       readout: (p) => `Selected point ${p + 1} of 6`,
       legend: ["Exact review surface", "Stationary points", "Selected point"],
-      note: "Exact polynomial, sampled and height-clipped to ±8. All six stationary points are marked; their exact classification is stated in the lesson.",
+      note: "Exact polynomial, sampled and height-clipped to $\\pm8$. All six stationary points are marked; their exact classification is stated in the lesson.",
     },
     chainNonconstant: {
       label: "Parameter t",

@@ -13,7 +13,7 @@ import {
   shiftedDiskRadialBound,
   shiftedDiskVerticalSlice,
 } from "@/lib/curriculum/polar-region";
-import { Formula } from "./math-text";
+import { Formula, MathText } from "./math-text";
 
 type RegionExperiment = {
   id: "domain" | "slice" | "transformed-domain";
@@ -31,25 +31,25 @@ export const shiftedDiskExperiments: readonly RegionExperiment[] = [
     id: "domain",
     title: "1. The physical domain",
     explanation:
-      "The disk has centre (1,0) and radius 1. A vertical slice at x runs from negative to positive square root of 1−(x−1)².",
+      "The disk has centre $(1,0)$ and radius $1$. A vertical slice at $x$ runs from $-\\sqrt{1-(x-1)^2}$ to $\\sqrt{1-(x-1)^2}$.",
     ...regionExperimentSpecs.domain,
-    label: "Vertical slice x",
+    label: "Vertical slice $x$",
   },
   {
     id: "slice",
     title: "2. A radial slice",
     explanation:
-      "A ray at angle θ starts at the origin and ends at radius 2 cos θ. At either endpoint angle only the origin remains.",
+      "A ray at angle $\\theta$ starts at the origin and ends at radius $2\\cos\\theta$. At either endpoint angle only the origin remains.",
     ...regionExperimentSpecs.slice,
-    label: "Ray angle θ in radians",
+    label: "Ray angle $\\theta$ in radians",
   },
   {
     id: "transformed-domain",
     title: "3. The parameter domain",
     explanation:
-      "The curved parameter region has −π/2≤θ≤π/2 and 0≤r≤2 cos θ. The paired ray shows where the selected vertical parameter slice lands in the physical disk.",
+      "The curved parameter region has $-\\pi/2\\le\\theta\\le\\pi/2$ and $0\\le r\\le2\\cos\\theta$. The paired ray shows where the selected vertical parameter slice lands in the physical disk.",
     ...regionExperimentSpecs["transformed-domain"],
-    label: "Parameter angle θ in radians",
+    label: "Parameter angle $\\theta$ in radians",
   },
 ] as const;
 
@@ -124,15 +124,21 @@ function PhysicalDisk({
         />
       )}
       <circle cx={originX} cy={centreY} r="3" fill="currentColor" />
-      <text x="42" y="158" fill="currentColor" fontSize="15">
-        O
-      </text>
-      <text x="267" y="159" fill="currentColor" fontSize="15">
-        x
-      </text>
-      <text x="64" y="31" fill="currentColor" fontSize="15">
-        y
-      </text>
+      <foreignObject x="39" y="143" width="28" height="30">
+        <div>
+          <Formula>O</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="265" y="144" width="28" height="30">
+        <div>
+          <Formula>x</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="62" y="16" width="28" height="30">
+        <div>
+          <Formula>y</Formula>
+        </div>
+      </foreignObject>
     </svg>
   );
 }
@@ -177,18 +183,26 @@ function ParameterDomain({ theta }: { theta: number }) {
         stroke="currentColor"
         opacity="0.5"
       />
-      <text x="4" y="245" fill="currentColor" fontSize="15">
-        −π/2
-      </text>
-      <text x="283" y="255" fill="currentColor" fontSize="15">
-        π/2
-      </text>
-      <text x="164" y="272" fill="currentColor" fontSize="15">
-        θ
-      </text>
-      <text x="12" y="41" fill="currentColor" fontSize="15">
-        r
-      </text>
+      <foreignObject x="4" y="227" width="55" height="30">
+        <div>
+          <Formula>{String.raw`-\pi/2`}</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="283" y="237" width="55" height="30">
+        <div>
+          <Formula>{String.raw`\pi/2`}</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="164" y="254" width="55" height="30">
+        <div>
+          <Formula>{String.raw`\theta`}</Formula>
+        </div>
+      </foreignObject>
+      <foreignObject x="12" y="23" width="55" height="30">
+        <div>
+          <Formula>{String.raw`r`}</Formula>
+        </div>
+      </foreignObject>
     </svg>
   );
 }
@@ -217,7 +231,9 @@ function RegionExperimentCard({
   return (
     <section className="lesson-extension" data-experiment-id={experiment.id}>
       <h3>{experiment.title}</h3>
-      <p>{experiment.explanation}</p>
+      <p>
+        <MathText text={experiment.explanation} />
+      </p>
       <details
         open={active}
         onToggle={(event) =>
@@ -231,7 +247,7 @@ function RegionExperimentCard({
         <summary>Explore {experiment.title.slice(3).toLowerCase()}</summary>
         <div style={{ paddingBlock: "1rem" }}>
           <label id={controlId} htmlFor={`${controlId}-range`}>
-            {experiment.label}
+            <MathText text={experiment.label} />
           </label>
           <input
             id={`${controlId}-range`}
@@ -254,12 +270,12 @@ function RegionExperimentCard({
           <output htmlFor={`${controlId}-range`} aria-live="polite">
             {experiment.id === "domain" ? (
               <>
-                x = {value.toFixed(2)}; y from {vertical?.lower.toFixed(2)} to{" "}
-                {vertical?.upper.toFixed(2)}.
+                <Formula>{`x=${value.toFixed(2)},\\quad${vertical?.lower.toFixed(2)}\\le y\\le${vertical?.upper.toFixed(2)}`}</Formula>
+                .
               </>
             ) : (
               <>
-                θ = {value.toFixed(2)} radians; r from 0 to {radial?.toFixed(2)}
+                <Formula>{`\\theta=${value.toFixed(2)},\\quad0\\le r\\le${radial?.toFixed(2)}`}</Formula>
                 .
               </>
             )}

@@ -71,9 +71,9 @@
     "errata": [
       {
         "page": 8,
-        "printed": "The source asks for limit 0 as x approaches 3 for x²−3x+1.",
-        "correction": "The limit is 1.",
-        "justification": "The polynomial is continuous, and substituting x=3 gives 3²−3·3+1=1.",
+        "printed": "The source asks for limit $0$ as $x$ approaches $3$ for $x^2-3x+1$.",
+        "correction": "The limit is $1$.",
+        "justification": "The polynomial is continuous, and substituting $x=3$ gives $3^2-3\\cdot3+1=1$.",
         "provenance": "Audit-derived correction; the original PDF is unchanged."
       }
     ]

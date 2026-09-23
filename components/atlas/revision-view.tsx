@@ -77,8 +77,9 @@ export function RevisionView({
         <section aria-label="Mixed prerequisite practice">
           <h3>Mix in a supporting idea</h3>
           <p>
-            From {supportingConcept.title}: solve this separately, then explain
-            which assumption or technique transfers to the current lesson.
+            From <MathText text={supportingConcept.title} />: solve this
+            separately, then explain which assumption or technique transfers to
+            the current lesson.
           </p>
           <LessonPractice
             id={supportingConcept.id}

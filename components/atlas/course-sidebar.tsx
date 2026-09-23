@@ -1,4 +1,5 @@
 "use client";
+import { MathText } from "./math-text";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -112,7 +113,7 @@ export function CourseSidebar({ study }: { study: StudyController }) {
                     <div className="concept-nav">
                       {matches.map((c) => (
                         <button key={c.id} onClick={() => open(c.id)}>
-                          {c.title}
+                          <MathText text={c.title} />
                         </button>
                       ))}
                     </div>
@@ -159,7 +160,7 @@ export function CourseSidebar({ study }: { study: StudyController }) {
                               : undefined
                           }
                         >
-                          {c.title}
+                          <MathText text={c.title} />
                         </button>
                       ))}
                     </div>

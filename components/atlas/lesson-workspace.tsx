@@ -53,13 +53,17 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
             {lectures[concept.lecture - 1]}
           </div>
           <h1 tabIndex={-1} id="lesson-title">
-            {concept.title}
+            <MathText text={concept.title} />
           </h1>
-          <p>{concept.subtitle}</p>
+          <p>
+            <MathText text={concept.subtitle} />
+          </p>
           {returnConcept && returnConcept.id !== concept.id && (
             <div className="lesson-question">
               <span className="label">RETURN TO YOUR LESSON</span>
-              <p>{returnConcept.title}</p>
+              <p>
+                <MathText text={returnConcept.title} />
+              </p>
               <button onClick={resumeLesson}>Return to interrupted step</button>
             </div>
           )}
@@ -105,12 +109,16 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
             <details className="lesson-readiness">
               <summary>Need a prerequisite refresher?</summary>
               <p>Open a supporting lesson, then return here.</p>
-              {bridge && <p>{bridge.explanation}</p>}
+              {bridge && (
+                <p>
+                  <MathText text={bridge.explanation} />
+                </p>
+              )}
               {prerequisites.map((id) => {
                 const prerequisite = concepts.find((item) => item.id === id);
                 return prerequisite ? (
                   <button key={id} onClick={() => openPrerequisite(id)}>
-                    {prerequisite.title}
+                    <MathText text={prerequisite.title} />
                     {bridge?.prerequisite === id ? " (later explanation)" : ""}
                   </button>
                 ) : null;
