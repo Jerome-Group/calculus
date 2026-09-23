@@ -44,8 +44,10 @@ test("classified sources match the canonical ledger and observed Drive files", (
 test("changed or new instructional sources fail; changed personal references do not block", () => {
   const changed = structuredClone(observed);
   const annotated = manifest.find(
-    (entry) => entry.sourceId === "MH2100_Lecture_04_Annotated_PDF",
+    (entry) =>
+      entry.status === "unreviewed" && entry.kind !== "personal_reference",
   );
+  assert.ok(annotated, "fixture needs an unreviewed instructional source");
   changed.files.find(
     (file) => file.driveFileId === annotated.driveFileId,
   ).modifiedAt = "2026-09-23T00:00:00Z";
@@ -102,8 +104,10 @@ test("synchronizing metadata cannot bypass a pending source review", () => {
   const synchronized = structuredClone(manifest);
   const observation = structuredClone(observed);
   const entry = synchronized.find(
-    (item) => item.sourceId === "MH2100_Lecture_04_Annotated_PDF",
+    (item) =>
+      item.status === "unreviewed" && item.kind !== "personal_reference",
   );
+  assert.ok(entry, "fixture needs an unreviewed instructional source");
   const newer = "2026-09-23T00:00:00Z";
   entry.modifiedAt = newer;
   observation.files.find(
