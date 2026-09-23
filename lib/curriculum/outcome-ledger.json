@@ -3339,7 +3339,7 @@
         "cylindrical-shells"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Area between curves' at 2–19; area 2–4; volumes 5–12; shells 13–19; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Two page-verified area methods are mapped. No outcome-level scene, learner performance, or independent outcome check is claimed; other course sources remain unreviewed.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3350,8 +3350,11 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "area-between-curves:ch02-upper-minus-lower-strips",
+        "area-between-curves:ch02-split-at-crossings"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_02_Notes:02",
@@ -15234,6 +15237,155 @@
         "practiced": "independent task directly applies skill; learner performance unverified",
         "visualized": "No outcome-specific scene verified.",
         "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "area-between-curves:ch02-upper-minus-lower-strips",
+      "concept_id": "area-between-curves",
+      "outcome": "Derive the area formula from nonnegative vertical strip heights and apply it when the upper curve stays above on a closed interval.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "physical_page": 2,
+        "inspection": "Canonical local PDF SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998; physical pages visually rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [2, 3, 4],
+          "method": "Poppler PNG render and page-bounded text extraction checked against the local canonical PDF.",
+          "claim_observed": "Pages 2–3 derive the strip Riemann sums and upper-minus-lower integral; pages 3–4 work the x²+1 versus x example, obtaining 5/6."
+        },
+        "page_heading": "2.1 Area Between Curves — Theorem 1 and Example 2.1"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.contentBlocks[ch02-area-strip-definition]",
+            "claim": "Guide states the continuous strip-height formula.",
+            "method": "Compared cited guide reasoning and calculation with visually rendered physical source pages; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.contentBlocks[ch02-area-source-fixed-order]",
+            "claim": "Exact source example is worked with order and area checked.",
+            "method": "Compared cited guide reasoning and calculation with visually rendered physical source pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.exercises[ch02-fixed-order-transfer]",
+            "claim": "Independent task applies the method to a different curve pair.",
+            "method": "Compared cited guide reasoning and calculation with visually rendered physical source pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The area route has source-aligned worked/practiced evidence, but no outcome-level scene or learner validation.",
+      "source_section_id": "MH1101_Chapter_02_Notes:01",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.contentBlocks[ch02-area-strip-definition]",
+            "basis": "current guide and source-page inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.contentBlocks[ch02-area-source-fixed-order]",
+            "basis": "current guide and source-page inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.exercises[ch02-fixed-order-transfer]",
+            "basis": "current guide and source-page inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of source physical pages, exact worked example, and independent task.",
+        "named": "No atomic catalog-title credit claimed.",
+        "stated": "match",
+        "worked": "source example and area calculation checked",
+        "practiced": "task inspected; learner response unverified",
+        "visualized": "No outcome-specific scene checked.",
+        "checked": "No independent learner check."
+      }
+    },
+    {
+      "id": "area-between-curves:ch02-split-at-crossings",
+      "concept_id": "area-between-curves",
+      "outcome": "Find where curves exchange upper/lower order, split the interval, and add nonnegative area integrals.",
+      "core_source": {
+        "id": "MH1101_Chapter_02_Notes",
+        "physical_page": 4,
+        "inspection": "Canonical local PDF SHA-256 50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998; physical pages visually rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4],
+          "method": "Poppler PNG render and page-bounded text extraction checked against the local canonical PDF.",
+          "claim_observed": "Page 4 splits sine and cosine at π/4 and evaluates the two positive integrals as 2√2−2."
+        },
+        "page_heading": "2.1 Area Between Curves — Example 2.2"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.contentBlocks[ch02-area-source-crossing]",
+            "claim": "Exact source example is worked with order and area checked.",
+            "method": "Compared cited guide reasoning and calculation with visually rendered physical source pages; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.exercises[ch02-multiple-crossing-transfer]",
+            "claim": "Independent task applies the method to a different curve pair.",
+            "method": "Compared cited guide reasoning and calculation with visually rendered physical source pages; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The crossing method is worked and independently practiced; scene behavior and learner success remain unverified.",
+      "source_section_id": "MH1101_Chapter_02_Notes:01",
+      "candidate_blocks": {
+        "stated": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.contentBlocks[ch02-area-source-crossing]",
+            "basis": "current guide and source-page inspection"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#area-between-curves.exercises[ch02-multiple-crossing-transfer]",
+            "basis": "current guide and source-page inspection"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual comparison of source physical pages, exact worked example, and independent task.",
+        "named": "No atomic catalog-title credit claimed.",
+        "stated": "not separately claimed",
+        "worked": "source example and area calculation checked",
+        "practiced": "task inspected; learner response unverified",
+        "visualized": "No outcome-specific scene checked.",
+        "checked": "No independent learner check."
       }
     }
   ]

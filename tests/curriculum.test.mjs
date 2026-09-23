@@ -317,6 +317,17 @@ test("WebMCP concept read returns the same practice and source data as the visib
       (exercise) => exercise.id === "negative-infinite-threshold-transfer",
     ),
   );
+  const area = tool.execute({ conceptId: "area-between-curves" });
+  assert.ok(
+    area.lesson.contentBlocks.some(
+      (block) => block.id === "ch02-area-source-crossing",
+    ),
+  );
+  assert.ok(
+    area.lesson.exercises.some(
+      (exercise) => exercise.id === "ch02-multiple-crossing-transfer",
+    ),
+  );
 });
 
 test("WebMCP state includes the mathematical readout and its evidence limit", async () => {
