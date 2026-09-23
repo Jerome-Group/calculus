@@ -166,10 +166,13 @@ test("Lecture 12 identity, physical spans, exclusions, and atomic evidence", () 
     );
   }
 
-  assert.equal(ledger.atomic_outcomes.length, 344);
+  const lecture12Outcomes = ledger.atomic_outcomes.filter(
+    (outcome) => outcome.core_source.id === sourceId,
+  );
+  assert.equal(lecture12Outcomes.length, expected.length);
   assert.equal(
-    new Set(ledger.atomic_outcomes.map((item) => item.id)).size,
-    344,
+    new Set(lecture12Outcomes.map((item) => item.id)).size,
+    expected.length,
   );
   const selected = expected.map((item) =>
     ledger.atomic_outcomes.find((outcome) => outcome.id === idFor(item)),

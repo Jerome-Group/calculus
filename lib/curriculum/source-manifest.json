@@ -1354,6 +1354,10 @@
     "status": "canonical",
     "modifiedAt": "2026-08-13T05:07:31.170Z",
     "sha256": "93598442f95467b7214f3f8398b33341e778bd71e8acd1594bbcd4ab88a3a2fc",
-    "affectedConcepts": ["partials-do-not-make-a-plane"]
+    "affectedConcepts": [
+      "total-differentiability",
+      "partials-do-not-make-a-plane",
+      "certifying-differentiability-and-errors"
+    ]
   }
 ]
