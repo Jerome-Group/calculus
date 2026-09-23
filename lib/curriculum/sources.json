@@ -418,7 +418,16 @@
     "pages": 52,
     "course": "MH2100",
     "kind": "lecture",
-    "sha256": "e71806081bf3eb4d4989a0bb578c711181a2a47e7346e14ccb264d9632a72992"
+    "sha256": "e71806081bf3eb4d4989a0bb578c711181a2a47e7346e14ccb264d9632a72992",
+    "errata": [
+      {
+        "page": 38,
+        "printed": "The final derivative equality in the planar conservative-field criterion is printed as $Q_y$.",
+        "correction": "Read the final term as $Q_x$: $P_y=f_{xy}=f_{yx}=Q_x$.",
+        "justification": "The page’s preceding equality is $Q_x=f_{yx}$ and the planar curl condition is $P_y=Q_x$. The canonical rendered page visibly has $Q_y$ in the final position.",
+        "provenance": "Canonical SHA-matched PDF visually inspected; mathematical correction independently checked; PDF unchanged."
+      }
+    ]
   },
   "MH2100_Lecture_08": {
     "id": "MH2100_Lecture_08",
