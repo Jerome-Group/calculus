@@ -203,7 +203,16 @@
     "pages": 19,
     "course": "MH1101",
     "kind": "lecture",
-    "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998"
+    "sha256": "50b7ceb64c602b7eb61a63af778efe082467487d1daa21b90a20e18aec83b998",
+    "errata": [
+      {
+        "page": 12,
+        "printed": "Example 2.6 writes $\\pi\\int_0^1(x-x^4)\\,dy$ after an integral in $dx$.",
+        "correction": "Use $dx$ in the simplified integral.",
+        "justification": "The washer slices are vertical, the bounds and integrand use x, and the following antiderivative is with respect to x.",
+        "provenance": "Inspected physical page 12 of the canonical Chapter 02 Notes PDF in the authenticated Drive viewer."
+      }
+    ]
   },
   "MH1101_Chapter_01_Notes": {
     "id": "MH1101_Chapter_01_Notes",
