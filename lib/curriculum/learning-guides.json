@@ -2735,12 +2735,427 @@
         "State $a\\ne 0$ and control nearby denominators."
       ],
       "solutionTex": "\\frac{1/(a+h)-1/a}{h}=-\\frac1{a(a+h)}\\longrightarrow-\\frac1{a^2}"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "finite-derivative-definition",
+        "title": "Take the limit of nonzero secants",
+        "statement": "If $a$ is an interior domain point and the finite two-sided limit exists, $f\\prime(a)=\\lim_{h\\to0}[f(a+h)-f(a)]/h$. Setting $x=a+h$ gives the equivalent $(f(x)-f(a))/(x-a)$ form.",
+        "hypotheses": [
+          "The point value $f(a)$ and nearby values are defined.",
+          "Use nonzero increments on both sides; the quotient must converge to a finite real number."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-cubic-difference-quotient",
+        "title": "Solve the lecture cubic derivative exercise",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Find the derivative of $f(x)=x^3-3x+2$ at a general real $a$.",
+        "steps": [
+          {
+            "label": "Expand",
+            "text": "$f(a+h)-f(a)=3a^2h+3ah^2+h^3-3h$."
+          },
+          {
+            "label": "Divide and limit",
+            "text": "For $h\\ne0$, the quotient is $3a^2+3ah+h^2-3$, whose limit is $3a^2-3$."
+          }
+        ],
+        "result": "$f\\prime(a)=3a^2-3$.",
+        "verification": "The cancellation is valid only for $h\\ne0$; plugging in $h=0$ before division is invalid."
+      },
+      {
+        "kind": "theorem",
+        "id": "tangent-and-velocity",
+        "title": "Interpret a finite derivative with the right units",
+        "statement": "A finite derivative $f\\prime(a)$ is the slope of the tangent $y=f(a)+f\\prime(a)(x-a)$ and the instantaneous rate of output change per input unit. For position $s(t)$ in metres, $s\\prime(t)$ is velocity in metres per second.",
+        "hypotheses": [
+          "The base point is in the domain and has a finite derivative.",
+          "A secant uses two distinct inputs; its limiting slope, not a single sampled secant, defines the rate."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-tangent-rate",
+        "title": "Connect tangent slope and instantaneous velocity",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Use the guide-created position $s(t)=t^2$ metres with $t$ in seconds at $t=3$.",
+        "steps": [
+          {
+            "label": "Secants",
+            "text": "$[s(3+h)-s(3)]/h=[(3+h)^2-9]/h=6+h$ for $h\\ne0$."
+          },
+          {
+            "label": "Interpret",
+            "text": "The limit is $6$ m/s, and the tangent to the position graph at $(3,9)$ is $y=9+6(t-3)$."
+          }
+        ],
+        "result": "The instantaneous velocity is 6 m/s and the tangent slope is 6.",
+        "verification": "Pages 3–7 state the interpretations; this numeric example is guide-created, not a source example."
+      },
+      {
+        "kind": "theorem",
+        "id": "derivative-function-domain",
+        "title": "Form a derivative function only where limits exist",
+        "statement": "The derivative function assigns $f\\prime(x)=\\lim_{h\\to0}[f(x+h)-f(x)]/h$ at each point with a finite two-sided limit. Its domain may be smaller than the domain of $f$.",
+        "hypotheses": [
+          "The original function is defined at and on both sides of each interior point.",
+          "Exclude points where the finite two-sided derivative limit fails."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-square-root-domain",
+        "title": "Rationalize the source square-root quotient",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "For $f(x)=\\sqrt{x}$ with domain $[0,\\infty)$, find $f\\prime$ and its domain.",
+        "steps": [
+          {
+            "label": "Interior",
+            "text": "For $x>0$ and $h\\ne0$, rationalization gives $[\\sqrt{x+h}-\\sqrt{x}]/h=1/(\\sqrt{x+h}+\\sqrt{x})\\to1/(2\\sqrt{x})$."
+          },
+          {
+            "label": "Boundary",
+            "text": "At 0 only $h>0$ is allowed and $\\sqrt h/h=1/\\sqrt h\\to+\\infty$; there is no finite two-sided derivative."
+          }
+        ],
+        "result": "$f\\prime(x)=1/(2\\sqrt{x})$ on $(0,\\infty)$.",
+        "verification": "The original domain includes 0; the derivative domain does not. An unbounded one-sided slope is not a finite derivative."
+      },
+      {
+        "kind": "theorem",
+        "id": "derivative-graph-reading",
+        "title": "Read slope sign from a function graph",
+        "statement": "Where a derivative exists, $f\\prime$ is positive at an increasing tangent, negative at a decreasing tangent, and zero at a horizontal tangent. The graph of $f\\prime$ records these slopes point by point.",
+        "hypotheses": [
+          "Use points where the finite derivative exists.",
+          "Read a tangent slope, not the height $f(x)$, when locating $f\\prime(x)$."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-derivative-graph",
+        "title": "Read the lecture paired graphs",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Physical page 10 marks horizontal tangents at $A,B,C$ and estimates the rising tangent at $P$ with slope $m\\approx3/2$.",
+        "steps": [
+          {
+            "label": "Zeros",
+            "text": "The paired derivative graph crosses its horizontal axis at $A\\prime,B\\prime,C\\prime$, matching the three zero tangent slopes."
+          },
+          {
+            "label": "Positive slope",
+            "text": "At the marked input $x=5$, the source graph estimates the tangent slope as $m\\approx3/2$, so the derivative graph places $P\\prime$ near $(5,1.5)$."
+          }
+        ],
+        "result": "The derivative graph encodes slopes, not the original graph heights.",
+        "verification": "A positive function value does not imply a positive derivative; the source graph has positive heights while decreasing on some intervals."
+      },
+      {
+        "kind": "theorem",
+        "id": "derivative-notation",
+        "title": "Translate derivative notations without treating them as a fraction",
+        "statement": "For $y=f(x)$, $f\\prime(x)$, $y\\prime$, $dy/dx$, and $Df(x)$ denote the same first derivative. The evaluation notation $[dy/dx]_{x=a}$ means $f\\prime(a)$.",
+        "hypotheses": [
+          "Specify the dependent and independent variables.",
+          "At this stage $dy/dx$ is derivative notation, not an ordinary ratio of two independent numbers."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-notation-translation",
+        "title": "Evaluate a derivative in Leibniz notation",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Guide-created example for page 13 notation: let $y=x^2$ and evaluate at $x=3$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "The definition gives $f\\prime(x)=2x$."
+          },
+          {
+            "label": "Translate",
+            "text": "$dy/dx=2x$ and $[dy/dx]_{x=3}=f\\prime(3)=6$."
+          }
+        ],
+        "result": "Both notations report the same slope 6 at the same point.",
+        "verification": "$d^2y/dx^2$ later denotes a new derivative, not the square of $dy/dx$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "derivative-definition-transfer",
+        "outcome": "Derive a point derivative by cancellation before the limit.",
+        "kind": "proof",
+        "prompt": "Use the definition to find $g\\prime(a)$ for $g(x)=x^3+2x$. Show the nonzero-increment quotient.",
+        "hint": "Expand $(a+h)^3$ and cancel $g(a)$.",
+        "solution": "For $h\\ne0$, $[g(a+h)-g(a)]/h=3a^2+3ah+h^2+2$. Letting $h\\to0$ gives $g\\prime(a)=3a^2+2$.",
+        "solutionTex": "\\frac{g(a+h)-g(a)}h=3a^2+3ah+h^2+2\\longrightarrow3a^2+2",
+        "rubric": [
+          "Show the expansion and cancellation for nonzero $h$.",
+          "Take the two-sided finite limit.",
+          "State the derivative as a function of $a$."
+        ]
+      },
+      {
+        "id": "tangent-velocity-transfer",
+        "outcome": "Compute a finite rate and tangent equation.",
+        "kind": "proof",
+        "prompt": "For $s(t)=t^2+2t$ metres, find instantaneous velocity at $t=1$ and the tangent line to the position graph there from the definition.",
+        "hint": "Simplify $[s(1+h)-s(1)]/h$ for nonzero $h$.",
+        "solution": "The quotient is $(4h+h^2)/h=4+h$, so velocity is $4$ m/s. Since $s(1)=3$, the tangent is $y=3+4(t-1)$.",
+        "solutionTex": "s\\prime(1)=4,\\quad y=3+4(t-1)",
+        "rubric": [
+          "Use a nonzero displacement quotient.",
+          "Give velocity with units.",
+          "Use the point value and limiting slope in the tangent equation."
+        ]
+      },
+      {
+        "id": "derivative-domain-transfer",
+        "outcome": "Distinguish a function domain from its derivative domain.",
+        "kind": "proof",
+        "prompt": "For $g(x)=\\sqrt{x+2}$, find the domain of $g$ and derive $g\\prime(x)$ where it exists. What happens at $x=-2$?",
+        "hint": "Rationalize the quotient for $x>-2$; inspect the allowed side at the endpoint.",
+        "solution": "The original domain is $[-2,\\infty)$. For $x>-2$, $g\\prime(x)=1/(2\\sqrt{x+2})$. At $-2$, only right increments are allowed and the quotient is $1/\\sqrt h\\to+\\infty$, so no finite derivative exists there; the derivative domain is $(-2,\\infty)$.",
+        "solutionTex": "\\operatorname{dom}g=[-2,\\infty),\\quad\\operatorname{dom}g\\prime=(-2,\\infty)",
+        "rubric": [
+          "State the original real domain.",
+          "Derive the interior quotient.",
+          "Exclude the endpoint for the correct reason."
+        ]
+      },
+      {
+        "id": "derivative-graph-transfer",
+        "outcome": "Infer derivative signs and zeros from slope information.",
+        "kind": "proof",
+        "prompt": "A differentiable graph has horizontal tangents at $x=-1$ and $x=2$, decreases for $x<-1$, increases for $-1<x<2$, and decreases for $x>2$. State $f\\prime$ at those inputs and its signs on the three intervals.",
+        "hint": "Translate decreasing/increasing to slope signs.",
+        "solution": "The derivative vanishes at $-1$ and $2$. Differentiability and decreasing/increasing behavior give nonpositive slopes on $(-\\infty,-1)$, nonnegative slopes on $(-1,2)$, and nonpositive slopes on $(2,\\infty)$. Strict signs are not guaranteed: a differentiable function can flatten at an isolated point while remaining monotone.",
+        "solutionTex": "f\\prime(-1)=f\\prime(2)=0,\\quad f\\prime(x)\\le0\\ (x<-1),\\quad f\\prime(x)\\ge0\\ (-1<x<2),\\quad f\\prime(x)\\le0\\ (x>2)",
+        "rubric": [
+          "Use horizontal tangents for zero derivatives.",
+          "Give nonpositive, nonnegative, and nonpositive slopes on the three intervals; do not assume strict signs.",
+          "Do not infer derivative values from graph heights."
+        ]
+      },
+      {
+        "id": "derivative-notation-transfer",
+        "outcome": "Translate first-derivative symbols at a fixed input.",
+        "kind": "proof",
+        "prompt": "If $y=3x^2$ and $x=2$, write $f\\prime(x)$, $dy/dx$, and $[dy/dx]_{x=2}$.",
+        "hint": "Differentiate from the definition or the known quadratic result, then evaluate.",
+        "solution": "The derivative function is $f\\prime(x)=6x$, so $dy/dx=6x$ and $[dy/dx]_{x=2}=f\\prime(2)=12$. The symbols describe one operation and its value at 2.",
+        "solutionTex": "f\\prime(x)=\\frac{dy}{dx}=6x,\\quad\\left.\\frac{dy}{dx}\\right|_{x=2}=12",
+        "rubric": [
+          "State the derivative function.",
+          "Use equivalent notation consistently.",
+          "Evaluate only after forming the function."
+        ]
+      }
+    ]
   },
   "differentiability-corners": {
     "prerequisites": ["derivative-definition", "continuity-ivt"],
     "reasoning": "Proof sketch",
     "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "derivative-implies-continuity",
+        "title": "Use a finite derivative to prove continuity",
+        "statement": "If $f\\prime(a)$ exists as a finite real limit, then $f(a+h)-f(a)=h\\,[f(a+h)-f(a)]/h\\to0$, so $f(x)\\to f(a)$ as $x\\to a$. The converse need not hold.",
+        "hypotheses": [
+          "The point value and nearby difference quotient are defined.",
+          "The derivative limit is finite; multiplication by the increment then tends to zero."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-implication-and-converse",
+        "title": "Prove the one-way implication and test its converse",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Use the lecture theorem on pages 14–15 and its $|x|$ counterexample on page 19.",
+        "steps": [
+          {
+            "label": "Forward",
+            "text": "If the quotient tends to finite $f\\prime(a)$, multiply by $h\\to0$ to obtain $f(a+h)-f(a)\\to0$."
+          },
+          {
+            "label": "Converse failure",
+            "text": "$|x|\\to0=|0|$ at zero, but $|h|/h$ tends to $-1$ from the left and 1 from the right."
+          }
+        ],
+        "result": "Differentiability implies continuity; continuity alone does not imply differentiability.",
+        "verification": "The reverse implication is refuted by a continuous function with unequal one-sided secant slopes."
+      },
+      {
+        "kind": "theorem",
+        "id": "discontinuity-obstruction",
+        "title": "Use noncontinuity as a derivative obstruction",
+        "statement": "The contrapositive of differentiability implying continuity is: if $f$ is not continuous at $a$, then $f\\prime(a)$ does not exist as a finite derivative.",
+        "hypotheses": [
+          "Establish a genuine continuity failure at the target.",
+          "Do not infer differentiability merely from continuity elsewhere."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-jump-obstruction",
+        "title": "Diagnose a discontinuous piecewise function",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Use the guide-created jump $j(x)=0$ for $x<0$ and $j(x)=1$ for $x\\ge0$ at zero.",
+        "steps": [
+          {
+            "label": "Continuity",
+            "text": "Left limit 0 differs from $j(0)=1$, so the two-sided limit and continuity fail."
+          },
+          {
+            "label": "Derivative",
+            "text": "The theorem rules out a derivative at 0. Directly, $[j(h)-j(0)]/h=-1/h$ for $h<0$, so no finite two-sided quotient limit exists."
+          }
+        ],
+        "result": "$j$ is not differentiable at 0.",
+        "verification": "This is a guide-created contrast for the lecture page 20 obstruction, not a claimed source formula."
+      },
+      {
+        "kind": "theorem",
+        "id": "corner-one-sided-slopes",
+        "title": "Compare finite one-sided slopes at a corner",
+        "statement": "If the left and right difference quotients at $a$ have distinct finite limits, the two-sided derivative does not exist. A continuous point can still have this corner failure.",
+        "hypotheses": [
+          "The function is defined at and near the point.",
+          "Calculate the one-sided quotient limits separately."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-absolute-value-derivative",
+        "title": "Recover the derivative domain of absolute value",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "For $f(x)=|x|$, calculate all derivative cases as on lecture pages 16–19.",
+        "steps": [
+          {
+            "label": "Away from zero",
+            "text": "For $x>0$, nearby $|x|=x$ gives $f\\prime(x)=1$; for $x<0$, nearby $|x|=-x$ gives $f\\prime(x)=-1$."
+          },
+          {
+            "label": "At zero",
+            "text": "$[f(h)-f(0)]/h=|h|/h$ has limits -1 and 1 from opposite sides."
+          }
+        ],
+        "result": "$f\\prime(x)=-1$ for $x<0$, $1$ for $x>0$, and is undefined at 0.",
+        "verification": "$|x|$ remains continuous at zero, so the failure is a corner rather than a discontinuity."
+      },
+      {
+        "kind": "theorem",
+        "id": "vertical-tangent-infinite-slope",
+        "title": "Separate infinite slope from a finite derivative",
+        "statement": "A vertical tangent may be described geometrically when secant slopes grow without bound to the same infinite direction. The usual derivative does not exist there because its defining limit must be finite.",
+        "hypotheses": [
+          "Check the function is continuous at the point when claiming a geometric tangent.",
+          "Show both allowed side quotients have the asserted unbounded sign."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-signed-root-vertical",
+        "title": "Solve the lecture signed-root vertical-tangent exercise",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Let $f(x)=\\sqrt{x}$ for $x\\ge0$ and $f(x)=-\\sqrt{-x}$ for $x<0$.",
+        "steps": [
+          {
+            "label": "Continuity",
+            "text": "Both branches tend to 0 and $f(0)=0$."
+          },
+          {
+            "label": "Slope",
+            "text": "For $h>0$, $f(h)/h=1/\\sqrt h\\to+\\infty$; for $h<0$, $f(h)/h=(-\\sqrt{-h})/h=1/\\sqrt{-h}\\to+\\infty$."
+          }
+        ],
+        "result": "The graph has a vertical tangent at zero but no finite derivative there.",
+        "verification": "The point is continuous; unlike a corner, the one-sided slopes share the same unbounded direction."
+      },
+      {
+        "kind": "theorem",
+        "id": "acceleration-second-rate",
+        "title": "Interpret a second derivative as a rate of a rate",
+        "statement": "For position $s(t)$, velocity is $v(t)=s\\prime(t)$ and acceleration is $a(t)=v\\prime(t)=s\\prime\\prime(t)$ wherever those finite derivatives exist. Signed velocity uses displacement per unit time; acceleration uses change in velocity per unit time.",
+        "hypotheses": [
+          "Differentiate position once for velocity and the velocity function once more for acceleration.",
+          "Keep time and position units distinct."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-motion-interpretation",
+        "title": "Compute velocity and acceleration separately",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "Use the guide-created position $s(t)=t^3-3t^2+2$ metres, with time in seconds.",
+        "steps": [
+          {
+            "label": "First rate",
+            "text": "$v(t)=s\\prime(t)=3t^2-6t$, so $v(1)=-3$ m/s."
+          },
+          {
+            "label": "Second rate",
+            "text": "$a(t)=v\\prime(t)=6t-6$, so $a(1)=0$ metres per second squared."
+          }
+        ],
+        "result": "At one second the object moves in the negative direction despite zero instantaneous acceleration.",
+        "verification": "Page 26 states the physical interpretation; the polynomial motion example is guide-created."
+      },
+      {
+        "kind": "theorem",
+        "id": "higher-derivative-iteration",
+        "title": "Iterate derivatives and read order notation",
+        "statement": "When successive finite derivatives exist, $f^{(3)}=(f\\prime\\prime)\\prime$, $f^{(4)}=(f^{(3)})\\prime$, and $f^{(n)}$ is the result of $n$ differentiations; $d^ny/dx^n$ denotes that operation.",
+        "hypotheses": [
+          "Each lower-order derivative exists on a neighborhood sufficient to differentiate again.",
+          "The superscript $(n)$ is an order label, not an ordinary power of $f$."
+        ],
+        "prerequisites": ["finite limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-third-fourth-polynomial",
+        "title": "Iterate the lecture higher-derivative notation",
+        "strategy": "Form the relevant limit and check domain before interpreting it.",
+        "setup": "For the lecture polynomial $f(x)=x^3-x$, continue after $f\\prime\\prime(x)=6x$.",
+        "steps": [
+          {
+            "label": "Third",
+            "text": "$f^{(3)}(x)=(6x)\\prime=6$."
+          },
+          {
+            "label": "Fourth and later",
+            "text": "$f^{(4)}(x)=0$, and every further derivative is zero. Thus $f^{(4)}$ is not $[f(x)]^4$."
+          }
+        ],
+        "result": "The derivative orders are $3x^2-1$, $6x$, $6$, $0$, then zero.",
+        "verification": "The source page 27 states order notation; this worked continuation is guide-created from its page 25 polynomial."
+      },
       {
         "kind": "worked-example",
         "id": "second-derivative-from-definition",
@@ -2796,6 +3211,90 @@
       }
     ],
     "exercises": [
+      {
+        "id": "derivative-continuity-transfer",
+        "outcome": "Use the finite derivative implication and a converse counterexample.",
+        "kind": "proof",
+        "prompt": "Show that $g(x)=|x-2|$ is continuous at 2 but not differentiable there. Why can no function with a jump at a be differentiable at a?",
+        "hint": "Compare $|h|/h$ from each side; use the contrapositive of the theorem.",
+        "solution": "As $x\\to2$, $g(x)\\to0=g(2)$, so it is continuous. Its quotient at 2 is $|h|/h$, with left limit -1 and right limit 1, so no derivative exists. A jump breaks continuity, and differentiability would imply continuity, so a jump cannot be differentiable.",
+        "solutionTex": "\\lim_{h\\to0^-}\\frac{|h|}{h}=-1\\ne1=\\lim_{h\\to0^+}\\frac{|h|}{h}",
+        "rubric": [
+          "Prove continuity by a matching point limit.",
+          "Compare both secant-slope limits.",
+          "Apply the theorem only in its valid direction."
+        ]
+      },
+      {
+        "id": "discontinuity-obstruction-transfer",
+        "outcome": "Rule out a derivative from a point-value mismatch.",
+        "kind": "proof",
+        "prompt": "For $x\\ne1$, let $f(x)=x+1$ and assign $f(1)=7$. Is $f\\prime(1)$ defined?",
+        "hint": "Compare the nearby limit with the assigned value before forming a quotient.",
+        "solution": "The nearby limit is 2 but $f(1)=7$, so $f$ is discontinuous at 1. By the contrapositive theorem it cannot be differentiable there. Indeed $[f(1+h)-7]/h=(h-5)/h$ has no finite two-sided limit.",
+        "solutionTex": "\\lim_{x\\to1}f(x)=2\\ne7=f(1)",
+        "rubric": [
+          "Identify the continuity failure.",
+          "Invoke the correct contrapositive.",
+          "Optionally verify with the difference quotient."
+        ]
+      },
+      {
+        "id": "corner-transfer",
+        "outcome": "Compute side slopes for a shifted corner.",
+        "kind": "proof",
+        "prompt": "Find the derivative domain of $f(x)=|x-3|$ and its derivative on each side.",
+        "hint": "Set $u=x-3$ and inspect the quotient at $x=3$.",
+        "solution": "For $x<3$ the local formula is $3-x$, giving derivative -1; for $x>3$ it is $x-3$, giving 1. At 3, the quotient is $|h|/h$, whose side limits disagree. Thus the derivative domain is $\\mathbb R\\setminus\\{3\\}$.",
+        "solutionTex": "f\\prime(x)=\\begin{cases}-1&x<3\\\\1&x>3\\end{cases}",
+        "rubric": [
+          "Derive each side slope on an open region.",
+          "Compare the two quotient limits at 3.",
+          "Give the derivative domain."
+        ]
+      },
+      {
+        "id": "vertical-tangent-transfer",
+        "outcome": "Certify a vertical tangent without assigning a finite derivative.",
+        "kind": "proof",
+        "prompt": "For $g(x)=\\sqrt[3]{x}$, decide continuity and differentiability at 0 and whether its graph has a vertical tangent.",
+        "hint": "Compute $g(h)/h$ for positive and negative $h$.",
+        "solution": "The cube root is continuous at 0. For either sign of nonzero $h$, $g(h)/h=1/|h|^{2/3}\\to+\\infty$. Thus the graph has a vertical tangent, but $g\\prime(0)$ does not exist as a finite real number.",
+        "solutionTex": "\\frac{\\sqrt[3]{h}}h=|h|^{-2/3}\\to+\\infty",
+        "rubric": [
+          "Check continuity at zero.",
+          "Analyze the quotient from both sides.",
+          "Distinguish geometric vertical tangent from finite derivative."
+        ]
+      },
+      {
+        "id": "acceleration-transfer",
+        "outcome": "Interpret velocity and acceleration with distinct units.",
+        "kind": "proof",
+        "prompt": "A particle has $s(t)=t^3-6t^2+5$ metres for $t\\ge0$. Find $v(2)$ and $a(2)$ and state whether it is at rest.",
+        "hint": "Rest is decided by velocity, not acceleration.",
+        "solution": "The velocity is $v(t)=3t^2-12t$, so $v(2)=-12$ m/s. Acceleration is $a(t)=6t-12$, so $a(2)=0$ metres per second squared. The particle is moving, not at rest.",
+        "solutionTex": "v(2)=-12\\ \\mathrm{m/s},\\quad a(2)=0\\ \\mathrm{m/s^2}",
+        "rubric": [
+          "Differentiate in the right order.",
+          "Keep the two units distinct.",
+          "Use velocity for rest."
+        ]
+      },
+      {
+        "id": "higher-order-polynomial-transfer",
+        "outcome": "Compute third and fourth derivatives as iterations.",
+        "kind": "proof",
+        "prompt": "For $p(x)=x^4-2x^2$, find $p\\prime\\prime$, $p^{(3)}$, and $p^{(4)}$ and distinguish $p^{(4)}$ from $[p(x)]^4$.",
+        "hint": "Differentiate each previous derivative, not the original expression repeatedly by name alone.",
+        "solution": "The derivatives are $p\\prime=4x^3-4x$, $p\\prime\\prime=12x^2-4$, $p^{(3)}=24x$, and $p^{(4)}=24$. The fourth derivative is the constant 24, not the fourth power of $p$.",
+        "solutionTex": "p\\prime\\prime=12x^2-4,\\quad p^{(3)}=24x,\\quad p^{(4)}=24",
+        "rubric": [
+          "Show successive derivatives in order.",
+          "Use the order notation correctly.",
+          "Contrast derivative order with an ordinary power."
+        ]
+      },
       {
         "id": "second-derivative-definition-transfer",
         "outcome": "Compute a second derivative by taking the difference-quotient limit of the first derivative.",
