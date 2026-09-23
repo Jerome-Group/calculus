@@ -5152,6 +5152,22 @@
       {
         "title": "Stationarity admits every outcome",
         "text": "At the origin, $x^{2}+y^{2}$ has a strict minimum, $-x^{2}-y^{2}$ a strict maximum, and $x^{2}-y^{2}$ a saddle. The zero function has non-strict maxima and minima everywhere. All have zero gradient at the origin."
+      },
+      {
+        "title": "Coordinate restrictions prove necessity",
+        "text": "At an interior local extremum $p=(a,b)$, each coordinate slice through $p$ has a one-variable local extremum. If its derivative exists, Fermat’s theorem gives $f_x(p)=f_y(p)=0$. The converse fails: a zero gradient is only a candidate. The source also counts an interior point where a partial derivative fails to exist as critical."
+      },
+      {
+        "title": "Critical is a candidate, not a verdict",
+        "text": "At $f(x,y)=y^2-x^2$, the origin is the only critical point but the $x$-axis gives negative values and the $y$-axis positive values arbitrarily close. Its zero gradient does not yield an extremum."
+      },
+      {
+        "title": "A saddle needs two signs",
+        "text": "For a smooth stationary point, exhibit values both above and below $f(p)$ in every neighborhood to establish a saddle. A boundary point can be a domain-relative extremum without being an interior critical point."
+      },
+      {
+        "title": "A missing partial is critical too",
+        "text": "For $f(x,y)=|x|-y^2$, the origin is interior but $f_x(0,0)$ does not exist. It is critical under the source definition even though its gradient is undefined. Along the axes, nearby values have opposite signs, so the point is neither a local minimum nor a local maximum."
       }
     ],
     "exercise": {
@@ -5163,7 +5179,123 @@
         "Do not identify a saddle from stationarity alone."
       ],
       "solutionTex": "f(t,0)=t^2>0,\\quad f(0,t)=-t^2<0\\quad(t\\ne0)"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l04-domain-extrema",
+        "title": "A boundary extremum uses the domain",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "On $D=[0,1]^2$, $f=x+y$ has a domain-relative local and absolute minimum at $(0,0)$.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "For every $(x,y)\\in D$, $x+y\\ge0=f(0,0)$. The comparison quantifies only over $D$; $(0,0)$ is not interior, so the gradient condition is inapplicable."
+          }
+        ],
+        "result": "For every $(x,y)\\in D$, $x+y\\ge0=f(0,0)$. The comparison quantifies only over $D$; $(0,0)$ is not interior, so the gradient condition is inapplicable.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l04-fermat-proof",
+        "title": "Restrict before differentiating",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "Suppose $f$ has an interior local maximum at $(a,b)$ and both partials exist.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "The slices $g(t)=f(t,b)$ and $h(t)=f(a,t)$ have local maxima at $a$ and $b$. One-variable Fermat gives $g'(a)=f_x(a,b)=0$ and $h'(b)=f_y(a,b)=0$."
+          }
+        ],
+        "result": "The slices $g(t)=f(t,b)$ and $h(t)=f(a,t)$ have local maxima at $a$ and $b$. One-variable Fermat gives $g'(a)=f_x(a,b)=0$ and $h'(b)=f_y(a,b)=0$.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l04-critical-contrast",
+        "title": "A critical point need not be an extremum",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "For $f=y^2-x^2$, solve $\\nabla f=(-2x,2y)=0$.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "The only solution is $(0,0)$. Yet $f(t,0)=-t^2<0$ and $f(0,t)=t^2>0$ for $t\ne0$, so it is a saddle, not an extremum."
+          }
+        ],
+        "result": "The only solution is $(0,0)$. Yet $f(t,0)=-t^2<0$ and $f(0,t)=t^2>0$ for $t\\ne0$, so it is a saddle, not an extremum.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l04-nonsmooth-critical",
+        "title": "Classify a critical point without a gradient",
+        "strategy": "Check interior status, one-sided partials and nearby signs.",
+        "setup": "Let $f(x,y)=|x|-y^2$ on $\\mathbb R^2$.",
+        "steps": [
+          {
+            "label": "Criticality",
+            "text": "At $(0,0)$, the $x$ partial has right quotient $1$ and left quotient $-1$, so $f_x$ does not exist. The point is interior and therefore critical."
+          },
+          {
+            "label": "Classification",
+            "text": "$f(t,0)=|t|>0$ and $f(0,t)=-t^2<0$ for $t\\ne0$. Nearby values have both signs, so no local extremum occurs."
+          }
+        ],
+        "result": "The origin is critical without being stationary or an extremum.",
+        "verification": "The source definition on physical page 19 includes an undefined partial; the two axis comparisons verify the classification."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l04-domain-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "On $D=[-1,1]^2$, decide whether $(1,1)$ is a local or absolute maximum of $f=x+y$ and whether Fermat applies.",
+        "hint": "Compare over $D$; inspect interior status.",
+        "solution": "$x+y\\le2=f(1,1)$ throughout $D$, hence both. $(1,1)$ is boundary; the interior Fermat condition does not apply.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      },
+      {
+        "id": "l04-fermat-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "A differentiable $f$ has an interior local minimum at $(2,-1)$. Explain why both partials vanish without using a Hessian.",
+        "hint": "Restrict to horizontal and vertical lines through the point.",
+        "solution": "Each one-variable restriction has a local minimum at its corresponding coordinate, so its derivative vanishes: $f_x(2,-1)=f_y(2,-1)=0$.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      },
+      {
+        "id": "l04-critical-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "Find and classify the critical point of $f(x,y)=x^2-y^2$ directly.",
+        "hint": "Solve the gradient and test two axes.",
+        "solution": "The gradient $(2x,-2y)$ vanishes only at $(0,0)$. Along $(t,0)$ values are positive; along $(0,t)$ values are negative. Thus the sole critical point is a saddle.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      },
+      {
+        "id": "l04-nonsmooth-transfer",
+        "outcome": "Apply the interior critical-point definition when a partial does not exist.",
+        "kind": "reasoning",
+        "prompt": "For $f(x,y)=|x|+y^2$ on $\\mathbb R^2$, is the origin critical? Does it have a local extremum?",
+        "hint": "Compute the two one-sided $x$ quotients, then compare $|x|+y^2$ with zero.",
+        "solution": "The one-sided $x$ quotients are $1$ and $-1$, so $f_x(0,0)$ is undefined. The interior point is critical. Since $|x|+y^2\\ge0=f(0,0)$ everywhere, it is an absolute and local minimum.",
+        "rubric": [
+          "Use the missing-partial branch of the definition.",
+          "Prove the extremum by a direct inequality, not a Hessian test."
+        ]
+      }
+    ]
   },
   "mixed-and-higher-partials": {
     "prerequisites": ["partial-derivatives-as-slices"],
@@ -5176,6 +5308,14 @@
       {
         "title": "When swapping is justified",
         "text": "Continuity of the second partials on a neighborhood is a sufficient condition for equality of mixed partials. Merely existing at one point is insufficient. Higher-order cancellation identities likewise need appropriate smoothness rather than formal rearrangement alone."
+      },
+      {
+        "title": "Read the subscript order",
+        "text": "In this source, $f_{xy}=(f_x)_y$: first differentiate in $x$, then in $y$. The four second partials may have smaller domains than $f$."
+      },
+      {
+        "title": "Equality needs neighborhood hypotheses",
+        "text": "Clairaut’s theorem requires both mixed partials to exist and be continuous on an open neighborhood of the point. The analogous third-order reorderings require the third partials to be defined and continuous nearby. Equality seen in an example is not itself a proof of the theorem."
       }
     ],
     "exercise": {
@@ -5187,7 +5327,65 @@
         "Name a sufficient regularity condition."
       ],
       "solutionTex": "f_{xy}=e^y+\\cos x=f_{yx}"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l04-second-partials",
+        "title": "Compute every second partial",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "Let $f=x^2y-y^3+\\ln x$ for $x>0$.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "First $f_x=2xy+1/x$ and $f_y=x^2-3y^2$. Hence $f_{xx}=2y-1/x^2$, $f_{xy}=2x$, $f_{yx}=2x$, $f_{yy}=-6y$. The formula is valid only for $x>0$."
+          }
+        ],
+        "result": "First $f_x=2xy+1/x$ and $f_y=x^2-3y^2$. Hence $f_{xx}=2y-1/x^2$, $f_{xy}=2x$, $f_{yx}=2x$, $f_{yy}=-6y$. The formula is valid only for $x>0$.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l04-clairaut-contrast",
+        "title": "Check regularity before swapping",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "For the smooth function $g=x^2y^3$ on $\\mathbb R^2$, inspect mixed and third partials.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "$g_{xy}=6xy^2=g_{yx}$. Also $g_{xxy}=6y^2=g_{xyx}=g_{yxx}$. Polynomial partials are continuous on an open neighborhood of each point; mere pointwise existence would not supply this justification."
+          }
+        ],
+        "result": "$g_{xy}=6xy^2=g_{yx}$. Also $g_{xxy}=6y^2=g_{xyx}=g_{yxx}$. Polynomial partials are continuous on an open neighborhood of each point; mere pointwise existence would not supply this justification.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l04-partials-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "Compute all second partials of $f=x^2y+y^3$ and state $f_{xy}$ in the source order.",
+        "hint": "Compute $f_x$ and $f_y$ first.",
+        "solution": "$f_x=2xy$, $f_y=x^2+3y^2$; therefore $f_{xx}=2y$, $f_{xy}=2x$, $f_{yx}=2x$, $f_{yy}=6y$. In $f_{xy}$, differentiate first in $x$.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      },
+      {
+        "id": "l04-clairaut-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "For $g=x^3y^2$, compute $g_{xxy}$, $g_{xyx}$ and $g_{yxx}$; say why reordering is valid.",
+        "hint": "All polynomial partials are continuous everywhere.",
+        "solution": "Each is $12xy$. The required third partials exist and are continuous on an open neighborhood, so the order can be exchanged.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      }
+    ]
   },
   "hessian-classification": {
     "prerequisites": ["mixed-and-higher-partials", "local-extrema-and-saddles"],
@@ -5200,6 +5398,18 @@
       {
         "title": "Mixed terms can rotate the shape",
         "text": "For $f=x^{2}+4xy+y^{2}$, $H=[[2,4],[4,2]]$ has eigenvalues 6 and $-2$. Coordinate-axis slices both rise, yet along $y=-x$ the value is $-2x^{2}$, so it is a saddle. A zero determinant is inconclusive; compare $x^{4}+y^{4}$ with $x^{4}-y^{4}$."
+      },
+      {
+        "title": "Use the determinant with hypotheses",
+        "text": "At a zero-gradient critical point, first check that all second partials are continuous on an open neighborhood. Then $D=f_{xx}f_{yy}-f_{xy}^2$: $D>0$ and $f_{xx}>0$ means local minimum; $D>0$ and $f_{xx}<0$ local maximum; $D<0$ saddle; $D=0$ gives no classification."
+      },
+      {
+        "title": "Solve the complete stationary set",
+        "text": "For $f=\\sin(xy)$, $\\nabla f=\\cos(xy)(y,x)$. Thus critical points include the origin and every hyperbola $xy=(k+1/2)\\pi$. At the origin $D=-1$; on each hyperbola $D=0$, so use the global range $-1\\le f\\le1$ to classify the latter."
+      },
+      {
+        "title": "Zero determinant asks for more",
+        "text": "A zero determinant cannot be read as a saddle or flat extremum. On $xy=(k+1/2)\\pi$, $\\sin(xy)=(-1)^k$: even $k$ gives absolute maxima and odd $k$ absolute minima. Their nonisolated nature does not prevent an extremum."
       }
     ],
     "exercise": {
@@ -5211,7 +5421,65 @@
         "State local classification and justify any global claim separately."
       ],
       "solutionTex": "H=\\begin{pmatrix}-4&-2\\\\-2&-4\\end{pmatrix},\\quad\\det H=12>0,\\quad f_{xx}<0"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l04-hessian-test",
+        "title": "Apply the full two-variable test",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "For $q=x^2+4xy+y^2$, the origin is stationary.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "Compute $q_{xx}=2$, $q_{yy}=2$, $q_{xy}=4$, so $D=4-16=-12<0$. It is a saddle, confirmed by $q(t,0)=t^2>0$ and $q(t,-t)=-2t^2<0$."
+          }
+        ],
+        "result": "Compute $q_{xx}=2$, $q_{yy}=2$, $q_{xy}=4$, so $D=4-16=-12<0$. It is a saddle, confirmed by $q(t,0)=t^2>0$ and $q(t,-t)=-2t^2<0$.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l04-sinxy-example",
+        "title": "Resolve a degenerate critical curve",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "For $f=\\sin(xy)$, the gradient vanishes both at the origin and where $\\cos(xy)=0$.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "At the origin, $D=-1$, so saddle. On $xy=(k+1/2)\\pi$, the determinant is zero; the Hessian test is inconclusive. Since $f=(-1)^k$ and $|f|\\le1$, even $k$ gives absolute maxima and odd $k$ absolute minima."
+          }
+        ],
+        "result": "At the origin, $D=-1$, so saddle. On $xy=(k+1/2)\\pi$, the determinant is zero; the Hessian test is inconclusive. Since $f=(-1)^k$ and $|f|\\le1$, even $k$ gives absolute maxima and odd $k$ absolute minima.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l04-hessian-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "Classify the origin for $f=3x^2+2xy+2y^2$, citing the hypotheses.",
+        "hint": "Compute $D$ and $f_{xx}$.",
+        "solution": "The function is polynomial, so second partials are continuous nearby. $D=6\\cdot4-2^2=20>0$ and $f_{xx}=6>0$; the origin is a strict local minimum.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      },
+      {
+        "id": "l04-sinxy-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "For $f=\\cos(xy)$, identify the nonisolated critical curves and classify them without relying on a zero determinant.",
+        "hint": "Factor the gradient and use $-1\\le\\cos(xy)\\le1$.",
+        "solution": "$\\nabla f=-\\sin(xy)(y,x)$ vanishes on every $xy=k\\pi$ (and the origin is already on $k=0$). There $f=(-1)^k$; even $k$ are absolute maxima, odd $k$ absolute minima. Global range settles what a degenerate Hessian cannot.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      }
+    ]
   },
   "global-extrema-and-boundaries": {
     "prerequisites": ["hessian-classification", "extrema-fermat"],
@@ -5224,6 +5492,18 @@
       {
         "title": "A disk example",
         "text": "For $f=x^{2}+y^{2}-2x$ on the closed unit disk, the unconstrained stationary point is $(1,0)$, on the boundary. On the boundary $f=1-2x$, so its values range from $-1$ at $(1,0)$ to 3 at $(-1,0)$. Completing the square $f=(x-1)^{2}+y^{2}-1$ confirms the minimum."
+      },
+      {
+        "title": "Existence comes before searching",
+        "text": "A continuous function on a nonempty closed bounded domain in Euclidean space attains both absolute extrema. Without closedness or boundedness, existence requires another argument; a gradient calculation alone cannot supply it."
+      },
+      {
+        "title": "Search every part of the domain",
+        "text": "On a rectangle, solve interior critical equations, restrict to each of four edges, include their endpoints, and compare all values. The Hessian test classifies local interior shape but is unnecessary for the global value comparison."
+      },
+      {
+        "title": "Compare values, including ties",
+        "text": "For the source rectangle $[0,3]\\times[0,2]$ and $f=x^2-2xy+2y$, the interior value is 1 at $(1,1)$. The four edge restrictions are $x^2$, $9-4y$, $(x-2)^2$, and $2y$. Their endpoints and edge stationary points reveal two global minimizers and one maximizer."
       }
     ],
     "exercise": {
@@ -5235,7 +5515,65 @@
         "Explain attainment on the closed bounded set."
       ],
       "solutionTex": "0\\le x+y\\le2\\quad((x,y)\\in[0,1]^2)"
-    }
+    },
+    "supplementalBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "l04-compact-worked",
+        "title": "Check the theorem hypotheses",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "On $D=[0,3]\\times[0,2]$, let $f=x^2-2xy+2y$.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "The polynomial is continuous; the rectangle is closed and bounded. Thus absolute minimum and maximum exist. This gives existence, not locations; interior and boundary checks follow."
+          }
+        ],
+        "result": "The polynomial is continuous; the rectangle is closed and bounded. Thus absolute minimum and maximum exist. This gives existence, not locations; interior and boundary checks follow.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l04-rectangle-worked",
+        "title": "Compare all rectangle candidates",
+        "strategy": "Check source hypotheses, calculate, then compare with the contrasting case.",
+        "setup": "For $f=x^2-2xy+2y$ on $[0,3]\\times[0,2]$, find interior and boundary values.",
+        "steps": [
+          {
+            "label": "Reasoning",
+            "text": "Interior $\nabla f=(2x-2y,-2x+2)$ gives $(1,1)$ with value 1. Bottom $x^2$: 0,9. Right $9-4y$: 9,1. Top $(x-2)^2$: 4,0,1. Left $2y$: 0,4. Comparing yields minimum 0 at $(0,0)$ and $(2,2)$; maximum 9 at $(3,0)$."
+          }
+        ],
+        "result": "Interior $\\nabla f=(2x-2y,-2x+2)$ gives $(1,1)$ with value 1. Bottom $x^2$: 0,9. Right $9-4y$: 9,1. Top $(x-2)^2$: 4,0,1. Left $2y$: 0,4. Comparing yields minimum 0 at $(0,0)$ and $(2,2)$; maximum 9 at $(3,0)$.",
+        "verification": "Algebra and domain conditions cross-checked against physical Lecture 04 source pages."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "l04-compact-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "Does $f(x,y)=x+y$ necessarily attain both extrema on $(0,1)^2$? Justify.",
+        "hint": "Check closedness, then examine values approaching corners.",
+        "solution": "No. The open square is not closed. Values approach 0 and 2 but neither is attained; $0<x+y<2$ throughout.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      },
+      {
+        "id": "l04-rectangle-transfer",
+        "outcome": "Transfer the source skill to a new function or domain.",
+        "kind": "reasoning",
+        "prompt": "Find both absolute extrema of $f=x^2+y$ on $[-1,1]\\times[0,2]$, including all locations.",
+        "hint": "Check interior and each edge; ties matter.",
+        "solution": "The polynomial is continuous on the closed bounded rectangle. Interior: $\\nabla f=(2x,1)$ has no zero. Bottom and top edges give $x^2$ and $x^2+2$ for $-1\\le x\\le1$; their ranges are $[0,1]$ and $[2,3]$. Left and right edges both give $1+y$ for $0\\le y\\le2$, ranging over $[1,3]$. Thus the minimum is 0 at $(0,0)$ and the maximum is 3 at $(-1,2)$ and $(1,2)$.",
+        "rubric": [
+          "State applicable hypotheses and domain.",
+          "Show the calculation or comparison that supports the conclusion."
+        ]
+      }
+    ]
   },
   "lagrange-circle": {
     "prerequisites": [
