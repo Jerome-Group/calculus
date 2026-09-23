@@ -2083,6 +2083,40 @@
   "absolute-conditional-alternating": {
     "prerequisites": ["comparison-tests", "monotone-sequences"],
     "reasoning": "Proof sketch",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "alternating-series-test-hypotheses",
+        "title": "Alternating Series Test (imported)",
+        "statement": "If $b_n>0$ decreases to $0$, then $\\sum_{n=1}^{\\infty}(-1)^{n-1}b_n$ converges. This alone does not decide absolute convergence.",
+        "hypotheses": [
+          "The signs alternate and the magnitudes $b_n$ are eventually nonincreasing and tend to $0$."
+        ],
+        "prerequisites": ["Sequence limits and monotonicity"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "alternating-root-series-classification",
+        "title": "Convergence and absolute convergence are separate",
+        "strategy": "First establish the signed series using the alternating test, then test its magnitudes with a positive-series benchmark.",
+        "setup": "Classify $S=\\sum_{n=1}^{\\infty}(-1)^{n-1}/\\sqrt n$, the example on MH1101 Chapter 05 Notes physical page 17.",
+        "steps": [
+          {
+            "label": "Check the alternating hypotheses",
+            "text": "The positive magnitudes $b_n=1/\\sqrt n$ decrease and tend to $0$, so the Alternating Series Test proves convergence of $S$.",
+            "equation": "b_{n+1}<b_n,\\qquad\\lim_{n\\to\\infty}b_n=0"
+          },
+          {
+            "label": "Test absolute convergence separately",
+            "text": "Taking absolute values removes the signs and produces a $p$-series with $p=1/2\\le1$, which diverges.",
+            "equation": "\\sum_{n=1}^{\\infty}\\left|\\frac{(-1)^{n-1}}{\\sqrt n}\\right|=\\sum_{n=1}^{\\infty}n^{-1/2}=\\infty"
+          }
+        ],
+        "result": "$S$ is conditionally convergent: the signed sum converges, but its absolute-value series diverges.",
+        "verification": "The fact that $b_n\\to0$ is necessary but does not by itself prove convergence; the decrease and alternating signs supply the signed-series verdict."
+      }
+    ],
     "sections": [
       {
         "title": "Separate two convergence questions",
@@ -2102,7 +2136,23 @@
         "Use the definition of conditional convergence."
       ],
       "solutionTex": "\\sum_{n=1}^{\\infty}\\left|\\frac{(-1)^n}{n^2}\\right|=\\sum_{n=1}^{\\infty}\\frac1{n^2}<\\infty"
-    }
+    },
+    "exercises": [
+      {
+        "id": "alternating-rational-transfer",
+        "outcome": "Classify a signed alternating series by checking its magnitudes and its absolute-value series separately.",
+        "kind": "conceptual",
+        "prompt": "Classify $\\sum_{n=1}^{\\infty}(-1)^{n-1}n/(n^2+1)$ as absolutely convergent, conditionally convergent, or divergent. Justify both tests you use.",
+        "hint": "For $b_n=n/(n^2+1)$, inspect the derivative of $x/(x^2+1)$ on $x\\ge1$. Compare the positive series with $\\sum 1/n$ by a limit ratio.",
+        "solution": "For $x\\ge1$, the derivative of $x/(x^2+1)$ is $(1-x^2)/(x^2+1)^2\\le0$. Thus $b_n$ decreases to $0$, so the alternating series converges. But $b_n/(1/n)=n^2/(n^2+1)\\to1$; limit comparison with the divergent harmonic series shows $\\sum b_n$ diverges. The signed series is conditionally convergent.",
+        "rubric": [
+          "Establish positive magnitudes, eventual decrease and zero limit before applying the alternating test.",
+          "Test absolute values using a valid positive-series comparison.",
+          "State conditional convergence only after both verdicts."
+        ],
+        "solutionTex": "\\sum_{n=1}^{\\infty}(-1)^{n-1}\\frac{n}{n^2+1}\\text{ converges conditionally},\\qquad\\lim_{n\\to\\infty}\\frac{n/(n^2+1)}{1/n}=1"
+      }
+    ]
   },
   "ratio-root-tests": {
     "prerequisites": ["absolute-conditional-alternating"],

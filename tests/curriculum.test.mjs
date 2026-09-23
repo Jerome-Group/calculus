@@ -252,6 +252,19 @@ test("WebMCP concept read returns the same practice and source data as the visib
       (exercise) => exercise.id === "second-derivative-definition-transfer",
     ),
   );
+  const alternating = tool.execute({
+    conceptId: "absolute-conditional-alternating",
+  });
+  assert.ok(
+    alternating.lesson.contentBlocks.some(
+      (block) => block.id === "alternating-root-series-classification",
+    ),
+  );
+  assert.ok(
+    alternating.lesson.exercises.some(
+      (exercise) => exercise.id === "alternating-rational-transfer",
+    ),
+  );
 });
 
 test("WebMCP state includes the mathematical readout and its evidence limit", async () => {

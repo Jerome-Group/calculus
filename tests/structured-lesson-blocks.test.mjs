@@ -123,3 +123,25 @@ test("one-sided limits teach equal, unequal, and missing side limits", async () 
     );
   }
 });
+
+test("alternating series lesson renders both convergence verdicts", async () => {
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const { StructuredLessonBlockView } = await vite.ssrLoadModule(
+    "/components/atlas/structured-lesson-block.tsx",
+  );
+  const guide = learningGuides["absolute-conditional-alternating"];
+  const rendered = guide.contentBlocks
+    .map((block) =>
+      renderToStaticMarkup(
+        React.createElement(StructuredLessonBlockView, { block }),
+      ),
+    )
+    .join("");
+  assert.match(rendered, /Alternating Series Test/);
+  assert.match(rendered, /conditionally convergent/);
+  assert.match(rendered, /<math\b/);
+  assert.doesNotMatch(rendered, /katex-error/);
+  assert.equal(guide.exercises[0].id, "alternating-rational-transfer");
+});
