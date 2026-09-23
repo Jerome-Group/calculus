@@ -90,6 +90,101 @@
         ],
         "result": "$A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$ by equality of members.",
         "verification": "Replacing $(A\\cap C)$ with $C$ is invalid: elements of $C$ outside $A$ would be added."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-function-rule",
+        "title": "Decide whether a rule assigns exactly one output to every declared input.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $D=\\{-1,0,1\\}$ and $E=\\{0,1,2\\}$. Compare $R=\\{(-1,1),(0,0),(1,1)\\}$ with $S=\\{(-1,1),(0,0),(0,2),(1,1)\\}$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "In $R$, each of the three inputs appears once and every output belongs to $E$."
+          },
+          {
+            "label": "Check",
+            "text": "In $S$, input $0$ has two outputs, $0$ and $2$; the rule is ambiguous at that input."
+          }
+        ],
+        "result": "$R$ defines a function $D\\to E$; $S$ does not.",
+        "verification": "Merely listing an output for every input is insufficient when one input has two outputs."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-representations",
+        "title": "Translate a complete verbal rule into a numerical table and formula.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "On $D=\\{-2,0,3\\}$, the rule is “square the input, then add one.”",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Applying the same operation to each input gives $f(-2)=5$, $f(0)=1$, and $f(3)=10$."
+          },
+          {
+            "label": "Check",
+            "text": "The table $(-2,5),(0,1),(3,10)$ and formula $f(x)=x^2+1$ on $D$ encode the same function."
+          }
+        ],
+        "result": "A table covering all of this finite $D$ is complete; a table missing $3$ is not.",
+        "verification": "A finite sample table does not define the rule on all real inputs unless the domain is restricted."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-graph-pairs",
+        "title": "Read graph points as ordered pairs and distinguish input from output.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Take $f(x)=2x+1$ on $D=\\{-1,0,2\\}$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Substitute each permitted input: $f(-1)=-1$, $f(0)=1$, $f(2)=5$."
+          },
+          {
+            "label": "Check",
+            "text": "Plot only $(-1,-1),(0,1),(2,5)$ because the declared domain has three points."
+          }
+        ],
+        "result": "The graph is a three-point set, not the full line $y=2x+1$.",
+        "verification": "The formula and domain jointly determine the graph."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-vertical-line",
+        "title": "Apply the vertical line test and select a single-valued branch.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Consider the relation $x=y^2-2$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "At $x=2$, $y^2=4$, so the vertical line hits $(2,2)$ and $(2,-2)$."
+          },
+          {
+            "label": "Check",
+            "text": "Selecting $y=\\sqrt{x+2}$ retains one output for each $x\\ge-2$; the negative branch also defines a separate function."
+          }
+        ],
+        "result": "The whole sideways parabola fails the test, while either branch passes.",
+        "verification": "A horizontal line may meet a function graph twice; that is irrelevant to the vertical line test."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-difference-quotient",
+        "title": "Simplify a difference quotient before taking any limit.",
+        "strategy": "Use the given rule and its domain before simplifying.",
+        "setup": "For $f(x)=2x^2-5x+1$ and $h\\ne0$, form $[f(a+h)-f(a)]/h$.",
+        "steps": [
+          {
+            "label": "Set up",
+            "text": "Expanding gives $f(a+h)=2a^2+4ah+2h^2-5a-5h+1$."
+          },
+          {
+            "label": "Derive",
+            "text": "Subtracting $f(a)$ leaves $4ah+2h^2-5h=h(4a+2h-5)$; cancel only because $h\\ne0$."
+          }
+        ],
+        "result": "The quotient is $4a+2h-5$.",
+        "verification": "The expression at $h=0$ is still undefined in its original quotient form."
       }
     ],
     "exercises": [
@@ -149,6 +244,66 @@
           "Do not invoke distributivity for a pure rearrangement."
         ],
         "solutionTex": "(A\\cup B)\\cup C=A\\cup(B\\cup C)=B\\cup(A\\cup C)"
+      },
+      {
+        "id": "mh1100-l01-function-rule-transfer",
+        "outcome": "Decide whether a rule assigns exactly one output to every declared input.",
+        "kind": "conceptual",
+        "prompt": "Let $D=\\{-1,0,1\\}$ and $E=\\{0,1,2\\}$. Does $T=\\{(-1,1),(0,0)\\}$ define a function $D\\to E$? What if its declared domain is $\\{-1,0\\}$?",
+        "hint": "Check both existence and uniqueness for every declared input.",
+        "solution": "$T$ fails on $D$ because $1$ has no output. On domain $\\{-1,0\\}$ it is a function into $E$, with outputs $1$ and $0$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-representations-transfer",
+        "outcome": "Translate a complete verbal rule into a numerical table and formula.",
+        "kind": "conceptual",
+        "prompt": "On $D=\\{-1,0,2\\}$, turn “twice the input minus three” into a complete table and formula.",
+        "hint": "Evaluate the verbal rule at every member of $D$.",
+        "solution": "$f(x)=2x-3$ on $D$ gives $(-1,-5),(0,-3),(2,1)$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-graph-pairs-transfer",
+        "outcome": "Read graph points as ordered pairs and distinguish input from output.",
+        "kind": "conceptual",
+        "prompt": "List the graph of $g(x)=x^2$ on $D=\\{-2,1\\}$ and decide whether $(0,0)$ belongs.",
+        "hint": "A point is present only if its first coordinate is in $D$.",
+        "solution": "The graph is $\\{(-2,4),(1,1)\\}$. Although the formula gives $0$ at zero, $(0,0)$ is absent because $0\\notin D$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-vertical-line-transfer",
+        "outcome": "Apply the vertical line test and select a single-valued branch.",
+        "kind": "conceptual",
+        "prompt": "Does $x=y^2-9$ define $y$ as a function of $x$? State a branch and domain that does.",
+        "hint": "Use a permitted input with two heights.",
+        "solution": "At $x=0$, $y=3$ or $y=-3$, so the relation fails. The branch $y=\\sqrt{x+9}$ on $[-9,\\infty)$ is a function.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-difference-quotient-transfer",
+        "outcome": "Simplify a difference quotient before taking any limit.",
+        "kind": "conceptual",
+        "prompt": "For $g(x)=3x^2+x$, simplify $[g(a+h)-g(a)]/h$ for $h\\ne0$.",
+        "hint": "Expand before canceling.",
+        "solution": "$g(a+h)-g(a)=6ah+3h^2+h$, so the quotient is $6a+3h+1$.",
+        "rubric": [
+          "Apply the correct rule and domain restriction.",
+          "Show the decisive calculation or interval argument."
+        ]
       }
     ]
   },
@@ -174,7 +329,445 @@
         "Distinguish strict monotonicity from a derivative being everywhere positive."
       ],
       "solutionTex": "x_1<x_2\\implies x_1^3<x_2^3;\\quad 2\\in D,\\ -2\\notin D"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-piecewise-endpoints",
+        "title": "Choose the active piece at a boundary and mark open and closed graph endpoints.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $f(x)=1-x$ when $x\\le-1$ and $f(x)=x^2$ when $x>-1$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "The first rule owns $-1$, so $f(-1)=2$ and the line has a filled point $(-1,2)$."
+          },
+          {
+            "label": "Check",
+            "text": "The second rule approaches height $1$ at $-1$ but excludes that input, so draw an open point $(-1,1)$."
+          }
+        ],
+        "result": "The graph has a jump at $-1$; the two nearby heights do not change the assigned value.",
+        "verification": "Using both formulas at the boundary would violate the single-output rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-absolute-relu",
+        "title": "Convert absolute value and ReLU to piecewise rules and compare their negative inputs.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Compare $a(x)=|x|$ and $r(x)=\\max(0,x)$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "For $x<0$, $a(x)=-x>0$ but $r(x)=0$; for $x\\ge0$, both equal $x$."
+          },
+          {
+            "label": "Check",
+            "text": "At $x=0$, both branches meet at the filled origin; the absolute-value graph has a rising left ray, while ReLU has a flat left ray."
+          }
+        ],
+        "result": "$a(-2)=2$ and $r(-2)=0$; identical right halves do not make the functions identical.",
+        "verification": "Distance from zero explains $|x|$, while maximum with zero explains ReLU."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-leaky-relu",
+        "title": "Use a leaky ReLU parameter to determine branch slope and junction value.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Take $L(x)=x$ for $x>0$ and $L(x)=0.1x$ for $x\\le0$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "The negative branch has slope $0.1$ and includes $L(0)=0$."
+          },
+          {
+            "label": "Check",
+            "text": "The positive branch has slope $1$; unlike ReLU, $L(-2)=-0.2$ rather than zero."
+          }
+        ],
+        "result": "Both rays join at the origin but have different slopes.",
+        "verification": "A small positive left slope does not make the negative branch flat."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-rational-indicator",
+        "title": "Interpret a rational-indicator piecewise rule on its dense input classes.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $q(x)=1$ if $x\\in\\mathbb Q$ and $q(x)=0$ otherwise.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "The rational input $1/2$ gives $q(1/2)=1$; the irrational input $\\sqrt2$ gives $q(\\sqrt2)=0$."
+          },
+          {
+            "label": "Check",
+            "text": "Both input classes occur arbitrarily near every real $x$, so the graph has points on both height lines in every horizontal interval."
+          }
+        ],
+        "result": "The graph is not a solid horizontal line at either height.",
+        "verification": "A small sampled table cannot reveal every point of this graph."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-parity-test",
+        "title": "Classify a function as even, odd, or neither by substituting the negative input.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Classify $p(x)=x^3+x^2$ on $\\mathbb R$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Compute $p(-x)=-x^3+x^2$."
+          },
+          {
+            "label": "Check",
+            "text": "This is neither $p(x)=x^3+x^2$ nor $-p(x)=-x^3-x^2$ for all $x$."
+          }
+        ],
+        "result": "$p$ is neither even nor odd.",
+        "verification": "Checking one convenient input cannot prove parity; an identity for all inputs is required."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-parity-decomposition",
+        "title": "Decompose a function on a symmetric domain into unique even and odd parts.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $f$ be defined on a domain symmetric about zero.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Set $e(x)=[f(x)+f(-x)]/2$ and $o(x)=[f(x)-f(-x)]/2$. Substitution shows $e(-x)=e(x)$ and $o(-x)=-o(x)$."
+          },
+          {
+            "label": "Check",
+            "text": "Adding gives $e(x)+o(x)=f(x)$; subtracting any two decompositions shows the even and odd differences must both be zero."
+          }
+        ],
+        "result": "These formulas give the unique parity decomposition.",
+        "verification": "The construction needs $-x$ in the domain whenever $x$ is in it."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-strict-monotonicity",
+        "title": "Test strict increase or decrease using every ordered input pair on an interval.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Study $f(x)=x^2$ on $[0,3]$ and on $[-3,3]$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "For $0\\le x_1<x_2$, $x_2^2-x_1^2=(x_2-x_1)(x_2+x_1)>0$; hence strict increase holds on $[0,3]$."
+          },
+          {
+            "label": "Check",
+            "text": "On $[-3,3]$, inputs $-2<-1$ give $4>1$, while $1<2$ give $1<4$; neither single direction holds throughout."
+          }
+        ],
+        "result": "State the interval with the monotonicity claim.",
+        "verification": "A rising segment of a graph does not certify a whole larger interval."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-range-from-monotone",
+        "title": "Derive the range of a decreasing function from endpoint and limiting behavior.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $f(x)=1/(1+\\sqrt{1+x})$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "The radical requires $x\\ge-1$. For $x_1<x_2$ in this domain, the denominator grows strictly, so the positive reciprocal decreases."
+          },
+          {
+            "label": "Check",
+            "text": "At $x=-1$, $f=1$; as $x\\to\\infty$, the denominator grows without bound and $f\\to0$ without reaching zero."
+          }
+        ],
+        "result": "$\\operatorname{range}(f)=(0,1]$.",
+        "verification": "A limit at infinity is not an attained endpoint."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-polynomial-power",
+        "title": "Distinguish polynomial degree from a general power function and give natural domains.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Compare $P(x)=3x^4-2x+1$ and $r(x)=x^{1/2}$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "The leading nonzero term of $P$ has exponent 4; all exponents are nonnegative integers, so $P$ is a degree-four polynomial on $\\mathbb R$."
+          },
+          {
+            "label": "Check",
+            "text": "The rule $r(x)=\\sqrt{x}$ is a power function with exponent $1/2$ and real domain $[0,\\infty)$; it is not a polynomial."
+          }
+        ],
+        "result": "A power function need not be a polynomial.",
+        "verification": "A written high-degree term with zero coefficient does not set polynomial degree."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-rational-algebraic",
+        "title": "Classify rational and algebraic rules and retain restrictions after simplification.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Take $r(x)=(x^2-1)/(x-1)$ and $a(x)=\\sqrt{x+2}/(x-1)$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "For $r$, denominator zero excludes $x=1$ even though cancellation gives $x+1$ elsewhere."
+          },
+          {
+            "label": "Check",
+            "text": "The rule $a$ is algebraic; its square root needs $x\\ge-2$ and its denominator excludes $1$."
+          }
+        ],
+        "result": "$\\operatorname{Dom}(r)=\\mathbb R\\setminus\\{1\\}$ and $\\operatorname{Dom}(a)=[-2,1)\\cup(1,\\infty)$.",
+        "verification": "Simplifying a formula does not silently fill a hole in its original domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-trigonometric-family",
+        "title": "Distinguish bounded periodic sine and cosine from reciprocal trigonometric domain gaps.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Compare $s(x)=\\sin x$ and $c(x)=1/\\sin x$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Sine is defined for every real input, repeats after $2\\pi$, and stays in $[-1,1]$."
+          },
+          {
+            "label": "Check",
+            "text": "The reciprocal requires $\\sin x\\ne0$, so $c$ excludes $k\\pi$ for integer $k$; its magnitude is at least one."
+          }
+        ],
+        "result": "$s$ has range $[-1,1]$; $c$ has range $(-\\infty,-1]\\cup[1,\\infty)$.",
+        "verification": "Periodicity does not imply boundedness or a full real domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-exponential-family",
+        "title": "Use the base to distinguish increasing and decreasing exponentials while keeping positive range.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Compare $f(x)=2^x$ and $g(x)=(1/2)^x$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Both pass through $(0,1)$ and remain positive; $f(1)=2$ while $g(1)=1/2$."
+          },
+          {
+            "label": "Check",
+            "text": "Because $g(x)=2^{-x}$, it reflects $f$ across the vertical axis and decreases as $x$ grows."
+          }
+        ],
+        "result": "Both have domain $\\mathbb R$ and range $(0,\\infty)$; zero is never attained.",
+        "verification": "A base below one reverses direction without making outputs negative."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-logarithmic-family",
+        "title": "Use exponential inverse relation to determine logarithm domain and range.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $y=\\log_2 x$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Rewrite as $x=2^y$: this requires $x>0$ and permits every real $y$."
+          },
+          {
+            "label": "Check",
+            "text": "Since $2^0=1$ and $2^3=8$, the log graph contains $(1,0)$ and $(8,3)$; it reflects $y=2^x$ across $y=x$."
+          }
+        ],
+        "result": "$\\operatorname{Dom}(\\log_2)=(0,\\infty)$ and its range is $\\mathbb R$.",
+        "verification": "A logarithm base must be positive and different from one to define an inverse; the source omits the latter condition."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-family-classification",
+        "title": "Classify mixed function formulas by construction and natural domain.",
+        "strategy": "Use the given rule and its domain before simplifying.",
+        "setup": "Compare $5^x$, $x^5$, $(1+x)/(1-\\sqrt{x})$, and $1-x+5x^4$.",
+        "steps": [
+          {
+            "label": "Set up",
+            "text": "The variable is the exponent in $5^x$, so it is exponential; the variable is the base in $x^5$, so it is both a power function and polynomial."
+          },
+          {
+            "label": "Derive",
+            "text": "The root-containing quotient is algebraic with $x\\ge0$ and $x\\ne1$; the last expression is a degree-four polynomial on $\\mathbb R$."
+          }
+        ],
+        "result": "The family name follows the construction, and domain restrictions still apply.",
+        "verification": "A formula can belong to more than one family, as $x^5$ does."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh1100-l01-piecewise-endpoints-transfer",
+        "outcome": "Choose the active piece at a boundary and mark open and closed graph endpoints.",
+        "kind": "conceptual",
+        "prompt": "Sketch endpoint markers for $g(x)=x+2$ if $x<2$ and $g(x)=5-x$ if $x\\ge2$; find $g(2)$.",
+        "hint": "The inequality with equality owns the boundary.",
+        "solution": "The first branch ends open at $(2,4)$; the second starts filled at $(2,3)$, so $g(2)=3$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-absolute-relu-transfer",
+        "outcome": "Convert absolute value and ReLU to piecewise rules and compare their negative inputs.",
+        "kind": "conceptual",
+        "prompt": "Write $h(x)=|x-3|$ and $k(x)=\\max(0,x-3)$ piecewise; compare their values at $x=1$.",
+        "hint": "Split at $x=3$.",
+        "solution": "For $x<3$, $h(x)=3-x$ and $k(x)=0$; for $x\\ge3$, both equal $x-3$. Thus $h(1)=2$ and $k(1)=0$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-leaky-relu-transfer",
+        "outcome": "Use a leaky ReLU parameter to determine branch slope and junction value.",
+        "kind": "conceptual",
+        "prompt": "Let $L(x)=x$ for $x>0$ and $L(x)=\\alpha x$ for $x\\le0$. For $\\alpha=1/4$, find $L(-4)$ and $L(2)$ and describe both graph rays.",
+        "hint": "Use the branch condition before multiplying.",
+        "solution": "$L(-4)=-1$ on the left ray of slope $1/4$; $L(2)=2$ on the right ray of slope $1$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-rational-indicator-transfer",
+        "outcome": "Interpret a rational-indicator piecewise rule on its dense input classes.",
+        "kind": "conceptual",
+        "prompt": "Let $q(x)=1$ for rational $x$ and $q(x)=0$ otherwise. Determine $q(0)$ and $q(\\pi)$, and explain whether a vertical line at either input meets the graph twice.",
+        "hint": "Classify each input first.",
+        "solution": "$0$ is rational, so $q(0)=1$; $\\pi$ is irrational, so $q(\\pi)=0$. Each vertical line meets exactly one graph point.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-parity-test-transfer",
+        "outcome": "Classify a function as even, odd, or neither by substituting the negative input.",
+        "kind": "conceptual",
+        "prompt": "Classify $u(x)=x^7-3x$ and $v(x)=2+x^6$ on $\\mathbb R$.",
+        "hint": "Substitute $-x$ into both.",
+        "solution": "$u(-x)=-x^7+3x=-u(x)$, so $u$ is odd. $v(-x)=2+x^6=v(x)$, so $v$ is even.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-parity-decomposition-transfer",
+        "outcome": "Decompose a function on a symmetric domain into unique even and odd parts.",
+        "kind": "conceptual",
+        "prompt": "Find the even and odd parts of $f(x)=x^3+2x^2+4$ on $[-2,2]$.",
+        "hint": "Use the half-sum and half-difference formulas.",
+        "solution": "$f(-x)=-x^3+2x^2+4$, so $e(x)=2x^2+4$ and $o(x)=x^3$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-strict-monotonicity-transfer",
+        "outcome": "Test strict increase or decrease using every ordered input pair on an interval.",
+        "kind": "conceptual",
+        "prompt": "Is $g(x)=-x^2$ strictly decreasing on $[0,4]$? Is it decreasing on $[-4,4]$?",
+        "hint": "Compare squared values for nonnegative inputs and find a counterpair on the larger interval.",
+        "solution": "On $[0,4]$, $x_1<x_2$ implies $-x_1^2>-x_2^2$, so yes. On $[-4,4]$, $-2<-1$ gives $-4<-1$, contradicting decrease.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-range-from-monotone-transfer",
+        "outcome": "Derive the range of a decreasing function from endpoint and limiting behavior.",
+        "kind": "conceptual",
+        "prompt": "Find the domain and range of $h(x)=1/(2+\\sqrt{x})$.",
+        "hint": "Use the smallest input and the unattained lower limit.",
+        "solution": "The domain is $[0,\\infty)$; $h$ decreases from $h(0)=1/2$ toward but never to $0$, so its range is $(0,1/2]$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-polynomial-power-transfer",
+        "outcome": "Distinguish polynomial degree from a general power function and give natural domains.",
+        "kind": "conceptual",
+        "prompt": "Classify $Q(x)=0x^5+2x^2-1$ and $s(x)=x^{-1}$; state degrees or natural domains.",
+        "hint": "Discard zero leading coefficients and check negative exponents.",
+        "solution": "$Q$ is a degree-two polynomial on $\\mathbb R$; $s$ is a power function $1/x$ with domain $\\mathbb R\\setminus\\{0\\}$, not a polynomial.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-rational-algebraic-transfer",
+        "outcome": "Classify rational and algebraic rules and retain restrictions after simplification.",
+        "kind": "conceptual",
+        "prompt": "Classify $u(x)=1/(x^2-4)$ and find its domain; is $v(x)=\\sqrt{x-5}$ rational?",
+        "hint": "Factor the denominator; roots permit algebraic functions beyond rational ratios.",
+        "solution": "$u$ is rational with domain $\\mathbb R\\setminus\\{-2,2\\}$. $v$ is algebraic with domain $[5,\\infty)$ but is not rational.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-trigonometric-family-transfer",
+        "outcome": "Distinguish bounded periodic sine and cosine from reciprocal trigonometric domain gaps.",
+        "kind": "conceptual",
+        "prompt": "Find the excluded inputs and range of $u(x)=1/\\cos x$.",
+        "hint": "Cosine zeros occur at odd half-turns; reciprocals of values in $[-1,1]\\setminus\\{0\\}$ have magnitude at least one.",
+        "solution": "$u$ excludes $\\pi/2+k\\pi$ for $k\\in\\mathbb Z$ and has range $(-\\infty,-1]\\cup[1,\\infty)$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-exponential-family-transfer",
+        "outcome": "Use the base to distinguish increasing and decreasing exponentials while keeping positive range.",
+        "kind": "conceptual",
+        "prompt": "Find $h(-1)$ and $h(0)$ for $h(x)=3^x$ and state its range.",
+        "hint": "Use $3^{-1}=1/3$ and positivity.",
+        "solution": "$h(-1)=1/3$, $h(0)=1$, and the range is $(0,\\infty)$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-logarithmic-family-transfer",
+        "outcome": "Use exponential inverse relation to determine logarithm domain and range.",
+        "kind": "conceptual",
+        "prompt": "Solve $\\log_3 x=2$ and state whether $\\log_3 0$ is defined.",
+        "hint": "Translate to an exponential equation.",
+        "solution": "$x=3^2=9$. $\\log_3 0$ is undefined because $3^y>0$ for every real $y$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-family-classification-transfer",
+        "outcome": "Classify mixed function formulas by construction and natural domain.",
+        "kind": "conceptual",
+        "prompt": "Classify $2^x$, $x^{-2}$, and $3x^2-1$; give natural domains.",
+        "hint": "Ask whether the variable sits in the exponent or base and whether a denominator can vanish.",
+        "solution": "$2^x$ is exponential on $\\mathbb R$; $x^{-2}=1/x^2$ is a power and rational function on $\\mathbb R\\setminus\\{0\\}$; $3x^2-1$ is a degree-two polynomial on $\\mathbb R$.",
+        "rubric": [
+          "Apply the correct rule and domain restriction.",
+          "Show the decisive calculation or interval argument."
+        ]
+      }
+    ]
   },
   "transform-compose": {
     "prerequisites": ["sets-functions-domains", "function-shapes"],
@@ -198,7 +791,259 @@
         "Apply output scaling and translation in order."
       ],
       "solutionTex": "x=1-\\frac23=\\frac13,\\quad y=-2(3)+4=-2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-shifts",
+        "title": "Track vertical and horizontal shifts by mapping a known graph point.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Suppose $(2,3)$ lies on $f$ and $g(x)=f(x-4)+5$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "To reuse input $2$, solve $x-4=2$, giving new input $x=6$."
+          },
+          {
+            "label": "Check",
+            "text": "Add five to the old output: $g(6)=f(2)+5=8$."
+          }
+        ],
+        "result": "The known point moves to $(6,8)$; the graph moves right four and up five.",
+        "verification": "The minus inside the input corresponds to a right shift, unlike the plus outside."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-scales-reflections",
+        "title": "Track point coordinates under horizontal and vertical scaling and reflection.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Suppose $(2,3)$ lies on $f$ and $g(x)=-2f(-x/2)$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Set $-x/2=2$, so $x=-4$: input reversal and stretch act before evaluation."
+          },
+          {
+            "label": "Check",
+            "text": "Scale and reflect the height: $g(-4)=-2f(2)=-6$."
+          }
+        ],
+        "result": "The point becomes $(-4,-6)$.",
+        "verification": "The argument scale acts inversely on the input coordinate; the outer factor acts directly on height."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-arithmetic-domains",
+        "title": "Derive domains of sum, product, and quotient from both input domains and zeros of the divisor.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $f(x)=\\sqrt{x-1}$ and $g(x)=x-3$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "Both are defined exactly when $x\\ge1$, so $f+g$ and $fg$ have domain $[1,\\infty)$."
+          },
+          {
+            "label": "Check",
+            "text": "For $f/g$, also remove $x=3$ because $g(3)=0$; for $g/f$, remove $x=1$ because $f(1)=0$."
+          }
+        ],
+        "result": "$\\operatorname{Dom}(f/g)=[1,3)\\cup(3,\\infty)$ and $\\operatorname{Dom}(g/f)=(1,\\infty)$.",
+        "verification": "Quotient domains depend on which function is below the fraction bar."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-composition-domain",
+        "title": "Calculate composite values and reject inner outputs outside the outer domain.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $f(x)=(x+1)/(x+2)$ and $g(x)=x+1/x$.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "The inner function requires $x\\ne0$. The outer function rejects input $-2$, so solve $g(x)=-2$."
+          },
+          {
+            "label": "Check",
+            "text": "Multiplying by nonzero $x$ gives $(x+1)^2=0$, hence $x=-1$ must also be removed."
+          }
+        ],
+        "result": "$\\operatorname{Dom}(f\\circ g)=\\mathbb R\\setminus\\{-1,0\\}$.",
+        "verification": "Simplifying the composed fraction must not restore an originally forbidden input."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-nested-composition",
+        "title": "Evaluate nested composition from the innermost function outward.",
+        "strategy": "Identify the applicable condition, compute explicitly, and contrast the tempting incorrect reading.",
+        "setup": "Let $f(x)=1$ when $|x|\\le1$ and $f(x)=0$ otherwise.",
+        "steps": [
+          {
+            "label": "Determine",
+            "text": "For any real $x$, the first application produces either $0$ or $1$."
+          },
+          {
+            "label": "Check",
+            "text": "Both outputs lie in $[-1,1]$, so the second application gives $1$; a third application gives $f(1)=1$."
+          }
+        ],
+        "result": "$f(f(f(x)))=1$ for every real $x$.",
+        "verification": "The middle expression becomes constant even though the first application is not constant."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-sign-sine-composition",
+        "title": "Compose a sign rule with sine using zeros and sign intervals.",
+        "strategy": "Use the given rule and its domain before simplifying.",
+        "setup": "Let $q(x)=\\operatorname{sgn}(\\sin x)$.",
+        "steps": [
+          {
+            "label": "Set up",
+            "text": "Sine is zero at $k\\pi$, so $q(k\\pi)=0$ for every integer $k$."
+          },
+          {
+            "label": "Derive",
+            "text": "On $(2k\\pi,(2k+1)\\pi)$ sine is positive, giving height 1; on $((2k+1)\\pi,(2k+2)\\pi)$ it is negative, giving height -1."
+          }
+        ],
+        "result": "The graph alternates horizontal open intervals at heights 1 and -1, with isolated zeros at integer multiples of $\\pi$.",
+        "verification": "The zero points must be included; the sign function does not assign them a side value."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-trig-addition-identities",
+        "title": "Derive product-to-sum and half-angle identities from addition formulas.",
+        "strategy": "Use the given rule and its domain before simplifying.",
+        "setup": "Use $\\sin(\\alpha\\pm\\beta)=\\sin\\alpha\\cos\\beta\\pm\\cos\\alpha\\sin\\beta$.",
+        "steps": [
+          {
+            "label": "Set up",
+            "text": "Subtract the minus case from the plus case: $\\sin(\\alpha+\\beta)-\\sin(\\alpha-\\beta)=2\\cos\\alpha\\sin\\beta$."
+          },
+          {
+            "label": "Derive",
+            "text": "Set $\\beta=\\alpha$ in $\\cos(\\alpha-\\beta)=\\cos\\alpha\\cos\\beta+\\sin\\alpha\\sin\\beta$ and $\\cos(\\alpha+\\beta)=\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta$; subtract to get $1-\\cos(2\\alpha)=2\\sin^2\\alpha$."
+          }
+        ],
+        "result": "Thus $\\cos\\alpha\\sin\\beta=[\\sin(\\alpha+\\beta)-\\sin(\\alpha-\\beta)]/2$ and $\\sin^2\\alpha=[1-\\cos(2\\alpha)]/2$.",
+        "verification": "The two formulas come from different pairings; reversing subtraction changes the sign."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh1100-l01-hyperbolic-addition-identities",
+        "title": "Derive hyperbolic product and square identities from supplied addition formulas.",
+        "strategy": "Use the given rule and its domain before simplifying.",
+        "setup": "Use $\\cosh(\\alpha\\pm\\beta)=\\cosh\\alpha\\cosh\\beta\\pm\\sinh\\alpha\\sinh\\beta$.",
+        "steps": [
+          {
+            "label": "Set up",
+            "text": "Add plus and minus formulas; the $\\sinh\\alpha\\sinh\\beta$ terms cancel, giving $2\\cosh\\alpha\\cosh\\beta$."
+          },
+          {
+            "label": "Derive",
+            "text": "Set $\\beta=\\alpha$ and subtract $\\cosh(0)=1$ from $\\cosh(2\\alpha)$ to obtain $2\\sinh^2\\alpha$."
+          }
+        ],
+        "result": "Hence $\\cosh\\alpha\\cosh\\beta=[\\cosh(\\alpha+\\beta)+\\cosh(\\alpha-\\beta)]/2$ and $\\sinh^2\\alpha=[\\cosh(2\\alpha)-1]/2$.",
+        "verification": "The hyperbolic square identity has a minus one, unlike the trigonometric sine-square identity."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh1100-l01-shifts-transfer",
+        "outcome": "Track vertical and horizontal shifts by mapping a known graph point.",
+        "kind": "conceptual",
+        "prompt": "Suppose $(1,-2)$ lies on $f$. Where does it move under $h(x)=f(x+3)-4$?",
+        "hint": "Solve $x+3=1$ before changing height.",
+        "solution": "The new input is $-2$ and output is $-6$, so the point moves to $(-2,-6)$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-scales-reflections-transfer",
+        "outcome": "Track point coordinates under horizontal and vertical scaling and reflection.",
+        "kind": "conceptual",
+        "prompt": "Suppose $(3,-1)$ lies on $f$. Map this point under $h(x)=3f(2x)$ and state the graph changes.",
+        "hint": "Solve $2x=3$ and multiply output by three.",
+        "solution": "The point moves to $(3/2,-3)$: horizontal shrink by two, vertical stretch by three.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-arithmetic-domains-transfer",
+        "outcome": "Derive domains of sum, product, and quotient from both input domains and zeros of the divisor.",
+        "kind": "conceptual",
+        "prompt": "For $u(x)=\\sqrt{x+2}$ and $v(x)=x$, find domains of $uv$ and $u/v$.",
+        "hint": "Intersect input domains, then exclude divisor zeros only for the quotient.",
+        "solution": "$uv$ has domain $[-2,\\infty)$; $u/v$ has domain $[-2,0)\\cup(0,\\infty)$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-composition-domain-transfer",
+        "outcome": "Calculate composite values and reject inner outputs outside the outer domain.",
+        "kind": "conceptual",
+        "prompt": "For $p(x)=\\sqrt{x}$ and $q(x)=x-4$, find domains of $p\\circ q$ and $q\\circ p$.",
+        "hint": "Test the inner domain, then the outer domain.",
+        "solution": "$p(q(x))=\\sqrt{x-4}$ needs $x\\ge4$; $q(p(x))=\\sqrt{x}-4$ needs $x\\ge0$.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-nested-composition-transfer",
+        "outcome": "Evaluate nested composition from the innermost function outward.",
+        "kind": "conceptual",
+        "prompt": "Let $r(x)=0$ when $x<0$ and $r(x)=2$ when $x\\ge0$. Find $r(r(x))$ for all real $x$.",
+        "hint": "Track the possible first outputs before applying the rule again.",
+        "solution": "The first output is $0$ or $2$, both nonnegative, so $r(r(x))=2$ for all real $x.",
+        "rubric": [
+          "Use the stated domain or branch condition before computing.",
+          "Give a reason that distinguishes the answer from a nearby incorrect claim."
+        ]
+      },
+      {
+        "id": "mh1100-l01-sign-sine-composition-transfer",
+        "outcome": "Compose a sign rule with sine using zeros and sign intervals.",
+        "kind": "conceptual",
+        "prompt": "With $\\operatorname{sgn}(t)=-1,0,1$ according as $t<0,t=0,t>0$, find $\\operatorname{sgn}(\\cos x)$ on $(0,2\\pi)$ and at $x=\\pi/2,3\\pi/2$.",
+        "hint": "Track cosine signs and its zeros.",
+        "solution": "It is 1 on $(0,\\pi/2)\\cup(3\\pi/2,2\\pi)$, -1 on $(\\pi/2,3\\pi/2)$, and 0 at the two endpoints $\\pi/2,3\\pi/2$.",
+        "rubric": [
+          "Apply the correct rule and domain restriction.",
+          "Show the decisive calculation or interval argument."
+        ]
+      },
+      {
+        "id": "mh1100-l01-trig-addition-identities-transfer",
+        "outcome": "Derive product-to-sum and half-angle identities from addition formulas.",
+        "kind": "conceptual",
+        "prompt": "Given $\\sin(\\alpha\\pm\\beta)=\\sin\\alpha\\cos\\beta\\pm\\cos\\alpha\\sin\\beta$, derive $\\sin\\alpha\\cos\\beta=[\\sin(\\alpha+\\beta)+\\sin(\\alpha-\\beta)]/2$.",
+        "hint": "Add the two sine formulas.",
+        "solution": "Adding cancels the $\\cos\\alpha\\sin\\beta$ terms and gives $2\\sin\\alpha\\cos\\beta$; divide by two.",
+        "rubric": [
+          "Apply the correct rule and domain restriction.",
+          "Show the decisive calculation or interval argument."
+        ]
+      },
+      {
+        "id": "mh1100-l01-hyperbolic-addition-identities-transfer",
+        "outcome": "Derive hyperbolic product and square identities from supplied addition formulas.",
+        "kind": "conceptual",
+        "prompt": "Given $\\cosh(\\alpha\\pm\\beta)=\\cosh\\alpha\\cosh\\beta\\pm\\sinh\\alpha\\sinh\\beta$, derive $\\sinh\\alpha\\sinh\\beta=[\\cosh(\\alpha+\\beta)-\\cosh(\\alpha-\\beta)]/2$.",
+        "hint": "Subtract the two supplied cosh formulas.",
+        "solution": "Subtraction cancels the $\\cosh\\alpha\\cosh\\beta$ terms and leaves $2\\sinh\\alpha\\sinh\\beta$; divide by two.",
+        "rubric": [
+          "Apply the correct rule and domain restriction.",
+          "Show the decisive calculation or interval argument."
+        ]
+      }
+    ]
   },
   "limits-one-sided": {
     "prerequisites": ["sets-functions-domains"],
