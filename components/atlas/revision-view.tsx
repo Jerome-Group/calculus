@@ -35,7 +35,9 @@ export function RevisionView({
       {theorems?.length ? (
         theorems.map((theorem) => (
           <section key={theorem.id}>
-            <h3>{theorem.title}</h3>
+            <h3>
+              <MathText text={theorem.title} />
+            </h3>
             <p>
               <MathText text={theorem.statement} />
             </p>
