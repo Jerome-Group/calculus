@@ -10922,141 +10922,430 @@
       "id": "MH2100_Lecture_12_Final_Exam_Review:01",
       "source_id": "MH2100_Lecture_12_Final_Exam_Review",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Nine final-review problems: four integral methods",
-      "physical_pages_from_audit": "problem pages 1,4,7,10,13,16,19,22,25",
-      "linked_concept_ids": [
-        "review-integral-methods",
-        "review-change-of-variables",
-        "review-lagrange-box",
-        "review-critical-points",
-        "review-total-differentiability"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Nine final-review problems: four integral methods' at problem pages 1,4,7,10,13,16,19,22,25; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Four integral-method review problems",
+      "physical_pages_from_audit": "1–12; rendered physical pages inspected, including blank continuation slides",
+      "linked_concept_ids": ["review-integral-methods"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "All four prompt pages have no source-written solution steps; independently checked guide derivations supply the worked reasoning. The generic Stokes scene has not been verified against each exact source geometry, and no outcome-specific visualization, independent answer check, or learner performance is claimed.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the cone–cylinder curl flux]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the Stokes triangle circulation]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original Green task: cancellation before integration]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original potential task: endpoints and reversed orientation]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the cone–cylinder curl flux]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the Stokes triangle circulation]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original Green task: cancellation before integration]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original potential task: endpoints and reversed orientation]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-stokes-cone-cylinder-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-stokes-triangle-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-green-clockwise-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-potential-reversed-parameter-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "review-integral-methods:lecture12-stokes-cone-cylinder-flux",
+        "review-integral-methods:lecture12-stokes-triangle-circulation",
+        "review-integral-methods:lecture12-green-clockwise-triangle",
+        "review-integral-methods:lecture12-potential-reversed-parameter"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "1–12",
+      "inspected_physical_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "source_review_notes": [
+        "Rendered physical pages 1, 4, 7, and 10 contain the four integral-method prompts. Their paired continuation pages 2–3, 5–6, 8–9, and 11–12 are blank; each prompt page shows only an empty Solution area after the question. No source-written worked solution or erratum was observed. Compared the general Stokes outcomes stokes-theorem:source-skill-1 and stokes-theorem:lecture11-hypotheses, Green outcome greens-theorem:green-triangle-source, and endpoint outcome fundamental-line-theorem:endpoint-theorem. Their theorem-level method coverage is not duplicated; this row records the four distinct source-specific geometry, cancellation, and orientation applications."
+      ],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 2,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 3,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 5,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 6,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 8,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 9,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 11,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 12,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        }
+      ]
     },
     {
       "id": "MH2100_Lecture_12_Final_Exam_Review:02",
       "source_id": "MH2100_Lecture_12_Final_Exam_Review",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "substitution",
-      "physical_pages_from_audit": "problem pages 1,4,7,10,13,16,19,22,25",
-      "linked_concept_ids": [
-        "review-integral-methods",
-        "review-change-of-variables",
-        "review-lagrange-box",
-        "review-critical-points",
-        "review-total-differentiability"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'substitution' at problem pages 1,4,7,10,13,16,19,22,25; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Area of a curved region by change of variables",
+      "physical_pages_from_audit": "13–15; rendered physical pages inspected, including blank continuation slides",
+      "linked_concept_ids": ["review-change-of-variables"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The source gives only the area prompt on page 13; guide derivations and transfer are independently supplied. The exact curved-region display has not been verified as an outcome-specific visualization, and learner performance is unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-change-of-variables.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-change-of-variables.sections[Map every boundary]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-change-of-variables.sections[Check sign, scale, and bounds]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-change-of-variables.exercises[lecture12-curvilinear-area-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "review-change-of-variables:lecture12-curvilinear-area"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "13–15",
+      "inspected_physical_pages": [13, 14, 15],
+      "source_review_notes": [
+        "Rendered physical page 13 states the four-boundary first-quadrant area problem. Pages 14–15 are blank continuation slides; page 13's Solution area is empty. No source-written solution or erratum was observed. Compared the general map hypotheses in change-of-variables:lecture08-theorem-regularity-conditions and injectivity outcomes; those theorem conditions are not duplicated. This row records the distinct construction of coordinates from the four curved source boundaries and area via the inverse determinant."
+      ],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 14,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 15,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        }
+      ]
     },
     {
       "id": "MH2100_Lecture_12_Final_Exam_Review:03",
       "source_id": "MH2100_Lecture_12_Final_Exam_Review",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "box",
-      "physical_pages_from_audit": "problem pages 1,4,7,10,13,16,19,22,25",
-      "linked_concept_ids": [
-        "review-integral-methods",
-        "review-change-of-variables",
-        "review-lagrange-box",
-        "review-critical-points",
-        "review-total-differentiability"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'box' at problem pages 1,4,7,10,13,16,19,22,25; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Maximum-volume axis-aligned box in an ellipsoid",
+      "physical_pages_from_audit": "16–18; rendered physical pages inspected, including blank continuation slides",
+      "linked_concept_ids": ["review-lagrange-box"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The source gives the optimization prompt but no multiplier calculations; the guide derivation was independently recomputed. The generic box scene has not been verified against this exact ellipsoid for this outcome, and learner performance is unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-lagrange-box.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-lagrange-box.sections[Why the box is centered]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-lagrange-box.sections[Apply the requested Lagrange multipliers]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-lagrange-box.exercise",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": ["review-lagrange-box:lecture12-ellipsoid-box"],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "16–18",
+      "inspected_physical_pages": [16, 17, 18],
+      "source_review_notes": [
+        "Rendered physical page 16 asks for Lagrange multipliers on an axis-aligned box whose eight vertices lie on the stated ellipsoid. Pages 17–18 are blank continuations; the Solution area on page 16 is empty. No erratum was observed. Compared the general constraint method and open-top box outcomes in lagrange-sphere plus global-extrema-and-boundaries:compact-existence. Those general outcomes are not duplicated; this row records the distinct centered inscribed-box model and its ellipsoid-specific multiplier solution."
+      ],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 17,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 18,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        }
+      ]
     },
     {
       "id": "MH2100_Lecture_12_Final_Exam_Review:04",
       "source_id": "MH2100_Lecture_12_Final_Exam_Review",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "six stationary points",
-      "physical_pages_from_audit": "problem pages 1,4,7,10,13,16,19,22,25",
-      "linked_concept_ids": [
-        "review-integral-methods",
-        "review-change-of-variables",
-        "review-lagrange-box",
-        "review-critical-points",
-        "review-total-differentiability"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'six stationary points' at problem pages 1,4,7,10,13,16,19,22,25; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Classification of six stationary points",
+      "physical_pages_from_audit": "19–21; rendered physical pages inspected, including blank continuation slides",
+      "linked_concept_ids": ["review-critical-points"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The prompt is source-stated but no source classification is supplied. The guide enumerates and classifies all six candidates with an independently checked Hessian; the generic scene has not been verified for this exact outcome, and learner performance is unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-critical-points.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-critical-points.sections[Enumerate rather than sample]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-critical-points.sections[Keep all values and types]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-critical-points.exercises[lecture12-six-stationary-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "review-critical-points:lecture12-six-stationary-points"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "19–21",
+      "inspected_physical_pages": [19, 20, 21],
+      "source_review_notes": [
+        "Rendered physical page 19 gives the polynomial and asks for every local minimum, maximum, and saddle. Pages 20–21 are blank continuations; the Solution area on page 19 is empty. No erratum was observed. Compared hessian-classification:find-all-stationary, hessian-classification:determinant-test, and local-extrema-and-saddles:critical-point-candidates. Their general candidate and classification rules are not duplicated; this row records the source polynomial’s complete six-point enumeration, types, and values."
+      ],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 20,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 21,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        }
+      ]
     },
     {
       "id": "MH2100_Lecture_12_Final_Exam_Review:05",
       "source_id": "MH2100_Lecture_12_Final_Exam_Review",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "two differentiability examples",
-      "physical_pages_from_audit": "problem pages 1,4,7,10,13,16,19,22,25",
-      "linked_concept_ids": [
-        "review-integral-methods",
-        "review-change-of-variables",
-        "review-lagrange-box",
-        "review-critical-points",
-        "review-total-differentiability"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'two differentiability examples' at problem pages 1,4,7,10,13,16,19,22,25; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Two total-differentiability decisions at the origin",
+      "physical_pages_from_audit": "22–27; rendered physical pages inspected, including blank continuation slides",
+      "linked_concept_ids": ["review-total-differentiability"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "The two source prompts have no written solutions. The guide independently checks a full-radius bound for the positive case and the forced candidate plus diagonal obstruction for the negative case. Existing differentiability graphics are not claimed as outcome-specific proof; no learner performance is verified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-total-differentiability.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#review-total-differentiability.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A successful all-direction estimate]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A continuous failure]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A successful all-direction estimate]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A continuous failure]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.exercises[new-uniform-bound-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.exercises[lecture12-failed-remainder-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "canonical_sha_and_physical_pages_verified",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "review-total-differentiability:lecture12-origin-positive-remainder",
+        "review-total-differentiability:lecture12-origin-negative-remainder"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "22–27",
+      "inspected_physical_pages": [22, 23, 24, 25, 26, 27],
+      "source_review_notes": [
+        "Rendered physical pages 22 and 25 give separate piecewise functions and ask whether each is totally differentiable at the origin. Pages 23–24 and 26–27 are blank continuations; neither prompt page contains solution steps. No erratum was observed. Compared total-differentiability:normalized-remainder-decision and candidate-plane-function. The general test is not duplicated; this row records the two contrasting source examples, including one uniform bound and one diagonal obstruction."
+      ],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 23,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 24,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 26,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        },
+        {
+          "physical_page": 27,
+          "reason": "Blank continuation slide; it contains no extra prompt, solution step, or diagram."
+        }
+      ]
     },
     {
       "id": "MH2100_Supplement_Partial_Derivatives_And_Total_Differentiability:01",
@@ -52734,6 +53023,609 @@
         "practiced": "changed-data solution checked; learner performance unverified",
         "visualized": "Stable scene remains a candidate; no exact outcome alignment claimed.",
         "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "review-integral-methods:lecture12-stokes-cone-cylinder-flux",
+      "concept_id": "review-integral-methods",
+      "outcome": "Use the outward cone–cylinder orientation to evaluate curl flux from the top rim.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 1,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [1, 2, 3],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks for the flux of curl(F) across the outward cone and cylinder; pages 2–3 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the cone–cylinder curl flux]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the cone–cylinder curl flux]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-stokes-cone-cylinder-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-integral-methods:lecture12-stokes-triangle-circulation",
+      "concept_id": "review-integral-methods",
+      "outcome": "Use positive projected orientation to set the upward Stokes area vector on a triangular boundary.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 4,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5, 6],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks for the line integral around the positively projected triangle; pages 5–6 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the Stokes triangle circulation]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Work the Stokes triangle circulation]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-stokes-triangle-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-integral-methods:lecture12-green-clockwise-triangle",
+      "concept_id": "review-integral-methods",
+      "outcome": "Reduce the source Green field by cross-derivative cancellation and apply the clockwise sign.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 7,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [7, 8, 9],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page gives the original P and Q on a clockwise triangle and asks for the boundary integral; pages 8–9 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original Green task: cancellation before integration]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original Green task: cancellation before integration]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-green-clockwise-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-integral-methods:lecture12-potential-reversed-parameter",
+      "concept_id": "review-integral-methods",
+      "outcome": "Use a potential’s endpoint values after accounting for a parametrization opposite to the curve’s assigned orientation.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 10,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10, 11, 12],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page supplies the original conservative field and reverse parametrization; pages 11–12 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-integral-methods.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original potential task: endpoints and reversed orientation]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.sections[Original potential task: endpoints and reversed orientation]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-integral-methods.exercises[lecture12-potential-reversed-parameter-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "stokes",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-change-of-variables:lecture12-curvilinear-area",
+      "concept_id": "review-change-of-variables",
+      "outcome": "Choose coordinates adapted to four curved boundaries and integrate the absolute inverse Jacobian to find area.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 13,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 15],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks for the area inside four first-quadrant curves by change of variables; pages 14–15 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-change-of-variables.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-change-of-variables.sections[Map every boundary]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-change-of-variables.sections[Check sign, scale, and bounds]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-change-of-variables.exercises[lecture12-curvilinear-area-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-review-region",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-lagrange-box:lecture12-ellipsoid-box",
+      "concept_id": "review-lagrange-box",
+      "outcome": "Reduce an axis-aligned box inscribed in an ellipsoid to positive half-lengths and maximize its volume with Lagrange multipliers.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 16,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17, 18],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks for the maximum box volume under the stated ellipsoid constraint using Lagrange multipliers; pages 17–18 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-lagrange-box.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-lagrange-box.sections[Why the box is centered]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-lagrange-box.sections[Apply the requested Lagrange multipliers]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-lagrange-box.exercise",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "reviewBox",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-critical-points:lecture12-six-stationary-points",
+      "concept_id": "review-critical-points",
+      "outcome": "Enumerate and classify all six stationary points of the separable quartic–cubic polynomial.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 19,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20, 21],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks for all local minima, maxima, and saddles of the stated polynomial; pages 20–21 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-critical-points.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-critical-points.sections[Enumerate rather than sample]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-critical-points.sections[Keep all values and types]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-critical-points.exercises[lecture12-six-stationary-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "reviewCritical",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:04",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-total-differentiability:lecture12-origin-positive-remainder",
+      "concept_id": "review-total-differentiability",
+      "outcome": "Prove total differentiability at the origin by bounding the normalized remainder for the positive quartic-over-radius example.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 22,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23, 24],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks whether the piecewise function (x^4+y^4)/sqrt(x^2+y^2) is totally differentiable at the origin; pages 23–24 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-total-differentiability.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A successful all-direction estimate]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A successful all-direction estimate]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.exercises[new-uniform-bound-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "differential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:05",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
+      }
+    },
+    {
+      "id": "review-total-differentiability:lecture12-origin-negative-remainder",
+      "concept_id": "review-total-differentiability",
+      "outcome": "Disprove total differentiability using the forced linear map and diagonal direction for the cubic-over-quadratic example.",
+      "core_source": {
+        "id": "MH2100_Lecture_12_Final_Exam_Review",
+        "sha256": "ce83ad7e22cc6674292ed4b2875d60dbbc10397f7144cc0b1a407c3020295e07",
+        "physical_page": 25,
+        "inspection": "The canonical SHA-matched PDF was rendered and visually inspected page-by-page; text extraction was used only to locate prompts.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25, 26, 27],
+          "method": "Matched the canonical source SHA-256 against sources.json and source-manifest.json; visually inspected all rendered physical pages.",
+          "claim_observed": "The page asks whether the piecewise function (x^3-xy^2)/(x^2+y^2) is totally differentiable at the origin; pages 26–27 are blank."
+        },
+        "page_heading": "Final Exam Review"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#review-total-differentiability.title",
+            "claim": "The existing review concept names the method family used by this source problem.",
+            "method": "Direct inspection of the stable catalog title and comparison with the prompt wording."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A continuous failure]",
+            "claim": "The visible lesson states the source problem’s theorem, candidate set, coordinate map, or remainder test.",
+            "method": "Compared the cited lesson section with the visually verified prompt page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.sections[A continuous failure]",
+            "claim": "The guide derivation solves the exact source data and was independently recomputed.",
+            "method": "Checked the displayed calculation against the page-verified source problem; the source itself provides no written solution steps."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#review-total-differentiability.exercises[lecture12-failed-remainder-transfer]",
+            "claim": "Changed-data practice requires the same decision or method and has a checked solution; learner performance is unverified.",
+            "method": "Independently solved the transfer prompt and compared its answer with the displayed solution; no learner attempt was observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "differential",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "The source prompt is mapped to an existing stable review route, but its continuation pages contain no source-written solution. The cited guide supplies the independently checked derivation and transfer; no outcome-specific visualization or learner-performance check is claimed.",
+      "source_section_id": "MH2100_Lecture_12_Final_Exam_Review:05",
+      "inspection_check": {
+        "method": "Compared the SHA-matched rendered prompt, stable review concept, visible guide derivation, and changed-data task.",
+        "named": "The parent review concept and prompt method are named.",
+        "stated": "The cited guide section states the source skill.",
+        "worked": "The source-specific derivation was independently recomputed.",
+        "practiced": "Changed-data practice is supplied; learner performance remains unverified.",
+        "visualized": "The related scene was not verified as a representation or proof of this exact source outcome.",
+        "checked": "No learner answer check or performance evidence is recorded."
       }
     }
   ]

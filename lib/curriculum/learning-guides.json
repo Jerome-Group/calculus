@@ -24185,8 +24185,12 @@
         "text": "The two Stokes tasks use outward curl flux for $F=(y,-x,z)$ on the cone $z=\\sqrt{x^{2}+y^{2}}$, $0\\leq z\\leq 1$, joined to the cylinder $x^{2}+y^{2}=1$, $1\\leq z\\leq 4$; and upward curl flux for $F=(x+y^{2},y+z^{2},z+x^{2})$ on the first-octant triangle $x+y+z=3$. The original Green task from Lecture 12, physical page 7, asks for clockwise circulation of $P\\,dx+Q\\,dy$ around the triangle $(0,0)$,$(0,12)$,$(3,0)$, where $P=y\\cos x-xy\\sin x$ and $Q=xy+x\\cos x$. The original potential task on physical page 10 gives $(2xy+e^{-x^2})\\,dx+(x^2+y\\cos(\\pi y^2/2))\\,dy$ along the oriented curve whose parametrization $r(t)=(e^{t^2-t}-\\cos(2\\pi t),2\\sin(\\pi t^2/2)-t^9)$, $0\\leq t\\leq 1$, runs opposite to the requested orientation. These original tasks are distinct from the simplified scaffolds below."
       },
       {
-        "title": "Work the Stokes setups",
-        "text": "For the cone and cylinder, the top boundary is clockwise under the outward side orientation; $r=(\\cos t,-\\sin t,4)$ gives integrand 1 and answer $2\\pi$. Excluding a tiny cone-tip cap and taking its limit handles the apex. For the first-octant triangle, $\\operatorname{curl}F=(-2z,-2x,-2y)$; its dot product with the upward area vector $(1,1,1)$ is $-6$, so the flux is $-27$. Check the induced boundary orientation before using Stokes instead."
+        "title": "Work the cone–cylinder curl flux",
+        "text": "For the outward cone and cylinder, the seam cancels and the remaining top boundary is clockwise. Parametrize it by $\\mathbf r(t)=(\\cos t,-\\sin t,4)$; then $\\mathbf F\\cdot\\mathbf r'(t)=1$, so the curl flux is $2\\pi$. The cone tip is not smooth, so remove a small tip cap, apply Stokes to the truncated surface, and let its radius tend to zero; the cap contribution vanishes."
+      },
+      {
+        "title": "Work the Stokes triangle circulation",
+        "text": "For the triangle on $x+y+z=3$, positive orientation of its $xy$ projection induces the upward vector area $(1,1,1)\\,dx\\,dy$. The curl is $(-2z,-2x,-2y)$, whose dot product with that vector is $-2(x+y+z)=-6$. The projected triangle has area $9/2$, so Stokes gives circulation $-27$."
       },
       {
         "title": "Original Green task: cancellation before integration",
@@ -24207,7 +24211,65 @@
         "Show the curl cancellation and bounds."
       ],
       "solutionTex": "\\int_0^3\\int_0^{12-4x}y\\,dy\\,dx=72"
-    }
+    },
+    "exercises": [
+      {
+        "id": "lecture12-stokes-cone-cylinder-transfer",
+        "outcome": "Use the outward cone–cylinder orientation to evaluate curl flux from the top rim.",
+        "kind": "computational",
+        "prompt": "An outward cone $z=\\sqrt{x^2+y^2}$ for $0\\le z\\le1$ joins the cylinder $x^2+y^2=1$ for $1\\le z\\le3$. For $\\mathbf F=(2y,-x,z)$, use Stokes’ theorem to find the curl flux across the joined side.",
+        "hint": "The seam cancels. The outward side induces clockwise travel on the top circle $z=3$.",
+        "solution": "The top circle can be parametrized clockwise by $\\mathbf r(t)=(\\cos t,-\\sin t,3)$. Then $\\mathbf F\\cdot\\mathbf r'(t)=2\\sin^2t+\\cos^2t$, whose integral from $0$ to $2\\pi$ is $3\\pi$. A vanishing tip cap justifies Stokes at the cone apex.",
+        "solutionTex": "\\int_0^{2\\pi}(2\\sin^2t+\\cos^2t)\\,dt=3\\pi",
+        "rubric": [
+          "Use the induced clockwise top-rim orientation.",
+          "Evaluate the line integral or equivalent curl flux.",
+          "Account for the cone apex by a limiting cap."
+        ]
+      },
+      {
+        "id": "lecture12-stokes-triangle-transfer",
+        "outcome": "Use positive projected orientation to set the upward Stokes area vector on a triangular boundary.",
+        "kind": "computational",
+        "prompt": "Let $C$ be the positively projected triangle with vertices $(2,0,0)$, $(0,2,0)$, and $(0,0,2)$. For $\\mathbf F=(x+y^2,y+z^2,z+x^2)$, use Stokes’ theorem to evaluate $\\int_C\\mathbf F\\cdot d\\mathbf r$.",
+        "hint": "The spanning triangle is $x+y+z=2$ over $x,y\\ge0$, $x+y\\le2$.",
+        "solution": "The curl is $(-2z,-2x,-2y)$. Positive projected orientation uses vector area $(1,1,1)\\,dx\\,dy$, so the integrand is $-2(x+y+z)=-4$. The projected area is $2$, giving circulation $-8$.",
+        "solutionTex": "\\iint_{x,y\\ge0,\\,x+y\\le2}-4\\,dx\\,dy=-8",
+        "rubric": [
+          "Match positive projected orientation with the upward normal.",
+          "Compute the curl and its dot product with the vector area.",
+          "Integrate over the projected triangle."
+        ]
+      },
+      {
+        "id": "lecture12-green-clockwise-transfer",
+        "outcome": "Combine cross-derivative cancellation with the sign of a clockwise Green boundary.",
+        "kind": "computational",
+        "prompt": "Use the clockwise triangle with vertices $(0,0),(0,6),(2,0)$ and the field $P=y\\cos x-xy\\sin x$, $Q=xy+x\\cos x$. Evaluate $\\oint_C P\\,dx+Q\\,dy$.",
+        "hint": "Compute $Q_x-P_y$ before integrating; use $0\\le x\\le2$ and $0\\le y\\le6-3x$.",
+        "solution": "The derivatives are $Q_x=y+\\cos x-x\\sin x$ and $P_y=\\cos x-x\\sin x$, so $Q_x-P_y=y$. Clockwise orientation negates the region integral: $-\\int_0^2\\int_0^{6-3x}y\\,dy\\,dx=-12$.",
+        "solutionTex": "-\\int_0^2\\int_0^{6-3x}y\\,dy\\,dx=-12",
+        "rubric": [
+          "Differentiate the original two field components.",
+          "Cancel the matching trigonometric terms.",
+          "Apply the clockwise sign and integrate over the triangle."
+        ]
+      },
+      {
+        "id": "lecture12-potential-reversed-parameter-transfer",
+        "outcome": "Use endpoint values of a potential after reversing the parameter direction.",
+        "kind": "method-choice",
+        "prompt": "Let $\\mathbf G=(2xy+\\cos x,x^2+2y)$, and let $C$ run opposite to increasing $t$ on $\\mathbf r(t)=(t,t^2)$, $0\\le t\\le1$. Evaluate $\\int_C\\mathbf G\\cdot d\\mathbf r$ without integrating along the parametrization.",
+        "hint": "A potential is $\\phi(x,y)=x^2y+\\sin x+y^2$; identify the starting and ending points of $C$.",
+        "solution": "The derivatives of $\\phi$ are the two components of $\\mathbf G$. Increasing $t$ runs from $(0,0)$ to $(1,1)$, so the requested reverse path runs from $(1,1)$ to $(0,0)$. Thus the integral is $\\phi(0,0)-\\phi(1,1)=-2-\\sin1$.",
+        "solutionTex": "\\phi(0,0)-\\phi(1,1)=-(2+\\sin1)",
+        "rubric": [
+          "Verify a potential for both components.",
+          "Reverse the parameter endpoints to match $C$.",
+          "Subtract the endpoint values in the requested order."
+        ]
+      }
+    ]
   },
   "review-change-of-variables": {
     "prerequisites": ["inverse-jacobian", "plane-jacobian"],
@@ -24225,14 +24287,30 @@
     "exercise": {
       "prompt": "Compute $\\iint_D xy\\,dA$ over the same region.",
       "hint": "The integrand xy becomes $v$.",
-      "solution": "The integral is $\\int_1^2\\int_1^3\\frac{v}{4u}\\,dv\\,du=(ln2)/4\\cdot 4=ln2$.",
+      "solution": "The integral is $\\int_1^2\\int_1^3\\frac{v}{4u}\\,dv\\,du=(\\ln2)/4\\cdot4=\\ln2$.",
       "rubric": [
         "Transform both region and field.",
         "Use the absolute inverse determinant.",
         "Compare with the area-scaled bounds."
       ],
       "solutionTex": "\\int_1^2\\int_1^3\\frac{v}{4u}\\,dv\\,du=\\ln2"
-    }
+    },
+    "exercises": [
+      {
+        "id": "lecture12-curvilinear-area-transfer",
+        "outcome": "Adapt boundary-defined coordinates and the inverse Jacobian to a changed curved region.",
+        "kind": "computational",
+        "prompt": "Find the area in the first quadrant bounded by $y=x^3$, $y=4x^3$, $xy=2$, and $xy=5$.",
+        "hint": "Use $u=y/x^3$ and $v=xy$, then compute the inverse Jacobian.",
+        "solution": "The map gives $1\\le u\\le4$, $2\\le v\\le5$, and $\\left|\\partial(x,y)/\\partial(u,v)\\right|=1/(4u)$. Therefore the area is $\\int_2^5\\int_1^4(4u)^{-1}\\,du\\,dv=(3/4)\\ln4=(3/2)\\ln2$.",
+        "solutionTex": "\\int_2^5\\int_1^4\\frac{1}{4u}\\,du\\,dv=\\frac{3}{2}\\ln2",
+        "rubric": [
+          "Map all four physical boundaries to the parameter rectangle.",
+          "Use the absolute inverse determinant.",
+          "Integrate over both changed bounds."
+        ]
+      }
+    ]
   },
   "review-lagrange-box": {
     "prerequisites": ["lagrange-sphere", "global-extrema-and-boundaries"],
@@ -24243,20 +24321,24 @@
         "text": "For an axis-aligned box whose eight vertices lie on $2x^{2}+72y^{2}+18z^{2}=288$, compare vertices differing in only one coordinate. Their squared endpoints must agree, so a nondegenerate box has opposite coordinate pairs. Its positive half-lengths $x$,$y$,$z$ give volume 8xyz."
       },
       {
+        "title": "Apply the requested Lagrange multipliers",
+        "text": "For positive half-lengths, maximize $\\ln(xyz)$ subject to $2x^2+72y^2+18z^2=288$. The multiplier equations $1/x=4\\lambda x$, $1/y=144\\lambda y$, and $1/z=36\\lambda z$ imply $x=6y=3z$. Substitution gives $6x^2=288$, so $(x,y,z)=(4\\sqrt3,2/\\sqrt3,4/\\sqrt3)$ and $V=8xyz=256/\\sqrt3$. The feasible half-ellipsoid is compact; its boundary boxes have zero volume, so this positive stationary candidate is the global maximum."
+      },
+      {
         "title": "Global bound without multipliers",
         "text": "Set $X=x/12,Y=y/2,Z=z/4$. The constraint becomes $X^{2}+Y^{2}+Z^{2}=1$. AM–GM gives $X^{2}Y^{2}Z^{2}\\leq 1/27$, so $XYZ\\leq 1/(3\\sqrt{3})$. Since $8xyz=768XYZ$, maximum volume is $256/\\sqrt{3}$, attained at $X=Y=Z=1/\\sqrt{3}$. Boundary boxes have zero volume."
       }
     ],
     "exercise": {
       "prompt": "For an ellipsoid $x^2/a^2+y^2/b^2+z^2/c^2=1$ with $a,b,c>0$, find the largest axis-aligned inscribed box.",
-      "hint": "Normalize coordinates and maximize the product.",
-      "solution": "The half-lengths are $a/\\sqrt{3},b/\\sqrt{3},c/\\sqrt{3}$, so volume is $8abc/(3\\sqrt{3})$. Positivity and AM–GM establish the global maximum, while degenerate boundary volumes vanish.",
+      "hint": "Maximize $\\ln(xyz)$ subject to the ellipsoid equation and compare the positive interior candidate with the zero-volume boundary.",
+      "solution": "Let $g=x^2/a^2+y^2/b^2+z^2/c^2=1$ and maximize $\\ln(xyz)$ for positive half-lengths. The multiplier equations are $1/x=2\\lambda x/a^2$, $1/y=2\\lambda y/b^2$, and $1/z=2\\lambda z/c^2$, so $x/a=y/b=z/c$. The constraint makes each ratio $1/\\sqrt3$. Hence the box half-lengths are $a/\\sqrt3,b/\\sqrt3,c/\\sqrt3$ and its volume is $8abc/(3\\sqrt3)$. The feasible set is compact; boundary boxes have zero volume, so this positive interior candidate is the global maximum.",
       "rubric": [
         "Distinguish half-lengths from side lengths.",
         "State positive semiaxes.",
         "Prove a global bound and its equality case."
       ],
-      "solutionTex": "V_{\\max}=\\frac{8abc}{3\\sqrt3},\\quad(x,y,z)=\\frac{(a,b,c)}{\\sqrt3}"
+      "solutionTex": "x=\\frac a{\\sqrt3},\\quad y=\\frac b{\\sqrt3},\\quad z=\\frac c{\\sqrt3},\\quad V_{\\max}=\\frac{8abc}{3\\sqrt3}"
     }
   },
   "review-critical-points": {
@@ -24265,7 +24347,7 @@
     "sections": [
       {
         "title": "Enumerate rather than sample",
-        "text": "For $f=x^{4}-2x^{2}+y^{3}-3y$, stationarity gives $x\\in {-1,0,1}$ and $y\\in {-1,1}$, producing six points. The Hessian is diagonal with entries $12x^{2}-4$ and 6y, so its signs classify every candidate."
+        "text": "For $f=x^{4}-2x^{2}+y^{3}-3y$, stationarity gives $x\\in \\{-1,0,1\\}$ and $y\\in \\{-1,1\\}$, producing six points. The Hessian is diagonal with entries $12x^{2}-4$ and 6y, so its signs classify every candidate."
       },
       {
         "title": "Keep all values and types",
@@ -24281,7 +24363,23 @@
         "Use sufficiently small nonzero displacements."
       ],
       "solutionTex": "f(h,1)+2=h^4-2h^2<0,\\quad f(0,1+k)+2=3k^2+k^3>0"
-    }
+    },
+    "exercises": [
+      {
+        "id": "lecture12-six-stationary-transfer",
+        "outcome": "Enumerate and classify every stationary point after changing polynomial coefficients.",
+        "kind": "computational",
+        "prompt": "Find and classify all stationary points of $h(x,y)=x^4-4x^2+y^3-6y$. State whether it has a global extremum on $\\mathbb R^2$.",
+        "hint": "Solve $4x(x^2-2)=0$ and $3(y^2-2)=0$, then classify with the diagonal Hessian.",
+        "solution": "The stationary coordinates are $x\\in\\{0,\\pm\\sqrt2\\}$ and $y\\in\\{\\pm\\sqrt2\\}$. The Hessian entries are $12x^2-8$ and $6y$. Thus $(\\pm\\sqrt2,\\sqrt2)$ are minima of value $-4-4\\sqrt2$; $(0,-\\sqrt2)$ is a maximum of value $4\\sqrt2$; $(\\pm\\sqrt2,-\\sqrt2)$ are saddles of value $-4+4\\sqrt2$; and $(0,\\sqrt2)$ is a saddle of value $-4\\sqrt2$. The cubic term makes $h$ unbounded above and below, so there is no global extremum.",
+        "solutionTex": "(\\pm\\sqrt2,\\sqrt2):\\text{min }-4-4\\sqrt2;\\quad(0,-\\sqrt2):\\text{max }4\\sqrt2;\\quad(\\pm\\sqrt2,-\\sqrt2):\\text{saddle};\\quad(0,\\sqrt2):\\text{saddle}",
+        "rubric": [
+          "Find all pairs from the two independent stationary equations.",
+          "Use the Hessian signs to classify each point.",
+          "Use the cubic term to decide global boundedness."
+        ]
+      }
+    ]
   },
   "review-total-differentiability": {
     "prerequisites": [
@@ -24310,6 +24408,20 @@
           "Identify the candidate linear map from the axis restrictions.",
           "Give an inequality valid for all directions.",
           "State $\\delta$ as a function of $\\varepsilon$ with the puncture."
+        ]
+      },
+      {
+        "id": "lecture12-failed-remainder-transfer",
+        "outcome": "Disprove total differentiability using the forced linear map and one diagonal approach.",
+        "kind": "counterexample",
+        "prompt": "Let $h(x,y)=(2x^3-xy^2)/(x^2+y^2)$ away from $(0,0)$ and $h(0,0)=0$. Find the candidate linear map and decide whether $h$ is totally differentiable at the origin.",
+        "hint": "Use the two coordinate axes to determine the candidate, then test the normalized remainder along $(t,t)$.",
+        "solution": "The axis quotients give $h_x(0,0)=2$ and $h_y(0,0)=0$, so the only candidate is $L(x,y)=2x$. Its remainder is $-3xy^2/(x^2+y^2)$. Along $(t,t)$, the normalized absolute remainder is $3/(2\\sqrt2)$, not zero; total differentiability fails. The bound $|h(x,y)|\\le2\\sqrt{x^2+y^2}$ still proves continuity.",
+        "solutionTex": "\\frac{|h(t,t)-2t|}{\\sqrt{2t^2}}=\\frac{3}{2\\sqrt2}\\not\\longrightarrow0",
+        "rubric": [
+          "Derive both coordinate partials at the origin.",
+          "Use them to identify the only possible linear map.",
+          "Show the diagonal normalized remainder does not tend to zero."
         ]
       }
     ],
