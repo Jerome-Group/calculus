@@ -39,3 +39,33 @@ test("nonzero-center Taylor degree and error guarantee are mathematically consis
   assert.ok(exercise.prompt.includes("$a=1$"));
   assert.ok(exercise.solution.includes(String.raw`$R_{n}\to 0$`));
 });
+
+test("series transfer solutions agree with finite partial sums", () => {
+  const geometric = guides["series-geometric-telescoping"].exercises.find(
+    (exercise) => exercise.id === "signed-geometric-transfer",
+  );
+  const telescoping = guides["series-geometric-telescoping"].exercises.find(
+    (exercise) => exercise.id === "two-step-telescoping-transfer",
+  );
+  const harmonic = guides["series-divergence-test"].exercises.find(
+    (exercise) => exercise.id === "scaled-harmonic-transfer",
+  );
+  assert.ok(geometric && telescoping && harmonic);
+  for (const count of [1, 2, 5, 20]) {
+    const geometricSum = Array.from(
+      { length: count },
+      (_, index) => 5 * (-2 / 3) ** index,
+    ).reduce((sum, term) => sum + term, 0);
+    assert.ok(Math.abs(geometricSum - 3 * (1 - (-2 / 3) ** count)) < 1e-12);
+    const telescopingSum = Array.from(
+      { length: count },
+      (_, index) => 2 / ((index + 3) * (index + 5)),
+    ).reduce((sum, term) => sum + term, 0);
+    const lastIndex = count + 1;
+    const boundary = 7 / 12 - 1 / (lastIndex + 2) - 1 / (lastIndex + 3);
+    assert.ok(Math.abs(telescopingSum - boundary) < 1e-12);
+  }
+  assert.ok(geometric.solutionTex.includes(String.raw`\longrightarrow3`));
+  assert.ok(telescoping.solutionTex.includes(String.raw`\frac7{12}`));
+  assert.ok(harmonic.solutionTex.includes(String.raw`\longrightarrow\infty`));
+});
