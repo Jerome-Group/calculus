@@ -3713,7 +3713,7 @@
         "steps": [
           {
             "label": "1",
-            "text": "On each interval, $d(\\ln|x|)/dx=1/x$."
+            "text": "On each interval, $\\frac{d}{dx}\\ln|x|=1/x$."
           },
           {
             "label": "2",
@@ -6444,7 +6444,7 @@
       }
     ],
     "exercise": {
-      "prompt": "For $f(x,y)=xe^y$ and $r(t)=(t,t^2)$, find $d(f\\circ r)/dt$.",
+      "prompt": "For $f(x,y)=xe^y$ and $r(t)=(t,t^2)$, find $\\frac{d}{dt}(f\\circ r)$.",
       "hint": "Compute the two partial contributions separately.",
       "solution": "The derivative is $e^{t^2}\\cdot 1+t e^{t^2}\\cdot 2t=e^{t^2}(1+2t^2)$, agreeing with direct differentiation of $t e^{t^2}$.",
       "rubric": [
@@ -6527,7 +6527,7 @@
         "kind": "method-choice",
         "prompt": "For $q(x,y)=x^3/(x^2+y^2)$ off zero and $q(0)=0$, compare $D_{(1,1)}q(0)$ from its defining limit with $\\nabla q(0)\\cdot(1,1)$. Why may they differ?",
         "hint": "Along $(t,t)$, $q(t,t)=t/2$; axis partials are $(1,0)$.",
-        "solution": "The defining limit gives $D_(1,1)q(0)=1/2$. The axis partials form gradient $(1,0)$, whose dot product with $(1,1)$ is 1. The dot-product theorem requires total differentiability, which fails for this $q$.",
+        "solution": "The defining limit gives $D_{(1,1)}q(0)=1/2$. The axis partials form gradient $(1,0)$, whose dot product with $(1,1)$ is 1. The dot-product theorem requires total differentiability, which fails for this $q$.",
         "solutionTex": "D_{(1,1)}q(0)=\\lim_{t\\to0}\\frac{q(t,t)}t=\\tfrac12\\ne(1,0)\\cdot(1,1)=1",
         "rubric": [
           "Use the unnormalized vector consistently.",
