@@ -54,7 +54,7 @@ export type PracticeExercise = {
   prompt: string;
   hint: string;
   solution: string;
-  solutionTex: string;
+  solutionTex?: string;
   rubric: string[];
 };
 export type LearningGuide = {
@@ -65,7 +65,7 @@ export type LearningGuide = {
   nextStep?: { id: string; label: string };
   relatedStep?: { id: string; label: string };
   sections: { title: string; text: string }[];
-  exercise: PracticeExercise;
+  exercise: PracticeExercise & { solutionTex: string };
   exercises?: (PracticeExercise & {
     id: string;
     outcome: string;

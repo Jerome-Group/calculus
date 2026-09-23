@@ -13,7 +13,7 @@ import {
   writePracticeDraft,
   type PracticeDraft,
 } from "@/lib/curriculum/practice-drafts";
-import type { LearningGuide } from "@/lib/curriculum/learning";
+import type { PracticeExercise } from "@/lib/curriculum/learning";
 export function LessonPractice({
   id,
   exerciseId = "core",
@@ -21,7 +21,7 @@ export function LessonPractice({
 }: {
   id: string;
   exerciseId?: string;
-  exercise: LearningGuide["exercise"];
+  exercise: PracticeExercise;
 }) {
   const fieldId = `answer-${id}-${exerciseId}`;
   const headingId = `practice-${id}-${exerciseId}`;
@@ -110,7 +110,9 @@ export function LessonPractice({
         onToggle={(event) => update({ solutionOpen: event.currentTarget.open })}
       >
         <summary>Compare with a solution</summary>
-        <Formula block>{exercise.solutionTex}</Formula>
+        {exercise.solutionTex && (
+          <Formula block>{exercise.solutionTex}</Formula>
+        )}
         <p>
           <MathText text={exercise.solution} />
         </p>
