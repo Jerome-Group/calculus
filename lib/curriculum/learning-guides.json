@@ -3358,7 +3358,7 @@
         "id": "basic-rule-families",
         "title": "Build the algebraic families",
         "tex": "\\begin{aligned}(cf+g)'&=cf'+g' & (x^n)'&=nx^{n-1}\\\\(fg)'&=f'g+fg' & (f/g)'&=(f'g-fg')/g^2\\end{aligned}",
-        "note": "These formulas require the displayed derivatives to exist. The quotient also requires $g(x)\\ne0$; for general real powers use a domain where the power is differentiable."
+        "note": "Each displayed derivative requires the indicated derivatives to exist at the input. The quotient requires $g(x)\\ne0$. Positive and negative integer powers have their own domains; for arbitrary real $s$, use $x^s$ only on $x>0$. Trigonometric formulas assume radian measure; reciprocal rules also require their denominators nonzero."
       },
       {
         "kind": "derivation",
@@ -3386,7 +3386,594 @@
         "id": "trigonometric-rule-families",
         "title": "Trigonometric derivatives in radians",
         "tex": "\\begin{aligned}(\\sin x)'&=\\cos x &(\\cos x)'&=-\\sin x\\\\(\\tan x)'&=\\sec^2x &(\\cot x)'&=-\\csc^2x\\\\(\\sec x)'&=\\sec x\\tan x &(\\csc x)'&=-\\csc x\\cot x\\end{aligned}",
-        "note": "The sine and cosine derivatives use the radian sine limit. Tangent and secant require $\\cos x\\ne0$; cotangent and cosecant require $\\sin x\\ne0$. The quotient rule yields the latter four from sine and cosine."
+        "note": "All angles are measured in radians. $\\sin x$ and $\\cos x$ are differentiable for every real $x$. $\\tan x$ and $\\sec x$ require $\\cos x\\ne0$; $\\cot x$ and $\\csc x$ require $\\sin x\\ne0$. The four quotient formulas follow from the quotient rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "base-derivatives-from-definition",
+        "title": "Start with the difference quotient",
+        "strategy": "Substitute the function into the definition, simplify for nonzero h, then take the limit.",
+        "setup": "At an input $a$, use $f\\prime(a)=\\lim_{h\\to0}[f(a+h)−f(a)]/h$.",
+        "steps": [
+          {
+            "label": "Constant function",
+            "text": "For $f(x)=c$, the numerator is zero for every nonzero $h$.",
+            "equation": "f'(a)=lim_{h→0}(c−c)/h=0"
+          },
+          {
+            "label": "Identity function",
+            "text": "For $f(x)=x$, the increment in the output equals the increment $h$.",
+            "equation": "f'(a)=lim_{h→0}[(a+h)−a]/h=lim_{h→0}h/h=1"
+          },
+          {
+            "label": "Graph meaning",
+            "text": "The graph $y=c$ is horizontal, so its slope agrees with the derivative $0$."
+          }
+        ],
+        "result": "A constant has derivative 0; the identity function has derivative 1 at every real input.",
+        "verification": "The cancellations are performed only for $h\\ne0$, then the limit $h\\to0$ is taken."
+      },
+      {
+        "kind": "theorem",
+        "id": "binomial-theorem-for-integer-power-proof",
+        "title": "Expand a positive integer power",
+        "statement": "For real $a,b$ and positive integer $n$, $(a+b)^n=\\sum_{k=0}^n\\binom{n}{k}a^k b^{n-k}$, where $\\binom{n}{k}=n!/[k!(n-k)!]$ for $0\\le k\\le n$, and $0!=1$.",
+        "hypotheses": [
+          "$a,b\\in\\mathbb R$.",
+          "$n$ is a positive integer.",
+          "$k$ is an integer with $0\\le k\\le n$."
+        ],
+        "prerequisites": ["Integer powers and factorials"],
+        "status": "Theorem used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "binomial-increment-expansion",
+        "title": "Find the terms linear in h",
+        "strategy": "Expand $(x+h)^n$ and separate the term proportional to $h$ from terms with higher powers of $h$.",
+        "setup": "Use the binomial coefficients for $n=3$.",
+        "steps": [
+          {
+            "label": "Expand",
+            "text": "Apply the binomial theorem to x+h.",
+            "equation": "(x+h)^3=x^3+3x^2h+3xh^2+h^3"
+          },
+          {
+            "label": "Subtract and divide",
+            "text": "The constant term cancels, and division by h lowers each remaining h power by one.",
+            "equation": "[(x+h)^3−x^3]/h=3x^2+3xh+h^2"
+          }
+        ],
+        "result": "The coefficient of h in the expansion is the term that survives the difference quotient limit.",
+        "verification": "As $h\\to0$, the terms $3xh$ and $h^2$ vanish, leaving $3x^2$."
+      },
+      {
+        "kind": "derivation",
+        "id": "positive-power-rule-from-binomial-limit",
+        "title": "Derive the positive integer power rule",
+        "strategy": "Expand by the binomial theorem, cancel $x^n$, divide by $h$, and let every remaining positive power of $h$ vanish.",
+        "setup": "Fix $x\\in\\mathbb R$. For $n\\ge2$, write $(x+h)^n=x^n+nx^{n-1}h+\\sum_{k=0}^{n-2}\\binom{n}{k}x^k h^{n-k}$.",
+        "steps": [
+          {
+            "label": "Form the difference quotient",
+            "text": "Subtract $x^n$ and divide by $h\\ne0$.",
+            "equation": "[(x+h)^n−x^n]/h=nx^{n−1}+Σ_{k=0}^{n−2}binom(n,k)x^k h^{n−k−1}"
+          },
+          {
+            "label": "Take the limit",
+            "text": "For every $k\\le n-2$, the remaining exponent $n-k-1$ is at least $1$, so each remainder term tends to zero.",
+            "equation": "lim_{h→0}[(x+h)^n−x^n]/h=nx^{n−1}"
+          },
+          {
+            "label": "Handle n=1",
+            "text": "The case omitted from the expansion proof is direct.",
+            "equation": "lim_{h→0}[(x+h)−x]/h=1"
+          }
+        ],
+        "result": "For every positive integer $n$ and every real $x$, $\\frac{d}{dx}(x^n)=nx^{n-1}$.",
+        "verification": "The $n=1$ case is checked separately; the proof for $n\\ge2$ uses only terms whose powers of $h$ are positive."
+      },
+      {
+        "kind": "theorem",
+        "id": "linearity-rules-at-a-point",
+        "title": "Differentiate a linear combination",
+        "statement": "If $f,g$ are differentiable at $a$ and $c$ is constant, then $(cf)'(a)=cf'(a)$, $(f+g)'(a)=f'(a)+g'(a)$, and $(f-g)'(a)=f'(a)-g'(a)$. Repeated use gives the rule for any finite sum.",
+        "hypotheses": [
+          "$f$ and $g$ have finite two-sided derivatives at $a$.",
+          "$c$ is constant with respect to the input."
+        ],
+        "prerequisites": [
+          "Difference quotient",
+          "Limits of sums and constant multiples"
+        ],
+        "status": "Complete proof follows below"
+      },
+      {
+        "kind": "derivation",
+        "id": "linearity-difference-quotient-proof",
+        "title": "Split the difference quotient",
+        "strategy": "Factor constants and separate each summand before taking limits.",
+        "setup": "At a, let f and g be differentiable and let c be constant.",
+        "steps": [
+          {
+            "label": "Constant multiple",
+            "text": "Factor c out of the difference quotient.",
+            "equation": "lim_{h→0}[cf(a+h)−cf(a)]/h=c lim_{h→0}[f(a+h)−f(a)]/h=c f'(a)"
+          },
+          {
+            "label": "Sum",
+            "text": "Split the numerator into the two increments and use the sum limit law.",
+            "equation": "lim_{h→0}[(f+g)(a+h)−(f+g)(a)]/h=f'(a)+g'(a)"
+          },
+          {
+            "label": "Difference and finite sums",
+            "text": "Write $f-g=f+(-1)g$; induction extends the sum rule to any finite list."
+          }
+        ],
+        "result": "Constant multiples, sums, and differences differentiate term by term under the stated pointwise hypotheses.",
+        "verification": "The constant c is fixed; it is not a function of the input."
+      },
+      {
+        "kind": "worked-example",
+        "id": "linearity-polynomial-example",
+        "title": "Combine the linearity rules",
+        "strategy": "Differentiate each term, retaining its coefficient and sign.",
+        "setup": "Let $F(x)=3x^2−2x+5$.",
+        "steps": [
+          {
+            "label": "Differentiate term by term",
+            "text": "Use the constant multiple, power, identity, and constant rules.",
+            "equation": "F'(x)=3(2x)−2(1)+0=6x−2"
+          },
+          {
+            "label": "Check at a point",
+            "text": "Substitute $x=1$ only after obtaining the derivative function.",
+            "equation": "F'(1)=4"
+          }
+        ],
+        "result": "$F\\prime(x)=6x−2$.",
+        "verification": "The constant term contributes zero; the negative coefficient remains negative."
+      },
+      {
+        "kind": "theorem",
+        "id": "product-rule-pointwise-hypotheses",
+        "title": "The product rule at one input",
+        "statement": "If $f$ and $g$ are differentiable at $a$, then $fg$ is differentiable at $a$ and $(fg)\\prime(a)=f(a)g\\prime(a)+g(a)f\\prime(a)$.",
+        "hypotheses": [
+          "$f$ and $g$ have finite two-sided derivatives at $a$, so both are continuous there."
+        ],
+        "prerequisites": [
+          "Difference quotient",
+          "Continuity implied by differentiability"
+        ],
+        "status": "Complete proof follows in the product-rule-increments derivation"
+      },
+      {
+        "kind": "theorem",
+        "id": "quotient-rule-pointwise-hypotheses",
+        "title": "The quotient rule needs a nonzero denominator",
+        "statement": "If $f$ and $g$ are differentiable at $a$ and $g(a)\\ne0$, then $f/g$ is defined near $a$ and $(f/g)\\prime(a)=[f\\prime(a)g(a)-f(a)g\\prime(a)]/[g(a)]^2$.",
+        "hypotheses": [
+          "$f$ and $g$ have finite two-sided derivatives at $a$.",
+          "$g(a)\\ne0$; continuity of $g$ then keeps $g$ nonzero on some neighborhood of $a$."
+        ],
+        "prerequisites": [
+          "Difference quotient",
+          "Product rule",
+          "Continuity implied by differentiability"
+        ],
+        "status": "Complete proof follows below"
+      },
+      {
+        "kind": "derivation",
+        "id": "quotient-rule-difference-quotient-proof",
+        "title": "Separate numerator and denominator changes",
+        "strategy": "Put the difference of quotients over a common denominator, then add and subtract $f(a)g(a)$.",
+        "setup": "Assume $f$ and $g$ are differentiable at $a$ and $g(a)\\ne0$. For sufficiently small $h$, $g(a+h)\\ne0$ by continuity.",
+        "steps": [
+          {
+            "label": "Combine the quotients",
+            "text": "Use a common denominator before dividing by h.",
+            "equation": "[(f/g)(a+h)−(f/g)(a)]/h=[f(a+h)g(a)−f(a)g(a+h)]/[h g(a+h)g(a)]"
+          },
+          {
+            "label": "Insert the mixed product",
+            "text": "Add and subtract $f(a)g(a)$ in the numerator.",
+            "equation": "[g(a)(f(a+h)−f(a))−f(a)(g(a+h)−g(a))]/[h g(a+h)g(a)]"
+          },
+          {
+            "label": "Take the limit",
+            "text": "The denominator tends to $g(a)^2\\ne0$, while the difference quotients tend to $f\\prime(a)$ and $g\\prime(a)$.",
+            "equation": "(f/g)'(a)=[f'(a)g(a)−f(a)g'(a)]/[g(a)]^2"
+          }
+        ],
+        "result": "The numerator order is $f\\prime g−fg\\prime$; the denominator is $g^2$.",
+        "verification": "The condition $g(a)\\ne0$ justifies the quotient near $a$ and the nonzero limiting denominator."
+      },
+      {
+        "kind": "worked-example",
+        "id": "sum-of-cubes-quotient-example",
+        "title": "Simplify before differentiating",
+        "strategy": "Compare the quotient-rule expansion with a factorization that cancels a common factor on the original domain.",
+        "setup": "For $y=(x^2−2x+4)/(x^3+8)$, the denominator is nonzero exactly when $x\\ne−2$.",
+        "steps": [
+          {
+            "label": "Apply the quotient rule",
+            "text": "Differentiate the numerator and denominator in the correct order.",
+            "equation": "y'= [(x^3+8)(2x−2)−(x^2−2x+4)(3x^2)]/(x^3+8)^2"
+          },
+          {
+            "label": "Expand",
+            "text": "Collecting like terms gives the source's unsimplified result.",
+            "equation": "y'=(-x^4+4x^3−12x^2+16x−16)/(x^3+8)^2"
+          },
+          {
+            "label": "Factor the sum of cubes",
+            "text": "Since $x^2−2x+4=(x−1)^2+3>0$, the only excluded input is $x=−2$; cancel on that original domain.",
+            "equation": "x^3+8=(x+2)(x^2−2x+4),\\quad y=1/(x+2)"
+          },
+          {
+            "label": "Differentiate the simpler form",
+            "text": "Differentiate 1/(x+2) on its domain.",
+            "equation": "y'=-1/(x+2)^2"
+          }
+        ],
+        "result": "The expanded quotient derivative equals $−1/(x+2)^2$ for $x\\ne−2$.",
+        "verification": "The expanded numerator is $−(x^2−2x+4)^2$, so cancellation agrees with the derivative of the simplified form."
+      },
+      {
+        "kind": "theorem",
+        "id": "negative-integer-power-rule-statement",
+        "title": "Negative integer powers exclude zero",
+        "statement": "For positive integer $n$ and $x\\ne0$, $\\frac{d}{dx}(x^{-n})=-n x^{-n-1}$.",
+        "hypotheses": [
+          "$n$ is a positive integer.",
+          "$x\\ne0$, the domain of $x^{-n}$."
+        ],
+        "prerequisites": ["Positive integer power rule", "Quotient rule"],
+        "status": "Complete proof follows below"
+      },
+      {
+        "kind": "derivation",
+        "id": "negative-integer-power-rule-proof",
+        "title": "Rewrite a negative power as a quotient",
+        "strategy": "Apply the quotient rule to $1/x^n$.",
+        "setup": "For $x\\ne0$, write $x^{−n}=1/x^n$, where $n$ is a positive integer.",
+        "steps": [
+          {
+            "label": "Apply the quotient rule",
+            "text": "The numerator derivative is zero and the denominator derivative is $nx^{n−1}$. ",
+            "equation": "d(1/x^n)/dx=[x^n(0)−1(nx^{n−1})]/(x^n)^2"
+          },
+          {
+            "label": "Simplify the power",
+            "text": "Combine exponents only after using $x\\ne0$.",
+            "equation": "−nx^{n−1}/x^{2n}=−nx^{−n−1}"
+          }
+        ],
+        "result": "$\\frac{d}{dx}(x^{−n})=−n x^{−n−1}$ for $x\\ne0$.",
+        "verification": "The point $x=0$ is excluded because the original negative power is undefined there."
+      },
+      {
+        "kind": "theorem",
+        "id": "real-power-rule-positive-domain",
+        "title": "Use the general power rule on positive inputs",
+        "statement": "For every real $s$, $x^s$ is differentiable for $x>0$ and $\\frac{d}{dx}(x^s)=sx^{s-1}$.",
+        "hypotheses": [
+          "$s\\in\\mathbb R$.",
+          "$x>0$. This common domain makes $x^s$ real and differentiable for every real $s$."
+        ],
+        "prerequisites": [
+          "Positive integer power rule",
+          "Real powers on positive inputs"
+        ],
+        "status": "The source states the general rule without a domain; this guide supplies a safe domain for arbitrary real exponents."
+      },
+      {
+        "kind": "worked-example",
+        "id": "square-root-real-power-example",
+        "title": "Read the square-root derivative as a power",
+        "strategy": "Write the root as a fractional power, then apply the real-power rule on x>0.",
+        "setup": "For $x>0$, $\\sqrt{x}=x^{1/2}$.",
+        "steps": [
+          {
+            "label": "Apply the rule",
+            "text": "Use $s=1/2$.",
+            "equation": "d(sqrt(x))/dx=(1/2)x^{−1/2}=1/(2sqrt(x))"
+          }
+        ],
+        "result": "The derivative is 1/(2sqrt(x)) for x>0.",
+        "verification": "At $x=0$ the displayed derivative is not finite; the theorem\\'s open positive domain avoids claiming it there."
+      },
+      {
+        "kind": "theorem",
+        "id": "tangent-normal-line-equations",
+        "title": "Turn a derivative into tangent and normal lines",
+        "statement": "At $P=(a,f(a))$, if $f\\prime(a)=m$, the tangent line has slope $m$. If $m\\ne0$, the normal line through $P$ has slope $−1/m$; if $m=0$, the normal is vertical.",
+        "hypotheses": [
+          "$f$ is defined and differentiable at $a$.",
+          "The normal is the line through $P$ perpendicular to the tangent; the reciprocal-slope formula assumes $m\\ne0$."
+        ],
+        "prerequisites": [
+          "Derivative as tangent slope",
+          "Point-slope equation of a line"
+        ],
+        "status": "The source works the nonzero-slope case; the horizontal-tangent exception is stated for completeness."
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-tangent-normal-example",
+        "title": "Find both lines at the source point",
+        "strategy": "Differentiate the quotient, evaluate the slope, then use point-slope form and the perpendicular-slope relation.",
+        "setup": "Let $y=\\sqrt{x}/(1+x^2)$, $x>0$. Find tangent and normal lines at $(1,1/2)$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "Use the quotient rule and $d(\\sqrt{x})/dx=1/(2\\sqrt{x})$.",
+            "equation": "y'=[(1+x^2)/(2sqrt(x))−2x sqrt(x)]/(1+x^2)^2=(1−3x^2)/[2sqrt(x)(1+x^2)^2]"
+          },
+          {
+            "label": "Evaluate the tangent slope",
+            "text": "Substitute $x=1$.",
+            "equation": "y'(1)=(1−3)/[2(1)(4)]=−1/4"
+          },
+          {
+            "label": "Write the tangent",
+            "text": "Use the point (1,1/2) and slope −1/4.",
+            "equation": "y−1/2=−(1/4)(x−1),\\quad y=−x/4+3/4"
+          },
+          {
+            "label": "Write the normal",
+            "text": "The perpendicular slope is 4, the negative reciprocal of −1/4.",
+            "equation": "y−1/2=4(x−1),\\quad y=4x−7/2"
+          }
+        ],
+        "result": "The tangent is $y=−x/4+3/4$ and the normal is $y=4x−7/2$.",
+        "verification": "Both pass through $(1,1/2)$; their slopes multiply to $(−1/4)(4)=−1$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "product-quotient-misrule-diagnosis",
+        "title": "Catch two tempting shortcuts",
+        "strategy": "Evaluate the correct rule and the tempting incorrect formula at the same input.",
+        "setup": "Let $p(x)=(x+1)(x+2)$ with factors $p_1=x+1,p_2=x+2$, and $q(x)=(x^2+1)/(x+2)$. Compare their derivatives at $x=1$.",
+        "steps": [
+          {
+            "label": "Product",
+            "text": "Differentiate both factors and keep each companion factor.",
+            "equation": "p'(1)=1(3)+2(1)=5,\\quad p'(1)\\ne p_1'(1)p_2'(1)=1"
+          },
+          {
+            "label": "Quotient",
+            "text": "Use numerator order f'g−fg' and square the denominator.",
+            "equation": "q'(1)=[2(3)−2(1)]/3^2=4/9"
+          },
+          {
+            "label": "Reject the reversed numerator",
+            "text": "Reversing the terms changes the sign; dividing the derivatives also gives a different value.",
+            "equation": "[2(1)−3(2)]/9=−4/9,\\quad 2/1=2"
+          }
+        ],
+        "result": "The product and quotient shortcuts fail even at $x=1$.",
+        "verification": "The correct quotient derivative is 4/9, not −4/9 or 2."
+      },
+      {
+        "kind": "theorem",
+        "id": "radian-convention-and-trig-limits",
+        "title": "Trigonometric derivative formulas use radians",
+        "statement": "The input $x$ to $\\sin x$ and the other trigonometric functions is its radian measure. As $h\\to0$, $\\cos h\\to1$, $\\sin h\\to0$, and the fundamental radian limit $\\sin(h)/h\\to1$.",
+        "hypotheses": [
+          "$h$ is measured in radians.",
+          "The limit $\\sin(h)/h\\to1$ is the standard fundamental sine limit used by the source\\'s derivative proof."
+        ],
+        "prerequisites": ["Unit circle definitions", "Fundamental sine limit"],
+        "status": "The source states the angle convention and basic limits, then uses the sine limit in the next proof."
+      },
+      {
+        "kind": "worked-example",
+        "id": "degree-input-contrast",
+        "title": "A degree input contributes a scale factor",
+        "strategy": "Convert the numeric degree input to radians before applying the sine limit.",
+        "setup": "Let $S(d)=\\sin(\\pi d/180)$, where $d$ is a number of degrees.",
+        "steps": [
+          {
+            "label": "Use the derivative definition at zero",
+            "text": "Set $u=\\pi h/180$ in the difference quotient.",
+            "equation": "S'(0)=lim_{h→0}sin(πh/180)/h=(π/180)lim_{u→0}sin(u)/u"
+          },
+          {
+            "label": "Apply the radian limit",
+            "text": "The standard limit is 1 only when its input is in radians.",
+            "equation": "S'(0)=π/180"
+          }
+        ],
+        "result": "The derivative of the sine of a degree-valued input is not $1$ at zero; it is $\\pi/180$.",
+        "verification": "This factor is exactly the degrees-to-radians conversion scale."
+      },
+      {
+        "kind": "derivation",
+        "id": "sine-derivative-definition-proof",
+        "title": "Derive the sine rule from its difference quotient",
+        "strategy": "Use the sine addition formula, split the quotient into two limits, and apply the radian limits.",
+        "setup": "Fix $x\\in\\mathbb R$ and let $h\\to0$ in radians.",
+        "steps": [
+          {
+            "label": "Expand the increment",
+            "text": "Apply the sine addition formula to expand the increment.",
+            "equation": "[sin(x+h)−sin(x)]/h=sin(x)[cos(h)−1]/h+cos(x)sin(h)/h"
+          },
+          {
+            "label": "Justify the cosine-difference limit",
+            "text": "For $h$ near zero, use $1−\\cos(h)=\\sin^2(h)/(1+\\cos(h))$.",
+            "equation": "[cos(h)−1]/h=−[sin(h)/h]sin(h)/[1+cos(h)]→0"
+          },
+          {
+            "label": "Take the remaining limits",
+            "text": "Use sin(h)/h→1 and the previous limit.",
+            "equation": "sin(x)·0+cos(x)·1=cos(x)"
+          }
+        ],
+        "result": "For every real $x$, $\\frac{d}{dx}(\\sin x)=\\cos x$.",
+        "verification": "The sine quotient limit requires radian input; the cosine-difference limit is shown rather than inferred from cos(h)→1 alone."
+      },
+      {
+        "kind": "derivation",
+        "id": "cosine-derivative-definition-proof",
+        "title": "Derive the cosine rule from its difference quotient",
+        "strategy": "Use the cosine addition formula and the same two radian limits.",
+        "setup": "Fix $x\\in\\mathbb R$ and let $h\\to0$ in radians.",
+        "steps": [
+          {
+            "label": "Expand the increment",
+            "text": "Apply the cosine addition formula to expand the increment.",
+            "equation": "[cos(x+h)−cos(x)]/h=cos(x)[cos(h)−1]/h−sin(x)sin(h)/h"
+          },
+          {
+            "label": "Take the limits",
+            "text": "The cosine-difference quotient tends to zero and sin(h)/h tends to one.",
+            "equation": "cos(x)·0−sin(x)·1=−sin(x)"
+          }
+        ],
+        "result": "For every real $x$, $\\frac{d}{dx}(\\cos x)=−\\sin x$.",
+        "verification": "The negative sign comes from the minus sign in the cosine addition formula."
+      },
+      {
+        "kind": "theorem",
+        "id": "sine-cosine-rules-all-real",
+        "title": "Apply sine and cosine derivatives",
+        "statement": "For every $x\\in\\mathbb R$, $\\sin x$ and $\\cos x$ are differentiable and $(\\sin x)\\prime=\\cos x$, $(\\cos x)\\prime=−\\sin x$, with $x$ measured in radians.",
+        "hypotheses": ["$x$ is real and interpreted as an angle in radians."],
+        "prerequisites": ["Sine and cosine derivative proofs"],
+        "status": "Theorem used without proof; derivations are given in the preceding blocks"
+      },
+      {
+        "kind": "worked-example",
+        "id": "sine-cosine-linear-combination-example",
+        "title": "Differentiate a linear combination of sine and cosine",
+        "strategy": "Apply the two derivative formulas and evaluate only after differentiating.",
+        "setup": "Let $F(x)=3\\sin(x)−2\\cos(x)$.",
+        "steps": [
+          {
+            "label": "Differentiate",
+            "text": "Use linearity and the sine/cosine rules.",
+            "equation": "F'(x)=3cos(x)+2sin(x)"
+          },
+          {
+            "label": "Evaluate",
+            "text": "Substitute $x=\\pi/3$.",
+            "equation": "F'(π/3)=3/2+\\sqrt{3}"
+          }
+        ],
+        "result": "$F\\prime(x)=3\\cos(x)+2\\sin(x)$, and $F\\prime(\\pi/3)=3/2+\\sqrt{3}$.",
+        "verification": "The minus sign in $−2\\cos(x)$ combines with $(\\cos x)\\prime=−\\sin x$ to make a positive sine term."
+      },
+      {
+        "kind": "derivation",
+        "id": "tangent-derivative-quotient-proof",
+        "title": "Derive the tangent derivative",
+        "strategy": "Write tangent as sine over cosine, apply the quotient rule, then use the Pythagorean identity.",
+        "setup": "Where $\\cos(x)\\ne0$, $\\tan(x)=\\sin(x)/\\cos(x)$. All angles are in radians.",
+        "steps": [
+          {
+            "label": "Apply the quotient rule",
+            "text": "Use the sine and cosine derivatives.",
+            "equation": "(tan x)'=[cos(x)cos(x)−sin(x)(−sin(x))]/cos^2(x)"
+          },
+          {
+            "label": "Simplify",
+            "text": "Apply $\\sin^2(x)+\\cos^2(x)=1$.",
+            "equation": "(cos^2(x)+sin^2(x))/cos^2(x)=1/cos^2(x)=sec^2(x)"
+          }
+        ],
+        "result": "$(\\tan x)\\prime=\\sec^2(x)$ for $\\cos(x)\\ne0$.",
+        "verification": "The excluded inputs are $x=\\pi/2+k\\pi$ for $k\\in\\mathbb Z$."
+      },
+      {
+        "kind": "theorem",
+        "id": "reciprocal-trig-rules-with-domains",
+        "title": "Reciprocal trigonometric derivative formulas",
+        "statement": "Where defined, $(\\sec x)\\prime=\\sec x\\tan x$, $(\\csc x)\\prime=−\\csc x\\cot x$, and $(\\cot x)\\prime=−\\csc^2x$.",
+        "hypotheses": [
+          "Angles are measured in radians.",
+          "$\\sec x$ requires $\\cos x\\ne0$.",
+          "$\\csc x$ and $\\cot x$ require $\\sin x\\ne0$."
+        ],
+        "prerequisites": ["Quotient rule", "Sine and cosine derivatives"],
+        "status": "Derivations follow by the quotient rule"
+      },
+      {
+        "kind": "derivation",
+        "id": "reciprocal-trig-quotient-derivations",
+        "title": "Derive the remaining three trigonometric rules",
+        "strategy": "Rewrite sec and csc as reciprocals, and cot as a quotient; retain each function's domain.",
+        "setup": "All angles are in radians.",
+        "steps": [
+          {
+            "label": "Secant",
+            "text": "Differentiate $1/\\cos(x)$ where $\\cos(x)\\ne0$.",
+            "equation": "(sec x)'=−(cos x)'/cos^2(x)=sin(x)/cos^2(x)=sec(x)tan(x)"
+          },
+          {
+            "label": "Cosecant",
+            "text": "Differentiate $1/\\sin(x)$ where $\\sin(x)\\ne0$.",
+            "equation": "(csc x)'=−(sin x)'/sin^2(x)=−cos(x)/sin^2(x)=−csc(x)cot(x)"
+          },
+          {
+            "label": "Cotangent",
+            "text": "Apply the quotient rule to $\\cos(x)/\\sin(x)$ where $\\sin(x)\\ne0$.",
+            "equation": "(cot x)'=[−sin^2(x)−cos^2(x)]/sin^2(x)=−csc^2(x)"
+          }
+        ],
+        "result": "The quotient rule gives all three reciprocal-trigonometric derivative formulas.",
+        "verification": "The denominators show why sec excludes zeros of cosine and csc/cot exclude zeros of sine."
+      },
+      {
+        "kind": "theorem",
+        "id": "constant-and-identity-derivative-statements",
+        "title": "Differentiate constants and the identity",
+        "statement": "For every real $c$ and every real input $a$, the constant function $f(x)=c$ has $f'(a)=0$; the identity function $\\operatorname{id}(x)=x$ has $\\operatorname{id}'(a)=1$.",
+        "hypotheses": [
+          "The constant function $f(x)=c$ and the identity function $\\operatorname{id}(x)=x$ are defined on all of $\\mathbb R$."
+        ],
+        "prerequisites": ["Derivative definition"],
+        "status": "Complete calculations follow in the worked example."
+      },
+      {
+        "kind": "theorem",
+        "id": "positive-integer-power-rule-statement",
+        "title": "Differentiate positive integer powers",
+        "statement": "For every positive integer $n$ and every real $x$, $\\frac{d}{dx}(x^n)=nx^{n-1}$.",
+        "hypotheses": ["$n$ is a positive integer.", "$x\\in\\mathbb R$."],
+        "prerequisites": ["Binomial theorem", "Derivative definition"],
+        "status": "Complete proof follows below."
+      },
+      {
+        "kind": "strategy",
+        "id": "preserve-domain-when-canceling",
+        "title": "Keep the original quotient domain",
+        "text": "Factor numerator and denominator, record where the original denominator $g(x)\\ne0$, then cancel common factors only on that original domain."
+      },
+      {
+        "kind": "strategy",
+        "id": "common-misrule-check",
+        "title": "Test tempting derivative shortcuts",
+        "text": "For products, retain each changing-factor contribution. For quotients, keep numerator order $f'g-fg'$ and denominator $g^2$; compare a proposed shortcut on concrete functions."
+      },
+      {
+        "kind": "theorem",
+        "id": "tangent-derivative-domain-statement",
+        "title": "Differentiate tangent on its domain",
+        "statement": "For radian inputs with $\\cos x\\ne0$, $\\frac{d}{dx}(\\tan x)=\\sec^2x$. The excluded inputs are $x=\\pi/2+k\\pi$ for $k\\in\\mathbb Z$.",
+        "hypotheses": [
+          "Angles are measured in radians.",
+          "$\\cos x\\ne0$, so $\\tan x$ is defined."
+        ],
+        "prerequisites": [
+          "Quotient rule",
+          "Sine and cosine derivatives",
+          "$\\sin^2x+\\cos^2x=1$"
+        ],
+        "status": "The derivation follows below."
       }
     ],
     "exercises": [
@@ -3417,6 +4004,244 @@
           "Use the Pythagorean identity.",
           "Exclude zeros of cosine."
         ]
+      },
+      {
+        "id": "constant-derivative-definition-transfer",
+        "outcome": "Find the derivative of a constant function from its definition.",
+        "kind": "proof",
+        "prompt": "Use the difference quotient to find the derivative of $f(x)=−7$ at an arbitrary input $a$.",
+        "hint": "Write $f(a+h)−f(a)$ and simplify for $h\\ne0$.",
+        "solution": "For $h\\ne0$, $[f(a+h)−f(a)]/h=[−7−(−7)]/h=0$, so $f\\prime(a)=0$.",
+        "solutionTex": "f'(a)=lim_{h→0}[−7−(−7)]/h=0",
+        "rubric": [
+          "Substitute the same constant at $a+h$ and $a$.",
+          "Simplify before taking the limit; division by $h$ is for $h\\ne0$.",
+          "State that the derivative is zero for every $a$."
+        ]
+      },
+      {
+        "id": "identity-derivative-definition-transfer",
+        "outcome": "Find the derivative of the identity function from its definition.",
+        "kind": "proof",
+        "prompt": "For $g(t)=t$, use the difference quotient at an arbitrary input $b$ to find $g\\prime(b)$.",
+        "hint": "The output increment is $(b+h)−b$.",
+        "solution": "For $h\\ne0$, $[g(b+h)−g(b)]/h=[(b+h)−b]/h=1$, hence $g\\prime(b)=1$.",
+        "solutionTex": "g'(b)=lim_{h→0}[(b+h)−b]/h=1",
+        "rubric": [
+          "Substitute $b+h$ and $b$ into $g$.",
+          "Cancel $h$ only after noting $h\\ne0$.",
+          "Take the limit and state the result."
+        ]
+      },
+      {
+        "id": "binomial-expansion-transfer",
+        "outcome": "Expand a positive integer power using binomial coefficients.",
+        "kind": "computational",
+        "prompt": "Expand $(t+h)^4$ and identify the term that is linear in $h$.",
+        "hint": "Use $\\binom{4}{k}=4!/[k!(4−k)!]$ for $k=0,1,2,3,4$.",
+        "solution": "$(t+h)^4=t^4+4t^3h+6t^2h^2+4th^3+h^4$. The term linear in $h$ is $4t^3h$.",
+        "solutionTex": "(t+h)^4=t^4+4t^3h+6t^2h^2+4th^3+h^4",
+        "rubric": [
+          "Use the five coefficients $1,4,6,4,1$.",
+          "Pair each coefficient with the matching powers of $t$ and $h$.",
+          "Identify only $4t^3h$ as linear in $h."
+        ]
+      },
+      {
+        "id": "positive-integer-power-transfer",
+        "outcome": "Differentiate positive integer powers.",
+        "kind": "computational",
+        "prompt": "Differentiate $x^6$ and $r^4$ with respect to their displayed variables.",
+        "hint": "Bring the positive integer exponent down and reduce it by one.",
+        "solution": "$\\frac{d}{dx}(x^6)=6x^5$ and $\\frac{d}{dr}(r^4)=4r^3$.",
+        "solutionTex": "d(x^6)/dx=6x^5,\\quad d(r^4)/dr=4r^3",
+        "rubric": [
+          "Use the exponent as the coefficient.",
+          "Reduce each exponent by one.",
+          "Differentiate with respect to the displayed variable."
+        ]
+      },
+      {
+        "id": "linearity-transfer",
+        "outcome": "Differentiate a finite linear combination term by term.",
+        "kind": "computational",
+        "prompt": "Differentiate $Q(t)=−2t^3+5t^2−6t+9$.",
+        "hint": "Keep every coefficient and sign, and differentiate the constant term to zero.",
+        "solution": "$Q\\prime(t)=−6t^2+10t−6$.",
+        "solutionTex": "Q'(t)=−6t^2+10t−6",
+        "rubric": [
+          "Apply the power rule to each nonconstant term.",
+          "Preserve the negative signs and coefficients.",
+          "Give zero contribution from the constant."
+        ]
+      },
+      {
+        "id": "quotient-rule-pointwise-transfer",
+        "outcome": "Apply the quotient rule and state where the quotient is defined.",
+        "kind": "computational",
+        "prompt": "Differentiate $R(t)=(t^2−3)/(t+1)$ and state its domain.",
+        "hint": "Use numerator order $f\\prime g−fg\\prime$ and square the denominator.",
+        "solution": "For $t\\ne−1$, $R\\prime(t)=[2t(t+1)−(t^2−3)]/(t+1)^2=(t^2+2t+3)/(t+1)^2$.",
+        "solutionTex": "R'(t)=\\frac{2t(t+1)−(t^2−3)}{(t+1)^2}=\\frac{t^2+2t+3}{(t+1)^2},\\quad t\\ne−1",
+        "rubric": [
+          "Keep the numerator order $f\\prime g−fg\\prime$.",
+          "Square the denominator.",
+          "Exclude $t=−1$ from the original function\\'s domain."
+        ]
+      },
+      {
+        "id": "quotient-simplify-transfer",
+        "outcome": "Factor a quotient before differentiating and preserve the original domain.",
+        "kind": "computational",
+        "prompt": "For $y=(x^2+2x+4)/(x^3−8)$, compare the quotient-rule derivative with simplifying first. State the domain.",
+        "hint": "Factor $x^3−8=(x−2)(x^2+2x+4)$.",
+        "solution": "The original domain is $x\\ne2$. Factoring gives $y=1/(x−2)$, so $y\\prime=−1/(x−2)^2$. The quotient-rule numerator is $−(x^2+2x+4)^2$, yielding the same derivative after cancellation.",
+        "solutionTex": "x^3−8=(x−2)(x^2+2x+4),\\quad y=\\frac1{x−2},\\quad y'=−\\frac1{(x−2)^2},\\quad x\\ne2",
+        "rubric": [
+          "Factor the difference of cubes correctly.",
+          "State the original denominator restriction before cancelling.",
+          "Differentiate the simpler form and check agreement with the quotient rule."
+        ]
+      },
+      {
+        "id": "negative-integer-power-transfer",
+        "outcome": "Differentiate a negative integer power on its domain.",
+        "kind": "computational",
+        "prompt": "Differentiate $t^{−4}$ and state its domain.",
+        "hint": "Use $n=4$ in the negative integer power rule.",
+        "solution": "For $t\\ne0$, $\\frac{d}{dt}(t^{−4})=−4t^{−5}$.",
+        "solutionTex": "d(t^{−4})/dt=−4t^{−5},\\quad t\\ne0",
+        "rubric": [
+          "Bring down $−4$.",
+          "Reduce the exponent by one.",
+          "Exclude $t=0$."
+        ]
+      },
+      {
+        "id": "real-power-positive-domain-transfer",
+        "outcome": "Apply the real power rule on positive inputs.",
+        "kind": "computational",
+        "prompt": "For $x>0$, differentiate $x^{−3/2}$ and state the domain used.",
+        "hint": "Use $s=−3/2$ and retain the restriction $x>0$.",
+        "solution": "For $x>0$, $\\frac{d}{dx}(x^{−3/2})=−\\frac32x^{−5/2}$.",
+        "solutionTex": "d(x^{−3/2})/dx=−\\frac32x^{−5/2},\\quad x>0",
+        "rubric": [
+          "Use the exponent as the coefficient.",
+          "Subtract one from the exponent.",
+          "Keep $x>0$ as the stated domain for arbitrary real exponents."
+        ]
+      },
+      {
+        "id": "tangent-normal-lines-transfer",
+        "outcome": "Use a derivative to find tangent and normal lines at a point.",
+        "kind": "computational",
+        "prompt": "Find tangent and normal lines to $y=x^2/(x+1)$ at $x=1$.",
+        "hint": "Find $y(1)$ and $y\\prime(1)$; the normal slope is the negative reciprocal of the nonzero tangent slope.",
+        "solution": "At $x=1$, $y=1/2$ and $y\\prime=[2x(x+1)−x^2]/(x+1)^2=3/4$. Thus the tangent is $y−1/2=(3/4)(x−1)$, and the normal is $y−1/2=−(4/3)(x−1)$.",
+        "solutionTex": "y−\\frac12=\\frac34(x−1),\\quad y−\\frac12=−\\frac43(x−1)",
+        "rubric": [
+          "Evaluate the function and derivative at $x=1$.",
+          "Use the derivative as the tangent slope.",
+          "Use the negative reciprocal for the normal slope and retain the same point."
+        ]
+      },
+      {
+        "id": "product-quotient-misrule-transfer",
+        "outcome": "Reject common product- and quotient-rule shortcuts by checking values.",
+        "kind": "conceptual",
+        "prompt": "At $x=0$ compare $r(x)=(x+2)(x+4)$ with the shortcut $r_1\\prime(0)r_2\\prime(0)$. At $x=1$ compare $q(x)=(x^2+2)/(x+3)$ with $f\\prime(1)/g\\prime(1)$ and the reversed quotient numerator. Identify the invalid shortcuts.",
+        "hint": "For $r$, let $r_1=x+2$ and $r_2=x+4$. For $q$, use $f=x^2+2$ and $g=x+3$.",
+        "solution": "For $r$, $r\\prime(0)=1\\cdot4+2\\cdot1=6$, while $r_1\\prime(0)r_2\\prime(0)=1$. For $q$ at $x=1$, $f=3$, $g=4$, $f\\prime=2$ and $g\\prime=1$, so $q\\prime(1)=(2\\cdot4−3\\cdot1)/16=5/16$. Reversing the numerator gives $−5/16$, and $f\\prime(1)/g\\prime(1)=2$. The shortcuts are invalid.",
+        "solutionTex": "r'(0)=6\\ne r_1'(0)r_2'(0)=1,\\quad q'(1)=\\frac5{16}\\ne−\\frac5{16}\\ne2",
+        "rubric": [
+          "Compute the product derivative with both changing contributions.",
+          "Use $f\\prime g−fg\\prime$ for the quotient.",
+          "Show the wrong formulas give different values."
+        ]
+      },
+      {
+        "id": "degree-input-scale-transfer",
+        "outcome": "Account for the radian conversion when an input is measured in degrees.",
+        "kind": "proof",
+        "prompt": "Let $S(d)=\\sin(\\pi d/180)$, where $d$ is measured in degrees. Use the definition and the radian sine limit to find $S\\prime(30)$.",
+        "hint": "Write $\\alpha=\\pi h/180$ in the difference quotient and expand $\\sin(\\pi/6+\\alpha)−\\sin(\\pi/6)$.",
+        "solution": "With $\\alpha=\\pi h/180$, the difference quotient is $[\\sin(\\pi/6)(\\cos\\alpha−1)+\\cos(\\pi/6)\\sin\\alpha]/h$. The first term tends to zero; the second tends to $(\\pi/180)\\cos(\\pi/6)=\\pi\\sqrt3/360$.",
+        "solutionTex": "S'(30)=\\frac{\\pi}{180}\\cos\\frac\\pi6=\\frac{\\pi\\sqrt3}{360}",
+        "rubric": [
+          "Convert the degree increment $h$ to the radian increment $\\alpha=\\pi h/180$.",
+          "Use the sine addition identity in the difference quotient.",
+          "Retain the factor $\\pi/180$."
+        ]
+      },
+      {
+        "id": "sine-derivative-definition-transfer",
+        "outcome": "Derive the sine derivative from its definition.",
+        "kind": "proof",
+        "prompt": "Use the derivative definition at $x=\\pi/6$ to show the slope of $\\sin x$ is $\\cos(\\pi/6)$.",
+        "hint": "Use $\\sin(x+h)=\\sin x\\cos h+\\cos x\\sin h$, plus $\\sin h/h\\to1$ and $(\\cos h−1)/h\\to0$.",
+        "solution": "The quotient is $\\sin(\\pi/6)(\\cos h−1)/h+\\cos(\\pi/6)\\sin h/h$. Its limit is $0+\\cos(\\pi/6)=\\sqrt3/2$.",
+        "solutionTex": "lim_{h→0}\\frac{\\sin(\\frac\\pi6+h)−\\sin(\\frac\\pi6)}h=\\cos\\frac\\pi6=\\frac{\\sqrt3}{2}",
+        "rubric": [
+          "Start from the difference quotient.",
+          "Apply the sine addition identity.",
+          "Use both radian limits and state the slope."
+        ]
+      },
+      {
+        "id": "cosine-derivative-definition-transfer",
+        "outcome": "Derive the cosine derivative from its definition.",
+        "kind": "proof",
+        "prompt": "Use the derivative definition at $x=\\pi/6$ to show the slope of $\\cos x$ is $−\\sin(\\pi/6)$.",
+        "hint": "Use $\\cos(x+h)=\\cos x\\cos h−\\sin x\\sin h$.",
+        "solution": "The quotient is $\\cos(\\pi/6)(\\cos h−1)/h−\\sin(\\pi/6)\\sin h/h$. Its limit is $0−\\sin(\\pi/6)=−1/2$.",
+        "solutionTex": "lim_{h→0}\\frac{\\cos(\\frac\\pi6+h)−\\cos(\\frac\\pi6)}h=−\\sin\\frac\\pi6=−\\frac12",
+        "rubric": [
+          "Start from the difference quotient.",
+          "Use the cosine addition identity with its minus sign.",
+          "Apply the radian limits and state the slope."
+        ]
+      },
+      {
+        "id": "sine-cosine-linear-combination-transfer",
+        "outcome": "Apply both sine and cosine derivative rules.",
+        "kind": "computational",
+        "prompt": "Differentiate $H(x)=2\\cos x+\\sin x$ and evaluate $H\\prime(\\pi/6)$.",
+        "hint": "Use $(\\cos x)\\prime=−\\sin x$ and $(\\sin x)\\prime=\\cos x$.",
+        "solution": "$H\\prime(x)=−2\\sin x+\\cos x$, so $H\\prime(\\pi/6)=−1+\\sqrt3/2$.",
+        "solutionTex": "H'(x)=−2\\sin x+\\cos x,\\quad H'(\\frac\\pi6)=−1+\\frac{\\sqrt3}{2}",
+        "rubric": [
+          "Apply the cosine derivative with the negative sign.",
+          "Apply the sine derivative.",
+          "Evaluate both trigonometric values at $\\pi/6$."
+        ]
+      },
+      {
+        "id": "tangent-derivative-transfer",
+        "outcome": "Apply the tangent derivative where cosine is nonzero.",
+        "kind": "proof",
+        "prompt": "Differentiate $p(x)=2\\tan x$ and state the full domain of $p$ and $p\\prime$.",
+        "hint": "Use $(\\tan x)\\prime=\\sec^2x$ and exclude zeros of $\\cos x$.",
+        "solution": "$p\\prime(x)=2\\sec^2x$ on $x\\ne\\pi/2+k\\pi$ for $k\\in\\mathbb Z$, the domain of $\\tan x$.",
+        "solutionTex": "p'(x)=2\\sec^2x,\\quad x\\ne\\frac\\pi2+k\\pi,\\ k\\in\\mathbb Z",
+        "rubric": [
+          "Keep the constant factor $2$.",
+          "Use the tangent derivative formula.",
+          "Exclude every zero of cosine."
+        ]
+      },
+      {
+        "id": "reciprocal-trig-derivatives-transfer",
+        "outcome": "Apply the secant, cosecant, and cotangent derivative formulas with their domains.",
+        "kind": "computational",
+        "prompt": "Differentiate $J(x)=2\\sec x−3\\csc x+\\cot x$ and state where the original function is defined.",
+        "hint": "Use the three quotient-derived formulas; all three terms must be defined.",
+        "solution": "$J\\prime(x)=2\\sec x\\tan x+3\\csc x\\cot x−\\csc^2x$. The domain excludes $\\sin x=0$ and $\\cos x=0$, so $x\\ne k\\pi/2$ for $k\\in\\mathbb Z$.",
+        "solutionTex": "J'(x)=2\\sec x\\tan x+3\\csc x\\cot x−\\csc^2x,\\quad x\\ne k\\frac\\pi2,\\ k\\in\\mathbb Z",
+        "rubric": [
+          "Differentiate secant, cosecant, and cotangent with the correct signs.",
+          "Preserve the coefficient $−3$ when differentiating $−3\\csc x$.",
+          "Exclude zeros of both sine and cosine."
+        ]
       }
     ],
     "sections": [
@@ -3427,6 +4252,22 @@
       {
         "title": "A quotient worked through",
         "text": "For $q(x)=\\sin x/x$ on $x\\ne0$, numerator derivative is $\\cos x$ and denominator derivative is $1$. Thus $q'(x)=(x\\cos x-\\sin x)/x^2$. The derivative formula has the same excluded zero; any extension at zero must be defined and differentiated separately."
+      },
+      {
+        "title": "Keep power-rule domains distinct",
+        "text": "The positive integer rule applies to every real $x$. For positive integer $n$, $x^{−n}$ is defined only for $x\\ne0$. For arbitrary real exponent $s$, this guide states $\\frac{d}{dx}(x^s)=sx^{s−1}$ on $x>0$, where $x^s$ is real and differentiable for every real $s$."
+      },
+      {
+        "title": "Simplify only on the original quotient domain",
+        "text": "Before applying the quotient rule, factor numerator and denominator when possible. Cancelling a common factor preserves the function only where the original denominator $g(x)\\ne0$; state that domain before using the simpler form."
+      },
+      {
+        "title": "Use radians for the trigonometric rules",
+        "text": "The standard sine limit and the derivative formulas use radian measure. A degree-valued input $d$ must be converted to radians, so $\\sin(\\pi d/180)$ has derivative $\\pi/180$ at $d=0$, not $1$."
+      },
+      {
+        "title": "A normal line is perpendicular to the tangent",
+        "text": "At a point where the tangent slope $m$ is nonzero, the normal slope is $−1/m$. If $m=0$, the normal is vertical; do not apply a reciprocal-slope formula that divides by zero."
       }
     ],
     "exercise": {

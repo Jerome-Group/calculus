@@ -1085,8 +1085,18 @@
       },
       {
         "sourceId": "MH1100_Lecture_07",
+        "pages": [4, 4],
+        "detail": "The simplest rules"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
         "pages": [5, 5],
         "detail": "The power rule"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [6, 6],
+        "detail": "The power rule; binomial theorem"
       },
       {
         "sourceId": "MH1100_Lecture_07",
@@ -1125,6 +1135,11 @@
       },
       {
         "sourceId": "MH1100_Lecture_07",
+        "pages": [14, 14],
+        "detail": "Product rule proof (continued)"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
         "pages": [15, 15],
         "detail": "Differentiation formulas"
       },
@@ -1140,8 +1155,18 @@
       },
       {
         "sourceId": "MH1100_Lecture_07",
+        "pages": [18, 18],
+        "detail": "Quotient rule proof (continued)"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
         "pages": [19, 19],
         "detail": "Quotient Rule"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [20, 20],
+        "detail": "Quotient Rule; negative integer powers"
       },
       {
         "sourceId": "MH1100_Lecture_07",
@@ -1160,6 +1185,11 @@
       },
       {
         "sourceId": "MH1100_Lecture_07",
+        "pages": [24, 24],
+        "detail": "Example 12–Solution (Cont’d); graph"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
         "pages": [25, 25],
         "detail": "Differentiation Formulas"
       },
@@ -1167,6 +1197,31 @@
         "sourceId": "MH1100_Lecture_07",
         "pages": [26, 26],
         "detail": "Derivatives of Trigonometric Functions"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [27, 27],
+        "detail": "Derivatives of Trigonometric Functions; sine derivative proof"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [28, 28],
+        "detail": "Derivatives of Trigonometric Functions; cosine derivative exercise"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [29, 29],
+        "detail": "Derivatives of Trigonometric Functions; sine and cosine theorem"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [30, 30],
+        "detail": "Derivatives of Trigonometric Functions; tangent derivative"
+      },
+      {
+        "sourceId": "MH1100_Lecture_07",
+        "pages": [31, 31],
+        "detail": "Derivatives of Trigonometric Functions; derivative table"
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_02_Derivatives",
