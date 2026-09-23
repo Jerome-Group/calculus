@@ -3500,8 +3500,8 @@
         "series-geometric-telescoping",
         "series-divergence-test"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'geometric/telescoping/harmonic series' at 2–32; limits 2–18; monotone 19–21; series 22–32; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "partial_atomic_mapping",
+      "gap": "Three page-verified atomic outcomes now cover geometric finite sums, telescoping boundaries, and harmonic divergence. Other Chapter 04 source skills and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3512,8 +3512,12 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "series-geometric-telescoping:finite-geometric-decision",
+        "series-geometric-telescoping:telescoping-boundaries",
+        "series-divergence-test:harmonic-blocks"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH1101_Chapter_05_Notes:01",
@@ -9613,6 +9617,282 @@
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
         "checked": "No independent outcome-level validation or learner performance check."
+      }
+    },
+    {
+      "id": "series-geometric-telescoping:finite-geometric-decision",
+      "concept_id": "series-geometric-telescoping",
+      "outcome": "Derive a finite geometric partial sum, keep indexing explicit, and decide convergence from the common ratio.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 24,
+        "inspection": "Canonical local course PDF rendered physical pages 24, 25 and manually compared with guide.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [24, 25],
+          "method": "Manual reading of rendered physical PDF pages and extracted text cross-check.",
+          "claim_observed": "Example 4.20 and Theorem 6 give the finite sum and the |r| < 1 convergence split. The displayed a² in Example 4.20 is a source typo for ar²."
+        },
+        "page_heading": "4.4 Series"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#series-geometric-telescoping.title",
+            "claim": "The catalog names the relevant series concept.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.sections[Sum means a limit of partial sums]",
+            "claim": "The guide states the finite-partial-sum decision and its evidence limit.",
+            "method": "Compare the guide section with the rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.contentBlocks[geometric-partial-sum-cases]",
+            "claim": "The guide works the source calculation with the necessary finite boundaries and limit.",
+            "method": "Manual algebra comparison against the rendered source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.exercises[signed-geometric-transfer]",
+            "claim": "A distinct transfer prompt has a hint, complete solution, and assessment rubric.",
+            "method": "Inspect task and solution; no learner response observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide calculation inspected. Scene behavior, independent learner performance, and other Chapter 04 subskills remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#series-geometric-telescoping.title",
+            "basis": "Direct catalog title inspection. Learner mastery unverified."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.sections[Sum means a limit of partial sums]",
+            "basis": "Compare the guide section with the rendered source pages. Learner mastery unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.contentBlocks[geometric-partial-sum-cases]",
+            "basis": "Manual algebra comparison against the rendered source pages. Learner mastery unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.exercises[signed-geometric-transfer]",
+            "basis": "Inspect task and solution; no learner response observed. Learner mastery unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages, guide derivation, transfer task, and catalog.",
+        "named": "match",
+        "stated": "match",
+        "worked": "The source finite-sum proof and case split are worked; the new signed-ratio task demands an independently indexed partial sum.",
+        "practiced": "Independent task inspected; learner performance unverified.",
+        "visualized": "No scene verified for this outcome.",
+        "checked": "No independent learner-level outcome check."
+      }
+    },
+    {
+      "id": "series-geometric-telescoping:telescoping-boundaries",
+      "concept_id": "series-geometric-telescoping",
+      "outcome": "Expose the surviving boundary terms of a finite telescoping sum before taking its limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 28,
+        "inspection": "Canonical local course PDF rendered physical pages 27, 28 and manually compared with guide.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 28],
+          "method": "Manual reading of rendered physical PDF pages and extracted text cross-check.",
+          "claim_observed": "Example 4.23 decomposes 1/[n(n+1)], shows finite cancellation to 1−1/(k+1), then takes the limit."
+        },
+        "page_heading": "4.4 Series"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#series-geometric-telescoping.title",
+            "claim": "The catalog names the relevant series concept.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.sections[Keep the surviving boundary terms]",
+            "claim": "The guide states the finite-partial-sum decision and its evidence limit.",
+            "method": "Compare the guide section with the rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.contentBlocks[telescoping-surviving-boundaries]",
+            "claim": "The guide works the source calculation with the necessary finite boundaries and limit.",
+            "method": "Manual algebra comparison against the rendered source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.exercises[two-step-telescoping-transfer]",
+            "claim": "A distinct transfer prompt has a hint, complete solution, and assessment rubric.",
+            "method": "Inspect task and solution; no learner response observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide calculation inspected. Scene behavior, independent learner performance, and other Chapter 04 subskills remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#series-geometric-telescoping.title",
+            "basis": "Direct catalog title inspection. Learner mastery unverified."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.sections[Keep the surviving boundary terms]",
+            "basis": "Compare the guide section with the rendered source pages. Learner mastery unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.contentBlocks[telescoping-surviving-boundaries]",
+            "basis": "Manual algebra comparison against the rendered source pages. Learner mastery unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-geometric-telescoping.exercises[two-step-telescoping-transfer]",
+            "basis": "Inspect task and solution; no learner response observed. Learner mastery unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages, guide derivation, transfer task, and catalog.",
+        "named": "match",
+        "stated": "match",
+        "worked": "The source one-step cancellation is worked; the new two-step task requires two terms at both boundaries.",
+        "practiced": "Independent task inspected; learner performance unverified.",
+        "visualized": "No scene verified for this outcome.",
+        "checked": "No independent learner-level outcome check."
+      }
+    },
+    {
+      "id": "series-divergence-test:harmonic-blocks",
+      "concept_id": "series-divergence-test",
+      "outcome": "Prove harmonic divergence by unbounded partial sums despite a zero term limit.",
+      "core_source": {
+        "id": "MH1101_Chapter_04_Notes",
+        "physical_page": 29,
+        "inspection": "Canonical local course PDF rendered physical pages 28, 29, 30 and manually compared with guide.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [28, 29, 30],
+          "method": "Manual reading of rendered physical PDF pages and extracted text cross-check.",
+          "claim_observed": "Example 4.24 bounds dyadic harmonic blocks from below; Theorems 7–8 on page 30 distinguish a necessary zero term limit from a convergence proof."
+        },
+        "page_heading": "4.4 Series"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#series-divergence-test.title",
+            "claim": "The catalog names the relevant series concept.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-divergence-test.sections[A harmonic-series proof]",
+            "claim": "The guide states the finite-partial-sum decision and its evidence limit.",
+            "method": "Compare the guide section with the rendered source pages."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-divergence-test.contentBlocks[harmonic-dyadic-lower-bound]",
+            "claim": "The guide works the source calculation with the necessary finite boundaries and limit.",
+            "method": "Manual algebra comparison against the rendered source pages."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-divergence-test.exercises[scaled-harmonic-transfer]",
+            "claim": "A distinct transfer prompt has a hint, complete solution, and assessment rubric.",
+            "method": "Inspect task and solution; no learner response observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and guide calculation inspected. Scene behavior, independent learner performance, and other Chapter 04 subskills remain unverified.",
+      "source_section_id": "MH1101_Chapter_04_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#series-divergence-test.title",
+            "basis": "Direct catalog title inspection. Learner mastery unverified."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-divergence-test.sections[A harmonic-series proof]",
+            "basis": "Compare the guide section with the rendered source pages. Learner mastery unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-divergence-test.contentBlocks[harmonic-dyadic-lower-bound]",
+            "basis": "Manual algebra comparison against the rendered source pages. Learner mastery unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#series-divergence-test.exercises[scaled-harmonic-transfer]",
+            "basis": "Inspect task and solution; no learner response observed. Learner mastery unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages, guide derivation, transfer task, and catalog.",
+        "named": "match",
+        "stated": "match",
+        "worked": "The source block proof is worked; the new scaled harmonic task tests transfer beyond repeating the same series.",
+        "practiced": "Independent task inspected; learner performance unverified.",
+        "visualized": "No scene verified for this outcome.",
+        "checked": "No independent learner-level outcome check."
       }
     }
   ]

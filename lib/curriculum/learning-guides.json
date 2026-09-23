@@ -1986,7 +1986,7 @@
     "sections": [
       {
         "title": "Sum means a limit of partial sums",
-        "text": "For a series starting at $n=0$, define $S_{N}$ as its first $N$ terms, from $n=0$ through $n=N-1$. Convergence means $S_{N}$ approaches a finite number, not merely $a_{n}\\to 0$. For the geometric series, $S_N=1+r+\\cdots+r^{N-1}=(1-r^N)/(1-r)$ when $r\\ne 1$; at $N=1$ this is just 1. Its infinite sum is $1/(1-r)$ only for $|r|<1$. Some books instead use $S_{N}$ for the sum through index $N$; that has $N+1$ terms and numerator $1-r^{N+1}$."
+        "text": "For a series starting at $n=0$, define $S_N$ as its first $N$ terms, from $n=0$ through $n=N-1$. Its value is the limit of these partial sums, when that limit exists. For $r\\ne1$, $S_N=1+r+\\cdots+r^{N-1}=(1-r^N)/(1-r)$; $S_1=1$. The sum is $1/(1-r)$ only when $|r|<1$. For $r=1$, the partial sum grows as $N$; for $r=-1$, it alternates between 0 and 1. Keep the first term, term count, and last index distinct. Some books instead use $S_N$ for the sum through index $N$; that has $N+1$ terms and numerator $1-r^{N+1}$."
       },
       {
         "title": "Keep the surviving boundary terms",
@@ -2002,7 +2002,81 @@
         "Check the ratio magnitude."
       ],
       "solutionTex": "\\sum_{n=2}^{\\infty}3^{-n}=\\frac{1/9}{1-1/3}=\\frac16"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "geometric-partial-sum-cases",
+        "title": "Derive the finite geometric sum before taking a limit",
+        "strategy": "Match the notes’ $n=1$ indexing and subtract $r s_k$ from $s_k$.",
+        "setup": "For $a\\ne0$, let $s_k=\\sum_{n=1}^{k}ar^{n-1}=a+ar+\\cdots+ar^{k-1}$.",
+        "steps": [
+          {
+            "label": "Cancel finite sums",
+            "text": "If $r\\ne1$, then $r s_k=ar+\\cdots+ar^k$, so $(1-r)s_k=a(1-r^k)$ and $s_k=a(1-r^k)/(1-r)$."
+          },
+          {
+            "label": "Take only justified limits",
+            "text": "If $|r|<1$, then $r^k\\to0$ and $s_k\\to a/(1-r)$. If $r=1$, $s_k=ka$; if $r=-1$, $s_k$ alternates between 0 and $a$; if $|r|>1$, $r^k$ prevents a finite limit."
+          }
+        ],
+        "result": "The series converges exactly when $|r|<1$ and then sums to $a/(1-r)$.",
+        "verification": "At $k=1$, the finite formula gives $s_1=a$. This uses Example 4.20 and Theorem 6 on pages 24–25; the source’s displayed $a^2$ in the finite row is a typographical slip for $ar^2$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "telescoping-surviving-boundaries",
+        "title": "Cancel a finite telescoping sum",
+        "strategy": "Decompose first, then show the two surviving boundary terms before taking a limit.",
+        "setup": "The notes’ Example 4.23 asks for $\\sum_{n=1}^{\\infty}1/[n(n+1)]$.",
+        "steps": [
+          {
+            "label": "Split each term",
+            "text": "$1/[n(n+1)]=1/n-1/(n+1)$."
+          },
+          {
+            "label": "Retain finite boundaries",
+            "text": "$s_k=\\sum_{n=1}^{k}[1/n-1/(n+1)]=1-1/(k+1)$."
+          },
+          {
+            "label": "Take the limit",
+            "text": "Since $1/(k+1)\\to0$, the series converges with sum 1."
+          }
+        ],
+        "result": "Cancellation proves the sum only after the finite partial sum is written.",
+        "verification": "For $k=1$, $s_1=1/2$ agrees with the first term; the infinite value is 1."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "signed-geometric-transfer",
+        "outcome": "Determine a signed geometric series from its finite partial sums and common ratio.",
+        "kind": "method-choice",
+        "prompt": "For $\\sum_{n=1}^{\\infty}5(-2/3)^{n-1}$, find $s_k$, decide convergence, and give the sum. Explain why the sign changes do not imply divergence.",
+        "hint": "The first term is 5, the ratio is $-2/3$, and there are $k$ terms through index $k$.",
+        "solution": "Subtract $r s_k$ from $s_k$ to obtain $s_k=5[1-(-2/3)^k]/[1-(-2/3)]=3[1-(-2/3)^k]$. Since $|-2/3|<1$, the final power tends to zero and the series sums to 3. Alternation alone is not a divergence test.",
+        "solutionTex": "s_k=3\\left[1-\\left(-\\frac23\\right)^k\\right]\\longrightarrow3",
+        "rubric": [
+          "Use $k$ terms, ending at exponent $k-1$.",
+          "Check the absolute value of the ratio.",
+          "Take a limit of partial sums, not just a term limit."
+        ]
+      },
+      {
+        "id": "two-step-telescoping-transfer",
+        "outcome": "Use finite boundary terms to evaluate a telescoping series with a two-step shift.",
+        "kind": "method-choice",
+        "prompt": "Find the exact sum of $\\sum_{n=2}^{\\infty}2/[(n+1)(n+3)]$. Write the $N$th partial sum from $n=2$ through $n=N$ first.",
+        "hint": "$2/[(n+1)(n+3)]=1/(n+1)-1/(n+3)$. List the first two positive and last two negative terms.",
+        "solution": "For $N\\ge2$, $s_N=\\sum_{n=2}^{N}[1/(n+1)-1/(n+3)]=1/3+1/4-1/(N+2)-1/(N+3)$. The two trailing terms tend to zero, so the series sums to $7/12$.",
+        "solutionTex": "s_N=\\frac13+\\frac14-\\frac1{N+2}-\\frac1{N+3}\\longrightarrow\\frac7{12}",
+        "rubric": [
+          "Decompose with the two-step shift correctly.",
+          "Keep both surviving terms at each boundary.",
+          "Take the limit after forming the finite sum."
+        ]
+      }
+    ]
   },
   "series-divergence-test": {
     "prerequisites": ["series-geometric-telescoping"],
@@ -2026,7 +2100,48 @@
         "Do not call the second result a proof of convergence."
       ],
       "solutionTex": "\\lim_{n\\to\\infty}\\frac n{n+1}=1\\ne0;\\quad\\lim_{n\\to\\infty}n^{-2}=0"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "worked-example",
+        "id": "harmonic-dyadic-lower-bound",
+        "title": "Shrinking terms can still have unbounded partial sums",
+        "strategy": "Group consecutive harmonic terms into blocks that each contribute at least one half.",
+        "setup": "The notes’ Example 4.24 studies $H_N=\\sum_{n=1}^{N}1/n$.",
+        "steps": [
+          {
+            "label": "Bound a block",
+            "text": "For each $j\\ge1$, the indices $2^{j-1}+1$ through $2^j$ give $2^{j-1}$ terms, each at least $1/2^j$, so their sum is at least $1/2$."
+          },
+          {
+            "label": "Count blocks",
+            "text": "$H_{2^m}\\ge1+m/2\\to\\infty$. Since all terms are positive, the full partial-sum sequence is unbounded and the series diverges."
+          },
+          {
+            "label": "Compare with term limit",
+            "text": "Yet $1/n\\to0$. The term test gives no convergence verdict when the term limit is zero."
+          }
+        ],
+        "result": "The limit of terms and limit of partial sums answer different questions.",
+        "verification": "The notes use a strict lower bound for most blocks; the weak inequality here holds for every $m\\ge1$, including $m=1$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "scaled-harmonic-transfer",
+        "outcome": "Construct an unbounded partial-sum subsequence despite terms tending to zero.",
+        "kind": "method-choice",
+        "prompt": "Does $\\sum_{n=1}^{\\infty}1/(2n)$ converge? Use partial sums at $N=2^m$ and explain what the term test can and cannot say.",
+        "hint": "The partial sum is one half of $H_N$. Use the dyadic block bound for $H_{2^m}$.",
+        "solution": "The terms tend to zero, so the term test alone is inconclusive. But $\\sum_{n=1}^{2^m}1/(2n)=H_{2^m}/2\\ge1/2+m/4\\to\\infty$. Thus the full positive partial-sum sequence is unbounded and the series diverges.",
+        "solutionTex": "\\sum_{n=1}^{2^m}\\frac1{2n}=\\frac12H_{2^m}\\ge\\frac12+\\frac m4\\longrightarrow\\infty",
+        "rubric": [
+          "State that a zero term limit is inconclusive.",
+          "Give an unbounded sequence of finite partial sums.",
+          "Explain why this proves series divergence."
+        ]
+      }
+    ]
   },
   "integral-test": {
     "prerequisites": ["improper-integrals", "series-geometric-telescoping"],

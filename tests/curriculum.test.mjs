@@ -265,6 +265,25 @@ test("WebMCP concept read returns the same practice and source data as the visib
       (exercise) => exercise.id === "alternating-rational-transfer",
     ),
   );
+  const geometric = tool.execute({
+    conceptId: "series-geometric-telescoping",
+  });
+  assert.ok(
+    geometric.lesson.contentBlocks.some(
+      (block) => block.id === "geometric-partial-sum-cases",
+    ),
+  );
+  assert.ok(
+    geometric.lesson.exercises.some(
+      (exercise) => exercise.id === "two-step-telescoping-transfer",
+    ),
+  );
+  const harmonic = tool.execute({ conceptId: "series-divergence-test" });
+  assert.ok(
+    harmonic.lesson.exercises.some(
+      (exercise) => exercise.id === "scaled-harmonic-transfer",
+    ),
+  );
 });
 
 test("WebMCP state includes the mathematical readout and its evidence limit", async () => {

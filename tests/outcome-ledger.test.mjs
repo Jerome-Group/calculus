@@ -71,7 +71,7 @@ test("optional textbook inventory cannot count as core outcomes", () => {
 });
 
 test("inspected atomic outcomes retain core locators and separate evidence states", () => {
-  assert.ok(ledger.atomic_outcomes.length >= 40);
+  assert.ok(ledger.atomic_outcomes.length >= 43);
   assert.equal(
     new Set(ledger.atomic_outcomes.map((entry) => entry.id)).size,
     ledger.atomic_outcomes.length,
@@ -107,6 +107,12 @@ test("inspected atomic outcomes retain core locators and separate evidence state
         (entry) => entry.id === `absolute-conditional-alternating:${skill}`,
       ),
     );
+  for (const skill of [
+    "series-geometric-telescoping:finite-geometric-decision",
+    "series-geometric-telescoping:telescoping-boundaries",
+    "series-divergence-test:harmonic-blocks",
+  ])
+    assert.ok(ledger.atomic_outcomes.some((entry) => entry.id === skill));
   for (const entry of ledger.atomic_outcomes) {
     const source = sources[entry.core_source.id];
     assert.ok(source, entry.id);
