@@ -1009,12 +1009,23 @@ details > p {
 .quick-graph {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   padding: 13px 18px;
   gap: 10px;
   border-bottom: 1px solid var(--border);
 }
+.quick-graph-label {
+  white-space: nowrap;
+}
+.quick-graph-controls {
+  display: flex;
+  align-items: center;
+  flex: 1 1 180px;
+  min-width: 0;
+  gap: 8px;
+}
 .quick-graph input {
-  width: 100%;
+  flex: 1;
   min-width: 0;
   border: 0;
   background: transparent;
@@ -1023,7 +1034,21 @@ details > p {
     14px ui-monospace,
     monospace;
 }
-.quick-graph button {
+.quick-graph .quick-graph-expression {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  background: transparent;
+  color: inherit;
+  white-space: nowrap;
+  text-align: left;
+}
+.quick-graph-edit {
+  margin-left: 10px;
+  font: 11px var(--font-sans);
+  opacity: 0.8;
+}
+.quick-graph .quick-graph-submit {
   display: flex;
   padding: 7px;
   border-radius: 4px;
