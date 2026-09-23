@@ -71,7 +71,7 @@ test("optional textbook inventory cannot count as core outcomes", () => {
 });
 
 test("inspected atomic outcomes retain core locators and separate evidence states", () => {
-  assert.ok(ledger.atomic_outcomes.length >= 37);
+  assert.ok(ledger.atomic_outcomes.length >= 38);
   assert.equal(
     new Set(ledger.atomic_outcomes.map((entry) => entry.id)).size,
     ledger.atomic_outcomes.length,
@@ -94,6 +94,11 @@ test("inspected atomic outcomes retain core locators and separate evidence state
   assert.ok(
     ledger.atomic_outcomes.some(
       (entry) => entry.id === "spherical-integration:variable-radial-bounds",
+    ),
+  );
+  assert.ok(
+    ledger.atomic_outcomes.some(
+      (entry) => entry.id === "partial-fractions:divide-before-decompose",
     ),
   );
   for (const entry of ledger.atomic_outcomes) {
@@ -152,7 +157,7 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
           continue;
         }
         const guide = locator.match(
-          /^lib\/curriculum\/learning-guides\.json#([^.]+)\.(sections|contentBlocks|exercises|exercise)(?:\[([^\]]+)\])?$/,
+          /^lib\/curriculum\/learning-guides\.json#([^.]+)\.(sections|contentBlocks|supplementalBlocks|exercises|exercise)(?:\[([^\]]+)\])?$/,
         );
         assert.ok(guide, locator);
         const lesson = guides[guide[1]];
@@ -172,6 +177,13 @@ test("promoted evidence locators resolve to current catalog or guide blocks", ()
             block.kind === "worked-example" ? "worked" : "stated",
             locator,
           );
+        } else if (guide[2] === "supplementalBlocks") {
+          const block = lesson.supplementalBlocks?.find(
+            (item) => item.id === guide[3],
+          );
+          assert.ok(block, locator);
+          assert.equal(state, "worked", locator);
+          assert.ok(["derivation", "worked-example"].includes(block.kind));
         } else if (guide[2] === "exercises") {
           assert.ok(
             lesson.exercises?.some(

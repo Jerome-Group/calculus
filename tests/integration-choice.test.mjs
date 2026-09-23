@@ -8,6 +8,12 @@ const guides = JSON.parse(
     "utf8",
   ),
 );
+const ledger = JSON.parse(
+  readFileSync(
+    new URL("../lib/curriculum/outcome-ledger.json", import.meta.url),
+    "utf8",
+  ),
+);
 const near = (actual, expected) =>
   assert.ok(Math.abs(actual - expected) < 1e-12, `${actual} != ${expected}`);
 
@@ -59,4 +65,39 @@ test("trigonometric branches and staged algebra give consistent answers", () => 
       "first algebraic step",
     ),
   );
+});
+
+test("improper partial fractions divide first and transfer across poles", () => {
+  const guide = guides["partial-fractions"];
+  const worked = guide.supplementalBlocks.find(
+    (block) => block.id === "divide-then-decompose-repeated-factor",
+  );
+  const transfer = guide.exercises.find(
+    (exercise) => exercise.id === "improper-repeated-factor-transfer",
+  );
+  assert.equal(worked.kind, "derivation");
+  assert.equal(transfer.kind, "method-choice");
+  assert.match(transfer.prompt, /division comes first/);
+  for (const x of [-3, 0, 3]) {
+    const sourceDenominator = x ** 3 - x ** 2 - x + 1;
+    const sourceIntegrand =
+      (x ** 4 - 2 * x ** 2 + 4 * x + 1) / sourceDenominator;
+    const sourceDecomposition =
+      x + 1 + 1 / (x - 1) + 2 / (x - 1) ** 2 - 1 / (x + 1);
+    near(sourceIntegrand, sourceDecomposition);
+
+    const transferDenominator = (x + 1) ** 2 * (x - 2);
+    const transferIntegrand =
+      (x ** 4 - 3 * x ** 2 - 3 * x - 7) / transferDenominator;
+    const derivativeOfSolution =
+      x + 1 / (x + 1) + 2 / (x + 1) ** 2 - 1 / (x - 2);
+    near(transferIntegrand, derivativeOfSolution);
+  }
+  const outcome = ledger.atomic_outcomes.find(
+    (entry) => entry.id === "partial-fractions:divide-before-decompose",
+  );
+  assert.deepEqual(outcome.core_source.page_validation.pages, [21, 23, 24]);
+  assert.equal(outcome.evidence.worked.length, 1);
+  assert.equal(outcome.evidence.practiced.length, 1);
+  assert.deepEqual(outcome.evidence.checked, []);
 });

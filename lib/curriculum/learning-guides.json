@@ -1772,6 +1772,47 @@
   "partial-fractions": {
     "prerequisites": ["integral-antiderivatives"],
     "reasoning": "Proof sketch",
+    "supplementalBlocks": [
+      {
+        "kind": "derivation",
+        "id": "divide-then-decompose-repeated-factor",
+        "title": "Divide before decomposing an improper fraction",
+        "strategy": "Compare degrees before choosing partial-fraction terms; decompose only the proper remainder.",
+        "setup": "For the notes' example, integrate $R(x)=(x^4-2x^2+4x+1)/(x^3-x^2-x+1)$ on an interval avoiding $x=-1,1$.",
+        "steps": [
+          {
+            "label": "Divide",
+            "text": "Since the numerator has degree four and the denominator degree three, long division gives $R(x)=x+1+4x/(x^3-x^2-x+1)$."
+          },
+          {
+            "label": "Factor and choose terms",
+            "text": "$x^3-x^2-x+1=(x-1)^2(x+1)$, so the proper remainder needs $A/(x-1)+B/(x-1)^2+C/(x+1)$. Solving $4x=A(x-1)(x+1)+B(x+1)+C(x-1)^2$ gives $(A,B,C)=(1,2,-1)$."
+          },
+          {
+            "label": "Integrate on a domain component",
+            "text": "$\\int R(x)\\,dx=x^2/2+x+\\ln|x-1|-2/(x-1)-\\ln|x+1|+C$. The constant may differ on $(-\\infty,-1)$, $(-1,1)$, and $(1,\\infty)$."
+          }
+        ],
+        "result": "Division precedes the repeated-factor template whenever the original rational function is improper.",
+        "verification": "Differentiate the result on any component and recover $x+1+1/(x-1)+2/(x-1)^2-1/(x+1)=R(x)$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "improper-repeated-factor-transfer",
+        "outcome": "Choose polynomial division before repeated-factor decomposition for an improper rational integrand.",
+        "kind": "method-choice",
+        "prompt": "Integrate $\\int (x^4-3x^2-3x-7)/[(x+1)^2(x-2)]\\,dx$ on an interval where it is defined. State why division comes first, include every repeated-factor term, and verify by differentiation.",
+        "hint": "The numerator degree exceeds the denominator degree. Division gives quotient $x$ and remainder $-x-7$; write $A/(x+1)+B/(x+1)^2+C/(x-2)$ for the proper part.",
+        "solution": "The denominator is $x^3-3x-2$, so division gives $x+(-x-7)/[(x+1)^2(x-2)]$. Multiplying the template through and solving gives $(A,B,C)=(1,2,-1)$. Hence the integrand is $x+1/(x+1)+2/(x+1)^2-1/(x-2)$ and the antiderivative is $x^2/2+\\ln|x+1|-2/(x+1)-\\ln|x-2|+C$ on each component of $\\mathbb{R}\\setminus\\{-1,2\\}$. Differentiation recovers the decomposition and original quotient.",
+        "solutionTex": "\\frac{x^4-3x^2-3x-7}{(x+1)^2(x-2)}=x+\\frac1{x+1}+\\frac2{(x+1)^2}-\\frac1{x-2}",
+        "rubric": [
+          "Compare polynomial degrees and divide before decomposing.",
+          "Include both powers of the repeated factor and solve the coefficient identity.",
+          "Integrate on a domain component and check the derivative."
+        ]
+      }
+    ],
     "sections": [
       {
         "title": "The denominator determines the template",

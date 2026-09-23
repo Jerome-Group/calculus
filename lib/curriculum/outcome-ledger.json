@@ -3351,7 +3351,7 @@
         "simpson-rule"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 3 source-specific atomic outcome(s) mapped for audit inventory topic 'Integration techniques and numerical quadrature, including tangent/secant cases'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "gap": "Only 4 source-specific atomic outcome(s) mapped for audit inventory topic 'Integration techniques and numerical quadrature, including tangent/secant cases'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -3365,7 +3365,8 @@
       "atomic_outcome_ids": [
         "integration-by-parts:source-skill-1",
         "trigonometric-substitution:source-skill-1",
-        "partial-fractions:source-skill-1"
+        "partial-fractions:source-skill-1",
+        "partial-fractions:divide-before-decompose"
       ],
       "coverage_decision": "partial_atomic_mapping"
     },
@@ -8275,6 +8276,98 @@
         "practiced": "exercise directly applies outcome; learner performance unverified",
         "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
         "checked": "No independent outcome-level validation or learner performance check."
+      }
+    },
+    {
+      "id": "partial-fractions:divide-before-decompose",
+      "concept_id": "partial-fractions",
+      "outcome": "Perform polynomial division before partial-fraction decomposition when a rational integrand is improper.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "physical_page": 23,
+        "inspection": "Local course PDF physical pages 21, 23, and 24 rendered and visually checked against the original example and method rule.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 23, 24],
+          "method": "Manual reading of rendered physical PDF pages; extracted text cross-checked for the long-division and repeated-factor equations.",
+          "claim_observed": "Page 21 directs division before decomposition of an improper fraction; pages 23–24 work division followed by repeated-factor partial fractions and integration."
+        },
+        "page_heading": "3.4 Rational Functions by Partial Fractions; Example 3.19"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#partial-fractions.title",
+            "claim": "The partial-fractions concept is named in the catalog.",
+            "method": "Direct catalog title inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[Decide the algebra before integrating]",
+            "claim": "The guide says to compare degrees and divide an improper rational integrand first.",
+            "method": "Direct reading against physical PDF pages 21 and 23."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.supplementalBlocks[divide-then-decompose-repeated-factor]",
+            "claim": "The notes’ Example 3.19 is worked through division, decomposition, and a componentwise antiderivative.",
+            "method": "Compare guide derivation with the rendered source example on physical pages 23–24 and check its algebra."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[improper-repeated-factor-transfer]",
+            "claim": "A different improper integrand requires the same first-step decision, repeated-factor terms, and derivative check.",
+            "method": "Direct comparison of prompt, hint, solution, and rubric; no learner performance observed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-fractions",
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source rule and Example 3.19 are checked, and a different worked transfer task is present. Scene behavior, independent learner performance, and the other integration-technique subskills remain unverified.",
+      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#partial-fractions.title",
+            "basis": "current code inspection"
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[Decide the algebra before integrating]",
+            "basis": "current guide inspection"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.supplementalBlocks[divide-then-decompose-repeated-factor]",
+            "basis": "source example and guide derivation inspected; learner mastery unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[improper-repeated-factor-transfer]",
+            "basis": "exercise prompt, hint, solution, and rubric inspected; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of rendered source pages, guide rule and derivation, transfer exercise, and candidate scene source.",
+        "named": "match",
+        "stated": "match",
+        "worked": "source Example 3.19 algebra and antiderivative reproduced",
+        "practiced": "independent prompt requires division decision and decomposition; learner performance unverified",
+        "visualized": "Candidate scene is unverified for this outcome.",
+        "checked": "No independent learner-level outcome check."
       }
     },
     {
