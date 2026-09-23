@@ -4718,79 +4718,437 @@
       "id": "MH1100_Lecture_11:01",
       "source_id": "MH1100_Lecture_11",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Optimization",
-      "physical_pages_from_audit": "2–39; Newton 18–28; antiderivatives 29–39",
-      "linked_concept_ids": [
-        "optimization-single",
-        "newton-method",
-        "antiderivatives-single"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Optimization' at 2–39; Newton 18–28; antiderivatives 29–39; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Optimization Problems",
+      "physical_pages_from_audit": "Canonical 39-page PDF hash verified; physical pages 4–17 rendered and visually checked.",
+      "linked_concept_ids": ["optimization-single"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 4–17 map one-variable constrained models, closed-interval endpoint comparison, the First Derivative Test for absolute extrema, squared-distance minimization, a travel-time objective, and a semicircle constraint. Physical pages 1–3 are cover/synopsis/overview only. Candidate scene alignment and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "This is only the parent-topic title; its title does not name any of the section’s atomic outcomes.",
+            "method": "Direct comparison of the route title with the reviewed atomic outcome list."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-one-variable-model-statement]",
+            "claim": "Guide statement for: Translate a constrained geometry problem into a one-variable objective and contextual domain.",
+            "method": "Compared with the SHA-matched physical pages 4, 5, 6, 7."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-closed-interval-candidates-statement]",
+            "claim": "Guide statement for: Certify an absolute extremum on a closed interval by comparing interior critical numbers and endpoints.",
+            "method": "Compared with the SHA-matched physical pages 5, 7, 8."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-first-derivative-absolute-test-statement]",
+            "claim": "Guide statement for: Use a global derivative sign change on an interval to certify an absolute maximum or minimum.",
+            "method": "Compared with the SHA-matched physical pages 9, 11, 12."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-squared-distance-statement]",
+            "claim": "Guide statement for: Replace distance by squared distance and prove a closest point on an unbounded curve.",
+            "method": "Compared with the SHA-matched physical pages 10, 11, 12."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-travel-time-statement]",
+            "claim": "Guide statement for: Build and globally minimize a travel-time objective from geometric distances and different speeds.",
+            "method": "Compared with the SHA-matched physical pages 13, 14, 15."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-semicircle-rectangle-statement]",
+            "claim": "Guide statement for: Express a rectangle’s area through a semicircle constraint and maximize it on its feasible interval.",
+            "method": "Compared with the SHA-matched physical pages 16, 17."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-fencing-model]",
+            "claim": "Worked reasoning for: Translate a constrained geometry problem into a one-variable objective and contextual domain.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-fencing-global-maximum]",
+            "claim": "Worked reasoning for: Certify an absolute extremum on a closed interval by comparing interior critical numbers and endpoints.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-parabola-closest-point]",
+            "claim": "Worked reasoning for: Use a global derivative sign change on an interval to certify an absolute maximum or minimum.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-squared-distance-work]",
+            "claim": "Worked reasoning for: Replace distance by squared distance and prove a closest point on an unbounded curve.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-boat-time-work]",
+            "claim": "Worked reasoning for: Build and globally minimize a travel-time objective from geometric distances and different speeds.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-semicircle-work]",
+            "claim": "Worked reasoning for: Express a rectangle’s area through a semicircle constraint and maximize it on its feasible interval.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-fence-model-transfer]",
+            "claim": "Independent transfer for: Translate a constrained geometry problem into a one-variable objective and contextual domain.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-closed-interval-transfer]",
+            "claim": "Independent transfer for: Certify an absolute extremum on a closed interval by comparing interior critical numbers and endpoints.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-absolute-sign-test-transfer]",
+            "claim": "Independent transfer for: Use a global derivative sign change on an interval to certify an absolute maximum or minimum.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-distance-transfer]",
+            "claim": "Independent transfer for: Replace distance by squared distance and prove a closest point on an unbounded curve.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-boat-time-transfer]",
+            "claim": "Independent transfer for: Build and globally minimize a travel-time objective from geometric distances and different speeds.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-parabola-rectangle-transfer]",
+            "claim": "Independent transfer for: Express a rectangle’s area through a semicircle constraint and maximize it on its feasible interval.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "optimization-single:lecture11-one-variable-model",
+        "optimization-single:lecture11-closed-interval-candidates",
+        "optimization-single:lecture11-first-derivative-absolute-test",
+        "optimization-single:lecture11-squared-distance",
+        "optimization-single:lecture11-travel-time",
+        "optimization-single:lecture11-semicircle-rectangle"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "4–17",
+      "inspected_physical_pages": [
+        4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+      ],
+      "source_checked_exclusions": [
+        {
+          "pages": [1],
+          "reason": "Physical page 1 is the cover, not course content."
+        },
+        {
+          "pages": [2, 3],
+          "reason": "Physical pages 2–3 are synopsis and application overview slides; they do not teach a separate skill."
+        }
+      ]
     },
     {
       "id": "MH1100_Lecture_11:02",
       "source_id": "MH1100_Lecture_11",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Newton iteration",
-      "physical_pages_from_audit": "2–39; Newton 18–28; antiderivatives 29–39",
-      "linked_concept_ids": [
-        "optimization-single",
-        "newton-method",
-        "antiderivatives-single"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Newton iteration' at 2–39; Newton 18–28; antiderivatives 29–39; inspect its source pages and split every distinct skill before claiming coverage.",
+      "physical_pages_from_audit": "Canonical 39-page PDF hash verified; physical pages 18–28 rendered and visually checked.",
+      "linked_concept_ids": ["newton-method"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 18–28 map graph-based root location, tangent-intercept construction and derivative condition, poor-start failure, polynomial and radical iteration with numerical stopping, and the cosine fixed point in radians. App visualization and learner convergence are not verified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "This is only the parent-topic title; its title does not name any of the section’s atomic outcomes.",
+            "method": "Direct comparison of the route title with the reviewed atomic outcome list."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-graphical-root-location-statement]",
+            "claim": "Guide statement for: Use graph zoom to locate a root to a chosen interval while distinguishing a visual estimate from a proof.",
+            "method": "Compared with the SHA-matched physical page 18."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-tangent-intercept-update-statement]",
+            "claim": "Guide statement for: Derive the Newton update from a tangent-line intercept and require a nonzero derivative.",
+            "method": "Compared with the SHA-matched physical pages 19, 20, 21."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-bad-starting-value-statement]",
+            "claim": "Guide statement for: Recognize that a poor initial estimate can prevent Newton iteration from converging.",
+            "method": "Compared with the SHA-matched physical pages 21, 26, 27, 28."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-polynomial-iteration-statement]",
+            "claim": "Guide statement for: Compute successive Newton iterates for a polynomial root.",
+            "method": "Compared with the SHA-matched physical pages 22, 23."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-decimal-agreement-statement]",
+            "claim": "Guide statement for: Apply Newton iteration to a transformed root problem and use successive-estimate agreement for requested decimal precision.",
+            "method": "Compared with the SHA-matched physical pages 24, 25."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-cosine-fixed-point-statement]",
+            "claim": "Guide statement for: Use a graph-informed starting estimate and radian mode to approximate a trigonometric fixed point.",
+            "method": "Compared with the SHA-matched physical pages 26, 27, 28."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-graphical-root-work]",
+            "claim": "Worked reasoning for: Use graph zoom to locate a root to a chosen interval while distinguishing a visual estimate from a proof.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-tangent-derivation]",
+            "claim": "Worked reasoning for: Derive the Newton update from a tangent-line intercept and require a nonzero derivative.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-newton-cycle]",
+            "claim": "Worked reasoning for: Recognize that a poor initial estimate can prevent Newton iteration from converging.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-cubic-iterates]",
+            "claim": "Worked reasoning for: Compute successive Newton iterates for a polynomial root.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-sixth-root-iterates]",
+            "claim": "Worked reasoning for: Apply Newton iteration to a transformed root problem and use successive-estimate agreement for requested decimal precision.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-cosine-iterates]",
+            "claim": "Worked reasoning for: Use a graph-informed starting estimate and radian mode to approximate a trigonometric fixed point.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-graph-bracket-transfer]",
+            "claim": "Independent transfer for: Use graph zoom to locate a root to a chosen interval while distinguishing a visual estimate from a proof.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-tangent-step-transfer]",
+            "claim": "Independent transfer for: Derive the Newton update from a tangent-line intercept and require a nonzero derivative.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-zero-derivative-transfer]",
+            "claim": "Independent transfer for: Recognize that a poor initial estimate can prevent Newton iteration from converging.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-cubic-transfer]",
+            "claim": "Independent transfer for: Compute successive Newton iterates for a polynomial root.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-sixth-root-transfer]",
+            "claim": "Independent transfer for: Apply Newton iteration to a transformed root problem and use successive-estimate agreement for requested decimal precision.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-cosine-transfer]",
+            "claim": "Independent transfer for: Use a graph-informed starting estimate and radian mode to approximate a trigonometric fixed point.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "newton-method:lecture11-graphical-root-location",
+        "newton-method:lecture11-tangent-intercept-update",
+        "newton-method:lecture11-bad-starting-value",
+        "newton-method:lecture11-polynomial-iteration",
+        "newton-method:lecture11-decimal-agreement",
+        "newton-method:lecture11-cosine-fixed-point"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "18–28",
+      "inspected_physical_pages": [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28],
+      "source_checked_exclusions": []
     },
     {
       "id": "MH1100_Lecture_11:03",
       "source_id": "MH1100_Lecture_11",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "antiderivatives and motion/initial data",
-      "physical_pages_from_audit": "2–39; Newton 18–28; antiderivatives 29–39",
-      "linked_concept_ids": [
-        "optimization-single",
-        "newton-method",
-        "antiderivatives-single"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'antiderivatives and motion/initial data' at 2–39; Newton 18–28; antiderivatives 29–39; inspect its source pages and split every distinct skill before claiming coverage.",
+      "topic_from_audit_inventory": "Antiderivatives and motion/initial data",
+      "physical_pages_from_audit": "Canonical 39-page PDF hash verified; physical pages 29–39 rendered and visually checked.",
+      "linked_concept_ids": ["antiderivatives-single"],
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 29–39 map interval constants, power and trigonometric rules, rewriting before integration, two initial values after two integrations, motion from acceleration, and vertical launch/apex/impact calculations. The p38 prompt omits the gravity coefficient; the worked solution supplies −9.8 m/s² and that assumption is recorded. App visualization and learner performance remain unverified.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "This is only the parent-topic title; its title does not name any of the section’s atomic outcomes.",
+            "method": "Direct comparison of the route title with the reviewed atomic outcome list."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-constant-on-interval-statement]",
+            "claim": "Guide statement for: Describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.",
+            "method": "Compared with the SHA-matched physical pages 29, 30, 32."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-power-rule-statement]",
+            "claim": "Guide statement for: Apply the reverse power rule only when its denominator is nonzero and the function is defined.",
+            "method": "Compared with the SHA-matched physical pages 31, 32."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-linearity-and-trig-table-statement]",
+            "claim": "Guide statement for: Use linearity and basic trigonometric antiderivatives by reversing derivative rules.",
+            "method": "Compared with the SHA-matched physical page 33."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-rewrite-integrand-statement]",
+            "claim": "Guide statement for: Rewrite a quotient with radicals as a sum of power terms before integrating.",
+            "method": "Compared with the SHA-matched physical page 34."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-two-initial-values-statement]",
+            "claim": "Guide statement for: Integrate a second derivative twice and use two function values to determine both constants.",
+            "method": "Compared with the SHA-matched physical page 35."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-motion-from-acceleration-statement]",
+            "claim": "Guide statement for: Recover velocity and position by integrating acceleration twice with initial data.",
+            "method": "Compared with the SHA-matched physical pages 36, 37."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-projectile-apex-statement]",
+            "claim": "Guide statement for: Use constant gravitational acceleration and initial data to find height and the time of maximum height.",
+            "method": "Compared with the SHA-matched physical pages 38, 39."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-impact-time-statement]",
+            "claim": "Guide statement for: Solve a height equation and select the physically meaningful impact time.",
+            "method": "Compared with the SHA-matched physical page 39."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-separated-constants]",
+            "claim": "Worked reasoning for: Describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-negative-power-rule]",
+            "claim": "Worked reasoning for: Apply the reverse power rule only when its denominator is nonzero and the function is defined.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-linearity-trig-work]",
+            "claim": "Worked reasoning for: Use linearity and basic trigonometric antiderivatives by reversing derivative rules.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-rewrite-integrand-work]",
+            "claim": "Worked reasoning for: Rewrite a quotient with radicals as a sum of power terms before integrating.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-second-derivative-work]",
+            "claim": "Worked reasoning for: Integrate a second derivative twice and use two function values to determine both constants.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-particle-motion-work]",
+            "claim": "Worked reasoning for: Recover velocity and position by integrating acceleration twice with initial data.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-projectile-apex-work]",
+            "claim": "Worked reasoning for: Use constant gravitational acceleration and initial data to find height and the time of maximum height.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-projectile-impact-work]",
+            "claim": "Worked reasoning for: Solve a height equation and select the physically meaningful impact time.",
+            "method": "Recomputed the cited calculation or proof; guide-created examples are labeled."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-separated-constants-transfer]",
+            "claim": "Independent transfer for: Describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-power-rule-transfer]",
+            "claim": "Independent transfer for: Apply the reverse power rule only when its denominator is nonzero and the function is defined.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-trig-linearity-transfer]",
+            "claim": "Independent transfer for: Use linearity and basic trigonometric antiderivatives by reversing derivative rules.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-rewrite-transfer]",
+            "claim": "Independent transfer for: Rewrite a quotient with radicals as a sum of power terms before integrating.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-two-values-transfer]",
+            "claim": "Independent transfer for: Integrate a second derivative twice and use two function values to determine both constants.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-motion-distance-transfer]",
+            "claim": "Independent transfer for: Recover velocity and position by integrating acceleration twice with initial data.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-projectile-apex-transfer]",
+            "claim": "Independent transfer for: Use constant gravitational acceleration and initial data to find height and the time of maximum height.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-impact-time-transfer]",
+            "claim": "Independent transfer for: Solve a height equation and select the physically meaningful impact time.; learner performance unverified.",
+            "method": "Solved and reviewed prompt, hint, solution, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "antiderivatives-single:lecture11-constant-on-interval",
+        "antiderivatives-single:lecture11-power-rule",
+        "antiderivatives-single:lecture11-linearity-and-trig-table",
+        "antiderivatives-single:lecture11-rewrite-integrand",
+        "antiderivatives-single:lecture11-two-initial-values",
+        "antiderivatives-single:lecture11-motion-from-acceleration",
+        "antiderivatives-single:lecture11-projectile-apex",
+        "antiderivatives-single:lecture11-impact-time"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "29–39",
+      "inspected_physical_pages": [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+      "source_checked_exclusions": []
     },
     {
       "id": "MH1100_Lecture_12:01",
@@ -29630,6 +29988,1346 @@
         "practiced": "task and solution checked; learner performance unverified",
         "visualized": "Current scene is only a candidate; no outcome-specific alignment check.",
         "checked": "No independent learner response or performance measurement."
+      }
+    },
+    {
+      "id": "optimization-single:lecture11-one-variable-model",
+      "concept_id": "optimization-single",
+      "outcome": "Translate a constrained geometry problem into a one-variable objective and contextual domain.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 4,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4, 5, 6, 7],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 4, 5, 6, 7 translate a constrained geometry problem into a one-variable objective and contextual domain.."
+        },
+        "page_heading": "Optimization Problems"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "The catalog names only the parent topic “Turn a constraint into an optimum”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-one-variable-model-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 4, 5, 6, 7.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-fencing-model]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 4, 5, 6, 7."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-fence-model-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-optimize",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Turn a constraint into an optimum”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "optimization-single:lecture11-closed-interval-candidates",
+      "concept_id": "optimization-single",
+      "outcome": "Certify an absolute extremum on a closed interval by comparing interior critical numbers and endpoints.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 5,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5, 7, 8],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 5, 7, 8 certify an absolute extremum on a closed interval by comparing interior critical numbers and endpoints.."
+        },
+        "page_heading": "Optimization Problems"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "The catalog names only the parent topic “Turn a constraint into an optimum”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-closed-interval-candidates-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 5, 7, 8.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-fencing-global-maximum]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 5, 7, 8."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-closed-interval-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-optimize",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Turn a constraint into an optimum”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "optimization-single:lecture11-first-derivative-absolute-test",
+      "concept_id": "optimization-single",
+      "outcome": "Use a global derivative sign change on an interval to certify an absolute maximum or minimum.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 9,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 11, 12],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 9, 11, 12 use a global derivative sign change on an interval to certify an absolute maximum or minimum.."
+        },
+        "page_heading": "First Derivative Test for Absolute Extreme Values"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "The catalog names only the parent topic “Turn a constraint into an optimum”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-first-derivative-absolute-test-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 9, 11, 12.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-parabola-closest-point]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 9, 11, 12."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-absolute-sign-test-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-optimize",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Turn a constraint into an optimum”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "optimization-single:lecture11-squared-distance",
+      "concept_id": "optimization-single",
+      "outcome": "Replace distance by squared distance and prove a closest point on an unbounded curve.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 10,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [10, 11, 12],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 10, 11, 12 replace distance by squared distance and prove a closest point on an unbounded curve.."
+        },
+        "page_heading": "Find the point on parabola nearest a given point"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "The catalog names only the parent topic “Turn a constraint into an optimum”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-squared-distance-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 10, 11, 12.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-squared-distance-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 10, 11, 12."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-distance-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-optimize",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Turn a constraint into an optimum”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "optimization-single:lecture11-travel-time",
+      "concept_id": "optimization-single",
+      "outcome": "Build and globally minimize a travel-time objective from geometric distances and different speeds.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 13,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [13, 14, 15],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 13, 14, 15 build and globally minimize a travel-time objective from geometric distances and different speeds.."
+        },
+        "page_heading": "Minimize rowing and running time"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "The catalog names only the parent topic “Turn a constraint into an optimum”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-travel-time-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 13, 14, 15.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-boat-time-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 13, 14, 15."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-boat-time-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-optimize",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Turn a constraint into an optimum”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "optimization-single:lecture11-semicircle-rectangle",
+      "concept_id": "optimization-single",
+      "outcome": "Express a rectangle’s area through a semicircle constraint and maximize it on its feasible interval.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 16,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16, 17],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 16, 17 express a rectangle’s area through a semicircle constraint and maximize it on its feasible interval.."
+        },
+        "page_heading": "Largest rectangle inscribed in a semicircle"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#optimization-single.title",
+            "claim": "The catalog names only the parent topic “Turn a constraint into an optimum”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-semicircle-rectangle-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 16, 17.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.contentBlocks[lecture11-semicircle-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 16, 17."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#optimization-single.exercises[lecture11-parabola-rectangle-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-optimize",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:01",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Turn a constraint into an optimum”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "newton-method:lecture11-graphical-root-location",
+      "concept_id": "newton-method",
+      "outcome": "Use graph zoom to locate a root to a chosen interval while distinguishing a visual estimate from a proof.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 18,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [18],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical page 18 use graph zoom to locate a root to a chosen interval while distinguishing a visual estimate from a proof.."
+        },
+        "page_heading": "Graphical approximation before Newton iteration"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "The catalog names only the parent topic “Newton’s tangent iteration”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-graphical-root-location-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 18.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-graphical-root-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical page 18."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-graph-bracket-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-newton",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Newton’s tangent iteration”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "newton-method:lecture11-tangent-intercept-update",
+      "concept_id": "newton-method",
+      "outcome": "Derive the Newton update from a tangent-line intercept and require a nonzero derivative.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 19,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20, 21],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 19, 20, 21 derive the newton update from a tangent-line intercept and require a nonzero derivative.."
+        },
+        "page_heading": "Newton tangent iteration"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "The catalog names only the parent topic “Newton’s tangent iteration”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-tangent-intercept-update-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 19, 20, 21.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-tangent-derivation]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 19, 20, 21."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-tangent-step-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-newton",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Newton’s tangent iteration”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "newton-method:lecture11-bad-starting-value",
+      "concept_id": "newton-method",
+      "outcome": "Recognize that a poor initial estimate can prevent Newton iteration from converging.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 21,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 26, 27, 28],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 21, 26, 27, 28 recognize that a poor initial estimate can prevent newton iteration from converging.."
+        },
+        "page_heading": "Newton failure and starting values"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "The catalog names only the parent topic “Newton’s tangent iteration”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-bad-starting-value-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 21, 26, 27, 28.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-newton-cycle]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 21, 26, 27, 28."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-zero-derivative-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-newton",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Newton’s tangent iteration”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "newton-method:lecture11-polynomial-iteration",
+      "concept_id": "newton-method",
+      "outcome": "Compute successive Newton iterates for a polynomial root.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 22,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 22, 23 compute successive newton iterates for a polynomial root.."
+        },
+        "page_heading": "Newton cubic worked example"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "The catalog names only the parent topic “Newton’s tangent iteration”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-polynomial-iteration-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 22, 23.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-cubic-iterates]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 22, 23."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-cubic-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-newton",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Newton’s tangent iteration”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "newton-method:lecture11-decimal-agreement",
+      "concept_id": "newton-method",
+      "outcome": "Apply Newton iteration to a transformed root problem and use successive-estimate agreement for requested decimal precision.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 24,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [24, 25],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 24, 25 apply newton iteration to a transformed root problem and use successive-estimate agreement for requested decimal precision.."
+        },
+        "page_heading": "Newton’s method for a sixth root"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "The catalog names only the parent topic “Newton’s tangent iteration”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-decimal-agreement-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 24, 25.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-sixth-root-iterates]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 24, 25."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-sixth-root-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-newton",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Newton’s tangent iteration”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "newton-method:lecture11-cosine-fixed-point",
+      "concept_id": "newton-method",
+      "outcome": "Use a graph-informed starting estimate and radian mode to approximate a trigonometric fixed point.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 26,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 27, 28],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 26, 27, 28 use a graph-informed starting estimate and radian mode to approximate a trigonometric fixed point.."
+        },
+        "page_heading": "Newton’s method for cos x = x"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#newton-method.title",
+            "claim": "The catalog names only the parent topic “Newton’s tangent iteration”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-cosine-fixed-point-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 26, 27, 28.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.contentBlocks[lecture11-cosine-iterates]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 26, 27, 28."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#newton-method.exercises[lecture11-cosine-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-newton",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:02",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Newton’s tangent iteration”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-constant-on-interval",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 29,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29, 30, 32],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 29, 30, 32 describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.."
+        },
+        "page_heading": "Antiderivatives and their constant"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-constant-on-interval-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 29, 30, 32.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-separated-constants]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 29, 30, 32."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-separated-constants-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-power-rule",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Apply the reverse power rule only when its denominator is nonzero and the function is defined.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 31,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31, 32],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 31, 32 apply the reverse power rule only when its denominator is nonzero and the function is defined.."
+        },
+        "page_heading": "Power rule for antiderivatives"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-power-rule-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 31, 32.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-negative-power-rule]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 31, 32."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-power-rule-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-linearity-and-trig-table",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Use linearity and basic trigonometric antiderivatives by reversing derivative rules.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 33,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [33],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical page 33 use linearity and basic trigonometric antiderivatives by reversing derivative rules.."
+        },
+        "page_heading": "Table of Antidifferentiation Formulas"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-linearity-and-trig-table-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 33.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-linearity-trig-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical page 33."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-trig-linearity-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-rewrite-integrand",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Rewrite a quotient with radicals as a sum of power terms before integrating.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 34,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [34],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical page 34 rewrite a quotient with radicals as a sum of power terms before integrating.."
+        },
+        "page_heading": "Rewrite before antidifferentiating"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-rewrite-integrand-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 34.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-rewrite-integrand-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical page 34."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-rewrite-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-two-initial-values",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Integrate a second derivative twice and use two function values to determine both constants.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 35,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [35],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical page 35 integrate a second derivative twice and use two function values to determine both constants.."
+        },
+        "page_heading": "Recover a function from its second derivative"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-two-initial-values-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 35.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-second-derivative-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical page 35."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-two-values-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-motion-from-acceleration",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Recover velocity and position by integrating acceleration twice with initial data.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 36,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36, 37],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 36, 37 recover velocity and position by integrating acceleration twice with initial data.."
+        },
+        "page_heading": "Position, velocity, and acceleration"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-motion-from-acceleration-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 36, 37.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-particle-motion-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 36, 37."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-motion-distance-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-projectile-apex",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Use constant gravitational acceleration and initial data to find height and the time of maximum height.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 38,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [38, 39],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical pages 38, 39 use constant gravitational acceleration and initial data to find height and the time of maximum height.."
+        },
+        "page_heading": "Ball thrown upward from a cliff"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-projectile-apex-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 38, 39.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-projectile-apex-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical pages 38, 39."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-projectile-apex-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
+      }
+    },
+    {
+      "id": "antiderivatives-single:lecture11-impact-time",
+      "concept_id": "antiderivatives-single",
+      "outcome": "Solve a height equation and select the physically meaningful impact time.",
+      "core_source": {
+        "id": "MH1100_Lecture_11",
+        "physical_page": 39,
+        "sha256": "229859c9033beb2d9ea68bd209222e47f9ae3cf0de3516f687b1ca6ff807cdc5",
+        "inspection": "Canonical 39-page PDF SHA-256 matched the source record; cited physical pages were rendered with Poppler and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [39],
+          "method": "Canonical SHA-256 matched; cited physical pages rendered with Poppler and visually inspected.",
+          "claim_observed": "Physical page 39 solve a height equation and select the physically meaningful impact time.."
+        },
+        "page_heading": "Solve for the ground-contact time"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#antiderivatives-single.title",
+            "claim": "The catalog names only the parent topic “Recover a function from its rate”; its title does not name this atomic outcome.",
+            "method": "Compared the route title directly with the atomic outcome statement."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-impact-time-statement]",
+            "claim": "The guide states the distinct skill and its constraints against the source pages 39.",
+            "method": "Compared the guide statement with the SHA-matched pages rendered and visually checked."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.contentBlocks[lecture11-projectile-impact-work]",
+            "claim": "The worked guide reasoning represents the mapped skill; any guide-created contrast is identified in its setup.",
+            "method": "Recomputed the calculation and compared the source-specific claim with physical page 39."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#antiderivatives-single.exercises[lecture11-impact-time-transfer]",
+            "claim": "A separately parameterized or structurally different transfer includes a hint, solution, and rubric; learner performance is unverified.",
+            "method": "Solved and reviewed the transfer independently; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-antiderivative",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source pages and the guide statement, worked reasoning, and independent transfer were inspected. The named catalog title is only the parent topic; no atomic title match is claimed. The candidate scene was not verified against this outcome, and learner performance is unobserved.",
+      "source_section_id": "MH1100_Lecture_11:03",
+      "inspection_check": {
+        "method": "Compared the SHA-matched, visually inspected source pages with the guide statement, recomputed worked reasoning, and separately solved transfer.",
+        "named": "The catalog names only the parent topic “Recover a function from its rate”; it does not name this atomic outcome.",
+        "stated": "The guide states the source-specific skill and relevant domain or hypotheses.",
+        "worked": "Recomputed the source example or an explicitly identified guide contrast.",
+        "practiced": "Solved a separate transfer and reviewed its hint, solution, and rubric; learner performance is unverified.",
+        "visualized": "No rendered app scene was verified for this exact outcome.",
+        "checked": "No independent learner outcome check is claimed."
       }
     }
   ]
