@@ -513,8 +513,14 @@ export function sceneInfo(id: string): SceneInfo {
       max: Math.PI / 2,
       initial: 0.5,
       readout: (p) =>
-        `F_z(p)=2cosα=${f(2 * Math.cos(p))}. At α=π/2, solve locally for x instead of z.`,
-      legend: ["Sphere", "Tangent plane", "Normal", "Vertical projection"],
+        `F_z(p)=2cosα=${f(2 * Math.cos(p))}; projected tangent-patch area factor |cosα|=${f(Math.abs(Math.cos(p)))}. At α=π/2, solve locally for x instead of z.`,
+      legend: [
+        "Sphere",
+        "Tangent patch",
+        "Normal",
+        "Projected patch on xy-plane",
+      ],
+      note: "The pink footprint is the vertical projection of a small tangent-plane patch. It narrows to a line at the equator, where the $z$-graph test fails but the sphere stays regular because $F_x\\ne0$. This linearized drawing illustrates the local chart choice; the implicit-function theorem supplies existence.",
     },
     mixed: {
       label: "Slice y=b",
