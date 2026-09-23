@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { createServer } from "vite";
 import { fileURLToPath } from "node:url";
 import katex from "katex";
+import { inspectTexSemantics } from "./helpers/math-notation.mjs";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const vite = await createServer({
   appType: "custom",
@@ -116,6 +117,7 @@ test("example annotations render mathematical notation", () => {
     }
 });
 test("every scene renders finite geometry and complete LaTex readouts throughout its parameter range", () => {
+  const semanticFailures = [];
   const ids = new Set([
     ...concepts.map((c) => c.scene),
     "curveCircle",
@@ -140,8 +142,11 @@ test("every scene renders finite geometry and complete LaTex readouts throughout
         const m = planarModel(id, p);
         assert.ok(m.traces.length, id);
         render(m.formula);
+        inspectTexSemantics(m.formula, `${id}.formula`, semanticFailures);
         render(m.readout);
+        inspectTexSemantics(m.readout, `${id}.readout`, semanticFailures);
         render(m.symbol);
+        inspectTexSemantics(m.symbol, `${id}.symbol`, semanticFailures);
         prose(m.note);
         for (const t of m.traces) {
           prose(t.label);
@@ -151,11 +156,18 @@ test("every scene renders finite geometry and complete LaTex readouts throughout
       } else {
         assert.ok(sceneTex(id), id);
         render(sceneTex(id));
+        inspectTexSemantics(sceneTex(id), `${id}.formula`, semanticFailures);
         render(readoutTex(id, p));
+        inspectTexSemantics(
+          readoutTex(id, p),
+          `${id}.readout(${p})`,
+          semanticFailures,
+        );
         for (const l of info.legend) prose(l);
       }
     }
   }
+  assert.deepEqual(semanticFailures, []);
 });
 test("known calculus values and parameter symbols remain correct", () => {
   assert.match(readoutTex("directional", Math.PI / 4), /2\.8284/);
@@ -363,7 +375,14 @@ test("WebMCP state includes the mathematical readout and its evidence limit", as
   );
   const result = tool.execute({});
   assert.equal(result.mathematicalReadout, "Dᵤf(0)=1");
+  assert.equal(result.mathematicalReadoutTex, readoutTex("differential", 0));
   assert.match(result.representation, /Sampled illustration/);
+  state.activeScene = "plane-domain";
+  const planar = tool.execute({});
+  assert.equal(
+    planar.mathematicalReadoutTex,
+    planarModel("plane-domain", 0).readout,
+  );
 });
 
 test("WebMCP manual control stops animation and respects reduced motion", async () => {
