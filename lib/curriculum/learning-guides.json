@@ -2061,7 +2061,657 @@
         "Separate a failed theorem application from the truth of its conclusion."
       ],
       "solutionTex": "f(x)=1/x\\ne0\\quad(x\\ne0),\\qquad 0\\notin\\operatorname{dom}f"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "continuity-three-conditions",
+        "title": "Check all three conditions at a point",
+        "statement": "$f$ is continuous at $a$ when $f(a)$ is defined, the finite limit $\\lim_{x\\to a}f(x)$ exists, and that limit equals $f(a)$.",
+        "hypotheses": [
+          "The target belongs to the domain.",
+          "The relevant finite two-sided limit exists and equals the point value."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-root-sum-continuity",
+        "title": "Verify the lecture root-sum example",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "At $a=4$, let $f(x)=x^2+\\sqrt{5-x}$.",
+        "steps": [
+          {
+            "label": "Domain",
+            "text": "$4$ lies in $x\\le5$, and the square root is defined on both sides near 4."
+          },
+          {
+            "label": "Limit",
+            "text": "By the sum, power, and root laws, $\\lim_{x\\to4}f(x)=4^2+\\sqrt{5-4}=17=f(4)$."
+          }
+        ],
+        "result": "$f$ is continuous at 4.",
+        "verification": "The point value and limit are checked separately; a formula alone is not the three-condition test."
+      },
+      {
+        "kind": "theorem",
+        "id": "discontinuity-classification",
+        "title": "Identify which continuity condition fails",
+        "statement": "For a function defined near $a$, discontinuity occurs when the point is missing, its finite two-sided limit fails, or its limit differs from its assigned value. A finite limit with a missing or wrong point value is removable; an unbounded approach is infinite; unequal one-sided limits give a jump.",
+        "hypotheses": [
+          "Check nearby domain values on both sides.",
+          "Classify from limit behavior before using the point marker."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-discontinuity-four-cases",
+        "title": "Separate hole, wrong value, pole, and jump",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Lecture page 9 presents $(x^2-x-2)/(x-2)$, a $1/x^2$ branch with value 1 at zero, the same quotient assigned value 1 at 2, and $\\lfloor x\\rfloor$.",
+        "steps": [
+          {
+            "label": "Hole and wrong value",
+            "text": "For $x\\ne2$, $(x^2-x-2)/(x-2)=x+1\\to3$. The unassigned version has a hole; the version with $f(2)=1$ has a wrong point value. Both are removable."
+          },
+          {
+            "label": "Pole and jump",
+            "text": "$1/x^2$ grows without a finite limit at zero even if its point value is 1. At an integer $n$, $\\lfloor x\\rfloor$ approaches $n-1$ from the left and $n$ from the right."
+          }
+        ],
+        "result": "The four examples fail different continuity conditions.",
+        "verification": "Changing a single point can repair only a finite removable discontinuity, not the pole or jump."
+      },
+      {
+        "kind": "theorem",
+        "id": "one-sided-continuity",
+        "title": "Test the available side at an endpoint",
+        "statement": "$f$ is right-continuous at $a$ when $\\lim_{x\\to a^+}f(x)=f(a)$, and left-continuous when $\\lim_{x\\to a^-}f(x)=f(a)$.",
+        "hypotheses": [
+          "The point value is defined.",
+          "Approach only through domain values on the specified side."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-floor-one-sided",
+        "title": "Read the floor function at an integer",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "At any integer $n$, let $f(x)=\\lfloor x\\rfloor$.",
+        "steps": [
+          {
+            "label": "Right",
+            "text": "For $n\\le x<n+1$, $f(x)=n$, so the right limit equals $n=f(n)$."
+          },
+          {
+            "label": "Left",
+            "text": "For $n-1\\le x<n$, $f(x)=n-1$, so the left limit differs from $f(n)$."
+          }
+        ],
+        "result": "$f$ is right-continuous but not left-continuous at each integer.",
+        "verification": "The value at the integer is not interchangeable with the left approach."
+      },
+      {
+        "kind": "theorem",
+        "id": "interval-continuity",
+        "title": "Check interior and included endpoints",
+        "statement": "$f$ is continuous on an interval when it is continuous at every interior point and, at each included endpoint, continuous from the side inside the interval.",
+        "hypotheses": [
+          "Check all interior domain points.",
+          "Use right continuity at an included left endpoint and left continuity at an included right endpoint."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-interval-root",
+        "title": "Verify the lecture closed-interval exercise",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Let $f(x)=2-\\sqrt{1-x^2}$ on $[-1,1]$.",
+        "steps": [
+          {
+            "label": "Interior",
+            "text": "$1-x^2>0$ for $-1<x<1$, so polynomial, root, and difference continuity apply."
+          },
+          {
+            "label": "Endpoints",
+            "text": "As $x\\to-1^+$ or $x\\to1^-$, $1-x^2\\to0^+$ and the root tends to 0, matching $f(-1)=f(1)=2$."
+          }
+        ],
+        "result": "$f$ is continuous on $[-1,1]$.",
+        "verification": "No value is required outside the natural domain; only inward endpoint approaches count."
+      },
+      {
+        "kind": "theorem",
+        "id": "continuity-algebra",
+        "title": "Build continuous functions with eligible operations",
+        "statement": "If $f,g$ are continuous at $a$, then $f+g$, $f-g$, $cf$, and $fg$ are continuous there. The quotient $f/g$ is continuous at $a$ when $g(a)\\ne0$.",
+        "hypotheses": [
+          "Both functions are continuous at the point.",
+          "For a quotient, the denominator value is nonzero; on an interval it stays nonzero at every point used."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-rational-direct-substitution",
+        "title": "Use the source rational exercise only on its domain",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Evaluate the page 21 limit $\\lim_{x\\to-2}(x^3+3x^2-1)/(5-3x)$.",
+        "steps": [
+          {
+            "label": "Denominator",
+            "text": "At $-2$, $5-3(-2)=11\\ne0$."
+          },
+          {
+            "label": "Substitute",
+            "text": "The numerator equals $-8+12-1=3$, so rational continuity gives the limit $3/11$."
+          }
+        ],
+        "result": "The limit is $3/11$.",
+        "verification": "At $x=5/3$ the denominator vanishes and this quotient theorem cannot be used."
+      },
+      {
+        "kind": "theorem",
+        "id": "polynomial-rational-continuity",
+        "title": "Use finite law proof for standard classes",
+        "statement": "Every polynomial is continuous on $\\mathbb R$ by finite sums of constant multiples of powers. A rational function $P/Q$ is continuous wherever $Q\\ne0$.",
+        "hypotheses": [
+          "The polynomial has finitely many terms.",
+          "A rational function is evaluated only at a point where its denominator is nonzero."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-polynomial-proof",
+        "title": "Justify polynomial continuity before citing it",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "For $P(x)=\\sum_{i=0}^n c_i x^i$ and any real $a$:",
+        "steps": [
+          {
+            "label": "Term limits",
+            "text": "$x^i\\to a^i$ and $c_i x^i\\to c_i a^i$ by finite limit laws."
+          },
+          {
+            "label": "Finite sum",
+            "text": "$\\lim_{x\\to a}P(x)=\\sum_{i=0}^n c_i a^i=P(a)$."
+          }
+        ],
+        "result": "Every polynomial is continuous at every real $a$.",
+        "verification": "This proves continuity, rather than assuming it from the graph. A rational quotient still needs $Q(a)\\ne0$."
+      },
+      {
+        "kind": "theorem",
+        "id": "trig-continuity-addition",
+        "title": "Move continuity at zero to any angle",
+        "statement": "The radian limits $\\sin h\\to0$ and $\\cos h\\to1$ as $h\\to0$, together with addition formulas, show that sine and cosine are continuous at every real $a$.",
+        "hypotheses": [
+          "Use radian-angle limits at zero.",
+          "Write $x=a+h$ and let $h\\to0$ in the addition formulas."
+        ],
+        "prerequisites": [
+          "Trigonometric addition formulas and Lecture03 chord bounds"
+        ],
+        "status": "Derived from source zero-angle limits"
+      },
+      {
+        "kind": "worked-example",
+        "id": "trig-continuity-at-a",
+        "title": "Use the addition formulas at an arbitrary angle",
+        "strategy": "Translate the target angle to a small increment.",
+        "setup": "Check continuity of sine and cosine at a fixed real $a$.",
+        "steps": [
+          {
+            "label": "Sine",
+            "text": "$\\sin(a+h)=\\sin a\\cos h+\\cos a\\sin h\\to\\sin a$ as $h\\to0$."
+          },
+          {
+            "label": "Cosine",
+            "text": "$\\cos(a+h)=\\cos a\\cos h-\\sin a\\sin h\\to\\cos a$. The source zero-angle limits come from the earlier unit-circle bounds."
+          }
+        ],
+        "result": "Both functions are continuous at every real $a$.",
+        "verification": "The quotient $\\tan x=\\sin x/\\cos x$ still excludes angles where $\\cos x=0$."
+      },
+      {
+        "kind": "theorem",
+        "id": "elementary-family-domains",
+        "title": "Keep elementary-family domain restrictions",
+        "statement": "Polynomial, rational, power, algebraic, trigonometric, exponential, and logarithmic functions are continuous where their real formulas are defined. In particular, $\\tan x$ requires $\\cos x\\ne0$, $\\sqrt{u}$ requires $u\\ge0$, and $\\log_b x$ requires $x>0$, $b>0$, and $b\\ne1$.",
+        "hypotheses": [
+          "Check the actual real domain of each family.",
+          "Apply quotient restrictions at every excluded trigonometric pole."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-tangent-domain",
+        "title": "Locate tangent discontinuities",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "$\\tan x=\\sin x/\\cos x$ on its domain.",
+        "steps": [
+          {
+            "label": "Eligible points",
+            "text": "Sine and cosine are continuous; the quotient is continuous wherever $\\cos x\\ne0$."
+          },
+          {
+            "label": "Excluded points",
+            "text": "$\\cos x=0$ at odd multiples of $\\pi/2$, so tangent is undefined there and has unbounded one-sided behavior."
+          }
+        ],
+        "result": "Tangent is continuous on each interval between consecutive odd half-turns.",
+        "verification": "The source list says $b>0$ for logarithms but omits $b\\ne1$; the guide includes the required real logarithm-base restriction."
+      },
+      {
+        "kind": "theorem",
+        "id": "continuous-outer-limit",
+        "title": "Move a limit through a continuous outer function",
+        "statement": "If $g(x)\\to b$ as $x\\to a$ and $f$ is continuous at $b$, with nearby $g(x)$ in the domain of $f$, then $f(g(x))\\to f(b)$.",
+        "hypotheses": [
+          "The inner finite limit $b$ exists.",
+          "The outer function is continuous at $b$ and the composition is defined near $a$."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "root-law-from-continuity",
+        "title": "Prove the lecture root-law exercise",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Suppose $g(x)\\to b$ and consider $f(u)=\\sqrt[n]{u}$.",
+        "steps": [
+          {
+            "label": "Odd root",
+            "text": "For odd positive $n$, the real root is continuous at every real $b$; hence $\\sqrt[n]{g(x)}\\to\\sqrt[n]b$."
+          },
+          {
+            "label": "Even root",
+            "text": "For even $n$, the lecture assumes $b>0$, so $g(x)>0$ eventually and the root is continuous at $b$."
+          }
+        ],
+        "result": "The source root law follows under its stated even-root positivity condition.",
+        "verification": "At $b=0$ an even root may have a one-sided domain issue; the lecture theorem deliberately assumes $b>0$."
+      },
+      {
+        "kind": "theorem",
+        "id": "continuous-composition",
+        "title": "Transfer pointwise continuity through a composition",
+        "statement": "If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then $f\\circ g$ is continuous at $a$ wherever the composition is defined.",
+        "hypotheses": [
+          "The inner point value $g(a)$ exists.",
+          "The outer function is continuous at that value; each nearby inner output is in its domain."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-nested-root-domain",
+        "title": "Resolve every restriction in the lecture nested example",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Let $F(x)=1/(\\sqrt{x^2+7}-4)$.",
+        "steps": [
+          {
+            "label": "Inner domain",
+            "text": "$x^2+7>0$ for all real $x$, so the square root is defined and continuous."
+          },
+          {
+            "label": "Outer denominator",
+            "text": "$\\sqrt{x^2+7}=4$ exactly when $x^2=9$, so exclude $x=\\pm3$."
+          }
+        ],
+        "result": "$F$ is continuous on $(-\\infty,-3)\\cup(-3,3)\\cup(3,\\infty)$.",
+        "verification": "The source uses four composition stages; continuity does not fill the excluded denominator zeros."
+      },
+      {
+        "kind": "theorem",
+        "id": "continuous-extension",
+        "title": "Fill a finite removable limit with its limit value",
+        "statement": "If $f$ is defined near but not at $a$ and $\\lim_{x\\to a}f(x)=L$ is finite, defining $F(a)=L$ and $F(x)=f(x)$ elsewhere makes $F$ continuous at $a$.",
+        "hypotheses": [
+          "The deleted-domain limit exists and is finite.",
+          "The new point value is exactly that limit."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-extension-at-three",
+        "title": "Solve the lecture extension exercise",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Near $x=3$, let $f(x)=(x^2-x-6)/(x^2-9)$ on its domain $x\\ne\\pm3$.",
+        "steps": [
+          {
+            "label": "Cancel on the deleted domain",
+            "text": "Factor to get $f(x)=(x-3)(x+2)/[(x-3)(x+3)]=(x+2)/(x+3)$ on the original domain $x\\ne\\pm3$."
+          },
+          {
+            "label": "Fill the point",
+            "text": "The replacement limit at 3 is $5/6$. Define $F(3)=5/6$ so the point value matches the limit."
+          }
+        ],
+        "result": "$F(3)=5/6$ gives a continuous extension at 3.",
+        "verification": "The full original domain also excludes $x=-3$; the extension only fills the removable point at 3. Any other value at 3 leaves discontinuity."
+      },
+      {
+        "kind": "theorem",
+        "id": "ivt-eligibility",
+        "title": "Check the entire closed interval for IVT",
+        "statement": "If $f$ is continuous on $[a,b]$, $a<b$, and $N$ lies strictly between unequal $f(a)$ and $f(b)$, there is some $c\\in(a,b)$ with $f(c)=N$. The theorem guarantees existence, not uniqueness.",
+        "hypotheses": [
+          "Continuity holds at every interior point and inward at both endpoints.",
+          "The target is strictly between the unequal endpoint values."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-large-polynomial-root",
+        "title": "Verify the lecture high-degree root bracket",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Let $p(x)=x^{201}-5x^{200}+6x^2-21x-46$ on $[5,6]$.",
+        "steps": [
+          {
+            "label": "Endpoint signs",
+            "text": "$p(5)=5^{200}(5-5)+150-105-46=-1<0$; $p(6)=6^{200}(6-5)+216-126-46=6^{200}+44>0$."
+          },
+          {
+            "label": "Continuity",
+            "text": "$p$ is a polynomial, so it is continuous on the entire closed interval; IVT with target 0 gives a root in $(5,6)$."
+          }
+        ],
+        "result": "At least one root lies in $(5,6)$.",
+        "verification": "The source page 34 prints $6^{200}-44$, but direct arithmetic gives $6^{200}+44$; either sign is positive. This guide records the corrected calculation."
+      },
+      {
+        "kind": "theorem",
+        "id": "ivt-bound-target",
+        "title": "Bracket a target using robust bounds",
+        "statement": "To prove $f(c)=N$ for some interior $c$, find a closed interval of continuity whose endpoint values lie on opposite sides of $N$. Bounds on a varying term may establish those inequalities without exact evaluation.",
+        "hypotheses": [
+          "The full bracket interval lies in the continuity domain.",
+          "One endpoint value is below and the other above the target."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-thousand-target",
+        "title": "Solve the lecture sine-plus-square target exercise",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Find $c$ with $c^2+10\\sin c=1000$.",
+        "steps": [
+          {
+            "label": "Lower endpoint",
+            "text": "At $x=0$, $f(0)=0<1000$."
+          },
+          {
+            "label": "Upper bound",
+            "text": "At $x=32$, $f(32)=1024+10\\sin32\\ge1014>1000$ because $\\sin32\\ge-1$. The function is continuous on $[0,32]$."
+          }
+        ],
+        "result": "IVT gives at least one $c\\in(0,32)$ with $f(c)=1000$.",
+        "verification": "No decimal approximation to $\\sin32$ or uniqueness claim is needed."
+      },
+      {
+        "kind": "theorem",
+        "id": "ivt-disjoint-roots",
+        "title": "Use disjoint sign-change brackets to count distinct roots",
+        "statement": "For a continuous function, each pair of endpoints with opposite signs brackets at least one zero. Disjoint open brackets produce distinct zeros; a degree bound can separately limit how many there are.",
+        "hypotheses": [
+          "Each closed bracket lies in a continuity interval.",
+          "Endpoint signs are strictly opposite and the open brackets are disjoint."
+        ],
+        "prerequisites": ["limits and function domains"],
+        "status": "Source theorem or consequence used without proof"
+      },
+      {
+        "kind": "worked-example",
+        "id": "source-cubic-three-roots",
+        "title": "Solve the lecture three-solution exercise",
+        "strategy": "Check domain and theorem hypotheses before concluding.",
+        "setup": "Let $p(x)=x^3-15x+1$ on $[-4,4]$.",
+        "steps": [
+          {
+            "label": "Choose signs",
+            "text": "$p(-4)=-3<0$, $p(-3)=19>0$, $p(1)=-13<0$, and $p(4)=5>0$."
+          },
+          {
+            "label": "Apply IVT three times",
+            "text": "The disjoint intervals $(-4,-3)$, $(-3,1)$, and $(1,4)$ each contain a root. A nonzero cubic has at most three real roots."
+          }
+        ],
+        "result": "There are exactly three distinct roots in $[-4,4]$.",
+        "verification": "IVT alone gives at least three; the cubic degree supplies the upper bound."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "continuity-point-transfer",
+        "outcome": "Check value, limit, and equality.",
+        "kind": "proof",
+        "prompt": "Let $f(x)=x^2+\\sqrt{9-x}$ for $x\\le9$. Is $f$ continuous at 5?",
+        "hint": "Check the domain, then take each component limit.",
+        "solution": "The point 5 is in the domain. The sum, power, and root laws give $\\lim_{x\\to5}f(x)=25+\\sqrt4=27=f(5)$, so all three conditions hold.",
+        "solutionTex": "\\lim_{x\\to5}f(x)=27=f(5)",
+        "rubric": [
+          "Verify the point lies in the domain.",
+          "Compute the finite limit with eligible laws.",
+          "Compare with the actual point value."
+        ]
+      },
+      {
+        "id": "discontinuity-type-transfer",
+        "outcome": "Classify a removable mismatch and a jump.",
+        "kind": "proof",
+        "prompt": "For $x\\ne1$, let $u(x)=(x^2-1)/(x-1)$ and set $u(1)=9$. Also let $v(x)=0$ for $x<1$ and $v(x)=2$ for $x\\ge1$. Classify discontinuity at 1 and say what a point-value change can repair.",
+        "hint": "Find nearby left and right limits first.",
+        "solution": "On $x\\ne1$, $u=x+1\\to2$ but $u(1)=9$, so the mismatch is removable by setting $u(1)=2$. For $v$, the left and right limits are 0 and 2, so it has a jump; changing only $v(1)$ cannot make the two-sided limit exist.",
+        "solutionTex": "\\lim_{x\\to1}u(x)=2\\ne9=u(1)",
+        "rubric": [
+          "Compute limits on deleted domains.",
+          "Distinguish removable mismatch from jump.",
+          "State exactly which point-value repair works."
+        ]
+      },
+      {
+        "id": "one-sided-continuity-transfer",
+        "outcome": "Decide continuity from each side.",
+        "kind": "proof",
+        "prompt": "Let $f(x)=2$ for $x<0$ and $f(x)=5$ for $x\\ge0$. At 0, which one-sided continuity statements hold?",
+        "hint": "Compare each one-sided limit with $f(0)$.",
+        "solution": "Here $f(0)=5$. The right limit is 5, so $f$ is continuous from the right. The left limit is 2, so it is not continuous from the left or two-sided continuous.",
+        "solutionTex": "\\lim_{x\\to0^-}f(x)=2\\ne5=f(0)=\\lim_{x\\to0^+}f(x)",
+        "rubric": [
+          "Find the actual point value.",
+          "Check each one-sided limit against that value.",
+          "Do not claim two-sided continuity."
+        ]
+      },
+      {
+        "id": "interval-continuity-transfer",
+        "outcome": "Use inward endpoint limits.",
+        "kind": "proof",
+        "prompt": "Is $g(x)=\\sqrt{4-x^2}$ continuous on $[-2,2]$? Explain the endpoints.",
+        "hint": "The square-root argument is nonnegative on this interval.",
+        "solution": "The composition is continuous for every interior point. At $-2$, the right limit is 0 and equals $g(-2)$; at 2, the left limit is 0 and equals $g(2)$. Hence $g$ is continuous on the closed interval.",
+        "solutionTex": "\\lim_{x\\to-2^+}g(x)=g(-2)=0=\\lim_{x\\to2^-}g(x)",
+        "rubric": [
+          "Check the natural domain.",
+          "Use the inward side at each endpoint.",
+          "Conclude continuity at every point of the interval."
+        ]
+      },
+      {
+        "id": "continuity-algebra-transfer",
+        "outcome": "Check quotient eligibility before substitution.",
+        "kind": "proof",
+        "prompt": "Where is $h(x)=(x^2+1)/(x-4)$ continuous, and what is $\\lim_{x\\to2}h(x)$?",
+        "hint": "Use polynomial continuity and exclude the denominator zero.",
+        "solution": "The numerator and denominator are polynomials, and $x-4\\ne0$ exactly when $x\\ne4$, so $h$ is continuous on $\\mathbb R\\setminus\\{4\\}$. At 2, the denominator is -2 and the limit is $(4+1)/(-2)=-5/2$.",
+        "solutionTex": "\\lim_{x\\to2}h(x)=-\\frac52",
+        "rubric": [
+          "State each component is continuous.",
+          "Exclude the denominator zero from the domain.",
+          "Evaluate at an eligible point."
+        ]
+      },
+      {
+        "id": "polynomial-rational-transfer",
+        "outcome": "Prove polynomial continuity and restrict a quotient.",
+        "kind": "proof",
+        "prompt": "Explain why $P(x)=2x^3-x+7$ is continuous everywhere and where $P(x)/(x^2-9)$ is continuous.",
+        "hint": "Use finite sums and products, then solve the denominator restriction.",
+        "solution": "Each monomial and constant is continuous, so their finite sum $P$ is continuous on $\\mathbb R$. The quotient is continuous wherever $x^2-9\\ne0$, namely $\\mathbb R\\setminus\\{-3,3\\}$.",
+        "solutionTex": "x^2-9=(x-3)(x+3)\\ne0",
+        "rubric": [
+          "Use finite limit-law closure for the polynomial.",
+          "Factor the denominator.",
+          "State the quotient domain precisely."
+        ]
+      },
+      {
+        "id": "elementary-family-transfer",
+        "outcome": "Check a trigonometric quotient and a logarithm domain.",
+        "kind": "proof",
+        "prompt": "Where are $q(x)=1/\\cos x$ and $r(x)=\\log_2(x-3)$ continuous?",
+        "hint": "Find denominator zeros and logarithm input positivity.",
+        "solution": "The secant quotient is continuous exactly where $\\cos x\\ne0$, excluding odd multiples of $\\pi/2$. The logarithm is continuous where $x-3>0$, namely $(3,\\infty)$; base 2 is positive and not 1.",
+        "solutionTex": "\\operatorname{dom}q=\\{x:\\cos x\\ne0\\},\\quad\\operatorname{dom}r=(3,\\infty)",
+        "rubric": [
+          "Use the quotient nonzero condition.",
+          "Use the positive logarithm input and valid base.",
+          "State continuity only on each actual domain."
+        ]
+      },
+      {
+        "id": "continuous-outer-transfer",
+        "outcome": "Check inner limit and outer continuity.",
+        "kind": "proof",
+        "prompt": "If $g(x)\\to9$ and $g(x)$ is defined near $a$, justify $\\sqrt{g(x)}\\to3$. What changes if the claimed inner limit is $-1$?",
+        "hint": "The square root is continuous at positive inputs.",
+        "solution": "Because $g(x)\\to9>0$, it is eventually positive; square root is continuous at 9, so the composite limit is $\\sqrt9=3$. For inner limit -1, a real square root is not defined at the limiting input, so the real theorem cannot apply.",
+        "solutionTex": "\\lim_{x\\to a}\\sqrt{g(x)}=\\sqrt9=3",
+        "rubric": [
+          "Check the finite inner limit.",
+          "Check outer continuity and nearby real domain.",
+          "Explain the negative-limit failure."
+        ]
+      },
+      {
+        "id": "continuous-composition-transfer",
+        "outcome": "Find the domain of a nested continuous expression.",
+        "kind": "proof",
+        "prompt": "Where is $H(x)=1/(\\sqrt{x^2+5}-3)$ continuous?",
+        "hint": "Solve where the outer denominator vanishes.",
+        "solution": "The square root is defined for every real x. Its value is 3 when $x^2+5=9$, so $x=\\pm2$ are excluded. Every remaining stage is continuous, giving continuity on $\\mathbb R\\setminus\\{-2,2\\}$.",
+        "solutionTex": "\\sqrt{x^2+5}-3=0\\iff x=\\pm2",
+        "rubric": [
+          "Check the inner root domain.",
+          "Solve the outer denominator restriction.",
+          "State the resulting continuity domain."
+        ]
+      },
+      {
+        "id": "continuous-extension-transfer",
+        "outcome": "Choose the unique continuous point value.",
+        "kind": "proof",
+        "prompt": "Near $x=2$, let $f(x)=(x^2-4)/(x^2+x-6)$ on its domain $x\\ne2,-3$. What value at 2 gives a continuous extension?",
+        "hint": "Factor both polynomials before using the quotient law.",
+        "solution": "For $x\\ne2,-3$, $f(x)=(x+2)/(x+3)$ after canceling $x-2$. The replacement limit at 2 is $4/5$; assigning $F(2)=4/5$ makes the extension continuous there. The separate pole at $-3$ remains excluded, and no other point value at 2 matches the limit.",
+        "solutionTex": "F(2)=\\lim_{x\\to2}\\frac{x+2}{x+3}=\\frac45",
+        "rubric": [
+          "Cancel only where the original is defined.",
+          "Evaluate the finite replacement limit.",
+          "Assign exactly that value."
+        ]
+      },
+      {
+        "id": "ivt-eligibility-transfer",
+        "outcome": "Reject a false IVT application across a pole.",
+        "kind": "proof",
+        "prompt": "For $f(x)=1/x$ on endpoints -1 and 1, does the endpoint sign change guarantee a zero? State the failed hypothesis.",
+        "hint": "Inspect the entire closed interval, not just endpoints.",
+        "solution": "Although $f(-1)=-1<0<f(1)=1$, $f$ is undefined at 0 and is not continuous on $[-1,1]$. IVT gives no guarantee; in fact $1/x$ never vanishes.",
+        "solutionTex": "0\\notin\\operatorname{dom}f",
+        "rubric": [
+          "Check all points of the closed interval.",
+          "Identify the missing continuity hypothesis.",
+          "Distinguish theorem inapplicability from the actual absence of a zero."
+        ]
+      },
+      {
+        "id": "ivt-bound-transfer",
+        "outcome": "Use a uniform oscillatory bound to bracket a target.",
+        "kind": "proof",
+        "prompt": "Show that $x^2+7\\sin x=500$ for some $x\\in(0,23)$.",
+        "hint": "Bound sine below by -1 at the right endpoint.",
+        "solution": "The function is continuous on $[0,23]$ and equals 0 at 0. At 23 it is $529+7\\sin23\\ge522>500$, so IVT gives some $c\\in(0,23)$ with the target value.",
+        "solutionTex": "0=f(0)<500<522\\le f(23)",
+        "rubric": [
+          "Establish continuity on the full interval.",
+          "Use a bound valid for every sine value.",
+          "Conclude only existence in the interior."
+        ]
+      },
+      {
+        "id": "ivt-disjoint-transfer",
+        "outcome": "Certify three distinct roots in disjoint brackets.",
+        "kind": "proof",
+        "prompt": "Show that $q(x)=x^3-4x$ has three distinct zeros in $[-3,3]$ using three disjoint sign-change brackets, then identify why there cannot be more.",
+        "hint": "Try endpoints -3, -1, 1, and 3, with 0 available to split the center bracket.",
+        "solution": "The signs are $q(-3)=-15<0$, $q(-1)=3>0$, $q(1)=-3<0$, and $q(3)=15>0$, so IVT gives roots in $(-3,-1)$, $(-1,1)$, and $(1,3)$. The intervals are disjoint. Since a nonzero cubic has at most three real roots, these are exactly three.",
+        "solutionTex": "q(-3)<0<q(-1),\\quad q(-1)>0>q(1),\\quad q(1)<0<q(3)",
+        "rubric": [
+          "Prove continuity on each bracket.",
+          "Compute alternating endpoint signs.",
+          "Use disjointness for distinctness and degree for the upper bound."
+        ]
+      },
+      {
+        "id": "ivt-polynomial-transfer",
+        "outcome": "Compute a polynomial endpoint bracket and prove a root exists.",
+        "kind": "proof",
+        "prompt": "Show that $q(x)=x^9-3x^8+x-5$ has a zero strictly between 3 and 4. Do not assume it is unique.",
+        "hint": "Factor the two leading terms as $x^8(x-3)$ when evaluating endpoints.",
+        "solution": "The polynomial is continuous on $[3,4]$. At 3, $q(3)=3^8(3-3)+3-5=-2<0$. At 4, $q(4)=4^8(4-3)+4-5=4^8-1>0$. Thus IVT gives at least one $c\\in(3,4)$ with $q(c)=0$; uniqueness does not follow.",
+        "solutionTex": "q(3)=-2<0<4^8-1=q(4)",
+        "rubric": [
+          "State polynomial continuity on the closed bracket.",
+          "Compute both endpoint signs without unstable large-number subtraction.",
+          "Conclude interior existence without claiming uniqueness."
+        ]
+      },
+      {
+        "id": "trig-continuity-transfer",
+        "outcome": "Use an addition formula and zero-angle limits to check translated trigonometric continuity.",
+        "kind": "proof",
+        "prompt": "Prove $\\lim_{x\\to a}\\sin(x+a)=\\sin(2a)$ for a fixed real $a$. Explain why the same argument does not make $\\tan x$ continuous at $a=\\pi/2$.",
+        "hint": "Write $x=a+h$ and use $\\sin(2a+h)=\\sin(2a)\\cos h+\\cos(2a)\\sin h$.",
+        "solution": "As $h\\to0$, $\\cos h\\to1$ and $\\sin h\\to0$, so the addition formula gives $\\sin(2a+h)\\to\\sin(2a)$. For tangent at $\\pi/2$, the denominator $\\cos(\\pi/2)=0$ and the function is undefined, so quotient continuity does not apply.",
+        "solutionTex": "\\sin(2a+h)\\to\\sin(2a)",
+        "rubric": [
+          "Translate to an increment tending to zero.",
+          "Apply both zero-angle limits to the addition formula.",
+          "Identify tangent’s excluded denominator zero."
+        ]
+      }
+    ]
   },
   "derivative-definition": {
     "prerequisites": ["limits-one-sided", "limit-laws-squeeze"],

@@ -691,6 +691,36 @@
       },
       {
         "sourceId": "MH1100_Lecture_05",
+        "pages": [4, 4],
+        "detail": "Three-condition continuity definition"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [5, 5],
+        "detail": "Direct substitution summary"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [6, 6],
+        "detail": "Example A root-sum continuity"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [7, 7],
+        "detail": "Discontinuity conditions"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [8, 8],
+        "detail": "Graph discontinuity exercise"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [9, 9],
+        "detail": "Four discontinuity examples"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
         "pages": [10, 10],
         "detail": "Example 2–Solution"
       },
@@ -701,13 +731,33 @@
       },
       {
         "sourceId": "MH1100_Lecture_05",
+        "pages": [12, 12],
+        "detail": "Removable mismatch solution"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [13, 13],
+        "detail": "Floor-function jump solution"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
         "pages": [14, 14],
         "detail": "One-sided continuity"
       },
       {
         "sourceId": "MH1100_Lecture_05",
+        "pages": [15, 15],
+        "detail": "Floor-function one-sided example"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
         "pages": [16, 16],
         "detail": "Definition: Continuous on an interval"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [17, 17],
+        "detail": "Closed-interval root exercise"
       },
       {
         "sourceId": "MH1100_Lecture_05",
@@ -721,6 +771,26 @@
       },
       {
         "sourceId": "MH1100_Lecture_05",
+        "pages": [20, 20],
+        "detail": "Polynomial continuity proof"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [21, 21],
+        "detail": "Rational limit exercise"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [22, 22],
+        "detail": "Sine and cosine continuity"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [23, 23],
+        "detail": "Tangent quotient domain"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
         "pages": [24, 24],
         "detail": "Theorem 7"
       },
@@ -728,6 +798,11 @@
         "sourceId": "MH1100_Lecture_05",
         "pages": [25, 25],
         "detail": "Theorem 8"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [26, 26],
+        "detail": "Root-law exercise"
       },
       {
         "sourceId": "MH1100_Lecture_05",
@@ -741,8 +816,33 @@
       },
       {
         "sourceId": "MH1100_Lecture_05",
+        "pages": [29, 29],
+        "detail": "Continuous extension exercise"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [30, 30],
+        "detail": "Concealed-graph IVT prompt"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
         "pages": [31, 31],
         "detail": "Intermediate Value Theorem"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [32, 32],
+        "detail": "IVT multiplicity illustrations"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [33, 33],
+        "detail": "IVT horizontal-line interpretation"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [34, 34],
+        "detail": "High-degree root example"
       },
       {
         "sourceId": "MH1100_Lecture_05",
@@ -753,6 +853,11 @@
         "sourceId": "MH1100_Lecture_05",
         "pages": [36, 36],
         "detail": "Continuity"
+      },
+      {
+        "sourceId": "MH1100_Lecture_05",
+        "pages": [37, 37],
+        "detail": "Three-root cubic exercise"
       },
       {
         "sourceId": "MH1100_Stewart_Chapter_01_Functions_And_Limits",
