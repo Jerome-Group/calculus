@@ -24,6 +24,7 @@ export function Viewport({
   resetKey = 0,
   onStatus,
   description,
+  descriptionId,
 }: {
   scene: string;
   parameter: number;
@@ -31,12 +32,14 @@ export function Viewport({
   resetKey?: number;
   onStatus?: (s: string, fingerprint?: string) => void;
   description?: string;
+  descriptionId?: string;
 }) {
   const host = useRef<HTMLDivElement>(null),
     api = useRef<any>(null);
   const [error, setError] = useState(""),
     [full, setFull] = useState(false),
-    [fallback, setFallback] = useState(false);
+    [fallback, setFallback] = useState(false),
+    [preferCompatibility, setPreferCompatibility] = useState(false);
   const status = useRef(onStatus);
   status.current = onStatus;
   useEffect(() => {
@@ -45,11 +48,13 @@ export function Viewport({
     let renderer: any;
     let cpu = false;
     try {
+      if (preferCompatibility) throw new Error("Compatibility mode selected");
       renderer = new T.WebGLRenderer({
         antialias: true,
         alpha: true,
         powerPreference: "high-performance",
       });
+      setFallback(false);
     } catch {
       renderer = new SVGRenderer();
       renderer.setPrecision(2);
@@ -67,6 +72,12 @@ export function Viewport({
     );
     renderer.domElement.setAttribute("role", "img");
     renderer.domElement.setAttribute("tabindex", "0");
+    const contextLost = (event: Event) => {
+      event.preventDefault();
+      setPreferCompatibility(true);
+    };
+    if (!cpu)
+      renderer.domElement.addEventListener("webglcontextlost", contextLost);
     const world = new T.Scene(),
       camera = new T.PerspectiveCamera(40, 1, 0.01, 10000);
     camera.up.set(0, 0, 1);
@@ -228,20 +239,23 @@ export function Viewport({
       cancelAnimationFrame(frame);
       resize.disconnect();
       controls.dispose();
+      renderer.domElement.removeEventListener("webglcontextlost", contextLost);
       dispose(world);
       renderer.dispose?.();
       renderer.domElement.remove();
       axisLabels.forEach(({ element }) => element.remove());
       api.current = null;
     };
-  }, []);
+  }, [preferCompatibility]);
   useEffect(() => {
     const canvas = host.current?.querySelector("canvas, svg");
+    if (descriptionId) canvas?.setAttribute("aria-describedby", descriptionId);
+    else canvas?.removeAttribute("aria-describedby");
     canvas?.setAttribute(
       "aria-label",
       `${description || (graph ? `Graph of ${graph.expressions.join("; ")}` : scene)}. Sampled 3D illustration. Drag to orbit; arrow keys rotate; plus and minus zoom. Formulas and current values follow the graph.`,
     );
-  }, [description, scene, graph]);
+  }, [description, descriptionId, scene, graph, preferCompatibility]);
 
   useEffect(() => {
     const a = api.current;
@@ -272,7 +286,7 @@ export function Viewport({
         graph ? JSON.stringify(graph) : undefined,
       );
     }
-  }, [scene, parameter, graph]);
+  }, [scene, parameter, graph, preferCompatibility]);
   useEffect(() => {
     api.current?.fit();
   }, [resetKey]);
@@ -289,6 +303,19 @@ export function Viewport({
           {fallback ? " · COMPATIBILITY MODE" : ""}
         </span>
         <div>
+          <button
+            type="button"
+            aria-pressed={preferCompatibility}
+            disabled={fallback && !preferCompatibility}
+            onClick={() => setPreferCompatibility((value) => !value)}
+            title="Toggle compatibility rendering"
+          >
+            {preferCompatibility
+              ? "Try WebGL"
+              : fallback
+                ? "Compatibility active"
+                : "Use compatibility view"}
+          </button>
           <button
             aria-label="Reset camera"
             onClick={() => api.current?.fit()}

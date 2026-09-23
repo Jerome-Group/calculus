@@ -6915,7 +6915,7 @@
     "definition": "The displayed paraboloid is a transfer model for Stokes’ Theorem, not a rendering of each exam-review geometry. The review sheet asks two Stokes problems, one Green problem and one conservative line integral. Their common first step is to identify the domain, the actual orientation and the correct differential expression.",
     "conditions": "For each theorem check the conditions in its lecture module. For an orientation-reversing parametrization, increasing the parameter travels opposite to the curve’s assigned direction. A boundary induced from an outward cylindrical side is clockwise at its top rim when viewed from above.",
     "proof": "For the cone $z^2=x^2+y^2$, $0\\le z\\le1$, joined to the cylinder $x^2+y^2=1$, $1\\le z\\le4$, take outward normals and $\\mathbf F=(y,-x,z)$. The seam cancels; the remaining top rim is clockwise. Parametrize it by $(\\cos t,-\\sin t,4)$ to obtain $\\mathbf F\\cdot\\mathbf r^{\\prime}=1$, hence curl flux $2\\pi$. For the triangle on $x+y+z=3$ with positive $xy$ projection and $\\mathbf F=(x+y^2,y+z^2,z+x^2)$, curl is $(-2z,-2x,-2y)$. The upward area vector is $(1,1,1)dx\\,dy$, so the integral is $-6\\cdot(9/2)=-27$.",
-    "example": "For a clockwise triangle with vertices (0,0),(0,12),(3,0), use the explicitly chosen field F=(0,xy). Its scalar curl is y, so the circulation is −72. For the potential stated in the expanded problem below, use the explicitly chosen path r(t)=(0,1−t), 0≤t≤1. Its endpoint difference gives −1/π. These two self-contained practice variants preserve the source review’s methods and values; they are not a transcription of its unavailable field and parametrization.",
+    "example": "The original Green problem uses P=y cos x−xy sin x and Q=xy+x cos x around the clockwise triangle (0,0),(0,12),(3,0). Differentiation cancels the trigonometric terms: Qₓ−Pᵧ=y, giving −72. Its simpler scaffold F=(0,xy) has the same curl and answer. The original potential problem uses the field (2xy+e^(−x²),x²+y cos(πy²/2)) and parametrization r(t)=(e^(t²−t)−cos(2πt),2 sin(πt²/2)−t⁹), 0≤t≤1, opposite to the requested orientation. The endpoint difference is −1/π. Its straight-path scaffold r(t)=(0,1−t) keeps the answer but removes the orientation decision. Both original problems and scaffolds are worked separately in the guide.",
     "pitfall": "An outward surface need not induce counterclockwise travel when viewed from above. The cone-and-cylinder review gives the opposite at its top rim. Also, an antiderivative may be defined by an integral; $e^{-x^2}$ needs no elementary antiderivative for the endpoint method.",
     "task": "Before calculating, predict the signs of all four answers and justify every prediction from the orientation or the computed integrand.",
     "insight": "The exact review answers, in file order, are $2\\pi$, $-27$, $-72$ and $-1/\\pi$. They come from explicit computations with the stated orientations, not from the canonical scene.",
@@ -6932,7 +6932,17 @@
       {
         "sourceId": "MH2100_Lecture_12_Final_Exam_Review",
         "pages": [1, 1],
-        "detail": "Final Exam Review"
+        "detail": "Final Exam Review overview"
+      },
+      {
+        "sourceId": "MH2100_Lecture_12_Final_Exam_Review",
+        "pages": [7, 7],
+        "detail": "Original Green clockwise-triangle problem"
+      },
+      {
+        "sourceId": "MH2100_Lecture_12_Final_Exam_Review",
+        "pages": [10, 10],
+        "detail": "Original orientation-reversing potential problem"
       },
       {
         "sourceId": "MH2100_Stewart_Calculus_Chapter_16_Vector_Calculus",

@@ -1,0 +1,210 @@
+{
+  "reviewed_at": "2026-09-23",
+  "method": "Connected Google Drive metadata and bounded readable-text comparison; five-word shingle overlaps indicate shared prose, not mathematical equivalence. No private source text is reproduced.",
+  "scope": "Eighteen slide/annotation variants in source-manifest.json; canonical notes or lectures used as comparators.",
+  "files": [
+    {
+      "source_id": "MH1101_Chapter_01_Slides_PDF",
+      "compared_with": "MH1101_Chapter_01_Notes",
+      "classification": "duplicate",
+      "confidence": "medium",
+      "evidence": "Same chapter section outline; approximately 58% of slide five-word shingles occur in canonical notes. Differences may include examples or slide formatting.",
+      "remaining_review": "Compare examples and worked steps page by page before excluding new outcomes.",
+      "drive_file_id": "1iR2LrwiwrpZ_YvCTgCVABgAox55LXX-5",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_01_Slides_Annotated_PDF",
+      "compared_with": "MH1101_Chapter_01_Slides_PDF",
+      "classification": "elaboration",
+      "confidence": "low",
+      "evidence": "Same chapter outline; approximately 77% of base-slide five-word shingles recur in extracted annotated text. Added extraction is mostly handwriting/OCR noise or elaboration.",
+      "remaining_review": "Visually inspect annotation marks and equations for corrections or distinct tasks.",
+      "drive_file_id": "1MKb54q2grykbJupmoddTD1eSOV1b24KW",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_02_Slides_PDF",
+      "compared_with": "MH1101_Chapter_02_Notes",
+      "classification": "duplicate",
+      "confidence": "medium",
+      "evidence": "Same chapter section outline; approximately 57% of slide five-word shingles occur in canonical notes. Differences may include examples or slide formatting.",
+      "remaining_review": "Compare examples and worked steps page by page before excluding new outcomes.",
+      "drive_file_id": "1IEp0sWRCyTog8IdGapG87zo_AfIN3eSq",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_02_Slides_Annotated_PDF",
+      "compared_with": "MH1101_Chapter_02_Slides_PDF",
+      "classification": "elaboration",
+      "confidence": "low",
+      "evidence": "Same chapter outline; approximately 88% of base-slide five-word shingles recur in extracted annotated text. Added extraction is mostly handwriting/OCR noise or elaboration.",
+      "remaining_review": "Visually inspect annotation marks and equations for corrections or distinct tasks.",
+      "drive_file_id": "1MlvtprONOqCZ2Rk6MLhBTiTf4BQD1Xc5",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_03_Slides_PDF",
+      "compared_with": "MH1101_Chapter_03_Notes",
+      "classification": "duplicate",
+      "confidence": "medium",
+      "evidence": "Same chapter section outline; approximately 43% of slide five-word shingles occur in canonical notes. Differences may include examples or slide formatting.",
+      "remaining_review": "Compare examples and worked steps page by page before excluding new outcomes.",
+      "drive_file_id": "1ArQnStYcBoPzplGx-VbTzSxjhMdDOiCk",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_03_Slides_Annotated_PDF",
+      "compared_with": "MH1101_Chapter_03_Slides_PDF",
+      "classification": "elaboration",
+      "confidence": "low",
+      "evidence": "Same chapter outline; approximately 80% of base-slide five-word shingles recur in extracted annotated text. Added extraction is mostly handwriting/OCR noise or elaboration.",
+      "remaining_review": "Visually inspect annotation marks and equations for corrections or distinct tasks.",
+      "drive_file_id": "1_kWFz7J4enOkQTocDFZrzHHWc6XtTYeI",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_04_Slides_PDF",
+      "compared_with": "MH1101_Chapter_04_Notes",
+      "classification": "duplicate",
+      "confidence": "medium",
+      "evidence": "Same chapter section outline; approximately 41% of slide five-word shingles occur in canonical notes. Differences may include examples or slide formatting.",
+      "remaining_review": "Compare examples and worked steps page by page before excluding new outcomes.",
+      "drive_file_id": "1uicBfDYfCokQu1crPzx2AYCFmJs_x49o",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_04_Slides_Annotated_PDF",
+      "compared_with": "MH1101_Chapter_04_Slides_PDF",
+      "classification": "elaboration",
+      "confidence": "low",
+      "evidence": "Same chapter outline; approximately 73% of base-slide five-word shingles recur in extracted annotated text. Added extraction is mostly handwriting/OCR noise or elaboration.",
+      "remaining_review": "Visually inspect annotation marks and equations for corrections or distinct tasks.",
+      "drive_file_id": "1_4xWIE0uCYJmGxwrWGr11Mb3NQ7DDGR7",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_05_Slides_PDF",
+      "compared_with": "MH1101_Chapter_05_Notes",
+      "classification": "duplicate",
+      "confidence": "medium",
+      "evidence": "Same chapter section outline; approximately 44% of slide five-word shingles occur in canonical notes. Differences may include examples or slide formatting.",
+      "remaining_review": "Compare examples and worked steps page by page before excluding new outcomes.",
+      "drive_file_id": "19cIGm8eZv-n--e0njzWjLY4iKS4nsZFD",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_05_Slides_Annotated_PDF",
+      "compared_with": "MH1101_Chapter_05_Slides_PDF",
+      "classification": "elaboration",
+      "confidence": "low",
+      "evidence": "Same chapter outline; approximately 67% of base-slide five-word shingles recur in extracted annotated text. Added extraction is mostly handwriting/OCR noise or elaboration.",
+      "remaining_review": "Visually inspect annotation marks and equations for corrections or distinct tasks.",
+      "drive_file_id": "19n35rbfmy1GYpHFA4WMSqODCA08r1_hj",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_06_Slides_PDF",
+      "compared_with": "MH1101_Chapter_06_Notes",
+      "classification": "duplicate",
+      "confidence": "medium",
+      "evidence": "Same chapter section outline; approximately 55% of slide five-word shingles occur in canonical notes. Differences may include examples or slide formatting.",
+      "remaining_review": "Compare examples and worked steps page by page before excluding new outcomes.",
+      "drive_file_id": "1jAXufzp4267lyCPsamLnKZiy0Gt4g-nx",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH1101_Chapter_06_Slides_Annotated_PDF",
+      "compared_with": "MH1101_Chapter_06_Slides_PDF",
+      "classification": "elaboration",
+      "confidence": "low",
+      "evidence": "Same chapter outline; approximately 82% of base-slide five-word shingles recur in extracted annotated text. Added extraction is mostly handwriting/OCR noise or elaboration.",
+      "remaining_review": "Visually inspect annotation marks and equations for corrections or distinct tasks.",
+      "drive_file_id": "1tXGDlAc5ZJzuMQGxknzcxBbeVn1ZMpVF",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH2100_Lecture_01_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_01",
+      "classification": "duplicate",
+      "confidence": "high",
+      "evidence": "Extracted five-word shingle sets match canonical lecture exactly; annotation image marks remain outside text comparison.",
+      "remaining_review": "Visual spot check for handwritten errata.",
+      "drive_file_id": "1XmY_hoDlUt7VvPdi9bzRwbxp63Abfpmy",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH2100_Lecture_02_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_02",
+      "classification": "unresolved",
+      "confidence": "none",
+      "evidence": "Drive readable-text fetch returned empty content for this nonempty PDF; no mathematical comparison possible from text.",
+      "remaining_review": "Render/OCR pages and compare against canonical lecture. Do not infer novelty from modification date or file size.",
+      "drive_file_id": "1RsFB5jv-t4Z0Ja7m895oIArz3zxK_asa",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH2100_Lecture_03_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_03",
+      "classification": "unresolved",
+      "confidence": "none",
+      "evidence": "Drive readable-text fetch returned empty content for this nonempty PDF; no mathematical comparison possible from text.",
+      "remaining_review": "Render/OCR pages and compare against canonical lecture. Do not infer novelty from modification date or file size.",
+      "drive_file_id": "1hWI46iZE42nw3mLh2JiB_C3uhShUcTpO",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH2100_Lecture_04_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_04",
+      "classification": "unresolved",
+      "confidence": "none",
+      "evidence": "Drive readable-text fetch returned empty content for this nonempty PDF; no mathematical comparison possible from text.",
+      "remaining_review": "Render/OCR pages and compare against canonical lecture. Do not infer novelty from modification date or file size.",
+      "drive_file_id": "1KO44VEnB6_MsZOyQ4Bp8Bn6MNl7tv7_I",
+      "existing_manifest_status": "unreviewed",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH2100_Lecture_05_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_05",
+      "classification": "unresolved",
+      "confidence": "none",
+      "evidence": "Drive readable-text fetch returned empty content for this nonempty PDF; no mathematical comparison possible from text.",
+      "remaining_review": "Render/OCR pages and compare against canonical lecture. Do not infer novelty from modification date or file size.",
+      "drive_file_id": "1kg31OPCTEkkKd0Mas86kSS511N-LmHhb",
+      "existing_manifest_status": "annotated_variant",
+      "reviewed_for_atomic_outcomes": false
+    },
+    {
+      "source_id": "MH2100_Lecture_06_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_06",
+      "classification": "duplicate",
+      "confidence": "high",
+      "evidence": "Extracted five-word shingle sets overlap at about 99%; prior manifest separately records adopted coverage from this variant.",
+      "remaining_review": "Retain prior adopted coverage; visually check whether annotations correct details.",
+      "drive_file_id": "1HvfWCfiAaYfa0rr_jGelMQVpPhO1mKzo",
+      "existing_manifest_status": "annotated_variant",
+      "reviewed_for_atomic_outcomes": false
+    }
+  ],
+  "newer_search": {
+    "query": "Annotated files modified after 2026-09-18 plus MH1101/MH2100 named files.",
+    "result": "Generic Teaching Week 6/7 annotated PDFs dated 2026-09-22 found; course association unverified. Named newer MH1101/MH2100 hits were logistics/media transcripts, outside canonical-source scope.",
+    "status": "unresolved"
+  }
+}

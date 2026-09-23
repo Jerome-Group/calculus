@@ -24,6 +24,14 @@ import { matchesConcept } from "@/lib/curriculum/search";
 import { planarModel } from "@/lib/curriculum/planar";
 import type { LessonMode } from "@/lib/curriculum/learning-modes";
 import { useWebMCP, type StudyState } from "./webmcp";
+import {
+  graphUrl,
+  lessonUrl,
+  readGraphHistory,
+  readLessonHistory,
+  routeUrl,
+  type LessonHistory,
+} from "./study-history";
 const experimentInfo = (id: string) =>
   id.startsWith("plane-")
     ? {
@@ -42,6 +50,12 @@ export function useStudyController() {
   const [noteTab, setNoteTab] = useState("intuition");
   const [readingMode, setReadingMode] = useState<LessonMode>("learn");
   const [notesRequest, setNotesRequest] = useState(0);
+  const [historyNotice, setHistoryNotice] = useState("");
+  const [returnTo, setReturnTo] = useState<{
+    id: string;
+    url: string;
+    scrollY: number;
+  } | null>(null);
   const pendingNotes = useRef(false);
   const [visualLayout, setVisualLayout] = useState<
     "split" | "wide" | "minimised"
@@ -65,10 +79,30 @@ export function useStudyController() {
   const index = concepts.indexOf(concept);
   const state = useRef<StudyState | null>(null),
     renderPending = useRef<PendingGraphRender | null>(null);
+  const scrollFrame = useRef(0);
+  const saveScroll = () => {
+    if (scrollFrame.current) {
+      cancelAnimationFrame(scrollFrame.current);
+      scrollFrame.current = 0;
+    }
+    history.replaceState(
+      { ...(history.state ?? {}), studyScrollY: window.scrollY },
+      "",
+    );
+  };
+  const lessonState = (
+    scene: string,
+    parameter: number,
+    mode: LessonMode,
+    tab: LessonHistory["notesTab"],
+  ): LessonHistory => ({ version: 1, scene, parameter, mode, notesTab: tab });
+  const defaultLessonState = (c: Concept) =>
+    lessonState(c.scene, experimentInfo(c.scene).initial, "learn", "intuition");
   function open(id: string) {
     const c = concepts.find((c) => c.id === id);
     if (!c) return;
     setSelected(id);
+    setHistoryNotice("");
     saveResume(id);
     setSearch("");
     setCourse(c.course);
@@ -80,11 +114,47 @@ export function useStudyController() {
     setP(experimentInfo(c.scene).initial);
     setPlaying(false);
     if (sidebar.isMobile) sidebar.setOpenMobile(false);
-    if (typeof window !== "undefined")
+    if (typeof window !== "undefined") {
+      saveScroll();
       (window.location.hash.slice(1) === id
         ? history.replaceState
         : history.pushState
-      ).call(history, null, "", "#" + id);
+      ).call(
+        history,
+        { studyScrollY: 0 },
+        "",
+        lessonUrl(new URL(window.location.href), id, defaultLessonState(c)),
+      );
+    }
+  }
+  function openPrerequisite(id: string) {
+    if (!concepts.some((item) => item.id === id)) return;
+    setReturnTo(
+      (current) =>
+        current ?? {
+          id: concept.id,
+          url: lessonUrl(
+            new URL(window.location.href),
+            concept.id,
+            lessonState(
+              activeScene,
+              p,
+              readingMode,
+              noteTab as LessonHistory["notesTab"],
+            ),
+          ),
+          scrollY: window.scrollY,
+        },
+    );
+    open(id);
+  }
+  function resumeLesson() {
+    if (!returnTo) return;
+    const target = returnTo;
+    setReturnTo(null);
+    saveScroll();
+    history.pushState({ studyScrollY: target.scrollY }, "", target.url);
+    restoreLocation();
   }
   useEffect(() => {
     if (route !== "lesson") return;
@@ -104,29 +174,112 @@ export function useStudyController() {
     heading?.focus({ preventScroll: true });
     heading?.scrollIntoView({ block: "start" });
   }, [noteTab, readingMode, notesRequest]);
-  function show(r: string) {
+  function show(r: string, selectedGraph = graph) {
+    saveScroll();
     setRoute(r);
     setPlaying(false);
     sidebar.setOpenMobile(false);
-    history.pushState(null, "", "#" + r);
+    history.pushState(
+      { studyScrollY: 0 },
+      "",
+      r === "graph"
+        ? graphUrl(new URL(window.location.href), selectedGraph)
+        : routeUrl(new URL(window.location.href), r),
+    );
   }
-  const readLocation = useEffectEvent(() => {
+  function restoreLocation() {
     const hash = window.location.hash.slice(1);
     if (hash === "graph" || hash === "course") {
       setRoute(hash);
       setPlaying(false);
-    } else if (concepts.some((c) => c.id === hash)) open(hash);
-  });
+      if (hash === "graph") {
+        const parsed = readGraphHistory(new URL(window.location.href));
+        const restored = parsed.kind === "valid" ? parsed.graph : initialGraph;
+        setGraph(restored);
+        setDraft(restored);
+        setGraphError(parsed.kind === "invalid" ? parsed.explanation : "");
+      }
+    } else {
+      const c = concepts.find((item) => item.id === hash);
+      if (!c) {
+        setRoute("course");
+        return;
+      }
+      const parsed = readLessonHistory(
+        new URL(window.location.href),
+        c,
+        experimentInfo,
+      );
+      const restored =
+        parsed.kind === "valid" ? parsed.value : defaultLessonState(c);
+      setSelected(c.id);
+      setCourse(c.course);
+      setExpanded(c.lecture);
+      setRoute("lesson");
+      setVariant(restored.scene === c.scene ? "" : restored.scene);
+      setP(restored.parameter);
+      setReadingMode(restored.mode);
+      setNoteTab(restored.notesTab);
+      setPlaying(false);
+      setHistoryNotice(parsed.kind === "invalid" ? parsed.explanation : "");
+    }
+    const y = history.state?.studyScrollY;
+    if (typeof y === "number" && Number.isFinite(y) && y >= 0)
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => window.scrollTo(0, y)),
+      );
+  }
+  const readLocation = useEffectEvent(restoreLocation);
   useEffect(() => {
     const read = () => readLocation();
     read();
     window.addEventListener("hashchange", read);
     window.addEventListener("popstate", read);
+    const scroll = () => {
+      if (scrollFrame.current) return;
+      scrollFrame.current = requestAnimationFrame(() => {
+        scrollFrame.current = 0;
+        saveScroll();
+      });
+    };
+    window.addEventListener("scroll", scroll, { passive: true });
     return () => {
       window.removeEventListener("hashchange", read);
       window.removeEventListener("popstate", read);
+      window.removeEventListener("scroll", scroll);
+      if (scrollFrame.current) cancelAnimationFrame(scrollFrame.current);
     };
   }, []);
+  useEffect(() => {
+    if (
+      route !== "lesson" ||
+      playing ||
+      window.location.hash !== `#${selected}`
+    )
+      return;
+    history.replaceState(
+      history.state,
+      "",
+      lessonUrl(
+        new URL(window.location.href),
+        selected,
+        lessonState(
+          activeScene,
+          p,
+          readingMode,
+          noteTab as LessonHistory["notesTab"],
+        ),
+      ),
+    );
+  }, [route, selected, activeScene, p, readingMode, noteTab, playing]);
+  useEffect(() => {
+    if (route !== "graph" || window.location.hash !== "#graph") return;
+    history.replaceState(
+      history.state,
+      "",
+      graphUrl(new URL(window.location.href), graph),
+    );
+  }, [route, graph]);
   useEffect(() => {
     if (!playing) return;
     const tick = window.setInterval(
@@ -146,7 +299,7 @@ export function useStudyController() {
       setGraph({ ...g, expressions: [...g.expressions] });
       setDraft(g);
       setGraphError("");
-      show("graph");
+      show("graph", g);
       return {
         status: "plotted",
         expression: g.expressions,
@@ -213,6 +366,8 @@ export function useStudyController() {
       sidebar.isMobile ? sidebar.setOpenMobile(value) : sidebar.setOpen(value),
     concept,
     route,
+    readingMode,
+    setReadingMode,
     p,
     graph,
     info,
@@ -271,6 +426,10 @@ export function useStudyController() {
 
   return {
     readingMode,
+    returnTo,
+    openPrerequisite,
+    resumeLesson,
+    historyNotice,
     setReadingMode,
     planar,
     chooseModel,

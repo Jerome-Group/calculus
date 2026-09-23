@@ -6,7 +6,17 @@ import {
   type CourseId,
 } from "@/lib/curriculum";
 import { initialGraph, validateGraph, type GraphSpec } from "@/lib/atlas/math";
+import { learningGuides } from "@/lib/curriculum/learning";
+import { examplesForConcept } from "@/lib/curriculum/example-registry";
+import {
+  inlineExperimentCatalog,
+  inlineExperimentSnapshot,
+  setInlineExperimentOpen,
+  setInlineExperimentValue,
+} from "@/lib/curriculum/inline-experiments";
 import type { StudyState, Tool, JsonSchema } from "./study-types";
+import { sceneVariants } from "@/lib/curriculum/scene-variants";
+export { sceneVariants } from "@/lib/curriculum/scene-variants";
 const afterRender = () =>
   new Promise<void>((resolve) => {
     const timer = setTimeout(resolve, 300);
@@ -33,37 +43,30 @@ const finite = (x: unknown, name: string) => {
     throw new Error(`${name} must be finite.`);
   return x;
 };
-export function sceneVariants(concept: Concept) {
-  return concept.scene === "elementarycurves"
-    ? [
-        "elementarycurves",
-        "curveCircle",
-        "curveEllipse",
-        "curveCusp",
-        "curveLine",
-        "curves",
-      ]
-    : concept.id === "surface-orientation"
-      ? ["parametric", "mobius"]
-      : concept.id === "conservative-domains"
-        ? ["conservative", "vortex"]
-        : [concept.scene];
-}
 export function studyTools(
   concepts: Concept[],
   current: () => StudyState,
 ): Tool[] {
+  const inlineExperiments = () =>
+    current().route === "lesson"
+      ? inlineExperimentSnapshot(current().concept.id)
+      : [];
   const snapshot = () => {
     const s = current();
     return {
       visualLayout: s.visualLayout,
       sidebarOpen: s.sidebarOpen,
       route: s.route,
+      readingMode: s.readingMode,
       course: s.course,
       query: s.search,
       conceptId: s.concept.id,
       scene: s.activeScene,
       parameter: s.p,
+      mathematicalReadout: s.info.readout?.(s.p) ?? null,
+      inlineExperiments: inlineExperiments(),
+      representation:
+        "Sampled illustration; use the lesson proof for exact conclusions.",
       range: [s.info.min, s.info.max],
       step: s.info.step,
       notesTab: s.noteTab,
@@ -143,9 +146,9 @@ export function studyTools(
     },
     {
       name: "read_concept",
-      title: "Read a concept and its sources",
+      title: "Read a concept, lesson and sources",
       description:
-        "Return original notes, exact source pages and links for one concept without navigating.",
+        "Return the visible lesson's mathematical notes, practice, and exact source pages for one concept without navigating.",
       inputSchema: schema({ conceptId: { type: "string" } }, ["conceptId"]),
       annotations: { readOnlyHint: true },
       execute: (a) => {
@@ -153,6 +156,8 @@ export function studyTools(
         if (!c) throw new Error("Unknown concept ID.");
         return {
           ...c,
+          lesson: learningGuides[c.id],
+          examples: examplesForConcept(c.id),
           sources: c.sources.map((r) => ({
             ...r,
             source: sources[r.sourceId],
@@ -168,6 +173,44 @@ export function studyTools(
       inputSchema: schema({}),
       annotations: { readOnlyHint: true },
       execute: snapshot,
+    },
+    {
+      name: "set_inline_experiment",
+      title: "Adjust an inline mathematical experiment",
+      description:
+        "Set one independent inline lesson control. Read get_study_state for current IDs and values; the same control updates visibly.",
+      inputSchema: schema(
+        {
+          id: { type: "string" },
+          parameter: { type: "string", enum: ["value", "radius", "angle"] },
+          value: { type: "number" },
+        },
+        ["id", "parameter", "value"],
+      ),
+      execute: async (a) => {
+        const s = current();
+        if (s.route !== "lesson") throw new Error("Open a lesson first.");
+        const id = string(a.id, "id", 80);
+        const parameter = string(a.parameter, "parameter", 20);
+        const entry = inlineExperimentCatalog(s.concept.id).find(
+          (item) => item.id === id,
+        );
+        if (!entry || !entry.parameters.includes(parameter))
+          throw new Error(
+            "Unknown inline experiment or parameter for this lesson.",
+          );
+        const value = finite(a.value, "value");
+        setInlineExperimentValue(
+          s.concept.id,
+          id,
+          parameter as "value" | "radius" | "angle",
+          value,
+        );
+        setInlineExperimentOpen(s.concept.id, id, true);
+        if (s.readingMode !== "learn") s.setReadingMode("learn");
+        await afterRender();
+        return snapshot();
+      },
     },
     {
       name: "open_concept",
@@ -242,7 +285,10 @@ export function studyTools(
         if (v < min || v > max)
           throw new Error(`Choose a value between ${min} and ${max}.`);
         if (s.route === "graph") await s.plotAndWait({ ...s.graph, a: v });
-        else s.setP(v);
+        else {
+          s.setPlaying(false);
+          s.setP(v);
+        }
         await afterRender();
         return snapshot();
       },
@@ -257,6 +303,14 @@ export function studyTools(
           throw new Error("Open a concept first.");
         if (typeof a.playing !== "boolean")
           throw new Error("playing must be boolean.");
+        if (
+          a.playing &&
+          typeof window !== "undefined" &&
+          window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+        )
+          throw new Error(
+            "Animation is disabled by the reduced motion preference.",
+          );
         current().setPlaying(a.playing);
         await afterRender();
         return snapshot();
