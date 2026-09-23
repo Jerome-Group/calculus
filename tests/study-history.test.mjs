@@ -98,3 +98,28 @@ test("graph links restore exact expressions and parameter; invalid state falls b
   assert.equal(invalid.kind, "invalid");
   assert.match(invalid.explanation, /Showing the default graph/);
 });
+
+test("opening a lesson from a shared graph drops stale graph state", () => {
+  const graph = { ...initialGraph, expressions: ["x^2+y^2-a"], a: 1.25 };
+  const graphLink = graphUrl(
+    new URL("https://example.test/?source=friend#course"),
+    graph,
+  );
+  const state = {
+    version: 1,
+    scene: "curveCircle",
+    parameter: 1.25,
+    mode: "explore",
+    notesTab: "example",
+  };
+  const lessonLink = new URL(
+    lessonUrl(new URL(graphLink, "https://example.test"), concept.id, state),
+    "https://example.test",
+  );
+  assert.equal(lessonLink.searchParams.get("graph"), null);
+  assert.equal(lessonLink.searchParams.get("source"), "friend");
+  assert.deepEqual(readLessonHistory(lessonLink, concept, sceneInfo), {
+    kind: "valid",
+    value: state,
+  });
+});
