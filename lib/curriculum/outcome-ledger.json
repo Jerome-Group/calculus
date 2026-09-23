@@ -4135,7 +4135,7 @@
       "source_id": "MH2100_Lecture_04",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "local/global extrema",
-      "physical_pages_from_audit": "2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40",
+      "physical_pages_from_audit": "14–23",
       "linked_concept_ids": [
         "gradient-normals-and-steepest-ascent",
         "local-extrema-and-saddles",
@@ -4144,7 +4144,7 @@
         "global-extrema-and-boundaries"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'local/global extrema' at 2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Source pages and distinct teachable skills reviewed; guide evidence is cited per outcome. Rendered scene behavior and independent learner performance remain unverified; cross-source completeness is not certified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4155,15 +4155,20 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "local-extrema-and-saddles:domain-relative-extrema",
+        "local-extrema-and-saddles:interior-fermat",
+        "local-extrema-and-saddles:critical-point-candidates",
+        "local-extrema-and-saddles:saddle-direct-comparison"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_04:03",
       "source_id": "MH2100_Lecture_04",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "higher partials",
-      "physical_pages_from_audit": "2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40",
+      "physical_pages_from_audit": "24–28",
       "linked_concept_ids": [
         "gradient-normals-and-steepest-ascent",
         "local-extrema-and-saddles",
@@ -4172,7 +4177,7 @@
         "global-extrema-and-boundaries"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'higher partials' at 2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Source pages and distinct teachable skills reviewed; guide evidence is cited per outcome. Rendered scene behavior and independent learner performance remain unverified; cross-source completeness is not certified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4183,15 +4188,19 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "mixed-and-higher-partials:ordered-second-partials",
+        "mixed-and-higher-partials:clairaut-neighborhood",
+        "mixed-and-higher-partials:third-order-permutations"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_04:04",
       "source_id": "MH2100_Lecture_04",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "Hessian classification",
-      "physical_pages_from_audit": "2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40",
+      "physical_pages_from_audit": "29–32",
       "linked_concept_ids": [
         "gradient-normals-and-steepest-ascent",
         "local-extrema-and-saddles",
@@ -4200,7 +4209,7 @@
         "global-extrema-and-boundaries"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'Hessian classification' at 2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Source pages and distinct teachable skills reviewed; guide evidence is cited per outcome. Rendered scene behavior and independent learner performance remain unverified; cross-source completeness is not certified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4211,15 +4220,19 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "hessian-classification:determinant-test",
+        "hessian-classification:find-all-stationary",
+        "hessian-classification:inconclusive-global-range"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_04:05",
       "source_id": "MH2100_Lecture_04",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "compact-domain optimization",
-      "physical_pages_from_audit": "2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40",
+      "physical_pages_from_audit": "33–40",
       "linked_concept_ids": [
         "gradient-normals-and-steepest-ascent",
         "local-extrema-and-saddles",
@@ -4228,7 +4241,7 @@
         "global-extrema-and-boundaries"
       ],
       "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'compact-domain optimization' at 2–40; gradient 2–13; extrema 14–23; mixed partials 24–28; Hessian 29–32; global 33–40; inspect its source pages and split every distinct skill before claiming coverage.",
+      "gap": "Source pages and distinct teachable skills reviewed; guide evidence is cited per outcome. Rendered scene behavior and independent learner performance remain unverified; cross-source completeness is not certified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -4239,8 +4252,12 @@
       },
       "depth": "unverified",
       "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "atomic_outcome_ids": [
+        "global-extrema-and-boundaries:compact-existence",
+        "global-extrema-and-boundaries:interior-boundary-candidates",
+        "global-extrema-and-boundaries:rectangle-global-comparison"
+      ],
+      "coverage_decision": "partial_atomic_mapping"
     },
     {
       "id": "MH2100_Lecture_05:01",
@@ -14159,6 +14176,1064 @@
         "practiced": "distinct transfer task exists; learner performance unverified",
         "visualized": "not verified",
         "checked": "no independent outcome-level validation or learner performance check"
+      }
+    },
+    {
+      "id": "local-extrema-and-saddles:domain-relative-extrema",
+      "concept_id": "local-extrema-and-saddles",
+      "outcome": "Distinguish absolute from local extrema using comparisons over the domain or a domain-intersected neighborhood.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 14,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Absolute and Local Extrema — a Formal Definition"
+        },
+        "page_heading": "Absolute and Local Extrema — a Formal Definition"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[Use the domain in the definition]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-domain-extrema]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-domain-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:02",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[Use the domain in the definition]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-domain-extrema]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-domain-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "local-extrema-and-saddles:interior-fermat",
+      "concept_id": "local-extrema-and-saddles",
+      "outcome": "Prove that an interior local extremum with all partial derivatives defined has zero gradient by restricting to each coordinate line.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 16,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [16],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Absolute and Local Extrema — Gradient Vectors"
+        },
+        "page_heading": "Absolute and Local Extrema — Gradient Vectors"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[Coordinate restrictions prove necessity]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-fermat-proof]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-fermat-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:02",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[Coordinate restrictions prove necessity]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-fermat-proof]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-fermat-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "local-extrema-and-saddles:critical-point-candidates",
+      "concept_id": "local-extrema-and-saddles",
+      "outcome": "Identify interior critical points where a partial derivative is absent or all partials vanish, without treating stationarity as sufficient for an extremum.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 19,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Critical Points — a Formal Definition"
+        },
+        "page_heading": "Critical Points — a Formal Definition"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[Critical is a candidate, not a verdict]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-critical-contrast]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-nonsmooth-critical]",
+            "claim": "The missing-partial branch is demonstrated independently from the zero-gradient branch.",
+            "method": "Compared the source definition on physical page 19 with the new example or transfer task; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-critical-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-nonsmooth-transfer]",
+            "claim": "The missing-partial branch is demonstrated independently from the zero-gradient branch.",
+            "method": "Compared the source definition on physical page 19 with the new example or transfer task; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:02",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[Critical is a candidate, not a verdict]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-critical-contrast]",
+            "basis": "current guide inspection; learner performance unverified"
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-nonsmooth-critical]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-critical-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-nonsmooth-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "local-extrema-and-saddles:saddle-direct-comparison",
+      "concept_id": "local-extrema-and-saddles",
+      "outcome": "Classify a smooth stationary saddle by producing arbitrarily nearby values above and below its value.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 22,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Critical Points — Saddle Points"
+        },
+        "page_heading": "Critical Points — Saddle Points"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[A saddle needs two signs]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-critical-contrast]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-critical-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:02",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.sections[A saddle needs two signs]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.supplementalBlocks[l04-critical-contrast]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#local-extrema-and-saddles.exercises[l04-critical-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "mixed-and-higher-partials:ordered-second-partials",
+      "concept_id": "mixed-and-higher-partials",
+      "outcome": "Compute fxx, fxy, fyx, and fyy by differentiating in the source notation order and respecting their domains.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 25,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [25],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Second-Order Partial Derivatives — an Introduction"
+        },
+        "page_heading": "Second-Order Partial Derivatives — an Introduction"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.sections[Read the subscript order]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.supplementalBlocks[l04-second-partials]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.exercises[l04-partials-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:03",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.sections[Read the subscript order]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.supplementalBlocks[l04-second-partials]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.exercises[l04-partials-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "mixed-and-higher-partials:clairaut-neighborhood",
+      "concept_id": "mixed-and-higher-partials",
+      "outcome": "Apply Clairaut’s theorem only when both mixed second partials exist and are continuous on an open neighborhood.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 27,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Second-Order Partial Derivatives — Clairaut’s Theorem"
+        },
+        "page_heading": "Second-Order Partial Derivatives — Clairaut’s Theorem"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.sections[Equality needs neighborhood hypotheses]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.supplementalBlocks[l04-clairaut-contrast]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.exercises[l04-clairaut-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:03",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.sections[Equality needs neighborhood hypotheses]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.supplementalBlocks[l04-clairaut-contrast]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.exercises[l04-clairaut-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "mixed-and-higher-partials:third-order-permutations",
+      "concept_id": "mixed-and-higher-partials",
+      "outcome": "Group third-order partials that differ only by differentiation order when the third partials are defined and continuous on an open neighborhood.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 27,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Second-Order Partial Derivatives — Clairaut’s Theorem"
+        },
+        "page_heading": "Second-Order Partial Derivatives — Clairaut’s Theorem"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.sections[Equality needs neighborhood hypotheses]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.supplementalBlocks[l04-clairaut-contrast]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.exercises[l04-clairaut-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:03",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.sections[Equality needs neighborhood hypotheses]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.supplementalBlocks[l04-clairaut-contrast]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#mixed-and-higher-partials.exercises[l04-clairaut-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "hessian-classification:determinant-test",
+      "concept_id": "hessian-classification",
+      "outcome": "At a zero-gradient critical point with continuous second partials nearby, classify from D=fxx fyy−fxy² and the sign of fxx, leaving D=0 inconclusive.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 29,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Critical Points — Classifying Them"
+        },
+        "page_heading": "Critical Points — Classifying Them"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.sections[Use the determinant with hypotheses]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.supplementalBlocks[l04-hessian-test]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.exercises[l04-hessian-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.sections[Use the determinant with hypotheses]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.supplementalBlocks[l04-hessian-test]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.exercises[l04-hessian-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "hessian-classification:find-all-stationary",
+      "concept_id": "hessian-classification",
+      "outcome": "Solve both gradient components simultaneously, including factor branches that form nonisolated critical sets.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 30,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Critical Points — Example 1"
+        },
+        "page_heading": "Critical Points — Example 1"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.sections[Solve the complete stationary set]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.supplementalBlocks[l04-sinxy-example]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.exercises[l04-sinxy-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.sections[Solve the complete stationary set]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.supplementalBlocks[l04-sinxy-example]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.exercises[l04-sinxy-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "hessian-classification:inconclusive-global-range",
+      "concept_id": "hessian-classification",
+      "outcome": "Resolve a zero Hessian determinant by another argument, such as a global range bound, instead of assigning a local type from the test.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 31,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [31],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Critical Points — Example 1 (cont’d)"
+        },
+        "page_heading": "Critical Points — Example 1 (cont’d)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.sections[Zero determinant asks for more]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.supplementalBlocks[l04-sinxy-example]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.exercises[l04-sinxy-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:04",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.sections[Zero determinant asks for more]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.supplementalBlocks[l04-sinxy-example]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#hessian-classification.exercises[l04-sinxy-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "global-extrema-and-boundaries:compact-existence",
+      "concept_id": "global-extrema-and-boundaries",
+      "outcome": "Check continuity on a closed bounded domain before invoking existence of both absolute extrema.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 35,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [35],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Absolute Extrema — the Extreme Value Theorem"
+        },
+        "page_heading": "Absolute Extrema — the Extreme Value Theorem"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.sections[Existence comes before searching]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.supplementalBlocks[l04-compact-worked]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.exercises[l04-compact-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:05",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.sections[Existence comes before searching]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.supplementalBlocks[l04-compact-worked]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.exercises[l04-compact-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "global-extrema-and-boundaries:interior-boundary-candidates",
+      "concept_id": "global-extrema-and-boundaries",
+      "outcome": "Compare interior critical values with extrema on every boundary piece and its endpoints; a local Hessian test is unnecessary for this comparison.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 36,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Absolute Extrema — and Where To Find Them"
+        },
+        "page_heading": "Absolute Extrema — and Where To Find Them"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.sections[Search every part of the domain]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.supplementalBlocks[l04-rectangle-worked]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.exercises[l04-rectangle-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:05",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.sections[Search every part of the domain]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.supplementalBlocks[l04-rectangle-worked]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.exercises[l04-rectangle-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "global-extrema-and-boundaries:rectangle-global-comparison",
+      "concept_id": "global-extrema-and-boundaries",
+      "outcome": "Complete a rectangle optimization by checking all four edge restrictions and comparing all candidate values, including tied extrema.",
+      "core_source": {
+        "id": "MH2100_Lecture_04",
+        "physical_page": 40,
+        "inspection": "Canonical local PDF SHA-256 6bf26c14a0ffa6e7fefe6b2f28e4f42c0e3c04097e6c1ef03022752ad6d77ced; physical page rendered and text cross-checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [40],
+          "method": "pdftoppm physical-page render and pdftotext layout cross-check.",
+          "claim_observed": "Absolute Extrema — Example 1 (cont’d)"
+        },
+        "page_heading": "Absolute Extrema — Example 1 (cont’d)"
+      },
+      "evidence": {
+        "named": [],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.sections[Compare values, including ties]",
+            "claim": "Guide states this source skill and its conditions.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.supplementalBlocks[l04-rectangle-worked]",
+            "claim": "Worked example applies this outcome with explicit intermediate reasoning.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.exercises[l04-rectangle-transfer]",
+            "claim": "Independent transfer prompt and feedback require this outcome; learner performance unverified.",
+            "method": "Compared canonical PDF page with current guide content and exact source skill; learner performance unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": null,
+        "verified_for_outcome": false
+      },
+      "depth": "partial_source_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Source and cited guide evidence inspected. No outcome-specific scene or independent learner-performance check; wider source coverage remains open.",
+      "source_section_id": "MH2100_Lecture_04:05",
+      "candidate_blocks": {
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.sections[Compare values, including ties]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.supplementalBlocks[l04-rectangle-worked]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#global-extrema-and-boundaries.exercises[l04-rectangle-transfer]",
+            "basis": "current guide inspection; learner performance unverified"
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Manual semantic comparison of physical PDF page, guide explanation, worked example and independent transfer task.",
+        "named": "not claimed",
+        "stated": "match",
+        "worked": "source-aligned worked reasoning inspected",
+        "practiced": "independent task directly applies skill; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
       }
     }
   ]
