@@ -1407,6 +1407,11 @@
         "sourceId": "MH1100_Stewart_Chapter_02_Derivatives",
         "pages": [51, 89],
         "detail": "Optional: Stewart, §2.5–2.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [28, 43],
+        "detail": "Motion and related-rate examples"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."
@@ -1447,6 +1452,11 @@
         "sourceId": "MH1100_Stewart_Chapter_02_Derivatives",
         "pages": [51, 89],
         "detail": "Optional: Stewart, §2.5–2.9; PDF pages within the supplied chapter extract"
+      },
+      {
+        "sourceId": "MH1100_Lecture_08",
+        "pages": [45, 56],
+        "detail": "Linearization and differential examples"
       }
     ],
     "enrichment": "Use the textbook’s accompanying diagrams to compare another example of the same mechanism. Return to the lecture statement for the course’s assumptions and notation."

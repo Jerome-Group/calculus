@@ -4192,52 +4192,274 @@
       "source_id": "MH1100_Lecture_08",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "rates and related rates",
-      "physical_pages_from_audit": "2–56; applications 36–43",
+      "physical_pages_from_audit": "2–56; applications 36–43 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "chain-rule-single",
         "implicit-related-rates",
         "linearization-differentials"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "No atomic source outcome yet extracted for audit inventory topic 'rates and related rates' at 2–56; applications 36–43; inspect its source pages and split every distinct skill before claiming coverage.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 27–34 cover motion; pages 35–43 cover sphere, cone, and ladder related rates. The motion graph on page 33 repeats the same functions and adds no separate decision. No scene or learner-performance claim is made.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-motion-direction]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-motion-distance]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-speeding-signs]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-sphere-rate]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-cone-rate]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-ladder-rate]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-motion-direction]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-motion-distance]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-speeding-signs]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-sphere-rate]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-cone-rate]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-ladder-rate]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-motion-direction-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-motion-distance-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-speeding-signs-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-sphere-rate-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-cone-rate-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-ladder-rate-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": [],
-      "coverage_decision": "explicit_gap"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "implicit-related-rates:motion-direction",
+        "implicit-related-rates:motion-distance",
+        "implicit-related-rates:speeding-signs",
+        "implicit-related-rates:sphere-rate",
+        "implicit-related-rates:cone-rate",
+        "implicit-related-rates:ladder-rate"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "27–43"
     },
     {
       "id": "MH1100_Lecture_08:04",
       "source_id": "MH1100_Lecture_08",
       "kind": "core_lecture_or_notes",
       "topic_from_audit_inventory": "linear approximation and differentials",
-      "physical_pages_from_audit": "2–56; applications 36–43",
+      "physical_pages_from_audit": "2–56; applications 36–43 (provisional inventory; replaced by physical_page_span)",
       "linked_concept_ids": [
         "chain-rule-single",
         "implicit-related-rates",
         "linearization-differentials"
       ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 1 source-specific atomic outcome(s) mapped for audit inventory topic 'linear approximation and differentials'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "outcome_status": "page_verified_atomic_mapping",
+      "gap": "Pages 44–50 cover tangent approximation, anchor, and curvature; pages 51–56 cover differentials and measurement error. Page 50 misnames the cosine input; page 55 calls a differential estimate a maximum. These are corrected in the guide. No scene or learner-performance claim is made.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          },
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-skill-1]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-anchor-and-bias]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-differential-change]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-measurement-error]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-source-skill-1]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-anchor-and-bias]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-differential-change]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-measurement-error]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-source-skill-1-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-anchor-and-bias-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-differential-change-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-measurement-error-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
-      "atomic_outcome_ids": ["linearization-differentials:source-skill-1"],
-      "coverage_decision": "partial_atomic_mapping"
+      "depth": "source_pages_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "linearization-differentials:source-skill-1",
+        "linearization-differentials:anchor-and-bias",
+        "linearization-differentials:differential-change",
+        "linearization-differentials:measurement-error"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "44–56"
     },
     {
       "id": "MH1100_Lecture_09:01",
@@ -10406,12 +10628,12 @@
       "core_source": {
         "id": "MH1100_Lecture_08",
         "physical_page": 44,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [44],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page explains nearby function values are approximated by the tangent-line function."
+          "pages": [44, 45, 46, 47],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 46–47 use $f(x)=\\sqrt{x+3}$ at $a=1$."
         },
         "page_heading": "Linear Approximations"
       },
@@ -10419,76 +10641,50 @@
         "named": [
           {
             "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.sections[Approximate with an error bound]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-skill-1]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.sections[Approximate with an error bound]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-source-skill-1]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-source-skill-1-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
           }
         ],
         "visualized": [],
         "checked": []
       },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "source_section_id": "MH1100_Lecture_08:04",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
       "visual_candidate": {
         "scene_id": "plane-linear",
         "verified_for_outcome": false
-      },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
-      "source_section_id": "MH1100_Lecture_08:04",
-      "candidate_blocks": {
-        "named": [
-          {
-            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
-            "basis": "current code inspection"
-          }
-        ],
-        "stated": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.sections[Approximate with an error bound]",
-            "basis": "current guide inspection"
-          }
-        ],
-        "worked": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.sections[Approximate with an error bound]",
-            "basis": "worked expression or example inspected; depth not certified"
-          }
-        ],
-        "practiced": [
-          {
-            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
-          }
-        ]
-      },
-      "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "worked instance in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
       }
     },
     {
@@ -23750,6 +23946,600 @@
         "practiced": "feedback reviewed; learner performance unverified",
         "visualized": "Scene not established as an outcome visualization.",
         "checked": "No independent learner outcome check."
+      }
+    },
+    {
+      "id": "implicit-related-rates:motion-direction",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Determine rest and direction from signed velocity.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 27,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [27, 28, 29, 30],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 28–30 use $s(t)=t^3-6t^2+9t$ for $t\\ge0$, measured in metres."
+        },
+        "page_heading": "Rates of Change"
+      },
+      "source_section_id": "MH1100_Lecture_08:03",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-motion-direction]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-motion-direction]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-motion-direction-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-circle",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "implicit-related-rates:motion-distance",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Sum absolute displacements between turning times to obtain total distance.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 30,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30, 31],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 30–31 use $s(0)=0$, $s(1)=4$, $s(3)=0$, and $s(5)=20$ m."
+        },
+        "page_heading": "Rates of Change"
+      },
+      "source_section_id": "MH1100_Lecture_08:03",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-motion-distance]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-motion-distance]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-motion-distance-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-circle",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "implicit-related-rates:speeding-signs",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Use velocity and acceleration signs to classify speeding up or slowing down.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 32,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [32, 33, 34],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 32–34 give $v=3(t-1)(t-3)$ and $a=6t-12$."
+        },
+        "page_heading": "Rates of Change"
+      },
+      "source_section_id": "MH1100_Lecture_08:03",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-speeding-signs]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-speeding-signs]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-speeding-signs-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-circle",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "implicit-related-rates:sphere-rate",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Differentiate sphere volume in time and substitute the instantaneous radius afterward.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 35,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [35, 36, 37, 38],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 36–38 give $dV/dt=100\\,\\mathrm{cm^3/s}$ at diameter $50$ cm."
+        },
+        "page_heading": "Related Rates"
+      },
+      "source_section_id": "MH1100_Lecture_08:03",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-sphere-rate]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-sphere-rate]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-sphere-rate-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-circle",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "implicit-related-rates:cone-rate",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Eliminate a changing cone radius by similar triangles before differentiating.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 39,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [39, 40, 41],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 39–41 pump water at $2\\,\\mathrm{m^3/min}$ when $h=3$ m."
+        },
+        "page_heading": "Related Rates"
+      },
+      "source_section_id": "MH1100_Lecture_08:03",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-cone-rate]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-cone-rate]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-cone-rate-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-circle",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "implicit-related-rates:ladder-rate",
+      "concept_id": "implicit-related-rates",
+      "outcome": "Use a fixed ladder length to infer a signed vertical rate.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 42,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [42, 43],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 42–43 use $L=5$ m, $dx/dt=1\\,\\mathrm{m/s}$, and $x=3$ m."
+        },
+        "page_heading": "Related Rates"
+      },
+      "source_section_id": "MH1100_Lecture_08:03",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#implicit-related-rates.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-ladder-rate]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.contentBlocks[lecture08-source-ladder-rate]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#implicit-related-rates.exercises[lecture08-ladder-rate-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-circle",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "linearization-differentials:anchor-and-bias",
+      "concept_id": "linearization-differentials",
+      "outcome": "Choose a convenient anchor and determine tangent estimate direction from curvature.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 46,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [46, 47, 48, 49, 50],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 46–50 use concave-down square roots and a cosine estimate at $29^\\circ$."
+        },
+        "page_heading": "Linear Approximations"
+      },
+      "source_section_id": "MH1100_Lecture_08:04",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-anchor-and-bias]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-anchor-and-bias]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-anchor-and-bias-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-linear",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "linearization-differentials:differential-change",
+      "concept_id": "linearization-differentials",
+      "outcome": "Distinguish tangent differential from the actual change and compare their errors.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 51,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [51, 52, 53, 54],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 53–54 use $f(x)=x^3+x^2-2x+1$ at $x=2$."
+        },
+        "page_heading": "Differentials"
+      },
+      "source_section_id": "MH1100_Lecture_08:04",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-differential-change]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-differential-change]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-differential-change-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-linear",
+        "verified_for_outcome": false
+      }
+    },
+    {
+      "id": "linearization-differentials:measurement-error",
+      "concept_id": "linearization-differentials",
+      "outcome": "Estimate absolute and relative propagated error while distinguishing an estimate from a strict bound.",
+      "core_source": {
+        "id": "MH1100_Lecture_08",
+        "physical_page": 55,
+        "inspection": "Canonical PDF SHA-256 matched; physical pages rendered and visually checked.",
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [55, 56],
+          "method": "SHA-256 matched; physical PDF pages rendered and visually checked.",
+          "claim_observed": "Pages 55–56 take measured $r=21$ cm and possible $|dr|\\le0.05$ cm."
+        },
+        "page_heading": "Differentials"
+      },
+      "source_section_id": "MH1100_Lecture_08:04",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#linearization-differentials.title",
+            "claim": "Catalog names the source topic.",
+            "method": "Direct catalog inspection."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-measurement-error]",
+            "claim": "Guide states the source decision and conditions.",
+            "method": "Compared canonical PDF with guide."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.contentBlocks[lecture08-source-measurement-error]",
+            "claim": "Guide works the source case and records relevant correction or contrast.",
+            "method": "Recomputed source example."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#linearization-differentials.exercises[lecture08-measurement-error-transfer]",
+            "claim": "Independent transfer has hint, solution, and rubric; learner performance unverified.",
+            "method": "Solved independent task."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "source_page_and_guide_inspection",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Scene alignment and independent learner performance not established.",
+      "inspection_check": {
+        "method": "Manual source-page, guide, and transfer-task comparison.",
+        "named": "match",
+        "stated": "source decision checked",
+        "worked": "source calculation checked",
+        "practiced": "independent solution reviewed; learner performance unverified",
+        "visualized": "No outcome-specific scene verified.",
+        "checked": "No independent learner outcome check."
+      },
+      "visual_candidate": {
+        "scene_id": "plane-linear",
+        "verified_for_outcome": false
       }
     }
   ]
