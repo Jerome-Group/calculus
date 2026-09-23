@@ -388,3 +388,92 @@ test("WebMCP exposes lesson blocks, practice, and exact source pages", async () 
   assert.ok(errorPages.includes(25));
   assert.ok(errorPages.includes(26));
 });
+
+test("Lecture 03 implicit outcomes retain exact pages and separate scene evidence", () => {
+  const expected = new Map([
+    ["implicit-functions-and-tangents:l03-curve-tangent", 39],
+    ["implicit-functions-and-tangents:l03-surface-tangent", 40],
+    ["implicit-functions-and-tangents:l03-local-graph-choice", 42],
+    ["implicit-functions-and-tangents:l03-implicit-derivatives", 44],
+  ]);
+  for (const [id, page] of expected) {
+    const outcome = ledger.atomic_outcomes.find((item) => item.id === id);
+    assert.ok(outcome, id);
+    assert.equal(outcome.source_section_id, "MH2100_Lecture_03:05");
+    assert.equal(outcome.core_source.physical_page, page);
+    assert.equal(outcome.evidence.visualized.length, 0);
+    assert.equal(outcome.evidence.checked.length, 0);
+    assert.equal(outcome.visual_candidate.verified_for_outcome, false);
+  }
+  const F = (x, y, z) => x * x + 2 * y * y + z * z + x * y * z - 17;
+  assert.equal(F(1, 2, 2), 0);
+  assert.deepEqual([2 + 2 * 2, 4 * 2 + 1 * 2, 2 * 2 + 1 * 2], [6, 10, 6]);
+  assert.equal(6 * 1 + 10 * 0 + 6 * -1, 0);
+  assert.equal(1 ** 3 + 0 ** 3 + 0 ** 3 + 6 * 1 * 0 * 0 - 1, 0);
+});
+
+test("implicit route serves the same source blocks and practice through WebMCP and MathML", async () => {
+  const { studyTools } = await vite.ssrLoadModule(
+    "/components/atlas/study-tools.ts",
+  );
+  const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
+  const { learningGuides } = await vite.ssrLoadModule(
+    "/lib/curriculum/learning.ts",
+  );
+  const { StructuredLessonBlockView } = await vite.ssrLoadModule(
+    "/components/atlas/structured-lesson-block.tsx",
+  );
+  const { MathText } = await vite.ssrLoadModule(
+    "/components/atlas/math-text.tsx",
+  );
+  const id = "implicit-functions-and-tangents";
+  const guide = learningGuides[id];
+  const readConcept = studyTools(concepts, () => null).find(
+    (tool) => tool.name === "read_concept",
+  );
+  const response = readConcept.execute({ conceptId: id });
+  const expectedBlocks = [
+    "l03-regular-level-tangent",
+    "l03-tangent-chain-rule",
+    "l03-implicit-function-theorem",
+    "l03-implicit-differentiation",
+    "l03-source-cubic-example",
+    "l03-chart-and-singular-contrast",
+  ];
+  const expectedPractice = [
+    "l03-regular-surface-transfer",
+    "l03-coordinate-failure-transfer",
+  ];
+  for (const blockId of expectedBlocks) {
+    const block = guide.contentBlocks.find((item) => item.id === blockId);
+    assert.ok(block, blockId);
+    assert.ok(
+      response.lesson.contentBlocks.some((item) => item.id === blockId),
+      blockId,
+    );
+    const html = renderToStaticMarkup(
+      React.createElement(StructuredLessonBlockView, { block }),
+    );
+    assert.match(html, /<math\b/u, blockId);
+    assert.doesNotMatch(html, /katex-error/u, blockId);
+  }
+  for (const taskId of expectedPractice) {
+    const task = guide.exercises.find((item) => item.id === taskId);
+    assert.ok(
+      response.lesson.exercises.some((item) => item.id === taskId),
+      taskId,
+    );
+    for (const value of [task.prompt, task.solution, `$${task.solutionTex}$`]) {
+      const html = renderToStaticMarkup(
+        React.createElement(MathText, { text: value }),
+      );
+      assert.match(html, /<math\b/u, taskId);
+      assert.doesNotMatch(html, /katex-error/u, taskId);
+    }
+  }
+  const pages = response.sources
+    .filter((item) => item.sourceId === "MH2100_Lecture_03")
+    .flatMap((item) => item.pages);
+  for (const page of [37, 39, 40, 41, 42, 43, 44])
+    assert.ok(pages.includes(page), `source page ${page}`);
+});
