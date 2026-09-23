@@ -60,6 +60,7 @@ export function readLessonHistory(
 export function lessonUrl(url: URL, id: string, state: LessonHistory): string {
   const next = new URL(url);
   next.hash = id;
+  next.searchParams.delete("graph");
   next.searchParams.set("study", JSON.stringify(state));
   return `${next.pathname}${next.search}${next.hash}`;
 }
