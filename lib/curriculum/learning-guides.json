@@ -16181,7 +16181,212 @@
         "Check the residual dot product."
       ],
       "solutionTex": "\\operatorname{proj}_{(1,1,0)}(3,4,0)=\\left(\\frac72,\\frac72,0\\right)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-position-displacement-statement",
+        "title": "Separate a position vector from a displacement",
+        "text": "A vector is the translation-independent displacement from a tail to a head. Its coordinates are the head coordinates minus the tail coordinates; the position vector is the special arrow whose tail is the origin."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-position-displacement-worked",
+        "title": "Separate a position vector from a displacement",
+        "strategy": "Subtract endpoint coordinates in order, then check that translating both endpoints leaves the difference unchanged.",
+        "setup": "Take $A=(-1,2,0)$ and $B=(3,-2,5)$ in three-dimensional space.",
+        "steps": [
+          {
+            "label": "Subtract head minus tail",
+            "text": "The displacement from A to B is B-A, component by component.",
+            "equation": "\\overrightarrow{AB}=(3-(-1),-2-2,5-0)=(4,-4,5)"
+          },
+          {
+            "label": "Translate the same arrow",
+            "text": "Starting at $C=(2,1,-3)$, the same displacement ends at $C+(4,-4,5)=(6,-3,2)$."
+          }
+        ],
+        "result": "The displacement is $(4,-4,5)$; B itself is the position vector of the head, not the displacement.",
+        "verification": "The endpoint difference is unchanged when both endpoints are translated by the same vector."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-component-algebra-statement",
+        "title": "Compute vector sums and scalar multiples",
+        "text": "Add vectors and multiply by scalars componentwise. The parallelogram construction shows that addition is commutative; the source lists the remaining vector-space laws."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-component-algebra-worked",
+        "title": "Compute vector sums and scalar multiples",
+        "strategy": "Apply each scalar to every component, then add corresponding components.",
+        "setup": "Let $u=(1,-2,3)$ and $v=(4,0,-1)$.",
+        "steps": [
+          {
+            "label": "Scale each vector",
+            "text": "Compute $2u=(2,-4,6)$ and leave v unchanged."
+          },
+          {
+            "label": "Subtract componentwise",
+            "text": "Subtract v from 2u in each coordinate.",
+            "equation": "2u-v=(2-4,-4-0,6-(-1))=(-2,-4,7)"
+          }
+        ],
+        "result": "$2u-v=(-2,-4,7)$.",
+        "verification": "Adding the same vector to both endpoints of a parallelogram gives the same diagonal vector regardless of order."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-dot-angle-statement",
+        "title": "Use the dot product to find length and angle",
+        "text": "For nonzero vectors $u$ and $v$, compute their angle from $u\\cdot v=\\lVert u\\rVert\\lVert v\\rVert\\cos\\theta$; the norm satisfies $\\lVert u\\rVert=\\sqrt{u\\cdot u}$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-dot-angle-worked",
+        "title": "Use the dot product to find length and angle",
+        "strategy": "Compute both squared lengths and the dot product, then solve for the cosine of the angle.",
+        "setup": "Take $u=(1,2,2)$ and $v=(2,1,2)$.",
+        "steps": [
+          {
+            "label": "Find lengths",
+            "text": "Each squared length is $1+4+4=9$, so both lengths are 3."
+          },
+          {
+            "label": "Find the angle cosine",
+            "text": "Their dot product is $2+2+4=8$.",
+            "equation": "\\cos\\theta=\\frac{u\\cdot v}{\\|u\\|\\|v\\|}=\\frac{8}{9}"
+          }
+        ],
+        "result": "The vectors have length 3 and meet at an angle whose cosine is 8/9.",
+        "verification": "The dot product is positive and smaller than the product of the lengths, so the angle is acute and nonzero."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-standard-basis-statement",
+        "title": "Resolve a vector along the standard basis",
+        "text": "In $\\mathbb{R}^{3}$, $e_1=(1,0,0)$, $e_2=(0,1,0)$, and $e_3=(0,0,1)$. Each vector $(a,b,c)$ is $ae_1+be_2+ce_3$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-standard-basis-worked",
+        "title": "Resolve a vector along the standard basis",
+        "strategy": "Read each coordinate as the coefficient of the matching standard basis vector.",
+        "setup": "Resolve $v=(2,-3,4)$ in the standard basis.",
+        "steps": [
+          {
+            "label": "Match coordinate positions",
+            "text": "The coordinates multiply the corresponding basis vectors: $2e_1$, $-3e_2$, and $4e_3$."
+          },
+          {
+            "label": "Reconstruct",
+            "text": "Add the three scaled basis vectors.",
+            "equation": "v=2e_1-3e_2+4e_3=(2,0,0)+(0,-3,0)+(0,0,4)"
+          }
+        ],
+        "result": "$v=2e_1-3e_2+4e_3$.",
+        "verification": "The component sum reconstructs $(2,-3,4)$."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-cartesian-points-statement",
+        "title": "Read Cartesian coordinates in three dimensions",
+        "text": "A point $(x,y,z)$ is located by signed displacements along three perpendicular coordinate axes; the source fixes their orientation with the right-hand rule."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-cartesian-points-worked",
+        "title": "Read Cartesian coordinates in three dimensions",
+        "strategy": "Read each coordinate as a signed displacement from the origin along its named axis.",
+        "setup": "Locate $P=(2,-1,3)$ in the Cartesian coordinate system.",
+        "steps": [
+          {
+            "label": "Read the x-coordinate",
+            "text": "Move 2 units in the positive x direction."
+          },
+          {
+            "label": "Read the y-coordinate",
+            "text": "Move 1 unit opposite the positive y direction."
+          },
+          {
+            "label": "Read the z-coordinate",
+            "text": "Move 3 units in the positive z direction.",
+            "equation": "P=2e_1-e_2+3e_3"
+          }
+        ],
+        "result": "P lies in the octant with signs $(+,-,+)$.",
+        "verification": "The standard-basis combination reconstructs $(2,-1,3)$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture01-position-displacement-transfer",
+        "outcome": "vectors-and-coordinates:lecture01-position-displacement",
+        "kind": "computation",
+        "prompt": "Find the displacement from $P=(2,-1,3)$ to $Q=(-3,4,1)$, then place a copy of that vector with tail $(1,2,0)$.",
+        "hint": "Subtract P from Q, then add the resulting vector to the new tail.",
+        "solution": "$Q-P=(-5,5,-2)$. A translated copy ends at $(1,2,0)+(-5,5,-2)=(-4,7,-2)$.",
+        "solutionTex": "\\overrightarrow{PQ}=(-5,5,-2),\\qquad (1,2,0)+\\overrightarrow{PQ}=(-4,7,-2)",
+        "rubric": [
+          "Subtract tail from head in the correct order.",
+          "Translate by adding the displacement to the new tail."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-component-algebra-transfer",
+        "outcome": "vectors-and-coordinates:lecture01-component-algebra",
+        "kind": "computation",
+        "prompt": "For $u=(-2,1,4)$ and $v=(3,-1,0)$, compute 3u+2v.",
+        "hint": "Scale each vector first; then add matching coordinates.",
+        "solution": "$3u=(-6,3,12)$ and $2v=(6,-2,0)$, so $3u+2v=(0,1,12)$.",
+        "solutionTex": "3(-2,1,4)+2(3,-1,0)=(0,1,12)",
+        "rubric": [
+          "Scale all three coordinates of each vector.",
+          "Add corresponding coordinates."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-dot-angle-transfer",
+        "outcome": "vectors-and-coordinates:lecture01-dot-angle",
+        "kind": "computation",
+        "prompt": "For $u=(1,-1,0)$ and $v=(1,1,1)$, find both lengths and their angle.",
+        "hint": "Use u·v and the square roots of u·u and v·v.",
+        "solution": "$u\\cdot v=0$, $\\lVert u\\rVert=\\sqrt{2}$, and $\\lVert v\\rVert=\\sqrt{3}$; therefore $\\cos\\theta=0$ and $\\theta=\\pi/2$.",
+        "solutionTex": "u\\cdot v=0,\\quad\\|u\\|=\\sqrt2,\\quad\\|v\\|=\\sqrt3,\\quad\\theta=\\frac{\\pi}{2}",
+        "rubric": [
+          "Calculate the dot product.",
+          "Calculate both nonzero vector lengths.",
+          "Use the angle identity."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-standard-basis-transfer",
+        "outcome": "vectors-and-coordinates:lecture01-standard-basis",
+        "kind": "computation",
+        "prompt": "Write $w=(-4,0,7)$ as a linear combination of the standard basis vectors of $\\mathbb{R}^{3}$.",
+        "hint": "Use the coordinates as the three coefficients.",
+        "solution": "$w=-4e_1+0e_2+7e_3$.",
+        "solutionTex": "(-4,0,7)=-4e_1+0e_2+7e_3",
+        "rubric": [
+          "Match each coefficient to its coordinate.",
+          "Include zero for the absent second component."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-cartesian-points-transfer",
+        "outcome": "vectors-and-coordinates:lecture01-cartesian-points",
+        "kind": "interpretation",
+        "prompt": "Describe the signed coordinate moves and octant for $Q=(-3,2,-4)$.",
+        "hint": "The sign of each coordinate determines whether the move follows or opposes the corresponding positive axis.",
+        "solution": "Move 3 units opposite x, 2 units along positive y, and 4 units opposite z. Q lies in the $(-,+,-)$ octant.",
+        "solutionTex": "Q=-3e_1+2e_2-4e_3",
+        "rubric": [
+          "Match each coordinate to its axis.",
+          "Interpret negative coordinates as opposite-direction moves.",
+          "Give the three signs in order."
+        ]
+      }
+    ]
   },
   "curves-and-parametrizations": {
     "prerequisites": ["vectors-and-coordinates", "derivative-definition"],
@@ -16205,7 +16410,50 @@
         "Do not confuse image length with traversal length."
       ],
       "solutionTex": "L_{[0,2\\pi]}=2\\pi,\\qquad L_{[0,4\\pi]}=4\\pi"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-curve-image-statement",
+        "title": "Read a curve as the image of a parametrization",
+        "text": "A parametrization is a continuous map $r:I\\to \\mathbb{R}^{n}$, and its curve is the image $r(I)$. The source's Peano construction is a continuous surjection from $[0,1]$ onto the closed unit square, so this definition allows a space-filling curve."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-curve-image-worked",
+        "title": "Read a curve as the image of a parametrization",
+        "strategy": "Identify the parameter interval, verify component continuity, and describe the full image rather than the formula's appearance.",
+        "setup": "Let $r(t)=(2\\cos t,2\\sin t)$ for $0\\le t\\le2\\pi$.",
+        "steps": [
+          {
+            "label": "Check continuity",
+            "text": "Both trigonometric components are continuous on the closed interval."
+          },
+          {
+            "label": "Describe the image",
+            "text": "The parameter traverses every angle once and returns to its starting point.",
+            "equation": "x^2+y^2=4"
+          }
+        ],
+        "result": "The curve is the circle of radius 2 centered at the origin.",
+        "verification": "The endpoint values agree, and every point at distance 2 from the origin occurs."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture01-curve-image-transfer",
+        "outcome": "curves-and-parametrizations:lecture01-curve-image",
+        "kind": "conceptual",
+        "prompt": "Under the lecture's definition, does the Peano map count as a curve even though its image is the whole closed unit square?",
+        "hint": "Check continuity, interval domain, and the definition of curve's image.",
+        "solution": "Yes. It is a continuous vector-valued map on $[0,1]$, and its range is the closed unit square. The word curve here means the image of such a parametrization, not necessarily a thin one-dimensional trace.",
+        "solutionTex": "r:[0,1]\\to[0,1]^2\\text{ continuous and onto}\\quad\\Longrightarrow\\quad r([0,1])=[0,1]^2",
+        "rubric": [
+          "Use the source definition of curve.",
+          "Distinguish the map's image from the usual visual expectation."
+        ]
+      }
+    ]
   },
   "constructing-curves": {
     "prerequisites": ["curves-and-parametrizations"],
@@ -16229,7 +16477,216 @@
         "Check both endpoints and direction."
       ],
       "solutionTex": "\\mathbf r(t)=(1-t,3t,2-t),\\quad0\\le t\\le1"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-line-parametrization-statement",
+        "title": "Parametrize a line from a point and direction",
+        "text": "A line through $A$ with nonzero direction $v$ has parametrization $r(t)=A+tv$. Replacing $t$ by a continuous surjective scalar clock can preserve the trace while changing its speed and regularity."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-line-parametrization-worked",
+        "title": "Parametrize a line from a point and direction",
+        "strategy": "Subtract the two given points for a direction, then add a real multiple of that direction to one anchor point.",
+        "setup": "The line through $A=(-1,2,0)$ and $B=(3,-2,5)$ has direction $B-A=(4,-4,5)$.",
+        "steps": [
+          {
+            "label": "Write the affine parametrization",
+            "text": "Use A as the anchor point and B-A as direction.",
+            "equation": "r(t)=(-1,2,0)+t(4,-4,5)"
+          },
+          {
+            "label": "Change the clock",
+            "text": "The scalar clock $t^3$ still ranges over all real numbers, so $s(t)=A+t^3(B-A)$ traces the same line."
+          }
+        ],
+        "result": "Both parametrizations have the same image; the second is non-affine and has zero velocity at $t=0$.",
+        "verification": "Because $t\\mapsto t^3$ is onto R, every line parameter value is reached."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-circle-statement",
+        "title": "Parametrize a circle from its center and radius",
+        "text": "A circle with center $(a,b)$ and radius $R>0$ is parametrized by $r(t)=(a+R\\cos t,b+R\\sin t)$ for $0\\le t\\le2\\pi$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-circle-worked",
+        "title": "Parametrize a circle from its center and radius",
+        "strategy": "Use the unit-circle coordinates, scale by the radius, and translate by the center.",
+        "setup": "Parametrize the circle of radius 3 centered at $(-2,1)$.",
+        "steps": [
+          {
+            "label": "Scale the unit circle",
+            "text": "Multiply each unit-circle coordinate by 3."
+          },
+          {
+            "label": "Translate the center",
+            "text": "Add $(-2,1)$ to the scaled coordinates.",
+            "equation": "r(t)=(-2+3\\cos t,1+3\\sin t)"
+          }
+        ],
+        "result": "The image satisfies $(x+2)^2+(y-1)^2=9$ and covers the full circle.",
+        "verification": "The sine-cosine identity gives the circle equation, and one full period covers all angles."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-cycloid-statement",
+        "title": "Build a cycloid from rolling-circle motion",
+        "text": "For a circle of radius $R$ rolling without slipping, the center advances distance $Rt$ while the marked point rotates by angle $t$; with the source's starting convention the cycloid is $r(t)=(R(t-\\sin t),R(1-\\cos t))$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-cycloid-worked",
+        "title": "Build a cycloid from rolling-circle motion",
+        "strategy": "Add the translating center position to the rotating radius vector, using no-slip distance equal to arc length.",
+        "setup": "Let a circle of radius 2 roll to the right from the origin with its marked point initially at ground contact.",
+        "steps": [
+          {
+            "label": "Track the center",
+            "text": "No slipping makes the center travel horizontal distance 2t and remain height 2."
+          },
+          {
+            "label": "Add the rotating offset",
+            "text": "The point relative to its center is $(-2\\sin t,-2\\cos t)$; add it to $(2t,2)$.",
+            "equation": "r(t)=(2t-2\\sin t,2-2\\cos t)"
+          }
+        ],
+        "result": "The marked point follows $r(t)=(2(t-\\sin t),2(1-\\cos t))$.",
+        "verification": "At $t=0$ the point is at ground contact; at $t=2\\pi$ it has advanced one circumference, $4\\pi$, and returned to ground height."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-helix-statement",
+        "title": "Parametrize a helix by angle and height",
+        "text": "The source helix $r(t)=(\\cos t,\\sin t,t)$ winds around the $z$-axis with unit radius while its height equals the rotation parameter."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-helix-worked",
+        "title": "Parametrize a helix by angle and height",
+        "strategy": "Use cosine and sine for the circular projection; choose the third coordinate to encode height.",
+        "setup": "Consider a helix of radius 2 whose height rises 3 units per revolution.",
+        "steps": [
+          {
+            "label": "Keep the circular projection",
+            "text": "The horizontal coordinates are $2\\cos t$ and $2\\sin t$."
+          },
+          {
+            "label": "Set the pitch",
+            "text": "One revolution takes 2pi parameter units, so height must rise 3 in 2pi.",
+            "equation": "r(t)=(2\\cos t,2\\sin t,\\tfrac{3}{2\\pi}t)"
+          }
+        ],
+        "result": "The curve has radius 2 and pitch 3.",
+        "verification": "Increasing t by 2pi returns the same x,y pair and increases z by 3."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-eliminate-parameter-statement",
+        "title": "Eliminate a parameter to find a Cartesian relation",
+        "text": "Eliminate the parameter algebraically, then record whether the resulting equation describes the entire parametrized image or a larger set."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-eliminate-parameter-worked",
+        "title": "Eliminate a parameter to find a Cartesian relation",
+        "strategy": "Use a trigonometric identity or solve a linear combination of component equations for the parameter and remove it.",
+        "setup": "For $r(t)=(t^2+t,t^2-t)$, let $x=t^2+t$ and $y=t^2-t$.",
+        "steps": [
+          {
+            "label": "Take the difference",
+            "text": "Subtract the component equations to isolate the linear term.",
+            "equation": "x-y=2t"
+          },
+          {
+            "label": "Take the sum",
+            "text": "Add the equations to isolate the square term.",
+            "equation": "x+y=2t^2"
+          },
+          {
+            "label": "Eliminate t",
+            "text": "Square the difference and compare it with twice the sum.",
+            "equation": "(x-y)^2=2(x+y)"
+          }
+        ],
+        "result": "Every point on the parametrized curve satisfies $(x-y)^2=2(x+y)$.",
+        "verification": "Substituting the component expressions makes both sides equal $4t^2$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture01-line-parametrization-transfer",
+        "outcome": "constructing-curves:lecture01-line-parametrization",
+        "kind": "computation",
+        "prompt": "Parametrize the line through $C=(2,0,-1)$ and $D=(-1,4,2)$, then give a non-affine parametrization with the same trace.",
+        "hint": "Use D-C, then replace t by $t^3$.",
+        "solution": "A direction is $(-3,4,3)$. The affine parametrization is $C+t(-3,4,3)$; $C+t^3(-3,4,3)$ has the same image and is non-affine.",
+        "solutionTex": "r(t)=(2,0,-1)+t(-3,4,3),\\qquad s(t)=(2,0,-1)+t^3(-3,4,3)",
+        "rubric": [
+          "Use a nonzero direction parallel to the line.",
+          "Anchor the line at a given point.",
+          "Explain why the nonlinear clock preserves the image."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-circle-transfer",
+        "outcome": "constructing-curves:lecture01-circle",
+        "kind": "computation",
+        "prompt": "Give a standard parametrization of the circle with center $(4,-3)$ and radius 2.",
+        "hint": "Translate the radius-2 unit circle.",
+        "solution": "$r(t)=(4+2\\cos t,-3+2\\sin t)$ for $0\\le t\\le2\\pi$.",
+        "solutionTex": "r(t)=(4+2\\cos t,-3+2\\sin t),\\quad0\\le t\\le2\\pi",
+        "rubric": [
+          "Use the correct center.",
+          "Use radius 2 in both coordinates.",
+          "Choose an interval covering one full turn."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-cycloid-transfer",
+        "outcome": "constructing-curves:lecture01-cycloid",
+        "kind": "computation",
+        "prompt": "For a rolling circle of radius $3$ with the same start convention, find the marked point's position at $t=\\pi$.",
+        "hint": "Use the radius-$3$ cycloid formula and $\\sin\\pi=0$, $\\cos\\pi=-1$.",
+        "solution": "$r(\\pi)=(3\\pi,6)$.",
+        "solutionTex": "r(\\pi)=(3(\\pi-0),3(1-(-1)))=(3\\pi,6)",
+        "rubric": [
+          "Use the no-slip cycloid parametrization.",
+          "Evaluate both trigonometric coordinates."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-helix-transfer",
+        "outcome": "constructing-curves:lecture01-helix",
+        "kind": "computation",
+        "prompt": "Parametrize a radius-1 helix that rises 4 units per complete turn.",
+        "hint": "One full turn is a change of 2pi in the angle parameter.",
+        "solution": "$r(t)=(\\cos t,\\sin t,2t/\\pi)$, since one change of $2\\pi$ increases the height by $4$.",
+        "solutionTex": "r(t)=(\\cos t,\\sin t,\\tfrac{2}{\\pi}t),\\quad r(t+2\\pi)-r(t)=(0,0,4)",
+        "rubric": [
+          "Use a unit circle in the horizontal plane.",
+          "Choose a linear height coordinate.",
+          "Check the height change over 2pi."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-eliminate-parameter-transfer",
+        "outcome": "constructing-curves:lecture01-eliminate-parameter",
+        "kind": "computation",
+        "prompt": "Eliminate t from $x=t^2-t$ and $y=t^2+t$.",
+        "hint": "Use $y-x=2t$ and $x+y=2t^2$.",
+        "solution": "Squaring $y-x=2t$ gives $(y-x)^2=4t^2=2(x+y)$.",
+        "solutionTex": "(y-x)^2=2(x+y)",
+        "rubric": [
+          "Obtain a linear expression for t.",
+          "Obtain an expression for $t^2$.",
+          "Substitute without losing equivalence."
+        ]
+      }
+    ]
   },
   "tangents-velocity-and-singularities": {
     "prerequisites": ["curves-and-parametrizations"],
@@ -16253,7 +16710,178 @@
         "Normalize by speed."
       ],
       "solutionTex": "\\mathbf r'(1)=(1,2),\\quad v=\\sqrt5,\\quad\\mathbf T=(1,2)/\\sqrt5"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-tangent-regularity-statement",
+        "title": "Distinguish tangent velocity from regularity",
+        "text": "If the derivative exists, $\\mathbf r'(t_0)=\\lim_{s\\to t_0}\\frac{\\mathbf r(s)-\\mathbf r(t_0)}{s-t_0}$ is the tangent vector. A parametrization is regular at $t_0$ only when it is differentiable there and $\\mathbf r'(t_0)\\ne\\mathbf 0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-tangent-regularity-worked",
+        "title": "Distinguish tangent velocity from regularity",
+        "strategy": "Differentiate the component functions and check both differentiability and whether the resulting vector is zero.",
+        "setup": "Compare $r(t)=(t,t^2)$ with $s(t)=(t^3,t^6)$, which both trace $y=x^2$.",
+        "steps": [
+          {
+            "label": "Differentiate the first clock",
+            "text": "$r'(t)=(1,2t)$, so $r'(0)=(1,0)$ and $r$ is regular at zero."
+          },
+          {
+            "label": "Differentiate the second clock",
+            "text": "$s'(t)=(3t^2,6t^5)$, so $s'(0)=(0,0)$ even though the trace is the same."
+          }
+        ],
+        "result": "Regularity is a property of the parametrization, not just its image.",
+        "verification": "The two clocks have the same image because $t\\mapsto t^3$ is onto, but only the first has nonzero velocity at the vertex."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-motion-statement",
+        "title": "Read velocity, speed, and acceleration from a path",
+        "text": "For a differentiable particle path $\\mathbf r(t)$, velocity is $\\mathbf r'(t)$, speed is $\\lVert\\mathbf r'(t)\\rVert$, and acceleration is $\\mathbf r''(t)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-motion-worked",
+        "title": "Read velocity, speed, and acceleration from a path",
+        "strategy": "Differentiate the position once for velocity, take its Euclidean norm for speed, then differentiate again for acceleration.",
+        "setup": "Let $r(t)=(t^2,3t)$ in the plane.",
+        "steps": [
+          {
+            "label": "Differentiate position",
+            "text": "The velocity is $v(t)=(2t,3)$, so the speed is $\\sqrt{4t^2+9}$."
+          },
+          {
+            "label": "Differentiate velocity",
+            "text": "The acceleration is constant.",
+            "equation": "a(t)=r''(t)=(2,0)"
+          }
+        ],
+        "result": "At $t=1$, $v=(2,3)$, $\\lVert v\\rVert=\\sqrt{13}$, and $a=(2,0)$.",
+        "verification": "The speed is nonnegative and equals the magnitude of the displayed velocity."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-parametric-tangent-line-statement",
+        "title": "Construct a tangent line from a regular parameter",
+        "text": "At a regular parameter $t_0$, the tangent line is $r(t_0)+\\lambda r'(t_0)$. If two parameters reach the same point, compare their tangent vectors separately."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-parametric-tangent-line-worked",
+        "title": "Construct a tangent line from a regular parameter",
+        "strategy": "Evaluate the path and derivative at the parameter, then use the point as anchor and derivative as direction.",
+        "setup": "Let $r(t)=(t^2-1,t^3-t)$ and find the tangent at $t=1$.",
+        "steps": [
+          {
+            "label": "Find the point",
+            "text": "$r(1)=(0,0)$."
+          },
+          {
+            "label": "Find the velocity",
+            "text": "r'$(t)=(2t,3t^2-1)$, so r'$(1)=(2,2)$."
+          },
+          {
+            "label": "Write the line",
+            "text": "Use the point and tangent direction.",
+            "equation": "L(\\lambda)=(0,0)+\\lambda(2,2)"
+          }
+        ],
+        "result": "The tangent line is $y=x$.",
+        "verification": "The derivative is nonzero at $t=1$, so the source's regular-parameter tangent construction applies."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-cusp-statement",
+        "title": "Prove the cusp has a unique tangent despite singular parametrizations",
+        "text": "For the semicubical cusp $x^2=y^3$, a differentiable path through the origin that stays on the curve has both component derivatives zero; this makes every such parametrization singular, although the curve's unique tangent is the y-axis."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-cusp-worked",
+        "title": "Prove the cusp has a unique tangent despite singular parametrizations",
+        "strategy": "Use the curve identity to bound coordinate difference quotients, then distinguish the zero velocity of a parametrization from the geometric tangent line.",
+        "setup": "Let $r(t)=(x(t),y(t))$ lie on $x^2=y^3$ and satisfy $r(t_0)=(0,0)$.",
+        "steps": [
+          {
+            "label": "Force the x derivative to vanish",
+            "text": "For $s\\ne t_0$, $x(s)^2=y(s)^3$. Divide by $(s-t_0)^2$ and factor the $y$-quotient.",
+            "equation": "\\left(\\frac{x(s)}{s-t_0}\\right)^2=\\left(\\frac{y(s)}{s-t_0}\\right)^3(s-t_0)\\to0"
+          },
+          {
+            "label": "Force the y derivative to vanish",
+            "text": "Since $y(s)\\ge0$ and $y(t_0)=0$, differentiability gives a local minimum, hence $y\\prime(t_0)=0$."
+          },
+          {
+            "label": "Identify the geometric tangent",
+            "text": "The source's one-sided parametrization approaches the origin along the y-axis, so the unique tangent line is vertical."
+          }
+        ],
+        "result": "Every differentiable parametrization has r'$(t_0)=(0,0)$, but the cusp's unique tangent is $x=0$.",
+        "verification": "The zero derivative diagnoses a singular parameter; it does not mean that the geometric curve has no tangent."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture01-tangent-regularity-transfer",
+        "outcome": "tangents-velocity-and-singularities:lecture01-tangent-regularity",
+        "kind": "classification",
+        "prompt": "Classify $r(t)=(t^2,t^4)$ at $t=0$ as regular or singular, and give its tangent vector if it exists.",
+        "hint": "Differentiate both components at zero and use the source definition.",
+        "solution": "r'$(t)=(2t,4t^3)$, hence r'$(0)=(0,0)$; the parametrization is singular at zero.",
+        "solutionTex": "r'(0)=(0,0)\\quad\\Longrightarrow\\quad\\text{singular at }0",
+        "rubric": [
+          "Check differentiability.",
+          "Evaluate the derivative at the parameter.",
+          "Apply the nonzero-velocity regularity condition."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-motion-transfer",
+        "outcome": "tangents-velocity-and-singularities:lecture01-motion",
+        "kind": "computation",
+        "prompt": "For $r(t)=(3\\cos t,3\\sin t,2t)$, find velocity, speed, and acceleration at $t=0$.",
+        "hint": "Differentiate coordinatewise; the speed is the norm of velocity.",
+        "solution": "$v(0)=(0,3,2)$, $\\lVert v(0)\\rVert=\\sqrt{13}$, and $a(0)=(-3,0,0)$.",
+        "solutionTex": "v(0)=(0,3,2),\\quad\\|v(0)\\|=\\sqrt{13},\\quad a(0)=(-3,0,0)",
+        "rubric": [
+          "Differentiate the position twice as needed.",
+          "Take the norm for speed.",
+          "Evaluate at $t=0$."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-parametric-tangent-line-transfer",
+        "outcome": "tangents-velocity-and-singularities:lecture01-parametric-tangent-line",
+        "kind": "computation",
+        "prompt": "For $r(t)=(t^2,t^3)$, find the tangent line at $t=2$.",
+        "hint": "Use $r(2)$ and $r'(2)$ as the point and direction.",
+        "solution": "$r(2)=(4,8)$ and $r'(2)=(4,12)$, so the tangent is $(4,8)+\\lambda(4,12)$, equivalently $y-8=3(x-4)$.",
+        "solutionTex": "(x,y)=(4,8)+\\lambda(4,12),\\qquad y-8=3(x-4)",
+        "rubric": [
+          "Evaluate the curve at the parameter.",
+          "Differentiate and evaluate.",
+          "Use the derivative as the line direction."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-cusp-transfer",
+        "outcome": "tangents-velocity-and-singularities:lecture01-cusp",
+        "kind": "proof",
+        "prompt": "For the cusp $x^2=y^5$, show that every differentiable parametrization through the origin has zero velocity there, and identify its tangent line.",
+        "hint": "The curve forces $y\\ge0$ and $x=\\pm y^{5/2}$. Use differentiability of $y(t)$ and compare $\\frac{x(t)}{t-t_0}$.",
+        "solution": "Because $y\\ge0$ and $y(t_0)=0$, differentiability makes $y'(t_0)=0$. Also $|x(t)|=y(t)^{5/2}$, so $\\left|\\frac{x(t)}{t-t_0}\\right|=\\left|\\frac{y(t)}{t-t_0}\\right|y(t)^{3/2}\\to0$. The first factor tends to $0$ and the second tends to $0$. Thus $x'(t_0)=0$ too. The unique tangent is the $y$-axis.",
+        "solutionTex": "y'(t_0)=0,\\quad|x(t)|=y(t)^{5/2},\\quad\\left|\\frac{x(t)}{t-t_0}\\right|=\\left|\\frac{y(t)}{t-t_0}\\right|y(t)^{3/2}\\to0",
+        "rubric": [
+          "Use the local minimum of y.",
+          "Use $x^2=y^5$ to control the x difference quotient.",
+          "Separate singular velocity from the geometric tangent."
+        ]
+      }
+    ]
   },
   "surfaces-and-level-sets": {
     "prerequisites": ["vectors-and-coordinates", "function-shapes"],
@@ -16310,6 +16938,84 @@
         ],
         "result": "Increasing the level shrinks the concentric contours toward the top of the hemisphere.",
         "verification": "Substituting the radius into the original square root gives $\\sqrt{k^2}=k$ because $k\\ge0$."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-graph-surface-statement",
+        "title": "Interpret a graph as a height over its domain",
+        "text": "For $f:D\\subseteq\\mathbb{R}^{2}\\to\\mathbb{R}$, its graph is the set of points $(x,y,z)$ with $(x,y)\\in D$ and $z=f(x,y)$; the domain is the vertical projection of the graph."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-graph-surface-worked",
+        "title": "Interpret a graph as a height over its domain",
+        "strategy": "Keep the planar input in D and set the vertical coordinate equal to the function value.",
+        "setup": "Let $f(x,y)=x+2y$ on $D=[-1,1]\\times[0,2]$.",
+        "steps": [
+          {
+            "label": "Write the graph condition",
+            "text": "The point lies over an input in D and has height $f(x,y)$."
+          },
+          {
+            "label": "Evaluate a sample height",
+            "text": "At $(1,2)$, the graph point is $(1,2,5)$.",
+            "equation": "(1,2,f(1,2))=(1,2,5)"
+          }
+        ],
+        "result": "The graph is the planar patch $z=x+2y$ above D.",
+        "verification": "Projecting the graph vertically to the xy-plane recovers exactly D."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-level-set-statement",
+        "title": "Define a level curve as a domain-restricted preimage",
+        "text": "A level curve at height $k$ is the preimage $f^{-1}(\\{k\\})$ within the function's domain; it is the planar trace of the graph's intersection with $z=k$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-level-set-worked",
+        "title": "Define a level curve as a domain-restricted preimage",
+        "strategy": "Set $f(x,y)=k$, solve in the plane, and retain only solutions in the stated domain.",
+        "setup": "For $f(x,y)=\\sqrt{36-x^2-y^2}$ on the disk $x^2+y^2\\leq 36$, find the level at $k=4$.",
+        "steps": [
+          {
+            "label": "Set the height",
+            "text": "Solve $\\sqrt{36-x^2-y^2}=4$."
+          },
+          {
+            "label": "Square with the domain in view",
+            "text": "The resulting radius is $2\\sqrt{5}$, which lies inside the disk.",
+            "equation": "x^2+y^2=20"
+          }
+        ],
+        "result": "The level curve is the circle $x^2+y^2=20$.",
+        "verification": "Every point on that circle has nonnegative height 4 and lies in the stated domain."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture01-contour-interval-statement",
+        "title": "Read contour intervals from a topographic map",
+        "text": "A contour interval is the constant vertical difference between adjacent labeled contours; it measures elevation change, not horizontal spacing on the map."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture01-contour-interval-worked",
+        "title": "Read contour intervals from a topographic map",
+        "strategy": "Read two adjacent contour labels, subtract their elevations, and check another adjacent pair for the same increment.",
+        "setup": "On a map, successive contours are labeled 120 m, 140 m, and 160 m.",
+        "steps": [
+          {
+            "label": "Subtract adjacent elevations",
+            "text": "The first adjacent difference is $140-120=20$ metres."
+          },
+          {
+            "label": "Check the next interval",
+            "text": "The next difference is $160-140=20$ metres, so the interval is consistent.",
+            "equation": "\\Delta h=140-120=160-140=20\\text{ m}"
+          }
+        ],
+        "result": "The contour interval is $20\\,\\text{m}$, regardless of how close the contour lines appear on the page.",
+        "verification": "Contour spacing represents horizontal slope; adjacent labels determine vertical interval."
       }
     ],
     "exercises": [
@@ -16339,6 +17045,48 @@
           "Check the attainable height range before squaring.",
           "Give the two nondegenerate radii and the singleton top level.",
           "Reject the negative level using the original expression."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-graph-surface-transfer",
+        "outcome": "surfaces-and-level-sets:lecture01-graph-surface",
+        "kind": "conceptual",
+        "prompt": "Describe the graph of $g(x,y)=4-x+y$ over $D=\\{(x,y):x^2+y^2\\le1\\}$, and give the graph point above $(0,1)$.",
+        "hint": "Keep the disk restriction and compute the vertical coordinate.",
+        "solution": "It is the portion of the plane $z=4-x+y$ above the closed unit disk. The point above $(0,1)$ is $(0,1,5)$.",
+        "solutionTex": "z=4-x+y,\\quad x^2+y^2\\le1,\\quad(0,1,g(0,1))=(0,1,5)",
+        "rubric": [
+          "State the domain restriction.",
+          "Set z equal to the function.",
+          "Evaluate the requested height."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-level-set-transfer",
+        "outcome": "surfaces-and-level-sets:lecture01-level-set",
+        "kind": "computation",
+        "prompt": "For $h(x,y)=\\sqrt{25-x^2-y^2}$, identify the level curve at height $3$ and state its radius.",
+        "hint": "Set $h=3$ and respect the nonnegative square-root branch.",
+        "solution": "$x^2+y^2=16$, a circle of radius 4.",
+        "solutionTex": "\\sqrt{25-x^2-y^2}=3\\iff x^2+y^2=16",
+        "rubric": [
+          "Set the function value equal to the level.",
+          "Square correctly.",
+          "State the radius and domain compatibility."
+        ]
+      },
+      {
+        "id": "mh2100-lecture01-contour-interval-transfer",
+        "outcome": "surfaces-and-level-sets:lecture01-contour-interval",
+        "kind": "computation",
+        "prompt": "A topographic map labels four successive contours 250 m, 275 m, 300 m, and 325 m. What is the contour interval?",
+        "hint": "Subtract two neighboring labels and verify the same increment.",
+        "solution": "Each adjacent difference is 25 m, so the contour interval is 25 m.",
+        "solutionTex": "275-250=300-275=325-300=25\\text{ m}",
+        "rubric": [
+          "Use adjacent contour labels.",
+          "Check that the increment is constant.",
+          "Report vertical units."
         ]
       }
     ],
@@ -16391,6 +17139,90 @@
         ],
         "result": "$S$ is neither open nor closed in $\\mathbb R^2$.",
         "verification": "The verdict uses the ambient Euclidean plane and treats openness and closedness as separate questions."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-euclidean-distance-statement",
+        "title": "Compute Euclidean distance and use its triangle inequality",
+        "text": "The Pythagorean distance between $x,y\\in\\mathbb{R}^n$ is $\\lVert x-y\\rVert_2$. It is symmetric, vanishes exactly when $x=y$, and satisfies $\\operatorname{dist}(x,z)\\le\\operatorname{dist}(x,y)+\\operatorname{dist}(y,z)$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-euclidean-distance-worked",
+        "title": "Compute Euclidean distance and use its triangle inequality",
+        "strategy": "Subtract coordinate vectors, take the Euclidean norm, and use the triangle inequality when bounding a distance through an intermediate point.",
+        "setup": "Let $p=(1,2)$ and $q=(-2,6)$.",
+        "steps": [
+          {
+            "label": "Subtract",
+            "text": "$q-p=(-3,4)$."
+          },
+          {
+            "label": "Take the norm",
+            "text": "The distance is the hypotenuse length.",
+            "equation": "\\operatorname{dist}(p,q)=\\sqrt{(-3)^2+4^2}=5"
+          },
+          {
+            "label": "Bound through a waypoint",
+            "text": "For any a, the direct distance is at most the two-leg route.",
+            "equation": "\\operatorname{dist}(p,q)\\le\\operatorname{dist}(p,a)+\\operatorname{dist}(a,q)"
+          }
+        ],
+        "result": "$\\operatorname{dist}(p,q)=5$.",
+        "verification": "Reversing p and q negates the difference vector but leaves its norm unchanged."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-metric-nonnegative-statement",
+        "title": "Derive nonnegativity from the other distance axioms",
+        "text": "If $d(x,x)=0$, $d(x,y)=d(y,x)$, and $d(x,z)\\leq d(x,y)+d(y,z)$, then $0=d(x,x)\\leq 2d(x,y)$, so $d(x,y)\\geq 0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-metric-nonnegative-worked",
+        "title": "Derive nonnegativity from the other distance axioms",
+        "strategy": "Apply the triangle inequality to the route from x back to x through y, then use symmetry.",
+        "setup": "Assume d satisfies the three source axioms, without assuming nonnegativity.",
+        "steps": [
+          {
+            "label": "Use the triangle inequality",
+            "text": "Apply it to the triple x,y,x.",
+            "equation": "0=d(x,x)\\le d(x,y)+d(y,x)"
+          },
+          {
+            "label": "Use symmetry",
+            "text": "Replace the second term by the first.",
+            "equation": "0\\le2d(x,y)"
+          }
+        ],
+        "result": "$d(x,y)\\geq 0$ for all x,y.",
+        "verification": "The proof derives the missing sign property from the stated axioms instead of assuming it."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-limit-point-statement",
+        "title": "Test whether a point is a limit point",
+        "text": "A point $p$ is a limit point of $S\\subseteq\\mathbb{R}^n$ exactly when every $\\varepsilon>0$ contains some $x\\in S$ with $0<\\operatorname{dist}(x,p)<\\varepsilon$; $p$ need not itself belong to $S$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-limit-point-worked",
+        "title": "Test whether a point is a limit point",
+        "strategy": "To prove accumulation, produce distinct points of S arbitrarily close; to disprove it, find one positive-radius punctured ball with no point of S.",
+        "setup": "Let $S=\\{(1/n,0):n\\in\\mathbb{N}\\}$ and $p=(0,0)$.",
+        "steps": [
+          {
+            "label": "Choose an arbitrary radius",
+            "text": "Given $\\varepsilon>0$, choose $n>1/\\varepsilon$."
+          },
+          {
+            "label": "Check a punctured point",
+            "text": "(1/n,0) belongs to S, differs from p, and is closer than $\\varepsilon$.",
+            "equation": "0<\\operatorname{dist}((1/n,0),(0,0))=1/n<\\varepsilon"
+          }
+        ],
+        "result": "$(0,0)$ is a limit point of S although it is not in S.",
+        "verification": "The witness depends on the arbitrary radius and never equals the target point."
       }
     ],
     "exercises": [
@@ -16406,6 +17238,47 @@
           "Use an included boundary point to refute openness.",
           "Use an excluded limit point to refute closedness.",
           "State the ambient space."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-euclidean-distance-transfer",
+        "outcome": "distance-and-neighborhoods:lecture02-euclidean-distance",
+        "kind": "computation",
+        "prompt": "Find the Euclidean distance from $a=(0,-1,2)$ to $b=(4,2,-2)$.",
+        "hint": "Subtract coordinatewise and take the square root of the sum of squared differences.",
+        "solution": "$b-a=(4,3,-4)$, so $\\operatorname{dist}(a,b)=\\sqrt{16+9+16}=\\sqrt{41}$.",
+        "solutionTex": "\\operatorname{dist}(a,b)=\\sqrt{4^2+3^2+(-4)^2}=\\sqrt{41}",
+        "rubric": [
+          "Subtract in matching coordinates.",
+          "Sum the squares.",
+          "Take the nonnegative square root."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-metric-nonnegative-transfer",
+        "outcome": "distance-and-neighborhoods:lecture02-metric-nonnegative",
+        "kind": "proof",
+        "prompt": "Suppose $\\rho$ on a set satisfies $\\rho(a,a)=0$, symmetry, and the triangle inequality. Prove $\\rho(a,b)\\geq 0$.",
+        "hint": "Apply the triangle inequality to $(a,b,a)$.",
+        "solution": "$0=\\rho(a,a)\\leq \\rho(a,b)+\\rho(b,a)=2\\rho(a,b)$. Dividing by 2 gives $\\rho(a,b)\\geq 0$.",
+        "solutionTex": "0=\\rho(a,a)\\le\\rho(a,b)+\\rho(b,a)=2\\rho(a,b)",
+        "rubric": [
+          "Choose the repeated endpoint in the triangle inequality.",
+          "Use symmetry.",
+          "Conclude nonnegativity."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-limit-point-transfer",
+        "outcome": "distance-and-neighborhoods:lecture02-limit-point",
+        "kind": "classification",
+        "prompt": "Is $p=(1,1)$ a limit point of $S={(1,1),(2,2)}$ in $\\mathbb{R}^{2}$?",
+        "hint": "Choose a radius smaller than the distance to the other member of S.",
+        "solution": "No. The other point is at distance $\\sqrt{2}$, so the punctured ball of radius $\\sqrt{2}/2$ around $p$ contains no member of $S$.",
+        "solutionTex": "\\operatorname{dist}((1,1),(2,2))=\\sqrt2",
+        "rubric": [
+          "Use the punctured-neighborhood condition.",
+          "Exhibit one radius that fails it."
         ]
       }
     ],
@@ -16455,7 +17328,51 @@
         "Use a radius independent of direction."
       ],
       "solutionTex": "\\delta=\\sqrt\\varepsilon,\\quad 0<\\sqrt{x^2+y^2}<\\delta\\implies x^2+y^2<\\varepsilon"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-restricted-domain-statement",
+        "title": "State a limit on a restricted domain",
+        "text": "For $S\\subseteq\\operatorname{Dom}(f)$ and a limit point $p$ of $S$, $\\lim_{x\\to p,\\,x\\in S}f(x)=L$ means every $\\varepsilon>0$ admits $\\delta>0$ such that $x\\in S$ and $0<\\operatorname{dist}(x,p)<\\delta$ imply $|f(x)-L|<\\varepsilon$. The value $f(p)$ is irrelevant."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-restricted-domain-worked",
+        "title": "State a limit on a restricted domain",
+        "strategy": "Start with an arbitrary output tolerance $\\varepsilon$, choose an input radius $\\delta$ that forces the output bound, and restrict every quantifier to admissible domain points other than p.",
+        "setup": "Let $S=\\mathbb{R}^{2}\\setminus\\{(0,0)\\}$ and $f(x,y)=x^2+y^2$; consider the limit at $(0,0)$.",
+        "steps": [
+          {
+            "label": "Translate the output error",
+            "text": "The target limit is 0, so $|f(x,y)-0|=x^2+y^2=\\operatorname{dist}((x,y),(0,0))^2$."
+          },
+          {
+            "label": "Choose $\\delta$",
+            "text": "Given $\\varepsilon>0$, choose $\\delta=\\sqrt{\\varepsilon}$. Every admissible point within $\\delta$ has output error below $\\varepsilon$.",
+            "equation": "0<\\sqrt{x^2+y^2}<\\delta=\\sqrt\\varepsilon\\Longrightarrow|f(x,y)|<\\varepsilon"
+          }
+        ],
+        "result": "The restricted limit is 0, even though f is not defined at the target point.",
+        "verification": "Only points in S distinct from the origin are tested."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture02-restricted-domain-transfer",
+        "outcome": "epsilon-delta-limits:lecture02-restricted-domain",
+        "kind": "proof",
+        "prompt": "Using the $\\varepsilon$–$\\delta$ definition, show that $f(x,y)=3x^2+3y^2$ tends to 0 as $(x,y)$ tends to the origin through the punctured plane.",
+        "hint": "Bound the function by three times the square of the distance.",
+        "solution": "Given $\\varepsilon>0$, take $\\delta=\\sqrt{\\varepsilon/3}$. If $0<\\sqrt{x^2+y^2}<\\delta$, then $|f(x,y)|=3(x^2+y^2)<3\\delta^2=\\varepsilon$.",
+        "solutionTex": "\\delta=\\sqrt{\\varepsilon/3},\\quad |f(x,y)|=3(x^2+y^2)<3\\delta^2=\\varepsilon",
+        "rubric": [
+          "Use an arbitrary $\\varepsilon>0$.",
+          "Choose a positive $\\delta$ depending on $\\varepsilon$.",
+          "Verify the implication for every admissible input."
+        ]
+      }
+    ]
   },
   "different-paths-different-limits": {
     "prerequisites": ["epsilon-delta-limits"],
@@ -16479,7 +17396,98 @@
         "State why distinct path limits contradict a common limit."
       ],
       "solutionTex": "f(t,0)=1,\\quad f(0,t)=0\\quad(t\\ne0)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-two-restrictions-statement",
+        "title": "Disprove a joint limit with two restricted limits",
+        "text": "If two restrictions of $f$ to curves in its domain approach the same point but have different finite limits, the full multivariable limit cannot exist; restrictions can disprove a limit but cannot establish one."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-two-restrictions-worked",
+        "title": "Disprove a joint limit with two restricted limits",
+        "strategy": "Check that both curves contain admissible points near the target, evaluate each one-variable restriction, and compare the limits.",
+        "setup": "Let $f(x,y)=y/(x+y-1)$ on $x+y\\ne 1$ and approach $(1,0)$.",
+        "steps": [
+          {
+            "label": "Restrict to $x=1$",
+            "text": "For $y\\ne 0$, $f(1,y)=1$, so the restricted limit is 1."
+          },
+          {
+            "label": "Restrict to $y=0$",
+            "text": "For $x\\ne 1$, $f(x,0)=0$, so the restricted limit is 0."
+          },
+          {
+            "label": "Conclude",
+            "text": "Both paths stay in the domain near the point, but their limits disagree."
+          }
+        ],
+        "result": "The joint limit at $(1,0)$ does not exist.",
+        "verification": "The denominator is nonzero along each punctured path used."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-equal-axes-fail-statement",
+        "title": "Recognize when matching axis limits are inconclusive",
+        "text": "Agreement on the coordinate axes is only a finite path test; it does not establish a joint limit when another admissible path gives a different value."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-equal-axes-fail-worked",
+        "title": "Recognize when matching axis limits are inconclusive",
+        "strategy": "Evaluate the coordinate restrictions first, then test a diagonal path before making any claim about the full limit.",
+        "setup": "For $f(x,y)=xy/(x^2+y^2)$, define the domain as the punctured plane and approach $(0,0)$.",
+        "steps": [
+          {
+            "label": "Check both axes",
+            "text": "On $y=0$ and on $x=0$, the numerator vanishes and the denominator is positive away from the origin."
+          },
+          {
+            "label": "Check the diagonal",
+            "text": "Substitute $y=x$.",
+            "equation": "f(x,x)=\\frac{x^2}{2x^2}=\\frac12\\quad(x\\ne0)"
+          },
+          {
+            "label": "Compare",
+            "text": "The zero axis limits and diagonal limit disagree."
+          }
+        ],
+        "result": "The limit does not exist; checking just the two coordinate axes would miss the obstruction.",
+        "verification": "All three restricted paths remain in the punctured domain."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture02-two-restrictions-transfer",
+        "outcome": "different-paths-different-limits:lecture02-two-restrictions",
+        "kind": "counterexample",
+        "prompt": "Test whether $g(x,y)=x/(x+y)$ has a limit at $(0,0)$ by comparing $y=0$ and $y=x$.",
+        "hint": "Use the punctured paths $(t,0)$ and $(t,t)$.",
+        "solution": "Along $y=0$ the value is 1; along $y=x$ it is 1/2. Both paths avoid the origin and lie in the domain, so the joint limit does not exist.",
+        "solutionTex": "g(t,0)=1,\\qquad g(t,t)=\\tfrac12\\quad(t\\ne0)",
+        "rubric": [
+          "Choose two admissible paths to the same point.",
+          "Compute each restricted limit.",
+          "Use their difference to conclude nonexistence."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-equal-axes-fail-transfer",
+        "outcome": "different-paths-different-limits:lecture02-equal-axes-fail",
+        "kind": "counterexample",
+        "prompt": "For $h(x,y)=x^2/(x^2+y^2)$, compare the two axis limits and the diagonal limit at the origin.",
+        "hint": "Evaluate $h(t,0)$, $h(0,t)$, and $h(t,t)$ for $t\\ne 0$.",
+        "solution": "The x-axis gives 1, the y-axis gives 0, and the diagonal gives 1/2; hence the joint limit does not exist.",
+        "solutionTex": "h(t,0)=1,\\quad h(0,t)=0,\\quad h(t,t)=\\tfrac12",
+        "rubric": [
+          "Compute all three restrictions.",
+          "State which tests contradict a common limit.",
+          "Do not infer existence from selected paths."
+        ]
+      }
+    ]
   },
   "curved-paths-hide-obstructions": {
     "prerequisites": ["different-paths-different-limits"],
@@ -16503,7 +17511,55 @@
         "Cancel only away from the puncture."
       ],
       "solutionTex": "f(x,kx^2)=\\frac{k}{1+k^2}\\quad(x\\ne0)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-nonlinear-path-statement",
+        "title": "Use a nonlinear path when straight paths agree",
+        "text": "Straight-line restrictions can all agree and still miss a joint-limit obstruction; substituting a curved path can expose different asymptotic scaling."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-nonlinear-path-worked",
+        "title": "Use a nonlinear path when straight paths agree",
+        "strategy": "Choose a curve whose coordinate orders match the powers in the denominator, then simplify before taking the limit.",
+        "setup": "Let $f(x,y)=\\frac{xy^2}{x^2+y^4}$ on $\\mathbb{R}^2\\setminus\\{(0,0)\\}$.",
+        "steps": [
+          {
+            "label": "Test a line",
+            "text": "On $y=mx$, the numerator is $m^2x^3$ and the denominator is $x^2(1+m^4x^2)$, so the limit is 0."
+          },
+          {
+            "label": "Match the powers",
+            "text": "On $x=y^2$, numerator and denominator both equal $y^4$.",
+            "equation": "f(y^2,y)=\\frac{y^4}{y^4+y^4}=\\frac12\\quad(y\\ne0)"
+          },
+          {
+            "label": "Conclude",
+            "text": "The curved-path limit differs from the axis and line limits."
+          }
+        ],
+        "result": "The joint limit does not exist.",
+        "verification": "The path $x=y^2$ is punctured and admissible for every nonzero y."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture02-nonlinear-path-transfer",
+        "outcome": "curved-paths-hide-obstructions:lecture02-nonlinear-path",
+        "kind": "counterexample",
+        "prompt": "For $q(x,y)=x^2y/(x^4+y^2)$, find an approach path that disproves a limit at the origin after checking the coordinate axes.",
+        "hint": "Balance $x^4$ and $y^2$ by taking $y=x^2$.",
+        "solution": "Both axes give 0. Along $y=x^2$, $q(x,x^2)=x^4/(x^4+x^4)=1/2$, so the joint limit does not exist.",
+        "solutionTex": "q(x,0)=q(0,y)=0,\\qquad q(x,x^2)=\\tfrac12",
+        "rubric": [
+          "Check the coordinate paths.",
+          "Choose a curve balancing the denominator terms.",
+          "Compare the restricted limits."
+        ]
+      }
+    ]
   },
   "squeeze-and-continuity": {
     "prerequisites": ["epsilon-delta-limits"],
@@ -16527,7 +17583,348 @@
         "Match the extension value to the limit."
       ],
       "solutionTex": "\\frac{|xy|}{\\sqrt{x^2+y^2}}\\le\\frac{\\sqrt{x^2+y^2}}2\\longrightarrow0"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-limit-laws-statement",
+        "title": "Apply limit laws with their hypotheses",
+        "text": "If $f(x,y)\\to A$ and $g(x,y)\\to B$ as $(x,y)\\to p$, sums, scalar multiples, and products have the corresponding limits; a quotient law additionally requires $B\\ne0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-limit-laws-worked",
+        "title": "Apply limit laws with their hypotheses",
+        "strategy": "Find component limits first, apply the law to numerator and denominator, and verify the denominator's limiting value is nonzero.",
+        "setup": "For $f(x,y)=\\frac{\\sin(\\pi x)+\\cos(\\pi y)}{x^2+y^2}$, evaluate the limit as $(x,y)\\to(1,1)$.",
+        "steps": [
+          {
+            "label": "Evaluate the numerator limit",
+            "text": "Continuity of sine and cosine gives $\\sin\\pi+\\cos\\pi=-1$."
+          },
+          {
+            "label": "Evaluate the denominator limit",
+            "text": "The denominator tends to $1+1=2$, which is nonzero."
+          },
+          {
+            "label": "Apply the quotient law",
+            "text": "Divide the two limits.",
+            "equation": "\\lim_{(x,y)\\to(1,1)}f(x,y)=-\\frac12"
+          }
+        ],
+        "result": "The limit is -1/2.",
+        "verification": "The quotient theorem applies because the denominator limit is 2."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-full-domain-squeeze-statement",
+        "title": "Use a bound valid in a full punctured neighborhood",
+        "text": "To prove a multivariable limit by squeezing, the inequalities must hold for every admissible input sufficiently near the target, not just along selected paths."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-full-domain-squeeze-worked",
+        "title": "Use a bound valid in a full punctured neighborhood",
+        "strategy": "Bound the absolute value using a nonnegative denominator comparison, then show the bound tends to zero in every direction.",
+        "setup": "For $f(x,y)=\\frac{3x^2y}{x^2+y^2}$ on the punctured plane, find the limit as $(x,y)\\to(0,0)$.",
+        "steps": [
+          {
+            "label": "Bound the fraction",
+            "text": "Since $x^2\\le x^2+y^2$, for every nonzero $(x,y)$ the absolute value is bounded by $3|y|$.",
+            "equation": "0\\le\\left|\\frac{3x^2y}{x^2+y^2}\\right|\\le3|y|"
+          },
+          {
+            "label": "Take the limit of the bound",
+            "text": "Also $|y|\\le\\sqrt{x^2+y^2}$, so the bound tends to zero with the full Euclidean distance."
+          }
+        ],
+        "result": "$\\lim_{(x,y)\\to(0,0)}f(x,y)=0$.",
+        "verification": "The bound is valid everywhere in the punctured plane."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-vector-limit-components-statement",
+        "title": "Compute vector limits component by component",
+        "text": "A vector-valued limit exists exactly when each component has a limit, and its value is the vector of those component limits."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-vector-limit-components-worked",
+        "title": "Compute vector limits component by component",
+        "strategy": "Separate the coordinate functions, evaluate each one-variable limit under the stated domain restriction, and combine the results.",
+        "setup": "For $x>0$, let $F(x)=\\left(x^x,\\frac{\\cos x-1}{x^2}\\right)$ and let $x\\to0^+$.",
+        "steps": [
+          {
+            "label": "Find the first component",
+            "text": "Write $x^x=\\exp(x\\ln x)$. Since $x\\ln x\\to0^-$, the first component tends to $1$."
+          },
+          {
+            "label": "Find the second component",
+            "text": "The standard cosine limit, or two applications of L'Hôpital's rule, gives $-\\frac12$."
+          },
+          {
+            "label": "Combine component limits",
+            "text": "Use the componentwise characterization.",
+            "equation": "\\lim_{x\\to0^+}F(x)=(1,-\\tfrac12)"
+          }
+        ],
+        "result": "The vector limit is (1,-1/2).",
+        "verification": "The domain is $x>0$, and both coordinate limits use the same right-hand approach."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-scalar-continuity-statement",
+        "title": "Check continuity using the domain and limit value",
+        "text": "Continuity at $p$ requires $p\\in\\operatorname{Dom}(f)$. If $p$ is a limit point of the domain, then $f$ is continuous at $p$ exactly when $\\lim_{x\\to p}f(x)=f(p)$; isolated domain points are automatic."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-scalar-continuity-worked",
+        "title": "Check continuity using the domain and limit value",
+        "strategy": "First check that the point belongs to the domain. At an accumulation point compare the limit with the assigned function value; at an isolated point no approaching domain points exist.",
+        "setup": "Define $f(x)=x^2$ for $x\\ne 0$ and $f(0)=1$.",
+        "steps": [
+          {
+            "label": "Find the limit",
+            "text": "The punctured values approach zero: $\\lim_{x\\to0}x^2=0$."
+          },
+          {
+            "label": "Compare with the assigned value",
+            "text": "Since $f(0)=1$, the limit does not equal the value."
+          }
+        ],
+        "result": "$f$ is not continuous at $0$.",
+        "verification": "The point belongs to the domain and is a limit point; failure is exactly the mismatch with $f(0)$."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-continuity-closure-statement",
+        "title": "Use continuity closure rules on the correct domain",
+        "text": "Sums, scalar multiples, products, and quotients with nonzero denominator preserve continuity; a rational expression is continuous only at points in its domain."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-continuity-closure-worked",
+        "title": "Use continuity closure rules on the correct domain",
+        "strategy": "Decompose a formula into continuous pieces, check each input's domain, then apply closure rules in order.",
+        "setup": "Consider $h(x,y)=e^{xy}+\\frac{x}{y}$ on $\\mathbb{R}\\times(\\mathbb{R}\\setminus\\{0\\})$.",
+        "steps": [
+          {
+            "label": "Check the domain",
+            "text": "The exponential term is defined everywhere, but $x/y$ requires $y\\ne0$."
+          },
+          {
+            "label": "Apply composition and quotient rules",
+            "text": "The map $(x,y)\\mapsto xy$ is polynomial, $\\exp$ is continuous, and $x/y$ is rational on $y\\ne0$."
+          },
+          {
+            "label": "Combine",
+            "text": "The sum is continuous throughout the stated domain."
+          }
+        ],
+        "result": "$h$ is continuous at every point with $y\\ne0$.",
+        "verification": "No continuity claim is made on the excluded line $y=0$."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-piecewise-squeeze-statement",
+        "title": "Prove continuity of a piecewise extension by squeezing",
+        "text": "A piecewise formula can be continuous at its special point even when the displayed quotient is undefined there; prove the limit through a bound valid on the punctured domain and match the assigned value."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-piecewise-squeeze-worked",
+        "title": "Prove continuity of a piecewise extension by squeezing",
+        "strategy": "Compare the numerator with the denominator, obtain a simple coordinate bound, and let the full distance tend to zero.",
+        "setup": "Let $f(x,y)=x^4/(x^2+y^2)$ off the origin and $f(0,0)=0$.",
+        "steps": [
+          {
+            "label": "Bound the quotient",
+            "text": "Since $x^2/(x^2+y^2)\\leq 1$, the magnitude is at most $x^2$.",
+            "equation": "0\\le\\left|\\frac{x^4}{x^2+y^2}\\right|\\le x^2"
+          },
+          {
+            "label": "Take the joint limit",
+            "text": "Because $x^2\\leq x^2+y^2$, the bound tends to zero as $(x,y)$ approaches the origin."
+          },
+          {
+            "label": "Match the value",
+            "text": "The limit equals the assigned value $f(0,0)=0$."
+          }
+        ],
+        "result": "The piecewise function is continuous at the origin.",
+        "verification": "The estimate applies to every nonzero point, not just coordinate paths."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-composition-continuity-statement",
+        "title": "Check the range condition before composing continuous maps",
+        "text": "If $f$ is continuous at $p$, $g$ is continuous at $f(p)$, and $f$ maps a neighborhood of $p$ into $\\operatorname{Dom}(g)$, then $g\\circ f$ is continuous at $p$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-composition-continuity-worked",
+        "title": "Check the range condition before composing continuous maps",
+        "strategy": "Identify the inner map's image and domain, then apply continuity first to the inner function and next to the outer function at its attained value.",
+        "setup": "The source example is $f(x,y,z)=e^{x^2yz}$, the exponential composed with $p(x,y,z)=x^2yz$.",
+        "steps": [
+          {
+            "label": "Check the inner map",
+            "text": "$p$ is a polynomial, so it is continuous on $\\mathbb{R}^3$."
+          },
+          {
+            "label": "Check the outer map",
+            "text": "The exponential is continuous for every real input, and $\\operatorname{Range}(p)\\subseteq\\mathbb{R}$."
+          },
+          {
+            "label": "Compose",
+            "text": "The continuity theorem applies at every point."
+          }
+        ],
+        "result": "f is continuous throughout $\\mathbb{R}^{3}$.",
+        "verification": "The full range of the inner polynomial lies in the exponential's domain."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-vector-continuity-statement",
+        "title": "Test vector continuity componentwise",
+        "text": "A map $F:D\\subseteq\\mathbb{R}^m\\to\\mathbb{R}^n$ is continuous at $p$ exactly when each coordinate function $F_i$ is continuous there; vector-valued sums and compositions inherit continuity under their domain conditions."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-vector-continuity-worked",
+        "title": "Test vector continuity componentwise",
+        "strategy": "Write the output in coordinates, check each scalar component at the same input, and combine the component conclusions.",
+        "setup": "Let $F(x,y)=(x^2+y,e^{xy})$ on $\\mathbb{R}^{2}$.",
+        "steps": [
+          {
+            "label": "Check the first component",
+            "text": "$x^2+y$ is a polynomial, hence continuous everywhere."
+          },
+          {
+            "label": "Check the second component",
+            "text": "The map $(x,y)\\mapsto xy$ is polynomial and $\\exp$ is continuous, so $e^{xy}$ is continuous everywhere."
+          },
+          {
+            "label": "Combine",
+            "text": "Both coordinates are continuous, so F is continuous as an $\\mathbb{R}^{2}-valued$ map."
+          }
+        ],
+        "result": "$F$ is continuous on $\\mathbb{R}^2$.",
+        "verification": "Both component limits equal their component values at every point."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture02-limit-laws-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-limit-laws",
+        "kind": "computation",
+        "prompt": "Evaluate $\\lim_{(x,y)\\to(0,1)}\\frac{x^2+\\cos(\\pi y)}{2x^2+y^2}$.",
+        "hint": "Use continuity and check the denominator limit before dividing.",
+        "solution": "The numerator tends to -1 and the denominator tends to 1, so the limit is -1.",
+        "solutionTex": "\\frac{0^2+\\cos\\pi}{2(0)^2+1^2}=-1",
+        "rubric": [
+          "Evaluate numerator and denominator limits.",
+          "Check the denominator limit is nonzero.",
+          "Apply the quotient law."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-full-domain-squeeze-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-full-domain-squeeze",
+        "kind": "proof",
+        "prompt": "Evaluate $\\lim_{(x,y)\\to(0,0)}\\frac{xy^2}{x^2+y^2}$.",
+        "hint": "Bound the absolute value by $|y|$, then use $|y|\\le\\sqrt{x^2+y^2}$.",
+        "solution": "For $(x,y)\\ne(0,0)$, $0\\le\\left|\\frac{xy^2}{x^2+y^2}\\right|\\le|y|\\le\\sqrt{x^2+y^2}$. The bound tends to zero, so the limit is $0$.",
+        "solutionTex": "0\\le\\left|\\frac{xy^2}{x^2+y^2}\\right|\\le|y|\\le\\sqrt{x^2+y^2}\\to0",
+        "rubric": [
+          "State a bound valid near the target in all directions.",
+          "Show the bound tends to zero.",
+          "Invoke squeezing."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-vector-limit-components-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-vector-limit-components",
+        "kind": "computation",
+        "prompt": "Let $G(t)=(t^2+1,\\sin(t)/t)$ for $t\\ne0$. Find $\\lim_{t\\to0}G(t)$.",
+        "hint": "Evaluate each coordinate limit separately.",
+        "solution": "The first component tends to 1 and the second to 1, so the vector limit is $(1,1)$.",
+        "solutionTex": "\\lim_{t\\to0}G(t)=(1,1)",
+        "rubric": [
+          "Find both scalar component limits.",
+          "Place them in the correct coordinate order."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-scalar-continuity-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-scalar-continuity",
+        "kind": "classification",
+        "prompt": "Let $D=\\{0\\}\\cup[2,3]$ and define $h(0)=7$, $h(x)=x$ for $2\\le x\\le3$. Is $h$ continuous at $0$ relative to $D$?",
+        "hint": "Check whether 0 is a limit point of D.",
+        "solution": "Yes. The point $0$ is isolated in $D$, so for sufficiently small $\\delta$ there is no distinct domain point close enough to test in the epsilon-delta implication.",
+        "solutionTex": "0\\notin\\overline{D\\setminus\\{0\\}}",
+        "rubric": [
+          "Use continuity relative to the stated domain.",
+          "Check the isolated-point condition rather than substituting a nearby formula."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-continuity-closure-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-continuity-closure",
+        "kind": "classification",
+        "prompt": "Where is $r(x,y)=\\frac{x^2+y^2}{x-y}$ continuous?",
+        "hint": "A rational function is continuous where its denominator does not vanish.",
+        "solution": "$r$ is continuous on $\\{(x,y):x\\ne y\\}$; the diagonal $x=y$ is outside its domain.",
+        "solutionTex": "\\operatorname{Dom}(r)=\\{(x,y)\\in\\mathbb R^2:x\\ne y\\}",
+        "rubric": [
+          "Identify the denominator restriction.",
+          "State continuity only on the domain."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-piecewise-squeeze-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-piecewise-squeeze",
+        "kind": "proof",
+        "prompt": "Extend $g(x,y)=y^4/(x^2+y^2)$ by $g(0,0)=0$. Prove continuity at the origin or find a counterexample.",
+        "hint": "Use $y^2/(x^2+y^2)\\leq 1$ to compare |g| with $y^2$.",
+        "solution": "Away from zero, $0\\leq |g|=y^4/(x^2+y^2)\\leq y^2\\leq x^2+y^2$. The upper bound tends to zero, matching $g(0,0)$, so g is continuous at the origin.",
+        "solutionTex": "0\\le\\frac{y^4}{x^2+y^2}\\le y^2\\le x^2+y^2\\to0",
+        "rubric": [
+          "Use a bound valid off the origin.",
+          "Show it tends to zero in all directions.",
+          "Match the piecewise value."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-composition-continuity-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-composition-continuity",
+        "kind": "classification",
+        "prompt": "Let $f(x,y)=x^2+y$ and $g(u)=\\sqrt{u}$. At which points can continuity of $g\\circ f$ be claimed from the composition theorem?",
+        "hint": "The outer square root is continuous on $[0,\\infty)$; check $f(x,y)$ is in that domain.",
+        "solution": "The composition is defined and continuous where $x^2+y\\ge0$. There $f$ is continuous and its value lies in the domain of the continuous square-root function.",
+        "solutionTex": "\\operatorname{Dom}(g\\circ f)=\\{(x,y):x^2+y\\ge0\\}",
+        "rubric": [
+          "Check the inner function's value.",
+          "Respect the outer function's domain.",
+          "Apply continuity only on the composition domain."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-vector-continuity-transfer",
+        "outcome": "squeeze-and-continuity:lecture02-vector-continuity",
+        "kind": "classification",
+        "prompt": "Is $G(x,y)=(\\sin(x+y),1/(1+x^2+y^2))$ continuous on $\\mathbb{R}^{2}$?",
+        "hint": "Check the two component functions and the denominator.",
+        "solution": "Yes. The sine of a polynomial is continuous, and the denominator $1+x^2+y^2$ is strictly positive, so the rational component is continuous everywhere.",
+        "solutionTex": "1+x^2+y^2\\ge1>0",
+        "rubric": [
+          "Check each coordinate function.",
+          "Verify the denominator never vanishes.",
+          "Use the componentwise criterion."
+        ]
+      }
+    ]
   },
   "limits-at-infinity": {
     "prerequisites": ["epsilon-delta-limits"],
@@ -16551,7 +17948,141 @@
         "Give a single $R$ for every escape route."
       ],
       "solutionTex": "\\frac{|x|}{1+x^2+y^2}\\le\\frac r{1+r^2}\\le\\frac1r\\longrightarrow0"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-all-directions-statement",
+        "title": "Interpret a limit at infinity in every direction",
+        "text": "$F(x)\\to L$ as $\\lVert x\\rVert\\to\\infty$ means that for every $\\varepsilon>0$ some $N>0$ makes $\\lVert F(x)-L\\rVert<\\varepsilon$ whenever $x\\in\\operatorname{Dom}(F)$ and $\\lVert x\\rVert>N$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-all-directions-worked",
+        "title": "Interpret a limit at infinity in every direction",
+        "strategy": "Use a bound depending only on the radius ||x||, so it covers every direction at once.",
+        "setup": "For $F(x,y)=\\left(\\frac{1}{\\sqrt{1+x^2+y^2}},0\\right)$, test the limit as $\\lVert(x,y)\\rVert\\to\\infty$.",
+        "steps": [
+          {
+            "label": "Write the output distance",
+            "text": "The distance to $(0,0)$ is the first component."
+          },
+          {
+            "label": "Choose a radius threshold",
+            "text": "If $\\sqrt{x^2+y^2}>N$, then the component is below $1/\\sqrt{1+N^2}$."
+          },
+          {
+            "label": "Meet $\\varepsilon$",
+            "text": "Choose $N$ large enough that this upper bound is below $\\varepsilon$."
+          }
+        ],
+        "result": "$F(x,y)\\to(0,0)$ as $\\lVert(x,y)\\rVert\\to\\infty$.",
+        "verification": "The estimate depends only on the norm and is valid in every direction."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-iterated-not-joint-statement",
+        "title": "Do not replace a joint limit at infinity with iterated limits",
+        "text": "An iterated limit fixes one coordinate before sending the other to infinity; it does not control all paths where $\\lVert(x,y)\\rVert\\to\\infty$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-iterated-not-joint-worked",
+        "title": "Do not replace a joint limit at infinity with iterated limits",
+        "strategy": "Evaluate the displayed iterated limit, then test admissible paths whose full distance grows without bound.",
+        "setup": "Let $f(x,y)=e^{-(x+y)}$ on $\\mathbb{R}^2$.",
+        "steps": [
+          {
+            "label": "Compute the iterated limit",
+            "text": "For fixed $x$, the inner limit $\\lim_{y\\to\\infty}f(x,y)$ is zero, so the subsequent $x$-limit is also zero."
+          },
+          {
+            "label": "Restrict to the positive x-axis",
+            "text": "With $y=0$ and $x\\to\\infty$, $f(x,0)=e^{-x}\\to0$."
+          },
+          {
+            "label": "Restrict to the negative x-axis",
+            "text": "With $y=0$ and $x\\to-\\infty$, $f(x,0)=e^{-x}\\to\\infty$."
+          }
+        ],
+        "result": "The joint limit at infinity does not exist, despite the iterated limit being zero.",
+        "verification": "Both axis paths have norm tending to infinity and produce incompatible behavior."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-vector-squeeze-statement",
+        "title": "Prove a vector limit at infinity with a radial squeeze",
+        "text": "To prove a vector limit at infinity, bound each varying component by a function of $\\lVert x\\rVert$ that tends to zero, then combine the coordinate limits."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-vector-squeeze-worked",
+        "title": "Prove a vector limit at infinity with a radial squeeze",
+        "strategy": "Use $|x|\\leq \\sqrt{x^2+y^2}$, divide by the quadratic denominator, and apply a radial bound.",
+        "setup": "Let $F(x,y)=\\left(\\frac{x}{x^2+y^2},-1\\right)$ on the punctured plane.",
+        "steps": [
+          {
+            "label": "Bound the first component",
+            "text": "The numerator magnitude is at most the radius.",
+            "equation": "0\\le\\left|\\frac{x}{x^2+y^2}\\right|\\le\\frac1{\\sqrt{x^2+y^2}}"
+          },
+          {
+            "label": "Take the component limits",
+            "text": "The bound tends to zero, while the second component remains $-1$."
+          },
+          {
+            "label": "Combine",
+            "text": "Use the componentwise vector-limit criterion."
+          }
+        ],
+        "result": "$F(x,y)\\to(0,-1)$ as $\\lVert(x,y)\\rVert\\to\\infty$.",
+        "verification": "The first component bound is uniform in angle."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "mh2100-lecture02-all-directions-transfer",
+        "outcome": "limits-at-infinity:lecture02-all-directions",
+        "kind": "proof",
+        "prompt": "Show that $H(x,y)=\\left(0,\\frac{1}{1+x^2+y^2}\\right)$ tends to $(0,0)$ at infinity.",
+        "hint": "Bound the second component by $1/\\sqrt{x^2+y^2}$ outside a large ball.",
+        "solution": "For $r=\\sqrt{x^2+y^2}>0$, $\\lVert H(x,y)\\rVert=1/(1+r^2)\\le1/r$. Given $\\varepsilon>0$, choose $N>1/\\varepsilon$; then $r>N$ implies $\\lVert H\\rVert<\\varepsilon$.",
+        "solutionTex": "\\|H(x,y)\\|=\\frac1{1+r^2}\\le\\frac1r<\\varepsilon\\quad(r>N>1/\\varepsilon)",
+        "rubric": [
+          "State an arbitrary $\\varepsilon$.",
+          "Choose a radius N.",
+          "Make the bound independent of direction."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-iterated-not-joint-transfer",
+        "outcome": "limits-at-infinity:lecture02-iterated-not-joint",
+        "kind": "counterexample",
+        "prompt": "For $q(x,y)=e^{x-y}$, compare the iterated limit with the restrictions $y=x$ and $y=0$ as $\\lVert(x,y)\\rVert\\to\\infty$.",
+        "hint": "The line $y=x$ keeps the exponent fixed while its distance from the origin grows.",
+        "solution": "Along $y=x$, $q=1$, while along $y=0$ with $x\\to\\infty$, $q\\to\\infty$. These path behaviors preclude a finite joint limit; an iterated calculation cannot override them.",
+        "solutionTex": "q(t,t)=1,\\qquad q(t,0)=e^t\\to\\infty",
+        "rubric": [
+          "Use paths whose norms tend to infinity.",
+          "Compute incompatible restrictions.",
+          "Do not infer joint convergence from an iterated limit."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-vector-squeeze-transfer",
+        "outcome": "limits-at-infinity:lecture02-vector-squeeze",
+        "kind": "computation",
+        "prompt": "Find the vector limit at infinity of $G(x,y)=\\left(\\frac{2y}{x^2+y^2},4\\right)$.",
+        "hint": "Use $|y|\\le\\sqrt{x^2+y^2}$ for the first coordinate.",
+        "solution": "The first component has magnitude at most $2/\\sqrt{x^2+y^2}$, which tends to zero; the second remains $4$. The vector limit is $(0,4)$.",
+        "solutionTex": "\\left|\\frac{2y}{x^2+y^2}\\right|\\le\\frac2{\\sqrt{x^2+y^2}}\\to0",
+        "rubric": [
+          "Bound the varying component radially.",
+          "Evaluate the constant component.",
+          "State the vector limit."
+        ]
+      }
+    ]
   },
   "partial-derivatives-as-slices": {
     "prerequisites": ["derivative-definition", "surfaces-and-level-sets"],
@@ -16599,6 +18130,48 @@
           "Give an admissible diagonal path.",
           "Do not infer continuity from two partials."
         ]
+      },
+      {
+        "id": "mh2100-lecture02-special-point-partials-transfer",
+        "outcome": "partial-derivatives-as-slices:lecture02-special-point-partials",
+        "kind": "computation",
+        "prompt": "Let $g(x,y)=y^3/(x^2+y^2)$ off the origin and $g(0,0)=0$. Find $g_x(0,0)$ and $g_y(0,0)$.",
+        "hint": "Restrict first to $y=0$, then to $x=0$.",
+        "solution": "$g(h,0)=0$, so $g_x(0,0)=0$. For $k\\ne 0$, $g(0,k)=k$, so $g_y(0,0)=1$.",
+        "solutionTex": "g_x(0,0)=0,\\qquad g_y(0,0)=1",
+        "rubric": [
+          "Use the piecewise value at the origin.",
+          "Compute both coordinate slices.",
+          "Apply the one-variable derivative limit."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-slice-tangent-plane-transfer",
+        "outcome": "partial-derivatives-as-slices:lecture02-slice-tangent-plane",
+        "kind": "computation",
+        "prompt": "For $h(x,y)=x^2+2xy+y^2$ at $(1,0)$, find the two coordinate-slice slopes and write the tangent plane to its graph.",
+        "hint": "Compute $h_x$ and $h_y$, then use $z-h(a,b)=h_x(a,b)(x-a)+h_y(a,b)(y-b)$.",
+        "solution": "$h(1,0)=1$, $h_x=2x+2y$ gives 2, and $h_y=2x+2y$ gives 2. Thus $z-1=2(x-1)+2y$, or $z=2x+2y-1$.",
+        "solutionTex": "z-1=2(x-1)+2y",
+        "rubric": [
+          "Compute the two slice slopes.",
+          "Use the graph point's height.",
+          "Construct the plane with the correct base coordinates."
+        ]
+      },
+      {
+        "id": "mh2100-lecture02-compute-partials-transfer",
+        "outcome": "partial-derivatives-as-slices:lecture02-compute-partials",
+        "kind": "computation",
+        "prompt": "For $g(x,y)=x^2y+1/y$ on $y\\ne0$, calculate $g_x$ and $g_y$.",
+        "hint": "Hold y fixed for $g_x$ and x fixed for $g_y$.",
+        "solution": "$g_x=2xy$. For the $y$ derivative, $x^2$ is constant and the derivative of $y^{-1}$ is $-y^{-2}$, so $g_y=x^2-1/y^2$.",
+        "solutionTex": "g_x=2xy,\\qquad g_y=x^2-\\frac1{y^2}\\quad(y\\ne0)",
+        "rubric": [
+          "Hold the other variable fixed in each derivative.",
+          "Differentiate the reciprocal term correctly.",
+          "Preserve $y\\ne 0$."
+        ]
       }
     ],
     "sections": [
@@ -16620,7 +18193,97 @@
         "Evaluate after differentiating."
       ],
       "solutionTex": "f_x(2,0)=1,\\qquad f_y(2,0)=2"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-special-point-partials-statement",
+        "title": "Compute partials at a piecewise point from the actual slices",
+        "text": "At a piecewise point, compute a partial derivative from the actual one-variable slice through that point; do not substitute the point into a derivative formula obtained only off the point."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-special-point-partials-worked",
+        "title": "Compute partials at a piecewise point from the actual slices",
+        "strategy": "Restrict to one coordinate axis at a time, simplify the resulting one-variable function, then take its derivative at the base value.",
+        "setup": "Let $f(x,y)=x^3/(x^2+y^2)$ off the origin and $f(0,0)=0$.",
+        "steps": [
+          {
+            "label": "Take the horizontal slice",
+            "text": "For $x\\ne 0$, $f(x,0)=x$; the x-partial at the origin is the derivative of this slice.",
+            "equation": "f_x(0,0)=\\lim_{h\\to0}\\frac{f(h,0)-f(0,0)}h=1"
+          },
+          {
+            "label": "Take the vertical slice",
+            "text": "For $y\\ne 0$, $f(0,y)=0$.",
+            "equation": "f_y(0,0)=\\lim_{k\\to0}\\frac{f(0,k)-f(0,0)}k=0"
+          }
+        ],
+        "result": "$f_x(0,0)=1$ and $f_y(0,0)=0$.",
+        "verification": "The calculation uses the point's assigned value and the function's restrictions, not an off-origin quotient rule."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-slice-tangent-plane-statement",
+        "title": "Interpret partial derivatives as slopes of coordinate slices",
+        "text": "At a graph point $(a,b,f(a,b))$, the two coordinate-slice tangent lines have slopes $f_x(a,b)$ and $f_y(a,b)$; when the graph has a tangent plane, those slice directions lie in that plane."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-slice-tangent-plane-worked",
+        "title": "Interpret partial derivatives as slopes of coordinate slices",
+        "strategy": "Differentiate the two one-variable slices at the fixed point, then use their tangent direction vectors to write the plane they span with the vertical graph point.",
+        "setup": "For $f(x,y)=x^2+xy+2y^2$ at $(1,1)$, the graph point is $(1,1,4)$.",
+        "steps": [
+          {
+            "label": "Find the slice slopes",
+            "text": "$f_x=2x+y$ and $f_y=x+4y$, so at $(1,1)$ the slopes are 3 and 5."
+          },
+          {
+            "label": "Form the lifted tangent directions",
+            "text": "The x-slice direction is $(1,0,3)$, and the y-slice direction is $(0,1,5)$."
+          },
+          {
+            "label": "Write their plane",
+            "text": "The two lifted directions span the graph's tangent plane.",
+            "equation": "z-4=3(x-1)+5(y-1)"
+          }
+        ],
+        "result": "The tangent plane is $z=3x+5y-4$.",
+        "verification": "Both slice directions satisfy the plane equation and have the stated coordinate slopes."
+      },
+      {
+        "kind": "strategy",
+        "id": "mh2100-lecture02-compute-partials-statement",
+        "title": "Compute partial derivatives on the stated domain",
+        "text": "Compute each partial by differentiating in its named variable while the other coordinate is fixed; retain the function's domain restrictions."
+      },
+      {
+        "kind": "worked-example",
+        "id": "mh2100-lecture02-compute-partials-worked",
+        "title": "Compute partial derivatives on the stated domain",
+        "strategy": "Treat the other coordinate as a constant, differentiate each term, and check that the formula is valid on the stated domain.",
+        "setup": "For $f(x,y)=e^{xy}+x/y$ on $y\\ne0$, find both partial derivatives.",
+        "steps": [
+          {
+            "label": "Differentiate in x",
+            "text": "Hold $y$ fixed. The chain rule gives $ye^{xy}$, and $x/y$ contributes $1/y$.",
+            "equation": "f_x(x,y)=ye^{xy}+\\frac1y"
+          },
+          {
+            "label": "Differentiate in y",
+            "text": "Hold $x$ fixed. The exponential contributes $xe^{xy}$, and $x/y$ contributes $-x/y^2$.",
+            "equation": "f_y(x,y)=xe^{xy}-\\frac{x}{y^2}"
+          },
+          {
+            "label": "Check the domain",
+            "text": "Both formulas are valid only where $y\\ne0$, the original function's domain."
+          }
+        ],
+        "result": "$f_x=ye^{xy}+1/y$ and $f_y=xe^{xy}-x/y^2$ for $y\\ne0$.",
+        "verification": "For the source example $f(x,y)=x^2-y^2$, the same rule gives $f_x=2x$ and $f_y=-2y$; at $(0,-2)$ the rates are $0$ and $4$."
+      }
+    ]
   },
   "cross-products-and-planes": {
     "prerequisites": ["vectors-and-coordinates"],
