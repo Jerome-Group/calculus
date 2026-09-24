@@ -7222,8 +7222,8 @@
         "implicit-functions-and-tangents",
         "directional-derivatives-and-gradient"
       ],
-      "outcome_status": "source_pages_37_to_44_reviewed_implicit_mapping_added_with_broader_chain_gap",
-      "gap": "Implicit curve tangent (pages 37–39), surface tangent (40), local graph theorem (41–42), and implicit differentiation/example (43–44) have four page-checked outcomes with guide reasoning and independent transfer. The theorem proof is explicitly omitted by the source. Other chain-rule subskills on pages 27–36 remain only partially mapped; scene alignment and learner performance remain unverified.",
+      "outcome_status": "source_pages_27_to_44_reviewed_chain_and_implicit_mapping_added",
+      "gap": "Chain-rule pages 27–36 now distinguish path composition, two-input dependency sums, general matrix dimensions, and special cancellation. Implicit pages 37–44 have four page-checked outcomes. Scene alignment and learner performance remain unverified.",
       "evidence": {
         "named": [],
         "stated": [],
@@ -7239,7 +7239,11 @@
         "implicit-functions-and-tangents:l03-curve-tangent",
         "implicit-functions-and-tangents:l03-surface-tangent",
         "implicit-functions-and-tangents:l03-local-graph-choice",
-        "implicit-functions-and-tangents:l03-implicit-derivatives"
+        "implicit-functions-and-tangents:l03-implicit-derivatives",
+        "multivariable-chain-rule:l03-path-worked",
+        "multivariable-chain-rule:l03-two-input",
+        "multivariable-chain-rule:l03-matrix-dimensions",
+        "multivariable-chain-rule:l03-balanced-cancellation"
       ],
       "coverage_decision": "partial_atomic_mapping"
     },
@@ -56545,6 +56549,378 @@
         "practiced": "solution checked; learner performance unverified",
         "visualized": "candidate scene not rendered or aligned to outcome",
         "checked": "no independent learner response or outcome validation recorded"
+      }
+    },
+    {
+      "id": "multivariable-chain-rule:l03-path-worked",
+      "concept_id": "multivariable-chain-rule",
+      "outcome": "Differentiate a scalar composition along a nonconstant path, evaluating both outer partials at the moving intermediate point.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 29,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against manifest SHA.",
+          "claim_observed": "The lecture works f(u,v)=u²eᵛ along G(t)=(t²−1,sin t), with both dependency products contributing."
+        },
+        "page_heading": "Example 1"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "claim": "The stable route names the source skill.",
+            "method": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-two-input]",
+            "claim": "The cited guide block states the source skill and usable assumptions.",
+            "method": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-source-path-exponential]",
+            "claim": "The cited guide block derives or computes this skill.",
+            "method": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-two-input-transfer]",
+            "claim": "The changed-data exercise applies the skill with solution and rubric.",
+            "method": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "chainNonconstant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide computation, and changed-data exercise inspected. Exact scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "basis": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-two-input]",
+            "basis": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-source-path-exponential]",
+            "basis": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-two-input-transfer]",
+            "basis": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with guide statement and independently calculated examples and transfer exercises.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions and page claim checked",
+        "worked": "calculus and dimensions checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Candidate scene present; exact outcome alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "multivariable-chain-rule:l03-two-input",
+      "concept_id": "multivariable-chain-rule",
+      "outcome": "Differentiate a scalar composition with two independent inputs by summing every path into each partial derivative.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 30,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against manifest SHA.",
+          "claim_observed": "The (2,2) theorem states two composite partials as sums of outer partials times inner partials, under total differentiability."
+        },
+        "page_heading": "The Multivariable Chain Rule (the (2, 2) Version)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "claim": "The stable route names the source skill.",
+            "method": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-two-input]",
+            "claim": "The cited guide block states the source skill and usable assumptions.",
+            "method": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-two-input-composition]",
+            "claim": "The cited guide block derives or computes this skill.",
+            "method": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-two-input-transfer]",
+            "claim": "The changed-data exercise applies the skill with solution and rubric.",
+            "method": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "chainNonconstant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide computation, and changed-data exercise inspected. Exact scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "basis": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-two-input]",
+            "basis": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-two-input-composition]",
+            "basis": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-two-input-transfer]",
+            "basis": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with guide statement and independently calculated examples and transfer exercises.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions and page claim checked",
+        "worked": "calculus and dimensions checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Candidate scene present; exact outcome alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "multivariable-chain-rule:l03-matrix-dimensions",
+      "concept_id": "multivariable-chain-rule",
+      "outcome": "Compose compatible derivative maps in the general chain rule, with Df(G(p)) on the left of DG(p).",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 33,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [33],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against manifest SHA.",
+          "claim_observed": "The general chain-rule theorem composes derivatives of maps through an intermediate Euclidean space."
+        },
+        "page_heading": "The Multivariable Chain Rule (the (m, n) Version)"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "claim": "The stable route names the source skill.",
+            "method": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-matrix-shapes]",
+            "claim": "The cited guide block states the source skill and usable assumptions.",
+            "method": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-matrix-shapes]",
+            "claim": "The cited guide block derives or computes this skill.",
+            "method": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-general-dimensions-transfer]",
+            "claim": "The changed-data exercise applies the skill with solution and rubric.",
+            "method": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "chainNonconstant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide computation, and changed-data exercise inspected. Exact scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "basis": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-matrix-shapes]",
+            "basis": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-matrix-shapes]",
+            "basis": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-general-dimensions-transfer]",
+            "basis": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with guide statement and independently calculated examples and transfer exercises.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions and page claim checked",
+        "worked": "calculus and dimensions checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Candidate scene present; exact outcome alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
+      }
+    },
+    {
+      "id": "multivariable-chain-rule:l03-balanced-cancellation",
+      "concept_id": "multivariable-chain-rule",
+      "outcome": "Identify a shared inner expression with opposite signs and derive the resulting weighted partial-derivative cancellation.",
+      "core_source": {
+        "id": "MH2100_Lecture_03",
+        "sha256": "d7f2a92a540030d59333f129ca38a9909e8255c4192f4d069329875b4955ecbb",
+        "inspection": "Authenticated Drive PDF readable text separated by physical page markers; canonical source SHA matches the manifest.",
+        "physical_page": 36,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [36],
+          "method": "Connected Drive canonical PDF text inspected by physical page marker and checked against manifest SHA.",
+          "claim_observed": "The lecture example f(x²−y²,y²−x²) derives yH_x+xH_y=0 from its special dependency pattern."
+        },
+        "page_heading": "Example 2"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "claim": "The stable route names the source skill.",
+            "method": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-two-input]",
+            "claim": "The cited guide block states the source skill and usable assumptions.",
+            "method": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-source-balanced-dependency]",
+            "claim": "The cited guide block derives or computes this skill.",
+            "method": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-balanced-cancellation-transfer]",
+            "claim": "The changed-data exercise applies the skill with solution and rubric.",
+            "method": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "chainNonconstant",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "source_page_and_cited_guide_inspected",
+      "gap": "Page statement, guide computation, and changed-data exercise inspected. Exact scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH2100_Lecture_03:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/concepts.json#multivariable-chain-rule.title",
+            "basis": "Compared the catalog title with the source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-chain-two-input]",
+            "basis": "Checked the statement against canonical physical-page text."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.contentBlocks[l03-source-balanced-dependency]",
+            "basis": "Independently checked the calculus and dimensions."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#multivariable-chain-rule.exercises[l03-balanced-cancellation-transfer]",
+            "basis": "Independently checked the changed-data result; learner performance is unverified."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared canonical physical-page text with guide statement and independently calculated examples and transfer exercises.",
+        "named": "distinct skill named by stable route",
+        "stated": "conditions and page claim checked",
+        "worked": "calculus and dimensions checked",
+        "practiced": "changed-data solution checked; learner performance unverified",
+        "visualized": "Candidate scene present; exact outcome alignment unverified.",
+        "checked": "No independent learner response or mastery evidence."
       }
     }
   ]

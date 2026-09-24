@@ -16530,6 +16530,48 @@
           "Include both coordinate rates.",
           "Check the composed expression and assumptions."
         ]
+      },
+      {
+        "id": "l03-two-input-transfer",
+        "outcome": "Compose a scalar function with two independent inputs using both Jacobian columns.",
+        "kind": "computational",
+        "prompt": "Let $f(u,v)=u^2+3v$ and $G(s,t)=(s^2+t,s-t^2)$. Find both partial derivatives of $f\\circ G$ at $(1,2)$ by the chain rule and check directly.",
+        "hint": "First compute $G(1,2)$, then multiply the row $Df(G(1,2))$ by the two columns of $DG(1,2)$.",
+        "solution": "$G(1,2)=(3,-3)$, $Df=(6,3)$ there, and $DG=\\begin{pmatrix}2&1\\\\1&-4\\end{pmatrix}$. Thus $D(f\\circ G)=(15,-6)$. Directly $f(G(s,t))=(s^2+t)^2+3(s-t^2)$, with the same partials.",
+        "solutionTex": "D(f\\circ G)(1,2)=(6,3)\\begin{pmatrix}2&1\\\\1&-4\\end{pmatrix}=(15,-6)",
+        "rubric": [
+          "Evaluate the outer derivative at the intermediate point.",
+          "Keep both independent-variable columns.",
+          "Check the answer by direct differentiation."
+        ]
+      },
+      {
+        "id": "l03-general-dimensions-transfer",
+        "outcome": "Multiply compatible derivative matrices for a three-coordinate intermediate map.",
+        "kind": "computational",
+        "prompt": "Let $G(s,t)=(s+t,s^2,t^2)$ and $f(u,v,w)=(u+v,vw)$. State the sizes of $Df$, $DG$, and $D(f\\circ G)$, then compute the composite Jacobian at $(1,2)$.",
+        "hint": "$G(1,2)=(3,1,4)$. The outer derivative is a $2\\times3$ matrix and the inner derivative is $3\\times2$.",
+        "solution": "At the intermediate point $Df=\\begin{pmatrix}1&1&0\\\\0&4&1\\end{pmatrix}$ and $DG=\\begin{pmatrix}1&1\\\\2&0\\\\0&4\\end{pmatrix}$. Their product is the $2\\times2$ composite Jacobian $\\begin{pmatrix}3&1\\\\8&4\\end{pmatrix}$. Directly $f(G(s,t))=(s+t+s^2,s^2t^2)$, confirming each entry.",
+        "solutionTex": "Df(G(1,2))DG(1,2)=\\begin{pmatrix}1&1&0\\\\0&4&1\\end{pmatrix}\\begin{pmatrix}1&1\\\\2&0\\\\0&4\\end{pmatrix}=\\begin{pmatrix}3&1\\\\8&4\\end{pmatrix}",
+        "rubric": [
+          "State all three matrix shapes.",
+          "Multiply outer by inner in the correct order.",
+          "Verify at least one output row directly."
+        ]
+      },
+      {
+        "id": "l03-balanced-cancellation-transfer",
+        "outcome": "Derive a weighted partial-derivative identity from a changed shared inner expression.",
+        "kind": "proof",
+        "prompt": "Let $K(x,y)=f(x^2-4y^2,4y^2-x^2)$ for any totally differentiable $f$. Prove $4yK_x+xK_y=0$ and explain why it does not say every chain-rule calculation cancels.",
+        "hint": "Set $q=x^2-4y^2$ and write $K=f(q,-q)$.",
+        "solution": "If $A=f_u(q,-q)-f_v(q,-q)$, then $K_x=2xA$ and $K_y=-8yA$. Therefore $4yK_x+xK_y=8xyA-8xyA=0$. Cancellation is forced by the opposite inner coordinates; a generic inner map has independent contributions.",
+        "solutionTex": "K_x=2xA,\\quad K_y=-8yA,\\quad4yK_x+xK_y=0",
+        "rubric": [
+          "Identify the shared inner expression.",
+          "Apply both chain-rule paths with the correct factors.",
+          "Explain the special symmetry behind cancellation."
+        ]
       }
     ],
     "sections": [
@@ -16552,7 +16594,110 @@
         "Check using the composed formula."
       ],
       "solutionTex": "\\frac d{dt}(te^{t^2})=e^{t^2}+2t^2e^{t^2}=e^{t^2}(1+2t^2)"
-    }
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "l03-chain-two-input",
+        "title": "Two independent inputs need two paths",
+        "statement": "For $f:\\mathbb R^2\\to\\mathbb R$ and $G=(g,h):\\mathbb R^2\\to\\mathbb R^2$, the composite $F=f\\circ G$ has $F_s=f_ug_s+f_vh_s$ and $F_t=f_ug_t+f_vh_t$, with outer partials evaluated at $G(s,t)$.",
+        "hypotheses": [
+          "$g$ and $h$ are totally differentiable at the input point.",
+          "$f$ is totally differentiable at the intermediate point $G(s,t)$, and the domains are open around those points."
+        ],
+        "prerequisites": ["Total differentiability", "One-input chain rule"],
+        "status": "Theorem used without proof in the lecture; derivative-map argument below"
+      },
+      {
+        "kind": "derivation",
+        "id": "l03-chain-matrix-shapes",
+        "title": "Check dimensions before multiplying",
+        "strategy": "Write the outer derivative on the left of the inner derivative.",
+        "setup": "If $G:\\mathbb R^n\\to\\mathbb R^m$ and $f:\\mathbb R^m\\to\\mathbb R^k$, then $DG$ is $m\\times n$ and $Df$ is $k\\times m$.",
+        "steps": [
+          {
+            "label": "Compose linear parts",
+            "text": "The first-order change of $G$ is $DG(p)h$; the first-order change of $f$ at $G(p)$ is $Df(G(p))DG(p)h$."
+          },
+          {
+            "label": "Check the output shape",
+            "text": "The product $Df(G(p))DG(p)$ is $k\\times n$, the derivative shape required for $f\\circ G:\\mathbb R^n\\to\\mathbb R^k$."
+          },
+          {
+            "label": "Read one entry",
+            "text": "Entry $(i,j)$ sums over every intermediate coordinate $r$: $\\partial_j(f_i\\circ G)=\\sum_{r=1}^m(\\partial_r f_i)(G(p))\\partial_jG_r(p)$. Each path contributes one product."
+          }
+        ],
+        "result": "$D(f\\circ G)(p)=Df(G(p))DG(p)$, in that order.",
+        "verification": "A $k\\times m$ matrix cannot multiply an $m\\times n$ matrix in the reverse order unless dimensions happen to match, and even then the meaning differs."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l03-source-path-exponential",
+        "title": "Work the source’s nonconstant path",
+        "strategy": "Evaluate the outer partials at the moving intermediate point before multiplying rates.",
+        "setup": "Lecture 03 page 29 takes $f(u,v)=u^2e^v$, $G(t)=(t^2-1,\\sin t)$, and $F=f\\circ G$.",
+        "steps": [
+          {
+            "label": "Differentiate both maps",
+            "text": "$f_u=2ue^v$, $f_v=u^2e^v$, and $G'(t)=(2t,\\cos t)$."
+          },
+          {
+            "label": "Follow both dependency paths",
+            "text": "$F'(t)=2(t^2-1)e^{\\sin t}(2t)+(t^2-1)^2e^{\\sin t}\\cos t$."
+          }
+        ],
+        "result": "$F'(t)=e^{\\sin t}[4t(t^2-1)+(t^2-1)^2\\cos t]$.",
+        "verification": "Direct differentiation of $(t^2-1)^2e^{\\sin t}$ gives the same result; both contributions can be nonzero."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l03-two-input-composition",
+        "title": "Work a two-input dependency tree",
+        "strategy": "Build the inner Jacobian and multiply the outer gradient in the correct order.",
+        "setup": "Take $f(u,v)=u^2+3v$, $G(s,t)=(s^2+t,s-t^2)$, and evaluate at $(s,t)=(1,2)$.",
+        "steps": [
+          {
+            "label": "Intermediate point",
+            "text": "$G(1,2)=(3,-3)$, so $Df(G(1,2))=(6,3)$."
+          },
+          {
+            "label": "Inner rates",
+            "text": "$DG(1,2)=\\begin{pmatrix}2&1\\\\1&-4\\end{pmatrix}$."
+          },
+          {
+            "label": "Multiply",
+            "text": "$(6,3)DG(1,2)=(15,-6)$, giving both partial derivatives of the composite."
+          }
+        ],
+        "result": "$\\nabla(f\\circ G)(1,2)=(15,-6)$.",
+        "verification": "Direct differentiation of $(s^2+t)^2+3(s-t^2)$ gives the same ordered pair."
+      },
+      {
+        "kind": "worked-example",
+        "id": "l03-source-balanced-dependency",
+        "title": "Explain the lecture’s forced cancellation",
+        "strategy": "Recognize that both intermediate coordinates depend on one shared expression with opposite signs.",
+        "setup": "Lecture 03 page 36 sets $H(x,y)=f(x^2-y^2,y^2-x^2)$ for an arbitrary totally differentiable $f$.",
+        "steps": [
+          {
+            "label": "Name the shared difference",
+            "text": "Let $q=x^2-y^2$; then $H(x,y)=f(q,-q)$."
+          },
+          {
+            "label": "Differentiate each input",
+            "text": "$H_x=2x(f_u-f_v)$ and $H_y=-2y(f_u-f_v)$, with outer partials evaluated at $(q,-q)$."
+          },
+          {
+            "label": "Cancel",
+            "text": "$yH_x+xH_y=2xy(f_u-f_v)-2xy(f_u-f_v)=0$.",
+            "usesHypothesis": "Total differentiability licenses the two-input chain rule."
+          }
+        ],
+        "result": "$yH_x+xH_y=0$ for every $(x,y)$ in the stated domain.",
+        "verification": "The identity follows from the inner map symmetry; it is a special contrast, not a generic reason composed rates vanish."
+      }
+    ]
   },
   "implicit-functions-and-tangents": {
     "prerequisites": ["multivariable-chain-rule", "cross-products-and-planes"],
