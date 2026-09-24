@@ -176,7 +176,7 @@ test("surface result qualifies undefined and clipped samples beside the plot", (
 test("a non-sign-changing zero set is reported as undetected, not empty", () => {
   const message = buildGraph(graph("implicit", ["z^2"]), new THREE.Group());
   assert.match(message, /No sign-changing surface was detected/);
-  assert.match(message, /Non-sign-changing zero sets/);
+  assert.match(message, /Surfaces formed by repeated zeros may be missed/);
 });
 test("learning guides have real prerequisites and parseable exercise mathematics", async () => {
   const concepts = JSON.parse(
