@@ -123,7 +123,7 @@ export function readoutTex(id: string, p: number): string {
         ? tex`\mathbf b\times\mathbf a=(2,2,-1)`
         : tex`\mathbf a\times\mathbf b=(-2,-2,1)`;
     case "implicit":
-      return tex`F_z(p)=2\cos\alpha\approx${f(2 * Math.cos(p))}`;
+      return tex`F_z(p)=2\cos\alpha\approx${f(2 * Math.cos(p))},\quad J_{xy}=|\cos\alpha|\approx${f(Math.abs(Math.cos(p)))}`;
     case "mixed":
       return tex`f_x(1,b)=2b=${f(2 * p)},\quad f_{xy}(1,b)=2`;
     case "global":

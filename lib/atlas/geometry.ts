@@ -1022,19 +1022,25 @@ export function buildScene(id: string, p: number, g: T.Group) {
       sphere(1);
       {
         const q: Vec = [Math.sin(p), 0, Math.cos(p)];
+        const tangentPoint = (u: number, v: number): Vec => [
+          q[0] + u * Math.cos(p),
+          v,
+          q[2] - u * Math.sin(p),
+        ];
         dot(q);
         arrow(q, q.map((x) => x * 0.7) as Vec, C.blue);
-        mesh(
-          (u, v) => [q[0] + u * Math.cos(p), v, q[2] - u * Math.sin(p)],
-          -0.6,
-          0.6,
-          -0.6,
-          0.6,
-          C.accent,
-          0.4,
-          12,
-        );
-        line([[q[0], 0, 0], q], C.pink);
+        mesh(tangentPoint, -0.6, 0.6, -0.6, 0.6, C.accent, 0.4, 12);
+        const halfWidth = 0.45;
+        const corners = [
+          tangentPoint(-halfWidth, -halfWidth),
+          tangentPoint(halfWidth, -halfWidth),
+          tangentPoint(halfWidth, halfWidth),
+          tangentPoint(-halfWidth, halfWidth),
+        ];
+        const projected = corners.map(([x, y]): Vec => [x, y, 0]);
+        line([...projected, projected[0]], C.pink);
+        for (let i = 0; i < corners.length; i++)
+          line([corners[i], projected[i]], C.muted);
       }
       break;
     case "mixed":
