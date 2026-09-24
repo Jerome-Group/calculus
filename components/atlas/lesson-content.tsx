@@ -13,9 +13,12 @@ import type { StudyController } from "./use-study-controller";
 export function LessonContent({
   study,
 }: {
-  study: Pick<StudyController, "concept" | "openPrerequisite" | "plot">;
+  study: Pick<
+    StudyController,
+    "concept" | "open" | "openPrerequisite" | "plot"
+  >;
 }) {
-  const { concept, openPrerequisite } = study;
+  const { concept, open, openPrerequisite } = study;
   const guide = learningGuide(concept);
   return (
     <section className="rigor-panel" aria-label="Mathematical explanation">
