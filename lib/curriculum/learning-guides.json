@@ -11891,96 +11891,635 @@
   },
   "integration-by-parts": {
     "prerequisites": ["fundamental-theorem", "differentiation-rules"],
-    "reasoning": "Proof sketch",
+    "reasoning": "Proof sketch from the product rule; source reduction and cyclic examples are checked below.",
     "sections": [
       {
-        "title": "Repeated and cyclic parts",
-        "text": "From $(uv)'=u'v+uv'$, $\\int u\\,dv=uv-\\int v\\,du$. Repeated parts gives $\\int x^{2}e^{x}dx=e^{x}(x^{2}-2x+2)+C$. For $I=\\int e^x\\cos x\\,dx$, two rounds give $I=e^{x}\\cos x+e^{x}\\sin x-I$; solving yields $I=e^{x}(\\sin x+\\cos x)/2+C$."
+        "title": "Choose factors by the new integral",
+        "text": "The source choice guide asks that differentiating $u$ and integrating $dv$ make the remainder manageable. The LIATE order is a heuristic, not a theorem: inspect the actual remainder, and switch to substitution or another method when it simplifies the integral more directly."
       },
       {
-        "title": "Definite terms and choice",
-        "text": "For $\\int_0^1xe^x\\,dx$, choose $u=x$, $dv=e^{x}dx$. The boundary term $[xe^{x}]_{0}^{1}=e$ and the remaining integral is $e-1$, so the answer is 1. Choosing $u=e^{x}$ and $dv=x$ dx creates an $x^{2}e^{x}$ integral, increasing the polynomial degree instead of reducing it."
-      },
-      {
-        "title": "Stage the next method after parts",
-        "text": "For $\\int x \\arctan$ $x$ dx, choose $u=\\arctan$ $x$ and $dv=x$ dx because differentiating the inverse tangent gives a rational function. Parts yields $x^{2}$ arctan $x/2-(1/2)\\int x^{2}/(1+x^{2})dx$. Divide $x^{2}/(1+x^{2})=1-1/(1+x^{2})$, then finish with $x^{2}$ arctan $x/2-x/2+\\arctan x/2+C$. The second method is chosen after seeing the simpler remainder."
+        "title": "Keep endpoints and solve cyclic equations",
+        "text": "For a definite integral retain $[uv]_a^b$. In cyclic examples, apply parts twice and solve the resulting equation for the original integral; do not treat the repeated integral as a new unknown."
       }
     ],
     "exercise": {
-      "prompt": "Choose and justify the first method for $\\int_0^1 x\\arctan x\\,dx$, then identify the second method needed for the remainder and evaluate.",
-      "hint": "Let $u=\\arctan$ $x$ and $dv=x$ dx. After parts, divide $x^{2}$ by $1+x^{2}$ before integrating.",
-      "solution": "Parts is useful because $d(\\arctan x)=dx/(1+x^2)$. It gives $[x^2\\arctan x/2]_0^1-(1/2)\\int_0^1x^2/(1+x^2)\\,dx$. Divide $x^2/(1+x^2)=1-1/(1+x^2)$; the result is $\\pi/4-1/2$. Choosing $u=x$ makes the antiderivative of $\\arctan x$ the harder first step.",
+      "prompt": "Choose and justify the parts factors: evaluate $\\int x^2e^x\\,dx$ with $u$ chosen so the polynomial degree drops.",
+      "hint": "Take $u=x^2$ and $dv=e^x\\,dx$, then apply parts to the remaining $2xe^x$ integral.",
+      "solution": "Two applications give $\\int x^2e^x\\,dx=e^x(x^2-2x+2)+C$. The polynomial degree drops from $2$ to $1$ to $0$.",
+      "solutionTex": "\\int x^2e^x\\,dx=e^x(x^2-2x+2)+C",
       "rubric": [
-        "Justify the $u$,dv choice before calculating.",
-        "Use rational division for the remainder.",
-        "Apply both endpoint terms and simplify."
-      ],
-      "solutionTex": "\\int_0^1x\\arctan x\\,dx=\\left[\\frac{x^2\\arctan x}{2}-\\frac{x}{2}+\\frac{\\arctan x}{2}\\right]_0^1=\\frac\\pi4-\\frac12"
-    }
+        "Explain why differentiating the polynomial simplifies it.",
+        "Keep the sign in each remaining integral.",
+        "Differentiate the result to verify it."
+      ]
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch03-parts-rule",
+        "title": "Choose factors so integration by parts simplifies the remainder",
+        "statement": "For differentiable $u$ and an antiderivative $v$ of $dv$, $\\int u\\,dv=uv-\\int v\\,du$. On $[a,b]$, $\\int_a^b u v\\prime\\,dx=[uv]_a^b-\\int_a^b u\\prime v\\,dx$.",
+        "hypotheses": [
+          "The product rule applies on the interval; indefinite antiderivatives carry an arbitrary constant."
+        ],
+        "prerequisites": [],
+        "status": "Source rule stated; proof status recorded in the text."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-parts-source-example-31",
+        "title": "Source Example 3.1: integrate $x\\sin x$",
+        "strategy": "Choose the factor whose derivative is simpler, then apply the source identity.",
+        "setup": "Evaluate $\\int x\\sin x\\,dx$.",
+        "steps": [
+          {
+            "label": "Choose",
+            "text": "Set $u=x$ and $dv=\\sin x\\,dx$, so $du=dx$ and $v=-\\cos x$.",
+            "equation": " u=x,\\quad dv=\\sin x\\,dx"
+          },
+          {
+            "label": "Apply parts",
+            "text": "The remaining integral is elementary.",
+            "equation": "\\int x\\sin x\\,dx=-x\\cos x+\\int\\cos x\\,dx"
+          },
+          {
+            "label": "Integrate",
+            "text": "Integrate the remaining cosine.",
+            "equation": "\\int x\\sin x\\,dx=-x\\cos x+\\sin x+C"
+          }
+        ],
+        "result": "The source Example 3.1 antiderivative is $-x\\cos x+\\sin x+C$.",
+        "verification": "Differentiating gives $x\\sin x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-parts-source-example-33",
+        "title": "Source Example 3.3: retain the definite boundary term",
+        "strategy": "Use parts on the stated interval, evaluate both terms at the endpoints, then simplify.",
+        "setup": "Evaluate $\\int_0^1\\arctan x\\,dx$.",
+        "steps": [
+          {
+            "label": "Choose",
+            "text": "Take $u=\\arctan x$ and $dv=dx$.",
+            "equation": " u=\\arctan x,\\quad v=x"
+          },
+          {
+            "label": "Apply the boundary formula",
+            "text": "The boundary term vanishes at $0$ and is $\\pi/4$ at $1$.",
+            "equation": "\\int_0^1\\arctan x\\,dx=[x\\arctan x]_0^1-\\int_0^1\\frac{x}{1+x^2}\\,dx"
+          },
+          {
+            "label": "Finish",
+            "text": "Use $w=1+x^2$ in the remaining logarithmic integral.",
+            "equation": "\\int_0^1\\arctan x\\,dx=\\frac{\\pi}{4}-\\frac12\\ln 2"
+          }
+        ],
+        "result": "The source value is $\\pi/4-(\\ln 2)/2$.",
+        "verification": "The endpoint term is included, and differentiating the antiderivative form recovers $\\arctan x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-parts-source-example-34",
+        "title": "Source Example 3.4: solve a cyclic parts equation",
+        "strategy": "Repeat parts until the original integral returns, then solve algebraically.",
+        "setup": "Let $I=\\int e^x\\sin x\\,dx$.",
+        "steps": [
+          {
+            "label": "First pass",
+            "text": "Choose $u=\\sin x$ and $dv=e^x dx$.",
+            "equation": "I=e^x\\sin x-\\int e^x\\cos x\\,dx"
+          },
+          {
+            "label": "Second pass",
+            "text": "Apply parts to the cosine integral.",
+            "equation": "\\int e^x\\cos x\\,dx=e^x\\cos x+I"
+          },
+          {
+            "label": "Solve for $I$",
+            "text": "Substitute and collect the two copies of $I$.",
+            "equation": "2I=e^x(\\sin x-\\cos x)"
+          }
+        ],
+        "result": "$I=e^x(\\sin x-\\cos x)/2+C$.",
+        "verification": "Differentiate the result to recover $e^x\\sin x$."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch03-sine-reduction-rule",
+        "title": "Reduce a sine power by two",
+        "statement": "For integer $n>1$, integration by parts gives $\\int\\sin^n x\\,dx=-\\frac{\\sin^{n-1}x\\cos x}{n}+\\frac{n-1}{n}\\int\\sin^{n-2}x\\,dx$.",
+        "hypotheses": [
+          "This recurrence is for integer powers and is used together with base cases."
+        ],
+        "prerequisites": [],
+        "status": "Source recurrence is stated and proved in Example 3.5."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch03-liate-heuristic",
+        "title": "Use LIATE as a factor-choice heuristic",
+        "text": "The source lists LIATE to suggest a candidate for $u$. It does not guarantee success: compare the new integral with the original and prefer a substitution first when it exposes a direct differential."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-parts-source-example-35",
+        "title": "Source Example 3.5: the sine-power recurrence",
+        "strategy": "Take $u=\\sin^{n-1}x$ and $dv=\\sin x\\,dx$, then isolate the remaining $\\sin^n x$ integral.",
+        "setup": "Derive a recurrence for $I_n=\\int\\sin^n x\\,dx$.",
+        "steps": [
+          {
+            "label": "Differentiate and integrate",
+            "text": "Use $du=(n-1)\\sin^{n-2}x\\cos x\\,dx$ and $v=-\\cos x$."
+          },
+          {
+            "label": "Apply parts",
+            "text": "Replace $\\cos^2x$ with $1-\\sin^2x$.",
+            "equation": "I_n=-\\sin^{n-1}x\\cos x+(n-1)(I_{n-2}-I_n)"
+          },
+          {
+            "label": "Collect",
+            "text": "Move $(n-1)I_n$ to the left.",
+            "equation": "nI_n=-\\sin^{n-1}x\\cos x+(n-1)I_{n-2}"
+          }
+        ],
+        "result": "$I_n=-\\sin^{n-1}x\\cos x/n+((n-1)/n)I_{n-2}$.",
+        "verification": "Differentiation recovers $\\sin^n x$ after using the recurrence definition."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch03-parts-choice-transfer",
+        "outcome": "Choose a simplifying parts decomposition",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int x^2\\sin x\\,dx$ and explain why the polynomial is the useful choice for $u$.",
+        "hint": "Let $u=x^2$ and $dv=\\sin x\\,dx$; a second parts step handles $\\int x\\cos x\\,dx$.",
+        "solution": "The first pass gives $-x^2\\cos x+2\\int x\\cos x\\,dx$. The second gives $\\int x\\cos x\\,dx=x\\sin x+\\cos x$, so the result is $-x^2\\cos x+2x\\sin x+2\\cos x+C$.",
+        "solutionTex": "\\int x^2\\sin x\\,dx=-x^2\\cos x+2x\\sin x+2\\cos x+C",
+        "rubric": [
+          "Choose $u=x^2$ because differentiation lowers its degree.",
+          "Apply parts again to the remaining product.",
+          "Check by differentiation."
+        ]
+      },
+      {
+        "id": "ch03-parts-endpoint-transfer",
+        "outcome": "Keep the boundary term on a changed interval",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int_0^\\pi x\\sin x\\,dx$ using the definite parts formula.",
+        "hint": "Use $u=x$, $dv=\\sin x\\,dx$, and evaluate $[-x\\cos x]_0^\\pi$.",
+        "solution": "The boundary term is $[-x\\cos x]_0^\\pi=\\pi$. The remaining integral is $\\int_0^\\pi\\cos x\\,dx=0$, so the value is $\\pi$.",
+        "solutionTex": "\\int_0^\\pi x\\sin x\\,dx=\\pi",
+        "rubric": [
+          "State the endpoint term explicitly.",
+          "Evaluate the remaining definite integral.",
+          "Keep the sign at $x=\\pi$."
+        ]
+      },
+      {
+        "id": "ch03-parts-cyclic-transfer",
+        "outcome": "Solve a new cyclic parts integral",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int e^{2x}\\sin x\\,dx$ by repeating integration by parts until the original integral returns.",
+        "hint": "Call the integral $I$; the second pass produces a coefficient of $I$.",
+        "solution": "The two passes give $I=e^{2x}\\sin x/2-(1/2)\\int e^{2x}\\cos x\\,dx$ and $\\int e^{2x}\\cos x\\,dx=e^{2x}\\cos x/2+I/2$. Solving yields $I=e^{2x}(2\\sin x-\\cos x)/5+C$.",
+        "solutionTex": "\\int e^{2x}\\sin x\\,dx=\\frac{e^{2x}}5(2\\sin x-\\cos x)+C",
+        "rubric": [
+          "Label the original integral before repeating parts.",
+          "Collect all copies of $I$ on one side.",
+          "Differentiate the final expression."
+        ]
+      },
+      {
+        "id": "ch03-parts-reduction-transfer",
+        "outcome": "Use the recurrence on a changed power",
+        "kind": "method-choice",
+        "prompt": "Use the source recurrence to evaluate $\\int\\sin^5x\\,dx$.",
+        "hint": "Apply the recurrence once with $n=5$, then evaluate $\\int\\sin^3x\\,dx$ by the same rule.",
+        "solution": "The recurrence gives $-\\sin^4x\\cos x/5+(4/5)I_3$. Since $I_3=-\\sin^2x\\cos x/3+(2/3)I_1$ and $I_1=-\\cos x$, one form is $-\\sin^4x\\cos x/5-4\\sin^2x\\cos x/15-8\\cos x/15+C$.",
+        "solutionTex": "\\int\\sin^5x\\,dx=-\\frac{\\sin^4x\\cos x}{5}-\\frac{4\\sin^2x\\cos x}{15}-\\frac{8\\cos x}{15}+C",
+        "rubric": [
+          "Use the recurrence with both odd exponents.",
+          "Substitute the base integral $I_1=-\\cos x$.",
+          "Verify the derivative simplifies to $\\sin^5x$."
+        ]
+      },
+      {
+        "id": "ch03-liate-choice-transfer",
+        "outcome": "Treat LIATE as a guide, not an algorithm",
+        "kind": "method-choice",
+        "prompt": "Choose a first method for $\\int x^3\\sin(x^2)\\,dx$. Explain why the LIATE order alone is not the decision.",
+        "hint": "Set $u=x^2$ first; the remaining integral is a polynomial times a sine.",
+        "solution": "The substitution $u=x^2$ gives $\\frac12\\int u\\sin u\\,du$. One parts step yields $-u\\cos u/2+\\sin u/2+C$, hence $-(x^2/2)\\cos(x^2)+(1/2)\\sin(x^2)+C$. Substitution is the useful first move because $2x\\,dx$ is present.",
+        "solutionTex": "-\\frac{x^2}{2}\\cos(x^2)+\\frac12\\sin(x^2)+C",
+        "rubric": [
+          "Identify the direct differential before using parts.",
+          "Use parts only after substitution.",
+          "Explain why a fixed LIATE ranking does not replace checking the remainder."
+        ]
+      }
+    ]
   },
   "trigonometric-integrals": {
     "prerequisites": ["substitution-integral"],
-    "reasoning": "Proof sketch",
+    "reasoning": "Identity and substitution strategies are source-stated; the source examples and changed-data exercises are checked below.",
     "sections": [
       {
-        "title": "Use parity to choose a substitution",
-        "text": "For $\\sin^m x\\cos^n x$ with a positive odd sine power, reserve $\\sin x\\,dx$ and replace $\\sin^2x$ by $1-\\cos^2x$; then use $u=\\cos x$. With an odd cosine power, reverse the roles. If both powers are even, use half-angle identities."
+        "title": "Read parity before expanding",
+        "text": "For a positive odd sine or cosine power, reserve one factor for its differential and rewrite the rest with $\\sin^2x+\\cos^2x=1$. When both powers are even, reduce them with half-angle identities. The same parity decision applies to tangent and secant, but the saved differential is $\\sec x\\tan x\\,dx$ when the tangent exponent is odd."
       },
       {
-        "title": "Work both branches",
-        "text": "$\\int\\sin^3x\\cos^2x\\,dx$ becomes $-\\int(1-u^2)u^2\\,du=-u^3/3+u^5/5+C$. For $\\int\\cos^2x\\,dx$, use $\\cos^2x=(1+\\cos2x)/2$, giving $x/2+\\sin2x/4+C$."
+        "title": "Use product-to-sum for different frequencies",
+        "text": "When products have different integer frequencies and no factor is a direct differential, convert products into sums first. Check the resulting frequencies and constants by differentiating the antiderivative."
       }
     ],
     "exercise": {
-      "prompt": "Find $\\int\\sin x\\cos^3x\\,dx$.",
-      "hint": "Reserve $\\sin x\\,dx$ and use $u=\\cos x$.",
-      "solution": "The integral is $-\\int u^3\\,du=-\\cos^4x/4+C$. Differentiating restores $\\sin x\\cos^3x$.",
-      "rubric": ["Carry the minus sign in du.", "Verify by differentiating."],
-      "solutionTex": "\\int\\sin x\\cos^3x\\,dx=-\\frac14\\cos^4x+C"
-    }
+      "prompt": "Choose the parity strategy and evaluate $\\int\\sin^5x\\cos^2x\\,dx$.",
+      "hint": "Save one $\\sin x\\,dx$, rewrite $\\sin^4x=(1-\\cos^2x)^2$, then use $u=\\cos x$.",
+      "solution": "With $u=\\cos x$, the integral is $-\\int(1-u^2)^2u^2\\,du=-u^3/3+2u^5/5-u^7/7+C$.",
+      "solutionTex": "-\\frac{\\cos^3x}{3}+\\frac{2\\cos^5x}{5}-\\frac{\\cos^7x}{7}+C",
+      "rubric": [
+        "Identify the odd sine power.",
+        "Reserve the matching sine differential and carry its negative in $du$.",
+        "Differentiate the result."
+      ]
+    },
+    "contentBlocks": [
+      {
+        "kind": "strategy",
+        "id": "ch03-odd-power-substitution",
+        "title": "Save a factor from an odd sine or cosine power",
+        "text": "For $\\int\\sin^m x\\cos^n x\\,dx$, if $m$ is odd, save $\\sin x\\,dx$ and convert the remaining sine powers with $\\sin^2x=1-\\cos^2x$. If $n$ is odd, reserve $\\cos x\\,dx$ and use $\\cos^2x=1-\\sin^2x$. Then substitute the opposite trig function."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-37",
+        "title": "Source Example 3.7: an odd cosine power",
+        "strategy": "Save one cosine factor and convert the remaining even power before substituting $u=\\sin x$.",
+        "setup": "Evaluate $\\int\\cos^3x\\,dx$.",
+        "steps": [
+          {
+            "label": "Save the differential",
+            "text": "Write $\\cos^3x=\\cos^2x\\cos x$.",
+            "equation": "\\int\\cos^3x\\,dx=\\int(1-\\sin^2x)\\cos x\\,dx"
+          },
+          {
+            "label": "Substitute",
+            "text": "Use $u=\\sin x$ and $du=\\cos x\\,dx$.",
+            "equation": "\\int(1-u^2)\\,du=u-\\frac{u^3}{3}+C"
+          },
+          {
+            "label": "Return to x",
+            "text": "Replace $u$ by $\\sin x$.",
+            "equation": "\\sin x-\\frac{\\sin^3x}{3}+C"
+          }
+        ],
+        "result": "$\\int\\cos^3x\\,dx=\\sin x-\\sin^3x/3+C$.",
+        "verification": "Differentiating gives $\\cos x(1-\\sin^2x)=\\cos^3x$."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch03-even-half-angle",
+        "title": "Reduce even powers with half-angle identities",
+        "text": "For even powers, use $\\sin^2x=(1-\\cos 2x)/2$ and $\\cos^2x=(1+\\cos 2x)/2$. If a new even power appears, repeat the identity rather than treating it as an odd-power substitution."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-38",
+        "title": "Source Example 3.8: integrate an even power",
+        "strategy": "Apply the half-angle identity twice, then integrate the constant and cosine terms.",
+        "setup": "Evaluate $\\int\\sin^4x\\,dx$.",
+        "steps": [
+          {
+            "label": "Reduce one power",
+            "text": "Square the half-angle identity.",
+            "equation": "\\sin^4x=\\frac38-\\frac12\\cos 2x+\\frac18\\cos 4x"
+          },
+          {
+            "label": "Integrate termwise",
+            "text": "Integrate each cosine at its own frequency.",
+            "equation": "\\int\\sin^4x\\,dx=\\frac{3x}{8}-\\frac{\\sin 2x}{4}+\\frac{\\sin 4x}{32}+C"
+          }
+        ],
+        "result": "$3x/8-\\sin(2x)/4+\\sin(4x)/32+C$.",
+        "verification": "Differentiating restores $\\sin^4x$."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch03-tan-sec-parity",
+        "title": "Choose the saved factor for tangent and secant",
+        "text": "For $\\tan^m x\\sec^n x$, an even secant exponent lets you reserve $\\sec^2x\\,dx$ and use $u=\\tan x$. An odd tangent exponent lets you reserve $\\sec x\\tan x\\,dx$ and use $u=\\sec x$. Convert remaining powers with $\\sec^2x=1+\\tan^2x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-310",
+        "title": "Source Example 3.10: use an even secant factor",
+        "strategy": "Reserve $\\sec^2x\\,dx$ and convert the remaining secant square before setting $u=\\tan x$.",
+        "setup": "Evaluate $\\int\\tan^6x\\sec^4x\\,dx$.",
+        "steps": [
+          {
+            "label": "Separate the differential",
+            "text": "Write $\\sec^4x=\\sec^2x\\sec^2x$.",
+            "equation": "\\int\\tan^6x\\sec^2x(1+\\tan^2x)\\,dx"
+          },
+          {
+            "label": "Substitute",
+            "text": "Take $u=\\tan x$.",
+            "equation": "\\int u^6(1+u^2)\\,du"
+          },
+          {
+            "label": "Integrate",
+            "text": "Integrate the two polynomial terms.",
+            "equation": "\\frac{\\tan^7x}{7}+\\frac{\\tan^9x}{9}+C"
+          }
+        ],
+        "result": "$\\tan^7x/7+\\tan^9x/9+C$.",
+        "verification": "The derivative is $\\tan^6x\\sec^2x(1+\\tan^2x)=\\tan^6x\\sec^4x$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-311",
+        "title": "Source Example 3.11: use an odd tangent factor",
+        "strategy": "Save $\\sec x\\tan x\\,dx$, then rewrite remaining tangent powers in secant.",
+        "setup": "Evaluate $\\int\\tan^5x\\sec^7x\\,dx$, the source integral.",
+        "steps": [
+          {
+            "label": "Save the differential",
+            "text": "Reserve $\\sec x\\tan x\\,dx$; the remaining tangent power is even.",
+            "equation": "\\tan^5x\\sec^7x=\\tan^4x\\sec^6x(\\sec x\\tan x)"
+          },
+          {
+            "label": "Convert to secant",
+            "text": "Set $u=\\sec x$ and use $\\tan^2x=\\sec^2x-1$.",
+            "equation": "\\int(u^2-1)^2u^6\\,du"
+          },
+          {
+            "label": "Integrate",
+            "text": "Expand the polynomial and integrate each power.",
+            "equation": "\\frac{\\sec^{11}x}{11}-\\frac{2\\sec^9x}{9}+\\frac{\\sec^7x}{7}+C"
+          }
+        ],
+        "result": "$\\sec^{11}x/11-2\\sec^9x/9+\\sec^7x/7+C$.",
+        "verification": "Differentiating gives $\\sec^7x\\tan x(\\sec^2x-1)^2=\\tan^5x\\sec^7x$."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch03-product-to-sum",
+        "title": "Convert different-frequency products to sums",
+        "text": "For products such as $\\sin(mx)\\cos(nx)$, use a product-to-sum identity before integrating. The source provides separate sine-sine, cosine-cosine, and sine-cosine forms; check the sign when $m-n<0$."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-313",
+        "title": "Source Example 3.13: product-to-sum with different frequencies",
+        "strategy": "Use $\\sin A\\cos B=\\tfrac12[\\sin(A+B)+\\sin(A-B)]$ before integrating.",
+        "setup": "Evaluate $\\int\\sin 4x\\cos 5x\\,dx$.",
+        "steps": [
+          {
+            "label": "Convert the product",
+            "text": "The difference frequency is negative: $\\sin(-x)=-\\sin x$.",
+            "equation": "\\sin 4x\\cos 5x=\\frac12(\\sin 9x-\\sin x)"
+          },
+          {
+            "label": "Integrate each frequency",
+            "text": "Include the reciprocal of each frequency.",
+            "equation": "-\\frac{\\cos 9x}{18}+\\frac{\\cos x}{2}+C"
+          }
+        ],
+        "result": "$\\cos x/2-\\cos(9x)/18+C$.",
+        "verification": "Differentiating returns $\\tfrac12(\\sin9x-\\sin x)=\\sin4x\\cos5x$."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch03-odd-power-transfer",
+        "outcome": "Use the odd-power substitution on changed exponents",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int\\sin^3x\\cos^4x\\,dx$ and state the substitution.",
+        "hint": "Save $\\sin x\\,dx$ and set $u=\\cos x$.",
+        "solution": "The integral becomes $-\\int(1-u^2)u^4\\,du=-u^5/5+u^7/7+C$. Thus the antiderivative is $-\\cos^5x/5+\\cos^7x/7+C$.",
+        "solutionTex": "-\\frac{\\cos^5x}{5}+\\frac{\\cos^7x}{7}+C",
+        "rubric": [
+          "Use the odd sine factor for $du$.",
+          "Convert the remaining sine square.",
+          "Check the derivative."
+        ]
+      },
+      {
+        "id": "ch03-even-power-transfer",
+        "outcome": "Apply half-angle twice to a changed even power",
+        "kind": "method-choice",
+        "prompt": "Find $\\int\\cos^4x\\,dx$.",
+        "hint": "Square $\\cos^2x=(1+\\cos2x)/2$, then reduce $\\cos^2 2x$.",
+        "solution": "The identity gives $\\cos^4x=3/8+(1/2)\\cos2x+(1/8)\\cos4x$. Integration gives $3x/8+\\sin2x/4+\\sin4x/32+C$.",
+        "solutionTex": "\\frac{3x}{8}+\\frac{\\sin2x}{4}+\\frac{\\sin4x}{32}+C",
+        "rubric": [
+          "Use the half-angle identity at both frequencies.",
+          "Integrate each term with its frequency factor.",
+          "Differentiate to verify."
+        ]
+      },
+      {
+        "id": "ch03-tan-sec-parity-transfer",
+        "outcome": "Choose the saved factor in two tangent-secant cases",
+        "kind": "method-choice",
+        "prompt": "Evaluate both $\\int\\tan^4x\\sec^4x\\,dx$ and $\\int\\tan^3x\\sec^5x\\,dx$. Name the saved differential in each.",
+        "hint": "For the first, save $\\sec^2x\\,dx$; for the second, save $\\sec x\\tan x\\,dx$.",
+        "solution": "The first becomes $\\int u^4(1+u^2)\\,du$ with $u=\\tan x$, giving $\\tan^5x/5+\\tan^7x/7+C$. The second uses $u=\\sec x$ and $\\tan^2x=\\sec^2x-1$, giving $\\sec^7x/7-\\sec^5x/5+C$.",
+        "solutionTex": "\\int\\tan^4x\\sec^4x\\,dx=\\frac{\\tan^5x}{5}+\\frac{\\tan^7x}{7}+C;\\quad \\int\\tan^3x\\sec^5x\\,dx=\\frac{\\sec^7x}{7}-\\frac{\\sec^5x}{5}+C",
+        "rubric": [
+          "Match the saved factor to the parity condition.",
+          "Use the correct Pythagorean identity.",
+          "Check both derivatives."
+        ]
+      },
+      {
+        "id": "ch03-product-to-sum-transfer",
+        "outcome": "Integrate a different-frequency cosine product",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int\\cos2x\\cos7x\\,dx$ using product-to-sum.",
+        "hint": "Use $\\cos A\\cos B=\\tfrac12[\\cos(A-B)+\\cos(A+B)]$.",
+        "solution": "The product becomes $\\tfrac12(\\cos5x+\\cos9x)$, so the integral is $\\sin5x/10+\\sin9x/18+C$.",
+        "solutionTex": "\\frac{\\sin5x}{10}+\\frac{\\sin9x}{18}+C",
+        "rubric": [
+          "Name the product-to-sum identity.",
+          "Keep both frequencies in the denominators.",
+          "Differentiate the result."
+        ]
+      }
+    ]
   },
   "trigonometric-substitution": {
     "prerequisites": ["substitution-integral", "trigonometric-integrals"],
-    "reasoning": "Proof sketch",
+    "reasoning": "Branch choices follow the source identity table; guide-created solutions are labeled where the source says to try the prompt.",
     "sections": [
       {
-        "title": "Fix a branch before simplifying",
-        "text": "For $\\sqrt{a^2-x^2}$ with $a>0$, choose $x=a\\sin\\theta$ and $\\theta\\in[-\\pi/2,\\pi/2]$, so $\\cos\\theta\\ge0$ and $\\sqrt{a^2-x^2}=a\\cos\\theta$. Without the range restriction the root is $a|\\cos\\theta|$. For $\\sqrt{a^2+x^2}$, $x=a\\tan\\theta$ on the same open angle interval gives $a\\sec\\theta$."
+        "title": "Match the radical and fix the angle range",
+        "text": "For $\\sqrt{a^2-x^2}$, use $x=a\\sin\\theta$ with $-\\pi/2\\le\\theta\\le\\pi/2$. For $\\sqrt{a^2+x^2}$, use $x=a\\tan\\theta$ in that open interval. For $\\sqrt{x^2-a^2}$, choose a secant branch matching the sign of $x$; otherwise $\\sqrt{\\sec^2\\theta}=|\\sec\\theta|$ changes the answer."
       },
       {
-        "title": "Include the differential",
-        "text": "For $\\int\\sqrt{1-x^2}\\,dx$, $x=\\sin\\theta$ and $dx=\\cos\\theta\\,d\\theta$ give $\\int\\cos^2\\theta\\,d\\theta$. Substituting back gives $(\\arcsin x+x\\sqrt{1-x^2})/2+C$ on the interior of $[-1,1]$. A diagram helps recover the factors but does not replace the branch choice."
+        "title": "Scale, transform bounds, then substitute back",
+        "text": "If the radicand is not in a standard form, scale the variable first. For a definite integral, transform each endpoint and keep the angle interval inside a one-to-one branch. A triangle can help recover expressions, but cannot replace sign and domain checks."
       },
       {
-        "title": "The secant branch depends on the x-domain",
-        "text": "For $\\sqrt{x^2-a^2}$, $a>0$ and $x\\ge a$, take $x=a\\sec\\theta$ with $0\\le\\theta<\\pi/2$. Then $\\tan\\theta\\ge0$ and $\\sqrt{x^2-a^2}=a\\tan\\theta$, not $a|\\tan\\theta|$. On $x\\le-a$ use $x=-a\\sec\\theta$ on the same angle range and transform $dx$ with its negative sign. One substitution formula cannot silently cross the gap $(-a,a)$."
-      },
-      {
-        "title": "The tangent branch keeps secant positive",
-        "text": "For $\\sqrt{x^2+4}$, $x=2\\tan\\theta$ with $-\\pi/2<\\theta<\\pi/2$ gives $\\sec\\theta>0$, so $\\sqrt{x^2+4}=2\\sec\\theta$. In $\\int dx/(x^2+4)^{3/2}$, $dx=2\\sec^2\\theta\\,d\\theta$ reduces the integrand to $\\cos\\theta/4$. The result is $x/[4\\sqrt{x^2+4}]+C$. Without the angle range, replacing $\\sqrt{\\sec^2\\theta}$ by $\\sec\\theta$ could have the wrong sign."
+        "title": "Use symmetry before integrating an ellipse",
+        "text": "The notes' p20 ellipse prompt identifies first-quadrant symmetry but leaves the calculation to the learner. For the guide's changed axes, use $x=a\\sin\\theta$ on one quadrant and multiply by four; this completed derivation is guide-authored, not a source solution."
       }
     ],
     "exercise": {
-      "prompt": "Evaluate $A=\\int_2^4 dx/\\sqrt{x^2-4}$ and $B=\\int_0^3 dx/(x^2+9)^{3/2}$ by trigonometric substitutions. Choose secant or tangent for each, state the branches, and transform the bounds.",
-      "hint": "For A use $x=2sec \\theta$, $0\\leq \\theta \\leq \\pi /3$. For $B$ use $x=3tan \\theta$, $0\\leq \\theta \\leq \\pi /4$. Check the sign of each square root on its chosen branch.",
-      "solution": "A: $x=2\\sec\\theta$ gives $\\sqrt{x^2-4}=2\\tan\\theta$ and $dx=2\\sec\\theta\\tan\\theta\\,d\\theta$ on $0\\le\\theta\\le\\pi/3$, so $A=\\int_0^{\\pi/3}\\sec\\theta\\,d\\theta=\\ln(2+\\sqrt3)$. $B$: $x=3\\tan\\theta$ gives $\\sqrt{x^2+9}=3\\sec\\theta>0$ and $dx=3\\sec^2\\theta\\,d\\theta$ on $0\\le\\theta\\le\\pi/4$, so $B=(1/9)\\int_0^{\\pi/4}\\cos\\theta\\,d\\theta=\\sqrt2/18$. Both signs follow from the declared branches.",
+      "prompt": "Classify the radical in $\\int dx/\\sqrt{x^2+9}$ and state a one-to-one substitution interval for the appropriate branches.",
+      "hint": "Use a tangent substitution and choose the principal interval for the inverse tangent.",
+      "solution": "Set $x=3\\tan\\theta$ with $-\\pi/2<\\theta<\\pi/2$. Then the root is $3\\sec\\theta>0$ and $dx=3\\sec^2\\theta\\,d\\theta$. The result is $\\ln|x+\\sqrt{x^2+9}|+C$.",
+      "solutionTex": "x=3\\tan\\theta,\\quad -\\frac{\\pi}{2}<\\theta<\\frac{\\pi}{2}",
       "rubric": [
-        "Choose secant for the difference and tangent for the sum, with explicit branches.",
-        "Transform bounds, differentials, and square-root signs for both.",
-        "Evaluate both transformed integrals."
-      ],
-      "solutionTex": "A=\\int_0^{\\pi/3}\\sec\\theta\\,d\\theta=\\ln(2+\\sqrt3),\\quad B=\\frac19\\int_0^{\\pi/4}\\cos\\theta\\,d\\theta=\\frac{\\sqrt2}{18}"
-    }
+        "Match the sum-of-squares radical with tangent.",
+        "State an interval making the substitution one-to-one.",
+        "Explain why secant is positive there."
+      ]
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch03-trig-branch-map",
+        "title": "Match each radical to a one-to-one substitution branch",
+        "statement": "For $a>0$, the standard choices are $x=a\\sin\\theta$ for $\\sqrt{a^2-x^2}$, $x=a\\tan\\theta$ for $\\sqrt{a^2+x^2}$, and $x=a\\sec\\theta$ for $\\sqrt{x^2-a^2}$.",
+        "hypotheses": [
+          "Use an angle interval on which the substitution is one-to-one and the relevant square-root sign is fixed. For $x=a\\sec\\theta$ the branch must also reflect whether $x\\ge a$ or $x\\le-a$."
+        ],
+        "prerequisites": [],
+        "status": "Source choices and intervals are listed on physical page 17."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-314",
+        "title": "Source Example 3.14: use a sine branch",
+        "strategy": "Set $x=3\\sin\\theta$ and keep $0<\\theta<\\pi/2$ for the displayed positive-$x$ example.",
+        "setup": "Evaluate $\\int\\sqrt{9-x^2}/x^2\\,dx$.",
+        "steps": [
+          {
+            "label": "Transform",
+            "text": "Then $dx=3\\cos\\theta\\,d\\theta$ and the radical is $3\\cos\\theta$.",
+            "equation": "\\int\\frac{\\sqrt{9-x^2}}{x^2}\\,dx=\\int\\cot^2\\theta\\,d\\theta"
+          },
+          {
+            "label": "Integrate",
+            "text": "Use $\\cot^2\\theta=\\csc^2\\theta-1$.",
+            "equation": "-\\cot\\theta-\\theta+C"
+          },
+          {
+            "label": "Return to x",
+            "text": "On the chosen branch, $\\cot\\theta=\\sqrt{9-x^2}/x$.",
+            "equation": "-\\frac{\\sqrt{9-x^2}}{x}-\\arcsin(x/3)+C"
+          }
+        ],
+        "result": "$-\\sqrt{9-x^2}/x-\\arcsin(x/3)+C$ on the positive branch.",
+        "verification": "Differentiate on $0<x<3$ to recover the integrand."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-source-example-315",
+        "title": "Source Example 3.15: scale before tangent substitution",
+        "strategy": "Use the preliminary scale $u=2x$, then $u=3\\tan\\theta$; transfer the original endpoints to angles.",
+        "setup": "Evaluate $\\int_0^{3\\sqrt3/2}x^3/(4x^2+9)^{3/2}\\,dx$.",
+        "steps": [
+          {
+            "label": "Scale and select the branch",
+            "text": "The combined substitution is $x=(3/2)\\tan\\theta$, $0\\le\\theta\\le\\pi/3$.",
+            "equation": "dx=\\frac32\\sec^2\\theta\\,d\\theta,\\quad\\sqrt{4x^2+9}=3\\sec\\theta"
+          },
+          {
+            "label": "Transform the integrand",
+            "text": "Simplify before integrating the trigonometric expression.",
+            "equation": "\\frac{3}{16}\\int_0^{\\pi/3}\\frac{\\sin^3\\theta}{\\cos^2\\theta}\\,d\\theta"
+          },
+          {
+            "label": "Finish with a cosine substitution",
+            "text": "Set $v=\\cos\\theta$; the endpoints become $1$ and $1/2$.",
+            "equation": "\\frac{3}{16}\\int_{1/2}^{1}(v^{-2}-1)\\,dv=\\frac{3}{32}"
+          }
+        ],
+        "result": "The source result is $3/32$.",
+        "verification": "The transformed limits and the positive secant branch are used throughout."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-trig-ellipse-guide-solution",
+        "title": "Guide solution to the source ellipse prompt",
+        "strategy": "The source asks learners to try the ellipse-area problem and gives symmetry but no completed calculation. Here the guide supplies the missing derivation.",
+        "setup": "For $x^2/a^2+y^2/b^2=1$, use the first-quadrant graph $y=b\\sqrt{1-x^2/a^2}$.",
+        "steps": [
+          {
+            "label": "Use symmetry",
+            "text": "The ellipse is symmetric in both coordinate axes, so total area is four times its first-quadrant area."
+          },
+          {
+            "label": "Integrate one quadrant",
+            "text": "Set $x=a\\sin\\theta$, $0\\le\\theta\\le\\pi/2$.",
+            "equation": "A=4ab\\int_0^{\\pi/2}\\cos^2\\theta\\,d\\theta"
+          },
+          {
+            "label": "Evaluate",
+            "text": "The half-angle identity gives the quadrant integral $\\pi/4$.",
+            "equation": "A=4ab\\cdot\\frac{\\pi}{4}=\\pi ab"
+          }
+        ],
+        "result": "The guide-derived area is $\\pi ab$.",
+        "verification": "For $a,b>0$, the result has the expected area scale and becomes $\\pi r^2$ for a circle."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch03-trig-branch-transfer",
+        "outcome": "Choose a branch for three radical forms",
+        "kind": "method-choice",
+        "prompt": "For each of $\\sqrt{16-x^2}$, $\\sqrt{x^2+16}$, and $\\sqrt{x^2-16}$ on $x>4$, choose a substitution and state a range that fixes the signs.",
+        "hint": "Use sine for the difference, tangent for the sum, and positive secant on the specified domain.",
+        "solution": "Use $x=4\\sin\\theta$ with $-\\pi/2\\le\\theta\\le\\pi/2$ for the first; $x=4\\tan\\theta$ on the same open interval for the second; and $x=4\\sec\\theta$, $0\\le\\theta<\\pi/2$, for $x>4$. The last choice gives $\\tan\\theta>0$ and $\\sqrt{x^2-16}=4\\tan\\theta$.",
+        "solutionTex": "\\sqrt{16-x^2}:x=4\\sin\\theta;\\quad \\sqrt{x^2+16}:x=4\\tan\\theta;\\quad x>4:\\ x=4\\sec\\theta,\\ 0\\le\\theta<\\frac{\\pi}{2}",
+        "rubric": [
+          "Match each radicand to its Pythagorean identity.",
+          "State the interval for each substitution.",
+          "Use the positive-domain condition for the secant case."
+        ]
+      },
+      {
+        "id": "ch03-scaled-definite-transfer",
+        "outcome": "Scale and transform a definite integral",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int_0^1 x^3/(9x^2+4)^{3/2}\\,dx$ by scaling before using a tangent substitution.",
+        "hint": "Set $u=3x$, then $u=2\\tan\\theta$; transformed upper bounds satisfy $\\tan\\theta=3/2$.",
+        "solution": "With $u=3x$, the integral is $1/81\\int_0^3u^3/(u^2+4)^{3/2}\\,du$. Set $u=2\\tan\\theta$ and then $v=\\cos\\theta$; evaluation gives $(17/\\sqrt{13}-4)/81$.",
+        "solutionTex": "\\int_0^1\\frac{x^3}{(9x^2+4)^{3/2}}\\,dx=\\frac{17/\\sqrt{13}-4}{81}",
+        "rubric": [
+          "Scale before choosing the standard radical substitution.",
+          "Transform both endpoints and keep the positive tangent branch.",
+          "Check the transformed integral algebra."
+        ]
+      },
+      {
+        "id": "ch03-ellipse-symmetry-transfer",
+        "outcome": "Use ellipse symmetry with changed axes",
+        "kind": "method-choice",
+        "prompt": "Find the area enclosed by $x^2/9+y^2/4=1$ using first-quadrant symmetry.",
+        "hint": "Use $a=3$, $b=2$ in the guide derivation; a quarter of the ellipse has area $\\pi ab/4$.",
+        "solution": "The total is four times the first-quadrant area: $A=4(3)(2)\\int_0^{\\pi/2}\\cos^2\\theta\\,d\\theta=6\\pi$. The notes pose the general ellipse question but do not provide this completed calculation.",
+        "solutionTex": "A=6\\pi",
+        "rubric": [
+          "Use fourfold symmetry.",
+          "Use the scaled sine substitution on the quarter ellipse.",
+          "Label the computation as a guide solution, not a source worked answer."
+        ]
+      }
+    ]
   },
   "partial-fractions": {
     "prerequisites": ["integral-antiderivatives"],
-    "reasoning": "Proof sketch",
+    "reasoning": "The factor templates and source Examples 3.18–3.19 are checked; the two page-25 prompts remain explicitly identified as unsolved in the source.",
     "supplementalBlocks": [
       {
         "kind": "derivation",
         "id": "divide-then-decompose-repeated-factor",
-        "title": "Divide before decomposing an improper fraction",
-        "strategy": "Compare degrees before choosing partial-fraction terms; decompose only the proper remainder.",
+        "title": "Source Example 3.19: divide before decomposing a repeated factor",
+        "strategy": "Compare polynomial degrees first; decompose only the proper remainder and keep the original poles excluded.",
         "setup": "For the notes' example, integrate $R(x)=(x^4-2x^2+4x+1)/(x^3-x^2-x+1)$ on an interval avoiding $x=-1,1$.",
         "steps": [
           {
@@ -11997,95 +12536,501 @@
           }
         ],
         "result": "Division precedes the repeated-factor template whenever the original rational function is improper.",
-        "verification": "Differentiate the result on any component and recover $x+1+1/(x-1)+2/(x-1)^2-1/(x+1)=R(x)$."
+        "verification": "Differentiate on any component of $\\mathbb{R}\\setminus\\{-1,1\\}$ and recover the original rational function."
       }
     ],
     "exercises": [
       {
-        "id": "improper-repeated-factor-transfer",
-        "outcome": "Choose polynomial division before repeated-factor decomposition for an improper rational integrand.",
+        "id": "ch03-linear-factors-transfer",
+        "outcome": "Solve and integrate a changed linear-factor decomposition",
         "kind": "method-choice",
-        "prompt": "Integrate $\\int (x^4-3x^2-3x-7)/[(x+1)^2(x-2)]\\,dx$ on an interval where it is defined. State why division comes first, include every repeated-factor term, and verify by differentiation.",
-        "hint": "The numerator degree exceeds the denominator degree. Division gives quotient $x$ and remainder $-x-7$; write $A/(x+1)+B/(x+1)^2+C/(x-2)$ for the proper part.",
-        "solution": "The denominator is $x^3-3x-2$, so division gives $x+(-x-7)/[(x+1)^2(x-2)]$. Multiplying the template through and solving gives $(A,B,C)=(1,2,-1)$. Hence the integrand is $x+1/(x+1)+2/(x+1)^2-1/(x-2)$ and the antiderivative is $x^2/2+\\ln|x+1|-2/(x+1)-\\ln|x-2|+C$ on each component of $\\mathbb{R}\\setminus\\{-1,2\\}$. Differentiation recovers the decomposition and original quotient.",
+        "prompt": "Integrate $\\int(x+3)/[(x-1)(x+2)]\\,dx$ on an interval avoiding the poles.",
+        "hint": "Write $A/(x-1)+B/(x+2)$ and multiply by the denominator.",
+        "solution": "Coefficient matching gives $A=4/3$ and $B=-1/3$. Thus an antiderivative is $(4/3)\\ln|x-1|-(1/3)\\ln|x+2|+C$ on each domain component.",
+        "solutionTex": "\\int\\frac{x+3}{(x-1)(x+2)}\\,dx=\\frac43\\ln|x-1|-\\frac13\\ln|x+2|+C",
+        "rubric": [
+          "Factor and check properness.",
+          "Solve the coefficient identity.",
+          "Keep logarithm absolute values and pole intervals."
+        ]
+      },
+      {
+        "id": "ch03-quadratic-template-transfer",
+        "outcome": "Write a repeated quadratic decomposition form",
+        "kind": "method-choice",
+        "prompt": "Give the partial-fraction template for $(x^3+1)/[x(x^2+4)^2]$.",
+        "hint": "There is one simple linear factor and a repeated irreducible quadratic of multiplicity two.",
+        "solution": "The complete form is $A/x+(Bx+C)/(x^2+4)+(Dx+E)/(x^2+4)^2$. No coefficient solving is required to determine the template.",
+        "solutionTex": "\\frac{x^3+1}{x(x^2+4)^2}=\\frac{A}{x}+\\frac{Bx+C}{x^2+4}+\\frac{Dx+E}{(x^2+4)^2}",
+        "rubric": [
+          "Include every power of the repeated quadratic.",
+          "Use linear numerators above irreducible quadratics.",
+          "Do not confuse this template task with solving coefficients."
+        ]
+      },
+      {
+        "id": "ch03-coefficient-match-transfer",
+        "outcome": "Match coefficients for a changed rational function",
+        "kind": "method-choice",
+        "prompt": "Decompose and integrate $\\int(x+3)/[(x-1)(x+2)]\\,dx$ by multiplying through and matching coefficients.",
+        "hint": "Set $(x+3)=A(x+2)+B(x-1)$ and compare the coefficient of $x$ and the constant.",
+        "solution": "The equations are $A+B=1$ and $2A-B=3$, giving $A=4/3$ and $B=-1/3$. Integrate the two simple fractions to get $(4/3)\\ln|x-1|-(1/3)\\ln|x+2|+C$.",
+        "solutionTex": "A=\\frac43,\\quad B=-\\frac13,\\quad \\int\\frac{x+3}{(x-1)(x+2)}dx=\\frac43\\ln|x-1|-\\frac13\\ln|x+2|+C",
+        "rubric": [
+          "Multiply by the common denominator.",
+          "Solve both coefficient equations.",
+          "Integrate on each component away from the poles."
+        ]
+      },
+      {
+        "id": "ch03-radical-prompt-transfer",
+        "outcome": "Recognize when substitution must precede decomposition",
+        "kind": "method-choice",
+        "prompt": "Evaluate $\\int\\sqrt{x+5}/x\\,dx$ using a substitution before partial fractions.",
+        "hint": "Set $u=\\sqrt{x+5}$, so $x=u^2-5$ and $dx=2u\\,du$.",
+        "solution": "The transformed integrand is $2u^2/(u^2-5)=2+10/(u^2-5)$. Decompose the proper part as $\\sqrt5/(u-\\sqrt5)-\\sqrt5/(u+\\sqrt5)$. An antiderivative is $2u+\\sqrt5\\ln|u-\\sqrt5|-\\sqrt5\\ln|u+\\sqrt5|+C$. This is a guide transfer; the notes leave Example 3.21 unsolved.",
+        "solutionTex": "2\\sqrt{x+5}+\\sqrt5\\ln|\\sqrt{x+5}-\\sqrt5|-\\sqrt5\\ln|\\sqrt{x+5}+\\sqrt5|+C",
+        "rubric": [
+          "Make the radical substitution first.",
+          "Divide before decomposing the transformed rational function.",
+          "Label this as a guide-created transfer, not a source solution."
+        ]
+      },
+      {
+        "id": "improper-repeated-factor-transfer",
+        "outcome": "Divide before decomposing an improper rational function",
+        "kind": "method-choice",
+        "prompt": "For $\\int (x^4-3x^2-3x-7)/[(x+1)^2(x-2)]\\,dx$, explain why division comes first, then write the quotient and repeated-factor template.",
+        "hint": "Compare degrees. Divide the numerator by the cubic denominator before decomposing the proper remainder.",
+        "solution": "Polynomial division gives quotient $x$ and remainder $-x-7$. Then $(-x-7)/[(x+1)^2(x-2)]=1/(x+1)+2/(x+1)^2-1/(x-2)$. An antiderivative is $x^2/2+\\ln|x+1|-2/(x+1)-\\ln|x-2|+C$ on each interval avoiding the poles.",
         "solutionTex": "\\frac{x^4-3x^2-3x-7}{(x+1)^2(x-2)}=x+\\frac1{x+1}+\\frac2{(x+1)^2}-\\frac1{x-2}",
         "rubric": [
-          "Compare polynomial degrees and divide before decomposing.",
-          "Include both powers of the repeated factor and solve the coefficient identity.",
-          "Integrate on a domain component and check the derivative."
+          "State why degree comparison requires division first.",
+          "Use terms for both powers of the repeated linear factor and the remaining linear factor.",
+          "Keep the poles excluded and check by differentiation."
         ]
       }
     ],
     "sections": [
       {
-        "title": "The denominator determines the template",
-        "text": "First divide if numerator degree is at least denominator degree. For each repeated linear factor $(x-a)^k$ include $A_{1}/(x-a)+…+A_{k}/(x-a)^k$. For an irreducible quadratic $q$, use a linear numerator $(Bx+C)/q$; repeat terms for powers of $q$."
+        "title": "Choose the algebraic template first",
+        "text": "Check properness before decomposing. Factor the denominator over the reals; include every power of a repeated linear factor and a linear numerator above every power of an irreducible quadratic. Multiply through by the common denominator and solve the coefficient identity before integrating."
       },
       {
-        "title": "Solve coefficients explicitly",
-        "text": "For $(x^{2}+1)/(x(x-1)^{2})$, write $A/x+B/(x-1)+C/(x-1)^{2}$. Multiplying through gives $x^{2}+1=A(x-1)^{2}+Bx(x-1)+Cx$. Setting $x=0$ gives $A=1$, $x=1$ gives $C=2$, and the $x^{2}$ coefficient gives $B=0$. Integrating yields $\\ln|x|-2/(x-1)+C_{0}$ on each component. For $(x+1)/(x^{2}+1)$, split into a logarithmic derivative and an arctangent: $(1/2)\\ln(x^{2}+1)+\\arctan$ $x$."
-      },
-      {
-        "title": "Decide the algebra before integrating",
-        "text": "For a rational integrand, first compare polynomial degrees and divide if improper. Factor the remaining denominator over the reals, then include every power of a repeated linear factor and a linear numerator over each irreducible quadratic. Solve the coefficient identity and only then integrate. This algebraic route differs from parts, which is chosen for a product whose differentiated factor simplifies. Verify a proposed antiderivative by differentiation on each domain component."
+        "title": "Separate source solutions from guide extensions",
+        "text": "Examples 3.18 and 3.19 are worked in the notes. Examples 3.20 and 3.21 say “Give it a try” without solutions. The guide labels its additional decomposition and substitution reasoning as guide-authored."
       }
     ],
     "exercise": {
-      "prompt": "Choose the first algebraic step, then integrate $\\int(2x+3)/[x(x+1)^2]\\,dx$ on one interval avoiding its poles. Explain why a repeated-factor term is required.",
-      "hint": "The rational function is proper. Write $A/x+B/(x+1)+C/(x+1)^{2}$ before solving coefficients.",
-      "solution": "No division is needed. The repeated factor requires both $1/(x+1)$ and $1/(x+1)^{2}$ terms. Solving $2x+3=A(x+1)^{2}+Bx(x+1)+Cx$ gives $A=3$, $B=-3$, $C=-1$. Integrating gives $3\\ln|x|-3\\ln|x+1|+1/(x+1)+C$ on each interval separated by $-1$ and 0.",
+      "prompt": "State the first algebraic step, then write the partial-fraction form for $\\int (2x+3)/[x(x+1)^2]\\,dx$ before integrating.",
+      "hint": "The fraction is proper; include both powers of the repeated linear factor.",
+      "solution": "Use $A/x+B/(x+1)+C/(x+1)^2$. Multiplying through gives $2x+3=A(x+1)^2+Bx(x+1)+Cx$; solving gives $A=3$, $B=-3$, and $C=-1$.",
+      "solutionTex": "\\frac{2x+3}{x(x+1)^2}=\\frac3x-\\frac3{x+1}-\\frac1{(x+1)^2}",
       "rubric": [
-        "Check properness and factor structure before choosing the template.",
-        "Include both powers of the repeated factor and solve the identity.",
-        "Integrate with logarithm signs and domain components intact."
-      ],
-      "solutionTex": "\\int\\frac{2x+3}{x(x+1)^2}\\,dx=3\\ln|x|-3\\ln|x+1|+\\frac1{x+1}+C"
-    }
+        "Check properness before choosing terms.",
+        "Include the repeated factor’s first and second powers.",
+        "Verify the coefficient identity."
+      ]
+    },
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch03-partial-fraction-template",
+        "title": "Build a complete partial-fraction template",
+        "statement": "A proper rational function with factor $(ax+b)^r$ needs one term over each power through $r$. A repeated irreducible quadratic factor needs a linear numerator over every power.",
+        "hypotheses": [
+          "If the numerator degree is at least the denominator degree, perform polynomial division first. Factor the denominator over the reals as far as possible."
+        ],
+        "prerequisites": [],
+        "status": "Source decomposition rules on physical pages 21–22."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-partial-fractions-source-example-318",
+        "title": "Source Example 3.18: match linear-factor coefficients",
+        "strategy": "Factor the denominator, write one constant term for each linear factor, multiply through, and solve.",
+        "setup": "Integrate $\\int (x^2+2x-1)/(2x^3+3x^2-2x)\\,dx$.",
+        "steps": [
+          {
+            "label": "Factor",
+            "text": "The denominator is $x(2x-1)(x+2)$ and the fraction is proper."
+          },
+          {
+            "label": "Choose the template",
+            "text": "Write three simple linear-factor terms.",
+            "equation": "\\frac{x^2+2x-1}{x(2x-1)(x+2)}=\\frac{A}{x}+\\frac{B}{2x-1}+\\frac{C}{x+2}"
+          },
+          {
+            "label": "Match coefficients",
+            "text": "Multiplying through yields three linear equations.",
+            "equation": "A=\\frac12,\\quad B=\\frac15,\\quad C=-\\frac1{10}"
+          },
+          {
+            "label": "Integrate",
+            "text": "Account for the inner derivative of $2x-1$.",
+            "equation": "\\frac12\\ln|x|+\\frac1{10}\\ln|2x-1|-\\frac1{10}\\ln|x+2|+C"
+          }
+        ],
+        "result": "The source antiderivative is $\\tfrac12\\ln|x|+\\tfrac1{10}\\ln|2x-1|-\\tfrac1{10}\\ln|x+2|+C$.",
+        "verification": "Differentiation returns the original rational function on each interval excluding its poles."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-partial-fractions-source-example-317",
+        "title": "Source Example 3.17: include every repeated quadratic power",
+        "strategy": "Use a separate linear numerator above each power of the irreducible quadratic factor.",
+        "setup": "Write the decomposition form for $(x^3+x^2+1)/[x(x-1)(x^2+x+1)(x^2+1)^3]$.",
+        "steps": [
+          {
+            "label": "Read the real factors",
+            "text": "There are two simple linear factors and one simple irreducible quadratic."
+          },
+          {
+            "label": "Expand the repeated quadratic",
+            "text": "The factor $(x^2+1)^3$ requires powers one, two, and three, each with a linear numerator.",
+            "equation": "\\frac{A}{x}+\\frac{B}{x-1}+\\frac{Cx+D}{x^2+x+1}+\\frac{Ex+F}{x^2+1}+\\frac{Gx+H}{(x^2+1)^2}+\\frac{Ix+J}{(x^2+1)^3}"
+          }
+        ],
+        "result": "The form on physical page 22 includes all seven terms shown.",
+        "verification": "The denominator factors and multiplicity determine the template before any coefficient solving."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-partial-fractions-guide-example-321",
+        "title": "Guide extension for the unsolved radical prompt",
+        "strategy": "The notes leave Example 3.21 for the learner. This guide first substitutes $u=\\sqrt{x+4}$, then uses partial fractions in $u$.",
+        "setup": "Evaluate $\\int\\sqrt{x+4}/x\\,dx$ on an interval where the integrand is defined.",
+        "steps": [
+          {
+            "label": "Substitute",
+            "text": "Set $u=\\sqrt{x+4}$, so $x=u^2-4$ and $dx=2u\\,du$.",
+            "equation": "\\frac{\\sqrt{x+4}}{x}\\,dx=\\frac{2u^2}{u^2-4}\\,du"
+          },
+          {
+            "label": "Divide and decompose",
+            "text": "The transformed rational function is improper by degree.",
+            "equation": "\\frac{2u^2}{u^2-4}=2+\\frac{2}{u-2}-\\frac{2}{u+2}"
+          },
+          {
+            "label": "Integrate and return",
+            "text": "The original domain excludes $x=0$; the constants may differ on its components.",
+            "equation": "2u+2\\ln|u-2|-2\\ln|u+2|+C"
+          }
+        ],
+        "result": "A guide-derived antiderivative is $2\\sqrt{x+4}+2\\ln|\\sqrt{x+4}-2|-2\\ln|\\sqrt{x+4}+2|+C$.",
+        "verification": "Differentiate after substituting $u=\\sqrt{x+4}$ on each domain component."
+      }
+    ]
   },
   "quadrature-midpoint-trapezoid": {
     "prerequisites": ["riemann-integral"],
-    "reasoning": "Theorem used without proof",
+    "reasoning": "The composite formulas and stated error bounds are distinguished from the source’s empirical table; the notes say the error-bound proof is beyond the syllabus.",
     "sections": [
       {
-        "title": "Signed errors reveal geometry",
-        "text": "For a convex function, chords lie above the graph, so the trapezoidal rule overestimates; midpoint underestimates when convexity holds on each panel. Error signs require hypotheses, not just a visual impression."
+        "title": "Separate empirical error from a guarantee",
+        "text": "The source table compares estimates with $\\ln 2$ for $1/x$ on $[1,2]$; those observed errors are examples, not a general convergence proof. A certified bound requires a valid maximum $K$ for $|f\\prime\\prime|$ on the whole interval."
       },
       {
-        "title": "Choose n from a bound",
-        "text": "For a twice continuously differentiable function with $|f''|\\leq M$, composite midpoint error is at most $M(b-a)^{3}/(24n^{2})$, and trapezoidal error at most $M(b-a)^{3}/(12n^{2})$. Solve the inequality for $n$ and round up; these are certified bounds, unlike agreement between two numerical estimates."
+        "title": "Choose subdivisions from the theorem",
+        "text": "For equal width $h=(b-a)/n$, solve the midpoint or trapezoid error inequality for $n$, round upward, and verify all hypotheses. The notes state these theorems without proof; agreement between the two estimates is not itself a certificate."
       }
     ],
     "exercise": {
-      "prompt": "How many trapezoids guarantee error at most 0.001 for $\\int_0^1x^2\\,dx$?",
-      "hint": "Here $M=2$; require $2/(12n^{2})\\leq 0.001$.",
-      "solution": "$n^{2}\\geq 500/3$, so $n\\geq 13$ is sufficient. The bound is $1/(6\\cdot 169)$, below 0.001.",
+      "prompt": "For $f(x)=x^2$ on $[0,1]$, compare midpoint and trapezoid approximations with the exact integral.",
+      "hint": "Use the composite formulas and $\\int_0^1x^2dx=1/3$.",
+      "solution": "For $n$ equal panels, $M_n=1/3-1/(12n^2)$ and $T_n=1/3+1/(6n^2)$. Thus midpoint underestimates, trapezoid overestimates, and the trapezoid error magnitude is twice as large in this example.",
+      "solutionTex": "M_n=\\frac13-\\frac1{12n^2},\\quad T_n=\\frac13+\\frac1{6n^2}",
       "rubric": [
-        "Use an upper derivative bound on the whole interval.",
-        "Round $n$ upward."
-      ],
-      "solutionTex": "\\frac1{6n^2}\\le0.001\\implies n\\ge13"
-    }
+        "Use the correct sample locations and endpoint weights.",
+        "Subtract each estimate from the exact integral using the stated signed-error convention.",
+        "Describe this as an example, not a universal error proof."
+      ]
+    },
+    "proof": "The source states the midpoint and trapezoid error bounds under a second-derivative bound and explicitly says the proof is beyond the syllabus. No proof is claimed here.",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch03-midpoint-rule",
+        "title": "Sample each panel at its midpoint",
+        "statement": "For $h=(b-a)/n$, the composite midpoint rule is $M_n=h\\sum_{i=0}^{n-1}f(a+(i+1/2)h)$.",
+        "hypotheses": [
+          "Use equal subintervals and evaluate at the center of each panel."
+        ],
+        "prerequisites": [],
+        "status": "Source rule stated; proof status recorded in the text."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch03-trapezoid-rule",
+        "title": "Connect endpoint values with composite trapezoids",
+        "statement": "For $h=(b-a)/n$, $T_n=h(\\frac12f(a)+\\sum_{i=1}^{n-1}f(a+ih)+\\frac12f(b))$.",
+        "hypotheses": [
+          "Use equal subintervals; each interior endpoint is counted twice with half-cell contributions."
+        ],
+        "prerequisites": [],
+        "status": "Source rule stated; proof status recorded in the text."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-quadrature-source-example-322",
+        "title": "Source Example 3.22: compare both rules with $\\ln 2$",
+        "strategy": "Use five equal panels for $f(x)=1/x$ on $[1,2]$, then compare each estimate with the exact integral.",
+        "setup": "The width is $h=1/5$ and $\\int_1^2dx/x=\\ln2$.",
+        "steps": [
+          {
+            "label": "Midpoint samples",
+            "text": "Use $1.1,1.3,1.5,1.7,1.9$.",
+            "equation": "M_5=\\frac15\\sum_{x\\in\\{1.1,1.3,1.5,1.7,1.9\\}}\\frac1x\\approx0.691908"
+          },
+          {
+            "label": "Trapezoid samples",
+            "text": "Use endpoints $1,1.2,1.4,1.6,1.8,2$ with composite half-endpoint weights.",
+            "equation": "T_5=\\frac1{10}\\left(1+2\\sum_{x\\in\\{1.2,1.4,1.6,1.8\\}}\\frac1x+\\frac12\\right)\\approx0.695635"
+          },
+          {
+            "label": "Compare signed errors",
+            "text": "Define $E=\\text{exact}-\\text{approximation}$.",
+            "equation": "\\ln2\\approx0.693147,\\quad E_M>0,\\quad E_T<0"
+          }
+        ],
+        "result": "The source table gives $M_5\\approx0.691908$, $T_5\\approx0.695635$, and $\\ln2\\approx0.693147$.",
+        "verification": "The signs and rounded values agree with the computed sums; the example alone does not prove a general error rate."
+      },
+      {
+        "kind": "strategy",
+        "id": "ch03-quadrature-signed-error",
+        "title": "Read the error sign with its definition",
+        "text": "The notes define signed error as exact value minus approximation. For a convex function, the trapezoid chord lies above the graph; under the stated panelwise convexity, the trapezoid overestimates and midpoint underestimates. Do not infer a guarantee from one table row."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch03-quadrature-error-bound",
+        "title": "Use the stated second-derivative error bounds",
+        "statement": "If $|f\\prime\\prime(x)|\\le K$ on $[a,b]$ and the rules use $n$ equal panels, $|E_M|\\le K(b-a)^3/(24n^2)$ and $|E_T|\\le K(b-a)^3/(12n^2)$.",
+        "hypotheses": [
+          "The bound $K$ must hold throughout the interval; the source states sufficient differentiability.",
+          "The source says the proof is beyond the syllabus."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof; source physical page 31 explicitly places its proof beyond the syllabus."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-quadrature-source-example-323",
+        "title": "Source Example 3.23: choose $n$ from the midpoint bound",
+        "strategy": "For $f(x)=\\sqrt{x}$ on $[1,4]$, use $K=1/4$ in the stated theorem and solve for the requested tolerance.",
+        "setup": "Find a panel count guaranteeing midpoint error at most $10^{-4}$.",
+        "steps": [
+          {
+            "label": "Check curvature",
+            "text": "Here $f\\prime\\prime(x)=-1/(4x^{3/2})$, so $|f\\prime\\prime(x)|\\le1/4$ on $[1,4]$."
+          },
+          {
+            "label": "Apply the bound",
+            "text": "The interval length is $3$.",
+            "equation": "|E_M|\\le\\frac{(1/4)3^3}{24n^2}=\\frac{9}{32n^2}"
+          },
+          {
+            "label": "Solve and round",
+            "text": "Require the right side to be at most $10^{-4}$.",
+            "equation": "n\\ge\\sqrt{2812.5}\\approx53.033,\\quad n=54"
+          }
+        ],
+        "result": "The source chooses $n=54$.",
+        "verification": "Substitution of $n=54$ satisfies the bound, and $n=53$ does not."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch03-midpoint-transfer",
+        "outcome": "Compute a midpoint approximation on changed data",
+        "kind": "method-choice",
+        "prompt": "Use $M_4$ to approximate $\\int_0^2x^2\\,dx$.",
+        "hint": "The width is $h=1/2$ and the sample points are $1/4,3/4,5/4,7/4$.",
+        "solution": "The midpoint sum is $(1/2)[(1/4)^2+(3/4)^2+(5/4)^2+(7/4)^2]=21/8=2.625$. The exact integral is $8/3$, so this example underestimates.",
+        "solutionTex": "M_4=\\frac{21}{8}=2.625",
+        "rubric": [
+          "Use centers, not endpoints.",
+          "Multiply the sample sum by the panel width.",
+          "Compare with the exact integral only after computing the estimate."
+        ]
+      },
+      {
+        "id": "ch03-trapezoid-transfer",
+        "outcome": "Compute a composite trapezoid approximation on changed data",
+        "kind": "method-choice",
+        "prompt": "Use $T_4$ to approximate $\\int_0^2x^2\\,dx$.",
+        "hint": "Use width $1/2$, half-weighted endpoints, and full-weighted interior points.",
+        "solution": "The sum is $(1/2)[0/2+(1/4+1+9/4)+4/2]=11/4=2.75$. The exact value is $8/3$, so this example overestimates.",
+        "solutionTex": "T_4=\\frac{11}{4}=2.75",
+        "rubric": [
+          "Use all five endpoint values.",
+          "Apply half weights only to the two outer endpoints.",
+          "Check the exact integral separately."
+        ]
+      },
+      {
+        "id": "ch03-quadrature-bound-transfer",
+        "outcome": "Choose a certified trapezoid panel count",
+        "kind": "method-choice",
+        "prompt": "How many trapezoids guarantee error at most $0.01$ for $\\int_0^\\pi\\cos x\\,dx$?",
+        "hint": "Here $|f\\prime\\prime(x)|=|\\cos x|\\le1$ on the whole interval.",
+        "solution": "The trapezoid bound is $\\pi^3/(12n^2)$. Requiring it to be at most $0.01$ gives $n\\ge\\sqrt{\\pi^3/0.12}\\approx16.09$, so $n=17$ suffices.",
+        "solutionTex": "n\\ge\\sqrt{\\frac{\\pi^3}{0.12}}\\approx16.09,\\quad n=17",
+        "rubric": [
+          "State a valid second-derivative bound on the interval.",
+          "Use the trapezoid constant $12$.",
+          "Round the panel count upward."
+        ]
+      },
+      {
+        "id": "ch03-signed-error-transfer",
+        "outcome": "Compute signed midpoint and trapezoid errors on changed data.",
+        "kind": "method-choice",
+        "prompt": "For $f(x)=x^2$ on $[0,1]$ with $n=2$, compute $M_2$, $T_2$, and their signed errors using $E=\\text{exact}-\\text{approximation}$.",
+        "hint": "The exact integral is $1/3$; the midpoint samples are $1/4,3/4$, and the trapezoid nodes are $0,1/2,1$.",
+        "solution": "The midpoint value is $M_2=5/16$, so $E_M=1/3-5/16=1/48$. The trapezoid value is $T_2=3/8$, so $E_T=1/3-3/8=-1/24$. The magnitudes differ by a factor of two in this example.",
+        "solutionTex": "M_2=\\frac5{16},\\quad E_M=\\frac1{48};\\qquad T_2=\\frac38,\\quad E_T=-\\frac1{24}",
+        "rubric": [
+          "Use the stated sign convention for both rules.",
+          "Compute the exact integral before subtracting.",
+          "Keep the error signs and compare this example without claiming a general theorem."
+        ]
+      }
+    ]
   },
   "simpson-rule": {
     "prerequisites": ["quadrature-midpoint-trapezoid"],
-    "reasoning": "Theorem used without proof",
+    "reasoning": "The source derives the composite weights from the midpoint/trapezoid average and states the fourth-derivative bound without proof.",
     "sections": [
       {
-        "title": "Pairs of panels",
-        "text": "Composite Simpson requires an even number $n$ of equal subintervals with width $h$. Its weights are 1,4,2,4,…,2,4,1 and overall factor $h/3$. It integrates every polynomial of degree at most three exactly, although each local interpolant is quadratic."
+        "title": "Pair panels and keep $n$ even",
+        "text": "The composite rule uses an even number $n$ of equal panels and weights $1,4,2,4,\\ldots,2,4,1$ with factor $h/3$. The source derives this as a weighted average of $T_{n/2}$ and $M_{n/2}$."
       },
       {
-        "title": "A fourth-derivative guarantee",
-        "text": "If $f$ has a continuous fourth derivative bounded in magnitude by $M$, the error is at most $M(b-a)^{5}/(180n^{4})$. More panels do not make this bound applicable at a singularity; check smoothness first."
+        "title": "Apply the fourth-derivative guarantee separately",
+        "text": "The error theorem requires a bound for $|f^{(4)}|$ over the full interval. The notes state the theorem without proof; a numerical estimate alone does not satisfy its hypotheses."
       }
     ],
     "exercise": {
-      "prompt": "Apply Simpson with $n=2$ to $x^3$ on $[0,1]$.",
-      "hint": "Use values at 0, $1/2$ and 1.",
-      "solution": "With $h=1/2$, the result is $(1/6)[0+4(1/8)+1]=1/4$, exactly the integral.",
-      "rubric": ["Use the $h/3$ factor.", "Explain exactness for a cubic."],
-      "solutionTex": "S_2=\\frac16\\left[0+4\\left(\\frac18\\right)+1\\right]=\\frac14"
-    }
+      "prompt": "Apply Simpson with $n=2$ to $x^3$ on $[0,1]$ and explain why the even-count condition is met.",
+      "hint": "Use $h=1/2$ and sample at $0,1/2,1$.",
+      "solution": "The estimate is $(h/3)[0+4(1/8)+1]=(1/6)(3/2)=1/4$, equal to the exact integral. The two-panel count is even.",
+      "solutionTex": "S_2=\\frac16\\left[0+4\\left(\\frac18\\right)+1\\right]=\\frac14",
+      "rubric": [
+        "Use three equally spaced nodes.",
+        "Apply weights $1,4,1$ and factor $h/3$.",
+        "State why $n=2$ is admissible."
+      ]
+    },
+    "proof": "The source constructs Simpson’s rule as a weighted average of the trapezoid and midpoint rules on paired panels. It does not prove the fourth-derivative error theorem; no interpolation remainder proof is attributed to the notes.",
+    "contentBlocks": [
+      {
+        "kind": "theorem",
+        "id": "ch03-simpson-composite-rule",
+        "title": "Pair panels to form composite Simpson weights",
+        "statement": "For even $n$ and $h=(b-a)/n$, $S_n=\\frac h3[f_0+4f_1+2f_2+4f_3+\\cdots+2f_{n-2}+4f_{n-1}+f_n]$.",
+        "hypotheses": [
+          "The nodes are equally spaced and the number of subintervals is even.",
+          "The source derives the formula from $S_n=\\frac13T_{n/2}+\\frac23M_{n/2}$."
+        ],
+        "prerequisites": [],
+        "status": "Source formula and weighted-average derivation are on physical page 32."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-simpson-source-example-324",
+        "title": "Source Example 3.24: apply Simpson with eight panels",
+        "strategy": "Use the source’s even panel count, evaluate all nine nodes, then apply the alternating weights.",
+        "setup": "Approximate $\\int_2^4\\sqrt{1+x^3}\\,dx$ with $n=8$.",
+        "steps": [
+          {
+            "label": "Set the width",
+            "text": "There are eight equal subintervals on an interval of length two.",
+            "equation": "h=\\frac{4-2}{8}=\\frac14"
+          },
+          {
+            "label": "Apply the weights",
+            "text": "Use endpoints once, odd interior nodes four times, and even interior nodes twice.",
+            "equation": "S_8=\\frac1{12}[f_0+4f_1+2f_2+4f_3+2f_4+4f_5+2f_6+4f_7+f_8]"
+          },
+          {
+            "label": "Evaluate the source data",
+            "text": "Here $f(x)=\\sqrt{1+x^3}$.",
+            "equation": "S_8\\approx10.74159"
+          }
+        ],
+        "result": "The source reports approximately $10.74159$.",
+        "verification": "The even node count, width, and weight pattern match the source calculation."
+      },
+      {
+        "kind": "theorem",
+        "id": "ch03-simpson-error-bound",
+        "title": "Certify Simpson error with a fourth-derivative bound",
+        "statement": "If $|f^{(4)}(x)|\\le K$ on $[a,b]$, the composite Simpson error satisfies $|E_S|\\le K(b-a)^5/(180n^4)$.",
+        "hypotheses": [
+          "The fourth derivative must exist with the required continuity and the bound must hold on the entire interval.",
+          "The source states this theorem without proof."
+        ],
+        "prerequisites": [],
+        "status": "Theorem used without proof; source physical page 33 states the bound."
+      },
+      {
+        "kind": "worked-example",
+        "id": "ch03-simpson-source-example-325",
+        "title": "Source Example 3.25: combine the error theorem with even $n$",
+        "strategy": "For $1/x$ on $[1,3]$, use $K=24$, then round the bound-based panel count up to an even integer.",
+        "setup": "The source requests a Simpson estimate with error at most $10^{-6}$.",
+        "steps": [
+          {
+            "label": "Check the derivative bound",
+            "text": "The fourth derivative has magnitude $24/x^5\\le24$ on $[1,3]$."
+          },
+          {
+            "label": "Evaluate the $n=8$ bound",
+            "text": "The interval length is two.",
+            "equation": "|E_S|\\le\\frac{24\\cdot2^5}{180\\cdot8^4}=\\frac{64}{15\\cdot8^4}\\approx0.0010417"
+          },
+          {
+            "label": "Choose an even count",
+            "text": "Solve $64/(15n^4)\\le10^{-6}$ and enforce evenness.",
+            "equation": "n\\ge45.45,\\quad n=46"
+          }
+        ],
+        "result": "The source selects $n=46$ as the smallest even count meeting this bound.",
+        "verification": "The theorem hypotheses hold on $[1,3]$; the rounded even count satisfies the inequality."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ch03-simpson-weights-transfer",
+        "outcome": "Use the weights on a changed integrand",
+        "kind": "method-choice",
+        "prompt": "Apply composite Simpson with $n=4$ to $\\int_0^1x^4\\,dx$.",
+        "hint": "The width is $1/4$; use weights $1,4,2,4,1$.",
+        "solution": "The estimate is $1/5+2/(15\\cdot4^4)=1/5+1/1920=77/384\\approx0.2005208$. This is the composite estimate; no exactness claim is made for degree four.",
+        "solutionTex": "S_4=\\frac15+\\frac{2}{15\\cdot4^4}=\\frac{77}{384}\\approx0.2005208",
+        "rubric": [
+          "Keep $n$ even and compute $h=1/4$.",
+          "Use the correct alternating weights.",
+          "Do not claim exactness for a quartic."
+        ]
+      },
+      {
+        "id": "ch03-simpson-bound-transfer",
+        "outcome": "Choose an even count from a changed error bound",
+        "kind": "method-choice",
+        "prompt": "Use the Simpson theorem to find the smallest even $n$ that guarantees error at most $0.001$ for $\\int_0^\\pi\\cos x\\,dx$.",
+        "hint": "For $f(x)=\\cos x$, $|f^{(4)}(x)|=|\\cos x|\\le1$ on the interval.",
+        "solution": "The bound requires $\\pi^5/(180n^4)\\le0.001$, so $n\\ge(\\pi^5/0.18)^{1/4}\\approx6.42$. Round to the smallest even integer: $n=8$.",
+        "solutionTex": "n\\ge\\left(\\frac{\\pi^5}{0.18}\\right)^{1/4}\\approx6.42,\\quad n=8",
+        "rubric": [
+          "Use a fourth-derivative bound on the whole interval.",
+          "Solve the inequality before rounding.",
+          "Round upward to an even panel count."
+        ]
+      }
+    ]
   },
   "sequence-limits": {
     "prerequisites": ["epsilon-delta-one-variable"],

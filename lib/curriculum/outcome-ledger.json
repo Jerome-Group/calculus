@@ -5785,35 +5785,673 @@
       "id": "MH1101_Chapter_03_Notes:01",
       "source_id": "MH1101_Chapter_03_Notes",
       "kind": "core_lecture_or_notes",
-      "topic_from_audit_inventory": "Integration techniques and numerical quadrature, including tangent/secant cases",
-      "physical_pages_from_audit": "2–35; parts 2–7; trig 8–16; trig substitution 17–20; fractions 21–25; quadrature 26–35",
-      "linked_concept_ids": [
-        "integration-by-parts",
-        "trigonometric-integrals",
-        "trigonometric-substitution",
-        "partial-fractions",
-        "quadrature-midpoint-trapezoid",
-        "simpson-rule"
-      ],
-      "outcome_status": "provisional_topic_requires_atomic_source_review",
-      "gap": "Only 4 source-specific atomic outcome(s) mapped for audit inventory topic 'Integration techniques and numerical quadrature, including tangent/secant cases'. Remaining subskills, exact source examples/tasks and teaching evidence require review.",
+      "topic_from_audit_inventory": "Integration by parts: factor choices, endpoint terms, cyclic closure, and sine-power reduction",
+      "physical_pages_from_audit": "Physical pages 2–7; product-rule identity and choices, definite and cyclic examples, recurrence, heuristic; p7 Example 3.6 is left to the learner.",
+      "linked_concept_ids": ["integration-by-parts"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Source section statements, named operations, worked reasoning, and independent transfer feedback are inspected. No stable scene is verified for these atomics and no learner performance data are claimed. Example 3.6 on p7 is an unsolved source prompt; the guide’s changed-data work is not attributed to that source solution.",
       "evidence": {
-        "named": [],
-        "stated": [],
-        "worked": [],
-        "practiced": [],
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-rule].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-sine-reduction-rule].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-liate-heuristic].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-rule]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-sine-reduction-rule]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-liate-heuristic]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-31]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-35]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-31]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-choice-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-endpoint-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-cyclic-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-reduction-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-liate-choice-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          }
+        ],
         "visualized": [],
         "checked": []
       },
-      "depth": "unverified",
-      "verification": "pending",
+      "depth": "canonical_source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
       "atomic_outcome_ids": [
         "integration-by-parts:source-skill-1",
+        "integration-by-parts:ch03-definite-boundary-term",
+        "integration-by-parts:ch03-cyclic-integral",
+        "integration-by-parts:ch03-sine-power-reduction",
+        "integration-by-parts:ch03-liate-heuristic"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "2–7",
+      "inspected_physical_pages": [2, 3, 4, 5, 6, 7],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 1,
+          "reason": "Title and table-of-contents page only; no distinct instructional operation."
+        },
+        {
+          "physical_page": 7,
+          "reason": "Example 3.6 explicitly invites the learner to try the integral but supplies no worked source solution; guide reasoning is labeled separately."
+        }
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_03_Notes:02",
+      "source_id": "MH1101_Chapter_03_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Trigonometric integrals: odd/even powers, tangent-secant parity, and product-to-sum",
+      "physical_pages_from_audit": "Physical pages 8–16; odd and even powers, tangent-secant strategies, reduction, product-to-sum identities and Example 3.13.",
+      "linked_concept_ids": ["trigonometric-integrals"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Source section statements, named operations, worked reasoning, and independent transfer feedback are inspected. No stable scene is verified for these atomics and no learner performance data are claimed.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-odd-power-substitution].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-even-half-angle].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-tan-sec-parity].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-product-to-sum].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-odd-power-substitution]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-even-half-angle]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-tan-sec-parity]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-product-to-sum]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-37]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-38]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-310]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-313]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-odd-power-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-even-power-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-tan-sec-parity-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-product-to-sum-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "canonical_source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "trigonometric-integrals:ch03-odd-power-substitution",
+        "trigonometric-integrals:ch03-even-half-angle",
+        "trigonometric-integrals:ch03-tangent-secant-parity",
+        "trigonometric-integrals:ch03-product-to-sum"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "8–16",
+      "inspected_physical_pages": [8, 9, 10, 11, 12, 13, 14, 15, 16],
+      "reviewed_exclusions": []
+    },
+    {
+      "id": "MH1101_Chapter_03_Notes:03",
+      "source_id": "MH1101_Chapter_03_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Trigonometric substitution: radical forms, branches, scaling, and bounds",
+      "physical_pages_from_audit": "Physical pages 17–20; standard substitutions and angle intervals, Examples 3.14–3.15, and unsolved ellipse prompt Example 3.16.",
+      "linked_concept_ids": ["trigonometric-substitution"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Source section statements, named operations, worked reasoning, and independent transfer feedback are inspected. No stable scene is verified for these atomics and no learner performance data are claimed. Example 3.16 gives a symmetry cue but no completed area derivation; the guide labels its solution as guide-authored.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-branch-map].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-branch-map]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-314]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-trig-branch-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-scaled-definite-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-ellipse-symmetry-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "canonical_source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
         "trigonometric-substitution:source-skill-1",
+        "trigonometric-substitution:ch03-scaled-definite-substitution",
+        "trigonometric-substitution:ch03-ellipse-symmetry-prompt"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "17–20",
+      "inspected_physical_pages": [17, 18, 19, 20],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 20,
+          "reason": "Example 3.16 has an ellipse prompt and symmetry cue but no source-completed area derivation; the guide supplies a separate solution."
+        }
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_03_Notes:04",
+      "source_id": "MH1101_Chapter_03_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Partial fractions: factor templates, coefficient matching, division, and guide extension",
+      "physical_pages_from_audit": "Physical pages 21–25; templates and Examples 3.17–3.19; Examples 3.20–3.21 are unsolved prompts.",
+      "linked_concept_ids": ["partial-fractions"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Source section statements, named operations, worked reasoning, and independent transfer feedback are inspected. No stable scene is verified for these atomics and no learner performance data are claimed. Examples 3.20–3.21 remain unsolved in the notes; their guide work is not attributed to the source.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-317]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.supplementalBlocks[divide-then-decompose-repeated-factor]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-linear-factors-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-quadratic-template-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-coefficient-match-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[improper-repeated-factor-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "canonical_source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
         "partial-fractions:source-skill-1",
+        "partial-fractions:ch03-repeated-quadratic-template",
+        "partial-fractions:ch03-coefficient-matching",
         "partial-fractions:divide-before-decompose"
       ],
-      "coverage_decision": "partial_atomic_mapping"
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "21–25",
+      "inspected_physical_pages": [21, 22, 23, 24, 25],
+      "reviewed_exclusions": [
+        {
+          "physical_page": 25,
+          "reason": "Example 3.20 is marked “Give it a try”; no source solution appears."
+        },
+        {
+          "physical_page": 25,
+          "reason": "Example 3.21 is marked “Give it a try”; the guide’s substitution/partial-fraction solution is guide-authored."
+        }
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_03_Notes:05",
+      "source_id": "MH1101_Chapter_03_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Midpoint and trapezoid rules: composite formulas, signed comparisons, and error bounds",
+      "physical_pages_from_audit": "Physical pages 26–31; composite rules and Example 3.22, then error theorem and Example 3.23; proof is beyond the syllabus.",
+      "linked_concept_ids": ["quadrature-midpoint-trapezoid"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Source section statements, named operations, worked reasoning, and independent transfer feedback are inspected. No stable scene is verified for these atomics and no learner performance data are claimed. The source says the midpoint/trapezoid error-bound proof is beyond the syllabus.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-midpoint-rule].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-trapezoid-rule].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-signed-error].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-error-bound].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-midpoint-rule]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-trapezoid-rule]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-signed-error]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-error-bound]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-323]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-midpoint-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-trapezoid-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-midpoint-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-quadrature-bound-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "canonical_source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "quadrature-midpoint-trapezoid:ch03-midpoint-rule",
+        "quadrature-midpoint-trapezoid:ch03-trapezoid-rule",
+        "quadrature-midpoint-trapezoid:ch03-signed-error-comparison",
+        "quadrature-midpoint-trapezoid:ch03-error-bound"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "26–31",
+      "inspected_physical_pages": [26, 27, 28, 29, 30, 31],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "The source spells “Midpoint” as “Mipoint” on physical pages 29–30; this is a typographic error only.",
+        "The source explicitly places the error-bound proof beyond the syllabus."
+      ]
+    },
+    {
+      "id": "MH1101_Chapter_03_Notes:06",
+      "source_id": "MH1101_Chapter_03_Notes",
+      "kind": "core_lecture_or_notes",
+      "topic_from_audit_inventory": "Simpson rule: paired-panel weights, even n, and fourth-derivative bound",
+      "physical_pages_from_audit": "Physical pages 32–35; weighted-average construction, composite formula, Examples 3.24–3.25, and unproved error theorem.",
+      "linked_concept_ids": ["simpson-rule"],
+      "outcome_status": "atomic_source_review_completed",
+      "gap": "Source section statements, named operations, worked reasoning, and independent transfer feedback are inspected. No stable scene is verified for these atomics and no learner performance data are claimed. The source states the Simpson error theorem without proof.",
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-composite-rule].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-error-bound].title",
+            "claim": "A dedicated block title names a mapped operation.",
+            "method": "Compared the atomic title with the inspected section."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-composite-rule]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-error-bound]",
+            "claim": "The guide states the operation and limits checked against the source.",
+            "method": "Visually compared source and guide wording."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-source-example-324]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-source-example-325]",
+            "claim": "Source example or guide-labeled prompt solution is worked and checked.",
+            "method": "Independently recalculated the result."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.exercises[ch03-simpson-weights-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          },
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.exercises[ch03-simpson-bound-transfer]",
+            "claim": "Changed-data practice has feedback.",
+            "method": "Solved and checked prompt, hint, answer, and rubric."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "depth": "canonical_source_and_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "atomic_outcome_ids": [
+        "simpson-rule:ch03-composite-weights",
+        "simpson-rule:ch03-error-bound"
+      ],
+      "coverage_decision": "mapped_with_reasoned_exclusions",
+      "physical_page_span": "32–35",
+      "inspected_physical_pages": [32, 33, 34, 35],
+      "reviewed_exclusions": [],
+      "source_review_notes": [
+        "The source derives the composite formula as a weighted average of midpoint/trapezoid rules; it does not prove the fourth-derivative error theorem."
+      ]
     },
     {
       "id": "MH1101_Chapter_04_Notes:01",
@@ -16590,46 +17228,47 @@
     {
       "id": "integration-by-parts:source-skill-1",
       "concept_id": "integration-by-parts",
-      "outcome": "Choose u and dv so integration by parts reduces the remaining integral.",
+      "outcome": "Choose the differentiated and integrated factors so integration by parts makes the remaining integral manageable.",
       "core_source": {
         "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
         "physical_page": 3,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [3],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page directs learners to choose u and v-prime so the remaining integral is easier."
+          "pages": [2, 3],
+          "method": "Rendered and visually inspected canonical physical pages [2, 3]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source gives the product-rule formula and asks learners to choose factors so the remaining integral is easier."
         },
-        "page_heading": "Integration by Parts: choice guide"
+        "page_heading": "3.1 Integration by Parts: choice guide"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#integration-by-parts.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-rule].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Definite terms and choice]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-rule]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Definite terms and choice]",
-            "claim": "The cited section works a concrete instance of the outcome.",
-            "method": "Direct semantic reading of the section example and computation."
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-31]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-choice-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
           }
         ],
         "visualized": [],
@@ -16639,83 +17278,90 @@
         "scene_id": "plane-parts",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
       "source_section_id": "MH1101_Chapter_03_Notes:01",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#integration-by-parts.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-rule].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Definite terms and choice]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-rule]",
+            "basis": "Guide statement and hypotheses checked against the source page."
           }
         ],
         "worked": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Definite terms and choice]",
-            "basis": "worked expression or example inspected; depth not certified"
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-31]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-choice-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "worked instance in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     },
     {
       "id": "trigonometric-substitution:source-skill-1",
       "concept_id": "trigonometric-substitution",
-      "outcome": "Restrict the trigonometric substitution angle to a branch that is one-to-one and determines the square-root sign.",
+      "outcome": "Restrict the substitution angle to a one-to-one branch that determines the square-root sign.",
       "core_source": {
         "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
         "physical_page": 17,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
         "page_validation": {
           "status": "page_verified",
           "pages": [17],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page lists sine, tangent, and secant substitutions with explicit angle intervals and explains one-to-one restriction."
+          "method": "Rendered and visually inspected canonical physical pages [17]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source lists the sine, tangent, and secant substitutions with angle restrictions and explains why the inverse branch matters."
         },
-        "page_heading": "3.3     Trigonometric Substitution"
+        "page_heading": "3.3 Trigonometric Substitution: choice table"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#trigonometric-substitution.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-branch-map].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.sections[Fix a branch before simplifying]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-branch-map]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-314]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-trig-branch-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
           }
         ],
         "visualized": [],
@@ -16725,77 +17371,90 @@
         "scene_id": "plane-trig-sub",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
-      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:03",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#trigonometric-substitution.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-branch-map].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.sections[Fix a branch before simplifying]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-branch-map]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-314]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-trig-branch-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     },
     {
       "id": "partial-fractions:source-skill-1",
       "concept_id": "partial-fractions",
-      "outcome": "Choose decomposition terms from the factorization of a proper rational denominator.",
+      "outcome": "Choose partial-fraction terms from a proper rational denominator’s real factorization and multiplicities.",
       "core_source": {
         "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
         "physical_page": 21,
-        "inspection": "Page text extracted from the authenticated Drive PDF and checked against the stated source skill.",
         "page_validation": {
           "status": "page_verified",
-          "pages": [21],
-          "method": "Connected Drive PDF readable text separated by physical page markers; claim checked on that page.",
-          "claim_observed": "Page requires properness, denominator factorization, and factor-specific decomposition terms."
+          "pages": [21, 22],
+          "method": "Rendered and visually inspected canonical physical pages [21, 22]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source requires properness, real factorization, repeated linear terms, and linear numerators over irreducible quadratics."
         },
-        "page_heading": "3.4      Rational Functions by Partial Fractions"
+        "page_heading": "3.4 partial-fraction decomposition rules and Example 3.18"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#partial-fractions.title",
-            "claim": "The concept is named in the current catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[The denominator determines the template]",
-            "claim": "The cited lesson section states the source-page outcome.",
-            "method": "Direct semantic reading of the cited section against the page-verified atomic outcome."
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
           }
         ],
-        "worked": [],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercise",
-            "claim": "The exercise prompt and solution require applying the atomic outcome.",
-            "method": "Direct comparison of exercise prompt, hints, and solution with the exact outcome; learner performance unverified."
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-linear-factors-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
           }
         ],
         "visualized": [],
@@ -16805,38 +17464,44 @@
         "scene_id": "plane-fractions",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Cited source page and lesson statement inspected; worked/practice evidence is partial where recorded. Scene behavior and independent outcome-level checks remain unverified; remaining source subskills are gaps.",
-      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:04",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#partial-fractions.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[The denominator determines the template]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
           }
         ],
         "practiced": [
           {
-            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercise",
-            "basis": "current exercise prompt and solution inspected; independent learner performance unverified"
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-linear-factors-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of the page-verified outcome with current catalog title, cited guide section, exercise prompt/hints/solution, and candidate scene implementation source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "no worked instance established in cited section",
-        "practiced": "exercise directly applies outcome; learner performance unverified",
-        "visualized": "Candidate scene source inspected; rendered behavior and full outcome match not established.",
-        "checked": "No independent outcome-level validation or learner performance check."
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     },
     {
@@ -16845,43 +17510,44 @@
       "outcome": "Perform polynomial division before partial-fraction decomposition when a rational integrand is improper.",
       "core_source": {
         "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
         "physical_page": 23,
-        "inspection": "Local course PDF physical pages 21, 23, and 24 rendered and visually checked against the original example and method rule.",
         "page_validation": {
           "status": "page_verified",
           "pages": [21, 23, 24],
-          "method": "Manual reading of rendered physical PDF pages; extracted text cross-checked for the long-division and repeated-factor equations.",
-          "claim_observed": "Page 21 directs division before decomposition of an improper fraction; pages 23–24 work division followed by repeated-factor partial fractions and integration."
+          "method": "Rendered and visually inspected canonical physical pages [21, 23, 24]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "Page 21 requires division for an improper fraction; Example 3.19 divides, factors the repeated denominator, solves its decomposition, and integrates it on pages 23–24."
         },
-        "page_heading": "3.4 Rational Functions by Partial Fractions; Example 3.19"
+        "page_heading": "3.4 improper-fraction rule and Example 3.19"
       },
       "evidence": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#partial-fractions.title",
-            "claim": "The partial-fractions concept is named in the catalog.",
-            "method": "Direct catalog title inspection."
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[Decide the algebra before integrating]",
-            "claim": "The guide says to compare degrees and divide an improper rational integrand first.",
-            "method": "Direct reading against physical PDF pages 21 and 23."
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
           }
         ],
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#partial-fractions.supplementalBlocks[divide-then-decompose-repeated-factor]",
-            "claim": "The notes’ Example 3.19 is worked through division, decomposition, and a componentwise antiderivative.",
-            "method": "Compare guide derivation with the rendered source example on physical pages 23–24 and check its algebra."
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[improper-repeated-factor-transfer]",
-            "claim": "A different improper integrand requires the same first-step decision, repeated-factor terms, and derivative check.",
-            "method": "Direct comparison of prompt, hint, solution, and rubric; no learner performance observed."
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
           }
         ],
         "visualized": [],
@@ -16891,44 +17557,1718 @@
         "scene_id": "plane-fractions",
         "verified_for_outcome": false
       },
-      "depth": "partial_source_and_guide_inspection",
-      "verification": "source_page_and_cited_guide_inspected",
-      "gap": "Source rule and Example 3.19 are checked, and a different worked transfer task is present. Scene behavior, independent learner performance, and the other integration-technique subskills remain unverified.",
-      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:04",
       "candidate_blocks": {
         "named": [
           {
-            "locator": "lib/curriculum/concepts.json#partial-fractions.title",
-            "basis": "current code inspection"
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
           }
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[Decide the algebra before integrating]",
-            "basis": "current guide inspection"
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "basis": "Guide statement and hypotheses checked against the source page."
           }
         ],
         "worked": [
           {
             "locator": "lib/curriculum/learning-guides.json#partial-fractions.supplementalBlocks[divide-then-decompose-repeated-factor]",
-            "basis": "source example and guide derivation inspected; learner mastery unverified"
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
           }
         ],
         "practiced": [
           {
             "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[improper-repeated-factor-transfer]",
-            "basis": "exercise prompt, hint, solution, and rubric inspected; learner performance unverified"
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
           }
         ]
       },
       "inspection_check": {
-        "method": "Manual semantic comparison of rendered source pages, guide rule and derivation, transfer exercise, and candidate scene source.",
-        "named": "match",
-        "stated": "match",
-        "worked": "source Example 3.19 algebra and antiderivative reproduced",
-        "practiced": "independent prompt requires division decision and decomposition; learner performance unverified",
-        "visualized": "Candidate scene is unverified for this outcome.",
-        "checked": "No independent learner-level outcome check."
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "integration-by-parts:ch03-definite-boundary-term",
+      "concept_id": "integration-by-parts",
+      "outcome": "Retain and evaluate the boundary term in a definite integration-by-parts calculation.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 4,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [4],
+          "method": "Rendered and visually inspected canonical physical pages [4]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "Source Example 3.3 applies the definite formula to an inverse-tangent integral and evaluates both endpoints."
+        },
+        "page_heading": "Example 3.3: definite inverse-tangent integral"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Keep endpoints and solve cyclic equations]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-endpoint-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-parts",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Keep endpoints and solve cyclic equations]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-33]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-endpoint-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "integration-by-parts:ch03-cyclic-integral",
+      "concept_id": "integration-by-parts",
+      "outcome": "Solve a cyclic integration-by-parts equation after the original integral reappears.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 5,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [5],
+          "method": "Rendered and visually inspected canonical physical pages [5]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "Source Example 3.4 repeats parts, obtains the original integral, and solves the resulting equation."
+        },
+        "page_heading": "Example 3.4: cyclic exponential-trigonometric integral"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Keep endpoints and solve cyclic equations]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-cyclic-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-parts",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.sections[Keep endpoints and solve cyclic equations]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-34]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-cyclic-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "integration-by-parts:ch03-sine-power-reduction",
+      "concept_id": "integration-by-parts",
+      "outcome": "Derive and use the source recurrence that lowers an integer sine power by two.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 6,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6],
+          "method": "Rendered and visually inspected canonical physical pages [6]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "Source Example 3.5 derives a recurrence for the integral of sin^n x using integration by parts."
+        },
+        "page_heading": "Example 3.5: sine-power reduction formula"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-sine-reduction-rule].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-sine-reduction-rule]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-35]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-reduction-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-parts",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-sine-reduction-rule].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-sine-reduction-rule]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-35]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-parts-reduction-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "integration-by-parts:ch03-liate-heuristic",
+      "concept_id": "integration-by-parts",
+      "outcome": "Use the LIATE ordering as a factor-choice heuristic and check whether the resulting integral simplifies.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 6,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [6, 7],
+          "method": "Rendered and visually inspected canonical physical pages [6, 7]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source presents LIATE as a guide for choosing u; it does not make factor ordering a theorem, and Example 3.6 is explicitly left for the learner."
+        },
+        "page_heading": "3.1 factor-choice heuristic and Example 3.6 prompt"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-liate-heuristic].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-liate-heuristic]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-31]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-liate-choice-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-parts",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:01",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-liate-heuristic].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-liate-heuristic]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.contentBlocks[ch03-parts-source-example-31]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#integration-by-parts.exercises[ch03-liate-choice-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "trigonometric-integrals:ch03-odd-power-substitution",
+      "concept_id": "trigonometric-integrals",
+      "outcome": "For an odd sine or cosine power, save one factor as the differential and convert the remaining even power.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 9,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [8, 9, 10],
+          "method": "Rendered and visually inspected canonical physical pages [8, 9, 10]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source demonstrates saving one cosine factor in Example 3.7 and describes the symmetric odd-sine branch."
+        },
+        "page_heading": "Examples 3.7 and 3.9: odd trigonometric powers"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-odd-power-substitution].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-odd-power-substitution]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-37]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-odd-power-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-trig",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-odd-power-substitution].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-odd-power-substitution]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-37]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-odd-power-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "trigonometric-integrals:ch03-even-half-angle",
+      "concept_id": "trigonometric-integrals",
+      "outcome": "Reduce even sine or cosine powers with repeated half-angle identities.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 9,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [9, 10],
+          "method": "Rendered and visually inspected canonical physical pages [9, 10]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source applies half-angle identities to an even power and repeats the identity when another even power appears."
+        },
+        "page_heading": "Example 3.8: even sine power"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-even-half-angle].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-even-half-angle]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-38]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-even-power-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-trig",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-even-half-angle].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-even-half-angle]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-38]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-even-power-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "trigonometric-integrals:ch03-tangent-secant-parity",
+      "concept_id": "trigonometric-integrals",
+      "outcome": "Choose sec^2 x dx for an even secant power or sec x tan x dx for an odd tangent power.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 11,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [11, 12, 13],
+          "method": "Rendered and visually inspected canonical physical pages [11, 12, 13]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source distinguishes the even-secant substitution from saving sec x tan x when the tangent power is odd."
+        },
+        "page_heading": "Examples 3.10–3.12: tangent-secant parity"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-tan-sec-parity].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-tan-sec-parity]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-310]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-tan-sec-parity-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-trig",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-tan-sec-parity].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-tan-sec-parity]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-310]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-tan-sec-parity-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "trigonometric-integrals:ch03-product-to-sum",
+      "concept_id": "trigonometric-integrals",
+      "outcome": "Convert a product of different-frequency trigonometric functions to sums before integrating.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 15,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [14, 15, 16],
+          "method": "Rendered and visually inspected canonical physical pages [14, 15, 16]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source lists product-to-sum identities and works the sin(4x) cos(5x) example."
+        },
+        "page_heading": "Product-to-Sum identities and Example 3.13"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-product-to-sum].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-product-to-sum]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-313]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-product-to-sum-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-trig",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:02",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-product-to-sum].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-product-to-sum]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.contentBlocks[ch03-trig-source-example-313]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-integrals.exercises[ch03-product-to-sum-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "trigonometric-substitution:ch03-scaled-definite-substitution",
+      "concept_id": "trigonometric-substitution",
+      "outcome": "Scale a nonstandard quadratic radical before substitution and transform all definite bounds.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 19,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [19, 20],
+          "method": "Rendered and visually inspected canonical physical pages [19, 20]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source first sets u=2x, then uses u=3 tan(theta), transforms the bounds to 0 and pi/3, and evaluates the definite integral."
+        },
+        "page_heading": "Example 3.15: scaled tangent substitution"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.sections[Scale, transform bounds, then substitute back]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-scaled-definite-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-trig-sub",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.sections[Scale, transform bounds, then substitute back]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-source-example-315]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-scaled-definite-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "trigonometric-substitution:ch03-ellipse-symmetry-prompt",
+      "concept_id": "trigonometric-substitution",
+      "outcome": "Use symmetry to reduce the source ellipse-area prompt to one quadrant.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 20,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [20],
+          "method": "Rendered and visually inspected canonical physical pages [20]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source asks learners to find the ellipse area and states symmetry makes the total four times the first-quadrant area; it does not show the remaining calculation."
+        },
+        "page_heading": "Example 3.16: ellipse-area prompt"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.sections[Use symmetry before integrating an ellipse]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution]",
+            "claim": "The guide supplies and labels a guide-authored worked solution because the source prompt is unsolved.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-ellipse-symmetry-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-trig-sub",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The source prompt and its symmetry cue are inspected; the worked calculation is guide-authored. Scene alignment and learner performance remain unverified.",
+      "source_section_id": "MH1101_Chapter_03_Notes:03",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.sections[Use symmetry before integrating an ellipse]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.contentBlocks[ch03-trig-ellipse-guide-solution]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#trigonometric-substitution.exercises[ch03-ellipse-symmetry-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "partial-fractions:ch03-repeated-quadratic-template",
+      "concept_id": "partial-fractions",
+      "outcome": "Include a linear numerator over each power of a repeated irreducible quadratic.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 22,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [21, 22],
+          "method": "Rendered and visually inspected canonical physical pages [21, 22]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "Source Example 3.17 writes the full template, including three powers of x^2+1 with linear numerators."
+        },
+        "page_heading": "Example 3.17: repeated irreducible quadratic factor"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-317]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-quadratic-template-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-fractions",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fraction-template]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-317]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-quadratic-template-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "partial-fractions:ch03-coefficient-matching",
+      "concept_id": "partial-fractions",
+      "outcome": "Multiply through by the common denominator and solve the coefficient identity before integrating.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 22,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [22, 23],
+          "method": "Rendered and visually inspected canonical physical pages [22, 23]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "Source Example 3.18 expands the common-denominator identity, compares coefficients, and integrates each resulting term."
+        },
+        "page_heading": "Example 3.18: coefficient equations"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[Choose the algebraic template first]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-coefficient-match-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-fractions",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:04",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.sections[Choose the algebraic template first]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.contentBlocks[ch03-partial-fractions-source-example-318]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#partial-fractions.exercises[ch03-coefficient-match-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "quadrature-midpoint-trapezoid:ch03-midpoint-rule",
+      "concept_id": "quadrature-midpoint-trapezoid",
+      "outcome": "Approximate a definite integral with midpoint samples from equal-width panels.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 27,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 27, 29, 30],
+          "method": "Rendered and visually inspected canonical physical pages [26, 27, 29, 30]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source defines the midpoint sample in each equal panel and uses it in the five-panel comparison example."
+        },
+        "page_heading": "3.5 midpoint composite rule and Example 3.22"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-midpoint-rule].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-midpoint-rule]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-midpoint-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-quadrature",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-midpoint-rule].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-midpoint-rule]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-midpoint-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "quadrature-midpoint-trapezoid:ch03-trapezoid-rule",
+      "concept_id": "quadrature-midpoint-trapezoid",
+      "outcome": "Approximate a definite integral with endpoint-weighted composite trapezoids.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 28,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [26, 28, 29, 30],
+          "method": "Rendered and visually inspected canonical physical pages [26, 28, 29, 30]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source forms trapezoids from endpoint values and compares the five-panel composite estimate with the exact integral."
+        },
+        "page_heading": "3.5 composite trapezoid rule and Example 3.22"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-trapezoid-rule].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-trapezoid-rule]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-trapezoid-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-quadrature",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-trapezoid-rule].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-trapezoid-rule]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-trapezoid-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "quadrature-midpoint-trapezoid:ch03-signed-error-comparison",
+      "concept_id": "quadrature-midpoint-trapezoid",
+      "outcome": "Interpret signed quadrature error as exact value minus approximation and distinguish table evidence from a theorem.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 30,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [29, 30],
+          "method": "Rendered and visually inspected canonical physical pages [29, 30]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source table reports midpoint and trapezoid values alongside ln 2; the table is an example, not a general bound."
+        },
+        "page_heading": "Example 3.22 numerical comparison table"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-signed-error].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-signed-error]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-signed-error-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-quadrature",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-signed-error].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-signed-error]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-322]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-signed-error-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "quadrature-midpoint-trapezoid:ch03-error-bound",
+      "concept_id": "quadrature-midpoint-trapezoid",
+      "outcome": "Use a whole-interval second-derivative bound to choose midpoint or trapezoid panel count.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 31,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [30, 31],
+          "method": "Rendered and visually inspected canonical physical pages [30, 31]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source states both n^-2 error bounds and says their proof is beyond the syllabus; Example 3.23 selects n from a bound."
+        },
+        "page_heading": "Theorem 1: error bounds for trapezoidal and midpoint rules"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-error-bound].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-error-bound]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-323]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-quadrature-bound-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-quadrature",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:05",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-error-bound].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-error-bound]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.contentBlocks[ch03-quadrature-source-example-323]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#quadrature-midpoint-trapezoid.exercises[ch03-quadrature-bound-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "simpson-rule:ch03-composite-weights",
+      "concept_id": "simpson-rule",
+      "outcome": "Use an even panel count and the composite Simpson 1,4,2,...,4,1 weights.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 32,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [32, 33],
+          "method": "Rendered and visually inspected canonical physical pages [32, 33]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source derives Simpson’s rule as a weighted average of T_(n/2) and M_(n/2), gives the composite weights, and requires n even."
+        },
+        "page_heading": "3.6 composite Simpson formula and even-n condition"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-composite-rule].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-composite-rule]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-source-example-324]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.exercises[ch03-simpson-weights-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-simpson",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:06",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-composite-rule].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-composite-rule]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-source-example-324]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.exercises[ch03-simpson-weights-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
+      }
+    },
+    {
+      "id": "simpson-rule:ch03-error-bound",
+      "concept_id": "simpson-rule",
+      "outcome": "Choose an even Simpson panel count from a whole-interval fourth-derivative error bound.",
+      "core_source": {
+        "id": "MH1101_Chapter_03_Notes",
+        "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+        "inspection": "Canonical 35-page PDF SHA-256 verified; every physical page in the cited claim was rendered and visually inspected.",
+        "physical_page": 33,
+        "page_validation": {
+          "status": "page_verified",
+          "pages": [33, 34, 35],
+          "method": "Rendered and visually inspected canonical physical pages [33, 34, 35]; SHA-256 f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505.",
+          "claim_observed": "The source states the n^-4 error theorem without proof and uses Example 3.25 to choose an even n from a derivative bound."
+        },
+        "page_heading": "Theorem 2 and Example 3.25: Simpson error guarantee"
+      },
+      "evidence": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-error-bound].title",
+            "claim": "A dedicated learner-facing title names this atomic skill; the parent catalog title is not treated as atomic evidence.",
+            "method": "Compared the specific block title with the inspected source page."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-error-bound]",
+            "claim": "The guide states the operation and its assumptions or branch conditions.",
+            "method": "Checked the block wording against the visually inspected source claim."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-source-example-325]",
+            "claim": "The guide works the cited source example and checks the calculation.",
+            "method": "Independently recomputed the displayed algebra, integral, bounds, or error calculation."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.exercises[ch03-simpson-bound-transfer]",
+            "claim": "A changed-data task requires independent application and includes checked feedback.",
+            "method": "Solved the changed-data prompt and checked its hint, solution, and rubric; no learner attempt is claimed."
+          }
+        ],
+        "visualized": [],
+        "checked": []
+      },
+      "visual_candidate": {
+        "scene_id": "plane-simpson",
+        "verified_for_outcome": false
+      },
+      "depth": "source_page_and_cited_guide_inspected",
+      "verification": "canonical_sha_and_physical_pages_verified",
+      "gap": "The canonical page, specific guide statement, worked calculation, and changed-data feedback were inspected. No outcome-specific scene alignment or learner performance check is claimed.",
+      "source_section_id": "MH1101_Chapter_03_Notes:06",
+      "candidate_blocks": {
+        "named": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-error-bound].title",
+            "basis": "Dedicated block title names this operation; parent-topic naming alone is not counted."
+          }
+        ],
+        "stated": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-error-bound]",
+            "basis": "Guide statement and hypotheses checked against the source page."
+          }
+        ],
+        "worked": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.contentBlocks[ch03-simpson-source-example-325]",
+            "basis": "Source-specific or explicitly guide-authored calculation independently checked."
+          }
+        ],
+        "practiced": [
+          {
+            "locator": "lib/curriculum/learning-guides.json#simpson-rule.exercises[ch03-simpson-bound-transfer]",
+            "basis": "Changed-data exercise, hint, solution, and rubric checked."
+          }
+        ]
+      },
+      "inspection_check": {
+        "method": "Compared the hash-matched rendered source page with the dedicated block, checked work, and independently solved changed-data task.",
+        "named": "dedicated atomic skill title inspected",
+        "stated": "method and hypotheses or branch limits inspected",
+        "worked": "calculation independently checked",
+        "practiced": "changed-data feedback checked; learner performance unverified",
+        "visualized": "Existing scene remains a candidate; no outcome-specific alignment claimed.",
+        "checked": "No independent learner response or mastery measurement claimed."
       }
     },
     {

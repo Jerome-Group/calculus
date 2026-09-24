@@ -50,6 +50,9 @@ test("every core source has an explicit section inventory and honest gap", () =>
       const chapter06Notes = /^MH1101_Chapter_06_Notes:0[1-5]$/.test(
         section.id,
       );
+      const chapter03Notes = /^MH1101_Chapter_03_Notes:0[1-6]$/.test(
+        section.id,
+      );
       const lecture10 = /^MH1100_Lecture_10:0[1-4]$/.test(section.id);
       const lecture11 = /^MH1100_Lecture_11:0[1-3]$/.test(section.id);
       const lecture12 = /^MH1100_Lecture_12:0[12]$/.test(section.id);
@@ -80,6 +83,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         mh2100Lecture05 ||
         chapter02Volumes ||
         mh2100Lecture12Review ||
+        chapter03Notes ||
         chapter04Notes ||
         chapter06Notes;
       const pageVerified =
@@ -99,6 +103,7 @@ test("every core source has an explicit section inventory and honest gap", () =>
         chapter02Volumes ||
         mh2100Lecture12Review ||
         partialsSupplement ||
+        chapter03Notes ||
         chapter04Notes ||
         chapter05Notes ||
         chapter06Notes;
@@ -228,7 +233,12 @@ test("inspected atomic outcomes retain core locators and separate evidence state
     assert.ok(entry.core_source.physical_page >= 1);
     assert.ok(entry.core_source.physical_page <= source.pages);
     assert.ok(concepts.some((concept) => concept.id === entry.concept_id));
-    assert.equal(entry.verification, "source_page_and_cited_guide_inspected");
+    assert.equal(
+      entry.verification,
+      entry.core_source.id === "MH1101_Chapter_03_Notes"
+        ? "canonical_sha_and_physical_pages_verified"
+        : "source_page_and_cited_guide_inspected",
+    );
     assert.equal(entry.core_source.page_validation.status, "page_verified");
     assert.ok(entry.core_source.page_validation.claim_observed);
     assert.ok(
