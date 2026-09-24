@@ -14595,7 +14595,7 @@
           "The source proves the claim by comparison of nonnegative terms."
         ],
         "prerequisites": ["Positive-term comparison"],
-        "status": "Theorem used without proof"
+        "status": "Proof follows below by comparison of nonnegative terms"
       },
       {
         "kind": "worked-example",
