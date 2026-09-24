@@ -1372,6 +1372,6 @@ export function buildGraph(spec: GraphSpec, g: T.Group) {
     ),
   );
   if (!pos.length)
-    return "No sign-changing surface was detected at this resolution. Non-sign-changing zero sets, such as z² = 0, and small features may be missed.";
+    return "No sign-changing surface was detected at this resolution. Surfaces formed by repeated zeros may be missed, as may small features.";
   return `${pos.length / 9} approximate zero-set triangles · ${finite}/${values.length} finite grid samples`;
 }

@@ -286,6 +286,50 @@ test("Graph Studio editors typeset valid idle expressions in every mode", async 
   assert.match(invalid, /class="expression-feedback" role="status"/);
 });
 
+test("implicit Graph Studio generated zero-set feedback has no unrendered math", async () => {
+  const { buildGraph } = await vite.ssrLoadModule("/lib/atlas/geometry.ts");
+  const { GraphStudio } = await vite.ssrLoadModule(
+    "/components/atlas/graph-studio.tsx",
+  );
+  const { Group } = await import("three");
+  const graph = {
+    mode: "implicit",
+    expressions: ["z^2"],
+    min: -2,
+    max: 2,
+    vmin: -2,
+    vmax: 2,
+    clip: 2,
+    a: 1,
+  };
+  const status = buildGraph(graph, new Group());
+  const html = renderToStaticMarkup(
+    React.createElement(GraphStudio, {
+      study: {
+        status,
+        graph,
+        setGraph() {},
+        draft: graph,
+        setDraft() {},
+        graphError: "",
+        plot() {},
+        rendered() {},
+      },
+    }),
+  );
+  assertNoUnmarkedVisibleMath(
+    html,
+    "implicit graph with repeated-zero surface",
+  );
+  const statusText =
+    html.match(/<div class="graph-status"[^>]*>([^<]*)<\/div>/)?.[1] ?? "";
+  assert.match(
+    statusText,
+    /Surfaces formed by repeated zeros may be missed/,
+    "the visible generated status explains why z^2's zero set may be absent",
+  );
+});
+
 test("all 125 lesson scenes render their initial learner-facing surfaces without raw math text", async () => {
   const { LessonExperiment } = await vite.ssrLoadModule(
     "/components/atlas/lesson-experiment.tsx",
