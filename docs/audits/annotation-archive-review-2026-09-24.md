@@ -23,13 +23,13 @@ Drive metadata searches used PDF MIME type plus the following title filters; eac
 
 | Search scope | MH1100 | MH1101 | MH2100 | Evidence |
 | --- | ---: | ---: | ---: | --- |
-| `name contains '<course>_Tutorial'` | 36 | 36 | 53 | MH1100/1101 each include 12 question PDFs, 12 solution PDFs, and 12 older loose tutorial PDFs. MH2100 includes 30 question PDFs, 10 solution PDFs, and 13 Concepts/Graded/Attempt PDFs. |
+| `name contains '<course>_Tutorial'` | 36 | 36 | 53 | MH1100/1101 each include 12 question PDFs, 12 solution PDFs, and 12 older loose tutorial PDFs. The later page-level review classifies the MH2100 set as 25 Questions, 10 Solutions, 6 Attempt, 6 Concepts, and 6 Graded PDFs; see [`archive-variant-review-2026-09-24.md`](archive-variant-review-2026-09-24.md). |
 | Course name plus `Final`, `Midterm`, or `Review` | 39 | 52 | 47 | Filename inventory only; question/solution variants and review/formula files coexist. |
 
-Readable text was fetched from one tutorial solution for each course (MH1100 Tutorial 03, MH1101 Tutorial 09, MH2100 Tutorial 06). This verifies text access for those samples only. The tutorial, solution, exam, review, older loose-copy, and annotated-note sets were **not** compared page-by-page; duplicates and answer variants remain unresolved. Searches were limited to the stated filename filters and accessible Drive results. No claim is made that other filenames or unlisted folders are absent.
+This report's original broad-archive paragraph was a filename inventory plus three sample text fetches. The later page-level follow-up covers all 125 tutorial PDFs and 137 public rows among 138 unique MH1100, MH1101, and MH2100 Final/Midterm/Review results; one private result is excluded from public row-level metadata and content review, with only an aggregate count retained. Across the searches, 263 unique IDs were observed and 262 public source rows retained. See [`archive-variant-review-2026-09-24.md`](archive-variant-review-2026-09-24.md) and its ID-level JSON. The 39/52/47 counts above are per-course exam/review search results, not tutorial counts. Overlapping hits were deduplicated by Drive ID (two MH1100 Final/Review hits and one MH2100 Final/Review hit). Search bounds remain limited to the stated title terms and accessible Drive results; other filenames or unlisted folders are not certified absent.
 
 ## Reproduction
 
 1. Search the six listed Drive IDs; compare L01–04 raw PDF renders with their canonical lecture page sequences. Keep source files and OCR output outside Git.
 2. Consult the existing L05/L06 page decisions in `2026-09-22/source-review.md`; do not count them as new work in this review.
-3. Re-run the two stated Drive filename/MIME filters per course to reproduce the bounded archive counts. Reconcile the remaining archive only in a separately scoped review.
+3. Re-run the stated Drive filename/MIME filters per course to reproduce bounded counts. The supplemental review links classifications to source IDs and does not certify unrelated annotation results.
