@@ -357,7 +357,16 @@
     "pages": 35,
     "course": "MH1101",
     "kind": "lecture",
-    "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505"
+    "sha256": "f8b86e97960de4ba1798d3abc8be5bb0e3cd9fd8236496e251911e5067b44505",
+    "errata": [
+      {
+        "page": 29,
+        "printed": "The source spells “Midpoint” as “Mipoint” in Example 3.22 on page 29 and repeats the typo on page 30.",
+        "correction": "Read “Mipoint” as “Midpoint”; the spelling does not alter the rule or any calculation.",
+        "justification": "Visual inspection of physical pages 29–30 confirms the same method name in the example and table; formulas and numerical values are otherwise legible.",
+        "provenance": "Direct visual inspection of the canonical SHA-256-matched 35-page PDF; source file unchanged."
+      }
+    ]
   },
   "MH2100_Lecture_04": {
     "id": "MH2100_Lecture_04",

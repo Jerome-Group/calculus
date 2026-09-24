@@ -2325,8 +2325,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [2, 2],
-        "detail": "3.1         Integration by Parts"
+        "pages": [2, 7],
+        "detail": "3.1 Integration by Parts; physical pages 2–7"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
@@ -2360,8 +2360,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [8, 8],
-        "detail": "3.2         Trigonometric Integrals"
+        "pages": [8, 16],
+        "detail": "3.2 Trigonometric Integrals; physical pages 8–16"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
@@ -2394,8 +2394,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [17, 17],
-        "detail": "3.3     Trigonometric Substitution"
+        "pages": [17, 20],
+        "detail": "3.3 Trigonometric Substitution; physical pages 17–20"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
@@ -2430,8 +2430,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [21, 21],
-        "detail": "3.4      Rational Functions by Partial Fractions"
+        "pages": [21, 25],
+        "detail": "3.4 Rational Functions by Partial Fractions; physical pages 21–25"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
@@ -2450,8 +2450,8 @@
     "scene": "plane-quadrature",
     "formula": "|E_M|\\le\\frac{K(b-a)^3}{24n^2},\\quad |E_T|\\le\\frac{K(b-a)^3}{12n^2}",
     "definition": "Midpoint rectangles sample the centre of each interval. Trapezoids connect endpoint heights by straight segments. Both approximate integrals using finitely many function evaluations; smoothness bounds can certify the error.",
-    "conditions": "For the stated bounds, $|f\\prime\\prime|\\le K$ on $[a,b]$ with sufficient differentiability and equal subinterval widths. The bound uses the maximum over the whole interval.",
-    "proof": "Local linear errors cancel by symmetry in the midpoint rule. Integrating the second-order remainder on each cell and summing yields an error proportional to $n^{-2}$.",
+    "conditions": "For the stated bounds, $|f\\prime\\prime|\\le K$ on the whole interval and the rules use equal widths. The source proof is beyond the syllabus.",
+    "proof": "The source states the midpoint and trapezoid error bounds and explicitly says their proof is beyond the syllabus; this guide does not attribute a proof to the notes.",
     "example": "For $x^2$ on $[0,1]$, midpoint sums are $1/3-1/(12n^2)$ and trapezoid sums are $1/3+1/(6n^2)$. The exact integral lies between them.",
     "pitfall": "The difference between two numerical answers is not automatically a certified error estimate.",
     "task": "Increase the subdivision count and compare both approximations with $1/3$.",
@@ -2465,18 +2465,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [26, 26],
-        "detail": "3.5      Numerical Integration I: Midpoint Rule &"
-      },
-      {
-        "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [29, 29],
-        "detail": "1.1 1.3 1.5 1.7 1.9"
-      },
-      {
-        "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [31, 31],
-        "detail": "Theorem 1. (Error Bounds for Trapezoidal and Midpoint Rule)"
+        "pages": [26, 31],
+        "detail": "3.5 Midpoint and Trapezoidal Rules; physical pages 26–31"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
@@ -2494,9 +2484,9 @@
     "subtitle": "Curved approximations can gain accuracy much faster than straight ones.",
     "scene": "plane-simpson",
     "formula": "S_n=\\frac{\\Delta x}{3}(f_0+4f_1+2f_2+\\cdots+4f_{n-1}+f_n)",
-    "definition": "Simpson’s rule fits a quadratic across each pair of equal subintervals and integrates that quadratic exactly. Its alternating weights come from integrating the interpolating basis functions.",
-    "conditions": "The subinterval count $n$ must be even. If $|f^{(4)}|\\le K$ on the interval, then $|E_S|\\le K(b-a)^5/(180n^4)$ under the usual smoothness assumptions.",
-    "proof": "On the symmetric nodes $-h,0,h$, the quadratic interpolant integrates to $h(f(-h)+4f(0)+f(h))/3$. Summing panels makes interior even-index endpoints appear twice.",
+    "definition": "For even $n$, Simpson’s composite rule uses weights $1,4,2,4,\\ldots,2,4,1$ with factor $h/3$. The source derives it as a weighted average of trapezoid and midpoint rules on paired panels.",
+    "conditions": "The panel count $n$ must be even. If $|f^{(4)}|\\le K$ on the whole interval, the source states $|E_S|\\le K(b-a)^5/(180n^4)$ and does not prove the bound.",
+    "proof": "The source derives the composite formula from $S_n=\\frac13T_{n/2}+\\frac23M_{n/2}$. It states the fourth-derivative error bound without proof.",
     "example": "For $f(x)=x^4$ on $[0,1]$, Simpson’s value is $1/5+2/(15n^4)$. Doubling $n$ divides this error by $16$.",
     "pitfall": "Using an odd number of equal subintervals does not fit the composite formula.",
     "task": "Double the even interval count and compare the error’s rate of decrease.",
@@ -2509,13 +2499,8 @@
     "sources": [
       {
         "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [32, 32],
-        "detail": "3.6      Numerical Integration II: Simpson’s Rule"
-      },
-      {
-        "sourceId": "MH1101_Chapter_03_Notes",
-        "pages": [33, 33],
-        "detail": "Theorem 2. (Error Bound for Simpson’s Rule)"
+        "pages": [32, 35],
+        "detail": "3.6 Simpson’s Rule; physical pages 32–35"
       },
       {
         "sourceId": "MH1101_Stewart_Chapter_07_Integration_Techniques",
