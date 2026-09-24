@@ -2484,4 +2484,23 @@ body {
   .reading-modes {
     flex-wrap: wrap;
   }
+  .quick-graph-label,
+  .quick-graph-controls {
+    flex: 1 1 100%;
+  }
+  .viewport-top {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px 0;
+  }
+  .viewport-top > div {
+    flex-wrap: wrap;
+  }
+  .viewport-top button {
+    padding: 4px 8px;
+  }
 }
