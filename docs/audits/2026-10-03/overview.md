@@ -27,6 +27,12 @@ distorted direction angles, and an unintended filled SVG axes triangle. Actual b
 inspection also corrected a false disagreement caption at a zero ray height. Vite test and
 inventory caches are isolated after a real dev hydration failure exposed cache interference.
 
+GitHub surfaced six existing development-only Undici alerts while preparing release.
+Miniflare pins the affected 7.29.0; a scoped override selects the official 7.29.1 patch.
+The affected BalancedPool/interceptor paths were not found in the shipped worker.
+Installation, build and local preview are rechecked; this does not claim production TLS
+was exposed. The patch retains the existing Node 24 toolchain and public access model.
+
 ## Evidence and limits
 
 The baseline and redesigned local application were opened in the user's in-app browser:
