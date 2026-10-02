@@ -8,22 +8,24 @@ import { LessonWorkspace } from "./lesson-workspace";
 import { GraphStudio } from "./graph-studio";
 function AtlasInner() {
   const study = useStudyController();
-  const {
-    selected,
-    route,
-    search,
-    course,
-    concept,
-    open,
-    show,
-    webmcp,
-    setCourse,
-    setExpanded,
-  } = study;
+  const { selected, route, search, course, concept, open, show, webmcp } =
+    study;
   return (
     <>
       <CourseSidebar study={study} />
-      <main className="atlas-main">
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={(event) => {
+          event.preventDefault();
+          const main = document.getElementById("main-content");
+          main?.focus({ preventScroll: true });
+          main?.scrollIntoView({ block: "start" });
+        }}
+      >
+        Skip to mathematics
+      </a>
+      <main className="atlas-main" id="main-content" tabIndex={-1}>
         <header className="topbar">
           <div>
             <SidebarTrigger aria-label="Toggle lecture navigation" />
@@ -40,17 +42,19 @@ function AtlasInner() {
             </span>
           </div>
           <div className="top-tabs">
-            <button
-              className={route !== "graph" ? "selected" : ""}
-              onClick={() => open(selected)}
-            >
-              <BookOpen size={15} /> Learn
-            </button>
+            {route !== "lesson" && (
+              <button
+                className={route !== "graph" ? "selected" : ""}
+                onClick={() => open(selected)}
+              >
+                <BookOpen size={15} /> Resume lesson
+              </button>
+            )}
             <button
               className={route === "graph" ? "selected" : ""}
               onClick={() => show("graph")}
             >
-              <FunctionSquare size={15} /> Explore
+              <FunctionSquare size={15} /> Graph studio
             </button>
           </div>
         </header>
@@ -62,10 +66,9 @@ function AtlasInner() {
           <CourseLibrary
             course={course}
             query={search}
-            chooseCourse={(id) => {
-              setCourse(id);
-              setExpanded(1);
-            }}
+            setQuery={study.setSearch}
+            notice={study.historyNotice}
+            chooseCourse={study.chooseCourse}
             open={open}
           />
         )}

@@ -32,6 +32,7 @@ import {
   routeUrl,
   type LessonHistory,
 } from "./study-history";
+import { libraryUrl, readLibraryHistory } from "./library-history";
 const experimentInfo = (id: string) =>
   id.startsWith("plane-")
     ? {
@@ -174,7 +175,7 @@ export function useStudyController() {
     heading?.focus({ preventScroll: true });
     heading?.scrollIntoView({ block: "start" });
   }, [noteTab, readingMode, notesRequest]);
-  function show(r: string, selectedGraph = graph) {
+  function show(r: string, selectedGraph = graph, libraryCourse = course) {
     saveScroll();
     setRoute(r);
     setPlaying(false);
@@ -184,14 +185,43 @@ export function useStudyController() {
       "",
       r === "graph"
         ? graphUrl(new URL(window.location.href), selectedGraph)
-        : routeUrl(new URL(window.location.href), r),
+        : r === "course"
+          ? libraryUrl(new URL(window.location.href), libraryCourse, search)
+          : routeUrl(new URL(window.location.href), r),
     );
+    window.scrollTo({ top: 0, behavior: "instant" });
+    requestAnimationFrame(() =>
+      document
+        .getElementById(r === "graph" ? "graph-title" : "library-title")
+        ?.focus({ preventScroll: true }),
+    );
+  }
+  function chooseCourse(id: CourseId) {
+    setCourse(id);
+    setExpanded(1);
+    show("course", graph, id);
+  }
+  function updateSearch(value: string) {
+    const query = value.slice(0, 100);
+    setSearch(query);
+    if (route === "course")
+      history.replaceState(
+        history.state,
+        "",
+        libraryUrl(new URL(window.location.href), course, query),
+      );
   }
   function restoreLocation() {
     const hash = window.location.hash.slice(1);
     if (hash === "graph" || hash === "course") {
       setRoute(hash);
       setPlaying(false);
+      if (hash === "course") {
+        const parsed = readLibraryHistory(new URL(window.location.href));
+        setCourse(parsed.kind === "valid" ? parsed.value.course : "MH1100");
+        setSearch(parsed.kind === "valid" ? parsed.value.query : "");
+        setHistoryNotice(parsed.kind === "invalid" ? parsed.explanation : "");
+      }
       if (hash === "graph") {
         const parsed = readGraphHistory(new URL(window.location.href));
         const restored = parsed.kind === "valid" ? parsed.graph : initialGraph;
@@ -395,12 +425,8 @@ export function useStudyController() {
     playing,
     activeScene,
     setNoteTab: showNotes,
-    setSearch,
-    chooseCourse: (id: CourseId) => {
-      setCourse(id);
-      setExpanded(1);
-      show("course");
-    },
+    setSearch: updateSearch,
+    chooseCourse,
     reset: () => {
       setP(info.initial);
       setPlaying(false);
@@ -469,7 +495,8 @@ export function useStudyController() {
     filtered,
     setCourse,
     setExpanded,
-    setSearch,
+    setSearch: updateSearch,
+    chooseCourse,
     setNoteTab: showNotes,
   };
 }

@@ -87,7 +87,10 @@ export function SourceReferences({ concept }: { concept: Concept }) {
             </span>
             <h3>{source.title}</h3>
             {source.errata?.map((note) => (
-              <aside className="source-erratum" key={note.page}>
+              <aside
+                className="source-erratum"
+                key={`${note.page}:${note.printed}`}
+              >
                 <strong>Source erratum · PDF p. {note.page}</strong>
                 <p>
                   <MathText text={note.printed} />

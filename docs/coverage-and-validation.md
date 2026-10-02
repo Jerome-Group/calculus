@@ -160,3 +160,12 @@ The audit reviews are leads from commit `d5977e8745563b8d36778bbf6860ff3c40b7a20
 - **Review: the largest inscribed box** (`review-lagrange-box`): lecture 12; PDF pages 16–18. Topics: final review, Lagrange multipliers, ellipsoid, inscribed box, global maximum, compactness, AM GM.
 - **Review: classify all six stationary points** (`review-critical-points`): lecture 12; PDF pages 19–21. Topics: final review, stationary points, Hessian, second derivative test, local minimum, local maximum, saddle point, local versus global.
 - **Review: the remainder decides differentiability** (`review-total-differentiability`): lecture 12; PDF pages 22–27. Topics: final review, total differentiability, Frechet derivative, uniform remainder, partial derivatives, directional derivatives, continuity, counterexample.
+
+## Repeatable experience verification (October 2026)
+
+Use `node scripts/calculus.mjs inventory --json` for the complete current lesson,
+feature, route, dependency, browser-tool and verification map. `map --check` rejects
+stale `data/experience-map.json`; regenerate with `map` after a source change.
+`verify --profile ci` is the shared local/CI gate, including a fresh production build.
+See `docs/verification.md` for structured reports, effects, negative cases and limits.
+Static references and historical outcome-ledger flags remain discovery, not certification.

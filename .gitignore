@@ -40,6 +40,7 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+/tmp/
 
 # Course files are private; access-controlled links may remain in source.
 *.[pP][dD][fF]

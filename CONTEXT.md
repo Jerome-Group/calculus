@@ -18,3 +18,17 @@ referenced file or grant permission to copy it.
 **PDF page**: one-based physical page in the linked extract, not a printed textbook page number.
 
 **Visual layout**: split notes/graph, wide graph, or minimised graph with expanded reading space.
+
+**Comparison lab**: two or more analytic representations of an existing lesson, with
+an exact readout and a prediction followed by explanatory feedback.
+
+**Self-assessment**: a learner's own confidence record; never an automatic grade.
+
+**Independent choice record**: a scored choice made without hints; limited evidence
+about that choice, never a claim of mastery or learning gain.
+
+**Source fingerprint**: SHA-256 of tracked and nonignored files, including contents,
+paths, symlink targets and executable flags; distinguishes edits sharing a Git HEAD.
+
+**Browser evidence**: attributed observations of a stated source and URL. Machine
+validation checks its shape and provenance, not whether the observations happened.

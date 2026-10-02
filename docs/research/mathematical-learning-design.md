@@ -1,0 +1,21 @@
+# Linked comparisons in the existing calculus curriculum
+
+The redesign preserves course scope and theorem assumptions. New comparison labs use functions already explained by MH2100 lessons. Their purpose is to make mathematical distinctions inspectable; learning benefits have not been established for this application.
+
+## What the comparisons expose
+
+- **Path limits:** `xy/(x²+y²)` separates the axis value zero from the diagonal value one half. `x²y/(x⁴+y²)` tends to zero on every fixed straight line but is constant on `y=kx²`. A domain path, restriction graph and exact formula distinguish a sampled observation from a nonexistence proof. The origin remains excluded. The universal punctured-neighborhood definition is authoritative; agreement among tested paths does not establish existence. [OpenStax, limits and continuity](https://openstax.org/books/calculus-volume-3/pages/4-2-limits-and-continuity).
+- **Differentiability:** a quadratic bowl has normalized remainder equal to input radius. For the continuous zero extension of `x³/(x²+y²)`, the candidate plane is `z=x`, but its normalized error in direction θ equals `|cosθ sin²θ|`, independently of radius. Absolute error can shrink while the differentiability condition fails. Coordinate partials determine a candidate, not a certificate. [OpenStax, linear approximations](https://openstax.org/books/calculus-volume-3/pages/4-4-tangent-planes-and-linear-approximations); [Math Insight, subtleties](https://mathinsight.org/differentiability_multivariable_subtleties).
+- **Saddles:** directional sections of `x²+ay²` connect opposing quadratic signs with a saddle. At `a=0`, the Hessian test is inconclusive, while direct nonnegativity proves non-strict minima. Keep zero gradient separate from classification. [OpenStax, extrema](https://openstax.org/books/calculus-volume-3/pages/4-7-maxima-minima-problems).
+- **Clocks:** the helix and its cubic reparametrization cover the same image segment, with different speeds. Zero cubic velocity at the origin of parameter space does not remove the geometric tangent supplied by the regular clock.
+- **Integration:** fibres of `x+y≤2`, with nonnegative coordinates, make inner bounds geometric. Swapping order keeps the triangle fixed. Polar parameter rectangles map to annular sectors: their exact finite area differs from the differential approximation at the inner radius by a quadratic correction. [OpenStax, polar area](https://openstax.org/books/calculus-volume-3/pages/5-3-double-integrals-in-polar-coordinates).
+
+## Design evidence and limits
+
+Simulation design research describes how affordances, constraints, cues and immediate feedback can guide exploration. This motivates named controls, synchronized representations, meaningful initial settings and reset. The research provides a framework and a simulation interview exemplar; it does not demonstrate attainment gains in this application. [Podolefsky, Moore and Perkins, implicit scaffolding](https://arxiv.org/abs/1306.6544).
+
+Experimental retrieval-practice research motivates short prediction prompts before explanatory feedback. Its tasks involved science texts; effects cannot be assumed to transfer quantitatively to these calculus labs. Predictions here provide opportunities to explain, not a mastery score. [Karpicke and Blunt, 2011 primary paper](https://learninglab.psych.purdue.edu/downloads/2011/2011_Karpicke_Blunt_Science.pdf).
+
+Math Insight supplies an author-maintained precedent for movable points and tangent-plane explanations. CalcPlot3D supplies an interactive multivariable plotting precedent. Focused comparisons borrow the idea of manipulable mathematical objects without importing a general plotting toolbar. [Math Insight, differentiability introduction](https://mathinsight.org/differentiability_multivariable_introduction); [CalcPlot3D manual](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/chapter-overview.html).
+
+Native range controls support keyboard changes; SVG descriptions and numeric readouts offer alternatives to visual inspection. Exact analytic identities and server-rendered structure are independently testable. Learner participants are unavailable: misconception reduction, retention, learning gain and mastery remain unverified. No private course extracts are reproduced here.

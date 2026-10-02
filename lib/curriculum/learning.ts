@@ -74,7 +74,12 @@ export type LearningGuide = {
       | "computational"
       | "proof"
       | "counterexample"
-      | "method-choice";
+      | "method-choice"
+      | "calculation"
+      | "computation"
+      | "interpretation"
+      | "classification"
+      | "reasoning";
   })[];
 };
 export const learningGuides = guides as Record<string, LearningGuide>;

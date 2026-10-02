@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Viewport } from "./viewport";
+import { Viewport } from "./deferred-viewport";
 import { Formula } from "./math-text";
 import { type GraphSpec } from "@/lib/atlas/math";
 import { ExpressionPreview, expressionPreview } from "./expression-preview";
@@ -132,7 +132,9 @@ export function GraphStudio({ study }: { study: StudyController }) {
     <>
       <div className="lesson-heading">
         <div className="eyebrow">AN OPEN MATHEMATICAL WORKSPACE</div>
-        <h1>Graph studio</h1>
+        <h1 tabIndex={-1} id="graph-title">
+          Graph studio
+        </h1>
         <p>
           Give an equation a shape. Explore graphs, parametrizations, curves,
           and implicit surfaces.

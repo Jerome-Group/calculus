@@ -60,13 +60,13 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
-      - name: Check formatting
-        run: npm run format:check
-      - name: Check source freshness
-        run: node scripts/check-source-manifest.mjs
-      - name: Lint the application
-        run: npm run lint
-      - name: Build the application
-        run: npx vinext build
-      - name: Test the application
-        run: node --test tests/*.test.mjs
+      - name: Verify the application
+        run: node scripts/calculus.mjs verify --profile ci --json --output outputs/verification/ci
+      - name: Retain verification evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: calculus-verification
+          path: outputs/verification/ci
+          if-no-files-found: warn
+          retention-days: 14
