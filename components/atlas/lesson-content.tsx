@@ -10,6 +10,7 @@ import { RegionExperimentSequence } from "./region-experiment-sequence";
 import { StructuredLessonBlockView } from "./structured-lesson-block";
 import { ReviewDifferentiabilityExperiments } from "./review-differentiability-experiments";
 import type { StudyController } from "./use-study-controller";
+import { ComparisonLab } from "./comparison-labs";
 export function LessonContent({
   study,
 }: {
@@ -22,6 +23,7 @@ export function LessonContent({
   const guide = learningGuide(concept);
   return (
     <section className="rigor-panel" aria-label="Mathematical explanation">
+      <ComparisonLab key={concept.id} conceptId={concept.id} />
       <span className="label">MATHEMATICAL NOTES</span>
       {guide && (
         <nav className="prerequisites" aria-label="Lesson prerequisites">

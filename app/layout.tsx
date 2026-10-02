@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./experience.css";
 
 const title = "Calculus · Explore the mathematics of change";
 const description =

@@ -1,6 +1,6 @@
 # Calculus
 
-An interactive learning site for students exploring multivariable calculus through visual explanations and 3D geometry.
+An interactive undergraduate library for calculus in one and several variables: definitions, arguments, worked examples, practice and linked mathematical drawings.
 
 Live site: https://calculus.jeromegroup.org
 
@@ -9,26 +9,34 @@ Live site: https://calculus.jeromegroup.org
 Existing teaching application imported from ChatGPT Sites; build and tests are checked in CI.
 Course documents are excluded; access-controlled notes links are retained.
 
-## Local development
+## Local development and verification
 
-Use Node.js 24 or newer, then:
-
-```sh
-npm ci
-npx vite
-```
-
-Build and run the existing checks on macOS or Linux:
+Use Node.js 24+ and Git. Install locked dependencies with `npm ci`; start locally with
+`npm run dev -- --host 127.0.0.1`. Set an explicit unused port when running several projects.
 
 ```sh
-npm run format:check
-npm run lint
-npx vinext build
-node --test tests/*.test.mjs
+node scripts/calculus.mjs help --json
+node scripts/calculus.mjs doctor --json
+node scripts/calculus.mjs inventory --json --output outputs/inventory.json
+node scripts/calculus.mjs map --check --json
+node scripts/calculus.mjs verify --profile ci --json --output outputs/verification/local
+node scripts/calculus.mjs browser-plan --json
 ```
 
-The retained `install:ci` and `build` wrappers target the Linux Sites environment.
-The commands above work directly on the MacBook Pro. See `MAP.md` for the source layout.
+`verify --profile ci` is the same executable loop used by CI: formatting, lint, source
+freshness, map freshness, production build, then all Node tests. It stops on a failure,
+bounds process time, preserves stdout/stderr and records both the Git revision and a
+SHA-256 source fingerprint. `build` writes `dist`; `test` requires that build. Neither
+publishes. `map` without `--check` rewrites `data/experience-map.json`; regenerate it
+when lessons, features, dependencies, tools or test coverage change. `outputs/` is ignored.
+The retained Sites shell wrappers are legacy Linux integrations; the CLI runs directly
+on macOS and Linux without shell package-manager wrappers.
+
+Browser journeys require actual observations. `browser-evidence --input <report> --json`
+validates their structure and current source identity; it does not manufacture or
+independently verify observations. Read [verification contracts](docs/verification.md)
+and the machine-readable [experience map](data/experience-map.json) for known gaps.
+Self-assessment and choice records remain browser-local; neither is proof of mastery.
 
 ## Source and rights
 

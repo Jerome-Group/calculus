@@ -176,8 +176,11 @@ test("all 125 lessons retain a mode path, and pilot math parses strictly", async
 });
 
 test("legacy confidence is migrated without correctness or mastery", async () => {
-  const { legacyConfidence, parsePilotProgress, pilotMastery } =
-    await vite.ssrLoadModule("/lib/curriculum/pilot-progress.ts");
+  const {
+    legacyConfidence,
+    parsePilotProgress,
+    hasDelayedIndependentChoiceEvidence,
+  } = await vite.ssrLoadModule("/lib/curriculum/pilot-progress.ts");
   assert.equal(
     legacyConfidence({
       status: "Can explain independently",
@@ -192,7 +195,7 @@ test("legacy confidence is migrated without correctness or mastery", async () =>
     ),
     { valid: { attempts: [] } },
   );
-  assert.equal(pilotMastery({ attempts: [] }), false);
+  assert.equal(hasDelayedIndependentChoiceEvidence({ attempts: [] }), false);
   const first = {
     taskId: "reverse",
     kind: "transfer",
@@ -200,15 +203,18 @@ test("legacy confidence is migrated without correctness or mastery", async () =>
     support: "none",
     at: "2026-09-22T00:00:00Z",
   };
-  assert.equal(pilotMastery({ attempts: [first] }), false);
   assert.equal(
-    pilotMastery({
+    hasDelayedIndependentChoiceEvidence({ attempts: [first] }),
+    false,
+  );
+  assert.equal(
+    hasDelayedIndependentChoiceEvidence({
       attempts: [first, { ...first, at: "2026-09-23T00:00:00Z" }],
     }),
     true,
   );
   assert.equal(
-    pilotMastery({
+    hasDelayedIndependentChoiceEvidence({
       attempts: [
         first,
         { ...first, support: "hint", at: "2026-09-23T00:00:00Z" },

@@ -70,8 +70,8 @@ export function Viewport({
       setFallback(true);
     }
     renderer.setPixelRatio?.(Math.min(window.devicePixelRatio, 2));
-    if (cpu) renderer.setClearColor(new T.Color(0x073cba));
-    else renderer.setClearColor(0x073cba, 0);
+    if (cpu) renderer.setClearColor(new T.Color(0x143847));
+    else renderer.setClearColor(0x143847, 0);
     renderer.outputColorSpace = T.SRGBColorSpace;
     el.appendChild(renderer.domElement);
     renderer.domElement.setAttribute(

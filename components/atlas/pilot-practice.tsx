@@ -71,7 +71,7 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
         at: new Date().toISOString(),
       });
       update({
-        feedback: `${correct ? "Choice correct. Compare your reasoning:" : "Try again."} ${message}`,
+        feedback: `${correct ? "Choice correct. Your written reasoning is not graded; compare it:" : "Try again."} ${message}`,
       });
     } catch {
       update({

@@ -1,4 +1,4 @@
-import type { Concept } from "./index";
+import { sources, type Concept } from "./index";
 import { learningGuides } from "./learning";
 const aliases: Record<string, string> = {
   "partials-do-not-make-a-plane":
@@ -14,20 +14,30 @@ const normalize = (text: string) =>
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase();
+const searchableText = (value: unknown): string => {
+  if (typeof value === "string") return value;
+  if (Array.isArray(value)) return value.map(searchableText).join(" ");
+  if (value && typeof value === "object")
+    return Object.values(value).map(searchableText).join(" ");
+  return "";
+};
+const indexes = new WeakMap<Concept, string>();
 export function matchesConcept(concept: Concept, query: string) {
   const words = normalize(query).split(/\s+/).filter(Boolean);
-  const guide = learningGuides[concept.id];
-  const haystack = normalize(
-    [
-      concept.title,
-      concept.subtitle,
-      concept.definition,
-      concept.conditions,
-      concept.pitfall,
-      ...concept.topics,
-      aliases[concept.id] || "",
-      guide?.sections.map((s) => s.text).join(" ") || "",
-    ].join(" "),
-  );
+  let haystack = indexes.get(concept);
+  if (haystack === undefined) {
+    const guide = learningGuides[concept.id];
+    haystack = normalize(
+      [
+        searchableText(concept),
+        searchableText(guide),
+        aliases[concept.id] || "",
+        ...concept.sources.map(
+          (citation) => sources[citation.sourceId]?.title || "",
+        ),
+      ].join(" "),
+    );
+    indexes.set(concept, haystack);
+  }
   return words.every((word) => haystack.includes(word));
 }

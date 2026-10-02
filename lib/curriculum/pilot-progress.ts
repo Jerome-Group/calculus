@@ -90,7 +90,7 @@ export function legacyConfidence(
   return record.status === "Can explain independently" ? "confident" : "unsure";
 }
 
-export function pilotMastery(record?: PilotRecord) {
+export function hasDelayedIndependentChoiceEvidence(record?: PilotRecord) {
   const independent =
     record?.attempts.filter(
       (attempt) =>
@@ -101,6 +101,9 @@ export function pilotMastery(record?: PilotRecord) {
   return independent.some((first, index) =>
     independent
       .slice(index + 1)
-      .some((later) => Date.parse(later.at) - Date.parse(first.at) >= 86400000),
+      .some(
+        (later) =>
+          Math.abs(Date.parse(later.at) - Date.parse(first.at)) >= 86400000,
+      ),
   );
 }

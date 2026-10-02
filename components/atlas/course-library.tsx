@@ -8,29 +8,28 @@ export function CourseLibrary({
   query,
   chooseCourse,
   open,
+  setQuery,
+  notice,
 }: {
   course: CourseId;
   query: string;
   chooseCourse: (c: CourseId) => void;
   open: (id: string) => void;
+  setQuery: (query: string) => void;
+  notice?: string;
 }) {
   const selected = courses[course];
   const matches = concepts.filter(
-    (c) => c.course === course && matchesConcept(c, query),
+    (c) => (query.trim() || c.course === course) && matchesConcept(c, query),
   );
   return (
     <div className="library">
       <header className="library-heading">
         <div>
           <span className="eyebrow">MH1100 / MH1101 / MH2100</span>
-          <h1>
+          <h1 id="library-title" tabIndex={-1}>
             Calculus.
-            <br />
-            <em>
-              From limits
-              <br />
-              to fields.
-            </em>
+            <em>From limits to fields.</em>
           </h1>
           <p>
             One connected library, from the first limit to vector calculus.
@@ -38,12 +37,33 @@ export function CourseLibrary({
           </p>
         </div>
         <div className="library-equation">
-          <Formula
-            block
-          >{String.raw`\underbrace{\frac{d}{dx}}_{\text{local change}}\;\underbrace{\int_a^x f(t)\,dt}_{\text{accumulation}}=f(x)`}</Formula>
+          <div>
+            <Formula
+              block
+            >{String.raw`\underbrace{\frac{d}{dx}}_{\text{local change}}\;\underbrace{\int_a^x f(t)\,dt}_{\text{accumulation}}=f(x)`}</Formula>
+            <p className="equation-caption">
+              For continuous <Formula>f</Formula>: change and accumulation
+              connect.
+            </p>
+          </div>
         </div>
       </header>
-      <StudyProgress open={open} />
+      {notice && <p role="status">{notice}</p>}
+      <label className="library-search">
+        <span>Find a connection across all three courses</span>
+        <input
+          aria-label="Search the entire library"
+          value={query}
+          maxLength={100}
+          placeholder="Try path, tangent, approximation, or integral…"
+          onChange={(event) => setQuery(event.target.value)}
+        />
+        {query && (
+          <button onClick={() => setQuery("")} type="button">
+            Clear search
+          </button>
+        )}
+      </label>
       <div className="course-paths">
         {courseIds.map((id, i) => (
           <button
@@ -65,43 +85,68 @@ export function CourseLibrary({
           </button>
         ))}
       </div>
+      <StudyProgress open={open} />
       <section className="unit-library">
         <header>
           <div>
-            <span className="eyebrow">{course} · STUDY PATH</span>
-            <h2>{selected.title}</h2>
+            <span className="eyebrow">
+              {query.trim() ? "ALL COURSES · SEARCH" : `${course} · STUDY PATH`}
+            </span>
+            <h2>
+              {query.trim() ? "Connections in the library" : selected.title}
+            </h2>
           </div>
           <span>
             {matches.length} explorations
             {query ? " matching “" + query + "”" : ""}
           </span>
         </header>
-        {selected.units.map((title, i) => {
-          const cs = matches.filter((c) => c.lecture === i + 1);
-          return cs.length ? (
-            <article key={title}>
-              <span className="unit-index">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3>{title}</h3>
-                <div className="unit-concepts">
-                  {cs.map((c) => (
-                    <button key={c.id} onClick={() => open(c.id)}>
-                      <span>
-                        <MathText text={c.title} />
-                      </span>
-                      <ArrowRight size={15} />
-                    </button>
-                  ))}
+        {query.trim() ? (
+          <div className="search-library-results">
+            {matches.map((item) => (
+              <button key={item.id} onClick={() => open(item.id)}>
+                <small>
+                  {item.course} ·{" "}
+                  {item.course === "MH1101" ? "Chapter" : "Lecture"}{" "}
+                  {item.lecture}
+                </small>
+                <strong>
+                  <MathText text={item.title} />
+                </strong>
+                <p>
+                  <MathText text={item.subtitle} />
+                </p>
+              </button>
+            ))}
+          </div>
+        ) : (
+          selected.units.map((title, i) => {
+            const cs = matches.filter((c) => c.lecture === i + 1);
+            return cs.length ? (
+              <article key={title}>
+                <span className="unit-index">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3>{title}</h3>
+                  <div className="unit-concepts">
+                    {cs.map((c) => (
+                      <button key={c.id} onClick={() => open(c.id)}>
+                        <span>
+                          <MathText text={c.title} />
+                        </span>
+                        <ArrowRight size={15} />
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ) : null;
-        })}
+              </article>
+            ) : null;
+          })
+        )}
         {matches.length === 0 && (
           <p>
-            No matching concepts in this course. Choose another course or clear
+            No matching concepts. Try “limit”, “flux”, or “Jacobian”, or clear
             your search.
           </p>
         )}

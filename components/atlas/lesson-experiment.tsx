@@ -2,7 +2,7 @@
 import { useEffect, useId, useState } from "react";
 import { Minus, Maximize2, Pause, Play, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
-import { Viewport } from "./viewport";
+import { Viewport } from "./deferred-viewport";
 import { Formula, MathText } from "./math-text";
 import { sceneTex, legendColors } from "@/lib/atlas/scenes";
 import { PlanarViewport } from "./planar-viewport";
@@ -62,6 +62,8 @@ export function LessonExperiment({ study }: { study: StudyController }) {
           : " spatial-experience")
       }
       aria-label="Visualisation"
+      id="lesson-experiment"
+      tabIndex={-1}
     >
       <div className="experience-heading">
         <h2>Experiment</h2>
@@ -238,7 +240,7 @@ export function LessonExperiment({ study }: { study: StudyController }) {
                 )
                 .map(([value, label]) => (
                   <button
-                    key={label}
+                    key={value}
                     onClick={() => {
                       setP(Number(value));
                       setPlaying(false);

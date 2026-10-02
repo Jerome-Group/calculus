@@ -30,7 +30,6 @@ export function CourseSidebar({ study }: { study: StudyController }) {
     open,
     show,
     filtered,
-    setCourse,
     setExpanded,
     setSearch,
   } = study;
@@ -75,11 +74,7 @@ export function CourseSidebar({ study }: { study: StudyController }) {
             <button
               key={id}
               aria-current={course === id ? "true" : undefined}
-              onClick={() => {
-                setCourse(id);
-                setExpanded(1);
-                show("course");
-              }}
+              onClick={() => study.chooseCourse(id)}
             >
               {id}
               <span>{courses[id].title}</span>
@@ -92,6 +87,7 @@ export function CourseSidebar({ study }: { study: StudyController }) {
             aria-label="Find a concept"
             placeholder="Find a concept…"
             value={search}
+            maxLength={100}
             onChange={(e) => setSearch(e.target.value)}
           />
           {search && (

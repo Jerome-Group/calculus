@@ -11,7 +11,7 @@ import {
 import {
   legacyConfidence,
   parsePilotProgress,
-  pilotMastery,
+  hasDelayedIndependentChoiceEvidence,
   pilotSnapshot,
   savePilotConfidence,
 } from "@/lib/curriculum/pilot-progress";
@@ -120,9 +120,9 @@ export function PilotLessonView({
           .
         </p>
         <p>
-          {pilotMastery(record)
-            ? "Independent transfer repeated after a delay."
-            : "Mastery requires an unsupported transfer answer and another unsupported transfer answer at least a day later."}
+          {hasDelayedIndependentChoiceEvidence(record)
+            ? "Correct transfer choices recorded without hints at least a day apart. Written reasoning is not graded."
+            : "Record transfer choices without hints at least a day apart to track repeated practice. Choices do not establish mastery."}
         </p>
         <p>
           Confidence: {confidence || "not recorded"}. This is separate from task
