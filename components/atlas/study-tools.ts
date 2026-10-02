@@ -254,8 +254,9 @@ export function studyTools(
         if (!courseIds.includes(a.course as CourseId))
           throw new Error("Unknown course.");
         const q = a.query === undefined ? "" : string(a.query, "query", 100);
-        current().setSearch(q);
         current().chooseCourse(a.course as CourseId);
+        await afterRender();
+        current().setSearch(q);
         await afterRender();
         return { ...snapshot(), title: courses[a.course as CourseId].title };
       },

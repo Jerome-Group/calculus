@@ -13991,6 +13991,14 @@
       "basis": "static-discovery; inspect assertions before claiming coverage"
     },
     {
+      "file": "tests/browse-course-history.test.mjs",
+      "names": [],
+      "inferredLessonReferences": ["derivative-definition"],
+      "inferredSceneReferences": [],
+      "mechanisms": ["source-or-data-inspection"],
+      "basis": "static-discovery; inspect assertions before claiming coverage"
+    },
+    {
       "file": "tests/cap-orientation.test.mjs",
       "names": [
         "closing and orienting the cap controls theorem eligibility and flux sign",
