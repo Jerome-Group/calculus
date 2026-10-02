@@ -13805,8 +13805,8 @@
     },
     {
       "name": "react",
-      "declared": "19.2.6",
-      "locked": "19.2.6",
+      "declared": "19.2.8",
+      "locked": "19.2.8",
       "development": false
     },
     {
@@ -13817,8 +13817,8 @@
     },
     {
       "name": "react-dom",
-      "declared": "19.2.6",
-      "locked": "19.2.6",
+      "declared": "19.2.8",
+      "locked": "19.2.8",
       "development": false
     },
     {
@@ -13835,8 +13835,8 @@
     },
     {
       "name": "react-server-dom-webpack",
-      "declared": "19.2.6",
-      "locked": "19.2.6",
+      "declared": "19.2.8",
+      "locked": "19.2.8",
       "development": true
     },
     {

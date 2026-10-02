@@ -32,6 +32,10 @@ Miniflare pins the affected 7.29.0; a scoped override selects the official 7.29.
 The affected BalancedPool/interceptor paths were not found in the shipped worker.
 Installation, build and local preview are rechecked; this does not claim production TLS
 was exposed. The patch retains the existing Node 24 toolchain and public access model.
+The broader npm audit also surfaced renderer, image-parser, font-ZIP and URI-normalization
+advisories. React/React DOM/RSC are aligned at 19.2.8; scoped consumer overrides select
+image-size 2.0.3, fflate 0.7.5 and fast-uri 3.1.8. Other toolchain pins remain unchanged.
+These patches require fresh common checks and independent dependency review before release.
 
 ## Evidence and limits
 
