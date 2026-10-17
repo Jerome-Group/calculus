@@ -131,6 +131,31 @@ test("every account operation isolates owners and rejects stale A writes after c
   );
 });
 
+test("long lesson IDs retain readable drafts after account writes", async () => {
+  const owner = "long-lesson-a";
+  assert.equal((await call(owner, write(owner, "another lesson"))).status, 200);
+  for (const lessonId of [
+    "directional-derivatives-and-gradient",
+    "tangents-velocity-and-singularities",
+  ]) {
+    const query = `?scope=lesson&lessonId=${lessonId}`;
+    const empty = await call(owner, undefined, query);
+    assert.equal(empty.status, 200);
+    assert.deepEqual(empty.body.records, []);
+    const saved = await call(
+      owner,
+      write(owner, `${lessonId} reasoning`, 0, crypto.randomUUID(), {
+        ...key,
+        lessonId,
+      }),
+    );
+    assert.equal(saved.status, 200);
+    const restored = await call(owner, undefined, query);
+    assert.equal(restored.status, 200);
+    assert.deepEqual(restored.body.records, [saved.body.record]);
+  }
+});
+
 test("mutable revision CAS is atomic, retries compare payloads, and tombstones prevent stale recreation", async () => {
   const owner = "cas-a";
   const original = write(owner, "first");

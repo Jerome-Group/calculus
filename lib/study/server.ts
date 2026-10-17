@@ -306,15 +306,19 @@ async function read(db: Database, user: StudyUser, url: URL) {
   if (scope === "lesson") {
     const { results } = await db
       .prepare(
-        `SELECT ${columns} FROM study_records WHERE owner_id = ? AND (record_key LIKE ? OR record_key = ? OR record_key LIKE ? OR record_key LIKE ? OR record_key LIKE ?) ORDER BY record_key LIMIT 200`,
+        `SELECT ${columns} FROM study_records WHERE owner_id = ? AND ((record_key >= ? AND record_key < ?) OR record_key = ? OR (record_key >= ? AND record_key < ?) OR (record_key >= ? AND record_key < ?) OR (record_key >= ? AND record_key < ?)) ORDER BY record_key LIMIT 200`,
       )
       .bind(
         user.id,
-        `assessment:${lessonId}:%`,
+        `assessment:${lessonId}:`,
+        `assessment:${lessonId};`,
         `confidence:${lessonId}`,
-        `practice-draft:${lessonId}:%`,
-        `pilot-draft:${lessonId}:%`,
-        `inline-control:${lessonId}:%`,
+        `practice-draft:${lessonId}:`,
+        `practice-draft:${lessonId};`,
+        `pilot-draft:${lessonId}:`,
+        `pilot-draft:${lessonId};`,
+        `inline-control:${lessonId}:`,
+        `inline-control:${lessonId};`,
       )
       .all<Row>();
     return reply({ user, records: results.map(wire) });
