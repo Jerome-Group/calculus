@@ -13988,6 +13988,18 @@
       "basis": "static-discovery; inspect assertions before claiming coverage"
     },
     {
+      "file": "tests/dependency-landing.test.mjs",
+      "names": [
+        "only forward same-action patch/minor SHA pins qualify",
+        "independent approval is bound to exact head, base and patch",
+        "CI events without a PR and invalid arguments cannot contact GitHub"
+      ],
+      "inferredLessonReferences": [],
+      "inferredSceneReferences": [],
+      "mechanisms": [],
+      "basis": "static-discovery; inspect assertions before claiming coverage"
+    },
+    {
       "file": "tests/differentiability-path.test.mjs",
       "names": [
         "differentiability path is ordered, resolvable, and reaches the exact review pair",

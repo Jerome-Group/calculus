@@ -12,7 +12,7 @@ Start here: `README.md`, then `AGENTS.md`.
 | Validation                        | `scripts/calculus.mjs`, `scripts/verification/`, `tests/`, and `eslint-suppressions.json`                                                 |
 | Runtime and deployment            | `worker/index.ts`, `build/`, `vite.config.ts`, `.openai/hosting.json`; retained database scaffolding in `db/` and `drizzle/`              |
 | Working conventions and decisions | `AGENTS.md` (including the learner-participant constraint), `CODING_STANDARDS.md`, `CONTEXT.md`, `docs/adr/`, and `docs/audits/` evidence |
-| Automation                        | `.github/workflows/ci.yml` and the central conformance caller                                                                             |
+| Automation                        | `.github/workflows/ci.yml`, the central conformance caller, and `scripts/merge-verified-dependency.mjs`                                   |
 
 Curriculum source ledger and verification: `docs/coverage-and-validation.md`.
 Visual comparison: `design-qa.md`. Local source PDFs and extracts: ignored `course-materials/`.
