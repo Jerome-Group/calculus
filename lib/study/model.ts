@@ -233,7 +233,6 @@ export const attemptSchema = z
     }
   });
 export type StudyAttempt = z.infer<typeof attemptSchema>;
-export type PracticeRecord = z.infer<typeof assessmentSchema>;
 export type PilotRecord = {
   attempts: Pick<
     StudyAttempt,
