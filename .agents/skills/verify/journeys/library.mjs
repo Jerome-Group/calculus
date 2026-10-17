@@ -163,6 +163,17 @@ export async function library(page, e) {
           await noOverflow(page);
         },
       );
+      await e.check(
+        "Choosing a course clears the obsolete invalid-library notice",
+        async () =>
+          assert.equal(
+            await page
+              .getByRole("status")
+              .filter({ hasText: /Showing Calculus I with an empty search/ })
+              .count(),
+            0,
+          ),
+      );
       await page.getByText("Browser tools", { exact: true }).click();
       await e.check("The interface remains usable without WebMCP", async () =>
         visible(page.locator(".agent-status p")),

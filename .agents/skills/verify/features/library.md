@@ -25,4 +25,5 @@ It opens Browser tools without relying on WebMCP.
 
 Search spans all courses. Course selection and query belong to the library URL.
 The skip link follows sidebar controls in the current DOM, so the driver reaches it through bounded Tab navigation.
+Selecting a valid course must clear an obsolete malformed-state notice. The current interface retains that notice, tracked as #204.
 Private course links need existing Drive permissions; library verification does not fetch them.
