@@ -1,5 +1,7 @@
 # ADR-0006: Linked comparisons and executable verification
 
+Browser-local persistence and the no-account boundary are superseded by [ADR-0008](0008-account-owned-study-records.md). Curriculum, mathematical evidence, verification, and release requirements still stand.
+
 ## Status
 
 Accepted for issue #188.
