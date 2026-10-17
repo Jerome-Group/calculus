@@ -2,10 +2,8 @@
 import { useId, useSyncExternalStore } from "react";
 import {
   getInlineExperimentOpen,
-  getInlineExperimentValue,
   initialInlineExperimentValue,
   setInlineExperimentOpen,
-  setInlineExperimentValue,
   subscribeInlineExperiment,
 } from "@/lib/curriculum/inline-experiments";
 import {
@@ -15,6 +13,7 @@ import {
   type ReviewFunction,
 } from "@/lib/curriculum/review-differentiability";
 import { Formula, MathText } from "./math-text";
+import { useStudyRecord, StudySaveStatus } from "./study-records";
 import { exampleById } from "@/lib/curriculum/example-registry";
 
 const reviews = [
@@ -96,16 +95,24 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
   const conceptId = "review-total-differentiability";
   const subscribe = (listener: () => void) =>
     subscribeInlineExperiment(conceptId, review.kind, listener);
-  const radius = useSyncExternalStore(
-    subscribe,
-    () => getInlineExperimentValue(conceptId, review.kind, "radius"),
-    () => initialInlineExperimentValue(conceptId, review.kind, "radius"),
-  );
-  const angle = useSyncExternalStore(
-    subscribe,
-    () => getInlineExperimentValue(conceptId, review.kind, "angle"),
-    () => initialInlineExperimentValue(conceptId, review.kind, "angle"),
-  );
+  const radiusRecord = useStudyRecord({
+    kind: "inline-control",
+    lessonId: conceptId,
+    experimentId: review.kind,
+    parameter: "radius",
+  });
+  const angleRecord = useStudyRecord({
+    kind: "inline-control",
+    lessonId: conceptId,
+    experimentId: review.kind,
+    parameter: "angle",
+  });
+  const radius =
+    radiusRecord.value ??
+    initialInlineExperimentValue(conceptId, review.kind, "radius");
+  const angle =
+    angleRecord.value ??
+    initialInlineExperimentValue(conceptId, review.kind, "angle");
   const active = useSyncExternalStore(
     subscribe,
     () => getInlineExperimentOpen(conceptId, review.kind),
@@ -163,16 +170,13 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
             max="0.5"
             step="0.01"
             value={radius}
+            disabled={radiusRecord.persistence.kind === "loading"}
             onChange={(event) =>
-              setInlineExperimentValue(
-                conceptId,
-                review.kind,
-                "radius",
-                Number(event.target.value),
-              )
+              void radiusRecord.save(Number(event.target.value))
             }
             style={{ width: "100%" }}
           />
+          <StudySaveStatus record={radiusRecord} />
           <label htmlFor={angleId}>
             Direction <Formula>{String.raw`\theta`}</Formula> in radians
           </label>
@@ -184,16 +188,13 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
             max={Math.PI}
             step="any"
             value={angle}
+            disabled={angleRecord.persistence.kind === "loading"}
             onChange={(event) =>
-              setInlineExperimentValue(
-                conceptId,
-                review.kind,
-                "angle",
-                Number(event.target.value),
-              )
+              void angleRecord.save(Number(event.target.value))
             }
             style={{ width: "100%" }}
           />
+          <StudySaveStatus record={angleRecord} />
           <output aria-live="polite">
             <p>
               <Formula>{`r=${radius.toFixed(2)},\\quad\\theta=${angle.toFixed(2)},\\quad(x,y)=(${x.toFixed(3)},${y.toFixed(3)})`}</Formula>

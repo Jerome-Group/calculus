@@ -19,7 +19,7 @@ import {
   concepts,
   courses,
 } from "@/lib/curriculum";
-import { saveResume } from "@/lib/curriculum/progress-store";
+import { useStudyRecord, useInlineStudy } from "./study-records";
 import { matchesConcept } from "@/lib/curriculum/search";
 import { planarModel } from "@/lib/curriculum/planar";
 import type { LessonMode } from "@/lib/curriculum/learning-modes";
@@ -43,6 +43,8 @@ const experimentInfo = (id: string) =>
     : sceneInfo(id);
 const defaultId = "derivative-definition";
 export function useStudyController() {
+  const resumeRecord = useStudyRecord({ kind: "resume" });
+  const inlineStudy = useInlineStudy();
   const [selected, setSelected] = useState(defaultId),
     [route, setRoute] = useState("course"),
     [expanded, setExpanded] = useState(6),
@@ -104,7 +106,7 @@ export function useStudyController() {
     if (!c) return;
     setSelected(id);
     setHistoryNotice("");
-    saveResume(id);
+    void resumeRecord.save({ lessonId: id });
     setSearch("");
     setCourse(c.course);
     setNoteTab("intuition");
@@ -387,6 +389,8 @@ export function useStudyController() {
     });
   }
   const studyState: StudyState = {
+    inlineSnapshot: inlineStudy.snapshot,
+    setInline: inlineStudy.set,
     plotAndWait,
     visualLayout,
     sidebarOpen: sidebar.isMobile ? sidebar.openMobile : sidebar.open,

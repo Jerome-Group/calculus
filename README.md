@@ -43,7 +43,24 @@ owns browser launch, live readiness, action evidence, failure recovery, and clea
 validates their structure and current source identity; it does not manufacture or
 independently verify observations. Read [verification contracts](docs/verification.md)
 and the machine-readable [experience map](data/experience-map.json) for known gaps.
-Self-assessment and choice records remain browser-local; neither is proof of mastery.
+Personal drafts, self-assessments, choices, confidence, resume state, and inline controls
+save to the signed-in ChatGPT account through Sites D1. Public teaching remains available.
+Guest work and failed account writes stay in the current tab and can be lost on reload.
+Only an account acknowledgement produces a saved state. Neither saved work nor choice
+correctness establishes mastery. Old browser records require explicit preview and import;
+their source keys remain untouched. See [the ownership decision](docs/adr/0008-account-owned-study-records.md).
+
+The declared D1 binding is `DB`. Generate schema migrations with `npx drizzle-kit generate`.
+After a build, apply each pending migration once to the local preview database:
+
+```sh
+npx wrangler d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_serious_cargill.sql
+```
+
+The built Worker tests create disposable D1 databases and apply the committed migration
+journal themselves. Local header fixtures verify application ownership after the gateway;
+they do not simulate or establish hosted ChatGPT sign-in. Sites publishing applies hosted
+migrations separately.
 
 ## Source and rights
 

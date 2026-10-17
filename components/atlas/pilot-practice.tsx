@@ -1,57 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
 import type { PilotLesson, PilotTask } from "@/lib/curriculum/learning-modes";
-import { savePilotAttempt } from "@/lib/curriculum/pilot-progress";
+import type { StudyValues } from "@/lib/study/model";
 import {
-  deletePilotDraft,
-  readPilotDraft,
-  writePilotDraft,
-  type PilotTaskDraft,
-} from "@/lib/curriculum/pilot-drafts";
+  useStudyRecord,
+  useStudyAttempts,
+  StudySaveStatus,
+} from "./study-records";
 import { MathText } from "./math-text";
 
 function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
-  const [draft, setDraft] = useState<PilotTaskDraft>({
+  const record = useStudyRecord({
+    kind: "pilot-draft",
+    lessonId,
+    taskId: task.id,
+  });
+  const attempts = useStudyAttempts(lessonId);
+  const draft = record.value ?? {
     choice: "",
     reasoning: "",
     support: "none",
     feedback: "",
-  });
-  const [storageStatus, setStorageStatus] = useState("");
-  useEffect(() => {
-    let active = true;
-    queueMicrotask(() => {
-      if (!active) return;
-      const restored = readPilotDraft(lessonId, task.id);
-      setDraft(restored.draft);
-      setStorageStatus(
-        restored.stored
-          ? restored.draft.reasoning || restored.draft.choice
-            ? "Draft restored from this device."
-            : ""
-          : "Storage is unavailable. Your draft remains usable in this tab.",
-      );
-    });
-    return () => {
-      active = false;
-    };
-  }, [lessonId, task.id]);
-  function update(patch: Partial<PilotTaskDraft>) {
-    const next = { ...draft, ...patch };
-    setDraft(next);
-    setStorageStatus(
-      writePilotDraft(lessonId, task.id, next)
-        ? "Draft saved on this device."
-        : "Storage is unavailable. Your draft remains usable in this tab.",
-    );
-  }
-  function clear() {
-    setDraft({ choice: "", reasoning: "", support: "none", feedback: "" });
-    setStorageStatus(
-      deletePilotDraft(lessonId, task.id)
-        ? "This task draft was deleted. Other work remains saved."
-        : "Storage is unavailable. This draft was cleared in this tab only.",
-    );
+  };
+  function update(patch: Partial<StudyValues["pilot-draft"]>) {
+    if (record.persistence.kind !== "loading")
+      void record.save({ ...draft, ...patch });
   }
   function check() {
     const selected = task.choices.find((item) => item.id === draft.choice);
@@ -61,26 +33,23 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
       ? task.explanation
       : task.feedback[selected.errorCode || ""] ||
         "Recheck the theorem conditions.";
-    try {
-      savePilotAttempt(lessonId, {
-        taskId: task.id,
-        kind: task.kind,
-        correct,
-        support: draft.support,
-        errorCode: selected.errorCode,
-        at: new Date().toISOString(),
-      });
-      update({
-        feedback: `${correct ? "Choice correct. Your written reasoning is not graded; compare it:" : "Try again."} ${message}`,
-      });
-    } catch {
-      update({
-        feedback: `${message} Progress could not be saved on this device.`,
-      });
-    }
+    void attempts.record({
+      id: crypto.randomUUID(),
+      lessonId,
+      taskId: task.id,
+      choice: draft.choice,
+      support: draft.support,
+      at: new Date().toISOString(),
+    });
+    update({
+      feedback: `${correct ? "Choice correct. Your written reasoning is not graded; compare it:" : "Try again."} ${message}`,
+    });
   }
   return (
-    <fieldset className="pilot-task">
+    <fieldset
+      className="pilot-task"
+      disabled={record.persistence.kind === "loading"}
+    >
       <legend>
         {task.kind.toUpperCase()} · {task.id.replaceAll("-", " ")}
       </legend>
@@ -107,6 +76,7 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
           <textarea
             id={`${lessonId}-${task.id}-reasoning`}
             value={draft.reasoning}
+            maxLength={16384}
             onChange={(event) =>
               update({ reasoning: event.target.value, feedback: "" })
             }
@@ -129,10 +99,32 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
           Check answer
         </button>
       </div>
-      <button type="button" onClick={clear}>
+      <button type="button" onClick={() => void record.clear()}>
         Delete this draft
       </button>
-      <p role="status">{storageStatus}</p>
+      <StudySaveStatus record={record} />
+      {attempts.pending
+        .filter(({ input }) => input.taskId === task.id)
+        .slice(-1)
+        .map(({ input, persistence }) => (
+          <div key={input.id}>
+            <p role="status">Choice record: {persistence.message}</p>
+            {persistence.kind === "unsaved" && (
+              <button
+                type="button"
+                onClick={() => void attempts.retry(input.id)}
+              >
+                Retry choice save
+              </button>
+            )}
+            {persistence.kind === "conflict" && (
+              <p>
+                The same choice ID has different evidence. Your tab&apos;s
+                choice has not replaced it.
+              </p>
+            )}
+          </div>
+        ))}
       {draft.support === "hint" && (
         <p>
           <strong>Hint:</strong> <MathText text={task.hint} />
@@ -144,7 +136,6 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
     </fieldset>
   );
 }
-
 export function PilotPractice({ lesson }: { lesson: PilotLesson }) {
   return (
     <section

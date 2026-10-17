@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import { createServer } from "vite";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createStudyRenderer } from "./helpers/study-render.mjs";
 
 const load = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
@@ -123,6 +123,7 @@ const vite = await createServer({
   server: { middlewareMode: true, hmr: false },
 });
 after(() => vite.close());
+const renderToStaticMarkup = await createStudyRenderer(vite);
 
 test("WebMCP reads all stable MH2100 routes with the visible guide and source", async () => {
   const { studyTools } = await vite.ssrLoadModule(

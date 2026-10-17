@@ -218,21 +218,26 @@ test("learning guides have real prerequisites and parseable exercise mathematics
   }
 });
 
-test("practice records discard corrupt and unsupported self-assessments", async () => {
-  const { parseProgress } = await vite.ssrLoadModule(
-    "/lib/curriculum/progress-store.ts",
+test("self-assessment validation rejects unsupported statuses and invalid dates", async () => {
+  const { assessmentSchema } = await vite.ssrLoadModule("/lib/study/model.ts");
+  assert.equal(assessmentSchema.safeParse(null).success, false);
+  assert.equal(
+    assessmentSchema.safeParse({
+      status: "Mastered",
+      date: "2026-09-16T00:00:00Z",
+    }).success,
+    false,
   );
-  assert.deepEqual(parseProgress("not json"), {});
-  assert.deepEqual(parseProgress("null"), {});
-  assert.deepEqual(parseProgress('["Needs practice"]'), {});
+  assert.equal(
+    assessmentSchema.safeParse({ status: "Needs practice", date: "not a date" })
+      .success,
+    false,
+  );
   assert.deepEqual(
-    parseProgress(
-      JSON.stringify({
-        valid: { status: "Needs practice", date: "2026-09-16" },
-        unsupported: { status: "Mastered", date: "2026-09-16" },
-        invalid: null,
-      }),
-    ),
-    { valid: { status: "Needs practice", date: "2026-09-16" } },
+    assessmentSchema.parse({
+      status: "Needs practice",
+      date: "2026-09-16T00:00:00Z",
+    }),
+    { status: "Needs practice", date: "2026-09-16T00:00:00.000Z" },
   );
 });

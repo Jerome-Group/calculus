@@ -1,7 +1,21 @@
 import type { Concept, CourseId } from "@/lib/curriculum";
 import type { GraphSpec } from "@/lib/atlas/math";
 import type { LessonMode } from "@/lib/curriculum/learning-modes";
+import type {
+  Parameter,
+  inlineExperimentSnapshot,
+} from "@/lib/curriculum/inline-experiments";
+import type { SaveOutcome } from "./study-records";
 export type StudyState = {
+  inlineSnapshot: (
+    lessonId: string,
+  ) => ReturnType<typeof inlineExperimentSnapshot>;
+  setInline: (
+    lessonId: string,
+    experimentId: string,
+    parameter: Parameter,
+    value: number,
+  ) => Promise<SaveOutcome>;
   visualLayout: "split" | "wide" | "minimised";
   sidebarOpen: boolean;
   setVisualLayout: (layout: "split" | "wide" | "minimised") => void;

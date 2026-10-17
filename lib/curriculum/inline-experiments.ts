@@ -9,7 +9,7 @@ import {
   type ReviewFunction,
 } from "./review-differentiability";
 
-type Parameter = "value" | "radius" | "angle";
+export type Parameter = "value" | "radius" | "angle";
 type ParameterSpec = {
   initial: number;
   min: number;
@@ -60,11 +60,8 @@ const catalog: Record<string, ExperimentSpec[]> = {
   ],
 };
 
-const values = new Map<string, number>();
 const openExperiments = new Set<string>();
 const listeners = new Map<string, Set<() => void>>();
-const storageKey = (conceptId: string, id: string, parameter: Parameter) =>
-  `calculus:inline-experiment:v1:${conceptId}:${id}:${parameter}`;
 const stateKey = (conceptId: string, id: string) => `${conceptId}:${id}`;
 
 function specFor(
@@ -114,33 +111,7 @@ export function initialInlineExperimentValue(
   return specFor(conceptId, id, parameter).initial;
 }
 
-export function getInlineExperimentValue(
-  conceptId: string,
-  id: string,
-  parameter: Parameter,
-) {
-  const spec = specFor(conceptId, id, parameter);
-  const key = storageKey(conceptId, id, parameter);
-  if (values.has(key)) return values.get(key)!;
-  let stored: number | null = null;
-  try {
-    const raw = globalThis.localStorage?.getItem(key);
-    if (raw !== undefined && raw !== null && raw !== "") stored = Number(raw);
-  } catch {
-    /* Private mode or disabled storage: retain the in-memory value. */
-  }
-  const value =
-    stored !== null &&
-    Number.isFinite(stored) &&
-    stored >= spec.min &&
-    stored <= spec.max
-      ? stored
-      : spec.initial;
-  values.set(key, value);
-  return value;
-}
-
-export function setInlineExperimentValue(
+export function normalizeInlineExperimentValue(
   conceptId: string,
   id: string,
   parameter: Parameter,
@@ -150,22 +121,12 @@ export function setInlineExperimentValue(
   if (!Number.isFinite(value)) throw new Error("value must be finite.");
   if (value < spec.min || value > spec.max)
     throw new Error(`Choose a value between ${spec.min} and ${spec.max}.`);
-  const adjusted =
-    spec.step === "any"
-      ? value
-      : Math.min(
-          spec.max,
-          spec.min + Math.round((value - spec.min) / spec.step) * spec.step,
-        );
-  const key = storageKey(conceptId, id, parameter);
-  values.set(key, adjusted);
-  try {
-    globalThis.localStorage?.setItem(key, String(adjusted));
-  } catch {
-    /* In-memory fallback. */
-  }
-  notify(conceptId, id);
-  return adjusted;
+  return spec.step === "any"
+    ? value
+    : Math.min(
+        spec.max,
+        spec.min + Math.round((value - spec.min) / spec.step) * spec.step,
+      );
 }
 
 export function getInlineExperimentOpen(conceptId: string, id: string) {
@@ -186,12 +147,16 @@ export function setInlineExperimentOpen(
   notify(conceptId, id);
 }
 
-export function inlineExperimentSnapshot(conceptId: string) {
+export function inlineExperimentSnapshot(
+  conceptId: string,
+  read: (id: string, parameter: Parameter) => number = (id, parameter) =>
+    initialInlineExperimentValue(conceptId, id, parameter),
+) {
   return inlineExperimentCatalog(conceptId).map(({ id, parameters }) => {
     const current = Object.fromEntries(
       parameters.map((parameter) => [
         parameter,
-        getInlineExperimentValue(conceptId, id, parameter as Parameter),
+        read(id, parameter as Parameter),
       ]),
     );
     let readout: string;

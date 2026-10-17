@@ -80,6 +80,7 @@ test("MathML and WebMCP expose the same projection factor and graph limit", asyn
   );
   const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
   const state = {
+    inlineSnapshot: () => [],
     visualLayout: "split",
     sidebarOpen: false,
     route: "lesson",

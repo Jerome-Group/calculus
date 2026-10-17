@@ -12,9 +12,7 @@ import { readoutTex } from "@/lib/curriculum/readouts";
 import { examplesForConcept } from "@/lib/curriculum/example-registry";
 import {
   inlineExperimentCatalog,
-  inlineExperimentSnapshot,
   setInlineExperimentOpen,
-  setInlineExperimentValue,
 } from "@/lib/curriculum/inline-experiments";
 import type { StudyState, Tool, JsonSchema } from "./study-types";
 import { sceneVariants } from "@/lib/curriculum/scene-variants";
@@ -51,7 +49,7 @@ export function studyTools(
 ): Tool[] {
   const inlineExperiments = () =>
     current().route === "lesson"
-      ? inlineExperimentSnapshot(current().concept.id)
+      ? current().inlineSnapshot(current().concept.id)
       : [];
   const snapshot = () => {
     const s = current();
@@ -212,7 +210,7 @@ export function studyTools(
             "Unknown inline experiment or parameter for this lesson.",
           );
         const value = finite(a.value, "value");
-        setInlineExperimentValue(
+        const save = await s.setInline(
           s.concept.id,
           id,
           parameter as "value" | "radius" | "angle",
@@ -221,7 +219,7 @@ export function studyTools(
         setInlineExperimentOpen(s.concept.id, id, true);
         if (s.readingMode !== "learn") s.setReadingMode("learn");
         await afterRender();
-        return snapshot();
+        return { ...snapshot(), persistence: save.kind };
       },
     },
     {

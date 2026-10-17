@@ -27,6 +27,18 @@ an exact readout and a prediction followed by explanatory feedback.
 **Independent choice record**: a scored choice made without hints; limited evidence
 about that choice, never a claim of mastery or learning gain.
 
+**Account record**: one validated personal value owned by the native stable Site user ID.
+Email and name describe the account and do not authorize data access.
+
+**Save acknowledgement**: D1 accepted the current edit for the current account. A queued,
+guest, offline, conflicting, or superseded edit has no such acknowledgement.
+
+**Legacy attempt**: historical device evidence imported explicitly. Its recorded correctness
+is preserved rather than presented as a newly verified answer.
+
+**Captured time**: when the learner checked a choice. **Acceptance time** records when D1
+accepted it. Delayed saving does not change the captured time.
+
 **Source fingerprint**: SHA-256 of tracked and nonignored files, including contents,
 paths, symlink targets and executable flags; distinguishes edits sharing a Git HEAD.
 

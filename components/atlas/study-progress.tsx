@@ -1,19 +1,8 @@
 "use client";
 import { MathText } from "./math-text";
-import { useSyncExternalStore } from "react";
 import { concepts, type Concept } from "@/lib/curriculum";
-import {
-  subscribeProgress,
-  progressSnapshot,
-  resumeSnapshot,
-  parseProgress,
-  type PracticeRecord,
-} from "@/lib/curriculum/progress-store";
-import {
-  pilotSnapshot,
-  parsePilotProgress,
-  type PilotRecord,
-} from "@/lib/curriculum/pilot-progress";
+import type { PracticeRecord, PilotRecord } from "@/lib/study/model";
+import { useStudyAccount } from "./study-records";
 
 export function summarizeStudyProgress(
   lessons: Pick<Concept, "id">[],
@@ -55,33 +44,29 @@ export function summarizeStudyProgress(
 }
 
 export function StudyProgress({ open }: { open: (id: string) => void }) {
-  const raw = useSyncExternalStore(
-    subscribeProgress,
-    progressSnapshot,
-    () => "{}",
-  );
-  const pilotRaw = useSyncExternalStore(
-    subscribeProgress,
-    pilotSnapshot,
-    () => "{}",
-  );
-  const last = useSyncExternalStore(
-    subscribeProgress,
-    resumeSnapshot,
-    () => "",
-  );
-  const summary = summarizeStudyProgress(
-    concepts,
-    parseProgress(raw),
-    parsePilotProgress(pilotRaw),
-  );
+  const account = useStudyAccount();
+  const summary = account.overview;
   const practice = concepts.filter((concept) =>
-    summary.practice.has(concept.id),
+    summary.practice.includes(concept.id),
   );
-  const resume = concepts.find((c) => c.id === last);
+  const resume = concepts.find((c) => c.id === summary.resume);
   return (
-    <section className="study-progress" aria-label="Study on this device">
-      <h2>Your study on this device</h2>
+    <section className="study-progress" aria-label="Your study">
+      <h2>Your account study</h2>
+      {account.overviewError && (
+        <p role="status">
+          {account.overviewError}{" "}
+          <button type="button" onClick={() => void account.refresh()}>
+            Retry summary
+          </button>
+        </p>
+      )}
+      {!account.user && (
+        <p>
+          Sign in to save study across sessions and devices. New guest work
+          stays in this tab.
+        </p>
+      )}
       <p>
         {summary.explainable} exercise self-assessments marked explainable ·{" "}
         {summary.needsPractice} marked for practice · {summary.choices} choice

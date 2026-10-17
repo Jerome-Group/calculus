@@ -1,7 +1,7 @@
 import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createStudyRenderer } from "./helpers/study-render.mjs";
 import { createServer } from "vite";
 import { fileURLToPath } from "node:url";
 
@@ -14,6 +14,7 @@ const vite = await createServer({
   server: { middlewareMode: true, hmr: false },
 });
 after(() => vite.close());
+const renderToStaticMarkup = await createStudyRenderer(vite);
 
 test("each differentiability function owns its origin definition, plane and graph", async () => {
   const { exampleById } = await vite.ssrLoadModule(

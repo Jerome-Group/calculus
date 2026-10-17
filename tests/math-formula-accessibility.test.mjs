@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createStudyRenderer } from "./helpers/study-render.mjs";
 import { createServer } from "vite";
 import { unmarkedNotation } from "./helpers/math-notation.mjs";
 
@@ -15,6 +15,7 @@ const vite = await createServer({
   server: { middlewareMode: true, hmr: false },
 });
 after(async () => vite.close());
+const renderToStaticMarkup = await createStudyRenderer(vite);
 
 function ordinaryText(html) {
   const voidTags = new Set([

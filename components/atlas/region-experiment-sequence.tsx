@@ -2,11 +2,9 @@
 import { useId, useSyncExternalStore } from "react";
 import {
   getInlineExperimentOpen,
-  getInlineExperimentValue,
   initialInlineExperimentValue,
   regionExperimentSpecs,
   setInlineExperimentOpen,
-  setInlineExperimentValue,
   subscribeInlineExperiment,
 } from "@/lib/curriculum/inline-experiments";
 import {
@@ -14,6 +12,7 @@ import {
   shiftedDiskVerticalSlice,
 } from "@/lib/curriculum/polar-region";
 import { Formula, MathText } from "./math-text";
+import { useStudyRecord, StudySaveStatus } from "./study-records";
 
 type RegionExperiment = {
   id: "domain" | "slice" | "transformed-domain";
@@ -215,11 +214,15 @@ function RegionExperimentCard({
   const conceptId = "polar-regions";
   const subscribe = (listener: () => void) =>
     subscribeInlineExperiment(conceptId, experiment.id, listener);
-  const value = useSyncExternalStore(
-    subscribe,
-    () => getInlineExperimentValue(conceptId, experiment.id, "value"),
-    () => initialInlineExperimentValue(conceptId, experiment.id, "value"),
-  );
+  const record = useStudyRecord({
+    kind: "inline-control",
+    lessonId: conceptId,
+    experimentId: experiment.id,
+    parameter: "value",
+  });
+  const value =
+    record.value ??
+    initialInlineExperimentValue(conceptId, experiment.id, "value");
   const active = useSyncExternalStore(
     subscribe,
     () => getInlineExperimentOpen(conceptId, experiment.id),
@@ -257,16 +260,11 @@ function RegionExperimentCard({
             max={experiment.max}
             step={experiment.step}
             value={value}
-            onChange={(event) =>
-              setInlineExperimentValue(
-                conceptId,
-                experiment.id,
-                "value",
-                Number(event.target.value),
-              )
-            }
+            disabled={record.persistence.kind === "loading"}
+            onChange={(event) => void record.save(Number(event.target.value))}
             style={{ width: "100%" }}
           />
+          <StudySaveStatus record={record} />
           <output htmlFor={`${controlId}-range`} aria-live="polite">
             {experiment.id === "domain" ? (
               <>
