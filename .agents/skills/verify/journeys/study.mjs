@@ -187,29 +187,48 @@ export async function study(page, e) {
     },
   );
   await e.step(
-    "Open recorded error history through its revision link",
+    "Open recorded error history through its revision control",
     async () => {
       await lesson(page, e, "epsilon-delta-one-variable");
       await mode(page, "Revise");
+      const route = page.url();
       await page
-        .getByRole("link", { name: "Review your recorded errors", exact: true })
+        .getByText("Review your recorded errors", { exact: true })
         .click();
       await e.check(
-        "The error-history link preserves the revision workspace and recorded error",
+        "The error-history control preserves the exact revision route and workspace",
         async () => {
+          assert.equal(page.url(), route);
           await visible(
             page.getByRole("region", {
               name: "Revision and retrieval",
               exact: true,
             }),
           );
-          await visible(
+        },
+      );
+      await e.check(
+        "Error-history navigation focuses its visible heading",
+        async () => {
+          const heading = page.locator("#pilot-errors");
+          await visible(heading);
+          assert.equal(
+            await heading.evaluate(
+              (element) => element === document.activeElement,
+            ),
+            true,
+          );
+        },
+      );
+      await e.check(
+        "The focused error history exposes the recorded error",
+        async () =>
+          visible(
             page
               .locator("#pilot-errors")
               .locator("+ ul")
               .filter({ hasText: "QUANTIFIER_REVERSED" }),
-          );
-        },
+          ),
       );
     },
   );

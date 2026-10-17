@@ -20,7 +20,7 @@ It opens Revisit and Resume, deletes that draft, and checks the self-assessment 
 It records wrong and correct epsilon-delta choices with a hint, reloads visible correctness and support, records confidence separately, and checks the library attempt total.
 A separate context makes browser storage throw. The draft must remain usable in that tab with an honest unavailable-storage message.
 Another fresh context must show no records from the original context.
-The revision error-history link must preserve the workspace and show the recorded error.
+The revision error-history control must preserve the exact route, focus its visible heading, and show the recorded error.
 
 ## Gotchas
 
