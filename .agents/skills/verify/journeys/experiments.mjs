@@ -192,21 +192,38 @@ export async function experiments(page, e) {
       await second
         .getByText("Inspect the exact function and plane", { exact: true })
         .click();
+      const status = first
+        .locator(".study-save-status")
+        .first()
+        .getByRole("status");
+      await visible(
+        status.filter({
+          hasText: /No saved account record yet\.|Saved to your account\./,
+        }),
+      );
+      const slider = first.getByRole("slider").first();
+      const initial = await slider.inputValue();
       const untouched = await second.locator("output").innerText();
-      await first.getByRole("slider").first().press("End");
+      await slider.press("End");
       await e.check(
         "Moving one exact review control leaves the other unchanged",
-        async () =>
-          assert.equal(await second.locator("output").innerText(), untouched),
+        async () => {
+          assert.notEqual(await slider.inputValue(), initial);
+          assert.equal(await second.locator("output").innerText(), untouched);
+        },
       );
-      const changed = await first.getByRole("slider").first().inputValue();
+      const changed = await slider.inputValue();
+      await visible(status.filter({ hasText: "Saved to your account." }));
       await page.reload();
       await first
         .getByText("Inspect the exact function and plane", { exact: true })
         .click();
-      assert.equal(
-        await first.getByRole("slider").first().inputValue(),
-        changed,
+      await visible(status.filter({ hasText: "Saved to your account." }));
+      await e.check(
+        "Reload restores the acknowledged changed inline value",
+        async () => {
+          assert.equal(await slider.inputValue(), changed);
+        },
       );
       await lesson(page, e, "polar-regions");
       const domain = page.locator('[data-experiment-id="domain"]');

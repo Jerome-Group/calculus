@@ -20,7 +20,7 @@ Run `npm run agent -- browser run --features experiments --output outputs/browse
 The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, plays and pauses, and uses each layout control.
 It opens all seven comparison families, checks representative exact values, submits wrong and correct predictions, changes every range through keyboard bounds, and verifies reset clears predictions.
 It checks ray witnesses, the inconclusive Hessian case, singular clock speed, and integration-order invariance.
-It changes exact review controls independently, reloads their saved values, and drives a polar-region control.
+It waits for account hydration, proves an exact review control changed independently, waits for its visible save acknowledgement, reloads and waits for hydration before comparing the saved value. It also drives a polar-region control.
 It switches pilot Diagram and Values only views, checks valid and invalid algebraic tolerance choices, and compares horizontal slice bounds.
 It checks disabled animation under reduced motion and page width at 390px.
 A new context blocks the actual deferred viewport chunk. Definition and reasoning must remain readable, and Reload to retry drawing must restore the scene.
@@ -28,6 +28,7 @@ Finally it selects Constant-height circle, reloads, and requires the same model.
 
 ## Gotchas
 
+Inline reload requires the migrated local D1 and explicit local account fixture; hosted sign-in remains a separate check.
 Regression #195 requires Constant-height circle to remain selected after reload.
 The request failure is an explicit local injection. The driver records its errors separately and rejects unrelated runtime errors.
 Comparisons illustrate sampled geometry; exact mathematical claims remain covered by focused model tests.

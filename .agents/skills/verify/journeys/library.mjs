@@ -37,33 +37,41 @@ export async function library(page, e) {
   await e.step(
     "Choose each course using its library card and sidebar course rail",
     async () => {
-      for (const [id, title, count] of [
+      const courses = [
         ["MH1100", "Calculus I", 24],
         ["MH1101", "Calculus II", 30],
         ["MH2100", "Calculus III", 71],
-      ]) {
-        const card = page
-          .locator(".course-paths")
-          .getByRole("button", { name: new RegExp(id) });
-        await card.click();
-        await e.check(`${id} card selects ${count} explorations`, async () => {
-          assert.equal(await card.getAttribute("aria-pressed"), "true");
-          await visible(
-            page
-              .locator(".unit-library")
-              .getByRole("heading", { name: title, exact: true }),
+      ];
+      for (const [kind, group, state] of [
+        ["card", page.locator(".course-paths"), "aria-pressed"],
+        [
+          "rail",
+          page.getByRole("navigation", { name: "Courses", exact: true }),
+          "aria-current",
+        ],
+      ])
+        for (const [id, title, count] of courses) {
+          const button = group.getByRole("button", { name: new RegExp(id) });
+          if (kind === "rail")
+            assert.notEqual(await button.getAttribute(state), "true");
+          await button.click();
+          await e.check(
+            `${id} ${kind} selects ${count} explorations`,
+            async () => {
+              assert.equal(await button.getAttribute(state), "true");
+              await visible(
+                page
+                  .locator(".unit-library")
+                  .getByRole("heading", { name: title, exact: true }),
+              );
+              assert.match(
+                await page.locator(".unit-library > header").innerText(),
+                new RegExp(`${count} explorations`),
+              );
+              assert.equal(new URL(page.url()).hash, "#course");
+            },
           );
-          assert.match(
-            await page.locator(".unit-library > header").innerText(),
-            new RegExp(`${count} explorations`),
-          );
-        });
-        await page
-          .getByRole("navigation", { name: "Courses", exact: true })
-          .getByRole("button", { name: new RegExp(id) })
-          .click();
-        assert.equal(new URL(page.url()).hash, "#course");
-      }
+        }
     },
   );
   await e.step(
@@ -126,6 +134,31 @@ export async function library(page, e) {
       await page.getByRole("link", { name: "Calculus", exact: true }).click();
       await e.check("Brand returns to the library", async () =>
         visible(page.locator("#library-title")),
+      );
+    },
+  );
+  await e.step(
+    "Clear an obsolete fallback explanation through search",
+    async () => {
+      await page.goto(`${e.url}/?library=invalid#course`);
+      const notice = page
+        .getByRole("status")
+        .filter({ hasText: /Showing Calculus I with an empty search/ });
+      await visible(notice);
+      const search = page.getByRole("textbox", {
+        name: "Search the entire library",
+        exact: true,
+      });
+      await search.fill("path");
+      await e.check(
+        "A deliberate search clears fallback text and survives reload",
+        async () => {
+          assert.equal(await notice.count(), 0);
+          await visible(page.locator(".search-library-results button").first());
+          await page.reload();
+          assert.equal(await search.inputValue(), "path");
+          assert.equal(await notice.count(), 0);
+        },
       );
     },
   );
