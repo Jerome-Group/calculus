@@ -1,0 +1,210 @@
+import assert from "node:assert/strict";
+import { lesson, mathematics, mode, noOverflow, visible } from "./controls.mjs";
+
+export async function lessons(page, e) {
+  await e.step(
+    "Open representative lessons in all three courses and select all four reading modes",
+    async () => {
+      for (const id of [
+        "limits-one-sided",
+        "partial-fractions",
+        "multivariable-chain-rule",
+      ]) {
+        await lesson(page, e, id);
+        for (const name of ["Learn", "Explore", "Practice", "Revise"]) {
+          await mode(page, name);
+          await e.check(`${id} ${name} has mathematical content`, async () =>
+            mathematics(page),
+          );
+        }
+      }
+    },
+  );
+  await e.step(
+    "Follow the argument, open references, and navigate prerequisites with a return path",
+    async () => {
+      await lesson(page, e, "multivariable-chain-rule");
+      await mode(page, "Learn");
+      const outline = page.getByRole("navigation", {
+        name: "Follow the argument",
+        exact: true,
+      });
+      for (const name of [
+        "Definition & assumptions",
+        "Experiment",
+        "Reasoning",
+        "Worked application",
+        "Key distinction",
+      ])
+        await outline.getByRole("button", { name, exact: true }).click();
+      const sources = page.getByRole("region", {
+        name: "Sources",
+        exact: true,
+      });
+      await sources.scrollIntoViewIfNeeded();
+      await sources
+        .getByText("How to use these references", { exact: true })
+        .click();
+      await outline
+        .getByRole("button", { name: "Try it yourself", exact: true })
+        .click();
+      await visible(page.locator(".lesson-practice").first());
+      await mode(page, "Revise");
+      await page
+        .getByRole("button", { name: "Open the full reasoning", exact: true })
+        .click();
+      await visible(
+        page.getByRole("region", {
+          name: "Mathematical explanation",
+          exact: true,
+        }),
+      );
+      await page.locator(".covered-topics summary").click();
+      await e.check(
+        "Source links preserve page locators and external-link protection",
+        async () => {
+          const links = await sources.getByRole("link").evaluateAll((items) =>
+            items.map((item) => ({
+              href: item.href,
+              target: item.target,
+              rel: item.rel,
+            })),
+          );
+          assert.ok(links.some((link) => /#page=\d+/.test(link.href)));
+          assert.ok(
+            links.every(
+              (link) =>
+                link.target === "_blank" && link.rel.includes("noreferrer"),
+            ),
+          );
+        },
+      );
+      const before = new URL(page.url()).hash;
+      await page
+        .getByRole("navigation", { name: "Lesson prerequisites", exact: true })
+        .getByRole("button")
+        .first()
+        .click();
+      assert.notEqual(new URL(page.url()).hash, before);
+      await page
+        .getByRole("button", {
+          name: "Return to interrupted step",
+          exact: true,
+        })
+        .click();
+      await page
+        .getByRole("navigation", {
+          name: "Continue this proof path",
+          exact: true,
+        })
+        .getByRole("button", { name: /^Next:/ })
+        .click();
+      await e.check("Proof continuation opens its linked lesson", async () =>
+        assert.equal(
+          new URL(page.url()).hash,
+          "#directional-derivatives-and-gradient",
+        ),
+      );
+      await page.goBack();
+      await e.check(
+        "Prerequisite return restores the interrupted lesson",
+        async () => assert.equal(new URL(page.url()).hash, before),
+      );
+      await page
+        .getByText("Need a prerequisite refresher?", { exact: true })
+        .click();
+      await page
+        .locator(".lesson-readiness")
+        .getByRole("button")
+        .first()
+        .click();
+      await page
+        .getByRole("button", {
+          name: "Return to interrupted step",
+          exact: true,
+        })
+        .click();
+    },
+  );
+  await e.step(
+    "Use lesson pagination and select a lesson in the expanded sidebar",
+    async () => {
+      const before = new URL(page.url()).hash;
+      await page
+        .locator(".lesson-pagination")
+        .getByRole("button", { name: /NEXT CONCEPT/ })
+        .click();
+      assert.notEqual(new URL(page.url()).hash, before);
+      await page
+        .locator(".lesson-pagination")
+        .getByRole("button", { name: /PREVIOUS CONCEPT/ })
+        .click();
+      assert.equal(new URL(page.url()).hash, before);
+      await page
+        .getByRole("textbox", { name: "Find a concept", exact: true })
+        .fill("partial fractions");
+      await page
+        .getByRole("navigation", { name: "Course concepts", exact: true })
+        .getByRole("button")
+        .first()
+        .click();
+      await e.check("Sidebar opens the selected concept", async () =>
+        assert.equal(new URL(page.url()).hash, "#partial-fractions"),
+      );
+      await page.locator(".lecture-toggle").first().click();
+      const concept = page
+        .getByRole("navigation", { name: "Course concepts", exact: true })
+        .locator(".concept-nav button")
+        .first();
+      const title = await concept.innerText();
+      await concept.click();
+      await e.check("Expanded lecture navigation opens its lesson", async () =>
+        assert.equal(await page.locator("#lesson-title").innerText(), title),
+      );
+    },
+  );
+  await e.step("Exercise pilot reading and revision entry points", async () => {
+    await lesson(page, e, "epsilon-delta-one-variable");
+    await visible(
+      page.getByRole("region", { name: "Guided lesson", exact: true }),
+    );
+    await mode(page, "Explore");
+    await visible(
+      page.getByRole("region", {
+        name: "Prediction before experiment",
+        exact: true,
+      }),
+    );
+    await mode(page, "Revise");
+    await visible(
+      page.getByRole("region", { name: "Revision and retrieval", exact: true }),
+    );
+    await page
+      .getByRole("button", { name: "Do the independent tasks", exact: true })
+      .click();
+    await e.check("Revision opens independent practice", async () =>
+      visible(
+        page.getByRole("region", { name: "Independent practice", exact: true }),
+      ),
+    );
+  });
+  await e.step(
+    "Read on a 320px viewport and explain malformed lesson state",
+    async () => {
+      await page.goto(`${e.url}/?study=invalid#partial-fractions`);
+      await visible(
+        page
+          .getByRole("status")
+          .filter({ hasText: /Showing default settings/ }),
+      );
+      await page.setViewportSize({ width: 320, height: 740 });
+      await e.check(
+        "Long mathematical content stays within the phone page",
+        async () => {
+          await noOverflow(page);
+          await mathematics(page);
+        },
+      );
+    },
+  );
+}

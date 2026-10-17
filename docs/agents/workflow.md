@@ -32,9 +32,13 @@ one context window's worth of implementation. When it is not, go from the grilli
 `/implement` in the same window — a spec for work that fits in one session is ceremony that buys
 nothing.
 
-`/implement` drives `/tdd` at the agreed seams and closes by running `/code-review` before
-anything is committed, so the review the Owner reads is a conclusion rather than a promise. The
-pull request that follows is not optional: **How work flows** in `AGENTS.md` is the rule.
+For this application, `/implement` verifies interface changes through
+[the local verify skill](../../.agents/skills/verify/SKILL.md), then runs focused mathematical,
+runtime, and regression checks. Use `/tdd` when requested or for a reproducible bug that needs a
+focused regression check. Source-string pins are not evidence that a learner journey works.
+Keep the maintained feature map current and retain failed browser evidence.
+Run `/code-review` before committing. The pull request that follows is required by **How work
+flows** in `AGENTS.md`.
 
 ## From a cleared map, `/to-spec` is mandatory
 

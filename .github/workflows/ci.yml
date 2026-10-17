@@ -60,6 +60,8 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Install the pinned Chromium browser
+        run: npx playwright install --with-deps chromium
       - name: Verify the application
         run: node scripts/calculus.mjs verify --profile ci --json --output outputs/verification/ci
       - name: Retain verification evidence

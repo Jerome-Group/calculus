@@ -21,18 +21,25 @@ node scripts/calculus.mjs inventory --json --output outputs/inventory.json
 node scripts/calculus.mjs map --check --json
 node scripts/calculus.mjs verify --profile ci --json --output outputs/verification/local
 node scripts/calculus.mjs browser-plan --json
+npm run agent -- browser list
+npm run agent -- browser doctor
+npm run agent -- browser run --features all --output outputs/browser/local
 ```
 
 `verify --profile ci` is the same executable loop used by CI: formatting, lint, source
-freshness, map freshness, production build, then all Node tests. It stops on a failure,
+freshness, map freshness, the built-Worker browser journeys, then all Node tests. It stops on a failure,
 bounds process time, preserves stdout/stderr and records both the Git revision and a
 SHA-256 source fingerprint. `build` writes `dist`; `test` requires that build. Neither
 publishes. `map` without `--check` rewrites `data/experience-map.json`; regenerate it
-when lessons, features, dependencies, tools or test coverage change. `outputs/` is ignored.
+when lessons, routes, or mapped features change. Full dependency, tool, and test discovery
+is generated on demand by `inventory`. `outputs/` is ignored.
 The retained Sites shell wrappers are legacy Linux integrations; the CLI runs directly
 on macOS and Linux without shell package-manager wrappers.
 
-Browser journeys require actual observations. `browser-evidence --input <report> --json`
+Install Chromium once with `npx playwright install chromium`. The [local verify skill](.agents/skills/verify/SKILL.md)
+owns browser launch, live readiness, action evidence, failure recovery, and cleanup.
+`browser run` builds current source and uses fresh local state; it never attaches to an existing server.
+`browser-evidence --input <report> --json`
 validates their structure and current source identity; it does not manufacture or
 independently verify observations. Read [verification contracts](docs/verification.md)
 and the machine-readable [experience map](data/experience-map.json) for known gaps.

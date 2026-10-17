@@ -2,7 +2,7 @@
 import { fileURLToPath } from "node:url";
 import { readFile, writeFile, mkdir, readdir, access } from "node:fs/promises";
 import path from "node:path";
-import { sourceSnapshot } from "./verification/revision.mjs";
+import { evidenceDirectory, sourceSnapshot } from "./verification/revision.mjs";
 import { doctor, runCheck, profileChecks } from "./verification/runner.mjs";
 import {
   browserPlan,
@@ -29,6 +29,8 @@ const help = {
       "Read machine-readable browser journeys and required evidence; no browser execution.",
     "browser-evidence":
       "Validate supplied observed browser report shape/revision; --input required. Does not independently verify observations.",
+    browser:
+      "Drive the built local Worker in Chromium: browser list, browser doctor, browser run --features all. Owns instances and durable evidence.",
   },
   options: [
     "--json",
@@ -61,6 +63,14 @@ function parse(args) {
   const command = args[0] ?? "help";
   if (!Object.hasOwn(help.commands, command))
     throw new Error(`Unknown command: ${command}`);
+  if (command === "browser")
+    return {
+      command,
+      options: {
+        "--json": args.includes("--json"),
+        browserArgs: args.slice(1),
+      },
+    };
   const options = {};
   const switches = new Set(["--json", "--check"]);
   const valued = new Set([
@@ -131,10 +141,19 @@ async function execute(command, options) {
     ? path.resolve(options["--root"])
     : defaultRoot;
   if (command === "help") return help;
+  if (command === "browser") {
+    const { browserCommand } = await import("../.agents/skills/verify/cli.mjs");
+    return browserCommand(options.browserArgs);
+  }
   if (command === "doctor") return doctor(root);
   if (command === "browser-plan") {
-    if (options["--output"])
-      await saveJson(path.resolve(options["--output"]), browserPlan);
+    if (options["--output"]) {
+      const file = await evidenceDirectory(
+        root,
+        path.resolve(options["--output"]),
+      );
+      await saveJson(file, browserPlan);
+    }
     return browserPlan;
   }
   if (command === "browser-evidence") {
@@ -167,8 +186,13 @@ async function execute(command, options) {
         status: issues.length ? "failed" : "passed",
         issues,
       };
-      if (options["--output"])
-        await saveJson(path.resolve(options["--output"]), result);
+      if (options["--output"]) {
+        const file = await evidenceDirectory(
+          root,
+          path.resolve(options["--output"]),
+        );
+        await saveJson(file, result);
+      }
       return result;
     }
     const file = path.join(root, "data/experience-map.json");
@@ -210,12 +234,19 @@ async function execute(command, options) {
       };
     }
   }
-  const source = await sourceSnapshot(root);
   const startedAt = new Date().toISOString();
-  const output = path.resolve(
-    options["--output"] ??
-      path.join(root, "outputs/verification", startedAt.replace(/[:.]/g, "-")),
+  const output = await evidenceDirectory(
+    root,
+    path.resolve(
+      options["--output"] ??
+        path.join(
+          root,
+          "outputs/verification",
+          startedAt.replace(/[:.]/g, "-"),
+        ),
+    ),
   );
+  const source = await sourceSnapshot(root);
   await mkdir(output, { recursive: true });
   const pkg = JSON.parse(
     await readFile(path.join(root, "package.json"), "utf8"),
@@ -255,6 +286,7 @@ async function execute(command, options) {
             profile,
             profile === "ci" ? testFiles : targeted,
             formatArgs,
+            output,
           );
   const checks = [],
     begun = performance.now();
@@ -365,7 +397,7 @@ try {
       `${error.message}\nRun node scripts/calculus.mjs help.\n`,
     );
   process.exitCode =
-    /Unknown command|Unknown option|Missing value|Duplicate option|not supported|Profile must|Timeout must|requires --input/.test(
+    /Unknown command|Unknown option|Missing value|Duplicate option|not supported|Profile must|Timeout must|requires --input|Browser command|browser option|Browser timeout|require run|Features must|does not write output/.test(
       error.message,
     )
       ? 2
