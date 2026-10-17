@@ -15,7 +15,7 @@ export function pinUpdate(files, diff) {
     .filter((line) => /^[+-]/.test(line) && !/^(\+\+\+ |--- )/.test(line));
   if (lines.length !== 2) return null;
   const pattern =
-    /^([+-])([ \t]*)- uses: ([\w.-]+\/[\w.-]+)@([a-f0-9]{40}) # v(\d+)\.(\d+)\.(\d+)$/;
+    /^([+-])([ \t]*(?:- )?)uses: ([\w.-]+\/[\w.-]+)@([a-f0-9]{40}) # v(\d+)\.(\d+)\.(\d+)$/;
   const before = lines.find((line) => line.startsWith("-"))?.match(pattern);
   const after = lines.find((line) => line.startsWith("+"))?.match(pattern);
   if (!before || !after || before[2] !== after[2] || before[3] !== after[3])
