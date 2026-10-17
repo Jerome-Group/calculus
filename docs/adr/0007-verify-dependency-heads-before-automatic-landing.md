@@ -12,7 +12,7 @@ Opt into `dependabot-auto-merge.yml` for one modified workflow containing one fo
 
 A trusted approval must record an independent PASS verdict and the exact head, current base and stable patch ID. Existing required checks must succeed. The helper then uses GitHub's immediate merge API with the verified head as its server-enforced condition and reads the result back. It never queues a future head or bypasses repository rules. A required merge queue therefore needs a separate decision.
 
-CI completion and review events retry this qualification against the current metadata. The privileged job checks out only the default branch, consumes no PR artifacts, and never executes PR code. Other dependency updates remain manual review work.
+CI completion and PR comment events retry this qualification against current metadata. Both events load the workflow from the default branch. A review event could load a PR's workflow, so it is deliberately excluded. After approving, the verifier posts its verdict comment to request evaluation. The privileged job checks out only the default branch, consumes no PR artifacts, and never executes PR code. Other dependency updates remain manual review work.
 
 ## Consequences
 

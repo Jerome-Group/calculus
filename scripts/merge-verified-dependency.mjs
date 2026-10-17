@@ -102,8 +102,8 @@ async function main() {
   const event = JSON.parse(
     await readFile(process.env.GITHUB_EVENT_PATH, "utf8"),
   );
-  const numbers = event.pull_request
-    ? [event.pull_request.number]
+  const numbers = event.issue?.pull_request
+    ? [event.issue.number]
     : (event.workflow_run?.pull_requests ?? []).map((pr) => pr.number);
   if (!numbers.length)
     console.log(

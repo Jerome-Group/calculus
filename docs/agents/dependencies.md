@@ -67,6 +67,10 @@ base prevents unattended landing. `node --test tests/dependency-landing.test.mjs
 qualification boundary. Missing or stale approval is a review prerequisite, not a reason to
 queue an unverified future revision.
 
+After submitting the approval, post the same verdict as a PR comment. Comment events and CI
+completion load the trusted default-branch workflow and re-evaluate the current head. Review
+events are excluded because GitHub can load their workflow definition from the PR.
+
 The opt-in is the condition that does not travel. This file is seeded into every repository, and
 the reason `github-actions` is safe to merge on a green tick is that _this_ repository's check
 genuinely fails when an action bump misbehaves. A template-born repository whose CI is still a
