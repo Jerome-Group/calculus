@@ -68,6 +68,7 @@ If a run fails, retain its directory and use a new output directory for the next
 ## Helpers
 
 The executable entry point is `node .agents/skills/verify/cli.mjs list`, `doctor`, or `run`.
+Run `node .agents/skills/verify/probe-interruption.mjs --output outputs/browser/interruption` to check real CLI SIGINT evidence and cleanup in a new directory.
 `npm run agent -- browser ...` delegates to that same implementation.
 Open a retained trace with `npx playwright show-trace outputs/browser/full/library/trace-1.zip`.
 Use the installed `maintain-verification-skill` workflow when app entry points change, then regenerate the compact map with `npm run agent -- map`.

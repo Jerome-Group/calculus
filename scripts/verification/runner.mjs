@@ -159,6 +159,15 @@ export function profileChecks(profile, testFiles, formatArgs, output) {
         path.join(output, "browser"),
       ],
     });
+  if (profile === "ci")
+    stages.push({
+      id: "browser-interruption",
+      args: [
+        ".agents/skills/verify/probe-interruption.mjs",
+        "--output",
+        path.join(output, "browser-interruption"),
+      ],
+    });
   stages.push({
     id: "tests",
     args: [
