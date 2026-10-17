@@ -1,5 +1,5 @@
 "use client";
-import { useState, useSyncExternalStore } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import { concepts } from "@/lib/curriculum";
 import { learningGuide } from "@/lib/curriculum/learning";
 import type { LessonMode, PilotLesson } from "@/lib/curriculum/learning-modes";
@@ -32,6 +32,7 @@ export function PilotLessonView({
   study: StudyController;
 }) {
   const [saveStatus, setSaveStatus] = useState("");
+  const errorHistory = useRef<HTMLHeadingElement>(null);
   const raw = useSyncExternalStore(
     subscribeProgress,
     pilotSnapshot,
@@ -90,9 +91,19 @@ export function PilotLessonView({
           Do the independent tasks
         </button>
         <p>
-          <a href="#pilot-errors">Review your recorded errors</a>
+          <button
+            type="button"
+            onClick={() => {
+              errorHistory.current?.focus({ preventScroll: true });
+              errorHistory.current?.scrollIntoView({ block: "start" });
+            }}
+          >
+            Review your recorded errors
+          </button>
         </p>
-        <h3 id="pilot-errors">Your error history</h3>
+        <h3 id="pilot-errors" ref={errorHistory} tabIndex={-1}>
+          Your error history
+        </h3>
         {record?.attempts.some((attempt) => !attempt.correct) ? (
           <ul>
             {record.attempts
