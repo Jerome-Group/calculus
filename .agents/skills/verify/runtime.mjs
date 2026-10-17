@@ -101,7 +101,7 @@ export async function startWorker(root, output, signal) {
   let spawnError;
   const stop = () =>
     (cleanup ??= (async () => {
-      if (child) {
+      if (child?.pid) {
         const kill = (kind) => {
           try {
             if (process.platform === "win32") child.kill(kind);
@@ -110,12 +110,24 @@ export async function startWorker(root, output, signal) {
             if (error.code !== "ESRCH") throw error;
           }
         };
-        if (child.exitCode === null && child.signalCode === null) {
-          const closed = once(child, "close");
-          kill("SIGTERM");
-          const timer = setTimeout(() => kill("SIGKILL"), 1500);
-          await closed;
+        const closed =
+          child.stdout.closed && child.stderr.closed
+            ? Promise.resolve()
+            : once(child, "close");
+        kill("SIGTERM");
+        const timer = setTimeout(() => kill("SIGKILL"), 1500);
+        let deadline;
+        try {
+          await Promise.race([
+            closed,
+            new Promise((resolve) => {
+              deadline = setTimeout(resolve, 2500);
+            }),
+          ]);
+        } finally {
           clearTimeout(timer);
+          clearTimeout(deadline);
+          kill("SIGKILL");
         }
       }
       await Promise.all([
@@ -131,11 +143,19 @@ export async function startWorker(root, output, signal) {
       ]);
       let portClosed = true;
       if (port) {
-        try {
-          await availablePort(port);
-        } catch (error) {
-          if (error.code !== "EADDRINUSE") throw error;
-          portClosed = false;
+        const deadline = Date.now() + 1000;
+        while (true) {
+          try {
+            await availablePort(port);
+            break;
+          } catch (error) {
+            if (error.code !== "EADDRINUSE") throw error;
+            if (Date.now() >= deadline) {
+              portClosed = false;
+              break;
+            }
+            await new Promise((resolve) => setTimeout(resolve, 25));
+          }
         }
       }
       return {
