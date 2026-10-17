@@ -414,3 +414,57 @@ test("missing DB fails visibly while native identity remains available", async (
     503,
   );
 });
+
+test("account overview keeps assessments and latest choice evidence independent", async () => {
+  const owner = "summary-contract";
+  const now = Date.now();
+  for (const [lessonId, status] of [
+    ["derivative-definition", "Can explain independently"],
+    ["partial-fractions", "Needs practice"],
+  ]) {
+    const result = await call(owner, {
+      ...write(owner, ""),
+      key: { kind: "assessment", lessonId, exerciseId: "core" },
+      value: { status, date: new Date(now).toISOString() },
+    });
+    assert.equal(result.status, 200);
+  }
+  const record = async (choice, support, offset, account = owner) => {
+    const result = await call(account, {
+      operation: "attempt",
+      expectedOwner: account,
+      attempt: {
+        ...attempt(
+          crypto.randomUUID(),
+          choice,
+          new Date(now + offset).toISOString(),
+        ),
+        support,
+      },
+    });
+    assert.equal(result.status, 200);
+    return (await call(account)).body.overview;
+  };
+  const wrong = await record("reversed", "none", -10000);
+  assert.ok(wrong.practice.includes("epsilon-delta-one-variable"));
+  const corrected = await record("correct", "none", -9000);
+  assert.deepEqual(
+    {
+      explainable: corrected.explainable,
+      needsPractice: corrected.needsPractice,
+      choices: corrected.choices,
+    },
+    { explainable: 1, needsPractice: 1, choices: 2 },
+  );
+  assert.deepEqual(corrected.practice, ["partial-fractions"]);
+  assert.ok(
+    (await record("correct", "hint", -8000)).practice.includes(
+      "epsilon-delta-one-variable",
+    ),
+  );
+  assert.ok(
+    (
+      await record("correct", "none", -4 * 86400000, "summary-due")
+    ).practice.includes("epsilon-delta-one-variable"),
+  );
+});
