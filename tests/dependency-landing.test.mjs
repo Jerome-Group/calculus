@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
+import { mkdtempSync, writeFileSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
@@ -136,7 +136,41 @@ test("CI events without a PR and invalid arguments cannot contact GitHub", () =>
     const invalid = run("--unknown");
     assert.equal(invalid.status, 2);
     assert.match(invalid.stderr, /Usage:/);
+    if (process.platform !== "win32") {
+      writeFileSync(
+        join(fixture, "gh"),
+        '#!/bin/sh\ntest "$*" = "api repos/fixture/repository/pulls/42" || exit 91\nprintf \'%s\\n\' \'{"state":"closed"}\'\n',
+        { mode: 0o755 },
+      );
+      writeFileSync(
+        event,
+        JSON.stringify({ issue: { number: 42, pull_request: {} } }),
+      );
+      const comment = run();
+      assert.equal(comment.status, 0, comment.stderr);
+      assert.equal(JSON.parse(comment.stdout).number, 42);
+    }
   } finally {
     rmSync(fixture, { recursive: true, force: true });
   }
+});
+
+test("privileged landing loads its workflow from trusted default-branch events", () => {
+  const workflow = readFileSync(
+    ".github/workflows/dependabot-auto-merge.yml",
+    "utf8",
+  );
+  const triggers = workflow.split("\non:\n")[1]?.split("\npermissions:")[0];
+  assert.ok(triggers, "workflow declares an event contract");
+  assert.deepEqual(
+    [...triggers.matchAll(/^  ([a-z_]+):\s*$/gm)]
+      .map((match) => match[1])
+      .sort(),
+    ["issue_comment", "workflow_run"],
+  );
+  assert.doesNotMatch(
+    workflow,
+    /pull_request_review\s*:/,
+    "review events can load a PR-supplied privileged workflow",
+  );
 });

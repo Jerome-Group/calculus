@@ -13992,11 +13992,12 @@
       "names": [
         "only forward same-action patch/minor SHA pins qualify",
         "independent approval is bound to exact head, base and patch",
-        "CI events without a PR and invalid arguments cannot contact GitHub"
+        "CI events without a PR and invalid arguments cannot contact GitHub",
+        "privileged landing loads its workflow from trusted default-branch events"
       ],
       "inferredLessonReferences": [],
       "inferredSceneReferences": [],
-      "mechanisms": [],
+      "mechanisms": ["source-or-data-inspection"],
       "basis": "static-discovery; inspect assertions before claiming coverage"
     },
     {
