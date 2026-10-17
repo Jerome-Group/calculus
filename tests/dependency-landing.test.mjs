@@ -64,13 +64,13 @@ test("only forward same-action patch/minor SHA pins qualify", () => {
     assert.equal(pinUpdate(changed, diff()), null);
 });
 
-test("named steps retain the same single-pin boundary", () => {
+test("named action steps use the same single-pin boundary", () => {
   const named =
     "--- a/.github/workflows/ci.yml\n+++ b/.github/workflows/ci.yml\n" +
-    "       - name: Retain verification evidence\n" +
+    "-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1\n" +
+    "+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2\n" +
+    "         name: Retain verification evidence\n" +
     "         if: always()\n" +
-    "-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1\n" +
-    "+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2\n" +
     "         with:\n" +
     "           name: calculus-verification\n";
   assert.deepEqual(pinUpdate(files, named), {
@@ -79,10 +79,20 @@ test("named steps retain the same single-pin boundary", () => {
     tag: "v7.0.2",
   });
   for (const candidate of [
-    named.replace("+        uses:", "+      uses:"),
-    named.replace("+        uses:", "+      - uses:"),
+    named.replace("+      - uses:", "+    - uses:"),
     named + "-          retention-days: 14\n+          retention-days: 1\n",
     named + "+permissions: write-all\n",
+    ...["env:", "with:", "run: |"].map(
+      (parent) =>
+        "       - name: A named step\n         " +
+        parent +
+        "\n" +
+        named
+          .split("\n")
+          .filter((line) => /^[+-] /.test(line))
+          .map((line) => line.replace("      - uses:", "          uses:"))
+          .join("\n"),
+    ),
   ])
     assert.equal(pinUpdate(files, candidate), null, candidate);
 });
