@@ -149,6 +149,16 @@ async function runBrowser(options) {
         activeEvidence = undefined;
         await save();
       }
+      if (report.features.at(-1).status !== "passed") {
+        const doctor = await inspectWorker(instance);
+        report.recoveryDoctors ??= [];
+        report.recoveryDoctors.push({ feature: feature.id, ...doctor });
+        await save();
+        if (doctor.status !== "passed")
+          throw new Error(
+            `Worker unhealthy after ${feature.id}; reset before another drive.`,
+          );
+      }
     }
     controller.signal.throwIfAborted();
   } catch (error) {
@@ -174,6 +184,7 @@ async function runBrowser(options) {
       report.features.every((feature) => feature.status === "passed") &&
       report.liveDoctor?.status === "passed" &&
       report.cleanup?.processExited &&
+      report.cleanup?.scratchRemoved &&
       report.cleanup?.portClosed
         ? "passed"
         : "failed";

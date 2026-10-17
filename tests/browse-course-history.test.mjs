@@ -86,6 +86,7 @@ for (const initialRoute of ["lesson", "course"]) {
         setSearch: (search) => {
           pending.search = search;
         },
+        setHistoryNotice() {},
         setExpanded() {},
         setPlaying() {},
         sidebar: { setOpenMobile() {} },
