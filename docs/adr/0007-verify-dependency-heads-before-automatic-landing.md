@@ -17,3 +17,20 @@ CI completion and PR comment events retry this qualification against current met
 ## Consequences
 
 Ready, independently verified action bumps can land without another owner confirmation. Missing reviews, stale bases, changed patches, failures and unknown states leave the PR open. This is stricter than the Organisation's general opt-in policy. The helper and its rejection cases are executable through `node --test tests/dependency-landing.test.mjs`.
+
+## Verification record
+
+Submit a trusted approval for the exact current revision, then post the same verdict as a PR
+comment so the default-branch workflow evaluates it. The approval body contains these literal
+lines, replacing the placeholders with verified hexadecimal values.
+
+```text
+Independent verification: PASS
+Head: <head SHA>
+Base: <current main SHA>
+Patch-id: <stable patch ID>
+```
+
+`PASS+NOTES` is also accepted. Dismissed approvals and requested changes prevent qualification.
+GitHub atomically guards the head; base and review observations are separate reads.
+Run `node scripts/merge-verified-dependency.mjs --help` for the bounded CLI contract.
