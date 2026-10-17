@@ -27,5 +27,5 @@ The focusable parameter slider must expose its visible expression-parameter name
 
 Chromium needs its installed browser and system libraries. Failure to start is a prerequisite failure, never a skipped graph proof.
 SVG and WebGL prove local sampled drawing only. Other GPU hardware remains unverified.
-The current shared slider puts its name on the wrapper rather than the focusable thumb. The named-slider assertion records that accessibility failure.
+The named-slider assertion checks the keyboard-focusable thumb, not its wrapper.
 The finite mesh can miss features or exclude clipped samples. A blank graph is not proof of an empty mathematical set.

@@ -27,4 +27,4 @@ The revision error-history control must preserve the exact route, focus its visi
 These records live in browser storage. A different context is a different device-local store.
 Storage-denial injection changes the environment only. The driver enters all drafts and choices through visible controls.
 Choice correctness and confidence are separate records. Neither proves mastery; written reasoning is not graded.
-The current error-history link changes the hash to an unknown route and opens the library. The final assertion retains that failure.
+Error-history navigation must focus its heading and preserve the lesson route and revision mode.

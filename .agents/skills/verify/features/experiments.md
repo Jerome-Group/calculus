@@ -28,6 +28,6 @@ Finally it selects Constant-height circle, reloads, and requires the same model.
 
 ## Gotchas
 
-Regression #195 currently resets Constant-height circle after reload. That assertion remains a failure until the product is fixed.
+Regression #195 requires Constant-height circle to remain selected after reload.
 The request failure is an explicit local injection. The driver records its errors separately and rejects unrelated runtime errors.
 Comparisons illustrate sampled geometry; exact mathematical claims remain covered by focused model tests.
