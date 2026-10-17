@@ -82,6 +82,3 @@ export const courses: Record<
   },
 };
 export const courseIds = Object.keys(courses) as CourseId[];
-export function sourceLabel(c: Concept) {
-  return `${c.course} · ${c.course === "MH1101" ? "Chapter" : "Lecture"} ${c.lecture}`;
-}
