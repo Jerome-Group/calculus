@@ -218,6 +218,7 @@ export async function startWorker(root, output, signal) {
       child,
       url: `http://127.0.0.1:${port}`,
       scratch,
+      signal,
       stop,
       command: [process.execPath, ...args],
       ownsPort: () =>

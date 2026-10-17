@@ -26,6 +26,7 @@ export async function featureEvidence(browser, instance, output, id) {
     url: instance.url,
     viewportChunk: instance.viewportChunk,
     async newPage({ storageUnavailable = false, ...options } = {}) {
+      instance.signal?.throwIfAborted();
       const context = await browser.newContext({
         viewport: { width: 1365, height: 900 },
         ...options,
@@ -36,6 +37,7 @@ export async function featureEvidence(browser, instance, output, id) {
         snapshots: true,
         sources: true,
       });
+      instance.signal?.throwIfAborted();
       if (storageUnavailable) {
         injections.push({
           kind: "storage-unavailable",
@@ -52,6 +54,10 @@ export async function featureEvidence(browser, instance, output, id) {
         });
       }
       const page = await context.newPage();
+      if (instance.signal?.aborted) {
+        await page.close();
+        instance.signal.throwIfAborted();
+      }
       page.setDefaultTimeout(8000);
       page.setDefaultNavigationTimeout(15000);
       pages.push(page);
@@ -125,8 +131,9 @@ export async function featureEvidence(browser, instance, output, id) {
         throw error;
       }
     },
-    async capture(label) {
-      for (const [index, page] of pages.entries()) {
+    async capture(label, { timeoutMs = 5000, lastOnly = false } = {}) {
+      const selected = [...pages.entries()];
+      for (const [index, page] of lastOnly ? selected.slice(-1) : selected) {
         if (page.isClosed()) continue;
         const stem = `${String(++captureCount).padStart(3, "0")}-page-${index + 1}`;
         const artifact = {
@@ -140,7 +147,7 @@ export async function featureEvidence(browser, instance, output, id) {
           await page.screenshot({
             path: path.join(directory, artifact.screenshot),
             fullPage: true,
-            timeout: 5000,
+            timeout: timeoutMs,
             animations: "disabled",
           });
           await writeFile(
@@ -151,6 +158,25 @@ export async function featureEvidence(browser, instance, output, id) {
         } catch (error) {
           artifacts.push({ label, url: page.url(), error: error.message });
         }
+      }
+    },
+    async interrupt() {
+      const captured = e.capture("Interrupted state", {
+        timeoutMs: 1000,
+        lastOnly: true,
+      });
+      let timer;
+      try {
+        await Promise.race([
+          captured,
+          new Promise((resolve) => {
+            timer = setTimeout(resolve, 2000);
+          }),
+        ]);
+      } finally {
+        clearTimeout(timer);
+        await Promise.allSettled(pages.map((page) => page.close()));
+        await captured;
       }
     },
     injectDrawingFailure() {

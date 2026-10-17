@@ -93,13 +93,14 @@ async function runBrowser(options) {
     () => controller.abort(new Error("Browser run timed out.")),
     options.timeoutMs,
   );
-  let instance, browser, activeEvidence;
-  const closeOnAbort = async () => {
-    await Promise.allSettled([
-      activeEvidence?.capture("Interrupted state"),
-      instance?.stop(),
-    ]);
-    await browser?.close();
+  let instance, browser, activeEvidence, abortCleanup;
+  const closeOnAbort = () => {
+    abortCleanup ??= (async () => {
+      await activeEvidence?.interrupt();
+      await instance?.stop();
+    })().catch((error) => {
+      report.abortCleanupError = error.message;
+    });
   };
   controller.signal.addEventListener("abort", closeOnAbort, { once: true });
   try {
@@ -153,6 +154,7 @@ async function runBrowser(options) {
         activeEvidence = undefined;
         await save();
       }
+      controller.signal.throwIfAborted();
       if (report.features.at(-1).status !== "passed") {
         const doctor = await inspectWorker(instance);
         report.recoveryDoctors ??= [];
@@ -166,13 +168,16 @@ async function runBrowser(options) {
     }
     controller.signal.throwIfAborted();
   } catch (error) {
-    report.error = error.message;
+    report.error = controller.signal.aborted
+      ? controller.signal.reason.message
+      : error.message;
     report.cleanup = error.cleanup;
   } finally {
     clearTimeout(timer);
     controller.signal.removeEventListener("abort", closeOnAbort);
     process.removeListener("SIGINT", onInt);
     process.removeListener("SIGTERM", onTerm);
+    await abortCleanup;
     if (instance) report.liveDoctor = await inspectWorker(instance);
     await browser?.close();
     if (instance) report.cleanup = await instance.stop();

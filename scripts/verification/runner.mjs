@@ -81,11 +81,11 @@ export async function runCheck({
     const timer = setTimeout(() => {
       timedOut = true;
       kill("SIGTERM");
-      forceKill = setTimeout(() => kill("SIGKILL"), 5000);
+      forceKill = setTimeout(() => kill("SIGKILL"), 15000);
     }, timeoutMs);
     const abort = () => {
       kill("SIGTERM");
-      forceKill = setTimeout(() => kill("SIGKILL"), 5000);
+      forceKill = setTimeout(() => kill("SIGKILL"), 15000);
     };
     abortSignal?.addEventListener("abort", abort, { once: true });
     if (abortSignal?.aborted) abort();
