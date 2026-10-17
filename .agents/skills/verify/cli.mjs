@@ -128,7 +128,11 @@ async function runBrowser(options) {
       ready: instance.ready,
       freshState: true,
     };
-    browser = await chromium.launch({ headless: true });
+    browser = await chromium.launch({
+      headless: true,
+      handleSIGINT: false,
+      handleSIGTERM: false,
+    });
     report.environment.browser = browser.version();
     for (const feature of selectFeatures(options.features)) {
       controller.signal.throwIfAborted();
