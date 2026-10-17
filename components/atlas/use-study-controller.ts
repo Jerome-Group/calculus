@@ -197,11 +197,13 @@ export function useStudyController() {
     );
   }
   function chooseCourse(id: CourseId) {
+    setHistoryNotice("");
     setCourse(id);
     setExpanded(1);
     show("course", graph, id);
   }
   function updateSearch(value: string) {
+    setHistoryNotice("");
     const query = value.slice(0, 100);
     setSearch(query);
     if (route === "course")
