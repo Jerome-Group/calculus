@@ -13630,28 +13630,10 @@
   },
   "dependencies": [
     {
-      "name": "@base-ui/react",
-      "declared": "^1.7.0",
-      "locked": "1.7.0",
-      "development": false
-    },
-    {
       "name": "@cloudflare/vite-plugin",
       "declared": "1.54.9",
       "locked": "1.54.9",
       "development": true
-    },
-    {
-      "name": "@hookform/resolvers",
-      "declared": "^5.7.1",
-      "locked": "5.7.1",
-      "development": false
-    },
-    {
-      "name": "@shadcn/react",
-      "declared": "^0.3.0",
-      "locked": "0.3.0",
-      "development": false
     },
     {
       "name": "@tailwindcss/postcss",
@@ -13714,18 +13696,6 @@
       "development": false
     },
     {
-      "name": "cmdk",
-      "declared": "^1.1.1",
-      "locked": "1.1.1",
-      "development": false
-    },
-    {
-      "name": "date-fns",
-      "declared": "^4.4.0",
-      "locked": "4.4.0",
-      "development": false
-    },
-    {
       "name": "drizzle-kit",
       "declared": "0.31.11",
       "locked": "0.31.11",
@@ -13735,12 +13705,6 @@
       "name": "drizzle-orm",
       "declared": "0.45.2",
       "locked": "0.45.2",
-      "development": false
-    },
-    {
-      "name": "embla-carousel-react",
-      "declared": "^8.6.0",
-      "locked": "8.6.0",
       "development": false
     },
     {
@@ -13754,12 +13718,6 @@
       "declared": "16.2.6",
       "locked": "16.2.6",
       "development": true
-    },
-    {
-      "name": "input-otp",
-      "declared": "^1.4.2",
-      "locked": "1.4.2",
-      "development": false
     },
     {
       "name": "katex",
@@ -13786,12 +13744,6 @@
       "development": false
     },
     {
-      "name": "next-themes",
-      "declared": "^0.4.6",
-      "locked": "0.4.6",
-      "development": false
-    },
-    {
       "name": "prettier",
       "declared": "3.9.6",
       "locked": "3.9.6",
@@ -13810,27 +13762,9 @@
       "development": false
     },
     {
-      "name": "react-day-picker",
-      "declared": "^10.0.1",
-      "locked": "10.0.1",
-      "development": false
-    },
-    {
       "name": "react-dom",
       "declared": "19.2.8",
       "locked": "19.2.8",
-      "development": false
-    },
-    {
-      "name": "react-hook-form",
-      "declared": "^7.85.0",
-      "locked": "7.85.0",
-      "development": false
-    },
-    {
-      "name": "react-resizable-panels",
-      "declared": "^4.12.2",
-      "locked": "4.12.2",
       "development": false
     },
     {
@@ -13838,18 +13772,6 @@
       "declared": "19.2.8",
       "locked": "19.2.8",
       "development": true
-    },
-    {
-      "name": "recharts",
-      "declared": "^3.8.0",
-      "locked": "3.8.0",
-      "development": false
-    },
-    {
-      "name": "sonner",
-      "declared": "^2.0.8",
-      "locked": "2.0.8",
-      "development": false
     },
     {
       "name": "tailwind-merge",
@@ -13882,12 +13804,6 @@
       "development": true
     },
     {
-      "name": "vaul",
-      "declared": "^1.1.2",
-      "locked": "1.1.2",
-      "development": false
-    },
-    {
       "name": "vinext",
       "declared": "0.0.50",
       "locked": "0.0.50",
@@ -13904,12 +13820,6 @@
       "declared": "4.131.2",
       "locked": "4.131.2",
       "development": true
-    },
-    {
-      "name": "zod",
-      "declared": "^3.25.76",
-      "locked": "3.25.76",
-      "development": false
     }
   ],
   "tests": [
@@ -15176,9 +15086,7 @@
     {
       "file": "tests/ui-components.test.mjs",
       "names": [
-        "emits the catalog",
-        "forwards progress semantics to the primitive",
-        "emits chart themes for the starter",
+        "emits animation utilities for the retained interactive controls",
         "renders sidebar skeletons deterministically"
       ],
       "inferredLessonReferences": [],
