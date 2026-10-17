@@ -22,6 +22,8 @@ Source anchors must retain their page locators, new-tab behavior, and `noreferre
 It visits the epsilon-delta pilot's Learn, Explore, and Revise entry points and opens independent tasks.
 It checks malformed shared-state explanation and page width at 320px.
 
+The driver also reads source errata with and without supplied provenance; it checks rendered annotations without fetching private files.
+
 ## Gotchas
 
 Course PDFs remain external and access controlled. Anchor inspection does not establish permission or source freshness.

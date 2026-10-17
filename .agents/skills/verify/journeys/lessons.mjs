@@ -127,6 +127,37 @@ export async function lessons(page, e) {
     },
   );
   await e.step(
+    "Read source errata with honest optional provenance",
+    async () => {
+      for (const [id, title, credited] of [
+        ["partial-fractions", "MH1101 Chapter 03 Notes", true],
+        ["power-series-radius", "MH1101 Chapter 06 Notes", false],
+      ]) {
+        await lesson(page, e, id);
+        await mode(page, "Learn");
+        const source = page
+          .getByRole("region", { name: "Sources", exact: true })
+          .locator(".source-group")
+          .filter({
+            has: page.getByRole("heading", { name: title, exact: true }),
+          });
+        const note = source.locator(".source-erratum").first();
+        await note.scrollIntoViewIfNeeded();
+        await e.check(
+          `${id} renders erratum provenance only when supplied`,
+          async () => {
+            await visible(note.getByText(/^Source erratum · PDF p\./));
+            assert.equal(await note.locator("small").count(), credited ? 1 : 0);
+            if (credited)
+              assert.ok(
+                (await note.locator("small").innerText()).trim().length > 0,
+              );
+          },
+        );
+      }
+    },
+  );
+  await e.step(
     "Use lesson pagination and select a lesson in the expanded sidebar",
     async () => {
       const before = new URL(page.url()).hash;
