@@ -15,7 +15,7 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { createServer } from "vite";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createStudyRenderer } from "./helpers/study-render.mjs";
 import katex from "katex";
 import {
   evidenceDirectory,
@@ -49,6 +49,7 @@ const vite = await createServer({
   optimizeDeps: { noDiscovery: true, include: [] },
 });
 after(() => vite.close());
+const renderToStaticMarkup = await createStudyRenderer(vite);
 const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
 const { learningGuides } = await vite.ssrLoadModule(
   "/lib/curriculum/learning.ts",

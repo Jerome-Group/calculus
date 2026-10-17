@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createStudyRenderer } from "./helpers/study-render.mjs";
 import { createServer } from "vite";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -14,6 +14,7 @@ const vite = await createServer({
   server: { middlewareMode: true, hmr: false },
 });
 after(async () => vite.close());
+const renderToStaticMarkup = await createStudyRenderer(vite);
 
 test("exact review residuals distinguish all-direction decay from diagonal obstruction", async () => {
   const { reviewValue, reviewPlane, reviewResidual } = await vite.ssrLoadModule(

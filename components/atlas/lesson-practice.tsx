@@ -1,19 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Formula, MathText } from "./math-text";
-import {
-  savePractice,
-  type PracticeStatus,
-} from "@/lib/curriculum/progress-store";
-import {
-  deletePracticeDraft,
-  readPracticeDraft,
-  writePracticeDraft,
-  type PracticeDraft,
-} from "@/lib/curriculum/practice-drafts";
+import { useStudyRecord, StudySaveStatus } from "./study-records";
+import type { StudyValues } from "@/lib/study/model";
 import type { PracticeExercise } from "@/lib/curriculum/learning";
+
 export function LessonPractice({
   id,
   exerciseId = "core",
@@ -25,59 +17,24 @@ export function LessonPractice({
 }) {
   const fieldId = `answer-${id}-${exerciseId}`;
   const headingId = `practice-${id}-${exerciseId}`;
-  const progressId = exerciseId === "core" ? id : `${id}:${exerciseId}`;
-  const [draft, setDraft] = useState<PracticeDraft>({
+  const record = useStudyRecord({
+    kind: "practice-draft",
+    lessonId: id,
+    exerciseId,
+  });
+  const assessment = useStudyRecord({
+    kind: "assessment",
+    lessonId: id,
+    exerciseId,
+  });
+  const draft = record.value ?? {
     answer: "",
     hintOpen: false,
     solutionOpen: false,
-  });
-  const [status, setStatus] = useState("");
-  useEffect(() => {
-    let active = true;
-    queueMicrotask(() => {
-      if (!active) return;
-      const restored = readPracticeDraft(id, exerciseId);
-      setDraft(restored.draft);
-      setStatus(
-        restored.stored
-          ? restored.draft.answer
-            ? "Draft restored from this device."
-            : ""
-          : "Storage is unavailable. Your draft remains usable in this tab.",
-      );
-    });
-    return () => {
-      active = false;
-    };
-  }, [id, exerciseId]);
-  function update(patch: Partial<PracticeDraft>) {
-    const next = { ...draft, ...patch };
-    setDraft(next);
-    setStatus(
-      writePracticeDraft(id, next, exerciseId)
-        ? "Draft saved on this device."
-        : "Storage is unavailable. Your draft remains usable in this tab.",
-    );
-  }
-  function clear() {
-    setDraft({ answer: "", hintOpen: false, solutionOpen: false });
-    setStatus(
-      deletePracticeDraft(id, exerciseId)
-        ? "This draft was deleted. Other progress remains saved."
-        : "Storage is unavailable. This draft was cleared in this tab only.",
-    );
-  }
-  function record(value: PracticeStatus) {
-    try {
-      savePractice(progressId, value);
-      setStatus(
-        `${value} saved on this device. This is your self-assessment, not an automatic grade.`,
-      );
-    } catch {
-      setStatus(
-        "Your browser could not save this self-assessment. You can still complete the exercise.",
-      );
-    }
+  };
+  function update(patch: Partial<StudyValues["practice-draft"]>) {
+    if (record.persistence.kind !== "loading")
+      void record.save({ ...draft, ...patch });
   }
   return (
     <section className="lesson-practice" aria-labelledby={headingId}>
@@ -86,19 +43,30 @@ export function LessonPractice({
       <p>
         <MathText text={exercise.prompt} />
       </p>
-      <label htmlFor={fieldId}>Your reasoning (saved on this device)</label>
+      <label htmlFor={fieldId}>Your reasoning</label>
       <Textarea
         id={fieldId}
         value={draft.answer}
+        disabled={record.persistence.kind === "loading"}
+        maxLength={16384}
         onChange={(event) => update({ answer: event.target.value })}
         placeholder="State the method, check its assumptions, and justify your answer."
       />
-      <Button type="button" variant="outline" onClick={clear}>
+      <Button
+        type="button"
+        variant="outline"
+        disabled={record.persistence.kind === "loading"}
+        onClick={() => void record.clear()}
+      >
         Delete this draft
       </Button>
+      <StudySaveStatus record={record} />
       <details
         open={draft.hintOpen}
-        onToggle={(event) => update({ hintOpen: event.currentTarget.open })}
+        onToggle={(event) => {
+          if (event.currentTarget.open !== draft.hintOpen)
+            update({ hintOpen: event.currentTarget.open });
+        }}
       >
         <summary>First hint</summary>
         <p>
@@ -107,7 +75,10 @@ export function LessonPractice({
       </details>
       <details
         open={draft.solutionOpen}
-        onToggle={(event) => update({ solutionOpen: event.currentTarget.open })}
+        onToggle={(event) => {
+          if (event.currentTarget.open !== draft.solutionOpen)
+            update({ solutionOpen: event.currentTarget.open });
+        }}
       >
         <summary>Compare with a solution</summary>
         {exercise.solutionTex && (
@@ -125,18 +96,38 @@ export function LessonPractice({
           ))}
         </ul>
         <div className="practice-actions">
-          <Button onClick={() => record("Needs practice")}>
+          <Button
+            disabled={assessment.persistence.kind === "loading"}
+            onClick={() =>
+              void assessment.save({
+                status: "Needs practice",
+                date: new Date().toISOString(),
+              })
+            }
+          >
             Needs practice
           </Button>
           <Button
             variant="outline"
-            onClick={() => record("Can explain independently")}
+            disabled={assessment.persistence.kind === "loading"}
+            onClick={() =>
+              void assessment.save({
+                status: "Can explain independently",
+                date: new Date().toISOString(),
+              })
+            }
           >
             I can explain it independently
           </Button>
         </div>
+        {assessment.value && (
+          <p>
+            {assessment.value.status}. This is your self-assessment, not an
+            automatic grade.
+          </p>
+        )}
+        <StudySaveStatus record={assessment} />
       </details>
-      <p role="status">{status}</p>
     </section>
   );
 }

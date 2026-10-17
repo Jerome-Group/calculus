@@ -28,7 +28,7 @@ It installs nothing and starts no server. A missing build needs `npm run build`.
 
 During a run, `report.json` records the owned PID, exact launch command, ready URL, and live HTTP doctor.
 After failure, inspect `liveDoctor`, `cleanup`, build logs, and the failed feature's evidence before rerunning that feature.
-A local D1 binding without a migration contract fails launch. This app's study records currently use browser storage.
+The DB binding uses fresh temporary local D1 state. The helper applies every built Drizzle migration with Wrangler before starting the Worker and retains migration logs. Other bindings or a missing migration journal fail launch.
 
 ## Drive
 
@@ -37,7 +37,8 @@ Run `npm run agent -- browser list` to discover executable features.
 `features.mjs` owns selection, descriptions, and execution. Every mapped feature runs without adaptive skips.
 
 The driver uses the Playwright library with real roles, labels, text, keyboard input, clicks, and navigation.
-It never calls WebMCP actions, React setters, application stores, or test endpoints.
+It never calls WebMCP actions, React setters, application writer modules, or test endpoints.
+The legacy case supplies explicit preexisting storage through the browser context input and observes its bytes after visible import actions.
 Read DOM state only to observe results. Reproduce a bug through the same user path before changing product code.
 
 ## Evidence
@@ -52,7 +53,8 @@ In-repository output paths must be ignored and cannot contain tracked source. Us
 Changed source fails the run.
 The browser run builds its own Worker, so its build log and source identity refer to the same attempt.
 
-Storage denial and a deferred-chunk request failure are explicit local environment injections.
+Storage denial, post-gateway identity headers on the owned loopback Worker, legacy-device context input, an offline network, a scoped study-service503 outage and a deferred-chunk request failure are explicit local fixtures.
+Account conflicts use real concurrent D1 writes. Expected anonymous identity401, conflict409 and injected service503 responses remain recorded and scoped to their context or action.
 Reports identify their expected errors separately. Other browser errors fail the feature.
 Source-link destinations are inspected without requesting private Drive files.
 Local Chromium proof establishes neither hosted sign-in nor learner usability or mastery.

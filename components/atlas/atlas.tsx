@@ -6,6 +6,8 @@ import { useStudyController } from "./use-study-controller";
 import { CourseSidebar } from "./course-sidebar";
 import { LessonWorkspace } from "./lesson-workspace";
 import { GraphStudio } from "./graph-studio";
+import { StudyRecordsProvider } from "./study-records";
+import { StudyAccount } from "./study-account";
 function AtlasInner() {
   const study = useStudyController();
   const { selected, route, search, course, concept, open, show, webmcp } =
@@ -58,6 +60,7 @@ function AtlasInner() {
             </button>
           </div>
         </header>
+        <StudyAccount />
         {route === "lesson" ? (
           <LessonWorkspace study={study} />
         ) : route === "graph" ? (
@@ -83,11 +86,13 @@ function AtlasInner() {
 }
 export default function Atlas() {
   return (
-    <SidebarProvider
-      defaultOpen
-      style={{ "--sidebar-width": "230px" } as React.CSSProperties}
-    >
-      <AtlasInner />
-    </SidebarProvider>
+    <StudyRecordsProvider>
+      <SidebarProvider
+        defaultOpen
+        style={{ "--sidebar-width": "230px" } as React.CSSProperties}
+      >
+        <AtlasInner />
+      </SidebarProvider>
+    </StudyRecordsProvider>
   );
 }

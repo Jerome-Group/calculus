@@ -935,3 +935,35 @@ summary:focus-visible {
     font-size: 16px;
   }
 }
+
+.study-account {
+  margin: 0 1.25rem 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+}
+.study-account-heading {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.study-account p,
+.study-save-status p {
+  margin-block: 0.5rem;
+}
+.study-account button,
+.study-save-status button {
+  padding: 0.35rem 0.6rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  border: 1px solid currentColor;
+  border-radius: 0.35rem;
+}
+.study-save-status pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 14rem;
+  overflow: auto;
+}

@@ -13,7 +13,7 @@ import { createServer } from "node:net";
 import os from "node:os";
 import path from "node:path";
 import { chromium } from "playwright";
-import { doctor } from "../../../scripts/verification/runner.mjs";
+import { doctor, runCheck } from "../../../scripts/verification/runner.mjs";
 
 export async function browserDoctor(root, output) {
   const result = await doctor(root);
@@ -99,6 +99,7 @@ export async function startWorker(root, output, signal) {
   const stdout = [],
     stderr = [];
   let spawnError;
+  let storage;
   const stop = () =>
     (cleanup ??= (async () => {
       if (child?.pid) {
@@ -169,10 +170,29 @@ export async function startWorker(root, output, signal) {
     const config = JSON.parse(
       await readFile(path.join(root, "dist/server/wrangler.json"), "utf8"),
     );
-    if (config.d1_databases?.length)
-      throw new Error(
-        "This device-local driver has no D1 migration contract. Add the account driver before verifying a database build.",
+    if (config.d1_databases?.length) {
+      if (
+        config.d1_databases.length !== 1 ||
+        config.d1_databases[0].binding !== "DB"
+      )
+        throw new Error(
+          "The account driver requires exactly the DB D1 binding.",
+        );
+      const migrations = path.join(root, "dist/.openai/drizzle");
+      const journal = JSON.parse(
+        await readFile(path.join(migrations, "meta/_journal.json"), "utf8"),
       );
+      if (!journal.entries?.length)
+        throw new Error("Built D1 migration journal is empty.");
+      for (const entry of journal.entries)
+        await access(path.join(migrations, `${entry.tag}.sql`), constants.R_OK);
+      config.d1_databases[0].migrations_dir = migrations;
+      storage = {
+        kind: "fresh-local-d1",
+        binding: "DB",
+        migrations: journal.entries.map(({ tag }) => tag),
+      };
+    }
     config.main = path.join(root, "dist/server/index.js");
     config.assets = {
       ...config.assets,
@@ -182,6 +202,32 @@ export async function startWorker(root, output, signal) {
     config.build = undefined;
     const configPath = path.join(scratch, "wrangler.json");
     await writeFile(configPath, JSON.stringify(config));
+    if (storage) {
+      const migration = await runCheck({
+        id: "migrations",
+        args: [
+          path.join(root, "node_modules/wrangler/bin/wrangler.js"),
+          "d1",
+          "migrations",
+          "apply",
+          "DB",
+          "--local",
+          "--config",
+          configPath,
+          "--persist-to",
+          path.join(scratch, "state"),
+        ],
+        root: scratch,
+        output,
+        signal,
+        timeoutMs: 30000,
+      });
+      if (migration.status !== "passed")
+        throw new Error(
+          "Fresh local D1 migration failed; inspect migrations logs.",
+        );
+      storage.migration = migration;
+    }
     port = await availablePort();
     const args = [
       path.join(root, "node_modules/wrangler/bin/wrangler.js"),
@@ -218,6 +264,7 @@ export async function startWorker(root, output, signal) {
       child,
       url: `http://127.0.0.1:${port}`,
       scratch,
+      storage,
       signal,
       stop,
       command: [process.execPath, ...args],

@@ -98,7 +98,7 @@ export function SourceReferences({ concept }: { concept: Concept }) {
                 <p>
                   <MathText text={`${note.correction} ${note.justification}`} />
                 </p>
-                <small>{note.provenance}</small>
+                {note.provenance && <small>{note.provenance}</small>}
               </aside>
             ))}
             {citations.length > 3 ? (

@@ -22,7 +22,7 @@ export type Source = {
     printed: string;
     correction: string;
     justification: string;
-    provenance: string;
+    provenance?: string;
   }[];
 };
 export const concepts = data as Concept[];

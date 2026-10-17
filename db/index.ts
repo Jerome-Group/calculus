@@ -11,3 +11,8 @@ export function getDb() {
 
   return drizzle(env.DB, { schema });
 }
+
+export function getStudyDatabase() {
+  if (!env.DB) throw new Error("Study database is unavailable");
+  return env.DB;
+}

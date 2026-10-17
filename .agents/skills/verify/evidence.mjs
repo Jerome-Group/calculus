@@ -25,12 +25,40 @@ export async function featureEvidence(browser, instance, output, id) {
   const e = {
     url: instance.url,
     viewportChunk: instance.viewportChunk,
-    async newPage({ storageUnavailable = false, ...options } = {}) {
+    async newPage({
+      storageUnavailable = false,
+      account = instance.storage ? "verification-a" : null,
+      ...options
+    } = {}) {
       instance.signal?.throwIfAborted();
       const context = await browser.newContext({
         viewport: { width: 1365, height: 900 },
         ...options,
+        extraHTTPHeaders: {
+          ...(account
+            ? {
+                "oai-authenticated-user-id": account,
+                "oai-authenticated-user-email": `${account}@example.invalid`,
+              }
+            : {}),
+          ...options.extraHTTPHeaders,
+        },
       });
+      const contextId = contexts.length + 1;
+      if (instance.storage)
+        injections.push({
+          kind: "local-gateway-identity",
+          context: contexts.length + 1,
+          account,
+          hostedSignIn: false,
+        });
+      if (options.storageState?.origins)
+        injections.push({
+          kind: "legacy-device-input",
+          keys: options.storageState.origins.flatMap((origin) =>
+            origin.localStorage.map(({ name }) => name),
+          ),
+        });
       contexts.push(context);
       await context.tracing.start({
         screenshots: true,
@@ -61,13 +89,22 @@ export async function featureEvidence(browser, instance, output, id) {
       page.setDefaultTimeout(8000);
       page.setDefaultNavigationTimeout(15000);
       pages.push(page);
-      const expected = (text) =>
+      const expected = (text, status) =>
+        (account === null &&
+          text.includes(`${instance.url}/api/study?scope=identity`) &&
+          (!status || status === 401)) ||
         injections.some(
           (injection) =>
             injection.active &&
-            injection.kind === "drawing-chunk-failure" &&
-            (text.includes(instance.viewportChunk) ||
-              text.includes("Failed to fetch dynamically imported module")),
+            (!injection.context || injection.context === contextId) &&
+            ((injection.kind === "drawing-chunk-failure" &&
+              (text.includes(instance.viewportChunk) ||
+                text.includes(
+                  "Failed to fetch dynamically imported module",
+                ))) ||
+              (injection.kind.startsWith("account-") &&
+                text.includes(`${instance.url}/api/study`) &&
+                (!status || status === injection.status))),
         );
       page.on("console", (message) =>
         consoleMessages.push({
@@ -94,7 +131,11 @@ export async function featureEvidence(browser, instance, output, id) {
         }),
       );
       page.on("response", (response) =>
-        requests.push({ url: response.url(), status: response.status() }),
+        requests.push({
+          url: response.url(),
+          status: response.status(),
+          expected: expected(response.url(), response.status()),
+        }),
       );
       return page;
     },
@@ -188,6 +229,20 @@ export async function featureEvidence(browser, instance, output, id) {
       injections.push(injection);
       return injection;
     },
+    expectStudyFailure(kind, status, page) {
+      if (!["offline", "conflict", "service"].includes(kind))
+        throw new Error("Unknown study failure fixture.");
+      const context = pages.indexOf(page) + 1;
+      if (!context) throw new Error("Study failure needs an owned page.");
+      const injection = {
+        kind: `account-${kind}`,
+        context,
+        status,
+        active: true,
+      };
+      injections.push(injection);
+      return injection;
+    },
     async finish(error) {
       if (
         error &&
@@ -221,7 +276,7 @@ export async function featureEvidence(browser, instance, output, id) {
           (item) => item.type === "error" && !item.expected,
         ),
         ...requestFailures.filter((item) => !item.expected),
-        ...requests.filter((item) => item.status >= 400),
+        ...requests.filter((item) => item.status >= 400 && !item.expected),
       ];
       if (unexpected.length)
         assertions.push({

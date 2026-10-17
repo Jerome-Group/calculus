@@ -4,15 +4,16 @@ Calculus: an interactive mathematics learning site.
 
 Start here: `README.md`, then `AGENTS.md`.
 
-| Area                              | Entry point                                                                                                                               |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Learning experience               | `app/page.tsx`, subject views in `components/`, shared `hooks/`, assets in `public/` and `vendor/`                                        |
-| Mathematics and examples          | `lib/curriculum/` for lessons and citations; `lib/atlas/` for geometry; `examples/` for retained integrations                             |
-| Audit action and outcome ledgers  | `data/concept_action_ledger.json` tracks concept-level leads; `lib/curriculum/outcome-ledger.json` tracks source outcomes and gaps        |
-| Validation                        | `.agents/skills/verify/SKILL.md` for real-browser journeys; `scripts/calculus.mjs`, `scripts/verification/`, and `tests/`                 |
-| Runtime and deployment            | `worker/index.ts`, `build/`, `vite.config.ts`, `.openai/hosting.json`; retained database scaffolding in `db/` and `drizzle/`              |
-| Working conventions and decisions | `AGENTS.md` (including the learner-participant constraint), `CODING_STANDARDS.md`, `CONTEXT.md`, `docs/adr/`, and `docs/audits/` evidence |
-| Automation                        | `.github/workflows/ci.yml`, the central conformance caller, and `scripts/merge-verified-dependency.mjs`                                   |
+| Area                              | Entry point                                                                                                                                     |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Learning experience               | `app/page.tsx`, subject views in `components/`, shared `hooks/`, assets in `public/` and `vendor/`                                              |
+| Mathematics and examples          | `lib/curriculum/` for lessons and citations; `lib/atlas/` for geometry; `examples/` for retained integrations                                   |
+| Audit action and outcome ledgers  | `data/concept_action_ledger.json` tracks concept-level leads; `lib/curriculum/outcome-ledger.json` tracks source outcomes and gaps              |
+| Validation                        | `.agents/skills/verify/SKILL.md`, `scripts/calculus.mjs`, `scripts/verification/`, and `tests/`                                                 |
+| Runtime and deployment            | `worker/index.ts`, `worker-env.d.ts`, `build/`, `vite.config.ts`, `.openai/hosting.json`; account schema and migrations in `db/` and `drizzle/` |
+| Personal study                    | `lib/study/` owns validation, server persistence, session state and legacy parsing; `components/atlas/study-records.tsx` owns public hooks      |
+| Working conventions and decisions | `AGENTS.md` (including the learner-participant constraint), `CODING_STANDARDS.md`, `CONTEXT.md`, `docs/adr/`, and `docs/audits/` evidence       |
+| Automation                        | `.github/workflows/ci.yml`, the central conformance caller, and `scripts/merge-verified-dependency.mjs`                                         |
 
 Curriculum source ledger and verification: `docs/coverage-and-validation.md`.
 Visual comparison: `design-qa.md`. Local source PDFs and extracts: ignored `course-materials/`.

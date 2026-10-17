@@ -30,15 +30,16 @@ export async function study(page, e) {
         .getByRole("button", { name: "Needs practice", exact: true })
         .click();
       await e.check(
-        "Self-assessment is identified as a device-local self-report",
+        "Self-assessment is identified as a learner self-report",
         async () =>
           visible(
-            exercise
-              .getByRole("status")
-              .filter({ hasText: /self-assessment, not an automatic grade/ }),
+            exercise.getByText(/self-assessment, not an automatic grade/),
           ),
       );
+      await saved(exercise);
+      await saved(exercise, 1);
       await page.reload();
+      await saved(exercise);
       await e.check(
         "Reload restores the draft and opened support",
         async () => {
@@ -56,7 +57,7 @@ export async function study(page, e) {
     async () => {
       await page.getByRole("button", { name: "Library", exact: true }).click();
       const progress = page.getByRole("region", {
-        name: "Study on this device",
+        name: "Your study",
         exact: true,
       });
       await visible(progress.getByRole("button", { name: /^Resume:/ }));
@@ -111,7 +112,9 @@ export async function study(page, e) {
       await visible(
         task.getByRole("status").filter({ hasText: /Choice correct/ }),
       );
+      await saved(task);
       await page.reload();
+      await saved(task);
       await e.check("Pilot choice and hint survive reload", async () => {
         assert.equal(await task.getByRole("radio").first().isChecked(), true);
         await visible(task.getByText("Hint:", { exact: true }));
@@ -129,6 +132,12 @@ export async function study(page, e) {
       await page
         .getByRole("button", { name: "I am unsure", exact: true })
         .click();
+      await saved(
+        page.getByRole("region", {
+          name: "Revision and retrieval",
+          exact: true,
+        }),
+      );
       await page.reload();
       await e.check(
         "Confidence persists separately from correctness",
@@ -138,49 +147,471 @@ export async function study(page, e) {
       await page.getByRole("button", { name: "Library", exact: true }).click();
       assert.match(
         await page
-          .getByRole("region", { name: "Study on this device", exact: true })
+          .getByRole("region", { name: "Your study", exact: true })
           .innerText(),
         /2 choice attempts recorded/,
       );
     },
   );
   await e.step(
-    "Keep practice usable when browser storage throws and keep another browser context fresh",
+    "Restore the same account in a new context and isolate another account",
     async () => {
-      const unavailable = await e.newPage({ storageUnavailable: true });
-      await lesson(unavailable, e, "partial-fractions");
-      await mode(unavailable, "Practice");
-      const exercise = unavailable.locator(".lesson-practice").first();
+      const replica = await e.newPage({ account: "verification-a" });
+      await replica.goto(e.url);
+      const summary = replica.getByRole("region", {
+        name: "Your study",
+        exact: true,
+      });
+      await visible(summary.getByText(/2 choice attempts recorded/));
+      await e.check(
+        "A new context restores account history without browser storage",
+        async () => {
+          assert.match(await summary.innerText(), /1 marked for practice/);
+          assert.equal(await replica.evaluate(() => localStorage.length), 0);
+        },
+      );
+      const other = await e.newPage({ account: "verification-b" });
+      const otherExercise = await practice(other, e);
+      await visible(
+        otherExercise
+          .getByRole("status")
+          .filter({ hasText: "No saved account record yet." })
+          .first(),
+      );
+      await e.check(
+        "Another account has no draft or attempts from the first account",
+        async () => {
+          assert.equal(
+            await otherExercise.getByRole("textbox").inputValue(),
+            "",
+          );
+          await other
+            .getByRole("button", { name: "Library", exact: true })
+            .click();
+          assert.match(
+            await other
+              .getByRole("region", { name: "Your study", exact: true })
+              .innerText(),
+            /0 marked for practice.*0 choice attempts recorded/s,
+          );
+        },
+      );
+    },
+  );
+  await e.step(
+    "Resolve an actual concurrent account edit explicitly",
+    async () => {
+      const first = await e.newPage({ account: "verification-a" });
+      const second = await e.newPage({ account: "verification-a" });
+      const firstExercise = await practice(first, e);
+      const secondExercise = await practice(second, e);
+      await saved(firstExercise);
+      await saved(secondExercise);
+      await firstExercise.getByRole("textbox").fill("First account version.");
+      await saved(firstExercise);
+      const expected = e.expectStudyFailure("conflict", 409, second);
+      try {
+        await secondExercise
+          .getByRole("textbox")
+          .fill("Conflicting tab version.");
+        await visible(
+          secondExercise.getByRole("button", {
+            name: "Use account version",
+            exact: true,
+          }),
+        );
+        await e.check(
+          "A stale edit keeps local reasoning and offers an explicit conflict choice",
+          async () => {
+            assert.equal(
+              await secondExercise.getByRole("textbox").inputValue(),
+              "Conflicting tab version.",
+            );
+            await secondExercise
+              .getByText("Compare versions", { exact: true })
+              .click();
+            assert.match(
+              await secondExercise.locator("pre").last().innerText(),
+              /First account version/,
+            );
+          },
+        );
+        await secondExercise
+          .getByRole("button", { name: "Use account version", exact: true })
+          .click();
+        await e.check(
+          "Choosing the account version restores its reasoning",
+          async () => {
+            assert.equal(
+              await secondExercise.getByRole("textbox").inputValue(),
+              "First account version.",
+            );
+          },
+        );
+      } finally {
+        expected.active = false;
+      }
+      const offline = e.expectStudyFailure("offline", undefined, first);
+      await first.context().setOffline(true);
+      await firstExercise
+        .getByRole("textbox")
+        .fill("Reasoning preserved while offline.");
+      await visible(
+        firstExercise
+          .getByRole("status")
+          .filter({ hasText: "Not saved to your account." }),
+      );
+      await e.check(
+        "A failed save preserves the input and never claims acknowledgement",
+        async () => {
+          assert.equal(
+            await firstExercise.getByRole("textbox").inputValue(),
+            "Reasoning preserved while offline.",
+          );
+        },
+      );
+      await first.context().setOffline(false);
+      offline.active = false;
+      await firstExercise
+        .getByRole("button", { name: "Retry save", exact: true })
+        .click();
+      await saved(firstExercise);
+      await first.reload();
+      await saved(firstExercise);
+      await e.check(
+        "Retry receives an account acknowledgement and survives reload",
+        async () => {
+          assert.equal(
+            await firstExercise.getByRole("textbox").inputValue(),
+            "Reasoning preserved while offline.",
+          );
+        },
+      );
+    },
+  );
+  await e.step(
+    "Bound failed account reads and recover only after an explicit retry",
+    async () => {
+      const outage = await e.newPage({ account: "verification-outage" });
+      const expected = e.expectStudyFailure("service", 503, outage);
+      let unavailable = true;
+      let failedRequests = 0;
+      await outage.route(`${e.url}/api/study*`, async (route) => {
+        if (
+          !unavailable ||
+          new URL(route.request().url()).searchParams.get("scope") ===
+            "identity"
+        )
+          return route.continue();
+        failedRequests++;
+        await route.fulfill({
+          status: 503,
+          contentType: "application/json",
+          body: JSON.stringify({
+            error: "service",
+            user: {
+              id: "verification-outage",
+              email: "verification-outage@example.invalid",
+              displayName: "verification-outage@example.invalid",
+              fullName: null,
+            },
+          }),
+        });
+      });
+      const exercise = await practice(outage, e);
+      await exercise.getByRole("textbox").fill("Keep this outage reasoning.");
+      await visible(
+        exercise
+          .getByRole("status")
+          .filter({ hasText: "Not saved to your account." })
+          .first(),
+      );
+      const before = failedRequests;
+      await outage.waitForTimeout(1000);
+      await e.check(
+        `Failed reads stop without retry (${failedRequests} requests)`,
+        async () => {
+          assert.equal(failedRequests, before);
+          assert.ok(failedRequests > 0 && failedRequests <= 8);
+          assert.equal(
+            await exercise.getByRole("textbox").inputValue(),
+            "Keep this outage reasoning.",
+          );
+        },
+      );
+      await outage
+        .getByRole("button", { name: "Library", exact: true })
+        .click();
+      const summary = outage.getByRole("region", {
+        name: "Your study",
+        exact: true,
+      });
+      await visible(
+        summary.getByRole("button", { name: "Retry summary", exact: true }),
+      );
+      unavailable = false;
+      expected.active = false;
+      await summary
+        .getByRole("button", { name: "Retry summary", exact: true })
+        .click();
+      await outage
+        .getByRole("textbox", {
+          name: "Search the entire library",
+          exact: true,
+        })
+        .fill("partial fractions");
+      await outage.locator(".search-library-results button").first().click();
+      await mode(outage, "Practice");
+      await saved(exercise);
+      await outage.reload();
+      await saved(exercise);
+      await e.check(
+        "Explicit retry saves retained reasoning after service recovery",
+        async () => {
+          assert.equal(
+            await exercise.getByRole("textbox").inputValue(),
+            "Keep this outage reasoning.",
+          );
+        },
+      );
+    },
+  );
+  await e.step(
+    "Keep guest work in the tab and expose native authentication and import controls",
+    async () => {
+      const guest = await e.newPage({
+        account: null,
+        storageUnavailable: true,
+      });
+      const exercise = await practice(guest, e);
       await exercise
         .getByRole("textbox")
-        .fill("This tab retains the attempted reasoning.");
+        .fill("Guest reasoning stays in this tab.");
       await e.check(
-        "Unavailable storage reports its limit and preserves the in-tab draft",
+        "Guest input works without browser storage and explains its limit",
         async () => {
           await visible(
             exercise
               .getByRole("status")
-              .filter({ hasText: /Storage is unavailable/ }),
+              .filter({ hasText: "Sign in to save." })
+              .first(),
           );
           assert.equal(
             await exercise.getByRole("textbox").inputValue(),
-            "This tab retains the attempted reasoning.",
+            "Guest reasoning stays in this tab.",
           );
         },
       );
-      const fresh = await e.newPage();
-      await fresh.goto(e.url);
+      const signIn = guest.getByRole("link", {
+        name: "Sign in with ChatGPT",
+        exact: true,
+      });
+      assert.equal(await signIn.getAttribute("target"), "_top");
+      assert.equal(
+        new URL(await signIn.getAttribute("href"), e.url).pathname,
+        "/signin-with-chatgpt",
+      );
+      await guest.reload();
       await e.check(
-        "A fresh context starts without another context's study records",
+        "A guest reload does not restore another account or persist guest reasoning",
         async () => {
-          const progress = fresh.getByRole("region", {
-            name: "Study on this device",
-            exact: true,
-          });
-          await visible(progress);
+          await visible(
+            exercise
+              .getByRole("status")
+              .filter({ hasText: "Sign in to save." })
+              .first(),
+          );
+          assert.equal(await exercise.getByRole("textbox").inputValue(), "");
+        },
+      );
+      const account = page.getByRole("region", {
+        name: "Your account",
+        exact: true,
+      });
+      const signOut = account.getByRole("link", {
+        name: "Sign out",
+        exact: true,
+      });
+      assert.equal(await signOut.getAttribute("target"), "_top");
+      assert.equal(
+        new URL(await signOut.getAttribute("href"), e.url).pathname,
+        "/signout-with-chatgpt",
+      );
+      await account
+        .getByText("Import old study from this device", { exact: true })
+        .click();
+      await account
+        .getByRole("button", { name: "Preview device records", exact: true })
+        .click();
+      await e.check(
+        "Legacy import requires an explicit preview and identifies the destination",
+        async () => {
+          await visible(account.getByText(/0 valid records from/));
           assert.match(
-            await progress.innerText(),
-            /0 marked for practice.*0 choice attempts recorded/s,
+            await account.innerText(),
+            /verification-a@example.invalid/,
+          );
+        },
+      );
+    },
+  );
+  await e.step(
+    "Import explicit legacy-device input without replacing account records",
+    async () => {
+      const attempt = {
+        taskId: "quantifiers",
+        kind: "recognition",
+        correct: true,
+        support: "none",
+        at: "2026-01-01T00:00:00Z",
+      };
+      const source = (attempts) => [
+        {
+          name: "calculus-practice",
+          value: JSON.stringify({
+            "derivative-definition": {
+              status: "Needs practice",
+              date: "2026-01-01",
+            },
+          }),
+        },
+        {
+          name: "calculus-pilot-progress-v2",
+          value: JSON.stringify({ "epsilon-delta-one-variable": { attempts } }),
+        },
+      ];
+      const device = source([attempt, attempt]);
+      const importer = await e.newPage({
+        account: "verification-import",
+        storageState: {
+          cookies: [],
+          origins: [{ origin: e.url, localStorage: device }],
+        },
+      });
+      await importer.goto(e.url);
+      const account = importer.getByRole("region", {
+        name: "Your account",
+        exact: true,
+      });
+      await visible(
+        account.getByRole("link", { name: "Sign out", exact: true }),
+      );
+      await account
+        .getByText("Import old study from this device", { exact: true })
+        .click();
+      await account
+        .getByRole("button", { name: "Preview device records", exact: true })
+        .click();
+      await visible(account.getByText(/3 valid records from/));
+      await e.check("Legacy preview does not write account study", async () => {
+        assert.match(
+          await importer
+            .getByRole("region", { name: "Your study", exact: true })
+            .innerText(),
+          /0 choice attempts recorded/,
+        );
+      });
+      await account
+        .getByRole("button", {
+          name: "Confirm import into this account",
+          exact: true,
+        })
+        .click();
+      await visible(
+        account.getByRole("status").filter({ hasText: /3 imported/ }),
+      );
+      await e.check(
+        "Import preserves identical historical attempt multiplicity and source bytes",
+        async () => {
+          await visible(
+            importer
+              .getByRole("region", { name: "Your study", exact: true })
+              .getByText(/2 choice attempts recorded/),
+          );
+          assert.deepEqual(
+            await importer.evaluate(
+              (keys) =>
+                keys.map((key) => ({
+                  name: key,
+                  value: localStorage.getItem(key),
+                })),
+              device.map(({ name }) => name),
+            ),
+            device,
+          );
+        },
+      );
+      await account
+        .getByRole("button", {
+          name: "Confirm import into this account",
+          exact: true,
+        })
+        .click();
+      await e.check(
+        "Repeating an import retains all existing records",
+        async () => {
+          await visible(
+            account
+              .getByRole("status")
+              .filter({ hasText: /0 imported.*3 existing records retained/s }),
+          );
+          assert.match(
+            await importer
+              .getByRole("region", { name: "Your study", exact: true })
+              .innerText(),
+            /2 choice attempts recorded/,
+          );
+        },
+      );
+      const later = await e.newPage({
+        account: "verification-import",
+        storageState: {
+          cookies: [],
+          origins: [
+            {
+              origin: e.url,
+              localStorage: source([
+                attempt,
+                attempt,
+                { ...attempt, at: "2026-01-02T00:00:00Z" },
+              ]),
+            },
+          ],
+        },
+      });
+      await later.goto(e.url);
+      const laterAccount = later.getByRole("region", {
+        name: "Your account",
+        exact: true,
+      });
+      await visible(
+        laterAccount.getByRole("link", { name: "Sign out", exact: true }),
+      );
+      await laterAccount
+        .getByText("Import old study from this device", { exact: true })
+        .click();
+      await laterAccount
+        .getByRole("button", { name: "Preview device records", exact: true })
+        .click();
+      await visible(laterAccount.getByText(/4 valid records from/));
+      await laterAccount
+        .getByRole("button", {
+          name: "Confirm import into this account",
+          exact: true,
+        })
+        .click();
+      await e.check(
+        "An appended legacy attempt adds only that attempt",
+        async () => {
+          await visible(
+            laterAccount
+              .getByRole("status")
+              .filter({ hasText: /1 imported.*3 existing records retained/s }),
+          );
+          await visible(
+            later
+              .getByRole("region", { name: "Your study", exact: true })
+              .getByText(/3 choice attempts recorded/),
           );
         },
       );
@@ -232,4 +663,21 @@ export async function study(page, e) {
       );
     },
   );
+}
+
+async function saved(region, index = 0) {
+  await visible(
+    region
+      .locator(".study-save-status")
+      .nth(index)
+      .getByRole("status")
+      .filter({ hasText: "Saved to your account." }),
+  );
+}
+async function practice(page, evidence) {
+  await lesson(page, evidence, "partial-fractions");
+  await mode(page, "Practice");
+  const exercise = page.locator(".lesson-practice").first();
+  await visible(exercise.getByRole("textbox"));
+  return exercise;
 }

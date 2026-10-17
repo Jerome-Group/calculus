@@ -175,25 +175,9 @@ test("all 125 lessons retain a mode path, and pilot math parses strictly", async
   }
 });
 
-test("legacy confidence is migrated without correctness or mastery", async () => {
-  const {
-    legacyConfidence,
-    parsePilotProgress,
-    hasDelayedIndependentChoiceEvidence,
-  } = await vite.ssrLoadModule("/lib/curriculum/pilot-progress.ts");
-  assert.equal(
-    legacyConfidence({
-      status: "Can explain independently",
-      date: "2026-09-16",
-    }),
-    "confident",
-  );
-  assert.deepEqual(parsePilotProgress("corrupt"), {});
-  assert.deepEqual(
-    parsePilotProgress(
-      JSON.stringify({ broken: { attempts: [null] }, valid: { attempts: [] } }),
-    ),
-    { valid: { attempts: [] } },
+test("delayed independent choice evidence never upgrades hinted or immediate choices", async () => {
+  const { hasDelayedIndependentChoiceEvidence } = await vite.ssrLoadModule(
+    "/lib/study/model.ts",
   );
   assert.equal(hasDelayedIndependentChoiceEvidence({ attempts: [] }), false);
   const first = {

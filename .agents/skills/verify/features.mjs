@@ -31,7 +31,7 @@ export const features = [
   {
     id: "study",
     description:
-      "Device-local drafts, self-assessment, resume, and unavailable storage.",
+      "Account drafts, attempt history, conflicts, guest limits, and legacy import.",
     run: study,
   },
 ];

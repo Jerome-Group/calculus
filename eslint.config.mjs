@@ -15,6 +15,24 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
+    files: ["components/atlas/**/*.{ts,tsx}"],
+    ignores: ["components/atlas/study-records.tsx"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            "**/study/server",
+            "**/study/legacy",
+            "**/study/session",
+            "**/db",
+            "**/db/*",
+          ],
+        },
+      ],
+    },
+  },
+  {
     files: ["components/ui/**/*.{ts,tsx}", "hooks/use-mobile.ts"],
     rules: {
       // These files are vendored verbatim from shadcn@4.17.0. Keep the

@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { createServer } from "vite";
 import katex from "katex";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { createStudyRenderer } from "./helpers/study-render.mjs";
 
 const read = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
@@ -71,6 +71,7 @@ const vite = await createServer({
   server: { middlewareMode: true, hmr: false },
 });
 after(() => vite.close());
+const renderToStaticMarkup = await createStudyRenderer(vite);
 
 test("WebMCP reads every MH1101 route with the same guide and semantic math", async () => {
   const { studyTools } = await vite.ssrLoadModule(

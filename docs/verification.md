@@ -13,7 +13,7 @@ Coverage status in a historical ledger is not silently promoted by a new visuali
 
 `verify --profile fast` runs source/map checks and a targeted subset; it is not the release
 gate. `build` writes the production bundle and logs. `test` requires a production bundle.
-`verify --profile ci` creates a fresh build before the complete suite. Child processes are
+`verify --profile ci` creates fresh builds before strict TypeScript checking, the serial browser and CLI-interruption gates, and the complete mathematical suite. Child processes are
 bounded, terminated on timeout, and reported as failed. A source change during a run fails
 provenance validation. No command deploys, modifies learner records or contacts production.
 
@@ -24,9 +24,12 @@ Use [the local verify skill](../.agents/skills/verify/SKILL.md) for executable l
 `browser doctor` checks installed prerequisites without starting or installing anything.
 `browser run --features all --output outputs/browser/local` builds current source, owns a
 local Wrangler Worker and fresh Chromium contexts, drives the actual controls, and cleans up.
+For the DB binding, the helper applies built Drizzle migrations to temporary local D1.
+Post-gateway header fixtures exercise distinct accounts locally; hosted sign-in remains a separate check.
 Each attempted feature retains actions, assertions, screenshots, DOM, traces, browser errors,
 and request results. The run retains build and Worker logs, source identity, live doctor, and
 cleanup outcome. Evidence survives failed assertions and cleanup.
+The committed `probe-interruption.mjs` drives an active lesson, sends SIGINT, and requires finalized evidence and absent owned processes.
 In-repository output must be ignored and cannot contain tracked source. Use `outputs/` or
 an external directory; unignored output is rejected before writing.
 

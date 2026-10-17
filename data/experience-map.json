@@ -27,7 +27,7 @@
       },
       {
         "id": "study",
-        "description": "Device-local drafts, self-assessment, resume, and unavailable storage.",
+        "description": "Account drafts, attempt history, conflicts, guest limits, and legacy import.",
         "map": ".agents/skills/verify/features/study.md"
       }
     ]

@@ -72,7 +72,7 @@ async function runBrowser(options) {
     status: "failed",
     limitations: [
       "Local built Worker and Chromium only.",
-      "Device-local study storage; no account or hosted sign-in proof.",
+      "Fresh local D1 and explicit post-gateway identity fixtures; no hosted sign-in proof.",
       "No learner usability or mastery claim.",
     ],
   };
@@ -128,6 +128,7 @@ async function runBrowser(options) {
       command: instance.command,
       ready: instance.ready,
       freshState: true,
+      storage: instance.storage,
     };
     browser = await chromium.launch({
       headless: true,

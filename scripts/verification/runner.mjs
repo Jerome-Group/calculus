@@ -145,6 +145,10 @@ export function profileChecks(profile, testFiles, formatArgs, output) {
           ".sites-runtime",
         ],
       },
+      {
+        id: "typecheck",
+        args: ["node_modules/typescript/bin/tsc", "--noEmit"],
+      },
     );
   if (profile === "ci")
     stages.push({

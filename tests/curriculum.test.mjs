@@ -220,6 +220,7 @@ test("workspace tools validate the whole layout request before changing state", 
   let layout = "split",
     sidebar = true;
   const state = {
+    inlineSnapshot: () => [],
     setVisualLayout: (v) => (layout = v),
     setSidebarOpen: (v) => (sidebar = v),
   };
@@ -355,6 +356,7 @@ test("WebMCP state includes the mathematical readout and its evidence limit", as
     "/components/atlas/study-tools.ts",
   );
   const state = {
+    inlineSnapshot: () => [],
     visualLayout: "split",
     sidebarOpen: false,
     route: "lesson",
@@ -422,6 +424,7 @@ test("WebMCP manual control stops animation and respects reduced motion", async 
   };
   globalThis.requestAnimationFrame = (callback) => setTimeout(callback, 0);
   const state = {
+    inlineSnapshot: () => [],
     route: "lesson",
     concept: concepts.find((item) => item.id === "total-differentiability"),
     info: { min: 0, max: 1, step: 0.1 },

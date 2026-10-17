@@ -1,5 +1,7 @@
 # ADR-0005: Separate learning evidence from exploration
 
+Device-only persistence is superseded by [ADR-0008](0008-account-owned-study-records.md). Curriculum, mathematical evidence, and mastery limits still stand.
+
 ## Status
 
 Accepted for issue #18.

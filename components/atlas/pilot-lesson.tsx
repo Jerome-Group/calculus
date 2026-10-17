@@ -1,20 +1,17 @@
 "use client";
-import { useRef, useState, useSyncExternalStore } from "react";
+import { useRef } from "react";
 import { concepts } from "@/lib/curriculum";
 import { learningGuide } from "@/lib/curriculum/learning";
 import type { LessonMode, PilotLesson } from "@/lib/curriculum/learning-modes";
 import {
-  subscribeProgress,
-  progressSnapshot,
-  parseProgress,
-} from "@/lib/curriculum/progress-store";
-import {
-  legacyConfidence,
-  parsePilotProgress,
+  nextReview,
   hasDelayedIndependentChoiceEvidence,
-  pilotSnapshot,
-  savePilotConfidence,
-} from "@/lib/curriculum/pilot-progress";
+} from "@/lib/study/model";
+import {
+  useStudyRecord,
+  useStudyAttempts,
+  StudySaveStatus,
+} from "./study-records";
 import { SourceReferences } from "./source-references";
 import { MathText } from "./math-text";
 import { PilotExplore } from "./pilot-explore";
@@ -31,29 +28,20 @@ export function PilotLessonView({
   mode: LessonMode;
   study: StudyController;
 }) {
-  const [saveStatus, setSaveStatus] = useState("");
   const errorHistory = useRef<HTMLHeadingElement>(null);
-  const raw = useSyncExternalStore(
-    subscribeProgress,
-    pilotSnapshot,
-    () => "{}",
-  );
-  const legacyRaw = useSyncExternalStore(
-    subscribeProgress,
-    progressSnapshot,
-    () => "{}",
-  );
-  const record = parsePilotProgress(raw)[lesson.id];
-  const confidence =
-    record?.confidence || legacyConfidence(parseProgress(legacyRaw)[lesson.id]);
+  const confidenceRecord = useStudyRecord({
+    kind: "confidence",
+    lessonId: lesson.id,
+  });
+  const history = useStudyAttempts(lesson.id);
+  const record = {
+    attempts: history.records,
+    nextReview: history.records[0] ? nextReview(history.records[0]) : undefined,
+  };
+  const confidence = confidenceRecord.value;
   const concept = study.concept;
   function setConfidence(value: "unsure" | "confident") {
-    try {
-      savePilotConfidence(lesson.id, value);
-      setSaveStatus("Confidence saved on this device.");
-    } catch {
-      setSaveStatus("Confidence could not be saved on this device.");
-    }
+    void confidenceRecord.save(value);
   }
   if (mode === "explore") return <PilotExplore lesson={lesson} study={study} />;
   if (mode === "practice") return <PilotPractice lesson={lesson} />;
@@ -111,15 +99,39 @@ export function PilotLessonView({
               .map((attempt, index) => (
                 <li key={`${attempt.at}-${index}`}>
                   {attempt.taskId}: {attempt.errorCode || "Review needed"} ·{" "}
+                  {attempt.source === "legacy"
+                    ? "historical device evidence, not rechecked · "
+                    : ""}{" "}
                   {attempt.support === "hint" ? "hint used" : "no hint"}
                 </li>
               ))}
           </ul>
         ) : (
           <p>
-            No errors recorded on this device yet.{" "}
+            No errors in the loaded history yet.{" "}
             <button onClick={() => study.setReadingMode("practice")}>
               Start practice
+            </button>
+          </p>
+        )}
+        <p>
+          {history.records.length} loaded of {history.total} saved choice
+          records.
+        </p>
+        {history.cursor && (
+          <button
+            type="button"
+            disabled={history.loading}
+            onClick={() => void history.loadMore()}
+          >
+            Load earlier choices
+          </button>
+        )}
+        {history.error && (
+          <p role="status">
+            {history.error}{" "}
+            <button type="button" onClick={() => void history.refresh()}>
+              Retry history
             </button>
           </p>
         )}
@@ -144,12 +156,20 @@ export function PilotLessonView({
           role="group"
           aria-label="Confidence self-report"
         >
-          <button onClick={() => setConfidence("unsure")}>I am unsure</button>
-          <button onClick={() => setConfidence("confident")}>
+          <button
+            disabled={confidenceRecord.persistence.kind === "loading"}
+            onClick={() => setConfidence("unsure")}
+          >
+            I am unsure
+          </button>
+          <button
+            disabled={confidenceRecord.persistence.kind === "loading"}
+            onClick={() => setConfidence("confident")}
+          >
             I feel confident
           </button>
         </div>
-        <p role="status">{saveStatus}</p>
+        <StudySaveStatus record={confidenceRecord} />
       </section>
     );
   const guide = learningGuide(concept);
