@@ -15025,6 +15025,16 @@
       "basis": "static-discovery; inspect assertions before claiming coverage"
     },
     {
+      "file": "tests/slider-accessibility.test.mjs",
+      "names": [
+        "focusable slider controls expose their supplied name and explanation"
+      ],
+      "inferredLessonReferences": [],
+      "inferredSceneReferences": [],
+      "mechanisms": ["static-react-render"],
+      "basis": "static-discovery; inspect assertions before claiming coverage"
+    },
+    {
       "file": "tests/source-errata.test.mjs",
       "names": [
         "lecture erratum retains its source locator and checks the corrected limit"
