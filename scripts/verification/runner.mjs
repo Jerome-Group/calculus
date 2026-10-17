@@ -48,6 +48,7 @@ export async function runCheck({
   output,
   timeoutMs = 180000,
   executable = process.execPath,
+  signal: abortSignal,
 }) {
   await mkdir(output, { recursive: true });
   const startedAt = new Date().toISOString();
@@ -80,14 +81,21 @@ export async function runCheck({
     const timer = setTimeout(() => {
       timedOut = true;
       kill("SIGTERM");
-      forceKill = setTimeout(() => kill("SIGKILL"), 1000);
+      forceKill = setTimeout(() => kill("SIGKILL"), 15000);
     }, timeoutMs);
+    const abort = () => {
+      kill("SIGTERM");
+      forceKill = setTimeout(() => kill("SIGKILL"), 15000);
+    };
+    abortSignal?.addEventListener("abort", abort, { once: true });
+    if (abortSignal?.aborted) abort();
     child.on("error", (error) => {
       spawnError = error.message;
     });
     child.on("close", (exitCode, signal) => {
       clearTimeout(timer);
       clearTimeout(forceKill);
+      abortSignal?.removeEventListener("abort", abort);
       resolve({ exitCode, signal, timedOut, spawnError });
     });
   });
@@ -110,7 +118,7 @@ export async function runCheck({
   };
 }
 
-export function profileChecks(profile, testFiles, formatArgs) {
+export function profileChecks(profile, testFiles, formatArgs, output) {
   const stages = [
     { id: "source-freshness", args: ["scripts/check-source-manifest.mjs"] },
     {
@@ -140,8 +148,25 @@ export function profileChecks(profile, testFiles, formatArgs) {
     );
   if (profile === "ci")
     stages.push({
-      id: "build",
-      args: ["node_modules/vinext/dist/cli.js", "build"],
+      id: "browser",
+      args: [
+        ".agents/skills/verify/cli.mjs",
+        "run",
+        "--features",
+        "all",
+        "--json",
+        "--output",
+        path.join(output, "browser"),
+      ],
+    });
+  if (profile === "ci")
+    stages.push({
+      id: "browser-interruption",
+      args: [
+        ".agents/skills/verify/probe-interruption.mjs",
+        "--output",
+        path.join(output, "browser-interruption"),
+      ],
     });
   stages.push({
     id: "tests",

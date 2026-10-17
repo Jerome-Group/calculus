@@ -6,46 +6,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { sceneChoices } from "@/lib/curriculum/scene-variants";
 import type { StudyController } from "./use-study-controller";
-const jacobianModels: [string, string][] = [
-  ["plane-nonlinear-jacobian", "Move the cell"],
-  ["plane-nonlinear-cell", "Shrink the cell"],
-  ["jacobian", "Linear map comparison"],
-];
-const variants: Record<string, [string, string][]> = {
-  "plane-jacobian": jacobianModels,
-  "change-of-variables": jacobianModels,
-  "flux-through-surfaces": [
-    ["flux", "Radial field"],
-    ["fluxOblique", "Constant field, signed contributions"],
-  ],
-  "multivariable-chain-rule": [
-    ["chainNonconstant", "Nonconstant path"],
-    ["chain", "Constant-height circle"],
-  ],
-  "surface-orientation": [
-    ["parametric", "Sphere chart"],
-    ["mobius", "Möbius strip"],
-  ],
-  "conservative-domains": [
-    ["conservative", "Potential field"],
-    ["vortex", "Punctured-plane field"],
-  ],
-  elementarycurves: [
-    ["elementarycurves", "Cycloid"],
-    ["curveCircle", "Circle"],
-    ["curveEllipse", "Ellipse"],
-    ["curveCusp", "Cusp"],
-    ["curveLine", "Line"],
-    ["curves", "Helix"],
-  ],
-};
+
 export function ExperimentModels({
   study,
 }: {
   study: Pick<StudyController, "concept" | "activeScene" | "chooseModel">;
 }) {
-  const choices = variants[study.concept.id] || variants[study.concept.scene];
+  const choices = sceneChoices(study.concept);
   if (!choices) return null;
   return (
     <div className="variant-select">

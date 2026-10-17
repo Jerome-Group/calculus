@@ -44,6 +44,35 @@ test("versioned shared URL restores model, bounded parameter and reading section
   );
 });
 
+for (const [conceptId, scene] of [
+  ["multivariable-chain-rule", "chain"],
+  ["plane-jacobian", "plane-nonlinear-cell"],
+  ["plane-jacobian", "jacobian"],
+  ["change-of-variables", "plane-nonlinear-cell"],
+  ["change-of-variables", "jacobian"],
+  ["flux-through-surfaces", "fluxOblique"],
+]) {
+  test(`shared URL restores ${scene} in ${conceptId}`, () => {
+    const lesson = concepts.find((c) => c.id === conceptId);
+    assert.ok(lesson);
+    const state = {
+      version: 1,
+      scene,
+      parameter: sceneInfo(scene).initial,
+      mode: "explore",
+      notesTab: "example",
+    };
+    const url = new URL(
+      lessonUrl(new URL("https://example.test/"), lesson.id, state),
+      "https://example.test",
+    );
+    assert.deepEqual(readLessonHistory(url, lesson, sceneInfo), {
+      kind: "valid",
+      value: state,
+    });
+  });
+}
+
 test("legacy IDs work and malformed or obsolete state explains fallback", () => {
   assert.deepEqual(
     readLessonHistory(

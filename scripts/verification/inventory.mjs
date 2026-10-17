@@ -3,6 +3,7 @@ import path from "node:path";
 import os from "node:os";
 import { createServer } from "vite";
 import { browserPlan } from "./browser-plan.mjs";
+import { features } from "../../.agents/skills/verify/features.mjs";
 
 const readJson = async (root, file) =>
   JSON.parse(await readFile(path.join(root, file), "utf8"));
@@ -184,6 +185,14 @@ export async function inventory(root) {
       scenes,
       comparisonLabs,
       features: featureCatalog(),
+      verification: {
+        driver: ".agents/skills/verify/cli.mjs",
+        features: features.map(({ id, description }) => ({
+          id,
+          description,
+          map: `.agents/skills/verify/features/${id}.md`,
+        })),
+      },
       tools: tools
         .studyTools(curriculum.concepts, () => {
           throw new Error("Inventory never executes study actions.");
@@ -371,45 +380,23 @@ export function featureCatalog() {
 export function experienceMap(value) {
   return {
     schemaVersion: value.schemaVersion,
-    browserPlan: value.browserPlan,
     application: value.application,
+    discoveryCommand: "npm run agent -- inventory --json",
+    verification: value.verification,
     routes: value.routes,
     lessons: value.lessons.map(
-      ({
-        id,
-        course,
-        lecture,
-        scene,
-        sceneVariants,
-        guide,
-        inlineExperiments,
-        sources,
-      }) => ({
+      ({ id, course, lecture, scene, sceneVariants, guide }) => ({
         id,
         course,
         unit: lecture,
         scene,
         sceneVariants,
-        inlineExperiments,
-        sources,
         prerequisites: guide?.prerequisites ?? [],
-        blocks: [
-          ...(guide?.contentBlocks ?? []),
-          ...(guide?.supplementalBlocks ?? []),
-        ].map(({ id, kind }) => ({ id, kind })),
-        exercises: [
-          { id: `${id}:exercise`, kind: "primary" },
-          ...(guide?.exercises ?? []).map(({ id, kind }) => ({ id, kind })),
-        ],
       }),
     ),
-    scenes: value.scenes,
+    sceneIds: value.scenes.map(({ id }) => id),
     comparisonLabs: value.comparisonLabs,
     features: value.features,
-    tools: value.tools,
-    prerequisites: value.prerequisites,
-    dependencies: value.dependencies,
-    tests: value.tests,
     limitations: value.limitations,
   };
 }

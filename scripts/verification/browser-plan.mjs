@@ -3,6 +3,7 @@ export const browserPlan = {
   execution:
     "Browser interaction required; this plan does not assert completed coverage.",
   evidenceRequired: [
+    "schemaVersion",
     "revision",
     "sourceFingerprint",
     "sourceDirty",
@@ -239,6 +240,8 @@ export function validateBrowserEvidence(value, source) {
   const issues = [];
   if (!value || typeof value !== "object" || Array.isArray(value))
     return ["Evidence must be an object."];
+  if (value.schemaVersion !== 1)
+    issues.push("Browser evidence schemaVersion must be 1.");
   for (const field of browserPlan.evidenceRequired)
     if (!Object.hasOwn(value, field))
       issues.push(`Missing evidence field ${field}`);

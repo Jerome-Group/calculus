@@ -19,8 +19,19 @@ provenance validation. No command deploys, modifies learner records or contacts 
 
 ## Browser reports
 
+Use [the local verify skill](../.agents/skills/verify/SKILL.md) for executable local checks.
+`npm run agent -- browser list` lists the five maintained features.
+`browser doctor` checks installed prerequisites without starting or installing anything.
+`browser run --features all --output outputs/browser/local` builds current source, owns a
+local Wrangler Worker and fresh Chromium contexts, drives the actual controls, and cleans up.
+Each attempted feature retains actions, assertions, screenshots, DOM, traces, browser errors,
+and request results. The run retains build and Worker logs, source identity, live doctor, and
+cleanup outcome. Evidence survives failed assertions and cleanup.
+In-repository output must be ignored and cannot contain tracked source. Use `outputs/` or
+an external directory; unignored output is rejected before writing.
+
 Run `browser-plan --json` for required positive, responsive, accessibility and isolated
-negative journeys. Use the in-app browser. Identify whether the URL is live or local.
+negative journeys when recording additional manual observations. Identify whether the URL is live or local.
 Reports include `schemaVersion: 1`, `revision`, `sourceFingerprint`, `sourceDirty`, `url`,
 `browser`, integer `viewport: {width,height}`, `actions` strings, `assertions` with
 `description` and `status`, `screenshots` paths, `consoleErrors` strings and `result`.

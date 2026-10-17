@@ -1,6 +1,14 @@
 import assert from "node:assert/strict";
 import test, { after } from "node:test";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import {
+  mkdir,
+  mkdtemp,
+  readFile,
+  readdir,
+  rm,
+  symlink,
+  writeFile,
+} from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { execFileSync, spawnSync } from "node:child_process";
@@ -9,7 +17,12 @@ import { createServer } from "vite";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import katex from "katex";
-import { sourceFingerprint } from "../scripts/verification/revision.mjs";
+import {
+  evidenceDirectory,
+  sourceFingerprint,
+  sourceSnapshot,
+} from "../scripts/verification/revision.mjs";
+import { features } from "../.agents/skills/verify/features.mjs";
 import { doctor, runCheck } from "../scripts/verification/runner.mjs";
 import {
   browserPlan,
@@ -60,6 +73,7 @@ test("CLI discovers commands as JSON and rejects misspelled commands/options", (
     "test",
     "verify",
     "browser-plan",
+    "browser",
   ])
     assert.ok(help.commands[name]);
   for (const args of [
@@ -141,6 +155,7 @@ test("browser evidence rejects malformed success and stale source fingerprints",
   };
   assert.ok(validateBrowserEvidence({}, source).length);
   const valid = {
+    schemaVersion: 1,
     revision: source.revision,
     sourceFingerprint: source.fingerprint,
     sourceDirty: source.dirty,
@@ -156,6 +171,9 @@ test("browser evidence rejects malformed success and stale source fingerprints",
   };
   assert.deepEqual(validateBrowserEvidence(valid, source), []);
   for (const changed of [
+    { schemaVersion: 2 },
+    { schemaVersion: "1" },
+    { schemaVersion: undefined },
     { url: "" },
     { url: "javascript:alert(1)" },
     { browser: " " },
@@ -197,6 +215,78 @@ test("browser evidence rejects malformed success and stale source fingerprints",
       { ...source, fingerprint: second },
     ).some((issue) => issue.includes("fingerprint differs")),
   );
+});
+
+test("browser registry, feature files, compact map, and CLI discovery agree", async () => {
+  const directory = path.join(root, ".agents/skills/verify/features");
+  const files = (await readdir(directory))
+    .filter((file) => file !== "README.md")
+    .sort();
+  assert.deepEqual(files, features.map(({ id }) => `${id}.md`).sort());
+  const headings = [
+    "Sub-features",
+    "How to get to it (user POV)",
+    "Driving it with Playwright",
+    "Gotchas",
+  ];
+  const index = await readFile(path.join(directory, "README.md"), "utf8");
+  for (const feature of features) {
+    const text = await readFile(
+      path.join(directory, `${feature.id}.md`),
+      "utf8",
+    );
+    assert.deepEqual(
+      [...text.matchAll(/^## (.+)$/gm)].map((match) => match[1]),
+      headings,
+    );
+    assert.ok(index.includes(`](${feature.id}.md)`));
+    assert.equal(typeof feature.run, "function");
+  }
+  const map = JSON.parse(
+    await readFile(path.join(root, "data/experience-map.json"), "utf8"),
+  );
+  assert.deepEqual(
+    map.verification.features.map(({ id }) => id),
+    features.map(({ id }) => id),
+  );
+  const listing = cli("browser", "list", "--json");
+  assert.equal(listing.status, 0, listing.stderr);
+  assert.deepEqual(
+    JSON.parse(listing.stdout).features.map(({ id }) => id),
+    features.map(({ id }) => id),
+  );
+  assert.equal(
+    cli("browser", "run", "--features", "unknown", "--json").status,
+    2,
+  );
+});
+
+test("evidence paths cannot hide source or change the source identity", async () => {
+  for (const output of [
+    root,
+    path.join(root, "app"),
+    path.join(root, "unignored-evidence"),
+  ])
+    await assert.rejects(
+      evidenceDirectory(root, output),
+      /tracked source|must be ignored/,
+    );
+  const output = await evidenceDirectory(
+    root,
+    path.join(root, "outputs", `identity-${process.pid}`),
+  );
+  const before = await sourceSnapshot(root);
+  await mkdir(output, { recursive: true });
+  const alias = path.join(output, "source-alias.json");
+  await symlink(path.join(root, "app/page.tsx"), alias);
+  const rejected = cli("browser-plan", "--output", alias, "--json");
+  assert.equal(rejected.status, 1);
+  assert.match(JSON.parse(rejected.stdout).error, /tracked source/);
+  await writeFile(path.join(output, "result.json"), '{"status":"passed"}\n');
+  const after = await sourceSnapshot(root);
+  assert.equal(after.fingerprint, before.fingerprint);
+  assert.equal(after.dirty, before.dirty);
+  await rm(output, { recursive: true, force: true });
 });
 
 function strictMath(value, locator) {

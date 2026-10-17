@@ -1,7 +1,60 @@
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { lstat, readFile, readlink } from "node:fs/promises";
+import { lstat, readFile, readlink, realpath } from "node:fs/promises";
 import path from "node:path";
+
+export async function evidenceDirectory(root, output) {
+  let parent = path.resolve(output);
+  const suffix = [];
+  while (true) {
+    try {
+      parent = await realpath(parent);
+      break;
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+      suffix.unshift(path.basename(parent));
+      parent = path.dirname(parent);
+    }
+  }
+  const directory = path.join(parent, ...suffix);
+  const tracked = execFileSync("git", ["ls-files", "-z"], {
+    cwd: root,
+    encoding: "utf8",
+  })
+    .split("\0")
+    .filter(Boolean);
+  if (tracked.some((file) => contains(directory, path.join(root, file))))
+    throw new Error("Evidence output overlaps tracked source files.");
+  if (contains(root, directory)) {
+    try {
+      execFileSync(
+        "git",
+        [
+          "check-ignore",
+          "--quiet",
+          "--",
+          path.join(directory, ".verification-output"),
+        ],
+        { cwd: root },
+      );
+    } catch {
+      throw new Error(
+        "In-repository evidence output must be ignored. Use outputs/ or a directory outside the repository.",
+      );
+    }
+  }
+  return directory;
+}
+
+function contains(directory, location) {
+  const relative = path.relative(directory, location);
+  return (
+    relative === "" ||
+    (!relative.startsWith(`..${path.sep}`) &&
+      relative !== ".." &&
+      !path.isAbsolute(relative))
+  );
+}
 
 export async function sourceSnapshot(root) {
   const git = (args) =>

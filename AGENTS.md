@@ -65,6 +65,13 @@ not this repository's. The full rule and the verified allowlist are in
 Where a piece of work starts, what hands on to what, and where research and prototypes live. See
 `docs/agents/workflow.md` before inventing a route.
 
+### Verify the learner interface
+
+Use [the local verify skill](.agents/skills/verify/SKILL.md) for interface changes and regression reproduction.
+`npm run agent -- browser list` discovers its maintained feature map; `browser run --features all` drives the built local Worker.
+Keep focused mathematical, runtime, and regression checks. Use TDD when requested or when a reproducible bug needs a focused check.
+Do not substitute source-string assertions for a real learner journey.
+
 ### Issue tracker
 
 GitHub Issues on this repository, via the `gh` CLI. `docs/agents/issue-tracker.md` carries the
