@@ -1,5 +1,9 @@
 import test, { after } from "node:test";
 import assert from "node:assert/strict";
+import { copyFile, mkdir, mkdtemp, rm, symlink } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { createStudyWorker } from "./helpers/study-worker.mjs";
 const worker = await createStudyWorker();
 const missingDb = await createStudyWorker({ database: false });
@@ -467,4 +471,39 @@ test("account overview keeps assessments and latest choice evidence independent"
       await record("correct", "none", -4 * 86400000, "summary-due")
     ).practice.includes("epsilon-delta-one-variable"),
   );
+});
+
+test("the migrated Worker fixture loads from a project path with spaces and Unicode", async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), "calculus project é-"));
+  let fixture;
+  try {
+    const project = fileURLToPath(new URL("../", import.meta.url));
+    const helper = path.join(directory, "tests/helpers/study-worker.mjs");
+    await mkdir(path.dirname(helper), { recursive: true });
+    for (const name of ["dist", "drizzle", "node_modules"])
+      await symlink(
+        path.join(project, name),
+        path.join(directory, name),
+        "dir",
+      );
+    await copyFile(
+      new URL("./helpers/study-worker.mjs", import.meta.url),
+      helper,
+    );
+    const { createStudyWorker: createFixture } = await import(
+      pathToFileURL(helper).href
+    );
+    fixture = await createFixture();
+    const response = await fixture.dispatchFetch(
+      "http://encoded.test/api/study?scope=overview",
+      {
+        headers: { "oai-authenticated-user-id": "encoded-path" },
+      },
+    );
+    assert.equal(response.status, 200);
+    assert.deepEqual((await response.json()).records, []);
+  } finally {
+    await fixture?.dispose();
+    await rm(directory, { recursive: true, force: true });
+  }
 });

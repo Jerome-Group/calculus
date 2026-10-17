@@ -1,4 +1,5 @@
 import { readFile, readdir } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 
 export async function createStudyWorker({ database = true } = {}) {
@@ -9,12 +10,12 @@ export async function createStudyWorker({ database = true } = {}) {
     ...paths.filter((path) => path.endsWith(".js") && path !== "index.js"),
   ].map((path) => ({
     type: "ESModule",
-    path: new URL(path, serverRoot).pathname,
+    path: fileURLToPath(new URL(path, serverRoot)),
   }));
   const worker = new Miniflare(
     convertV4MiniflareOptions({
       modules,
-      modulesRoot: serverRoot.pathname,
+      modulesRoot: fileURLToPath(serverRoot),
       compatibilityDate: "2026-09-11",
       compatibilityFlags: ["nodejs_compat"],
       d1Databases: database ? ["DB"] : [],
