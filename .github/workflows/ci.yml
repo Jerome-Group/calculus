@@ -60,6 +60,8 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Audit installed dependencies
+        run: npm audit --audit-level=info
       - name: Install the pinned Chromium browser
         run: npx playwright install --with-deps chromium
       - name: Verify the application
