@@ -13,7 +13,9 @@ Coverage status in a historical ledger is not silently promoted by a new visuali
 
 `verify --profile fast` runs source/map checks and a targeted subset; it is not the release
 gate. `build` writes the production bundle and logs. `test` requires a production bundle.
-`verify --profile ci` creates fresh builds before strict TypeScript checking, the serial browser and CLI-interruption gates, and the complete mathematical suite. Child processes are
+`verify --profile ci` runs `format`, `lint`, `typecheck`, `source-freshness`, `experience-map`,
+`browser`, `browser-interruption`, and `tests`, in that order. The two browser stages each create
+a fresh `vinext` build and own the local Worker they start. Child processes are
 bounded, terminated on timeout, and reported as failed. A source change during a run fails
 provenance validation. No command deploys, modifies learner records or contacts production.
 
