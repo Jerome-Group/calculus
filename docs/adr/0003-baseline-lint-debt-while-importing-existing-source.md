@@ -13,3 +13,5 @@ Do not regenerate the baseline as part of routine linting or CI.
 Prettier formats the owned source without changing application behavior. Registry UI and
 vendored assets keep their original formatting and licences. CI checks formatting, lint,
 build, and the existing tests in the required check within a ten-minute timeout.
+
+The bounded build dependency fork follows [ADR-0009](0009-own-a-bounded-braces-fork.md).

@@ -7,6 +7,7 @@ Start here: `README.md`, then `AGENTS.md`.
 | Area                              | Entry point                                                                                                                                     |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Learning experience               | `app/page.tsx`, subject views in `components/`, shared `hooks/`, assets in `public/` and `vendor/`                                              |
+| Build dependency fork             | `vendor/braces/`, upstream integrity in `vendor/braces/UPSTREAM.json`, ownership in `docs/adr/0009-own-a-bounded-braces-fork.md`                |
 | Mathematics and examples          | `lib/curriculum/` for lessons and citations; `lib/atlas/` for geometry; `examples/` for retained integrations                                   |
 | Audit action and outcome ledgers  | `data/concept_action_ledger.json` tracks concept-level leads; `lib/curriculum/outcome-ledger.json` tracks source outcomes and gaps              |
 | Validation                        | `.agents/skills/verify/SKILL.md`, `scripts/calculus.mjs`, `scripts/verification/`, and `tests/`                                                 |

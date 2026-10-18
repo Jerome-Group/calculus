@@ -392,6 +392,15 @@ test("inventory JSON includes every current lesson route, gaps, tools, and hones
     result.outcomeLedger.source_sections.some((section) => section.gap),
   );
   assert.ok(result.dependencies.every((dependency) => dependency.locked));
+  assert.deepEqual(
+    result.dependencies.find(({ name }) => name === "braces"),
+    {
+      name: "braces",
+      declared: "file:./vendor/braces",
+      locked: "0.1.0",
+      development: true,
+    },
+  );
   assert.ok(
     result.tests.every((entry) => entry.basis.includes("static-discovery")),
   );

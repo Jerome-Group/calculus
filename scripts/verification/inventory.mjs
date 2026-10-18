@@ -225,12 +225,16 @@ export async function inventory(root) {
         ...pkg.devDependencies,
       })
         .sort(([a], [b]) => a.localeCompare(b))
-        .map(([name, declared]) => ({
-          name,
-          declared,
-          locked: lock.packages?.[`node_modules/${name}`]?.version ?? null,
-          development: Object.hasOwn(pkg.devDependencies ?? {}, name),
-        })),
+        .map(([name, declared]) => {
+          const entry = lock.packages?.[`node_modules/${name}`];
+          const locked = entry?.link ? lock.packages?.[entry.resolved] : entry;
+          return {
+            name,
+            declared,
+            locked: locked?.version ?? null,
+            development: Object.hasOwn(pkg.devDependencies ?? {}, name),
+          };
+        }),
       dependencyGraph,
       tests,
       limitations: [

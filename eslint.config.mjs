@@ -15,6 +15,11 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
+    files: ["vendor/braces/**/*.js"],
+    languageOptions: { sourceType: "commonjs" },
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
+  {
     files: ["components/atlas/**/*.{ts,tsx}"],
     ignores: ["components/atlas/study-records.tsx"],
     rules: {

@@ -10,3 +10,5 @@ at the Owner's request; Drive permissions govern their targets. Ignore rules exc
 common course-document formats, and private material directories before the first project commit.
 
 The repository retains its Sites identity without republishing or changing the live deployment.
+
+The bounded build dependency fork follows [ADR-0009](0009-own-a-bounded-braces-fork.md).

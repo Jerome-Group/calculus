@@ -44,3 +44,5 @@ paths, symlink targets and executable flags; distinguishes edits sharing a Git H
 
 **Browser evidence**: attributed observations of a stated source and URL. Machine
 validation checks its shape and provenance, not whether the observations happened.
+
+**Bounded braces fork**: the private, locally vendored braces 3.0.3 derivative used by build dependencies. Calculus maintainers own its fixed traversal limits and upstream retirement decision in [ADR-0009](docs/adr/0009-own-a-bounded-braces-fork.md).
