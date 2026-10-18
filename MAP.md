@@ -18,8 +18,8 @@ Start here: `README.md`, then `AGENTS.md`.
 
 Curriculum source ledger and verification: `docs/coverage-and-validation.md`.
 Visual comparison: `design-qa.md`. Local source PDFs and extracts: ignored `course-materials/`.
-Generated verification evidence in `outputs/` is excluded from Git and lint: captured
-deployment bundles are evidence, not editable application source.
+Generated verification evidence in `outputs/` is excluded from Git, lint, and TypeScript
+source checking: captured deployment bundles are evidence, not editable application source.
 
 The compact map is `data/experience-map.json` (125 lessons, routes, and verification features).
 Regenerate through `npm run agent -- map`. Full source, scene, dependency, tool, and test
