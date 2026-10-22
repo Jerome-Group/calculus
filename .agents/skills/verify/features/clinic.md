@@ -16,3 +16,5 @@ The journey checks all nine sound decisions and transfers through real radio con
 ## Gotchas
 
 The selected case is versioned URL state. Choices and scratch work live only in the mounted Atlas session. Case switching and same-tab recovery retain them. Reload clears all attempts while retaining the selected case. A recovery history entry contains only validated case, fixed focus and finite scroll metadata. Feedback checks authored choices. Written reasoning is ungraded, and neither choice feedback nor agent browser checks establish mastery. Hosted native sign-in and participant outcomes are outside this journey.
+
+Sidebar navigation schedules destination focus on the next animation frame. Wait for the drawer to close and the Clinic heading to receive focus before focusing a case card and sending keyboard input. A visible picker alone does not establish that navigation focus has finished.
