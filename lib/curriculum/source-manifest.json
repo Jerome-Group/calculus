@@ -1086,9 +1086,9 @@
     "title": "MH2100_Lecture_06_Annotated",
     "kind": "annotated_lecture",
     "status": "annotated_variant",
-    "modifiedAt": "2026-09-18T22:06:58.582Z",
+    "modifiedAt": "2026-10-02T16:37:46.005Z",
     "canonicalParent": "MH2100_Lecture_06",
-    "reviewedAt": "2026-09-22",
+    "reviewedAt": "2026-10-22",
     "reviewer": "Codex",
     "coverageDiff": "adopted",
     "affectedConcepts": [
@@ -1096,7 +1096,8 @@
       "polar-rectangles",
       "polar-regions"
     ],
-    "note": "Review: linearity, restricted domains, zero-area-overlap additivity, non-simple splitting, polar rectangles and variable radial bounds; existing polar disk kept."
+    "note": "Linearity, domain restriction, zero-area-overlap decomposition and polar bounds are already covered. Prior adopted coverage is preserved.",
+    "sha256": "73d0ab9fea2c8e33f9b1b0426b3fe08db6ca8f69c795770a7dacacdc35e1605c"
   },
   {
     "sourceId": "MH2100_Lecture_07",
@@ -1360,5 +1361,77 @@
       "partials-do-not-make-a-plane",
       "certifying-differentiability-and-errors"
     ]
+  },
+  {
+    "sourceId": "MH2100_Lecture_07_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1QcbZXfkx7GYYtL14I-qdc1Z5NL0FqSZN",
+    "title": "MH2100_Lecture_07_Annotated",
+    "kind": "annotated_lecture",
+    "status": "annotated_variant",
+    "modifiedAt": "2026-10-02T16:37:45.968Z",
+    "canonicalParent": "MH2100_Lecture_07",
+    "affectedConcepts": [
+      "triple-riemann-sums",
+      "simple-solid-bounds",
+      "cylindrical-coordinates",
+      "cylindrical-integration",
+      "spherical-coordinates",
+      "spherical-integration"
+    ],
+    "sha256": "8677fab93f3e408acd4ed58e2e09f4bb0bb45872cb1547765387af800f3a2212",
+    "reviewedAt": "2026-10-22",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "note": "Partition sampling, zero extension, projections and iterated solid bounds are already covered. Later coordinate pages contain no substantive additional annotations."
+  },
+  {
+    "sourceId": "MH2100_Lecture_08_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1_R0Ta_9Ued4TZbz5NrkbG_-haF2RnEAf",
+    "title": "MH2100_Lecture_08_Annotated",
+    "kind": "annotated_lecture",
+    "status": "annotated_variant",
+    "modifiedAt": "2026-10-20T22:32:23.315Z",
+    "canonicalParent": "MH2100_Lecture_08",
+    "affectedConcepts": [
+      "linear-area-change",
+      "plane-jacobian",
+      "space-jacobians",
+      "change-of-variables",
+      "inverse-jacobian",
+      "scalar-line-integrals",
+      "vector-fields",
+      "vector-line-integrals"
+    ],
+    "sha256": "58ef8ccdbd18a15279dff77ae0f5c4361b7c3165b25dc72641f0a6dabfd640f3",
+    "reviewedAt": "2026-10-22",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "note": "Determinant scaling, coordinate factors, change-of-variables hypotheses, interior injectivity and inverse substitution are already covered."
+  },
+  {
+    "sourceId": "MH2100_Lecture_09_Annotated_PDF",
+    "course": "MH2100",
+    "driveFileId": "1a-F4FgpE5KImSyKI8T4DjTHtFvesz8el",
+    "title": "MH2100_Lecture_09_Annotated",
+    "kind": "annotated_lecture",
+    "status": "annotated_variant",
+    "modifiedAt": "2026-10-21T22:27:18.771Z",
+    "canonicalParent": "MH2100_Lecture_09",
+    "affectedConcepts": [
+      "coordinate-line-integrals",
+      "piecewise-paths",
+      "work-and-circulation",
+      "fundamental-line-theorem",
+      "conservative-domains",
+      "greens-theorem",
+      "area-from-boundary"
+    ],
+    "sha256": "8dc176154412a2ae62c6150878b653be2c626285b1b1729c067def9c36e414d5",
+    "reviewedAt": "2026-10-22",
+    "reviewer": "Codex",
+    "coverageDiff": "already_covered",
+    "note": "Orientation, signed increments, derivative pairing and component-domain restrictions are already covered. Later pages contain no substantive additional annotations."
   }
 ]

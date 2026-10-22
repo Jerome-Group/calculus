@@ -1,0 +1,72 @@
+{
+  "reviewed_at": "2026-10-22",
+  "method": "Fresh connected Drive metadata for 97 prior sources and scans of eight known parent folders. Four changed or new annotated PDFs reviewed visually across 178 pages against canonical PDFs and rendered guide content. Remote downloaded bytes match the local reviewed files by SHA-256. Private source text is not reproduced.",
+  "scope": "Current annotated MH2100 Lectures 06-09. Earlier review snapshots retain their original scope and limitations.",
+  "files": [
+    {
+      "source_id": "MH2100_Lecture_06_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_06",
+      "drive_file_id": "1HvfWCfiAaYfa0rr_jGelMQVpPhO1mKzo",
+      "modified_at": "2026-10-02T16:37:46.005Z",
+      "sha256": "73d0ab9fea2c8e33f9b1b0426b3fe08db6ca8f69c795770a7dacacdc35e1605c",
+      "reviewed_for_atomic_outcomes": true,
+      "classification": "already_covered",
+      "confidence": "high",
+      "reviewed_pages": "3-23",
+      "affected_concepts": [
+        "linearity-additivity",
+        "polar-rectangles",
+        "polar-regions"
+      ],
+      "evidence": "Linearity, domain restriction, zero-area-overlap decomposition and polar bounds are already covered. Prior adopted coverage is preserved."
+    },
+    {
+      "source_id": "MH2100_Lecture_07_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_07",
+      "drive_file_id": "1QcbZXfkx7GYYtL14I-qdc1Z5NL0FqSZN",
+      "modified_at": "2026-10-02T16:37:45.968Z",
+      "sha256": "8677fab93f3e408acd4ed58e2e09f4bb0bb45872cb1547765387af800f3a2212",
+      "reviewed_for_atomic_outcomes": true,
+      "classification": "already_covered",
+      "confidence": "high",
+      "reviewed_pages": "2-22",
+      "affected_concepts": ["triple-riemann-sums", "simple-solid-bounds"],
+      "evidence": "Partition sampling, zero extension, projections and iterated solid bounds are already covered. Later coordinate pages contain no substantive additional annotations."
+    },
+    {
+      "source_id": "MH2100_Lecture_08_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_08",
+      "drive_file_id": "1_R0Ta_9Ued4TZbz5NrkbG_-haF2RnEAf",
+      "modified_at": "2026-10-20T22:32:23.315Z",
+      "sha256": "58ef8ccdbd18a15279dff77ae0f5c4361b7c3165b25dc72641f0a6dabfd640f3",
+      "reviewed_for_atomic_outcomes": true,
+      "classification": "already_covered",
+      "confidence": "high",
+      "reviewed_pages": "2-24",
+      "affected_concepts": [
+        "linear-area-change",
+        "plane-jacobian",
+        "space-jacobians",
+        "change-of-variables",
+        "inverse-jacobian"
+      ],
+      "evidence": "Determinant scaling, coordinate factors, change-of-variables hypotheses, interior injectivity and inverse substitution are already covered."
+    },
+    {
+      "source_id": "MH2100_Lecture_09_Annotated_PDF",
+      "compared_with": "MH2100_Lecture_09",
+      "drive_file_id": "1a-F4FgpE5KImSyKI8T4DjTHtFvesz8el",
+      "modified_at": "2026-10-21T22:27:18.771Z",
+      "sha256": "8dc176154412a2ae62c6150878b653be2c626285b1b1729c067def9c36e414d5",
+      "reviewed_for_atomic_outcomes": true,
+      "classification": "already_covered",
+      "confidence": "high",
+      "reviewed_pages": "2-5",
+      "affected_concepts": [
+        "coordinate-line-integrals",
+        "vector-line-integrals"
+      ],
+      "evidence": "Orientation, signed increments, derivative pairing and component-domain restrictions are already covered. Later pages contain no substantive additional annotations."
+    }
+  ]
+}

@@ -22,7 +22,7 @@ const vite = await createServer({
 after(() => vite.close());
 
 test("classified sources match the canonical ledger and observed Drive files", () => {
-  assert.equal(manifest.length, 97);
+  assert.equal(manifest.length, 100);
   assert.deepEqual(
     validateSourceManifest(manifest, sources, observed, baseline),
     [],
