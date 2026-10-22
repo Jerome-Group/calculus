@@ -1118,7 +1118,7 @@ summary:focus-visible {
 .clinic-course > header > span:last-child {
   font-size: 10px;
   letter-spacing: 1px;
-  color: #687775;
+  color: #56736b;
 }
 .clinic-case-cards {
   display: grid;
@@ -1431,11 +1431,15 @@ summary:focus-visible {
   line-height: 1.8;
   resize: vertical;
 }
+.clinic-notebook textarea::placeholder {
+  color: #586957;
+  opacity: 1;
+}
 .clinic-notebook small {
   display: block;
   text-align: right;
   font-size: 10px;
-  color: #63755d;
+  color: #586957;
   margin-top: 4px;
 }
 .clinic-transfer-result {
