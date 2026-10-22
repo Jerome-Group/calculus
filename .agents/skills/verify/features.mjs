@@ -1,3 +1,4 @@
+import { clinic } from "./journeys/clinic.mjs";
 import { library } from "./journeys/library.mjs";
 import { lessons } from "./journeys/lessons.mjs";
 import { experiments } from "./journeys/experiments.mjs";
@@ -5,6 +6,12 @@ import { graph } from "./journeys/graph.mjs";
 import { study } from "./journeys/study.mjs";
 
 export const features = [
+  {
+    id: "clinic",
+    description:
+      "Nine diagnostic cases, exact arguments, transfer, transient attempts and recovery navigation.",
+    run: clinic,
+  },
   {
     id: "library",
     description: "Course entry points, search, history, and mobile navigation.",

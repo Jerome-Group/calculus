@@ -9,17 +9,12 @@ export async function library(page, e) {
       await ready(page);
       await visible(page.locator("#library-title"));
       const skip = page.getByRole("link", { name: "Skip to mathematics" });
-      for (
-        let count = 0;
-        count < 40 &&
-        !(await skip.evaluate((element) => element === document.activeElement));
-        count++
-      )
-        await page.keyboard.press("Tab");
-      assert.equal(
-        await skip.evaluate((element) => element === document.activeElement),
-        true,
-        "Skip navigation is keyboard reachable within 40 Tab presses",
+      await page.keyboard.press("Tab");
+      await e.check("First Tab focuses Skip to mathematics", async () =>
+        assert.equal(
+          await skip.evaluate((element) => element === document.activeElement),
+          true,
+        ),
       );
       await page.keyboard.press("Enter");
       await e.check(

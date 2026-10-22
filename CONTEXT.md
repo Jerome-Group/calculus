@@ -27,6 +27,12 @@ an exact readout and a prediction followed by explanatory feedback.
 **Independent choice record**: a scored choice made without hints; limited evidence
 about that choice, never a claim of mastery or learning gain.
 
+**Clinic case**: an original decision, exact argument and distinct transfer question, with choice-specific feedback and recovery into an existing lesson.
+
+**Clinic attempt**: a draft or committed choice plus ungraded scratch work, held only in the current Atlas tab session. Case switches and recovery retain it. Reload clears it. It is never an account record or a mastery claim.
+
+**Clinic recovery**: a lesson detour with a validated case, fixed focus token and bounded scroll position belonging to its history entry. Returning restores the current tab attempt.
+
 **Account record**: one validated personal value owned by the native stable Site user ID.
 Email and name describe the account and do not authorize data access.
 

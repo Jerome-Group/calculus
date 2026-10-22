@@ -10,6 +10,7 @@ export function CourseLibrary({
   open,
   setQuery,
   notice,
+  openClinic,
 }: {
   course: CourseId;
   query: string;
@@ -17,6 +18,7 @@ export function CourseLibrary({
   open: (id: string) => void;
   setQuery: (query: string) => void;
   notice?: string;
+  openClinic: () => void;
 }) {
   const selected = courses[course];
   const matches = concepts.filter(
@@ -85,6 +87,19 @@ export function CourseLibrary({
           </button>
         ))}
       </div>
+      <section className="library-clinic">
+        <div>
+          <span className="eyebrow">CALCULUS CLINIC</span>
+          <h2>Which assumption changes the answer?</h2>
+          <p>
+            Nine original cases. Make a decision, inspect the argument, and
+            transfer the idea.
+          </p>
+        </div>
+        <button onClick={openClinic}>
+          Open Calculus Clinic <ArrowRight size={18} />
+        </button>
+      </section>
       <StudyProgress open={open} />
       <section className="unit-library">
         <header>

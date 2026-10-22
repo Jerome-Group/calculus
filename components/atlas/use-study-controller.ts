@@ -33,6 +33,16 @@ import {
   type LessonHistory,
 } from "./study-history";
 import { libraryUrl, readLibraryHistory } from "./library-history";
+import { clinicCase, type ClinicCaseId } from "@/lib/clinic/cases";
+import {
+  clinicUrl,
+  readClinicHistory,
+  readClinicReturn,
+  readClinicPosition,
+  clinicFocusIds,
+  type ClinicLocation,
+  type ClinicReturn,
+} from "./clinic-history";
 const experimentInfo = (id: string) =>
   id.startsWith("plane-")
     ? {
@@ -54,6 +64,15 @@ export function useStudyController() {
   const [readingMode, setReadingMode] = useState<LessonMode>("learn");
   const [notesRequest, setNotesRequest] = useState(0);
   const [historyNotice, setHistoryNotice] = useState("");
+  const [clinicLocation, setClinicLocation] = useState<ClinicLocation>({
+    caseId: null,
+    notice: "",
+  });
+  const [clinicReturn, setClinicReturn] = useState<ClinicReturn | null>(null);
+  const [navigationFocus, setNavigationFocus] = useState<{
+    id: string;
+    scrollY: number;
+  } | null>(null);
   const [returnTo, setReturnTo] = useState<{
     id: string;
     url: string;
@@ -105,6 +124,8 @@ export function useStudyController() {
     const c = concepts.find((c) => c.id === id);
     if (!c) return;
     setSelected(id);
+    setClinicReturn(null);
+    setNavigationFocus({ id: "lesson-title", scrollY: 0 });
     setHistoryNotice("");
     void resumeRecord.save({ lessonId: id });
     setSearch("");
@@ -159,11 +180,56 @@ export function useStudyController() {
     history.pushState({ studyScrollY: target.scrollY }, "", target.url);
     restoreLocation();
   }
-  useEffect(() => {
-    if (route !== "lesson") return;
-    document.getElementById("lesson-title")?.focus({ preventScroll: true });
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [selected, route]);
+  useLayoutEffect(() => {
+    if (!navigationFocus) return;
+    const frame = requestAnimationFrame(() => {
+      const requestedTarget = document.getElementById(navigationFocus.id);
+      const target =
+        requestedTarget ??
+        document.getElementById(
+          route === "clinic" ? "clinic-case-title" : "lesson-title",
+        );
+      target?.focus({ preventScroll: true });
+      if (requestedTarget)
+        window.scrollTo({ top: navigationFocus.scrollY, behavior: "instant" });
+      else target?.scrollIntoView({ block: "center", behavior: "instant" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [navigationFocus, route]);
+  function openClinic(id: ClinicCaseId | null = null, position?: ClinicReturn) {
+    saveScroll();
+    history.pushState(
+      {
+        studyScrollY: position?.scrollY ?? 0,
+        ...(position ? { clinicPosition: position } : {}),
+      },
+      "",
+      clinicUrl(new URL(window.location.href), id),
+    );
+    restoreLocation();
+    sidebar.setOpenMobile(false);
+  }
+  function openClinicRecovery(lessonId: string, origin: ClinicReturn) {
+    const target = concepts.find((item) => item.id === lessonId);
+    if (!target) return;
+    saveScroll();
+    history.replaceState({ ...history.state, clinicPosition: origin }, "");
+    history.pushState(
+      { studyScrollY: 0, clinicReturn: origin },
+      "",
+      lessonUrl(
+        new URL(window.location.href),
+        target.id,
+        defaultLessonState(target),
+      ),
+    );
+    setReturnTo(null);
+    restoreLocation();
+    sidebar.setOpenMobile(false);
+  }
+  function returnToClinic() {
+    if (clinicReturn) openClinic(clinicReturn.caseId, clinicReturn);
+  }
   function showNotes(section: string) {
     pendingNotes.current = true;
     setNoteTab(section);
@@ -178,7 +244,12 @@ export function useStudyController() {
     heading?.scrollIntoView({ block: "start" });
   }, [noteTab, readingMode, notesRequest]);
   function show(r: string, selectedGraph = graph, libraryCourse = course) {
+    if (r === "clinic") {
+      openClinic();
+      return;
+    }
     saveScroll();
+    setClinicReturn(null);
     setRoute(r);
     setPlaying(false);
     sidebar.setOpenMobile(false);
@@ -191,12 +262,10 @@ export function useStudyController() {
           ? libraryUrl(new URL(window.location.href), libraryCourse, search)
           : routeUrl(new URL(window.location.href), r),
     );
-    window.scrollTo({ top: 0, behavior: "instant" });
-    requestAnimationFrame(() =>
-      document
-        .getElementById(r === "graph" ? "graph-title" : "library-title")
-        ?.focus({ preventScroll: true }),
-    );
+    setNavigationFocus({
+      id: r === "graph" ? "graph-title" : "library-title",
+      scrollY: 0,
+    });
   }
   function chooseCourse(id: CourseId) {
     setHistoryNotice("");
@@ -215,9 +284,25 @@ export function useStudyController() {
         libraryUrl(new URL(window.location.href), course, query),
       );
   }
-  function restoreLocation() {
+  function restoreLocation(focusFallback = true) {
     const hash = window.location.hash.slice(1);
-    if (hash === "graph" || hash === "course") {
+    setClinicReturn(null);
+    let focusId = "library-title";
+    let restoredY: number | null = null;
+    if (hash === "clinic") {
+      const parsed = readClinicHistory(new URL(window.location.href));
+      setClinicLocation(parsed);
+      setRoute("clinic");
+      setPlaying(false);
+      if (parsed.caseId) setCourse(clinicCase(parsed.caseId).course);
+      const position = readClinicPosition(history.state, parsed.caseId);
+      focusId = position
+        ? clinicFocusIds[position.focus]
+        : parsed.caseId
+          ? "clinic-case-title"
+          : "clinic-title";
+      if (position) restoredY = position.scrollY;
+    } else if (hash === "graph" || hash === "course") {
       setRoute(hash);
       setPlaying(false);
       if (hash === "course") {
@@ -227,6 +312,7 @@ export function useStudyController() {
         setHistoryNotice(parsed.kind === "invalid" ? parsed.explanation : "");
       }
       if (hash === "graph") {
+        focusId = "graph-title";
         const parsed = readGraphHistory(new URL(window.location.href));
         const restored = parsed.kind === "valid" ? parsed.graph : initialGraph;
         setGraph(restored);
@@ -237,6 +323,8 @@ export function useStudyController() {
       const c = concepts.find((item) => item.id === hash);
       if (!c) {
         setRoute("course");
+        if (focusFallback)
+          setNavigationFocus({ id: "library-title", scrollY: 0 });
         return;
       }
       const parsed = readLessonHistory(
@@ -246,6 +334,8 @@ export function useStudyController() {
       );
       const restored =
         parsed.kind === "valid" ? parsed.value : defaultLessonState(c);
+      setClinicReturn(readClinicReturn(history.state, c.id));
+      focusId = "lesson-title";
       setSelected(c.id);
       setCourse(c.course);
       setExpanded(c.lecture);
@@ -257,16 +347,16 @@ export function useStudyController() {
       setPlaying(false);
       setHistoryNotice(parsed.kind === "invalid" ? parsed.explanation : "");
     }
-    const y = history.state?.studyScrollY;
-    if (typeof y === "number" && Number.isFinite(y) && y >= 0)
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => window.scrollTo(0, y)),
-      );
+    const y = history.state?.studyScrollY ?? restoredY;
+    setNavigationFocus({
+      id: focusId,
+      scrollY: typeof y === "number" && Number.isFinite(y) && y >= 0 ? y : 0,
+    });
   }
   const readLocation = useEffectEvent(restoreLocation);
   useEffect(() => {
     const read = () => readLocation();
-    read();
+    readLocation(false);
     window.addEventListener("hashchange", read);
     window.addEventListener("popstate", read);
     const scroll = () => {
@@ -457,6 +547,11 @@ export function useStudyController() {
   const filtered = (c: Concept) => matchesConcept(c, search);
 
   return {
+    clinicLocation,
+    clinicReturn,
+    openClinic,
+    openClinicRecovery,
+    returnToClinic,
     readingMode,
     returnTo,
     openPrerequisite,

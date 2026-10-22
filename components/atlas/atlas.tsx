@@ -1,5 +1,5 @@
 "use client";
-import { BookOpen, FunctionSquare } from "lucide-react";
+import { BookOpen, FunctionSquare, Stethoscope } from "lucide-react";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { CourseLibrary } from "./course-library";
 import { useStudyController } from "./use-study-controller";
@@ -8,13 +8,15 @@ import { LessonWorkspace } from "./lesson-workspace";
 import { GraphStudio } from "./graph-studio";
 import { StudyRecordsProvider } from "./study-records";
 import { StudyAccount } from "./study-account";
+import { ClinicWorkspace } from "./clinic-workspace";
+import { useClinicSession } from "./use-clinic-session";
 function AtlasInner() {
   const study = useStudyController();
+  const clinic = useClinicSession();
   const { selected, route, search, course, concept, open, show, webmcp } =
     study;
   return (
     <>
-      <CourseSidebar study={study} />
       <a
         className="skip-link"
         href="#main-content"
@@ -27,6 +29,7 @@ function AtlasInner() {
       >
         Skip to mathematics
       </a>
+      <CourseSidebar study={study} />
       <main className="atlas-main" id="main-content" tabIndex={-1}>
         <header className="topbar">
           <div>
@@ -40,18 +43,23 @@ function AtlasInner() {
                 ? `${concept.course} · ${concept.course === "MH1101" ? "Chapter" : "Lecture"} ${concept.lecture}`
                 : route === "graph"
                   ? "Graph studio"
-                  : "Course overview"}
+                  : route === "clinic"
+                    ? "Calculus Clinic"
+                    : "Course overview"}
             </span>
           </div>
           <div className="top-tabs">
             {route !== "lesson" && (
-              <button
-                className={route !== "graph" ? "selected" : ""}
-                onClick={() => open(selected)}
-              >
+              <button onClick={() => open(selected)}>
                 <BookOpen size={15} /> Resume lesson
               </button>
             )}
+            <button
+              className={route === "clinic" ? "selected" : ""}
+              onClick={() => study.openClinic()}
+            >
+              <Stethoscope size={15} /> Clinic
+            </button>
             <button
               className={route === "graph" ? "selected" : ""}
               onClick={() => show("graph")}
@@ -63,6 +71,13 @@ function AtlasInner() {
         <StudyAccount />
         {route === "lesson" ? (
           <LessonWorkspace study={study} />
+        ) : route === "clinic" ? (
+          <ClinicWorkspace
+            clinic={clinic}
+            location={study.clinicLocation}
+            openCase={study.openClinic}
+            recover={study.openClinicRecovery}
+          />
         ) : route === "graph" ? (
           <GraphStudio study={study} />
         ) : (
@@ -73,6 +88,7 @@ function AtlasInner() {
             notice={study.historyNotice}
             chooseCourse={study.chooseCourse}
             open={open}
+            openClinic={() => study.openClinic()}
           />
         )}
         <details className="agent-status">
