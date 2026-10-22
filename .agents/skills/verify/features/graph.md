@@ -20,6 +20,7 @@ The driver uses topbar, sidebar, and lesson exact-example entry points and the q
 It renders `sin(x)*cos(y)`, `[cos(u),sin(u),v]`, `[cos(t),sin(t),t/3]`, and `x^2+y^2+z^2-1` through the editor, reloading each encoded state.
 It rejects an incomplete expression and inverted bounds, then restores rendering through Saddle and Helix presets.
 It exercises the parameter, keyboard camera controls, reset, SVG compatibility, and fullscreen entry and exit.
+Parameter proof opens Wave amplitude, checks its expression and complete bounds, changes real SVG geometry, and restores the encoded parameter after reload.
 It checks the malformed graph explanation and renders at 390px with reduced motion.
 The focusable parameter slider must expose its visible expression-parameter name.
 

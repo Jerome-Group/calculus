@@ -12,6 +12,7 @@ Use Wide, Split, Minimise, and Expand for the drawing layout.
 Lessons with alternatives expose Experiment model under Compare models.
 Compare & explain panels have predictions, exact witnesses, range controls, and Reset comparison and prediction.
 Learn's exact review diagrams open through Inspect the exact function and plane. Polar regions has separate Explore disclosures.
+Flux and divergence lessons expose Cap orientation and theorem decision. Choose the closing disk, normal direction, and field regularity to compare signed flux with the theorem's hypotheses.
 Drawing controls offer compatibility view, orbit, zoom, camera reset, and fullscreen, exercised in [graph](graph.md).
 
 ## Driving it with Playwright
@@ -20,6 +21,7 @@ Run `npm run agent -- browser run --features experiments --output outputs/browse
 The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, plays and pauses, and uses each layout control.
 It opens all seven comparison families, checks representative exact values, submits wrong and correct predictions, changes every range through keyboard bounds, and verifies reset clears predictions.
 It checks ray witnesses, the inconclusive Hessian case, singular clock speed, and integration-order invariance.
+It checks open and closed boundaries, reversed normals, and singular fields in both cap-decision entry points.
 It waits for account hydration, proves an exact review control changed independently, waits for its visible save acknowledgement, reloads and waits for hydration before comparing the saved value. It also drives a polar-region control.
 It switches pilot Diagram and Values only views, checks valid and invalid algebraic tolerance choices, and compares horizontal slice bounds.
 It checks disabled animation under reduced motion and page width at 390px.

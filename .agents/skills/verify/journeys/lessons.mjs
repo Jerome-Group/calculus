@@ -194,6 +194,23 @@ export async function lessons(page, e) {
       );
     },
   );
+  await e.step(
+    "Cross a course boundary through the lesson footer",
+    async () => {
+      await lesson(page, e, "lhopital");
+      await page
+        .locator(".lesson-pagination")
+        .getByRole("button", { name: /NEXT COURSE/ })
+        .click();
+      await e.check(
+        "Calculus I continues into the first Calculus II lesson",
+        async () => {
+          assert.equal(new URL(page.url()).hash, "#integral-antiderivatives");
+          await mathematics(page);
+        },
+      );
+    },
+  );
   await e.step("Exercise pilot reading and revision entry points", async () => {
     await lesson(page, e, "epsilon-delta-one-variable");
     await page
