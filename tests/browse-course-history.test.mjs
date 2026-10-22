@@ -87,6 +87,8 @@ for (const initialRoute of ["lesson", "course"]) {
           pending.search = search;
         },
         setHistoryNotice() {},
+        setClinicReturn() {},
+        setNavigationFocus() {},
         setExpanded() {},
         setPlaying() {},
         sidebar: { setOpenMobile() {} },

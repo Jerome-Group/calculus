@@ -6,6 +6,11 @@
     "driver": ".agents/skills/verify/cli.mjs",
     "features": [
       {
+        "id": "clinic",
+        "description": "Nine diagnostic cases, exact arguments, transfer, transient attempts and recovery navigation.",
+        "map": ".agents/skills/verify/features/clinic.md"
+      },
+      {
         "id": "library",
         "description": "Course entry points, search, history, and mobile navigation.",
         "map": ".agents/skills/verify/features/library.md"
@@ -33,6 +38,33 @@
     ]
   },
   "routes": [
+    {
+      "id": "clinic",
+      "url": "/#clinic",
+      "type": "clinic",
+      "query": "clinic",
+      "stateVersion": 1,
+      "state": {
+        "caseId": [
+          "rolle-corner",
+          "chain-composition",
+          "lhopital-nonconverse",
+          "improper-cancellation",
+          "conditional-rearrangement",
+          "power-series-boundary",
+          "partials-without-plane",
+          "curl-domain-hole",
+          "hemisphere-flux"
+        ]
+      },
+      "restoration": {
+        "parser": "components/atlas/clinic-history.ts#readClinicHistory",
+        "maxEncodedLength": 300,
+        "rejectsUnknownFields": true,
+        "invalidState": "Case picker with an explanation",
+        "legacyUrl": "supported"
+      }
+    },
     {
       "id": "course",
       "url": "/#course",

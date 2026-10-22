@@ -48,6 +48,7 @@ export async function inventory(root) {
       inline,
       examples,
       bridges,
+      clinic,
     ] = await Promise.all([
       load("/lib/curriculum/index.ts"),
       load("/lib/curriculum/learning.ts"),
@@ -58,6 +59,7 @@ export async function inventory(root) {
       load("/lib/curriculum/inline-experiments.ts"),
       load("/lib/curriculum/example-registry.ts"),
       load("/lib/curriculum/prerequisite-routes.ts"),
+      load("/lib/clinic/cases.ts"),
     ]);
     const [pkg, lock, ledger, sourceManifest, sourceObservation] =
       await Promise.all([
@@ -138,6 +140,21 @@ export async function inventory(root) {
       browserPlan,
       application: "calculus",
       routes: [
+        {
+          id: "clinic",
+          url: "/#clinic",
+          type: "clinic",
+          query: "clinic",
+          stateVersion: 1,
+          state: { caseId: clinic.clinicCaseIds },
+          restoration: {
+            parser: "components/atlas/clinic-history.ts#readClinicHistory",
+            maxEncodedLength: 300,
+            rejectsUnknownFields: true,
+            invalidState: "Case picker with an explanation",
+            legacyUrl: "supported",
+          },
+        },
         {
           id: "course",
           url: "/#course",

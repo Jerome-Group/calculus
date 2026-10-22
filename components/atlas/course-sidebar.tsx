@@ -8,6 +8,7 @@ import {
   FunctionSquare,
   List,
   Search,
+  Stethoscope,
   X,
 } from "lucide-react";
 import {
@@ -173,6 +174,16 @@ export function CourseSidebar({ study }: { study: StudyController }) {
         </nav>
       </SidebarContent>
       <SidebarFooter className="side-footer">
+        <button
+          className={"graph-link " + (route === "clinic" ? "active" : "")}
+          onClick={() => study.openClinic()}
+        >
+          <Stethoscope size={20} />
+          <span>
+            Calculus Clinic<small>Decide. Explain. Transfer.</small>
+          </span>
+          <ArrowRight size={16} />
+        </button>
         <button
           className={"graph-link " + (route === "graph" ? "active" : "")}
           onClick={() => show("graph")}

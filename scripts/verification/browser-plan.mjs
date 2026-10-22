@@ -19,6 +19,26 @@ export const browserPlan = {
   ],
   journeys: [
     {
+      id: "clinic-decisions",
+      actions: [
+        "commit all nine decisions",
+        "read exact arguments",
+        "check all nine transfer choices",
+        "recover and return",
+        "share and reload",
+        "Back and Forward",
+        "keyboard at 320px",
+      ],
+      assertions: [
+        "choice-specific diagnosis",
+        "targeted existing lesson",
+        "tab attempt retained on recovery",
+        "selected case retained but answers reset on reload",
+        "no account writes",
+        "safe invalid-state picker",
+      ],
+    },
+    {
       id: "library-navigation",
       actions: [
         "browse each course",

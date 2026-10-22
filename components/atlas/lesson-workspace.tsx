@@ -1,5 +1,6 @@
 "use client";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { clinicCase } from "@/lib/clinic/cases";
 import { concepts } from "@/lib/curriculum";
 import { learningGuide } from "@/lib/curriculum/learning";
 import { forwardBridges } from "@/lib/curriculum/prerequisite-routes";
@@ -64,6 +65,18 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
         }
       >
         <div className="lesson-heading">
+          {study.clinicReturn && (
+            <div className="clinic-return">
+              <span className="eyebrow">CLINIC RECOVERY</span>
+              <p>{clinicCase(study.clinicReturn.caseId).title}</p>
+              <button onClick={study.returnToClinic}>
+                <ArrowLeft size={16} /> Return to Clinic case
+              </button>
+              <small>
+                Your in-tab attempt is retained. A reload resets its answers.
+              </small>
+            </div>
+          )}
           {historyNotice && <p role="status">{historyNotice}</p>}
           <div className="eyebrow">
             {concept.course} ·{" "}
