@@ -24,6 +24,7 @@ It opens Browser tools without relying on WebMCP.
 ## Gotchas
 
 Search spans all courses. Course selection and query belong to the library URL.
+Server-rendered library controls can appear before the client restores URL state. After reload, wait for the existing application-ready signal before checking values; the exact query assertion remains required.
 The skip link precedes the sidebar and must remain the first keyboard-focusable page control, covered by regression #235.
 Selecting a valid course must clear an obsolete malformed-state notice, covered by regression #204.
 Private course links need existing Drive permissions; library verification does not fetch them.

@@ -95,6 +95,7 @@ export async function library(page, e) {
       );
       const text = await result.locator("strong").innerText();
       await page.reload();
+      await ready(page);
       await e.check("Library query survives a real reload", async () =>
         assert.equal(await search.inputValue(), "integral"),
       );
@@ -169,6 +170,7 @@ export async function library(page, e) {
           assert.equal(await notice.count(), 0);
           await visible(page.locator(".search-library-results button").first());
           await page.reload();
+          await ready(page);
           assert.equal(await search.inputValue(), "integral");
           assert.equal(await notice.count(), 0);
         },
