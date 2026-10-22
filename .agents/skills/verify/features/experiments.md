@@ -18,7 +18,7 @@ Drawing controls offer compatibility view, orbit, zoom, camera reset, and fullsc
 ## Driving it with Playwright
 
 Run `npm run agent -- browser run --features experiments --output outputs/browser/experiments`.
-The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, plays and pauses, and uses each layout control.
+The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, observes movement during animation and a stable parameter after pausing, and uses each layout control.
 It opens all seven comparison families, checks representative exact values, submits wrong and correct predictions, changes every range through keyboard bounds, and verifies reset clears predictions.
 It checks ray witnesses, the inconclusive Hessian case, singular clock speed, and integration-order invariance.
 It checks open and closed boundaries, reversed normals, and singular fields in both cap-decision entry points.

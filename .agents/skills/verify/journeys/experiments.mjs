@@ -161,9 +161,24 @@ export async function experiments(page, e) {
           exact: true,
         }),
       );
+      await e.check("Animation advances the visible parameter", async () =>
+        page.waitForFunction((value) => {
+          const control = document.querySelector(
+            '.control-panel [role="slider"]',
+          );
+          return (
+            control !== null && control.getAttribute("aria-valuenow") !== value
+          );
+        }, initial),
+      );
       await experiment
         .getByRole("button", { name: "Pause animation", exact: true })
         .click();
+      await e.check("Pausing holds the visible parameter steady", async () => {
+        const paused = await slider.getAttribute("aria-valuenow");
+        await page.waitForTimeout(300);
+        assert.equal(await slider.getAttribute("aria-valuenow"), paused);
+      });
       await experiment
         .getByRole("button", { name: "Use wide graph view", exact: true })
         .click();
