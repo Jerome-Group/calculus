@@ -782,7 +782,9 @@ export function createStudySession() {
     if (!user || !visible) return;
     const owner = user.id,
       generation = epoch;
-    const data = await previewLegacy(localStorage);
+    const data = await previewLegacy({
+      getItem: (key) => localStorage.getItem(key),
+    });
     if (generation !== epoch || owner !== user?.id) return;
     preview = { ...data, owner };
     importResults = [];

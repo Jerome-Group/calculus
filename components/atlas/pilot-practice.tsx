@@ -15,6 +15,10 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
     taskId: task.id,
   });
   const attempts = useStudyAttempts(lessonId);
+  const taskAttempts = attempts.pending.filter(
+    ({ input }) => input.taskId === task.id,
+  );
+  const latestAttempt = taskAttempts.at(-1)?.input.id;
   const draft = record.value ?? {
     choice: "",
     reasoning: "",
@@ -103,9 +107,14 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
         Delete this draft
       </button>
       <StudySaveStatus record={record} />
-      {attempts.pending
-        .filter(({ input }) => input.taskId === task.id)
-        .slice(-1)
+      {taskAttempts
+        .filter(
+          ({ input, persistence }) =>
+            input.id === latestAttempt ||
+            persistence.kind === "saving" ||
+            persistence.kind === "unsaved" ||
+            persistence.kind === "conflict",
+        )
         .map(({ input, persistence }) => (
           <div key={input.id}>
             <p role="status">Choice record: {persistence.message}</p>

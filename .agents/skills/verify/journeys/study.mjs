@@ -663,6 +663,147 @@ export async function study(page, e) {
       );
     },
   );
+  await e.step(
+    "Retry every failed choice for one task and retain both acknowledged events",
+    async () => {
+      const recovery = await e.newPage({
+        account: "verification-choice-recovery",
+      });
+      await lesson(recovery, e, "epsilon-delta-one-variable");
+      await mode(recovery, "Practice");
+      const task = recovery.locator(".pilot-task").first();
+      await task.getByRole("radio").first().check();
+      const failure = e.expectStudyFailure("service", 503, recovery);
+      await recovery.route("**/api/study", async (route) => {
+        if (
+          route.request().method() === "POST" &&
+          route.request().postDataJSON()?.operation === "attempt"
+        )
+          await route.fulfill({
+            status: 503,
+            contentType: "application/json",
+            body: JSON.stringify({ error: "Choice service unavailable" }),
+          });
+        else await route.continue();
+      });
+      const retry = task.getByRole("button", {
+        name: "Retry choice save",
+        exact: true,
+      });
+      for (let index = 0; index < 2; index++) {
+        const response = recovery.waitForResponse(
+          (item) =>
+            item.url().endsWith("/api/study") &&
+            item.request().method() === "POST" &&
+            item.request().postDataJSON()?.operation === "attempt",
+        );
+        await task
+          .getByRole("button", { name: "Check answer", exact: true })
+          .click();
+        await response;
+        await visible(retry.nth(index));
+      }
+      await e.check(
+        "Both failed choice saves expose independent retry controls",
+        async () => assert.equal(await retry.count(), 2),
+      );
+      await recovery.unroute("**/api/study");
+      failure.active = false;
+      for (let remaining = 2; remaining > 0; remaining--) {
+        await retry.first().click();
+        await recovery.waitForFunction(
+          (expected) =>
+            Array.from(document.querySelectorAll(".pilot-task button")).filter(
+              (button) => button.textContent === "Retry choice save",
+            ).length === expected,
+          remaining - 1,
+        );
+      }
+      await saved(task);
+      await recovery
+        .locator(".study-account")
+        .getByRole("status")
+        .filter({ hasText: "Some work is not saved." })
+        .waitFor({ state: "hidden" });
+      await e.check(
+        "Acknowledged choices leave one receipt and no unsaved work",
+        async () => {
+          assert.equal(
+            await task
+              .getByRole("status")
+              .filter({ hasText: /^Choice record:/ })
+              .count(),
+            1,
+          );
+          assert.doesNotMatch(
+            await recovery.locator(".study-account").innerText(),
+            /Some work is not saved/,
+          );
+        },
+      );
+      await mode(recovery, "Revise");
+      await e.check(
+        "Both retried choices appear once in account history",
+        async () =>
+          visible(recovery.getByText(/2 loaded of 2 saved choice records/)),
+      );
+      await recovery.reload();
+      await mode(recovery, "Revise");
+      await e.check(
+        "Reload retains both acknowledged choices once",
+        async () => {
+          await visible(
+            recovery.getByText(/2 loaded of 2 saved choice records/),
+          );
+        },
+      );
+    },
+  );
+  await e.step(
+    "Explain denied device-storage access during import preview",
+    async () => {
+      const denied = await e.newPage({
+        account: "verification-denied-storage",
+      });
+      await denied.context().addInitScript(() =>
+        Object.defineProperty(window, "localStorage", {
+          get() {
+            throw new DOMException(
+              "Verification denied storage getter",
+              "SecurityError",
+            );
+          },
+        }),
+      );
+      await lesson(denied, e, "epsilon-delta-one-variable");
+      await denied
+        .getByText("Import old study from this device", { exact: true })
+        .click();
+      await denied
+        .getByRole("button", { name: "Preview device records", exact: true })
+        .click();
+      await e.check(
+        "Denied storage shows its rejection without enabling import",
+        async () => {
+          await visible(
+            denied.getByText(
+              "Device storage is unavailable. Source data was not changed.",
+              { exact: true },
+            ),
+          );
+          assert.equal(
+            await denied
+              .getByRole("button", {
+                name: "Confirm import into this account",
+                exact: true,
+              })
+              .isEnabled(),
+            false,
+          );
+        },
+      );
+    },
+  );
 }
 
 async function saved(region, index = 0) {
