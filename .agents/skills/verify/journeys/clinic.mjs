@@ -342,6 +342,115 @@ export async function clinic(page, e) {
       await page.keyboard.press("Enter");
       assert.equal(selectedCase(page), "chain-composition");
       await noOverflow(page);
+    },
+  );
+  await e.step(
+    "Recover a mistaken transfer at 320px, reload its lesson, and return to the fresh case",
+    async () => {
+      await switchCase(page, "rolle-corner");
+      await page
+        .locator("#clinic-reasoning")
+        .fill("Retain this attempt only until reload.");
+      await choice(page, "decision", "endpoints-suffice").check();
+      await page
+        .getByRole("button", { name: "Explain my decision", exact: true })
+        .click();
+      await page
+        .getByRole("button", { name: "Try the transfer check", exact: true })
+        .click();
+      await choice(page, "transfer", "minimum-forbids").check();
+      await page
+        .getByRole("button", { name: "Check transfer choice", exact: true })
+        .click();
+      await page.locator(".clinic-transfer-result .clinic-recovery").click();
+      await visible(page.locator("#lesson-title"));
+      const origin = await page.evaluate(() => history.state.clinicReturn);
+      await page
+        .getByRole("button", { name: "Return to Clinic case", exact: true })
+        .click();
+      await page.waitForFunction(
+        () => document.activeElement?.id === "clinic-transfer-feedback",
+      );
+      await e.check(
+        "In-tab transfer recovery restores its exact feedback scroll, choices and scratch work",
+        async () => {
+          assert.equal(await page.evaluate(() => scrollY), origin.scrollY);
+          assert.equal(
+            await choice(page, "decision", "endpoints-suffice").isChecked(),
+            true,
+          );
+          assert.equal(
+            await choice(page, "transfer", "minimum-forbids").isChecked(),
+            true,
+          );
+          assert.equal(
+            await page.locator("#clinic-reasoning").inputValue(),
+            "Retain this attempt only until reload.",
+          );
+        },
+      );
+      await page.locator(".clinic-transfer-result .clinic-recovery").click();
+      await visible(page.locator("#lesson-title"));
+      await page.reload();
+      await page
+        .getByRole("button", { name: "Return to Clinic case", exact: true })
+        .click();
+      await page.waitForFunction(
+        () => document.activeElement?.id === "clinic-case-title",
+      );
+      await e.check(
+        "Recovery reload clears both choices, feedback and scratch work while retaining the case",
+        async () => {
+          assert.equal(selectedCase(page), "rolle-corner");
+          assert.equal(
+            await page.locator('input[name="clinic-decision"]:checked').count(),
+            0,
+          );
+          assert.equal(
+            await page.locator('input[name="clinic-transfer"]:checked').count(),
+            0,
+          );
+          assert.equal(
+            await page.locator("#clinic-transfer-feedback").count(),
+            0,
+          );
+          assert.equal(
+            await page.locator("#clinic-reasoning").inputValue(),
+            "",
+          );
+        },
+      );
+      await e.check(
+        "Recovery reload visibly focuses the fresh case heading within the 320px viewport",
+        async () => {
+          const heading = await page
+            .locator("#clinic-case-title")
+            .evaluate((el) => {
+              const rect = el.getBoundingClientRect();
+              return {
+                focused: document.activeElement === el,
+                top: rect.top,
+                bottom: rect.bottom,
+                left: rect.left,
+                right: rect.right,
+                topbarBottom: document
+                  .querySelector(".topbar")
+                  .getBoundingClientRect().bottom,
+                width: innerWidth,
+                height: innerHeight,
+              };
+            });
+          assert.equal(heading.width, 320);
+          assert.equal(heading.focused, true);
+          assert.ok(
+            heading.top >= Math.max(0, heading.topbarBottom) &&
+              heading.bottom <= heading.height &&
+              heading.left >= 0 &&
+              heading.right <= heading.width,
+            JSON.stringify(heading),
+          );
+        },
+      );
       await e.check(
         "Clinic-only decisions, notes, recovery and transfer produced no account writes",
         async () => assert.deepEqual(writes, []),

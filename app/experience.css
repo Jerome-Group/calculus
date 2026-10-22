@@ -1144,7 +1144,7 @@ summary:focus-visible {
   border-color: #6b9486;
 }
 .clinic-card-number {
-  color: #8a9e91;
+  color: #56736b;
   font:
     28px/1 Georgia,
     serif;
@@ -1231,7 +1231,7 @@ summary:focus-visible {
   align-items: center;
   padding: 12px 0;
   border-top: 2px solid #d9e0d8;
-  color: #6a7d73;
+  color: #56736b;
   font-size: 12px;
 }
 .clinic-steps li[aria-current] {

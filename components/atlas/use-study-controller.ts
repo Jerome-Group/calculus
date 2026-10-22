@@ -183,13 +183,16 @@ export function useStudyController() {
   useLayoutEffect(() => {
     if (!navigationFocus) return;
     const frame = requestAnimationFrame(() => {
+      const requestedTarget = document.getElementById(navigationFocus.id);
       const target =
-        document.getElementById(navigationFocus.id) ??
+        requestedTarget ??
         document.getElementById(
           route === "clinic" ? "clinic-case-title" : "lesson-title",
         );
       target?.focus({ preventScroll: true });
-      window.scrollTo({ top: navigationFocus.scrollY, behavior: "instant" });
+      if (requestedTarget)
+        window.scrollTo({ top: navigationFocus.scrollY, behavior: "instant" });
+      else target?.scrollIntoView({ block: "center", behavior: "instant" });
     });
     return () => cancelAnimationFrame(frame);
   }, [navigationFocus, route]);

@@ -11,7 +11,7 @@ Use Open Calculus Clinic in the library, Clinic in the topbar, or Calculus Clini
 ## Driving it with Playwright
 
 Run `npm run agent -- browser run --features clinic --output outputs/browser/clinic`.
-The journey checks all nine sound decisions and transfers through real radio controls and explicit commits. It also checks a wrong Rolle decision and transfer, recovery to the matching lesson and back, retained scratch work and feedback focus, restart, next case, Back and Forward, share link and reload reset, invalid encodings and topbar/sidebar entry. It drives native keyboard controls at 320px, checks no overflow, MathML, no KaTeX errors and no account writes. It never invokes application actions or internal modules.
+The journey checks all nine sound decisions and transfers through real radio controls and explicit commits. It also checks a wrong Rolle decision and transfer, recovery to the matching lesson and back, retained scratch work and feedback focus, restart, next case, Back and Forward, share link and reload reset, invalid encodings and topbar/sidebar entry. At 320px, transfer recovery preserves the exact feedback scroll and attempt. Reloading its recovery lesson clears both choices, feedback and scratch work. Returning then focuses the fresh case heading and checks its bounding rectangle against the viewport and sticky topbar. The journey drives native keyboard controls at 320px, checks no overflow, MathML, no KaTeX errors and no account writes. It never invokes application actions or internal modules.
 
 ## Gotchas
 
