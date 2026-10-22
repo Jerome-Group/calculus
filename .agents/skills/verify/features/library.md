@@ -15,7 +15,7 @@ Study-specific Resume and Revisit entries are in [study](study.md).
 ## Driving it with Playwright
 
 Run `npm run agent -- browser run --features library --output outputs/browser/library`.
-The driver tabs to Skip to mathematics and checks landmark focus, selects every course through both controls with distinct rail transitions, and counts 24, 30, and 71 rendered exploration buttons.
+The driver requires the first Tab to focus Skip to mathematics and Enter to focus the mathematics landmark, selects every course through both controls with distinct rail transitions, and counts 24, 30, and 71 rendered exploration buttons.
 It searches `integral`, checks result labels from MH1101 and MH2100, reloads, opens a result, uses Back and Forward, exercises no matches and clear, and searches `Jacobian` from the sidebar.
 It uses brand, overview, Library, and Resume lesson entry points, requiring Resume to restore the selected lesson ID.
 It opens malformed library state, clears its explanation through search and through course selection, and selects a course from the 390px phone drawer.
@@ -24,6 +24,6 @@ It opens Browser tools without relying on WebMCP.
 ## Gotchas
 
 Search spans all courses. Course selection and query belong to the library URL.
-The skip link follows sidebar controls in the current DOM, so the driver reaches it through bounded Tab navigation.
+The skip link precedes the sidebar and must remain the first keyboard-focusable page control, covered by regression #235.
 Selecting a valid course must clear an obsolete malformed-state notice, covered by regression #204.
 Private course links need existing Drive permissions; library verification does not fetch them.

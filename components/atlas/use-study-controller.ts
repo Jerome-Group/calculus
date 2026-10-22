@@ -281,7 +281,7 @@ export function useStudyController() {
         libraryUrl(new URL(window.location.href), course, query),
       );
   }
-  function restoreLocation() {
+  function restoreLocation(focusFallback = true) {
     const hash = window.location.hash.slice(1);
     setClinicReturn(null);
     let focusId = "library-title";
@@ -320,7 +320,8 @@ export function useStudyController() {
       const c = concepts.find((item) => item.id === hash);
       if (!c) {
         setRoute("course");
-        setNavigationFocus({ id: "library-title", scrollY: 0 });
+        if (focusFallback)
+          setNavigationFocus({ id: "library-title", scrollY: 0 });
         return;
       }
       const parsed = readLessonHistory(
@@ -352,7 +353,7 @@ export function useStudyController() {
   const readLocation = useEffectEvent(restoreLocation);
   useEffect(() => {
     const read = () => readLocation();
-    read();
+    readLocation(false);
     window.addEventListener("hashchange", read);
     window.addEventListener("popstate", read);
     const scroll = () => {

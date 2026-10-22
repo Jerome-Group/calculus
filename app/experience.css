@@ -1062,6 +1062,16 @@ summary:focus-visible {
 .clinic-heading-note em {
   color: #366c5d;
 }
+.clinic-heading-active {
+  padding-bottom: 16px;
+}
+.clinic-heading-active h1 {
+  margin: 12px 0 0;
+  font:
+    30px/1.1 Georgia,
+    serif;
+  letter-spacing: -0.6px;
+}
 .clinic-memory {
   display: flex;
   gap: 12px;
@@ -1262,9 +1272,9 @@ summary:focus-visible {
   line-height: 1.8;
   color: #3d5652;
 }
-.clinic-situation {
+.clinic-panel .clinic-situation {
   margin: 16px 0 28px;
-  font-size: 17px !important;
+  font-size: 17px;
 }
 .clinic-question {
   min-width: 0;
@@ -1444,8 +1454,8 @@ summary:focus-visible {
     23px/1.2 Georgia,
     serif;
 }
-.clinic-limit {
-  font-size: 11px !important;
+.clinic-panel .clinic-limit {
+  font-size: 11px;
   margin-top: 22px;
 }
 .clinic-case-actions {
@@ -1594,8 +1604,8 @@ summary:focus-visible {
     gap: 8px;
     font-size: 13px;
   }
-  .clinic-situation {
-    font-size: 15px !important;
+  .clinic-panel .clinic-situation {
+    font-size: 15px;
   }
   .clinic-transfer-result {
     padding: 18px 14px;

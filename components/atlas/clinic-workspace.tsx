@@ -48,30 +48,41 @@ export function ClinicWorkspace({
   };
   return (
     <div className="clinic-workspace">
-      <header className="clinic-heading">
-        <div>
-          <span className="eyebrow">CALCULUS CLINIC · NINE ORIGINAL CASES</span>
+      {content ? (
+        <header className="clinic-heading-active">
+          <span className="eyebrow">DECIDE · EXPLAIN · TRANSFER</span>
           <h1 id="clinic-title" tabIndex={-1}>
-            A decision.
-            <br />
-            <em>A reason to revisit.</em>
+            Calculus Clinic
           </h1>
-          <p>
-            Find the assumption that changes the answer. Commit a choice,
-            inspect an exact argument, then try the idea in a new situation.
-          </p>
-        </div>
-        <div className="clinic-heading-note">
-          <span aria-hidden="true">?</span>
-          <p>
-            Where does
-            <br />
-            the theorem
-            <br />
-            <em>actually apply?</em>
-          </p>
-        </div>
-      </header>
+        </header>
+      ) : (
+        <header className="clinic-heading">
+          <div>
+            <span className="eyebrow">
+              CALCULUS CLINIC · NINE ORIGINAL CASES
+            </span>
+            <h1 id="clinic-title" tabIndex={-1}>
+              A decision.
+              <br />
+              <em>A reason to revisit.</em>
+            </h1>
+            <p>
+              Find the assumption that changes the answer. Commit a choice,
+              inspect an exact argument, then try the idea in a new situation.
+            </p>
+          </div>
+          <div className="clinic-heading-note">
+            <span aria-hidden="true">?</span>
+            <p>
+              Where does
+              <br />
+              the theorem
+              <br />
+              <em>actually apply?</em>
+            </p>
+          </div>
+        </header>
+      )}
       <div className="clinic-memory">
         <span className="clinic-memory-dot" aria-hidden="true" />
         <p>

@@ -17,7 +17,6 @@ function AtlasInner() {
     study;
   return (
     <>
-      <CourseSidebar study={study} />
       <a
         className="skip-link"
         href="#main-content"
@@ -30,6 +29,7 @@ function AtlasInner() {
       >
         Skip to mathematics
       </a>
+      <CourseSidebar study={study} />
       <main className="atlas-main" id="main-content" tabIndex={-1}>
         <header className="topbar">
           <div>
