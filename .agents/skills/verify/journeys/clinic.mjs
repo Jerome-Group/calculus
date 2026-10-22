@@ -301,6 +301,10 @@ export async function clinic(page, e) {
       const sidebar = page.getByRole("dialog");
       await visible(sidebar);
       await sidebar.getByRole("button", { name: /Calculus Clinic/ }).click();
+      await sidebar.waitFor({ state: "hidden" });
+      await page.waitForFunction(
+        () => document.activeElement?.id === "clinic-title",
+      );
       await page.locator(".clinic-case-cards > button").first().focus();
       await page.keyboard.press("Enter");
       await visible(page.locator("#clinic-case-title"));
