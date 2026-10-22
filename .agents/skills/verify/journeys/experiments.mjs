@@ -181,6 +181,59 @@ export async function experiments(page, e) {
   );
   await comparisonsJourney(page, e);
   await e.step(
+    "Compare cap closure, normal orientation and field regularity",
+    async () => {
+      for (const id of ["flux-through-surfaces", "divergence-theorem"]) {
+        await lesson(page, e, id);
+        await mode(page, "Explore");
+        const panel = page.getByRole("complementary", {
+          name: "Cap orientation and theorem decision",
+          exact: true,
+        });
+        await e.check(`${id} explains the open boundary`, async () =>
+          assert.match(await panel.innerText(), /exposed circular edge/),
+        );
+        await panel
+          .getByRole("button", { name: "Open cap only", exact: true })
+          .click();
+        await e.check(
+          `${id} accepts the closed regular outward boundary`,
+          async () =>
+            assert.match(await panel.innerText(), /Eligible: divergence/),
+        );
+        await panel
+          .getByRole("button", { name: "Outward from half-ball", exact: true })
+          .click();
+        await e.check(
+          `${id} explains reversal of the inward flux sign`,
+          async () => {
+            assert.match(await panel.innerText(), /Reverse the flux sign/);
+            assert.match(
+              await panel
+                .locator("annotation")
+                .allTextContents()
+                .then((items) => items.join(" ")),
+              /-16/,
+            );
+          },
+        );
+        await panel
+          .getByRole("button", { name: "Regular field", exact: true })
+          .click();
+        await e.check(
+          `${id} rejects the field singularity on the closing disk`,
+          async () => {
+            assert.match(await panel.innerText(), /undefined at the origin/);
+            assert.doesNotMatch(
+              await panel.innerText(),
+              /Eligible: divergence/,
+            );
+          },
+        );
+      }
+    },
+  );
+  await e.step(
     "Change inline experiments independently and restore their visible values",
     async () => {
       await lesson(page, e, "review-total-differentiability");

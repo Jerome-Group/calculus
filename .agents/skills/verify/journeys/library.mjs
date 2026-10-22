@@ -81,13 +81,23 @@ export async function library(page, e) {
         name: "Search the entire library",
         exact: true,
       });
-      await search.fill("path");
+      await search.fill("integral");
       const result = page.locator(".search-library-results button").first();
       await visible(result);
+      await e.check(
+        "Search results include both Calculus II and Calculus III",
+        async () => {
+          const labels = await page
+            .locator(".search-library-results small")
+            .allTextContents();
+          assert.ok(labels.some((label) => label.includes("MH1101")));
+          assert.ok(labels.some((label) => label.includes("MH2100")));
+        },
+      );
       const text = await result.locator("strong").innerText();
       await page.reload();
       await e.check("Library query survives a real reload", async () =>
-        assert.equal(await search.inputValue(), "path"),
+        assert.equal(await search.inputValue(), "integral"),
       );
       await page.locator(".search-library-results button").first().click();
       await visible(page.locator("#lesson-title"));
@@ -95,7 +105,7 @@ export async function library(page, e) {
       await page.goBack();
       await e.check("Back restores the query and results", async () => {
         await visible(result);
-        assert.equal(await search.inputValue(), "path");
+        assert.equal(await search.inputValue(), "integral");
       });
       await page.goForward();
       await visible(page.locator("#lesson-title"));
@@ -149,14 +159,14 @@ export async function library(page, e) {
         name: "Search the entire library",
         exact: true,
       });
-      await search.fill("path");
+      await search.fill("integral");
       await e.check(
         "A deliberate search clears fallback text and survives reload",
         async () => {
           assert.equal(await notice.count(), 0);
           await visible(page.locator(".search-library-results button").first());
           await page.reload();
-          assert.equal(await search.inputValue(), "path");
+          assert.equal(await search.inputValue(), "integral");
           assert.equal(await notice.count(), 0);
         },
       );

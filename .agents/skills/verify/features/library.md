@@ -16,7 +16,7 @@ Study-specific Resume and Revisit entries are in [study](study.md).
 
 Run `npm run agent -- browser run --features library --output outputs/browser/library`.
 The driver tabs to Skip to mathematics and checks landmark focus, selects every course through both controls with distinct rail transitions, and checks 24, 30, and 71 explorations.
-It searches `path`, reloads, opens a result, uses Back and Forward, exercises no matches and clear, and searches `Jacobian` from the sidebar.
+It searches `integral`, checks result labels from MH1101 and MH2100, reloads, opens a result, uses Back and Forward, exercises no matches and clear, and searches `Jacobian` from the sidebar.
 It uses brand, overview, Library, and Resume lesson entry points.
 It opens malformed library state, clears its explanation through search and through course selection, and selects a course from the 390px phone drawer.
 It opens Browser tools without relying on WebMCP.

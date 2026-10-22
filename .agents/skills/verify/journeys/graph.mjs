@@ -42,12 +42,27 @@ export async function graph(page, e) {
     },
   );
   const representations = [
-    ["Function", ["sin(x)*cos(y)"]],
-    ["Parametric surface", ["cos(u)", "sin(u)", "v"]],
-    ["Space curve", ["cos(t)", "sin(t)", "t/3"]],
-    ["Implicit surface", ["x^2+y^2+z^2-1"]],
+    ["Function", ["sin(x)*cos(y)"], /sampled points displayed/, /sin.*cos/s],
+    [
+      "Parametric surface",
+      ["cos(u)", "sin(u)", "v"],
+      /parameter samples displayed/,
+      /r.*u.*v.*cos.*sin/s,
+    ],
+    [
+      "Space curve",
+      ["cos(t)", "sin(t)", "t/3"],
+      /sampled curve segments/,
+      /r.*t.*cos.*sin/s,
+    ],
+    [
+      "Implicit surface",
+      ["x^2+y^2+z^2-1"],
+      /approximate zero-set triangles/,
+      /x.*y.*z.*=0/s,
+    ],
   ];
-  for (const [name, expressions] of representations) {
+  for (const [name, expressions, status, formula] of representations) {
     await e.step(
       `Render ${name} through the representation editor and restore it after reload`,
       async () => {
@@ -58,6 +73,16 @@ export async function graph(page, e) {
           .getByRole("button", { name: "Render graph", exact: true })
           .click();
         await graphReady(page);
+        await page
+          .locator(".graph-status")
+          .filter({ hasText: status })
+          .waitFor();
+        const rendered = page
+          .locator(".sr-only")
+          .filter({ hasText: "Rendered graph:" })
+          .locator("annotation");
+        assert.match(await rendered.textContent(), formula);
+        const renderedFormula = await rendered.textContent();
         const url = page.url();
         await page.reload();
         await graphReady(page);
@@ -65,6 +90,7 @@ export async function graph(page, e) {
           `${name} restores the plotted expressions and encoded URL`,
           async () => {
             assert.equal(page.url(), url);
+            assert.equal(await rendered.textContent(), renderedFormula);
             for (const [index, expression] of expressions.entries())
               assert.equal(
                 await page.locator(`#expression-${index}`).inputValue(),
@@ -110,6 +136,71 @@ export async function graph(page, e) {
           .getByRole("slider")
           .getAttribute("aria-valuenow"),
         "5",
+      );
+    },
+  );
+  await e.step(
+    "Change a parameter used by the plotted expression and restore its URL",
+    async () => {
+      await page
+        .getByRole("button", { name: "Wave amplitude", exact: true })
+        .click();
+      await graphReady(page);
+      await e.check(
+        "The wave preset supplies its complete configuration",
+        async () => {
+          assert.equal(
+            await page.locator("#expression-0").inputValue(),
+            "a*sin(x)*cos(y)",
+          );
+          const bounds = page.locator(".bounds-grid input");
+          for (const [index, value] of [
+            -Math.PI,
+            Math.PI,
+            -Math.PI,
+            Math.PI,
+            6,
+          ].entries())
+            assert.equal(Number(await bounds.nth(index).inputValue()), value);
+        },
+      );
+      await page
+        .getByRole("button", { name: "Use compatibility view", exact: true })
+        .click();
+      const svg = page.locator(".canvas-host svg");
+      await visible(svg);
+      await svg.locator("path").first().waitFor({ state: "attached" });
+      const slider = page.getByRole("slider", { name: /Expression parameter/ });
+      await slider.press("Home");
+      const before = await svg.innerHTML();
+      await e.capture("Parameter a at its lower bound");
+      await slider.press("End");
+      await e.check(
+        "The expression parameter changes finite sampled drawing geometry",
+        async () => {
+          await page.waitForFunction(
+            (previous) =>
+              document.querySelector(".canvas-host svg")?.innerHTML !==
+              previous,
+            before,
+          );
+          assert.doesNotMatch(await svg.innerHTML(), /NaN|Infinity/);
+          assert.equal(await slider.getAttribute("aria-valuenow"), "5");
+        },
+      );
+      const url = page.url();
+      await page.reload();
+      await graphReady(page);
+      await e.check(
+        "Reload restores the expression and its changed parameter",
+        async () => {
+          assert.equal(page.url(), url);
+          assert.equal(
+            await page.locator("#expression-0").inputValue(),
+            "a*sin(x)*cos(y)",
+          );
+          assert.equal(await slider.getAttribute("aria-valuenow"), "5");
+        },
       );
     },
   );
