@@ -68,6 +68,10 @@ export async function library(page, e) {
                 await page.locator(".unit-library > header").innerText(),
                 new RegExp(`${count} explorations`),
               );
+              assert.equal(
+                await page.locator(".unit-concepts button").count(),
+                count,
+              );
               assert.equal(new URL(page.url()).hash, "#course");
             },
           );
@@ -133,6 +137,7 @@ export async function library(page, e) {
         .first()
         .click();
       await visible(page.locator("#lesson-title"));
+      const selectedLesson = new URL(page.url()).hash;
       await page
         .getByRole("button", { name: "Course overview", exact: true })
         .click();
@@ -141,6 +146,9 @@ export async function library(page, e) {
         .getByRole("button", { name: "Resume lesson", exact: true })
         .click();
       await visible(page.locator("#lesson-title"));
+      await e.check("Resume restores the selected lesson", async () =>
+        assert.equal(new URL(page.url()).hash, selectedLesson),
+      );
       await page.getByRole("link", { name: "Calculus", exact: true }).click();
       await e.check("Brand returns to the library", async () =>
         visible(page.locator("#library-title")),
