@@ -17,6 +17,16 @@ import { QuickGraphExpression } from "./quick-graph-expression";
 import type { StudyController } from "./use-study-controller";
 const presets = [
   {
+    name: "Wave amplitude",
+    mode: "surface",
+    expressions: ["a*sin(x)*cos(y)"],
+    min: -Math.PI,
+    max: Math.PI,
+    vmin: -Math.PI,
+    vmax: Math.PI,
+    clip: 6,
+  },
+  {
     name: "Radial wave",
     mode: "surface",
     expressions: ["sin(sqrt(x^2+y^2))"],
