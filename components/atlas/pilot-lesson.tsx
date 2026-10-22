@@ -190,7 +190,7 @@ export function PilotLessonView({
       <nav className="prerequisites" aria-label="Lesson prerequisites">
         <span>Builds on</span>
         {guide.prerequisites.map((id) => (
-          <button key={id} onClick={() => study.open(id)}>
+          <button key={id} onClick={() => study.openPrerequisite(id)}>
             <MathText
               text={concepts.find((item) => item.id === id)?.title ?? ""}
             />

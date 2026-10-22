@@ -280,12 +280,68 @@ export async function experiments(page, e) {
             /Certified for every input/,
           ),
       );
+      await page.locator("#candidate-delta").fill(String(epsilon));
+      await e.check(
+        "Editing delta removes certification for the former candidate",
+        async () =>
+          assert.doesNotMatch(
+            await page
+              .locator(".pilot-delta-challenge")
+              .getByRole("status")
+              .innerText(),
+            /Certified for every input/,
+          ),
+      );
+      await page.locator("#candidate-delta").fill(String(epsilon / 2));
+      await page
+        .getByRole("button", {
+          name: "Check all inputs algebraically",
+          exact: true,
+        })
+        .click();
       await page
         .getByRole("group", { name: "Representation", exact: true })
         .getByRole("button", { name: "Diagram", exact: true })
         .click();
       await visible(
         page.getByRole("region", { name: "Visualisation", exact: true }),
+      );
+      await page.locator(".control-panel").getByRole("slider").press("Home");
+      await e.check(
+        "Diagram tolerance changes cannot retain a former certification",
+        async () =>
+          assert.doesNotMatch(
+            await page
+              .locator(".pilot-delta-challenge")
+              .getByRole("status")
+              .innerText(),
+            /Certified for every input/,
+          ),
+      );
+      await page
+        .getByRole("group", { name: "Representation", exact: true })
+        .getByRole("button", { name: "Values only", exact: true })
+        .click();
+      await page.getByRole("slider", { name: /Output tolerance/ }).press("End");
+      await page
+        .getByRole("button", {
+          name: "Check all inputs algebraically",
+          exact: true,
+        })
+        .click();
+      await page
+        .getByRole("slider", { name: /Output tolerance/ })
+        .press("Home");
+      await e.check(
+        "Values-only tolerance changes cannot retain a former certification",
+        async () =>
+          assert.doesNotMatch(
+            await page
+              .locator(".pilot-delta-challenge")
+              .getByRole("status")
+              .innerText(),
+            /Certified for every input/,
+          ),
       );
       await lesson(page, e, "type-one-two-regions");
       await mode(page, "Explore");

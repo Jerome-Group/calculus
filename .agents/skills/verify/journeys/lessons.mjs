@@ -196,6 +196,23 @@ export async function lessons(page, e) {
   );
   await e.step("Exercise pilot reading and revision entry points", async () => {
     await lesson(page, e, "epsilon-delta-one-variable");
+    await page
+      .getByRole("navigation", { name: "Lesson prerequisites", exact: true })
+      .getByRole("button")
+      .first()
+      .click();
+    await page
+      .getByRole("button", { name: "Return to interrupted step", exact: true })
+      .click();
+    await e.check(
+      "Pilot prerequisite returns to the interrupted guided lesson",
+      async () => {
+        assert.equal(new URL(page.url()).hash, "#epsilon-delta-one-variable");
+        await visible(
+          page.getByRole("region", { name: "Guided lesson", exact: true }),
+        );
+      },
+    );
     await visible(
       page.getByRole("region", { name: "Guided lesson", exact: true }),
     );

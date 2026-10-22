@@ -92,7 +92,15 @@ export function PilotExplore({
     "vertical",
   );
   const [candidateDelta, setCandidateDelta] = useState("");
-  const [candidateFeedback, setCandidateFeedback] = useState("");
+  const [checkedDelta, setCheckedDelta] = useState<{
+    epsilon: number;
+    candidate: string;
+  } | null>(null);
+  const candidateFeedback =
+    checkedDelta?.epsilon === study.p &&
+    checkedDelta.candidate === candidateDelta
+      ? checkLinearDelta(study.p, candidateDelta)
+      : "";
   const epsilon = lesson.id === "epsilon-delta-one-variable";
   const coordinate = Math.max(0, Math.min(2, study.p));
   const delta = study.p / 2;
@@ -168,10 +176,7 @@ export function PilotExplore({
             max={study.info.max}
             step={study.info.step}
             value={study.p}
-            onChange={(event) => {
-              study.setP(Number(event.target.value));
-              setCandidateFeedback("");
-            }}
+            onChange={(event) => study.setP(Number(event.target.value))}
           />
         </section>
       )}
@@ -259,9 +264,10 @@ export function PilotExplore({
               />
               <button
                 onClick={() =>
-                  setCandidateFeedback(
-                    checkLinearDelta(study.p, candidateDelta),
-                  )
+                  setCheckedDelta({
+                    epsilon: study.p,
+                    candidate: candidateDelta,
+                  })
                 }
               >
                 Check all inputs algebraically

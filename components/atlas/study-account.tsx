@@ -121,7 +121,7 @@ export function StudyAccount() {
                 </details>
               )}
               {account.preview.rejected.length > 0 && (
-                <details>
+                <details open>
                   <summary>Rejected entries</summary>
                   <ul>
                     {account.preview.rejected.map((message, index) => (

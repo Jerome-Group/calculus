@@ -397,6 +397,32 @@ test("a delayed read cannot replace a newer acknowledged draft", async () => {
   assert.equal(session.read(key).persistence.kind, "saved");
 });
 
+test("a denied storage getter resolves import preview with a readable rejection", async () => {
+  const session = await ready();
+  const descriptor = Object.getOwnPropertyDescriptor(
+    globalThis,
+    "localStorage",
+  );
+  Object.defineProperty(globalThis, "localStorage", {
+    configurable: true,
+    get() {
+      throw new DOMException("Denied", "SecurityError");
+    },
+  });
+  try {
+    await session.prepareImport();
+    assert.deepEqual(session.account().preview.items, []);
+    assert.deepEqual(session.account().preview.rejected, [
+      "Device storage is unavailable. Source data was not changed.",
+    ]);
+    assert.equal(session.account().preview.sources, 0);
+  } finally {
+    if (descriptor)
+      Object.defineProperty(globalThis, "localStorage", descriptor);
+    else delete globalThis.localStorage;
+  }
+});
+
 test("partial import retains outcomes and retries only failed items", async () => {
   const session = await ready();
   const savedStorage = globalThis.localStorage;
