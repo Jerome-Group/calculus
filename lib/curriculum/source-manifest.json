@@ -1426,7 +1426,8 @@
       "fundamental-line-theorem",
       "conservative-domains",
       "greens-theorem",
-      "area-from-boundary"
+      "area-from-boundary",
+      "vector-line-integrals"
     ],
     "sha256": "8dc176154412a2ae62c6150878b653be2c626285b1b1729c067def9c36e414d5",
     "reviewedAt": "2026-10-22",

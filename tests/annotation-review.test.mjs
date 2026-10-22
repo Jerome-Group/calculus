@@ -38,6 +38,8 @@ test("current annotation review identifies the reviewed source revisions", () =>
     assert.equal(file.reviewed_for_atomic_outcomes, true);
     assert.equal(file.classification, "already_covered");
     assert.ok(file.affected_concepts.length);
+    for (const id of file.affected_concepts)
+      assert.ok(entry.affectedConcepts.includes(id));
   }
 });
 
