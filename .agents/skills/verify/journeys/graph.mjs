@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { graphObservation } from "./graph-observation.mjs";
 import {
   graphDrawing,
   graphReady,
@@ -354,6 +355,66 @@ export async function graph(page, e) {
       await page
         .getByRole("button", { name: "Exit fullscreen", exact: true })
         .click();
+    },
+  );
+  await e.step(
+    "Reset camera and fit a preset immediately after released pointer motion",
+    async () => {
+      const drawing = page.locator(".canvas-host svg");
+      for (const [action, referencePreset] of [
+        ["Reset camera", "Saddle"],
+        ["Helix", "Helix"],
+      ]) {
+        await page
+          .getByRole("button", { name: referencePreset, exact: true })
+          .click();
+        const canonical = roundedDrawing(await graphDrawing(page));
+        for (const [motion, button] of [
+          ["rotation", "left"],
+          ["pan", "right"],
+        ]) {
+          await page
+            .getByRole("button", { name: "Saddle", exact: true })
+            .click();
+          const before = await graphDrawing(page);
+          await drawing.scrollIntoViewIfNeeded();
+          const box = await drawing.boundingBox();
+          assert.ok(box, "The plotted SVG has a visible pointer target");
+          await page.mouse.move(
+            box.x + box.width * 0.35,
+            box.y + box.height * 0.4,
+          );
+          await page.mouse.down({ button });
+          await page.mouse.move(
+            box.x + box.width * 0.62,
+            box.y + box.height * 0.58,
+            { steps: 3 },
+          );
+          await page.waitForFunction(graphObservation, {
+            previousDrawing: before,
+          });
+          await page.mouse.up({ button });
+          await page.getByRole("button", { name: action, exact: true }).click();
+          await e.check(
+            `${action} restores stable canonical framing after released pointer ${motion}`,
+            async () => {
+              assert.equal(roundedDrawing(await graphDrawing(page)), canonical);
+              assert.ok(
+                await drawing.evaluate(async (svg) => {
+                  const reset = svg.innerHTML;
+                  for (let frame = 0; frame < 12; frame++) {
+                    await new Promise(requestAnimationFrame);
+                    if (svg.innerHTML !== reset) return false;
+                  }
+                  return true;
+                }),
+                "Canonical framing remains unchanged across further render frames",
+              );
+              assert.equal(roundedDrawing(await graphDrawing(page)), canonical);
+            },
+          );
+        }
+      }
     },
   );
   await e.step(

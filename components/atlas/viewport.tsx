@@ -109,6 +109,10 @@ export function Viewport({
     let lastScene = "";
     let dirty = true;
     const fit = () => {
+      const damping = controls.enableDamping;
+      controls.enableDamping = false;
+      controls.update();
+      controls.enableDamping = damping;
       const box = new T.Box3().setFromObject(content);
       if (box.isEmpty())
         box.setFromCenterAndSize(new T.Vector3(), new T.Vector3(4, 4, 4));
