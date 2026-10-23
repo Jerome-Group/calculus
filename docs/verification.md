@@ -22,7 +22,7 @@ provenance validation. No command deploys, modifies learner records or contacts 
 ## Browser reports
 
 Use [the local verify skill](../.agents/skills/verify/SKILL.md) for executable local checks.
-`npm run agent -- browser list` lists the five maintained features.
+`npm run agent -- browser list` lists the maintained features.
 `browser doctor` checks installed prerequisites without starting or installing anything.
 `browser run --features all --output outputs/browser/local` builds current source, owns a
 local Wrangler Worker and fresh Chromium contexts, drives the actual controls, and cleans up.

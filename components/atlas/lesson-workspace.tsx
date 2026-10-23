@@ -16,6 +16,8 @@ import {
   type LessonMode,
 } from "@/lib/curriculum/learning-modes";
 import type { StudyController } from "./use-study-controller";
+import { investigation } from "@/lib/workshop";
+import { WorkshopLessonEntry } from "./workshop-lesson-entry";
 
 export function LessonWorkspace({ study }: { study: StudyController }) {
   const focusSection = (id: string) => {
@@ -65,6 +67,19 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
         }
       >
         <div className="lesson-heading">
+          {study.workshopReturn && (
+            <div className="clinic-return workshop-return">
+              <span className="eyebrow">WORKSHOP CONTINUATION</span>
+              <p>{investigation(study.workshopReturn.id).title}</p>
+              <button onClick={study.returnToWorkshop}>
+                <ArrowLeft size={16} /> Return to Proof workshop
+              </button>
+              <small>
+                Your work stays in this tab. Reload resets constructions and
+                explanations.
+              </small>
+            </div>
+          )}
           {study.clinicReturn && (
             <div className="clinic-return">
               <span className="eyebrow">CLINIC RECOVERY</span>
@@ -146,6 +161,10 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
               <MathText text={concept.task} />
             </p>
           </div>
+          <WorkshopLessonEntry
+            lessonId={concept.id}
+            open={study.openWorkshop}
+          />
           {(readingMode === "learn" || readingMode === "explore") && (
             <div
               className="lesson-question lesson-essentials"

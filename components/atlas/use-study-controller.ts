@@ -43,6 +43,16 @@ import {
   type ClinicLocation,
   type ClinicReturn,
 } from "./clinic-history";
+import type { InvestigationId } from "@/lib/workshop";
+import {
+  workshopUrl,
+  readWorkshopHistory,
+  readWorkshopReturn,
+  readWorkshopPosition,
+  workshopFocusIds,
+  type WorkshopLocation,
+  type WorkshopReturn,
+} from "./workshop-history";
 const experimentInfo = (id: string) =>
   id.startsWith("plane-")
     ? {
@@ -69,6 +79,13 @@ export function useStudyController() {
     notice: "",
   });
   const [clinicReturn, setClinicReturn] = useState<ClinicReturn | null>(null);
+  const [workshopLocation, setWorkshopLocation] = useState<WorkshopLocation>({
+    id: "linear-bound",
+    notice: "",
+  });
+  const [workshopReturn, setWorkshopReturn] = useState<WorkshopReturn | null>(
+    null,
+  );
   const [navigationFocus, setNavigationFocus] = useState<{
     id: string;
     scrollY: number;
@@ -125,6 +142,7 @@ export function useStudyController() {
     if (!c) return;
     setSelected(id);
     setClinicReturn(null);
+    setWorkshopReturn(null);
     setNavigationFocus({ id: "lesson-title", scrollY: 0 });
     setHistoryNotice("");
     void resumeRecord.save({ lessonId: id });
@@ -187,7 +205,11 @@ export function useStudyController() {
       const target =
         requestedTarget ??
         document.getElementById(
-          route === "clinic" ? "clinic-case-title" : "lesson-title",
+          route === "clinic"
+            ? "clinic-case-title"
+            : route === "workshop"
+              ? "workshop-title"
+              : "lesson-title",
         );
       target?.focus({ preventScroll: true });
       if (requestedTarget)
@@ -230,6 +252,43 @@ export function useStudyController() {
   function returnToClinic() {
     if (clinicReturn) openClinic(clinicReturn.caseId, clinicReturn);
   }
+  function openWorkshop(
+    id: InvestigationId = "linear-bound",
+    position?: WorkshopReturn,
+  ) {
+    saveScroll();
+    history.pushState(
+      {
+        studyScrollY: position?.scrollY ?? 0,
+        ...(position ? { workshopPosition: position } : {}),
+      },
+      "",
+      workshopUrl(new URL(window.location.href), id),
+    );
+    restoreLocation();
+    sidebar.setOpenMobile(false);
+  }
+  function openWorkshopLesson(lessonId: string, origin: WorkshopReturn) {
+    const target = concepts.find((item) => item.id === lessonId);
+    if (!target) return;
+    saveScroll();
+    history.replaceState({ ...history.state, workshopPosition: origin }, "");
+    history.pushState(
+      { studyScrollY: 0, workshopReturn: origin },
+      "",
+      lessonUrl(
+        new URL(window.location.href),
+        target.id,
+        defaultLessonState(target),
+      ),
+    );
+    setReturnTo(null);
+    restoreLocation();
+    sidebar.setOpenMobile(false);
+  }
+  function returnToWorkshop() {
+    if (workshopReturn) openWorkshop(workshopReturn.id, workshopReturn);
+  }
   function showNotes(section: string) {
     pendingNotes.current = true;
     setNoteTab(section);
@@ -248,8 +307,13 @@ export function useStudyController() {
       openClinic();
       return;
     }
+    if (r === "workshop") {
+      openWorkshop();
+      return;
+    }
     saveScroll();
     setClinicReturn(null);
+    setWorkshopReturn(null);
     setRoute(r);
     setPlaying(false);
     sidebar.setOpenMobile(false);
@@ -287,9 +351,18 @@ export function useStudyController() {
   function restoreLocation(focusFallback = true) {
     const hash = window.location.hash.slice(1);
     setClinicReturn(null);
+    setWorkshopReturn(null);
     let focusId = "library-title";
     let restoredY: number | null = null;
-    if (hash === "clinic") {
+    if (hash === "workshop") {
+      const parsed = readWorkshopHistory(new URL(window.location.href));
+      setWorkshopLocation(parsed);
+      setRoute("workshop");
+      setPlaying(false);
+      const position = readWorkshopPosition(history.state, parsed.id);
+      focusId = position ? workshopFocusIds[position.focus] : "workshop-title";
+      if (position) restoredY = position.scrollY;
+    } else if (hash === "clinic") {
       const parsed = readClinicHistory(new URL(window.location.href));
       setClinicLocation(parsed);
       setRoute("clinic");
@@ -335,6 +408,7 @@ export function useStudyController() {
       const restored =
         parsed.kind === "valid" ? parsed.value : defaultLessonState(c);
       setClinicReturn(readClinicReturn(history.state, c.id));
+      setWorkshopReturn(readWorkshopReturn(history.state, c.id));
       focusId = "lesson-title";
       setSelected(c.id);
       setCourse(c.course);
@@ -547,6 +621,11 @@ export function useStudyController() {
   const filtered = (c: Concept) => matchesConcept(c, search);
 
   return {
+    workshopLocation,
+    workshopReturn,
+    openWorkshop,
+    openWorkshopLesson,
+    returnToWorkshop,
     clinicLocation,
     clinicReturn,
     openClinic,

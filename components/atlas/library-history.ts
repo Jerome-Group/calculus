@@ -39,6 +39,7 @@ export function libraryUrl(url: URL, course: CourseId, query: string): string {
   next.searchParams.delete("study");
   next.searchParams.delete("graph");
   next.searchParams.delete("clinic");
+  next.searchParams.delete("workshop");
   next.searchParams.set("library", JSON.stringify(value));
   return `${next.pathname}${next.search}${next.hash}`;
 }

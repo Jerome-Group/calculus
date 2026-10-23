@@ -63,6 +63,7 @@ export function lessonUrl(url: URL, id: string, state: LessonHistory): string {
   next.searchParams.delete("graph");
   next.searchParams.delete("library");
   next.searchParams.delete("clinic");
+  next.searchParams.delete("workshop");
   next.searchParams.set("study", JSON.stringify(state));
   return `${next.pathname}${next.search}${next.hash}`;
 }
@@ -74,6 +75,7 @@ export function routeUrl(url: URL, route: string): string {
   next.searchParams.delete("graph");
   next.searchParams.delete("library");
   next.searchParams.delete("clinic");
+  next.searchParams.delete("workshop");
   return `${next.pathname}${next.search}${next.hash}`;
 }
 
@@ -83,6 +85,7 @@ export function graphUrl(url: URL, graph: GraphSpec): string {
   next.searchParams.delete("study");
   next.searchParams.delete("library");
   next.searchParams.delete("clinic");
+  next.searchParams.delete("workshop");
   next.searchParams.set("graph", JSON.stringify({ version: 1, graph }));
   return `${next.pathname}${next.search}${next.hash}`;
 }

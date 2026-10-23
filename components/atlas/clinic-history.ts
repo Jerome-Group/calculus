@@ -46,7 +46,7 @@ export function readClinicHistory(url: URL): ClinicLocation {
 export function clinicUrl(url: URL, id: ClinicCaseId | null): string {
   const next = new URL(url);
   next.hash = "clinic";
-  for (const key of ["study", "graph", "library", "clinic"])
+  for (const key of ["study", "graph", "library", "clinic", "workshop"])
     next.searchParams.delete(key);
   if (id)
     next.searchParams.set("clinic", JSON.stringify({ version: 1, caseId: id }));
