@@ -880,14 +880,22 @@ export async function study(page, e) {
       await e.check(
         "Both retried choices appear once in account history",
         async () =>
-          visible(recovery.getByText(/2 saved account records loaded/)),
+          visible(
+            recovery.getByText("2 saved account records loaded.", {
+              exact: true,
+            }),
+          ),
       );
       await recovery.reload();
       await mode(recovery, "Revise");
       await e.check(
         "Reload retains both acknowledged choices once",
         async () => {
-          await visible(recovery.getByText(/2 saved account records loaded/));
+          await visible(
+            recovery.getByText("2 saved account records loaded.", {
+              exact: true,
+            }),
+          );
         },
       );
     },
