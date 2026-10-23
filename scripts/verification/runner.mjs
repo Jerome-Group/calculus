@@ -158,6 +158,8 @@ export function profileChecks(profile, testFiles, formatArgs, output) {
         "run",
         "--features",
         "all",
+        "--timeout-ms",
+        "360000",
         "--json",
         "--output",
         path.join(output, "browser"),
