@@ -30,7 +30,20 @@ export async function createSsrServer(options, registerAfter) {
   let teardownPromise;
   const teardown = () => (teardownPromise ??= closeAndRemove(vite, cacheDir));
   try {
-    vite = await createServer({ ...options, cacheDir });
+    vite = await createServer({
+      ...options,
+      cacheDir,
+      plugins: [
+        {
+          name: "retain-ssr-fixture-owner",
+          enforce: "pre",
+          configureServer(server) {
+            vite = server;
+          },
+        },
+        ...(options.plugins ?? []),
+      ],
+    });
     registerAfter(teardown);
     return vite;
   } catch (error) {

@@ -119,3 +119,43 @@ test("a rejected teardown registrar closes the real server and removes its cache
   assert.ok(closed, "Vite plugin teardown ran before rollback returned");
   await missing(cacheDir);
 });
+
+test("late Vite setup rejection closes its allocated watcher before removing the cache", async () => {
+  const failure = new Error("Late server setup rejected");
+  let allocated;
+  let closed = false;
+  try {
+    await assert.rejects(
+      createSsrServer(
+        {
+          ...options,
+          plugins: [
+            {
+              name: "reject-allocated-ssr-server",
+              configureServer(server) {
+                allocated = server;
+                throw failure;
+              },
+              closeServer() {
+                closed = true;
+              },
+            },
+          ],
+        },
+        () => assert.fail("Failed setup cannot register teardown"),
+      ),
+      (error) => error === failure,
+    );
+    assert.ok(allocated);
+    assert.equal(
+      closed,
+      true,
+      "Allocated server teardown ran before rejection",
+    );
+    assert.equal(allocated.watcher.closed, true);
+    assert.deepEqual(Object.keys(allocated.watcher.getWatched()), []);
+    await missing(allocated.config.cacheDir);
+  } finally {
+    if (allocated && !allocated.watcher.closed) await allocated.close();
+  }
+});
