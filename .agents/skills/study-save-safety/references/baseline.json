@@ -1,0 +1,894 @@
+{
+  "kind": "Historical failing baseline; retain after the product fix",
+  "issue": "https://github.com/Jerome-Group/calculus/issues/245",
+  "source": {
+    "syncCommit": "23d625fbd85e5ceec8b5d17647bdf3133bc54183",
+    "preserveRecovery": false,
+    "files": {
+      "lib/study/session.ts": "a9d92edfaf2cae4b94500059707332ac7b3eb0c83a942509ca89e45012579c2e",
+      "lib/study/model.ts": "7ee6be3e7e3a7b7f2d2ccd3a7d0bf56690dcdb4211a41623ef94facc8339c705",
+      "lib/study/server.ts": "3f115b1ac54d6af7c8082a78b241f9499ec356923e7ec882f015ce4ed7fdb8fe",
+      "components/atlas/study-records.tsx": "e5e716d02c73fcb2bcdb9244d3f52e0dff427b58a131474e492b674560021eb5"
+    },
+    "drift": []
+  },
+  "runtime": {
+    "node": "26.10.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "verification": {
+    "model/SaveQueue.tla": "1db4f266649ed4289530bd842b5ebe45888d08e40eb63fdab34f56ebabeebfd9",
+    "model/ReadGuards.tla": "342ac5fca5b17ce7cfa003c3925b9d90de4fe5efaf4396d6becf312baa6c165c",
+    "scripts/run.mjs": "cce312dbf78fd2eda35c7a5ba180b57cbbb0fd2a220bb7fe3d7df120759f6048",
+    "scripts/bridge.mjs": "da7d29dc8ce5b77f51d5fdae9de2271c6106b69e02a34ace0def3fe0259d9da9",
+    "scripts/toolchain.json": "738cdb78164528e97dbd33eb12692825a94e65f358ff45f1f2982a975c031411",
+    "source-lock.json": "46c8b4a5df7a35036b440b6222184271400bccc705f4b58b5259900d8a0b9f3b"
+  },
+  "toolchain": {
+    "tlc": {
+      "version": "1.8.0",
+      "url": "https://github.com/tlaplus/tlaplus/releases/download/v1.8.0/tla2tools.jar",
+      "sha256": "dae639a1f51a9e13ce60c369b15f32124cf1a78017aca366b6de0ae2b5169439"
+    },
+    "java": {
+      "version": "21.0.9+10",
+      "archive": [
+        "OpenJDK21U-jre_aarch64_mac_hotspot_21.0.9_10.tar.gz",
+        "1f7f6506b598e85d7d8ff8b36563d98657d2d81b16bfca3cd242d7906cfbd11b"
+      ],
+      "executable": "outputs/formal-save-safety/cache/temurin-darwin-arm64-21.0.9+10/Contents/Home/bin/java"
+    }
+  },
+  "outcome": "BUG",
+  "run": "outputs/formal-save-safety/run-2026-10-23T09-34-21.175Z-77450",
+  "summarySha256": "1c4fc6e69fb824d7165434e1c6be7136fe625c23202056633e710874bc68c91f",
+  "formal": [
+    {
+      "name": "queue-pass",
+      "model": "SaveQueue",
+      "properties": ["LatestEditRecoverable", "OnlyCurrentAcknowledged"],
+      "outcome": "PASS",
+      "generated": "115857",
+      "distinct": "37353",
+      "exitCode": 0,
+      "log": "outputs/formal-save-safety/run-2026-10-23T09-34-21.175Z-77450/queue-pass.log"
+    },
+    {
+      "name": "recovery-actionable",
+      "model": "SaveQueue",
+      "properties": ["RecoveryActionable"],
+      "outcome": "BUG",
+      "violated": "RecoveryActionable",
+      "generated": "993",
+      "distinct": "499",
+      "exitCode": 12,
+      "log": "outputs/formal-save-safety/run-2026-10-23T09-34-21.175Z-77450/recovery-actionable.log"
+    },
+    {
+      "name": "conflict-actionable",
+      "model": "SaveQueue",
+      "properties": ["ConflictActionable"],
+      "outcome": "BUG",
+      "violated": "ConflictActionable",
+      "generated": "3828",
+      "distinct": "1705",
+      "exitCode": 12,
+      "log": "outputs/formal-save-safety/run-2026-10-23T09-34-21.175Z-77450/conflict-actionable.log"
+    },
+    {
+      "name": "read-guards",
+      "model": "ReadGuards",
+      "properties": [
+        "EpochIsolation",
+        "LatestOverviewWins",
+        "ResponseOwnerIsolation"
+      ],
+      "outcome": "PASS",
+      "generated": "3749",
+      "distinct": "2035",
+      "exitCode": 0,
+      "log": "outputs/formal-save-safety/run-2026-10-23T09-34-21.175Z-77450/read-guards.log"
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "recovery-actionable",
+      "traceSha256": "7a3c26afb493cab8a3a35c2ad5a798deafb43e678db1d776b0d62f5fccc311b2",
+      "replayOutcome": "PASS",
+      "comparedStates": 8,
+      "states": [
+        {
+          "state": 1,
+          "assessment": {
+            "seq": 0,
+            "local": 0,
+            "pending": 0,
+            "flight": 0,
+            "confirmedRevision": 1,
+            "confirmedEdit": 0,
+            "persistence": "saved",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 1,
+            "edit": 0
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "unused"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 2,
+          "assessment": {
+            "seq": 1,
+            "local": 1,
+            "pending": 0,
+            "flight": 1,
+            "confirmedRevision": 1,
+            "confirmedEdit": 0,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 1,
+            "edit": 0
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "unused"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 3,
+          "assessment": {
+            "seq": 1,
+            "local": 1,
+            "pending": 0,
+            "flight": 1,
+            "confirmedRevision": 1,
+            "confirmedEdit": 0,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "unused"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 4,
+          "assessment": {
+            "seq": 1,
+            "local": 1,
+            "pending": 0,
+            "flight": 0,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saved",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 5,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 0,
+            "flight": 2,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 6,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 2,
+            "flight": 0,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "unsaved",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 7,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 2,
+            "flight": 0,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "unsaved",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 2,
+            "edit": 1,
+            "stage": "response"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 8,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 2,
+            "flight": 0,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 2,
+            "edit": 1,
+            "stage": "done"
+          },
+          "otherWriter": false
+        }
+      ]
+    },
+    {
+      "name": "conflict-actionable",
+      "traceSha256": "f708351c6f99866cbe37eee169f477ff02eb777c6c4968a630ad49ad5dfbd233",
+      "replayOutcome": "PASS",
+      "comparedStates": 10,
+      "states": [
+        {
+          "state": 1,
+          "assessment": {
+            "seq": 0,
+            "local": 0,
+            "pending": 0,
+            "flight": 0,
+            "confirmedRevision": 1,
+            "confirmedEdit": 0,
+            "persistence": "saved",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 1,
+            "edit": 0
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "unused"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 2,
+          "assessment": {
+            "seq": 1,
+            "local": 1,
+            "pending": 0,
+            "flight": 1,
+            "confirmedRevision": 1,
+            "confirmedEdit": 0,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 1,
+            "edit": 0
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "unused"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 3,
+          "assessment": {
+            "seq": 1,
+            "local": 1,
+            "pending": 0,
+            "flight": 1,
+            "confirmedRevision": 1,
+            "confirmedEdit": 0,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "unused"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 4,
+          "assessment": {
+            "seq": 1,
+            "local": 1,
+            "pending": 0,
+            "flight": 0,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saved",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 5,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 0,
+            "flight": 2,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 2,
+            "edit": 1
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": false
+        },
+        {
+          "state": 6,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 0,
+            "flight": 2,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 3,
+            "edit": 3
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": true
+        },
+        {
+          "state": 7,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 0,
+            "flight": 2,
+            "confirmedRevision": 2,
+            "confirmedEdit": 1,
+            "persistence": "saving",
+            "conflictHeld": false
+          },
+          "database": {
+            "revision": 3,
+            "edit": 3
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": true
+        },
+        {
+          "state": 8,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 2,
+            "flight": 0,
+            "confirmedRevision": 3,
+            "confirmedEdit": 3,
+            "persistence": "conflict",
+            "conflictHeld": true
+          },
+          "database": {
+            "revision": 3,
+            "edit": 3
+          },
+          "overview": {
+            "revision": 0,
+            "edit": 0,
+            "stage": "request"
+          },
+          "otherWriter": true
+        },
+        {
+          "state": 9,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 2,
+            "flight": 0,
+            "confirmedRevision": 3,
+            "confirmedEdit": 3,
+            "persistence": "conflict",
+            "conflictHeld": true
+          },
+          "database": {
+            "revision": 3,
+            "edit": 3
+          },
+          "overview": {
+            "revision": 3,
+            "edit": 3,
+            "stage": "response"
+          },
+          "otherWriter": true
+        },
+        {
+          "state": 10,
+          "assessment": {
+            "seq": 2,
+            "local": 2,
+            "pending": 2,
+            "flight": 0,
+            "confirmedRevision": 3,
+            "confirmedEdit": 3,
+            "persistence": "saving",
+            "conflictHeld": true
+          },
+          "database": {
+            "revision": 3,
+            "edit": 3
+          },
+          "overview": {
+            "revision": 3,
+            "edit": 3,
+            "stage": "done"
+          },
+          "otherWriter": true
+        }
+      ]
+    }
+  ],
+  "actualSchedules": [
+    {
+      "property": "RecoveryActionable",
+      "outcome": "BUG",
+      "expected": "unsaved",
+      "actual": "saving",
+      "trace": [
+        {
+          "action": "Init: hydrated revision 1",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-01T00:00:00.000Z"
+          },
+          "persistence": "saved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "Save(assessment); WriteFailure(assessment)",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-02T00:00:00.000Z"
+          },
+          "persistence": "unsaved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "Save(draft); ServerReply; WriteSuccess; CaptureOverview; DeliverOverview",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-02T00:00:00.000Z"
+          },
+          "persistence": "saving",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        }
+      ]
+    },
+    {
+      "property": "ConflictActionable",
+      "outcome": "BUG",
+      "expected": "conflict",
+      "actual": "saving",
+      "trace": [
+        {
+          "action": "OtherWriter: account revision 2",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-01T00:00:00.000Z"
+          },
+          "persistence": "saved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "Save(assessment); ServerReply(conflict); WriteConflict",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-02T00:00:00.000Z"
+          },
+          "persistence": "conflict",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "Save(draft); WriteSuccess; CaptureOverview; DeliverOverview",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-02T00:00:00.000Z"
+          },
+          "persistence": "saving",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        }
+      ]
+    },
+    {
+      "property": "LatestEditRecoverable",
+      "outcome": "PASS",
+      "trace": [
+        {
+          "action": "Save(draft); WriteFailure",
+          "value": {
+            "answer": "latest local work",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "unsaved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "Retry(draft); ServerReply; WriteSuccess",
+          "value": {
+            "answer": "latest local work",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0,
+          "outcome": "saved"
+        }
+      ]
+    },
+    {
+      "property": "OnlyCurrentAcknowledged",
+      "outcome": "PASS",
+      "trace": [
+        {
+          "action": "Save(first); ServerReply; Save(latest)",
+          "value": {
+            "answer": "latest",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saving",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "WriteSuccess(first); Drain(latest); ServerReply(latest) held",
+          "value": {
+            "answer": "latest",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saving",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0,
+          "firstOutcome": "superseded"
+        }
+      ]
+    },
+    {
+      "property": "EpochIsolation",
+      "outcome": "PASS",
+      "trace": [
+        {
+          "action": "IssueRead(A lesson); CaptureRead; hold response",
+          "value": {
+            "answer": "",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "loading",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "ChangeCookie; BeginValidate; IdentityResponse(B); hydrate B",
+          "value": {
+            "answer": "B private work",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saved",
+          "generation": 4,
+          "owner": "B",
+          "overviewChoices": 0
+        },
+        {
+          "action": "DeliverRead(old A lesson)",
+          "value": {
+            "answer": "B private work",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saved",
+          "generation": 4,
+          "owner": "B",
+          "overviewChoices": 0
+        }
+      ]
+    },
+    {
+      "property": "LatestOverviewWins",
+      "outcome": "PASS",
+      "trace": [
+        {
+          "action": "IssueRead(overview1); IssueRead(overview2); DeliverRead(overview2)",
+          "value": {
+            "answer": "second",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 9
+        },
+        {
+          "action": "DeliverRead(overview1)",
+          "value": {
+            "answer": "second",
+            "hintOpen": false,
+            "solutionOpen": false
+          },
+          "persistence": "saved",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 9
+        }
+      ]
+    },
+    {
+      "property": "ResponseOwnerIsolation",
+      "outcome": "PASS",
+      "trace": [
+        {
+          "action": "ChangeCookie(B), client still A",
+          "value": null,
+          "persistence": "loading",
+          "generation": 2,
+          "owner": "A",
+          "overviewChoices": 0
+        },
+        {
+          "action": "IssueRead(lesson, server B); CaptureRead; DeliverRead",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-03T00:00:00.000Z"
+          },
+          "persistence": "saved",
+          "generation": 5,
+          "owner": "B",
+          "overviewChoices": 0
+        }
+      ]
+    }
+  ],
+  "mutationControls": [
+    {
+      "name": "model-forget-failed-edit",
+      "property": "LatestEditRecoverable",
+      "outcome": "KILLED"
+    },
+    {
+      "name": "model-accept-older-ack",
+      "property": "OnlyCurrentAcknowledged",
+      "outcome": "KILLED"
+    },
+    {
+      "name": "model-ignore-epoch",
+      "property": "EpochIsolation",
+      "outcome": "KILLED"
+    },
+    {
+      "name": "model-ignore-overview-id",
+      "property": "LatestOverviewWins",
+      "outcome": "KILLED"
+    },
+    {
+      "name": "model-ignore-response-owner",
+      "property": "ResponseOwnerIsolation",
+      "outcome": "KILLED"
+    },
+    {
+      "name": "forget-failed-edit",
+      "property": "LatestEditRecoverable",
+      "outcome": "KILLED",
+      "sourceSha256": "7f507e6d35ee937909d996117bfbe9ae31787491c72a45a9e50cd167e2b3211a",
+      "expected": "saved",
+      "actual": "unsaved"
+    },
+    {
+      "name": "accept-older-ack",
+      "property": "OnlyCurrentAcknowledged",
+      "outcome": "KILLED",
+      "sourceSha256": "05a957ce644e633a7cb37f429c5992bbe1bc73145972e3a0250e1c59703866da",
+      "expected": "superseded",
+      "actual": "saved"
+    },
+    {
+      "name": "ignore-epoch",
+      "property": "EpochIsolation",
+      "outcome": "KILLED",
+      "sourceSha256": "e2f7713f4e34339464c0d29d064062caaeeac9347675f647e89c5db047ab45f4",
+      "expected": 4,
+      "actual": 7
+    },
+    {
+      "name": "ignore-overview-id",
+      "property": "LatestOverviewWins",
+      "outcome": "KILLED",
+      "sourceSha256": "c986940f61194cc6ba5da1db735d4e21fc89a4e40ed9be2984b88a932870b67f",
+      "expected": 9,
+      "actual": 7
+    },
+    {
+      "name": "ignore-response-owner",
+      "property": "ResponseOwnerIsolation",
+      "outcome": "KILLED",
+      "sourceSha256": "013a41b087f304c76df4c0f16434cfeb2ed59bd1b22c2faa05c992ca79ac5e96",
+      "expected": [],
+      "actual": [
+        {
+          "owner": "A",
+          "value": {
+            "status": "Needs practice",
+            "date": "2026-01-03T00:00:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "erase-unsaved-recovery",
+      "property": "RecoveryActionable",
+      "outcome": "KILLED",
+      "sourceSha256": "a96de74bce303f40b38f408ba790aef5b48784a044bc5f2d813d35061a5c8c44",
+      "expected": "unsaved",
+      "actual": "saved"
+    },
+    {
+      "name": "erase-conflict-recovery",
+      "property": "ConflictActionable",
+      "outcome": "KILLED",
+      "sourceSha256": "a96de74bce303f40b38f408ba790aef5b48784a044bc5f2d813d35061a5c8c44",
+      "expected": "conflict",
+      "actual": "saved"
+    }
+  ],
+  "restored": {
+    "sourceUnchanged": true,
+    "receipt": "outputs/formal-save-safety/run-2026-10-23T09-34-21.175Z-77450/actual-restored.json",
+    "outcomes": [
+      {
+        "property": "RecoveryActionable",
+        "outcome": "BUG"
+      },
+      {
+        "property": "ConflictActionable",
+        "outcome": "BUG"
+      },
+      {
+        "property": "LatestEditRecoverable",
+        "outcome": "PASS"
+      },
+      {
+        "property": "OnlyCurrentAcknowledged",
+        "outcome": "PASS"
+      },
+      {
+        "property": "EpochIsolation",
+        "outcome": "PASS"
+      },
+      {
+        "property": "LatestOverviewWins",
+        "outcome": "PASS"
+      },
+      {
+        "property": "ResponseOwnerIsolation",
+        "outcome": "PASS"
+      }
+    ]
+  }
+}

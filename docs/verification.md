@@ -50,6 +50,15 @@ missing renderer chunks and timeout cases belong in isolated local environments.
 
 ## Limits
 
+The [study-save safety skill](../.agents/skills/study-save-safety/SKILL.md) checks finite
+TLA+ models of pending writes and account reads. Run `npm run verify:study-safety`.
+Pinned portable tools bootstrap into ignored outputs. Covered-source drift blocks a pass.
+Model and real-source mutation controls must fail for their named property; the original
+source must still pass afterward. The existing required CI `checks` job runs the safety
+command before its application checks. An unsuccessful safety command fails that job.
+Its finite bounds and source correspondence exclude a proof of all TypeScript execution,
+SQL isolation, provider authentication, and unbounded requests.
+
 Strict KaTeX rendering checks every existing lesson's mathematical strings. Analytic tests
 check path dependence, normalized differentiability error, saddle sections, parametrization
 and integral/Jacobian identities. Renderer, curve parser, history and source tests exercise
