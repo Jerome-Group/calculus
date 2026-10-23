@@ -1,6 +1,6 @@
 # Source correspondence and bounds
 
-Reviewed at `6efcf0afafebfae78fabb0a93aa08aeb52367d87`. Line numbers below name that source snapshot. Function names and the source lock are authoritative after lines move.
+Reviewed at merged source `935db25f263c2195da917db9b48eb2aeed382823`. Its four covered files are byte-identical to the reviewed product fix `6efcf0afafebfae78fabb0a93aa08aeb52367d87`. Line numbers below name that unchanged source snapshot. Function names and the source lock are authoritative after lines move.
 
 Maintenance reviewed every covered-file change after `23d625fbd85e5ceec8b5d17647bdf3133bc54183`. Commit `43c8e6e2343a2dedbeebc6793fd1d36d8dc3c90e` updates dependencies and changes no covered file. Commit `6efcf0afafebfae78fabb0a93aa08aeb52367d87` adds the two-state guard in `install`, lines 279–283. Its regression tests require an unchanged overview to preserve `unsaved` and `conflict` until an explicit choice. No covered function moved, and no new writer of modeled fields appeared. The promises and bounds are unchanged.
 

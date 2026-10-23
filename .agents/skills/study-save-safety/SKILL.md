@@ -15,13 +15,13 @@ The command installs the pinned portable JRE and TLC into ignored `outputs/forma
 
 Read `outputs/formal-save-safety/latest-run.txt` for the unique run directory. Keep its `summary.json`, TLC logs and JSON traces, real-code receipts, and mutant source files together. Exit codes are `0` for all properties passing, `1` for a reproduced product bug, and `2` for drift, a modeling error, a surviving mutation, or a tool failure. Expected mutant failures print `KILLED`.
 
-Last reviewed source commit: `6efcf0afafebfae78fabb0a93aa08aeb52367d87`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
+Last reviewed source commit: `935db25f263c2195da917db9b48eb2aeed382823`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
 
 ## Read the result
 
 At that commit, the maintained outcome is **PASS** for all seven properties. The unchanged-revision branch of `install` preserves both `unsaved` and `conflict`. The full run kills seven model controls and seven real-source mutations, then confirms all seven properties still pass on the untouched source. This is the bounded claim below, subject to its assumptions.
 
-The historical baseline at `23d625fbd85e5ceec8b5d17647bdf3133bc54183` is **BUG**, tracked in [issue #245](https://github.com/Jerome-Group/calculus/issues/245). Failed assessment work stays in memory, but an unchanged overview changes `unsaved` to `saving` without starting a request. Retry disappears because `StudySaveStatus` renders it only for `unsaved`. The same branch changes an existing `conflict` to `saving`, which hides comparison and resolution controls. Commit `6efcf0a` fixes that branch without changing the promises.
+The historical baseline at `23d625fbd85e5ceec8b5d17647bdf3133bc54183` is **BUG**, tracked in [issue #245](https://github.com/Jerome-Group/calculus/issues/245). Failed assessment work stays in memory, but an unchanged overview changes `unsaved` to `saving` without starting a request. Retry disappears because `StudySaveStatus` renders it only for `unsaved`. The same branch changes an existing `conflict` to `saving`, which hides comparison and resolution controls. [PR #249](https://github.com/Jerome-Group/calculus/pull/249), merged as `935db25`, fixes that branch without changing the promises.
 
 The faulty unchanged-revision assignment originated in `b10389218fcee321d1e120efdd66f71b88315cd2`, "Persist personal study by ChatGPT account (#213)". `git blame` attributes the pending branch and its `else value.persistence = saving` to that commit.
 
