@@ -383,14 +383,11 @@ export async function study(page, e) {
                 exact: true,
               }),
             );
-            assert.equal(
-              await exercise
-                .getByRole("button", {
-                  name: "I can explain it independently",
-                  exact: true,
-                })
-                .getAttribute("aria-pressed"),
-              "true",
+            await visible(
+              exercise.getByText(
+                "Can explain independently. This is your self-assessment, not an automatic grade.",
+                { exact: true },
+              ),
             );
           },
         );
@@ -404,14 +401,11 @@ export async function study(page, e) {
         await e.check(
           "Explicit retry acknowledges the intended assessment and survives reload",
           async () => {
-            assert.equal(
-              await exercise
-                .getByRole("button", {
-                  name: "I can explain it independently",
-                  exact: true,
-                })
-                .getAttribute("aria-pressed"),
-              "true",
+            await visible(
+              exercise.getByText(
+                "Can explain independently. This is your self-assessment, not an automatic grade.",
+                { exact: true },
+              ),
             );
             assert.equal(
               await exercise.getByRole("textbox").inputValue(),
