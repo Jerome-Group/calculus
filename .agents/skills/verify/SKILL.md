@@ -18,7 +18,7 @@ Every run cleans up its instance automatically.
 Use `npm run agent -- browser run --features all --output outputs/browser/full` for the complete maintained map.
 Select distinct IDs with `--features library,lessons`.
 Runs default to 240 seconds. `--timeout-ms` accepts 1 through 540000 milliseconds.
-The CI profile explicitly gives its complete seven-feature browser gate 360 seconds. The enclosing CI stage allows 390 seconds, the application profile retains its nine-minute overall limit, and the job retains its ten-minute limit for installation, formal checks and application verification. Individual action waits, assertions and cleanup remain unchanged. These are configured bounds, not a promise that future expanded coverage will fit.
+The CI profile explicitly gives its complete seven-feature browser gate 360 seconds. The enclosing CI stage allows 390 seconds, the application profile retains its nine-minute overall limit, and application and formal verification run independently in parallel under ten-minute job limits. Required `checks` always runs and succeeds only when both jobs succeed. Individual action waits, assertions and cleanup remain unchanged. These are configured bounds, not a promise that future expanded coverage will fit.
 
 ## Doctor
 
