@@ -119,11 +119,7 @@ export async function lessons(page, e) {
       await focusedDestination(page, "notes-example");
       const interrupted = page.url();
       const before = new URL(interrupted).hash;
-      await page
-        .getByRole("navigation", { name: "Lesson prerequisites", exact: true })
-        .getByRole("button")
-        .first()
-        .click();
+      await openPrerequisite(page);
       assert.notEqual(new URL(page.url()).hash, before);
       await page
         .getByRole("button", {
@@ -170,14 +166,7 @@ export async function lessons(page, e) {
         "Prerequisite return restores the interrupted lesson",
         async () => assert.equal(new URL(page.url()).hash, before),
       );
-      await page
-        .getByText("Need a prerequisite refresher?", { exact: true })
-        .click();
-      await page
-        .locator(".lesson-readiness")
-        .getByRole("button")
-        .first()
-        .click();
+      await openPrerequisite(page);
       await page
         .getByRole("button", {
           name: "Return to interrupted step",
@@ -273,25 +262,24 @@ export async function lessons(page, e) {
   );
   await e.step("Exercise pilot reading and revision entry points", async () => {
     await lesson(page, e, "epsilon-delta-one-variable");
-    await page
-      .getByRole("navigation", { name: "Lesson prerequisites", exact: true })
-      .getByRole("button")
-      .first()
-      .click();
+    await openPrerequisite(page);
     await page
       .getByRole("button", { name: "Return to interrupted step", exact: true })
       .click();
     await e.check(
-      "Pilot prerequisite returns to the interrupted guided lesson",
+      "Pilot prerequisite returns to canonical Learn and its preparation",
       async () => {
         assert.equal(new URL(page.url()).hash, "#epsilon-delta-one-variable");
         await visible(
-          page.getByRole("region", { name: "Guided lesson", exact: true }),
+          page.getByRole("region", { name: "Lesson preparation", exact: true }),
         );
       },
     );
     await visible(
-      page.getByRole("region", { name: "Guided lesson", exact: true }),
+      page.getByRole("region", {
+        name: "Mathematical explanation",
+        exact: true,
+      }),
     );
     await mode(page, "Explore");
     await visible(
@@ -332,6 +320,13 @@ export async function lessons(page, e) {
       );
     },
   );
+}
+
+async function openPrerequisite(page) {
+  const readiness = page.locator(".lesson-readiness");
+  if ((await readiness.getAttribute("open")) === null)
+    await readiness.locator("summary").click();
+  await readiness.getByRole("button").first().click();
 }
 
 async function focusedDestination(page, id) {

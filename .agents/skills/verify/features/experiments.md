@@ -24,7 +24,7 @@ It checks ray witnesses, the inconclusive Hessian case, singular clock speed, an
 It checks open and closed boundaries, reversed normals, and singular fields in both cap-decision entry points.
 It waits for account hydration, proves an exact review control changed independently, waits for its visible save acknowledgement, reloads and waits for hydration before comparing the saved value. It also drives a polar-region control.
 It switches pilot Diagram and Values only views and checks valid and invalid algebraic tolerance choices. Horizontal slices at y=0 and y=2 must agree between diagram geometry and the exact values table, with x bounds 0 to 2 and 0 to 0 respectively.
-It checks disabled animation under reduced motion and page width at 390px.
+Values only and Minimise must stop active playback and hold the shared parameter. Switching to Practice during playback must commit that mode and restore it after reload. Enabling reduced motion during playback must stop it and disable animation. It also checks page width at 390px.
 A new context blocks the actual deferred viewport chunk. Definition and reasoning must remain readable, and Reload to retry drawing must restore the scene.
 Finally it selects Constant-height circle, reloads, and requires the same model.
 
@@ -32,5 +32,5 @@ Finally it selects Constant-height circle, reloads, and requires the same model.
 
 Inline reload requires the migrated local D1 and explicit local account fixture; hosted sign-in remains a separate check.
 Regression #195 requires Constant-height circle to remain selected after reload.
-The request failure is an explicit local injection. The driver records its errors separately and rejects unrelated runtime errors.
+The request failure is scoped to its owned context and exact chunk URL. The driver records its errors separately and rejects unrelated runtime errors, including generic dynamic-import errors without the owned URL.
 Comparisons illustrate sampled geometry; exact mathematical claims remain covered by focused model tests.

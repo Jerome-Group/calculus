@@ -1,5 +1,11 @@
 import assert from "node:assert/strict";
-import { visible, noOverflow, ready, mathematics } from "./controls.mjs";
+import {
+  visible,
+  noOverflow,
+  ready,
+  mathematics,
+  nestedPrerequisiteReturn,
+} from "./controls.mjs";
 
 const cases = [
   ["rolle-corner", "corner-breaks-hypothesis", "smooth-rolle"],
@@ -97,6 +103,7 @@ export async function clinic(page, e) {
           );
         },
       );
+      await nestedPrerequisiteReturn(page, e, "Return to Clinic case");
       await page
         .getByRole("button", { name: "Return to Clinic case", exact: true })
         .click();

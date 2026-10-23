@@ -48,7 +48,10 @@ export function parseBrowserArgs(args) {
   return { command, options };
 }
 
-async function runBrowser(options) {
+export async function runBrowser(
+  options,
+  selected = selectFeatures(options.features),
+) {
   const startedAt = new Date().toISOString();
   const output = await evidenceDirectory(
     root,
@@ -136,7 +139,7 @@ async function runBrowser(options) {
       handleSIGTERM: false,
     });
     report.environment.browser = browser.version();
-    for (const feature of selectFeatures(options.features)) {
+    for (const feature of selected) {
       controller.signal.throwIfAborted();
       activeEvidence = await featureEvidence(
         browser,
@@ -204,7 +207,7 @@ async function runBrowser(options) {
       !report.workerCleanupError &&
       !report.cleanup?.errors?.length &&
       !report.sourceChanged &&
-      report.features.length === selectFeatures(options.features).length &&
+      report.features.length === selected.length &&
       report.features.every((feature) => feature.status === "passed") &&
       report.liveDoctor?.status === "passed" &&
       report.cleanup?.processExited &&

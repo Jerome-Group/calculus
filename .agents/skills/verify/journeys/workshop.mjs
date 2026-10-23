@@ -1,5 +1,11 @@
 import assert from "node:assert/strict";
-import { ready, visible, noOverflow, mathematics } from "./controls.mjs";
+import {
+  ready,
+  visible,
+  noOverflow,
+  mathematics,
+  nestedPrerequisiteReturn,
+} from "./controls.mjs";
 
 const submit = (page) =>
   page.getByRole("button", { name: "Check construction", exact: true }).click();
@@ -198,6 +204,28 @@ export async function workshop(page, e) {
           assert.match(
             await page.locator(".workshop-history > summary").innerText(),
             /\(2\)/,
+          );
+        },
+      );
+      const report = await result(page).innerText();
+      await page
+        .locator(".workshop-continuation")
+        .getByRole("button")
+        .first()
+        .click();
+      await visible(page.locator("#lesson-title"));
+      await nestedPrerequisiteReturn(page, e, "Return to Proof workshop");
+      await page
+        .getByRole("button", { name: "Return to Proof workshop", exact: true })
+        .click();
+      await focused(page, "workshop-result");
+      await e.check(
+        "Nested prerequisites preserve the exact workshop report and explanation",
+        async () => {
+          assert.equal(await result(page).innerText(), report);
+          assert.equal(
+            await page.locator(".workshop-original").innerText(),
+            "My second construction uses 3x²+y² ≤ 3r².",
           );
         },
       );

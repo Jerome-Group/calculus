@@ -14,6 +14,7 @@ Run `npm run agent -- browser run --features workshop --output outputs/browser/w
 The journey submits constructions through labeled native controls and checks invalid-field and result focus. It checks the C=3 certificate, wrong-map and too-small-bound distinctions, a nondecisive parabola, a tiny nonzero cubic coefficient, loop reversal, singular-edge refusal, and zero winding. Changing C, the path exponent and coefficient, and traversal order must change finite SVG geometry. KaTeX, MathML, and text equivalents accompany the proofs and numerical illustrations.
 
 The journey preserves each initial explanation with its construction, report, and revisions. It hides stale current results during reconstruction, inspects older attempts, switches investigations, and follows lessons with return, Back, and Forward. At 320px, it uses the keyboard, checks page overflow at 200 percent CSS zoom and reduced motion, and opens the sidebar. It also checks direct lesson entry, selection-only links, invalid-link recovery, reload reset, and the absence of workshop account writes.
+Two nested prerequisite detours must retain the first interrupted lesson, its exact URL, and the workshop continuation through Back and Forward. Returning must restore the same report, explanation, and result focus.
 
 ## Gotchas
 

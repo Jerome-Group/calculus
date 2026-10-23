@@ -45,6 +45,7 @@ Read DOM state only to observe results. Reproduce a bug through the same user pa
 
 Each output directory retains `report.json`, build and Worker logs, and one directory per attempted feature.
 Each feature retains `events.jsonl`, `result.json`, screenshots, complete DOM snapshots, and Playwright traces.
+Journeys release completed auxiliary pages with `e.releasePage(page, label)`. It captures that page's final checkpoint, retains its context trace, and closes only that owned context. Later checkpoints capture active pages; `finish` retains and closes the remaining contexts.
 Actions precede their results in the event log. Assertions record observed outcomes and failures.
 Reports include URL, viewport, browser version, console messages, runtime errors, request failures, HTTP errors, Git revision, source fingerprint, and dirty state.
 
@@ -56,6 +57,7 @@ The browser run builds its own Worker, so its build log and source identity refe
 Storage denial, post-gateway identity headers on the owned loopback Worker, legacy-device context input, an offline network, a scoped study-service503 outage and a deferred-chunk request failure are explicit local fixtures.
 Account conflicts use real concurrent D1 writes. Expected anonymous identity401, conflict409 and injected service503 responses remain recorded and scoped to their context or action.
 Reports identify their expected errors separately. Other browser errors fail the feature.
+Drawing failures require the declared page's owned context and exact chunk URL. Generic dynamic-import text alone is unexpected.
 Source-link destinations are inspected without requesting private Drive files.
 Local Chromium proof establishes neither hosted sign-in nor learner usability or mastery.
 `browser-evidence --input` remains a shape-and-revision validator for supplied observations. It does not execute this driver.
@@ -71,6 +73,8 @@ If a run fails, retain its directory and use a new output directory for the next
 
 The executable entry point is `node .agents/skills/verify/cli.mjs list`, `doctor`, or `run`.
 Run `node .agents/skills/verify/probe-interruption.mjs --output outputs/browser/interruption` to check real CLI SIGINT evidence and cleanup in a new directory.
+Run `node .agents/skills/verify/probe-harness.mjs` for Node controls covering error ownership, page release, interruption, and axes-only graph rejection. These controls use fixtures; live browser reproof is required for harness changes.
+Run `node .agents/skills/verify/canonical-routes.mjs --output outputs/browser/canonical-routes` for all 125 actual Learn routes and both pilots' Practice, Explore, and Revise entry points. This optional sweep uses the same build, source identity, doctor, error checks, evidence, and cleanup as `browser run`. It defaults to 540 seconds and remains outside the 240-second CI browser gate. Retain failures and use a new output directory for each attempt.
 `npm run agent -- browser ...` delegates to that same implementation.
 Open a retained trace with `npx playwright show-trace outputs/browser/full/library/trace-1.zip`.
 Use the installed `maintain-verification-skill` workflow when app entry points change, then regenerate the compact map with `npm run agent -- map`.
