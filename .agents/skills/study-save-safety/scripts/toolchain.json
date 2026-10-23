@@ -2,7 +2,7 @@
   "tlc": {
     "version": "1.8.0",
     "url": "https://github.com/tlaplus/tlaplus/releases/download/v1.8.0/tla2tools.jar",
-    "sha256": "dae639a1f51a9e13ce60c369b15f32124cf1a78017aca366b6de0ae2b5169439"
+    "sha256": "d4a12081bb7acd49d6d6158e818d8d69f8eb3f9a1f140cb39d20d50c4ce77f44"
   },
   "java": {
     "version": "21.0.9+10",
