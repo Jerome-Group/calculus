@@ -7,6 +7,10 @@ import path from "node:path";
 import test from "node:test";
 import { featureEvidence } from "./evidence.mjs";
 import { graphObservation } from "./journeys/graph-observation.mjs";
+import {
+  assertResumeMutations,
+  mutationReceipts,
+} from "./journeys/resume-mutations.mjs";
 
 class Page extends EventEmitter {
   closed = false;
@@ -199,5 +203,123 @@ test("Axes and stale or empty status cannot prove a plotted graph", () => {
   } finally {
     globalThis.document = priorDocument;
     globalThis.window = priorWindow;
+  }
+});
+
+const studyUrl = "http://127.0.0.1:1234";
+const prerequisites = [
+  "partial-derivatives-as-slices",
+  "derivative-definition",
+];
+const resumeReceipts = () =>
+  prerequisites.map((lessonId, index) => ({
+    method: "POST",
+    url: `${studyUrl}/api/study`,
+    command: {
+      operation: "write",
+      expectedOwner: "verification-a",
+      key: { kind: "resume" },
+      value: { lessonId },
+      mutationId: `resume-control-${index}`,
+      baseRevision: index,
+    },
+    status: 200,
+    receipt: {
+      user: { id: "verification-a" },
+      record: {
+        key: "resume",
+        mutationId: `resume-control-${index}`,
+        value: { lessonId },
+      },
+    },
+  }));
+
+test("The mutation boundary preserves exact commands and resume acknowledgements", async () => {
+  const receipts = resumeReceipts();
+  const requests = receipts.map((entry) => ({
+    method: () => entry.method,
+    url: () => entry.url,
+    postData: () => JSON.stringify(entry.command),
+    response: async () => ({
+      status: () => entry.status,
+      text: async () => JSON.stringify(entry.receipt),
+    }),
+  }));
+  const observed = await mutationReceipts(requests);
+  assert.deepEqual(observed, receipts);
+  assertResumeMutations(observed, studyUrl, prerequisites);
+});
+
+test("Extra, other-endpoint and workspace-answer mutations cannot pass as prerequisite resume updates", () => {
+  const extra = resumeReceipts();
+  extra.push(structuredClone(extra[0]));
+  assert.throws(
+    () => assertResumeMutations(extra, studyUrl, prerequisites),
+    /Only the expected prerequisite mutations occurred/,
+  );
+  const endpoint = resumeReceipts();
+  endpoint[0].url = `${studyUrl}/api/other`;
+  assert.throws(
+    () => assertResumeMutations(endpoint, studyUrl, prerequisites),
+    /Only the owned study endpoint/,
+  );
+  const answer = resumeReceipts();
+  answer[0].command.key = {
+    kind: "practice-draft",
+    lessonId: prerequisites[0],
+    exerciseId: "core",
+  };
+  assert.throws(
+    () => assertResumeMutations(answer, studyUrl, prerequisites),
+    /Prerequisites never save workspace answers/,
+  );
+});
+
+test("Unacknowledged and different-record resume receipts fail their precise assertions", () => {
+  for (const [mutate, expected] of [
+    [
+      (entry) => {
+        entry.status = null;
+        entry.receipt = null;
+      },
+      /successful acknowledgement/,
+    ],
+    [
+      (entry) => {
+        entry.status = 503;
+      },
+      /successful acknowledgement/,
+    ],
+    [
+      (entry) => {
+        entry.receipt.user.id = "another-account";
+      },
+      /belongs to the current account/,
+    ],
+    [
+      (entry) => {
+        entry.receipt.record.key = "practice-draft:unexpected:core";
+      },
+      /names the resume record/,
+    ],
+    [
+      (entry) => {
+        entry.receipt.record.mutationId = "unrelated-mutation";
+      },
+      /matches the submitted mutation/,
+    ],
+    [
+      (entry) => {
+        entry.receipt.record.value.lessonId = "another-lesson";
+      },
+      /preserves the exact resume value/,
+    ],
+  ]) {
+    const receipts = resumeReceipts();
+    mutate(receipts[0]);
+    assert.throws(
+      () => assertResumeMutations(receipts, studyUrl, prerequisites),
+      expected,
+    );
   }
 });

@@ -1,5 +1,9 @@
 import assert from "node:assert/strict";
 import {
+  assertResumeMutations,
+  mutationReceipts,
+} from "./resume-mutations.mjs";
+import {
   ready,
   visible,
   noOverflow,
@@ -44,9 +48,10 @@ const firstExplanation =
 
 export async function workshop(page, e) {
   const writes = [];
+  let prerequisiteWrites;
   page.on("request", (request) => {
-    if (request.url().includes("/api/study") && request.method() !== "GET")
-      writes.push({ method: request.method(), url: request.url() });
+    if (!["GET", "HEAD", "OPTIONS"].includes(request.method()))
+      writes.push(request);
   });
   await e.step(
     "Enter the workshop and recover invalid rational input through the keyboard",
@@ -214,7 +219,21 @@ export async function workshop(page, e) {
         .first()
         .click();
       await visible(page.locator("#lesson-title"));
+      await e.check(
+        "Workshop constructions and recovery produce no mutations before prerequisite navigation",
+        async () => assert.equal(writes.length, 0),
+      );
       await nestedPrerequisiteReturn(page, e, "Return to Proof workshop");
+      prerequisiteWrites = [...writes];
+      await e.check(
+        "Only the two workshop prerequisites update and acknowledge their resume pointers",
+        async () =>
+          assertResumeMutations(
+            await mutationReceipts(prerequisiteWrites),
+            e.url,
+            ["partial-derivatives-as-slices", "derivative-definition"],
+          ),
+      );
       await page
         .getByRole("button", { name: "Return to Proof workshop", exact: true })
         .click();
@@ -491,8 +510,15 @@ export async function workshop(page, e) {
         );
       }
       await e.check(
-        "All workshop-only actions and continuation navigation produced no account writes",
-        async () => assert.deepEqual(writes, []),
+        "Workshop constructions, explanations and continuation add no mutations outside the prerequisite phase",
+        async () => {
+          assert.equal(writes.length, prerequisiteWrites.length);
+          assert.ok(
+            writes.every(
+              (request, index) => request === prerequisiteWrites[index],
+            ),
+          );
+        },
       );
     },
   );
