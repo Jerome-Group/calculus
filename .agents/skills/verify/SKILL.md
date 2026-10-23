@@ -66,6 +66,9 @@ Local Chromium proof establishes neither hosted sign-in nor learner usability or
 
 Success, assertion failure, timeout, SIGINT, and SIGTERM close owned browser contexts and the owned Worker process group.
 The helper removes its temporary state. It never stops an existing server or kills by process name.
+Worker cleanup sends SIGTERM, escalates at 1500 ms, and sends its final owned-group SIGKILL by 2000 ms.
+It reserves the remaining 500 ms of its 2500 ms close budget to observe closure after that final signal.
+Signal failures remain in `cleanup.errors`; an unobserved exit remains `cleanup.processExited: false`.
 Evidence stays at `--output`; inspect `cleanup.processExited`, `cleanup.portClosed`, and `cleanup.scratchRemoved` in the report.
 If a run fails, retain its directory and use a new output directory for the next attempt.
 
