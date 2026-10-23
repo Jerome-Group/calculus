@@ -20,7 +20,7 @@ const vite = await createServer({
   configFile: false,
   root,
   resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
+  server: { middlewareMode: true, hmr: false, ws: false },
 });
 after(async () => vite.close());
 const sourceId = "MH1101_Chapter_05_Notes";

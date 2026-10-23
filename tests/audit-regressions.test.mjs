@@ -10,7 +10,7 @@ const vite = await createServer({
   appType: "custom",
   configFile: false,
   root,
-  server: { middlewareMode: true, hmr: false },
+  server: { middlewareMode: true, hmr: false, ws: false },
 });
 after(() => vite.close());
 const { buildGraph } = await vite.ssrLoadModule("/lib/atlas/geometry.ts");

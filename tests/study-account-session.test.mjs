@@ -10,7 +10,7 @@ const vite = await createServer({
   configFile: false,
   root,
   resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
+  server: { middlewareMode: true, hmr: false, ws: false },
 });
 const { createStudySession } = await vite.ssrLoadModule(
   "/lib/study/session.ts",

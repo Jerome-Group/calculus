@@ -9,7 +9,7 @@ const vite = await createServer({
   configFile: false,
   root,
   resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
+  server: { middlewareMode: true, hmr: false, ws: false },
 });
 after(() => vite.close());
 const { libraryUrl, readLibraryHistory } = await vite.ssrLoadModule(
