@@ -101,16 +101,38 @@ export async function study(page, e) {
       await task
         .getByRole("button", { name: "Show hint", exact: true })
         .click();
-      await task
-        .getByRole("button", { name: "Check answer", exact: true })
-        .click();
+      await e.check(
+        "The wrong pilot choice receives its own immutable acknowledgement",
+        async () => {
+          const attempt = await acknowledgeChoice(page, task, () =>
+            task
+              .getByRole("button", { name: "Check answer", exact: true })
+              .click(),
+          );
+          assert.equal(attempt.correct, false);
+        },
+      );
       await visible(task.getByRole("status").filter({ hasText: /Try again/ }));
+      await saved(task);
       await task.getByRole("radio").first().check();
-      await task
-        .getByRole("button", { name: "Check answer", exact: true })
-        .click();
+      await e.check(
+        "The correct pilot choice receives its separate immutable acknowledgement",
+        async () => {
+          const attempt = await acknowledgeChoice(page, task, () =>
+            task
+              .getByRole("button", { name: "Check answer", exact: true })
+              .click(),
+          );
+          assert.equal(attempt.correct, true);
+        },
+      );
       await visible(
         task.getByRole("status").filter({ hasText: /Choice correct/ }),
+      );
+      await visible(
+        task
+          .getByRole("status")
+          .filter({ hasText: "Choice record: Saved to your account." }),
       );
       await saved(task);
       await page.reload();
@@ -700,7 +722,7 @@ export async function study(page, e) {
         await task
           .getByRole("button", { name: "Check answer", exact: true })
           .click();
-        await response;
+        assert.equal((await response).status(), 503);
         await visible(retry.nth(index));
       }
       await e.check(
@@ -709,8 +731,12 @@ export async function study(page, e) {
       );
       await recovery.unroute("**/api/study");
       failure.active = false;
+      const retried = [];
       for (let remaining = 2; remaining > 0; remaining--) {
-        await retry.first().click();
+        const attempt = await acknowledgeChoice(recovery, task, () =>
+          retry.first().click(),
+        );
+        retried.push(attempt.id);
         await recovery.waitForFunction(
           (expected) =>
             Array.from(document.querySelectorAll(".pilot-task button")).filter(
@@ -728,6 +754,7 @@ export async function study(page, e) {
       await e.check(
         "Acknowledged choices leave one receipt and no unsaved work",
         async () => {
+          assert.equal(new Set(retried).size, 2);
           assert.equal(
             await task
               .getByRole("status")
@@ -804,6 +831,35 @@ export async function study(page, e) {
       );
     },
   );
+}
+
+async function acknowledgeChoice(page, task, action) {
+  await visible(task);
+  const submitted = page.waitForRequest((request) => {
+    if (
+      new URL(request.url()).pathname !== "/api/study" ||
+      request.method() !== "POST"
+    )
+      return false;
+    const command = request.postDataJSON();
+    return (
+      command?.operation === "attempt" &&
+      command.attempt?.lessonId === "epsilon-delta-one-variable" &&
+      command.attempt?.taskId === "quantifiers"
+    );
+  });
+  await action();
+  const request = await submitted;
+  const acknowledgement = await request.response();
+  assert.ok(acknowledgement, "The submitted choice receives a response");
+  assert.equal(acknowledgement.status(), 200);
+  const input = request.postDataJSON().attempt;
+  const { record } = await acknowledgement.json();
+  assert.equal(record.key, `attempt:${input.id}`);
+  assert.equal(record.mutationId, input.id);
+  for (const [key, value] of Object.entries(input))
+    assert.equal(record.value[key], value);
+  return record.value;
 }
 
 async function saved(region, index = 0) {

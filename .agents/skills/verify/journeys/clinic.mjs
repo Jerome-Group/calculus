@@ -308,6 +308,9 @@ export async function clinic(page, e) {
       await page.locator(".clinic-case-cards > button").first().focus();
       await page.keyboard.press("Enter");
       await visible(page.locator("#clinic-case-title"));
+      await page.waitForFunction(
+        () => document.activeElement?.id === "clinic-case-title",
+      );
       const first = choice(page, "decision", "endpoints-suffice");
       await first.focus();
       await page.keyboard.press("ArrowDown");

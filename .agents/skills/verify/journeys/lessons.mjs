@@ -13,8 +13,33 @@ export async function lessons(page, e) {
         await lesson(page, e, id);
         for (const name of ["Learn", "Explore", "Practice", "Revise"]) {
           await mode(page, name);
-          await e.check(`${id} ${name} has mathematical content`, async () =>
-            mathematics(page),
+          await e.check(
+            `${id} ${name} has its mathematical content`,
+            async () => {
+              const content =
+                name === "Practice"
+                  ? page.locator(".lesson-practice").first()
+                  : page.getByRole("region", {
+                      name: {
+                        Learn: "Mathematical explanation",
+                        Explore: "Visualisation",
+                        Revise: "Revision summary",
+                      }[name],
+                      exact: true,
+                    });
+              await mathematics(page, content);
+              if (name === "Practice") {
+                assert.ok(
+                  (await content.locator("p").first().innerText()).trim(),
+                );
+                await visible(
+                  content.getByRole("textbox", {
+                    name: "Your reasoning",
+                    exact: true,
+                  }),
+                );
+              }
+            },
           );
         }
       }
@@ -29,14 +54,18 @@ export async function lessons(page, e) {
         name: "Follow the argument",
         exact: true,
       });
-      for (const name of [
-        "Definition & assumptions",
-        "Experiment",
-        "Reasoning",
-        "Worked application",
-        "Key distinction",
-      ])
+      for (const [name, destination] of [
+        ["Definition & assumptions", "lesson-definition"],
+        ["Experiment", "lesson-experiment"],
+        ["Reasoning", "notes-intuition"],
+        ["Worked application", "notes-example"],
+        ["Key distinction", "notes-pitfall"],
+      ]) {
         await outline.getByRole("button", { name, exact: true }).click();
+        await e.check(`${name} focuses its visible destination`, async () =>
+          focusedDestination(page, destination),
+        );
+      }
       const sources = page.getByRole("region", {
         name: "Sources",
         exact: true,
@@ -79,7 +108,17 @@ export async function lessons(page, e) {
           );
         },
       );
-      const before = new URL(page.url()).hash;
+      await page.locator(".control-panel").getByRole("slider").press("End");
+      const parameter = await page
+        .locator(".control-panel")
+        .getByRole("slider")
+        .getAttribute("aria-valuenow");
+      await outline
+        .getByRole("button", { name: "Worked application", exact: true })
+        .click();
+      await focusedDestination(page, "notes-example");
+      const interrupted = page.url();
+      const before = new URL(interrupted).hash;
       await page
         .getByRole("navigation", { name: "Lesson prerequisites", exact: true })
         .getByRole("button")
@@ -92,6 +131,27 @@ export async function lessons(page, e) {
           exact: true,
         })
         .click();
+      await e.check(
+        "Prerequisite return restores the parameter and worked-application state",
+        async () => {
+          assert.equal(page.url(), interrupted);
+          assert.equal(
+            await page
+              .locator(".control-panel")
+              .getByRole("slider")
+              .getAttribute("aria-valuenow"),
+            parameter,
+          );
+          assert.equal(
+            await page
+              .getByRole("group", { name: "Lesson mode", exact: true })
+              .getByRole("button", { name: "Learn", exact: true })
+              .getAttribute("aria-pressed"),
+            "true",
+          );
+          await visible(page.locator("#notes-example"));
+        },
+      );
       await page
         .getByRole("navigation", {
           name: "Continue this proof path",
@@ -272,4 +332,26 @@ export async function lessons(page, e) {
       );
     },
   );
+}
+
+async function focusedDestination(page, id) {
+  try {
+    await page.waitForFunction((targetId) => {
+      const target = document.getElementById(targetId);
+      if (!target || document.activeElement !== target) return false;
+      const bounds = target.getBoundingClientRect();
+      return bounds.top >= -1 && bounds.top < innerHeight && bounds.bottom > 0;
+    }, id);
+  } catch (error) {
+    const observed = await page.evaluate((targetId) => {
+      const bounds = document.getElementById(targetId)?.getBoundingClientRect();
+      return {
+        focus: document.activeElement?.id,
+        top: bounds?.top,
+        bottom: bounds?.bottom,
+        height: innerHeight,
+      };
+    }, id);
+    throw new Error(`${error.message} Observed ${JSON.stringify(observed)}`);
+  }
 }

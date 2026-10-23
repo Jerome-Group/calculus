@@ -16,8 +16,9 @@ Drafts, hints, solutions, self-assessment, and confidence are in [study](study.m
 ## Driving it with Playwright
 
 Run `npm run agent -- browser run --features lessons --output outputs/browser/lessons`.
-The driver opens `limits-one-sided`, `partial-fractions`, and `multivariable-chain-rule`, selecting all four modes and checking MathML without KaTeX errors.
-It uses argument buttons, source guidance, prerequisite links and return, sidebar search, and footer pagination.
+The driver opens `limits-one-sided`, `partial-fractions`, and `multivariable-chain-rule`, selecting all four modes and checking MathML inside each mode's actual content. Practice must expose its prompt and reasoning input.
+Each argument button must focus its destination within the viewport, allowing one CSS pixel of browser scroll rounding. The prerequisite return restores a changed experiment parameter and worked-application state with the exact interrupted URL.
+It also uses source guidance, sidebar search, and footer pagination.
 It crosses the Calculus I footer boundary into the first Calculus II lesson.
 Source anchors must retain their page locators, new-tab behavior, and `noreferrer` protection.
 It visits the epsilon-delta pilot's Learn, Explore, and Revise entry points and opens independent tasks.
@@ -30,3 +31,4 @@ The driver also reads source errata with and without supplied provenance; it che
 Course PDFs remain external and access controlled. Anchor inspection does not establish permission or source freshness.
 Browser proof covers the listed representative lessons. The complete inventory and mathematical checks retain all 125 lessons.
 Written reasoning is not automatically graded. Agent checks establish neither learner understanding nor mastery.
+Prerequisite entry buttons appear in Learn. This route cannot establish return from another interrupted reading mode.
