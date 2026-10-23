@@ -49,6 +49,7 @@ export async function inventory(root) {
       examples,
       bridges,
       clinic,
+      workshop,
     ] = await Promise.all([
       load("/lib/curriculum/index.ts"),
       load("/lib/curriculum/learning.ts"),
@@ -60,6 +61,7 @@ export async function inventory(root) {
       load("/lib/curriculum/example-registry.ts"),
       load("/lib/curriculum/prerequisite-routes.ts"),
       load("/lib/clinic/cases.ts"),
+      load("/lib/workshop/index.ts"),
     ]);
     const [pkg, lock, ledger, sourceManifest, sourceObservation] =
       await Promise.all([
@@ -141,6 +143,22 @@ export async function inventory(root) {
       application: "calculus",
       routes: [
         {
+          id: "workshop",
+          url: "/#workshop",
+          type: "workshop",
+          query: "workshop",
+          stateVersion: 1,
+          state: { id: workshop.investigations.map((item) => item.id) },
+          restoration: {
+            parser: "components/atlas/workshop-history.ts#readWorkshopHistory",
+            maxEncodedLength: 200,
+            rejectsUnknownFields: true,
+            invalidState:
+              "First investigation with an explanation; no work restored",
+            legacyUrl: "supported",
+          },
+        },
+        {
           id: "clinic",
           url: "/#clinic",
           type: "clinic",
@@ -201,6 +219,7 @@ export async function inventory(root) {
       })),
       scenes,
       comparisonLabs,
+      workshop: workshop.investigations,
       features: featureCatalog(),
       verification: {
         driver: ".agents/skills/verify/cli.mjs",
@@ -310,6 +329,20 @@ async function testCatalog(root, concepts, sceneIds) {
 export function featureCatalog() {
   return [
     {
+      id: "proof-workshop",
+      entry: "components/atlas/workshop-workspace.tsx",
+      actions: [
+        "construct",
+        "exact-check",
+        "inspect",
+        "revise",
+        "reconstruct",
+        "history",
+        "lesson-detour",
+        "reload-reset",
+      ],
+    },
+    {
       id: "course-library",
       entry: "components/atlas/course-library.tsx",
       actions: ["browse", "search", "select-course", "open-lesson"],
@@ -417,6 +450,7 @@ export function experienceMap(value) {
     ),
     sceneIds: value.scenes.map(({ id }) => id),
     comparisonLabs: value.comparisonLabs,
+    workshop: value.workshop,
     features: value.features,
     limitations: value.limitations,
   };

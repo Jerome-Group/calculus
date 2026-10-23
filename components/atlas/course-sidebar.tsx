@@ -9,6 +9,7 @@ import {
   List,
   Search,
   Stethoscope,
+  Pencil,
   X,
 } from "lucide-react";
 import {
@@ -174,6 +175,16 @@ export function CourseSidebar({ study }: { study: StudyController }) {
         </nav>
       </SidebarContent>
       <SidebarFooter className="side-footer">
+        <button
+          className={"graph-link " + (route === "workshop" ? "active" : "")}
+          onClick={() => study.openWorkshop()}
+        >
+          <Pencil size={20} />
+          <span>
+            Proof workshop<small>Construct. Inspect. Revise.</small>
+          </span>
+          <ArrowRight size={16} />
+        </button>
         <button
           className={"graph-link " + (route === "clinic" ? "active" : "")}
           onClick={() => study.openClinic()}

@@ -19,6 +19,29 @@ export const browserPlan = {
   ],
   journeys: [
     {
+      id: "proof-workshop",
+      actions: [
+        "construct a uniform bound",
+        "construct a hidden path",
+        "construct polygon winding",
+        "revise preserved explanation",
+        "inspect separate attempts",
+        "recover and return",
+        "Back and Forward",
+        "keyboard at 320px",
+        "reload",
+      ],
+      assertions: [
+        "exact universal and restricted claim boundaries",
+        "invalid field and result focus",
+        "attempt pairing",
+        "arrows and ordered polygon text",
+        "transient memory",
+        "selection-only URL",
+        "no account writes",
+      ],
+    },
+    {
       id: "clinic-decisions",
       actions: [
         "commit all nine decisions",

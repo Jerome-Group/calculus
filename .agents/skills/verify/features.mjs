@@ -4,8 +4,15 @@ import { lessons } from "./journeys/lessons.mjs";
 import { experiments } from "./journeys/experiments.mjs";
 import { graph } from "./journeys/graph.mjs";
 import { study } from "./journeys/study.mjs";
+import { workshop } from "./journeys/workshop.mjs";
 
 export const features = [
+  {
+    id: "workshop",
+    description:
+      "Learner-built exact bounds, hidden paths and polygon winding, preserved attempts, revision and lesson detours.",
+    run: workshop,
+  },
   {
     id: "clinic",
     description:

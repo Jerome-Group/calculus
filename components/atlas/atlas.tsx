@@ -1,5 +1,7 @@
 "use client";
-import { BookOpen, FunctionSquare, Stethoscope } from "lucide-react";
+import { BookOpen, FunctionSquare, Stethoscope, Pencil } from "lucide-react";
+import { useReducer } from "react";
+import { createWorkshop, workshopTransition } from "@/lib/workshop";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { CourseLibrary } from "./course-library";
 import { useStudyController } from "./use-study-controller";
@@ -10,9 +12,15 @@ import { StudyRecordsProvider } from "./study-records";
 import { StudyAccount } from "./study-account";
 import { ClinicWorkspace } from "./clinic-workspace";
 import { useClinicSession } from "./use-clinic-session";
+import { WorkshopWorkspace } from "./workshop-workspace";
 function AtlasInner() {
   const study = useStudyController();
   const clinic = useClinicSession();
+  const [workshop, dispatchWorkshop] = useReducer(
+    workshopTransition,
+    undefined,
+    createWorkshop,
+  );
   const { selected, route, search, course, concept, open, show, webmcp } =
     study;
   return (
@@ -45,7 +53,9 @@ function AtlasInner() {
                   ? "Graph studio"
                   : route === "clinic"
                     ? "Calculus Clinic"
-                    : "Course overview"}
+                    : route === "workshop"
+                      ? "Proof workshop"
+                      : "Course overview"}
             </span>
           </div>
           <div className="top-tabs">
@@ -54,6 +64,12 @@ function AtlasInner() {
                 <BookOpen size={15} /> Resume lesson
               </button>
             )}
+            <button
+              className={route === "workshop" ? "selected" : ""}
+              onClick={() => study.openWorkshop()}
+            >
+              <Pencil size={15} /> Proof workshop
+            </button>
             <button
               className={route === "clinic" ? "selected" : ""}
               onClick={() => study.openClinic()}
@@ -78,6 +94,12 @@ function AtlasInner() {
             openCase={study.openClinic}
             recover={study.openClinicRecovery}
           />
+        ) : route === "workshop" ? (
+          <WorkshopWorkspace
+            state={workshop[study.workshopLocation.id]}
+            dispatch={dispatchWorkshop}
+            study={study}
+          />
         ) : route === "graph" ? (
           <GraphStudio study={study} />
         ) : (
@@ -89,6 +111,7 @@ function AtlasInner() {
             chooseCourse={study.chooseCourse}
             open={open}
             openClinic={() => study.openClinic()}
+            openWorkshop={() => study.openWorkshop()}
           />
         )}
         <details className="agent-status">

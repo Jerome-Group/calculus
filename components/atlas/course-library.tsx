@@ -11,6 +11,7 @@ export function CourseLibrary({
   setQuery,
   notice,
   openClinic,
+  openWorkshop,
 }: {
   course: CourseId;
   query: string;
@@ -19,6 +20,7 @@ export function CourseLibrary({
   setQuery: (query: string) => void;
   notice?: string;
   openClinic: () => void;
+  openWorkshop: () => void;
 }) {
   const selected = courses[course];
   const matches = concepts.filter(
@@ -87,6 +89,19 @@ export function CourseLibrary({
           </button>
         ))}
       </div>
+      <section className="library-clinic workshop-entry">
+        <div>
+          <span className="eyebrow">PROOF WORKSHOP</span>
+          <h2>Make the argument yours.</h2>
+          <p>
+            Construct a bound, a hidden path, or an oriented loop. Inspect an
+            exact result, then revise your explanation.
+          </p>
+        </div>
+        <button onClick={openWorkshop}>
+          Open Proof workshop <ArrowRight size={18} />
+        </button>
+      </section>
       <section className="library-clinic">
         <div>
           <span className="eyebrow">CALCULUS CLINIC</span>
