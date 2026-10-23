@@ -11,7 +11,7 @@ Run from the repository root with Node.js 24+:
 node .agents/skills/study-save-safety/scripts/run.mjs
 ```
 
-The command installs the pinned portable JRE and TLC into ignored `outputs/formal-save-safety/cache/`. It runs `npm ci` if Vite is absent. It then checks both finite models, drives the real `createStudySession`, replays emitted queue counterexamples, and runs scratch-source mutations. No global Java installation or product edits are required. Initial bootstrap needs the network, `curl`, and `tar`. Cached reruns need no network. `npm run verify:study-safety` runs the same command. CI runs this beside the application job and requires both before its protected `checks` context can pass.
+The command installs the pinned portable JRE and TLC into ignored `outputs/formal-save-safety/cache/`. It runs `npm ci` if Vite is absent. It then checks both finite models, drives the real `createStudySession`, replays emitted queue counterexamples, and runs scratch-source mutations. No global Java installation or product edits are required. Initial bootstrap needs the network, `curl`, and `tar`. Cached reruns need no network. `npm run verify:study-safety` runs the same command. The existing protected CI `checks` job runs this command before its application checks. Any safety failure fails that required job.
 
 Read `outputs/formal-save-safety/latest-run.txt` for the unique run directory. Keep its `summary.json`, TLC logs and JSON traces, real-code receipts, and mutant source files together. Exit codes are `0` for all properties passing, `1` for a reproduced product bug, and `2` for drift, a modeling error, a surviving mutation, or a tool failure. Expected mutant failures print `KILLED`.
 
