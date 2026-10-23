@@ -3,10 +3,7 @@ import { useRef } from "react";
 import { concepts } from "@/lib/curriculum";
 import { learningGuide } from "@/lib/curriculum/learning";
 import type { LessonMode, PilotLesson } from "@/lib/curriculum/learning-modes";
-import {
-  nextReview,
-  hasDelayedIndependentChoiceEvidence,
-} from "@/lib/study/model";
+import { pilotReview } from "@/lib/study/model";
 import {
   useStudyRecord,
   useStudyAttempts,
@@ -34,10 +31,10 @@ export function PilotLessonView({
     lessonId: lesson.id,
   });
   const history = useStudyAttempts(lesson.id);
-  const record = {
-    attempts: history.records,
-    nextReview: history.records[0] ? nextReview(history.records[0]) : undefined,
-  };
+  const review = pilotReview(history.saved);
+  const local = history.tab.filter(
+    ({ persistence }) => persistence.kind !== "saved",
+  );
   const confidence = confidenceRecord.value;
   const concept = study.concept;
   function setConfidence(value: "unsure" | "confident") {
@@ -86,38 +83,68 @@ export function PilotLessonView({
               errorHistory.current?.scrollIntoView({ block: "start" });
             }}
           >
-            Review your recorded errors
+            Review your recorded choices
           </button>
         </p>
         <h3 id="pilot-errors" ref={errorHistory} tabIndex={-1}>
-          Your error history
+          Saved account history
         </h3>
-        {record?.attempts.some((attempt) => !attempt.correct) ? (
+        <p>{history.saved.length} saved account records loaded.</p>
+        {history.saved.length ? (
           <ul>
-            {record.attempts
-              .filter((attempt) => !attempt.correct)
-              .map((attempt, index) => (
-                <li key={`${attempt.at}-${index}`}>
-                  {attempt.taskId}: {attempt.errorCode || "Review needed"} ·{" "}
-                  {attempt.source === "legacy"
-                    ? "historical device evidence, not rechecked · "
-                    : ""}{" "}
-                  {attempt.support === "hint" ? "hint used" : "no hint"}
-                </li>
-              ))}
+            {history.saved.map((attempt) => (
+              <li key={attempt.id}>
+                {attempt.taskId}:{" "}
+                {attempt.correct
+                  ? "recorded correct"
+                  : attempt.errorCode || "Review needed"}{" "}
+                ·{" "}
+                {attempt.source === "legacy"
+                  ? "historical device correctness, not rechecked · "
+                  : "checked choice · "}
+                {attempt.support === "hint" ? "hint used" : "no hint"}
+              </li>
+            ))}
           </ul>
         ) : (
           <p>
-            No errors in the loaded history yet.{" "}
+            No saved account choices loaded yet.{" "}
             <button onClick={() => study.setReadingMode("practice")}>
               Start practice
             </button>
           </p>
         )}
-        <p>
-          {history.records.length} loaded of {history.total} saved choice
-          records.
-        </p>
+        {local.length > 0 && (
+          <>
+            <h3>Choices in this tab</h3>
+            <ul>
+              {local.map(({ input, value, persistence }) => (
+                <li key={input.id}>
+                  {input.taskId}:{" "}
+                  {value.correct
+                    ? "choice correct"
+                    : value.errorCode || "Review needed"}{" "}
+                  · {input.support === "hint" ? "hint used" : "no hint"}.{" "}
+                  <span role="status">{persistence.message}</span>{" "}
+                  {persistence.kind === "unsaved" && (
+                    <button
+                      type="button"
+                      onClick={() => void history.retry(input.id)}
+                    >
+                      Retry choice save
+                    </button>
+                  )}
+                  {persistence.kind === "conflict" && (
+                    <p>
+                      The saved record has different evidence for this choice
+                      ID. Your tab&apos;s choice has not replaced it.
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
         {history.cursor && (
           <button
             type="button"
@@ -137,15 +164,20 @@ export function PilotLessonView({
         )}
         <p>
           Next review:{" "}
-          {record?.nextReview
-            ? new Date(record.nextReview).toLocaleDateString()
-            : "after your first attempt"}
+          {review.nextReview
+            ? new Date(review.nextReview).toLocaleDateString()
+            : "after a saved account choice"}
           .
+          {review.reviewSource === "legacy"
+            ? " Historical suggestion from loaded device evidence. Correctness was not rechecked."
+            : review.reviewSource === "choice"
+              ? " Based on loaded checked account choices."
+              : " Tab choices do not set an account review date."}
         </p>
         <p>
-          {hasDelayedIndependentChoiceEvidence(record)
-            ? "Correct transfer choices recorded without hints at least a day apart. Written reasoning is not graded."
-            : "Record transfer choices without hints at least a day apart to track repeated practice. Choices do not establish mastery."}
+          {review.repeatedCorrectTransfer
+            ? "Correct checked transfer choices saved without hints at least a day apart in the loaded account history. Written reasoning is not graded."
+            : "Save checked transfer choices without hints at least a day apart to track repeated practice. Historical device correctness does not establish checked transfer evidence. Choices do not establish mastery."}
         </p>
         <p>
           Confidence: {confidence || "not recorded"}. This is separate from task

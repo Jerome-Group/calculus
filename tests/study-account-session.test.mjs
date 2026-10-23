@@ -16,6 +16,7 @@ const { createStudySession } = await vite.ssrLoadModule(
   "/lib/study/session.ts",
 );
 const { previewLegacy } = await vite.ssrLoadModule("/lib/study/legacy.ts");
+const { pilotReview } = await vite.ssrLoadModule("/lib/study/model.ts");
 const originalFetch = globalThis.fetch;
 after(async () => {
   globalThis.fetch = originalFetch;
@@ -428,7 +429,280 @@ test("a lost attempt acknowledgement retries the same captured event exactly onc
   assert.equal((await session.recordAttempt(input)).kind, "unsaved");
   assert.equal((await session.retryAttempt(input.id)).kind, "saved");
   await until(() => session.account().overview.choices === 1);
-  assert.equal(session.history(input.lessonId).records[0].at, input.at);
+  assert.equal(session.history(input.lessonId).saved[0].at, input.at);
+});
+
+const choiceInput = (patch = {}) => ({
+  id: crypto.randomUUID(),
+  lessonId: "epsilon-delta-one-variable",
+  taskId: "quadratic",
+  choice: "correct",
+  support: "none",
+  at: "2026-01-01T00:00:00.000Z",
+  ...patch,
+});
+
+test("guest choices retain tab evidence without saved account history", async () => {
+  owner = null;
+  const session = await ready();
+  const input = choiceInput();
+  assert.equal((await session.recordAttempt(input)).kind, "guest");
+  const history = session.history(input.lessonId);
+  assert.equal(history.saved.length, 0, "guest choices are not saved");
+  assert.deepEqual(
+    history.tab.map(({ input }) => input),
+    [input],
+  );
+  assert.equal(history.tab[0].persistence.kind, "guest");
+});
+
+test("failed choices retry independently under their original IDs and times", async () => {
+  const session = await ready();
+  const first = choiceInput();
+  const second = choiceInput({ at: "2026-01-02T00:00:00.000Z" });
+  const sent = [];
+  intercept = ({ command, dispatch }) => {
+    if (command?.operation === "attempt") {
+      sent.push(command.attempt);
+      throw new TypeError("choice service unavailable");
+    }
+    return dispatch();
+  };
+  assert.equal((await session.recordAttempt(first)).kind, "unsaved");
+  assert.equal((await session.recordAttempt(second)).kind, "unsaved");
+  assert.equal(session.history(first.lessonId).saved.length, 0);
+  assert.equal(
+    pilotReview(session.history(first.lessonId).saved).nextReview,
+    null,
+  );
+  intercept = ({ command, dispatch }) => {
+    if (command?.operation === "attempt") sent.push(command.attempt);
+    return dispatch();
+  };
+  assert.equal((await session.retryAttempt(first.id)).kind, "saved");
+  assert.deepEqual(
+    session.history(first.lessonId).saved.map(({ id }) => id),
+    [first.id],
+  );
+  assert.deepEqual(
+    session
+      .history(first.lessonId)
+      .tab.map(({ persistence }) => persistence.kind),
+    ["saved", "unsaved"],
+  );
+  assert.deepEqual(sent, [first, second, first]);
+  assert.equal(
+    pilotReview(session.history(first.lessonId).saved).repeatedCorrectTransfer,
+    false,
+  );
+  assert.equal((await session.retryAttempt(second.id)).kind, "saved");
+  await until(() => !session.history(first.lessonId).loading);
+  assert.deepEqual(
+    session.history(first.lessonId).saved.map(({ id }) => id),
+    [second.id, first.id],
+  );
+  assert.equal(
+    pilotReview(session.history(first.lessonId).saved).repeatedCorrectTransfer,
+    true,
+  );
+  assert.deepEqual(sent, [first, second, first, second]);
+});
+
+test("matching normalized history acknowledges a lost choice save", async () => {
+  const session = await ready();
+  const input = choiceInput({ at: "2026-01-01T08:00:00+08:00" });
+  let writes = 0;
+  intercept = async ({ command, dispatch }) => {
+    const response = await dispatch();
+    if (command?.operation === "attempt") {
+      writes++;
+      throw new TypeError("lost choice acknowledgement");
+    }
+    return response;
+  };
+  assert.equal((await session.recordAttempt(input)).kind, "unsaved");
+  await session.loadHistory(input.lessonId);
+  const history = session.history(input.lessonId);
+  assert.equal(history.tab[0].persistence.kind, "saved");
+  assert.equal(history.saved.length, 1);
+  assert.equal(history.saved[0].at, "2026-01-01T00:00:00.000Z");
+  assert.equal((await session.retryAttempt(input.id)).kind, "saved");
+  assert.equal(writes, 1, "a history receipt prevents another POST");
+  await until(() => session.account().overview.choices === 1);
+});
+
+test("a history receipt resolves an in-flight choice and survives its late network failure", async () => {
+  const session = await ready();
+  const input = choiceInput();
+  const gate = pause(),
+    captured = pause(),
+    completed = pause();
+  intercept = async ({ command, dispatch }) => {
+    const response = await dispatch();
+    if (command?.operation === "attempt") {
+      captured.resolve();
+      await gate.promise;
+      completed.resolve();
+      throw new TypeError("late lost acknowledgement");
+    }
+    return response;
+  };
+  const pending = session.recordAttempt(input);
+  await captured.promise;
+  try {
+    await session.loadHistory(input.lessonId);
+    assert.equal((await pending).kind, "saved");
+    assert.equal(
+      session.history(input.lessonId).tab[0].persistence.kind,
+      "saved",
+    );
+  } finally {
+    gate.resolve();
+    await completed.promise;
+  }
+  await new Promise(setImmediate);
+  assert.equal(
+    session.history(input.lessonId).tab[0].persistence.kind,
+    "saved",
+  );
+  assert.equal(session.history(input.lessonId).saved.length, 1);
+});
+
+test("a differing saved immutable ID preserves the account and conflicted tab events", async () => {
+  const session = await ready();
+  const input = choiceInput();
+  intercept = ({ command, dispatch }) => {
+    if (command?.operation === "attempt") throw new TypeError("not sent");
+    return dispatch();
+  };
+  assert.equal((await session.recordAttempt(input)).kind, "unsaved");
+  intercept = undefined;
+  const account = { ...input, support: "hint" };
+  const response = await fetch("/api/study", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      operation: "attempt",
+      expectedOwner: owner,
+      attempt: account,
+    }),
+  });
+  assert.equal(response.status, 200);
+  await session.loadHistory(input.lessonId);
+  const history = session.history(input.lessonId);
+  assert.equal(history.tab[0].persistence.kind, "conflict");
+  assert.equal(history.tab[0].input.support, "none");
+  assert.equal(history.saved[0].support, "hint");
+  assert.equal((await session.retryAttempt(input.id)).kind, "conflict");
+});
+
+test("choice acknowledgements during an old history read queue one refresh", async () => {
+  const session = await ready();
+  const first = choiceInput();
+  const second = choiceInput({ at: "2026-01-02T00:00:00.000Z" });
+  const gate = pause(),
+    captured = pause();
+  let loads = 0;
+  intercept = async ({ path, dispatch }) => {
+    const response = await dispatch();
+    if (String(path).includes("scope=history") && ++loads === 1) {
+      captured.resolve();
+      await gate.promise;
+    }
+    return response;
+  };
+  const initial = session.loadHistory(first.lessonId);
+  await captured.promise;
+  try {
+    assert.equal((await session.recordAttempt(first)).kind, "saved");
+    assert.equal((await session.recordAttempt(second)).kind, "saved");
+    assert.equal(session.history(first.lessonId).saved.length, 2);
+  } finally {
+    gate.resolve();
+    await initial;
+  }
+  await until(() => !session.history(first.lessonId).loading);
+  assert.equal(
+    loads,
+    2,
+    "acknowledgements coalesce into one fresh history read",
+  );
+  assert.equal(session.history(first.lessonId).saved.length, 2);
+});
+
+test("an account change clears saved and tab choices before a stale history response returns", async () => {
+  const session = await ready();
+  const input = choiceInput();
+  await session.recordAttempt(input);
+  await until(() => !session.history(input.lessonId).loading);
+  const generation = session.generation();
+  const gate = pause(),
+    captured = pause();
+  let held = false;
+  intercept = async ({ path, dispatch }) => {
+    const response = await dispatch();
+    if (String(path).includes("scope=history") && !held) {
+      held = true;
+      captured.resolve();
+      await gate.promise;
+    }
+    return response;
+  };
+  const old = session.loadHistory(input.lessonId);
+  await captured.promise;
+  try {
+    owner = crypto.randomUUID();
+    await session.validate();
+    assert.deepEqual(session.history(input.lessonId).saved, []);
+    assert.deepEqual(session.history(input.lessonId).tab, []);
+    assert.equal(
+      (await session.retryAttempt(input.id, generation)).kind,
+      "account-changed",
+    );
+    assert.equal(
+      (await session.recordAttempt(choiceInput(), generation)).kind,
+      "account-changed",
+    );
+  } finally {
+    gate.resolve();
+    await old;
+  }
+  assert.deepEqual(session.history(input.lessonId).saved, []);
+  assert.deepEqual(session.history(input.lessonId).tab, []);
+});
+
+test("historical transfer correctness remains reviewable without checked evidence", async () => {
+  const session = await ready();
+  const makeHistorical = (at) => ({
+    id: crypto.randomUUID(),
+    lessonId: "epsilon-delta-one-variable",
+    taskId: "quadratic",
+    kind: "transfer",
+    correct: true,
+    support: "none",
+    at,
+    source: "legacy",
+  });
+  const first = makeHistorical("2026-01-01T00:00:00.000Z");
+  const second = makeHistorical("2026-01-02T00:00:00.000Z");
+  const response = await fetch("/api/study", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      operation: "import",
+      expectedOwner: owner,
+      items: [first, second].map((value) => ({ kind: "attempt", value })),
+    }),
+  });
+  assert.equal(response.status, 200);
+  await session.loadHistory(first.lessonId);
+  const saved = session.history(first.lessonId).saved;
+  assert.equal(saved.length, 2);
+  assert.deepEqual(pilotReview(saved), {
+    nextReview: "2026-01-05T00:00:00.000Z",
+    reviewSource: "legacy",
+    repeatedCorrectTransfer: false,
+  });
 });
 
 test("a delayed read cannot replace a newer acknowledged draft", async () => {
@@ -906,7 +1180,7 @@ test("same-owner revalidation restarts cancelled history and ignores its late re
     assert.equal(session.history(lessonId).loading, false);
     assert.equal(loads, 2);
     assert.deepEqual(
-      session.history(lessonId).records.map(({ id }) => id),
+      session.history(lessonId).saved.map(({ id }) => id),
       [attempt.id],
     );
   } finally {
@@ -914,7 +1188,7 @@ test("same-owner revalidation restarts cancelled history and ignores its late re
     await initial;
   }
   assert.deepEqual(
-    session.history(lessonId).records.map(({ id }) => id),
+    session.history(lessonId).saved.map(({ id }) => id),
     [attempt.id],
   );
   await session.loadHistory(lessonId);

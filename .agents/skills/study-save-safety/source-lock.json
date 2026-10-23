@@ -1,9 +1,9 @@
 {
-  "syncCommit": "d395c70fb9a7c67c1938ad66a3af1b405230adbc",
+  "syncCommit": "524226e7a88b32d2a85f77cdd72db632651e58b8",
   "preserveRecovery": true,
   "files": {
-    "lib/study/session.ts": "8cdf563b50f06fd0e1b56c8a7c60430e7ce40f1dc51ea9cf59af03e6c43c7e9a",
-    "lib/study/model.ts": "7ee6be3e7e3a7b7f2d2ccd3a7d0bf56690dcdb4211a41623ef94facc8339c705",
+    "lib/study/session.ts": "90414b687ac4c33a67ec25bf9d5861da2d70c4f44a7568e8cff58a1f7ab78edf",
+    "lib/study/model.ts": "9c7174240871b37c884c1c987dfa59096481373ff11f87dd82f50009183f196b",
     "lib/study/server.ts": "3f115b1ac54d6af7c8082a78b241f9499ec356923e7ec882f015ce4ed7fdb8fe",
     "components/atlas/study-records.tsx": "e5e716d02c73fcb2bcdb9244d3f52e0dff427b58a131474e492b674560021eb5"
   }
