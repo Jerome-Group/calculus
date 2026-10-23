@@ -17,6 +17,9 @@ const { readLessonHistory, lessonUrl, routeUrl, graphUrl, readGraphHistory } =
 const { initialGraph } = await vite.ssrLoadModule("/lib/atlas/math.ts");
 const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
 const { sceneInfo } = await vite.ssrLoadModule("/lib/atlas/scenes.ts");
+const { readLessonInterruption } = await vite.ssrLoadModule(
+  "/components/atlas/lesson-interruption.ts",
+);
 const concept = concepts.find((c) => c.scene === "elementarycurves");
 
 test("versioned shared URL restores model, bounded parameter and reading section", () => {
@@ -152,3 +155,116 @@ test("opening a lesson from a shared graph drops stale graph state", () => {
     value: state,
   });
 });
+
+test("shared graph parameters obey the expression slider's complete range", () => {
+  for (const a of [-6, -5.01, 5.01, 6]) {
+    const url = new URL(
+      graphUrl(new URL("https://example.test/"), { ...initialGraph, a }),
+      "https://example.test",
+    );
+    assert.equal(readGraphHistory(url).kind, "invalid", `parameter ${a}`);
+  }
+  for (const a of [-5, 0, 5]) {
+    const graph = { ...initialGraph, a };
+    const url = new URL(
+      graphUrl(new URL("https://example.test/"), graph),
+      "https://example.test",
+    );
+    assert.deepEqual(readGraphHistory(url), { kind: "valid", graph });
+  }
+});
+
+for (const [id, origin] of [
+  [
+    "rolle-mean-value",
+    {
+      clinicReturn: {
+        version: 1,
+        caseId: "rolle-corner",
+        focus: "diagnosis",
+        scrollY: 400,
+      },
+      workshopReturn: null,
+    },
+  ],
+  [
+    "total-differentiability",
+    {
+      clinicReturn: null,
+      workshopReturn: {
+        version: 1,
+        id: "linear-bound",
+        focus: "result",
+        scrollY: 300,
+      },
+    },
+  ],
+]) {
+  test(`${id} prerequisite history retains its exact first anchor and validated workspace origin`, () => {
+    const anchor = concepts.find((item) => item.id === id);
+    const base = new URL("https://example.test/#derivative-definition");
+    const point = {
+      version: 1,
+      id,
+      url: lessonUrl(base, id, {
+        version: 1,
+        scene: anchor.scene,
+        parameter: 0,
+        mode: "learn",
+        notesTab: "example",
+      }),
+      scrollY: 250,
+      ...origin,
+    };
+    const bounds = () => ({ min: -100, max: 100 });
+    assert.deepEqual(
+      readLessonInterruption({ prerequisiteReturn: point }, base, bounds),
+      point,
+    );
+    assert.equal(readLessonInterruption({}, base, bounds), null);
+    assert.equal(
+      readLessonInterruption(
+        { prerequisiteReturn: point },
+        new URL("https://example.test/#course"),
+        bounds,
+      ),
+      null,
+    );
+    for (const invalid of [
+      { ...point, scrollY: -1 },
+      { ...point, scrollY: 10_000_001 },
+      { ...point, url: "https://other.test/" + point.url },
+      { ...point, url: "/elsewhere" + point.url },
+      { ...point, id: "not-a-lesson" },
+      { ...point, url: point.url.replace("study=", "study=invalid") },
+    ])
+      assert.equal(
+        readLessonInterruption({ prerequisiteReturn: invalid }, base, bounds),
+        null,
+      );
+    const unrelated = {
+      ...point,
+      clinicReturn: {
+        version: 1,
+        caseId: "rolle-corner",
+        focus: "diagnosis",
+        scrollY: 400,
+      },
+      workshopReturn: {
+        version: 1,
+        id: "linear-bound",
+        focus: "result",
+        scrollY: 300,
+      },
+    };
+    const read = readLessonInterruption(
+      { prerequisiteReturn: unrelated },
+      base,
+      bounds,
+    );
+    assert.equal(
+      id === "rolle-mean-value" ? read.workshopReturn : read.clinicReturn,
+      null,
+    );
+  });
+}

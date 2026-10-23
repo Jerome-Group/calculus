@@ -44,7 +44,7 @@ const hook = source.statements.find(
   (node) =>
     ts.isFunctionDeclaration(node) && node.name?.text === "useStudyController",
 );
-const names = ["show", "chooseCourse", "updateSearch"];
+const names = ["show", "chooseCourse", "updateSearch", "restoreLocation"];
 const actions = hook.body.statements.filter(
   (node) => ts.isFunctionDeclaration(node) && names.includes(node.name?.text),
 );
@@ -85,6 +85,10 @@ for (const initialRoute of ["lesson", "course"]) {
         ...values,
         graph: {},
         libraryUrl,
+        readLibraryHistory,
+        readLessonInterruption: () => null,
+        experimentInfo: () => ({ min: 0, max: 1 }),
+        concepts,
         graphUrl: () => {
           throw new Error("Unexpected graph navigation");
         },
@@ -103,6 +107,7 @@ for (const initialRoute of ["lesson", "course"]) {
           pending.search = search;
         },
         setHistoryNotice() {},
+        setReturnTo() {},
         setClinicReturn() {},
         setWorkshopReturn: (value) => {
           pending.workshopReturn = value;
@@ -111,7 +116,12 @@ for (const initialRoute of ["lesson", "course"]) {
         setExpanded() {},
         setPlaying() {},
         sidebar: { setOpenMobile() {} },
-        window: { location: { href: url.href }, scrollTo() {} },
+        window: {
+          get location() {
+            return url;
+          },
+          scrollTo() {},
+        },
         document: { getElementById: () => null },
         requestAnimationFrame: globalThis.requestAnimationFrame,
         history: {
@@ -133,6 +143,7 @@ for (const initialRoute of ["lesson", "course"]) {
         info: { min: 0, max: 1, step: 0.01 },
         chooseCourse: context.chooseCourse,
         setSearch: context.updateSearch,
+        restoreLocation: context.restoreLocation,
       };
     };
     const savedFrame = globalThis.requestAnimationFrame;
@@ -163,6 +174,12 @@ for (const initialRoute of ["lesson", "course"]) {
         assert.equal(url.searchParams.has("study"), false);
         assert.equal(url.searchParams.has("workshop"), false);
       }
+      url = new URL("https://calculus.jeromegroup.org/");
+      current.restoreLocation();
+      render();
+      assert.equal(current.route, "course");
+      assert.equal(current.course, "MH1100");
+      assert.equal(current.search, "");
     } finally {
       globalThis.requestAnimationFrame = savedFrame;
     }
