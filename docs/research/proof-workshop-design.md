@@ -6,7 +6,7 @@ Two complete design packages were compared before production implementation. The
 
 The chosen design uses A's standalone workspace and three mathematical families. It adopts B's closed drafting/inspected phases, explicit attempt identity, immutable pairing of construction with initial explanation and result, and later appended revisions. It also adopts direct lesson entries and text equivalents for formulas. A's request-ID protocol was rejected because checks are synchronous and local. Repeating a check while inspected returns the same state. A broad evaluator or plugin engine would add expression syntax and proof-rule ownership without helping these three constructions.
 
-The prototypes remain on their separate design branches. They are throwaway design evidence, never production checker code. The standalone prototype's mismatched first explanation and latest result were rejected. The production attempt owns all four paired values. Editing starts a new draft, clears the current visible result, preserves the previous attempt in inspectable history, and starts a blank explanation. Supplied starting values are labeled explicitly.
+The prototypes are retained as ignored design evidence in their isolated worktrees and release evidence. They are throwaway sketches, never production checker code. The standalone prototype's mismatched first explanation and latest result were rejected. The production attempt owns all four paired values. Editing starts a new draft, clears the current visible result, preserves the previous attempt in inspectable history, and starts a blank explanation. Supplied starting values are labeled explicitly.
 
 ## Exact mathematical contracts
 

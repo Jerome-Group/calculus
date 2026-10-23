@@ -22,6 +22,17 @@ const select = (page, name) =>
     .click();
 const focused = (page, id) =>
   page.waitForFunction((target) => document.activeElement?.id === target, id);
+const drawing = async (page, selector = ".workshop-curve") => {
+  const paths = await page
+    .locator(`.workshop-diagram ${selector}`)
+    .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("d")));
+  assert.ok(paths.length > 0);
+  for (const path of paths) {
+    assert.equal(typeof path, "string");
+    assert.doesNotMatch(path, /NaN|Infinity/);
+  }
+  return paths;
+};
 const firstExplanation =
   "My first construction claims that C=2 controls all directions.";
 
@@ -110,7 +121,14 @@ export async function workshop(page, e) {
         await page.locator("#workshop-explanation").inputValue(),
         "",
       );
+      const before = await drawing(page, ".workshop-guide");
       await page.locator("#workshop-bound").fill("3");
+      await e.check(
+        "Changing C moves the diagram's proposed bound line",
+        async () => {
+          assert.notDeepEqual(await drawing(page, ".workshop-guide"), before);
+        },
+      );
       await explain(page, "My second construction uses 3x²+y² ≤ 3r².");
       await submit(page);
       await focused(page, "workshop-result");
@@ -196,8 +214,16 @@ export async function workshop(page, e) {
         await result(page).innerText(),
         /unrestricted limit unresolved/,
       );
+      const parabola = await drawing(page);
       await reconstruct(page);
       await page.locator("#workshop-exponent").fill("3");
+      await e.check(
+        "Changing the exponent redraws the path restriction",
+        async () => {
+          assert.notDeepEqual(await drawing(page), parabola);
+        },
+      );
+      const balanced = await drawing(page);
       await page.locator("#workshop-coefficient").fill("1/1000000");
       await explain(
         page,
@@ -212,7 +238,11 @@ export async function workshop(page, e) {
           assert.match(text, /1000000\/1000000000001/);
           assert.match(text, /500000\/1000000000001/);
           assert.match(text, /any positive delta/);
-          assert.match(text, /full limit does not exist/);
+          assert.match(
+            await result(page).locator(".workshop-scope").innerText(),
+            /^The unrestricted limit does not exist\./,
+          );
+          assert.notDeepEqual(await drawing(page), balanced);
           assert.equal(await page.locator(".workshop-grid svg").count(), 1);
           await mathematics(page);
         },
@@ -234,6 +264,10 @@ export async function workshop(page, e) {
         /exact circulation of this polygon is 4π/,
       );
       assert.equal(await page.locator(".workshop-diagram marker").count(), 1);
+      const counterclockwise = await drawing(
+        page,
+        ".workshop-curve[marker-end]",
+      );
       assert.match(
         await page.locator(".workshop-captured").first().innerText(),
         /Vertex 4/,
@@ -254,9 +288,18 @@ export async function workshop(page, e) {
       await explain(page, "I reversed the same ordered rectangle.");
       await submit(page);
       await focused(page, "workshop-result");
-      assert.match(
-        await result(page).innerText(),
-        /exact circulation of this polygon is -4π/,
+      await e.check(
+        "Reversing traversal reverses circulation and redraws the ordered arrows",
+        async () => {
+          assert.match(
+            await result(page).innerText(),
+            /exact circulation of this polygon is -4π/,
+          );
+          assert.notDeepEqual(
+            await drawing(page, ".workshop-curve[marker-end]"),
+            counterclockwise,
+          );
+        },
       );
       await reconstruct(page);
       await setVertices([
