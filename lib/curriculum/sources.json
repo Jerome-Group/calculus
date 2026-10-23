@@ -37,9 +37,9 @@
       },
       {
         "page": 25,
-        "printed": "Pages 25–26 solve for $y\\prime$ by dividing by $y_0$ without stating the condition $y_0\\ne0$.",
+        "printed": "Pages 25–26 solve for $y^{\\prime}$ by dividing by $y_0$ without stating the condition $y_0\\ne0$.",
         "correction": "The finite-slope derivation requires $y_0\\ne0$; at $(\\pm a,0)$ the tangent is vertical. The final normal-form tangent equation remains valid there.",
-        "justification": "At $y_0=0$, the equation $2x_0/a^2+2y_0y\\prime/b^2=0$ cannot be solved for a finite $y\\prime$; the ellipse has $x_0=\\pm a$.",
+        "justification": "At $y_0=0$, the equation $2x_0/a^2+2y_0y^{\\prime}/b^2=0$ cannot be solved for a finite $y^{\\prime}$; the ellipse has $x_0=\\pm a$.",
         "provenance": "Direct visual inspection and algebraic check; the original file is unchanged."
       },
       {

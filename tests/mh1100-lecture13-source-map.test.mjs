@@ -231,7 +231,7 @@ test("Lecture 13 source reasoning preserves the worked methods and hypotheses", 
   assert.ok(cancellation.equation.includes("\\frac12"));
 
   const rule = block("lecture13-lhopital-rule-statement");
-  assert.ok(rule.statement.includes("g\\prime(x)\\ne0"));
+  assert.ok(rule.statement.includes("g^{\\prime}(x)\\ne0"));
   assert.ok(rule.statement.includes("finite value"));
   assert.ok(rule.statement.includes("\\infty"));
   assert.equal(rule.status, "Theorem used without proof");
@@ -245,7 +245,7 @@ test("Lecture 13 source reasoning preserves the worked methods and hypotheses", 
   const cauchy = block("cauchy-mean-value-theorem");
   assert.equal(cauchy.status, "Complete proof");
   assert.ok(cauchy.statement.includes("continuous on $[a,b]$"));
-  assert.ok(cauchy.statement.includes("g\\prime(x)\\ne0"));
+  assert.ok(cauchy.statement.includes("g^{\\prime}(x)\\ne0"));
   const proof = block("lecture13-cauchy-mean-value-proof-worked");
   assert.ok(JSON.stringify(proof).includes("Rolle"));
   assert.ok(JSON.stringify(proof).includes("h(x)=f(x)-f(a)"));

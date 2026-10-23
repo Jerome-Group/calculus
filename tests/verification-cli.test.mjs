@@ -325,7 +325,7 @@ function strictMath(value, locator) {
     }
 }
 
-test("every actual lesson renders accessible mathematical content and strictly parseable guide notation", () => {
+test("canonical lesson content renders accessible mathematics and strictly parseable guide notation", () => {
   for (const concept of concepts) {
     strictMath(concept, concept.id);
     strictMath(learningGuides[concept.id], `${concept.id}.guide`);

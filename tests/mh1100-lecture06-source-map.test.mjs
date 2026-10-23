@@ -183,7 +183,7 @@ test("new transfer tasks respect limiting slopes and rate units", () => {
   );
   assert.match(sourceGraph.setup, /m\\approx3\/2/);
   assert.match(sourceGraph.steps[1].text, /near \$\(5,1\.5\)\$/);
-  assert.doesNotMatch(sourceGraph.steps[1].text, /P\\prime\(5,1\.5\)/);
+  assert.doesNotMatch(sourceGraph.steps[1].text, /P\^\{\\prime\}\(5,1\.5\)/);
   assert.match(
     derivative.exercises.find((item) => item.id === "derivative-graph-transfer")
       .solution,
