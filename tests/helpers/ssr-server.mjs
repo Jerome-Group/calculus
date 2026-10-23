@@ -37,8 +37,11 @@ export async function createSsrServer(options, registerAfter) {
         {
           name: "retain-ssr-fixture-owner",
           enforce: "pre",
-          configureServer(server) {
-            vite = server;
+          configureServer: {
+            order: "pre",
+            handler(server) {
+              vite = server;
+            },
           },
         },
         ...(options.plugins ?? []),
