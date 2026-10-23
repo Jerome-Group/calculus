@@ -62,6 +62,8 @@ jobs:
         run: npm ci
       - name: Audit installed dependencies
         run: npm audit --audit-level=info
+      - name: Verify bounded study safety
+        run: npm run verify:study-safety
       - name: Install the pinned Chromium browser
         run: |
           sudo sed -i -E '\|^http://azure\.archive\.ubuntu\.com/ubuntu/([[:space:]].*)?$|d' /etc/apt/apt-mirrors.txt
@@ -73,6 +75,9 @@ jobs:
         if: always()
         with:
           name: calculus-verification
-          path: outputs/verification/ci
+          path: |
+            outputs/verification/ci
+            outputs/formal-save-safety/run-*/
+            outputs/formal-save-safety/latest-run.txt
           if-no-files-found: warn
           retention-days: 14

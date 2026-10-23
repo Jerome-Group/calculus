@@ -1,0 +1,29 @@
+{
+  "tlc": {
+    "version": "1.8.0",
+    "url": "https://github.com/tlaplus/tlaplus/releases/download/v1.8.0/tla2tools.jar",
+    "sha256": "dae639a1f51a9e13ce60c369b15f32124cf1a78017aca366b6de0ae2b5169439"
+  },
+  "java": {
+    "version": "21.0.9+10",
+    "release": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.9%2B10/",
+    "archives": {
+      "darwin-arm64": [
+        "OpenJDK21U-jre_aarch64_mac_hotspot_21.0.9_10.tar.gz",
+        "1f7f6506b598e85d7d8ff8b36563d98657d2d81b16bfca3cd242d7906cfbd11b"
+      ],
+      "darwin-x64": [
+        "OpenJDK21U-jre_x64_mac_hotspot_21.0.9_10.tar.gz",
+        "945abc49249f1e89a2a6a008d70d63dc42b25bbe5e1711ff97aeec70063008d2"
+      ],
+      "linux-arm64": [
+        "OpenJDK21U-jre_aarch64_linux_hotspot_21.0.9_10.tar.gz",
+        "1d041073c65e834bdb4da732485a54ff829859dcd1549e7992f15bd73341be29"
+      ],
+      "linux-x64": [
+        "OpenJDK21U-jre_x64_linux_hotspot_21.0.9_10.tar.gz",
+        "aeab55d064a1a27a3744b0880b9b414077b4ed2b1790817eea3df60aec946431"
+      ]
+    }
+  }
+}

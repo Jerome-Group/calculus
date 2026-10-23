@@ -14,10 +14,11 @@
     "sources:check": "node scripts/check-source-manifest.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .sites-runtime",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
-    "format:check": "prettier --check \"app/**/*.{ts,tsx,css}\" \"components/**/*.{ts,tsx}\" \"lib/**/*.{ts,json}\" \"tests/**/*.mjs\" \"build/**/*.ts\" \"db/**/*.ts\" \"worker/**/*.ts\" \"hooks/**/*.ts\" \"examples/**/*.ts\" \"*.{ts,mjs,json}\" .github/workflows/ci.yml .github/workflows/dependabot-auto-merge.yml README.md MAP.md CONTEXT.md \"docs/adr/*.md\" \"scripts/**/*.mjs\" data/experience-map.json \"docs/research/*.md\" \"docs/audits/2026-10-03/*.md\" \".agents/skills/verify/**/*.{mjs,md}\"",
+    "format:check": "prettier --check \"app/**/*.{ts,tsx,css}\" \"components/**/*.{ts,tsx}\" \"lib/**/*.{ts,json}\" \"tests/**/*.mjs\" \"build/**/*.ts\" \"db/**/*.ts\" \"worker/**/*.ts\" \"hooks/**/*.ts\" \"examples/**/*.ts\" \"*.{ts,mjs,json}\" .github/workflows/ci.yml .github/workflows/dependabot-auto-merge.yml README.md MAP.md CONTEXT.md \"docs/adr/*.md\" \"scripts/**/*.mjs\" data/experience-map.json \"docs/research/*.md\" \"docs/audits/2026-10-03/*.md\" \".agents/skills/verify/**/*.{mjs,md}\" \".agents/skills/study-save-safety/**/*.{mjs,md,json}\"",
     "calculus": "node scripts/calculus.mjs",
     "verify": "node scripts/calculus.mjs verify --profile ci",
-    "agent": "node scripts/calculus.mjs"
+    "agent": "node scripts/calculus.mjs",
+    "verify:study-safety": "node .agents/skills/study-save-safety/scripts/run.mjs"
   },
   "dependencies": {
     "class-variance-authority": "0.7.1",
