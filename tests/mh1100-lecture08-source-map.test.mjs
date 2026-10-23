@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import katex from "katex";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const read = (name) =>
   JSON.parse(readFileSync(new URL(name, import.meta.url), "utf8"));
@@ -13,14 +13,16 @@ const ledger = read("../lib/curriculum/outcome-ledger.json");
 const guides = read("../lib/curriculum/learning-guides.json");
 const sources = read("../lib/curriculum/sources.json");
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 const cases = [
   [

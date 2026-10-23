@@ -1,29 +1,23 @@
 import assert from "node:assert/strict";
 import test, { after } from "node:test";
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const scratch = await mkdtemp(path.join(tmpdir(), "calculus-slider-"));
-const vite = await createServer({
-  root,
-  cacheDir: path.join(scratch, "cache"),
-  appType: "custom",
-  configFile: false,
-  logLevel: "silent",
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-  optimizeDeps: { noDiscovery: true, include: [] },
-});
-after(async () => {
-  await vite.close();
-  await rm(scratch, { recursive: true, force: true });
-});
+const vite = await createSsrServer(
+  {
+    root,
+    appType: "custom",
+    configFile: false,
+    logLevel: "silent",
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+    optimizeDeps: { noDiscovery: true, include: [] },
+  },
+  after,
+);
 
 test("focusable slider controls expose their supplied name and explanation", async () => {
   const { Slider } = await vite.ssrLoadModule("/components/ui/slider.tsx");

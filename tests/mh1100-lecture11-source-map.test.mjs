@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import katex from "katex";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import {
   inspectNotation,
   inspectTexSemantics,
@@ -71,14 +71,16 @@ const missingLatexCommand =
   /(?<!\\)(?:sin|cos|tan|sec|csc|cot|sqrt|approx|Rightarrow|Longrightarrow|leq|geq|mathbb|int|pm|ldots)|(?<!\\)[A-Za-z]+prime/u;
 const doubledLatexCommand =
   /\\\\(?:sin|cos|tan|sec|csc|cot|sqrt|approx|Rightarrow|Longrightarrow|leq|geq|mathbb|int|pm|prime|mathrm|text|pi|infty|ldots)/u;
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 function close(actual, target, tolerance = 1e-8) {
   assert.ok(

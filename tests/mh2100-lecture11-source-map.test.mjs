@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import {
   inspectNotation,
   inspectTexSemantics,
@@ -117,14 +117,16 @@ const guidesForSource = Object.fromEntries(
     },
   ]),
 );
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("canonical source identity, exact section pages, exclusions, and stable routes", () => {
   assert.equal(sources[sourceId].file, "MH2100_Lecture_11.pdf");

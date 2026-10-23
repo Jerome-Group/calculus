@@ -1,18 +1,20 @@
 import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import { fileURLToPath } from "node:url";
 import * as THREE from "three";
 import katex from "katex";
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const { buildGraph } = await vite.ssrLoadModule("/lib/atlas/geometry.ts");
 const { initialGraph } = await vite.ssrLoadModule("/lib/atlas/math.ts");
 const { expression } = await vite.ssrLoadModule("/lib/atlas/math.ts");
