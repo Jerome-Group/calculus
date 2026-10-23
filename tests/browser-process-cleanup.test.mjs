@@ -155,3 +155,114 @@ test(
     }
   },
 );
+
+test(
+  "a signal error retains cleanup evidence and the original startup failure",
+  { timeout: 12000, skip: process.platform === "win32" },
+  async (t) => {
+    const fixture = await mkdtemp(
+      path.join(os.tmpdir(), "calculus-signal-proof-"),
+    );
+    const kill = process.kill.bind(process);
+    const failedKills = new Set();
+    let group;
+    try {
+      for (const directory of [
+        "dist/server",
+        "dist/client/assets",
+        "node_modules/wrangler/bin",
+        "evidence",
+      ])
+        await mkdir(path.join(fixture, directory), { recursive: true });
+      await writeFile(path.join(fixture, "dist/server/wrangler.json"), "{}");
+      const viewport = path.join(
+        fixture,
+        "dist/client/assets/viewport-fixture.js",
+      );
+      await writeFile(viewport, "");
+      await writeFile(
+        path.join(fixture, "node_modules/wrangler/bin/wrangler.js"),
+        `
+      const port = Number(process.argv[process.argv.indexOf('--port') + 1]);
+      require('node:http').createServer((q, r) => r.end('Calculus Graph studio'))
+        .listen(port, '127.0.0.1', () => console.log('Ready on http://127.0.0.1:' + port));
+    `,
+      );
+      t.mock.method(process, "kill", (pid, signal) => {
+        if (
+          pid < 0 &&
+          (signal === "SIGTERM" ||
+            (signal === "SIGKILL" && !failedKills.has(pid)))
+        ) {
+          group = pid;
+          if (signal === "SIGKILL") failedKills.add(pid);
+          throw Object.assign(new Error("Controlled kill EPERM"), {
+            code: "EPERM",
+          });
+        }
+        return kill(pid, signal);
+      });
+      const instance = await startWorker(
+        fixture,
+        path.join(fixture, "evidence"),
+        new AbortController().signal,
+      );
+      const cleanup = await instance.stop();
+      assert.equal(cleanup.processExited, true);
+      assert.equal(cleanup.portClosed, true);
+      assert.equal(cleanup.scratchRemoved, true);
+      assert.deepEqual(cleanup.errors, [
+        {
+          operation: "SIGTERM",
+          message: "Controlled kill EPERM",
+          code: "EPERM",
+        },
+        {
+          operation: "SIGKILL",
+          message: "Controlled kill EPERM",
+          code: "EPERM",
+        },
+      ]);
+      assert.match(
+        await readFile(
+          path.join(fixture, "evidence/worker.stdout.log"),
+          "utf8",
+        ),
+        /Ready on http:\/\/127\.0\.0\.1:/,
+      );
+      await assert.rejects(
+        fetch(instance.url, { signal: AbortSignal.timeout(1000) }),
+      );
+      await assert.rejects(
+        readFile(path.join(instance.scratch, "wrangler.json")),
+      );
+      await rm(viewport);
+      await assert.rejects(
+        startWorker(
+          fixture,
+          path.join(fixture, "evidence"),
+          new AbortController().signal,
+        ),
+        (error) => {
+          assert.equal(
+            error.message,
+            "Built deferred viewport chunk is missing.",
+          );
+          assert.equal(error.cleanup.errors[0].code, "EPERM");
+          assert.equal(error.cleanup.processExited, true);
+          return true;
+        },
+      );
+    } finally {
+      t.mock.restoreAll();
+      if (group) {
+        try {
+          kill(group, "SIGKILL");
+        } catch (error) {
+          if (error.code !== "ESRCH") throw error;
+        }
+      }
+      await rm(fixture, { recursive: true, force: true });
+    }
+  },
+);
