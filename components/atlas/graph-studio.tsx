@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Viewport } from "./deferred-viewport";
 import { Formula } from "./math-text";
-import { type GraphSpec } from "@/lib/atlas/math";
+import { initialGraph, type GraphSpec } from "@/lib/atlas/math";
 import { ExpressionPreview, expressionPreview } from "./expression-preview";
 import { QuickGraphExpression } from "./quick-graph-expression";
 import type { StudyController } from "./use-study-controller";
@@ -251,6 +251,9 @@ export function GraphStudio({ study }: { study: StudyController }) {
                 setDraft((g) => ({
                   ...g,
                   mode: v,
+                  ...(v === "curve"
+                    ? { vmin: initialGraph.vmin, vmax: initialGraph.vmax }
+                    : {}),
                   expressions:
                     v === "surface"
                       ? ["sin(x)*cos(y)"]

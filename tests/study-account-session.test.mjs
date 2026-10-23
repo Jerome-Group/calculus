@@ -127,6 +127,67 @@ test("same-record conflict preserves both versions and explicit resolution is co
   assert.equal((await ready()).read(key).value.answer, "my tab edit");
 });
 
+for (const recovery of ["unsaved", "conflict"]) {
+  test(`an unchanged overview preserves ${recovery} recovery until an explicit choice`, async () => {
+    const session = await ready();
+    const assessment = { ...key, kind: "assessment" };
+    const recorded = {
+      status: "Needs practice",
+      date: new Date().toISOString(),
+    };
+    const local = {
+      ...recorded,
+      status: "Can explain independently",
+    };
+    await session.ensure(assessment);
+    await session.save(assessment, recorded);
+    if (recovery === "conflict") {
+      const other = await ready();
+      await other.ensure(assessment);
+      await other.save(assessment, {
+        ...recorded,
+        date: "2026-10-22T00:00:00.000Z",
+      });
+    }
+    intercept = ({ command, dispatch }) => {
+      if (recovery === "unsaved" && command?.key?.kind === "assessment")
+        throw new TypeError("injected assessment outage");
+      return dispatch();
+    };
+    assert.equal((await session.save(assessment, local)).kind, recovery);
+    const refreshed = pause();
+    let overviewDelivered = false;
+    const unsubscribe = session.subscribe(() => {
+      if (overviewDelivered) refreshed.resolve();
+    });
+    intercept = async ({ path, dispatch }) => {
+      const response = await dispatch();
+      if (
+        new URL(path, "http://session.test").searchParams.get("scope") ===
+        "overview"
+      )
+        overviewDelivered = true;
+      return response;
+    };
+    await session.save(key, value("an unrelated draft"));
+    await refreshed.promise;
+    unsubscribe();
+    assert.equal(session.read(assessment).persistence.kind, recovery);
+    assert.deepEqual(session.read(assessment).value, local);
+    assert.equal(
+      (
+        await (recovery === "conflict"
+          ? session.resolve(assessment, "keep-mine")
+          : session.retry(assessment))
+      ).kind,
+      "saved",
+    );
+    const restored = await ready();
+    await restored.ensure(assessment);
+    assert.deepEqual(restored.read(assessment).value, local);
+  });
+}
+
 test("late A responses cannot populate B and a stale A write is rejected before mutation", async () => {
   const session = await ready();
   const originalOwner = owner;
