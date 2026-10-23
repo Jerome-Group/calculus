@@ -54,8 +54,9 @@ The [study-save safety skill](../.agents/skills/study-save-safety/SKILL.md) chec
 TLA+ models of pending writes and account reads. Run `npm run verify:study-safety`.
 Pinned portable tools bootstrap into ignored outputs. Covered-source drift blocks a pass.
 Model and real-source mutation controls must fail for their named property; the original
-source must still pass afterward. The existing required CI `checks` job runs the safety
-command before its application checks. An unsuccessful safety command fails that job.
+source must still pass afterward. CI runs safety verification in an independent `study_safety` job alongside application
+verification. The required `checks` gate always runs and succeeds only when both jobs
+succeed. A failed, cancelled, skipped or missing prerequisite result fails that gate.
 Its finite bounds and source correspondence exclude a proof of all TypeScript execution,
 SQL isolation, provider authentication, and unbounded requests.
 

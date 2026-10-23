@@ -18,7 +18,7 @@ Every run cleans up its instance automatically.
 Use `npm run agent -- browser run --features all --output outputs/browser/full` for the complete maintained map.
 Select distinct IDs with `--features library,lessons`.
 Runs default to 240 seconds. `--timeout-ms` accepts 1 through 540000 milliseconds.
-The existing CI command runs this browser gate and the mathematical checks within its nine-minute runner budget and ten-minute job limit.
+The CI profile explicitly gives its complete seven-feature browser gate 360 seconds. The enclosing CI stage allows 390 seconds, the application profile retains its nine-minute overall limit, and application and formal verification run independently in parallel under ten-minute job limits. Required `checks` always runs and succeeds only when both jobs succeed. Individual action waits, assertions and cleanup remain unchanged. These are configured bounds, not a promise that future expanded coverage will fit.
 
 ## Doctor
 
@@ -77,7 +77,7 @@ If a run fails, retain its directory and use a new output directory for the next
 The executable entry point is `node .agents/skills/verify/cli.mjs list`, `doctor`, or `run`.
 Run `node .agents/skills/verify/probe-interruption.mjs --output outputs/browser/interruption` to check real CLI SIGINT evidence and cleanup in a new directory.
 Run `node .agents/skills/verify/probe-harness.mjs` for Node controls covering error ownership, page release, interruption, axes-only graph rejection, and exact prerequisite resume receipts. Extra mutations, unacknowledged saves and mismatched receipt records must fail. These controls use fixtures; live browser reproof is required for harness changes.
-Run `node .agents/skills/verify/canonical-routes.mjs --output outputs/browser/canonical-routes` for all 125 actual Learn routes and both pilots' Practice, Explore, and Revise entry points. This optional sweep uses the same build, source identity, doctor, error checks, evidence, and cleanup as `browser run`. It defaults to 540 seconds and remains outside the 240-second CI browser gate. Retain failures and use a new output directory for each attempt.
+Run `node .agents/skills/verify/canonical-routes.mjs --output outputs/browser/canonical-routes` for all 125 actual Learn routes and both pilots' Practice, Explore, and Revise entry points. This optional sweep uses the same build, source identity, doctor, error checks, evidence, and cleanup as `browser run`. It defaults to 540 seconds and remains outside the maintained CI browser gate. Retain failures and use a new output directory for each attempt.
 `npm run agent -- browser ...` delegates to that same implementation.
 Open a retained trace with `npx playwright show-trace outputs/browser/full/library/trace-1.zip`.
 Use the installed `maintain-verification-skill` workflow when app entry points change, then regenerate the compact map with `npm run agent -- map`.
