@@ -34925,7 +34925,7 @@
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#rolle-mean-value.supplementalBlocks[rolle-theorem]",
+            "locator": "lib/curriculum/learning-guides.json#rolle-mean-value.supplementalBlocks[rolle-source-hypotheses]",
             "claim": "The cited guide block states the relevant theorem, definition, or method with its required domain and hypotheses.",
             "method": "Compared its statement with source physical page(s) 19, 20; any guide-added safeguard or explanation is distinguished from the source."
           }
@@ -34964,7 +34964,7 @@
         ],
         "stated": [
           {
-            "locator": "lib/curriculum/learning-guides.json#rolle-mean-value.supplementalBlocks[rolle-theorem]",
+            "locator": "lib/curriculum/learning-guides.json#rolle-mean-value.supplementalBlocks[rolle-source-hypotheses]",
             "basis": "Guide statement checked against source physical page(s) 19, 20."
           }
         ],
@@ -46322,7 +46322,7 @@
           "status": "page_verified",
           "pages": [7, 9],
           "method": "Canonical SHA-256 verified; each cited physical page rendered and visually checked against its heading and claim.",
-          "claim_observed": "The three space formulas multiply the scalar field by $X\\prime$, $Y\\prime$, or $Z\\prime$ respectively."
+          "claim_observed": "The three space formulas multiply the scalar field by $X^{\\prime}$, $Y^{\\prime}$, or $Z^{\\prime}$ respectively."
         },
         "page_heading": "Theorem (Continuous Space Scalar Fields and Smooth Oriented Curves)"
       },

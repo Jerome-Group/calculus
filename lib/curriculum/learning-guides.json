@@ -1001,7 +1001,7 @@
         "kind": "conceptual",
         "prompt": "Let $r(x)=0$ when $x<0$ and $r(x)=2$ when $x\\ge0$. Find $r(r(x))$ for all real $x$.",
         "hint": "Track the possible first outputs before applying the rule again.",
-        "solution": "The first output is $0$ or $2$, both nonnegative, so $r(r(x))=2$ for all real $x.",
+        "solution": "The first output is $0$ or $2$, both nonnegative, so $r(r(x))=2$ for all real $x$.",
         "rubric": [
           "Use the stated domain or branch condition before computing.",
           "Give a reason that distinguishes the answer from a nearby incorrect claim."
@@ -3199,7 +3199,7 @@
         "kind": "theorem",
         "id": "finite-derivative-definition",
         "title": "Take the limit of nonzero secants",
-        "statement": "If $a$ is an interior domain point and the finite two-sided limit exists, $f\\prime(a)=\\lim_{h\\to0}[f(a+h)-f(a)]/h$. Setting $x=a+h$ gives the equivalent $(f(x)-f(a))/(x-a)$ form.",
+        "statement": "If $a$ is an interior domain point and the finite two-sided limit exists, $f^{\\prime}(a)=\\lim_{h\\to0}[f(a+h)-f(a)]/h$. Setting $x=a+h$ gives the equivalent $(f(x)-f(a))/(x-a)$ form.",
         "hypotheses": [
           "The point value $f(a)$ and nearby values are defined.",
           "Use nonzero increments on both sides; the quotient must converge to a finite real number."
@@ -3223,14 +3223,14 @@
             "text": "For $h\\ne0$, the quotient is $3a^2+3ah+h^2-3$, whose limit is $3a^2-3$."
           }
         ],
-        "result": "$f\\prime(a)=3a^2-3$.",
+        "result": "$f^{\\prime}(a)=3a^2-3$.",
         "verification": "The cancellation is valid only for $h\\ne0$; plugging in $h=0$ before division is invalid."
       },
       {
         "kind": "theorem",
         "id": "tangent-and-velocity",
         "title": "Interpret a finite derivative with the right units",
-        "statement": "A finite derivative $f\\prime(a)$ is the slope of the tangent $y=f(a)+f\\prime(a)(x-a)$ and the instantaneous rate of output change per input unit. For position $s(t)$ in metres, $s\\prime(t)$ is velocity in metres per second.",
+        "statement": "A finite derivative $f^{\\prime}(a)$ is the slope of the tangent $y=f(a)+f^{\\prime}(a)(x-a)$ and the instantaneous rate of output change per input unit. For position $s(t)$ in metres, $s^{\\prime}(t)$ is velocity in metres per second.",
         "hypotheses": [
           "The base point is in the domain and has a finite derivative.",
           "A secant uses two distinct inputs; its limiting slope, not a single sampled secant, defines the rate."
@@ -3261,7 +3261,7 @@
         "kind": "theorem",
         "id": "derivative-function-domain",
         "title": "Form a derivative function only where limits exist",
-        "statement": "The derivative function assigns $f\\prime(x)=\\lim_{h\\to0}[f(x+h)-f(x)]/h$ at each point with a finite two-sided limit. Its domain may be smaller than the domain of $f$.",
+        "statement": "The derivative function assigns $f^{\\prime}(x)=\\lim_{h\\to0}[f(x+h)-f(x)]/h$ at each point with a finite two-sided limit. Its domain may be smaller than the domain of $f$.",
         "hypotheses": [
           "The original function is defined at and on both sides of each interior point.",
           "Exclude points where the finite two-sided derivative limit fails."
@@ -3274,7 +3274,7 @@
         "id": "source-square-root-domain",
         "title": "Rationalize the source square-root quotient",
         "strategy": "Form the relevant limit and check domain before interpreting it.",
-        "setup": "For $f(x)=\\sqrt{x}$ with domain $[0,\\infty)$, find $f\\prime$ and its domain.",
+        "setup": "For $f(x)=\\sqrt{x}$ with domain $[0,\\infty)$, find $f^{\\prime}$ and its domain.",
         "steps": [
           {
             "label": "Interior",
@@ -3285,17 +3285,17 @@
             "text": "At 0 only $h>0$ is allowed and $\\sqrt h/h=1/\\sqrt h\\to+\\infty$; there is no finite two-sided derivative."
           }
         ],
-        "result": "$f\\prime(x)=1/(2\\sqrt{x})$ on $(0,\\infty)$.",
+        "result": "$f^{\\prime}(x)=1/(2\\sqrt{x})$ on $(0,\\infty)$.",
         "verification": "The original domain includes 0; the derivative domain does not. An unbounded one-sided slope is not a finite derivative."
       },
       {
         "kind": "theorem",
         "id": "derivative-graph-reading",
         "title": "Read slope sign from a function graph",
-        "statement": "Where a derivative exists, $f\\prime$ is positive at an increasing tangent, negative at a decreasing tangent, and zero at a horizontal tangent. The graph of $f\\prime$ records these slopes point by point.",
+        "statement": "Where a derivative exists, $f^{\\prime}$ is positive at an increasing tangent, negative at a decreasing tangent, and zero at a horizontal tangent. The graph of $f^{\\prime}$ records these slopes point by point.",
         "hypotheses": [
           "Use points where the finite derivative exists.",
-          "Read a tangent slope, not the height $f(x)$, when locating $f\\prime(x)$."
+          "Read a tangent slope, not the height $f(x)$, when locating $f^{\\prime}(x)$."
         ],
         "prerequisites": ["finite limits and function domains"],
         "status": "Source theorem or consequence used without proof"
@@ -3309,11 +3309,11 @@
         "steps": [
           {
             "label": "Zeros",
-            "text": "The paired derivative graph crosses its horizontal axis at $A\\prime,B\\prime,C\\prime$, matching the three zero tangent slopes."
+            "text": "The paired derivative graph crosses its horizontal axis at $A^{\\prime},B^{\\prime},C^{\\prime}$, matching the three zero tangent slopes."
           },
           {
             "label": "Positive slope",
-            "text": "At the marked input $x=5$, the source graph estimates the tangent slope as $m\\approx3/2$, so the derivative graph places $P\\prime$ near $(5,1.5)$."
+            "text": "At the marked input $x=5$, the source graph estimates the tangent slope as $m\\approx3/2$, so the derivative graph places $P^{\\prime}$ near $(5,1.5)$."
           }
         ],
         "result": "The derivative graph encodes slopes, not the original graph heights.",
@@ -3323,7 +3323,7 @@
         "kind": "theorem",
         "id": "derivative-notation",
         "title": "Translate derivative notations without treating them as a fraction",
-        "statement": "For $y=f(x)$, $f\\prime(x)$, $y\\prime$, $\\frac{dy}{dx}$, and $Df(x)$ denote the same first derivative. The evaluation notation $[\\frac{dy}{dx}]_{x=a}$ means $f\\prime(a)$.",
+        "statement": "For $y=f(x)$, $f^{\\prime}(x)$, $y^{\\prime}$, $\\frac{dy}{dx}$, and $Df(x)$ denote the same first derivative. The evaluation notation $[\\frac{dy}{dx}]_{x=a}$ means $f^{\\prime}(a)$.",
         "hypotheses": [
           "Specify the dependent and independent variables.",
           "At this stage $\\frac{dy}{dx}$ is derivative notation, not an ordinary ratio of two independent numbers."
@@ -3340,11 +3340,11 @@
         "steps": [
           {
             "label": "Differentiate",
-            "text": "The definition gives $f\\prime(x)=2x$."
+            "text": "The definition gives $f^{\\prime}(x)=2x$."
           },
           {
             "label": "Translate",
-            "text": "$\\frac{dy}{dx}=2x$ and $[\\frac{dy}{dx}]_{x=3}=f\\prime(3)=6$."
+            "text": "$\\frac{dy}{dx}=2x$ and $[\\frac{dy}{dx}]_{x=3}=f^{\\prime}(3)=6$."
           }
         ],
         "result": "Both notations report the same slope 6 at the same point.",
@@ -3356,9 +3356,9 @@
         "id": "derivative-definition-transfer",
         "outcome": "Derive a point derivative by cancellation before the limit.",
         "kind": "proof",
-        "prompt": "Use the definition to find $g\\prime(a)$ for $g(x)=x^3+2x$. Show the nonzero-increment quotient.",
+        "prompt": "Use the definition to find $g^{\\prime}(a)$ for $g(x)=x^3+2x$. Show the nonzero-increment quotient.",
         "hint": "Expand $(a+h)^3$ and cancel $g(a)$.",
-        "solution": "For $h\\ne0$, $[g(a+h)-g(a)]/h=3a^2+3ah+h^2+2$. Letting $h\\to0$ gives $g\\prime(a)=3a^2+2$.",
+        "solution": "For $h\\ne0$, $[g(a+h)-g(a)]/h=3a^2+3ah+h^2+2$. Letting $h\\to0$ gives $g^{\\prime}(a)=3a^2+2$.",
         "solutionTex": "\\frac{g(a+h)-g(a)}h=3a^2+3ah+h^2+2\\longrightarrow3a^2+2",
         "rubric": [
           "Show the expansion and cancellation for nonzero $h$.",
@@ -3373,7 +3373,7 @@
         "prompt": "For $s(t)=t^2+2t$ metres, find instantaneous velocity at $t=1$ and the tangent line to the position graph there from the definition.",
         "hint": "Simplify $[s(1+h)-s(1)]/h$ for nonzero $h$.",
         "solution": "The quotient is $(4h+h^2)/h=4+h$, so velocity is $4$ m/s. Since $s(1)=3$, the tangent is $y=3+4(t-1)$.",
-        "solutionTex": "s\\prime(1)=4,\\quad y=3+4(t-1)",
+        "solutionTex": "s^{\\prime}(1)=4,\\quad y=3+4(t-1)",
         "rubric": [
           "Use a nonzero displacement quotient.",
           "Give velocity with units.",
@@ -3384,10 +3384,10 @@
         "id": "derivative-domain-transfer",
         "outcome": "Distinguish a function domain from its derivative domain.",
         "kind": "proof",
-        "prompt": "For $g(x)=\\sqrt{x+2}$, find the domain of $g$ and derive $g\\prime(x)$ where it exists. What happens at $x=-2$?",
+        "prompt": "For $g(x)=\\sqrt{x+2}$, find the domain of $g$ and derive $g^{\\prime}(x)$ where it exists. What happens at $x=-2$?",
         "hint": "Rationalize the quotient for $x>-2$; inspect the allowed side at the endpoint.",
-        "solution": "The original domain is $[-2,\\infty)$. For $x>-2$, $g\\prime(x)=1/(2\\sqrt{x+2})$. At $-2$, only right increments are allowed and the quotient is $1/\\sqrt h\\to+\\infty$, so no finite derivative exists there; the derivative domain is $(-2,\\infty)$.",
-        "solutionTex": "\\operatorname{dom}g=[-2,\\infty),\\quad\\operatorname{dom}g\\prime=(-2,\\infty)",
+        "solution": "The original domain is $[-2,\\infty)$. For $x>-2$, $g^{\\prime}(x)=1/(2\\sqrt{x+2})$. At $-2$, only right increments are allowed and the quotient is $1/\\sqrt h\\to+\\infty$, so no finite derivative exists there; the derivative domain is $(-2,\\infty)$.",
+        "solutionTex": "\\operatorname{dom}g=[-2,\\infty),\\quad\\operatorname{dom}g^{\\prime}=(-2,\\infty)",
         "rubric": [
           "State the original real domain.",
           "Derive the interior quotient.",
@@ -3398,10 +3398,10 @@
         "id": "derivative-graph-transfer",
         "outcome": "Infer derivative signs and zeros from slope information.",
         "kind": "proof",
-        "prompt": "A differentiable graph has horizontal tangents at $x=-1$ and $x=2$, decreases for $x<-1$, increases for $-1<x<2$, and decreases for $x>2$. State $f\\prime$ at those inputs and its signs on the three intervals.",
+        "prompt": "A differentiable graph has horizontal tangents at $x=-1$ and $x=2$, decreases for $x<-1$, increases for $-1<x<2$, and decreases for $x>2$. State $f^{\\prime}$ at those inputs and its signs on the three intervals.",
         "hint": "Translate decreasing/increasing to slope signs.",
         "solution": "The derivative vanishes at $-1$ and $2$. Differentiability and decreasing/increasing behavior give nonpositive slopes on $(-\\infty,-1)$, nonnegative slopes on $(-1,2)$, and nonpositive slopes on $(2,\\infty)$. Strict signs are not guaranteed: a differentiable function can flatten at an isolated point while remaining monotone.",
-        "solutionTex": "f\\prime(-1)=f\\prime(2)=0,\\quad f\\prime(x)\\le0\\ (x<-1),\\quad f\\prime(x)\\ge0\\ (-1<x<2),\\quad f\\prime(x)\\le0\\ (x>2)",
+        "solutionTex": "f^{\\prime}(-1)=f^{\\prime}(2)=0,\\quad f^{\\prime}(x)\\le0\\ (x<-1),\\quad f^{\\prime}(x)\\ge0\\ (-1<x<2),\\quad f^{\\prime}(x)\\le0\\ (x>2)",
         "rubric": [
           "Use horizontal tangents for zero derivatives.",
           "Give nonpositive, nonnegative, and nonpositive slopes on the three intervals; do not assume strict signs.",
@@ -3412,10 +3412,10 @@
         "id": "derivative-notation-transfer",
         "outcome": "Translate first-derivative symbols at a fixed input.",
         "kind": "proof",
-        "prompt": "If $y=3x^2$ and $x=2$, write $f\\prime(x)$, $\\frac{dy}{dx}$, and $[\\frac{dy}{dx}]_{x=2}$.",
+        "prompt": "If $y=3x^2$ and $x=2$, write $f^{\\prime}(x)$, $\\frac{dy}{dx}$, and $[\\frac{dy}{dx}]_{x=2}$.",
         "hint": "Differentiate from the definition or the known quadratic result, then evaluate.",
-        "solution": "The derivative function is $f\\prime(x)=6x$, so $\\frac{dy}{dx}=6x$ and $[\\frac{dy}{dx}]_{x=2}=f\\prime(2)=12$. The symbols describe one operation and its value at 2.",
-        "solutionTex": "f\\prime(x)=\\frac{dy}{dx}=6x,\\quad\\left.\\frac{dy}{dx}\\right|_{x=2}=12",
+        "solution": "The derivative function is $f^{\\prime}(x)=6x$, so $\\frac{dy}{dx}=6x$ and $[\\frac{dy}{dx}]_{x=2}=f^{\\prime}(2)=12$. The symbols describe one operation and its value at 2.",
+        "solutionTex": "f^{\\prime}(x)=\\frac{dy}{dx}=6x,\\quad\\left.\\frac{dy}{dx}\\right|_{x=2}=12",
         "rubric": [
           "State the derivative function.",
           "Use equivalent notation consistently.",
@@ -3432,7 +3432,7 @@
         "kind": "theorem",
         "id": "derivative-implies-continuity",
         "title": "Use a finite derivative to prove continuity",
-        "statement": "If $f\\prime(a)$ exists as a finite real limit, then $f(a+h)-f(a)=h\\,[f(a+h)-f(a)]/h\\to0$, so $f(x)\\to f(a)$ as $x\\to a$. The converse need not hold.",
+        "statement": "If $f^{\\prime}(a)$ exists as a finite real limit, then $f(a+h)-f(a)=h\\,[f(a+h)-f(a)]/h\\to0$, so $f(x)\\to f(a)$ as $x\\to a$. The converse need not hold.",
         "hypotheses": [
           "The point value and nearby difference quotient are defined.",
           "The derivative limit is finite; multiplication by the increment then tends to zero."
@@ -3449,7 +3449,7 @@
         "steps": [
           {
             "label": "Forward",
-            "text": "If the quotient tends to finite $f\\prime(a)$, multiply by $h\\to0$ to obtain $f(a+h)-f(a)\\to0$."
+            "text": "If the quotient tends to finite $f^{\\prime}(a)$, multiply by $h\\to0$ to obtain $f(a+h)-f(a)\\to0$."
           },
           {
             "label": "Converse failure",
@@ -3463,7 +3463,7 @@
         "kind": "theorem",
         "id": "discontinuity-obstruction",
         "title": "Use noncontinuity as a derivative obstruction",
-        "statement": "The contrapositive of differentiability implying continuity is: if $f$ is not continuous at $a$, then $f\\prime(a)$ does not exist as a finite derivative.",
+        "statement": "The contrapositive of differentiability implying continuity is: if $f$ is not continuous at $a$, then $f^{\\prime}(a)$ does not exist as a finite derivative.",
         "hypotheses": [
           "Establish a genuine continuity failure at the target.",
           "Do not infer differentiability merely from continuity elsewhere."
@@ -3511,14 +3511,14 @@
         "steps": [
           {
             "label": "Away from zero",
-            "text": "For $x>0$, nearby $|x|=x$ gives $f\\prime(x)=1$; for $x<0$, nearby $|x|=-x$ gives $f\\prime(x)=-1$."
+            "text": "For $x>0$, nearby $|x|=x$ gives $f^{\\prime}(x)=1$; for $x<0$, nearby $|x|=-x$ gives $f^{\\prime}(x)=-1$."
           },
           {
             "label": "At zero",
             "text": "$[f(h)-f(0)]/h=|h|/h$ has limits -1 and 1 from opposite sides."
           }
         ],
-        "result": "$f\\prime(x)=-1$ for $x<0$, $1$ for $x>0$, and is undefined at 0.",
+        "result": "$f^{\\prime}(x)=-1$ for $x<0$, $1$ for $x>0$, and is undefined at 0.",
         "verification": "$|x|$ remains continuous at zero, so the failure is a corner rather than a discontinuity."
       },
       {
@@ -3556,7 +3556,7 @@
         "kind": "theorem",
         "id": "acceleration-second-rate",
         "title": "Interpret a second derivative as a rate of a rate",
-        "statement": "For position $s(t)$, velocity is $v(t)=s\\prime(t)$ and acceleration is $a(t)=v\\prime(t)=s\\prime\\prime(t)$ wherever those finite derivatives exist. Signed velocity uses displacement per unit time; acceleration uses change in velocity per unit time.",
+        "statement": "For position $s(t)$, velocity is $v(t)=s^{\\prime}(t)$ and acceleration is $a(t)=v^{\\prime}(t)=s^{\\prime\\prime}(t)$ wherever those finite derivatives exist. Signed velocity uses displacement per unit time; acceleration uses change in velocity per unit time.",
         "hypotheses": [
           "Differentiate position once for velocity and the velocity function once more for acceleration.",
           "Keep time and position units distinct."
@@ -3573,11 +3573,11 @@
         "steps": [
           {
             "label": "First rate",
-            "text": "$v(t)=s\\prime(t)=3t^2-6t$, so $v(1)=-3$ m/s."
+            "text": "$v(t)=s^{\\prime}(t)=3t^2-6t$, so $v(1)=-3$ m/s."
           },
           {
             "label": "Second rate",
-            "text": "$a(t)=v\\prime(t)=6t-6$, so $a(1)=0$ metres per second squared."
+            "text": "$a(t)=v^{\\prime}(t)=6t-6$, so $a(1)=0$ metres per second squared."
           }
         ],
         "result": "At one second the object moves in the negative direction despite zero instantaneous acceleration.",
@@ -3587,7 +3587,7 @@
         "kind": "theorem",
         "id": "higher-derivative-iteration",
         "title": "Iterate derivatives and read order notation",
-        "statement": "When successive finite derivatives exist, $f^{(3)}=(f\\prime\\prime)\\prime$, $f^{(4)}=(f^{(3)})\\prime$, and $f^{(n)}$ is the result of $n$ differentiations; $\\frac{d^ny}{dx^n}$ denotes that operation.",
+        "statement": "When successive finite derivatives exist, $f^{(3)}=(f^{\\prime\\prime})^{\\prime}$, $f^{(4)}=(f^{(3)})^{\\prime}$, and $f^{(n)}$ is the result of $n$ differentiations; $\\frac{d^ny}{dx^n}$ denotes that operation.",
         "hypotheses": [
           "Each lower-order derivative exists on a neighborhood sufficient to differentiate again.",
           "The superscript $(n)$ is an order label, not an ordinary power of $f$."
@@ -3600,11 +3600,11 @@
         "id": "source-third-fourth-polynomial",
         "title": "Iterate the lecture higher-derivative notation",
         "strategy": "Form the relevant limit and check domain before interpreting it.",
-        "setup": "For the lecture polynomial $f(x)=x^3-x$, continue after $f\\prime\\prime(x)=6x$.",
+        "setup": "For the lecture polynomial $f(x)=x^3-x$, continue after $f^{\\prime\\prime}(x)=6x$.",
         "steps": [
           {
             "label": "Third",
-            "text": "$f^{(3)}(x)=(6x)\\prime=6$."
+            "text": "$f^{(3)}(x)=(6x)^{\\prime}=6$."
           },
           {
             "label": "Fourth and later",
@@ -3687,7 +3687,7 @@
         "id": "discontinuity-obstruction-transfer",
         "outcome": "Rule out a derivative from a point-value mismatch.",
         "kind": "proof",
-        "prompt": "For $x\\ne1$, let $f(x)=x+1$ and assign $f(1)=7$. Is $f\\prime(1)$ defined?",
+        "prompt": "For $x\\ne1$, let $f(x)=x+1$ and assign $f(1)=7$. Is $f^{\\prime}(1)$ defined?",
         "hint": "Compare the nearby limit with the assigned value before forming a quotient.",
         "solution": "The nearby limit is 2 but $f(1)=7$, so $f$ is discontinuous at 1. By the contrapositive theorem it cannot be differentiable there. Indeed $[f(1+h)-7]/h=(h-5)/h$ has no finite two-sided limit.",
         "solutionTex": "\\lim_{x\\to1}f(x)=2\\ne7=f(1)",
@@ -3704,7 +3704,7 @@
         "prompt": "Find the derivative domain of $f(x)=|x-3|$ and its derivative on each side.",
         "hint": "Set $u=x-3$ and inspect the quotient at $x=3$.",
         "solution": "For $x<3$ the local formula is $3-x$, giving derivative -1; for $x>3$ it is $x-3$, giving 1. At 3, the quotient is $|h|/h$, whose side limits disagree. Thus the derivative domain is $\\mathbb R\\setminus\\{3\\}$.",
-        "solutionTex": "f\\prime(x)=\\begin{cases}-1&x<3\\\\1&x>3\\end{cases}",
+        "solutionTex": "f^{\\prime}(x)=\\begin{cases}-1&x<3\\\\1&x>3\\end{cases}",
         "rubric": [
           "Derive each side slope on an open region.",
           "Compare the two quotient limits at 3.",
@@ -3717,7 +3717,7 @@
         "kind": "proof",
         "prompt": "For $g(x)=\\sqrt[3]{x}$, decide continuity and differentiability at 0 and whether its graph has a vertical tangent.",
         "hint": "Compute $g(h)/h$ for positive and negative $h$.",
-        "solution": "The cube root is continuous at 0. For either sign of nonzero $h$, $g(h)/h=1/|h|^{2/3}\\to+\\infty$. Thus the graph has a vertical tangent, but $g\\prime(0)$ does not exist as a finite real number.",
+        "solution": "The cube root is continuous at 0. For either sign of nonzero $h$, $g(h)/h=1/|h|^{2/3}\\to+\\infty$. Thus the graph has a vertical tangent, but $g^{\\prime}(0)$ does not exist as a finite real number.",
         "solutionTex": "\\frac{\\sqrt[3]{h}}h=|h|^{-2/3}\\to+\\infty",
         "rubric": [
           "Check continuity at zero.",
@@ -3743,10 +3743,10 @@
         "id": "higher-order-polynomial-transfer",
         "outcome": "Compute third and fourth derivatives as iterations.",
         "kind": "proof",
-        "prompt": "For $p(x)=x^4-2x^2$, find $p\\prime\\prime$, $p^{(3)}$, and $p^{(4)}$ and distinguish $p^{(4)}$ from $[p(x)]^4$.",
+        "prompt": "For $p(x)=x^4-2x^2$, find $p^{\\prime\\prime}$, $p^{(3)}$, and $p^{(4)}$ and distinguish $p^{(4)}$ from $[p(x)]^4$.",
         "hint": "Differentiate each previous derivative, not the original expression repeatedly by name alone.",
-        "solution": "The derivatives are $p\\prime=4x^3-4x$, $p\\prime\\prime=12x^2-4$, $p^{(3)}=24x$, and $p^{(4)}=24$. The fourth derivative is the constant 24, not the fourth power of $p$.",
-        "solutionTex": "p\\prime\\prime=12x^2-4,\\quad p^{(3)}=24x,\\quad p^{(4)}=24",
+        "solution": "The derivatives are $p^{\\prime}=4x^3-4x$, $p^{\\prime\\prime}=12x^2-4$, $p^{(3)}=24x$, and $p^{(4)}=24$. The fourth derivative is the constant 24, not the fourth power of $p$.",
+        "solutionTex": "p^{\\prime\\prime}=12x^2-4,\\quad p^{(3)}=24x,\\quad p^{(4)}=24",
         "rubric": [
           "Show successive derivatives in order.",
           "Use the order notation correctly.",
@@ -3851,7 +3851,7 @@
         "id": "base-derivatives-from-definition",
         "title": "Start with the difference quotient",
         "strategy": "Substitute the function into the definition, simplify for nonzero h, then take the limit.",
-        "setup": "At an input $a$, use $f\\prime(a)=\\lim_{h\\to0}[f(a+h)-f(a)]/h$.",
+        "setup": "At an input $a$, use $f^{\\prime}(a)=\\lim_{h\\to0}[f(a+h)-f(a)]/h$.",
         "steps": [
           {
             "label": "Constant function",
@@ -3989,14 +3989,14 @@
             "equation": "F'(1)=4"
           }
         ],
-        "result": "$F\\prime(x)=6x-2$.",
+        "result": "$F^{\\prime}(x)=6x-2$.",
         "verification": "The constant term contributes zero; the negative coefficient remains negative."
       },
       {
         "kind": "theorem",
         "id": "product-rule-pointwise-hypotheses",
         "title": "The product rule at one input",
-        "statement": "If $f$ and $g$ are differentiable at $a$, then $fg$ is differentiable at $a$ and $(fg)\\prime(a)=f(a)g\\prime(a)+g(a)f\\prime(a)$.",
+        "statement": "If $f$ and $g$ are differentiable at $a$, then $fg$ is differentiable at $a$ and $(fg)^{\\prime}(a)=f(a)g^{\\prime}(a)+g(a)f^{\\prime}(a)$.",
         "hypotheses": [
           "$f$ and $g$ have finite two-sided derivatives at $a$, so both are continuous there."
         ],
@@ -4010,7 +4010,7 @@
         "kind": "theorem",
         "id": "quotient-rule-pointwise-hypotheses",
         "title": "The quotient rule needs a nonzero denominator",
-        "statement": "If $f$ and $g$ are differentiable at $a$ and $g(a)\\ne0$, then $f/g$ is defined near $a$ and $(f/g)\\prime(a)=[f\\prime(a)g(a)-f(a)g\\prime(a)]/[g(a)]^2$.",
+        "statement": "If $f$ and $g$ are differentiable at $a$ and $g(a)\\ne0$, then $f/g$ is defined near $a$ and $(f/g)^{\\prime}(a)=[f^{\\prime}(a)g(a)-f(a)g^{\\prime}(a)]/[g(a)]^2$.",
         "hypotheses": [
           "$f$ and $g$ have finite two-sided derivatives at $a$.",
           "$g(a)\\ne0$; continuity of $g$ then keeps $g$ nonzero on some neighborhood of $a$."
@@ -4041,11 +4041,11 @@
           },
           {
             "label": "Take the limit",
-            "text": "The denominator tends to $g(a)^2\\ne0$, while the difference quotients tend to $f\\prime(a)$ and $g\\prime(a)$.",
+            "text": "The denominator tends to $g(a)^2\\ne0$, while the difference quotients tend to $f^{\\prime}(a)$ and $g^{\\prime}(a)$.",
             "equation": "(f/g)'(a)=\\frac{f'(a)g(a)-f(a)g'(a)}{g(a)^2}"
           }
         ],
-        "result": "The numerator order is $f\\prime g-fg\\prime$; the denominator is $g^2$.",
+        "result": "The numerator order is $f^{\\prime} g-fg^{\\prime}$; the denominator is $g^2$.",
         "verification": "The condition $g(a)\\ne0$ justifies the quotient near $a$ and the nonzero limiting denominator."
       },
       {
@@ -4147,7 +4147,7 @@
         "kind": "theorem",
         "id": "tangent-normal-line-equations",
         "title": "Turn a derivative into tangent and normal lines",
-        "statement": "At $P=(a,f(a))$, if $f\\prime(a)=m$, the tangent line has slope $m$. If $m\\ne0$, the normal line through $P$ has slope $-1/m$; if $m=0$, the normal is vertical.",
+        "statement": "At $P=(a,f(a))$, if $f^{\\prime}(a)=m$, the tangent line has slope $m$. If $m\\ne0$, the normal line through $P$ has slope $-1/m$; if $m=0$, the normal is vertical.",
         "hypotheses": [
           "$f$ is defined and differentiable at $a$.",
           "The normal is the line through $P$ perpendicular to the tangent; the reciprocal-slope formula assumes $m\\ne0$."
@@ -4299,7 +4299,7 @@
         "kind": "theorem",
         "id": "sine-cosine-rules-all-real",
         "title": "Apply sine and cosine derivatives",
-        "statement": "For every $x\\in\\mathbb R$, $\\sin x$ and $\\cos x$ are differentiable and $(\\sin x)\\prime=\\cos x$, $(\\cos x)\\prime=-\\sin x$, with $x$ measured in radians.",
+        "statement": "For every $x\\in\\mathbb R$, $\\sin x$ and $\\cos x$ are differentiable and $(\\sin x)^{\\prime}=\\cos x$, $(\\cos x)^{\\prime}=-\\sin x$, with $x$ measured in radians.",
         "hypotheses": ["$x$ is real and interpreted as an angle in radians."],
         "prerequisites": ["Sine and cosine derivative proofs"],
         "status": "Theorem used without proof; derivations are given in the preceding blocks"
@@ -4322,8 +4322,8 @@
             "equation": "F'(\\frac{\\pi}{3})=\\frac{3}{2}+\\sqrt{3}"
           }
         ],
-        "result": "$F\\prime(x)=3\\cos(x)+2\\sin(x)$, and $F\\prime(\\pi/3)=3/2+\\sqrt{3}$.",
-        "verification": "The minus sign in $-2\\cos(x)$ combines with $(\\cos x)\\prime=-\\sin x$ to make a positive sine term."
+        "result": "$F^{\\prime}(x)=3\\cos(x)+2\\sin(x)$, and $F^{\\prime}(\\pi/3)=3/2+\\sqrt{3}$.",
+        "verification": "The minus sign in $-2\\cos(x)$ combines with $(\\cos x)^{\\prime}=-\\sin x$ to make a positive sine term."
       },
       {
         "kind": "derivation",
@@ -4343,14 +4343,14 @@
             "equation": "\\frac{\\cos^2 x+\\sin^2 x}{\\cos^2 x}=\\frac{1}{\\cos^2 x}=\\sec^2 x"
           }
         ],
-        "result": "$(\\tan x)\\prime=\\sec^2(x)$ for $\\cos(x)\\ne0$.",
+        "result": "$(\\tan x)^{\\prime}=\\sec^2(x)$ for $\\cos(x)\\ne0$.",
         "verification": "The excluded inputs are $x=\\pi/2+k\\pi$ for $k\\in\\mathbb Z$."
       },
       {
         "kind": "theorem",
         "id": "reciprocal-trig-rules-with-domains",
         "title": "Reciprocal trigonometric derivative formulas",
-        "statement": "Where defined, $(\\sec x)\\prime=\\sec x\\tan x$, $(\\csc x)\\prime=-\\csc x\\cot x$, and $(\\cot x)\\prime=-\\csc^2x$.",
+        "statement": "Where defined, $(\\sec x)^{\\prime}=\\sec x\\tan x$, $(\\csc x)^{\\prime}=-\\csc x\\cot x$, and $(\\cot x)^{\\prime}=-\\csc^2x$.",
         "hypotheses": [
           "Angles are measured in radians.",
           "$\\sec x$ requires $\\cos x\\ne0$.",
@@ -4469,7 +4469,7 @@
         "kind": "proof",
         "prompt": "Use the difference quotient to find the derivative of $f(x)=-7$ at an arbitrary input $a$.",
         "hint": "Write $f(a+h)-f(a)$ and simplify for $h\\ne0$.",
-        "solution": "For $h\\ne0$, $[f(a+h)-f(a)]/h=[-7-(-7)]/h=0$, so $f\\prime(a)=0$.",
+        "solution": "For $h\\ne0$, $[f(a+h)-f(a)]/h=[-7-(-7)]/h=0$, so $f^{\\prime}(a)=0$.",
         "solutionTex": "f'(a)=\\lim_{h\\to0}\\frac{-7-(-7)}{h}=0",
         "rubric": [
           "Substitute the same constant at $a+h$ and $a$.",
@@ -4481,9 +4481,9 @@
         "id": "identity-derivative-definition-transfer",
         "outcome": "Find the derivative of the identity function from its definition.",
         "kind": "proof",
-        "prompt": "For $g(t)=t$, use the difference quotient at an arbitrary input $b$ to find $g\\prime(b)$.",
+        "prompt": "For $g(t)=t$, use the difference quotient at an arbitrary input $b$ to find $g^{\\prime}(b)$.",
         "hint": "The output increment is $(b+h)-b$.",
-        "solution": "For $h\\ne0$, $[g(b+h)-g(b)]/h=[(b+h)-b]/h=1$, hence $g\\prime(b)=1$.",
+        "solution": "For $h\\ne0$, $[g(b+h)-g(b)]/h=[(b+h)-b]/h=1$, hence $g^{\\prime}(b)=1$.",
         "solutionTex": "g'(b)=\\lim_{h\\to0}\\frac{(b+h)-b}{h}=1",
         "rubric": [
           "Substitute $b+h$ and $b$ into $g$.",
@@ -4502,7 +4502,7 @@
         "rubric": [
           "Use the five coefficients $1,4,6,4,1$.",
           "Pair each coefficient with the matching powers of $t$ and $h$.",
-          "Identify only $4t^3h$ as linear in $h."
+          "Identify only $4t^3h$ as linear in $h$."
         ]
       },
       {
@@ -4525,7 +4525,7 @@
         "kind": "computational",
         "prompt": "Differentiate $Q(t)=-2t^3+5t^2-6t+9$.",
         "hint": "Keep every coefficient and sign, and differentiate the constant term to zero.",
-        "solution": "$Q\\prime(t)=-6t^2+10t-6$.",
+        "solution": "$Q^{\\prime}(t)=-6t^2+10t-6$.",
         "solutionTex": "Q'(t)=-6t^2+10t-6",
         "rubric": [
           "Apply the power rule to each nonconstant term.",
@@ -4538,11 +4538,11 @@
         "outcome": "Apply the quotient rule and state where the quotient is defined.",
         "kind": "computational",
         "prompt": "Differentiate $R(t)=(t^2-3)/(t+1)$ and state its domain.",
-        "hint": "Use numerator order $f\\prime g-fg\\prime$ and square the denominator.",
-        "solution": "For $t\\ne-1$, $R\\prime(t)=[2t(t+1)-(t^2-3)]/(t+1)^2=(t^2+2t+3)/(t+1)^2$.",
+        "hint": "Use numerator order $f^{\\prime} g-fg^{\\prime}$ and square the denominator.",
+        "solution": "For $t\\ne-1$, $R^{\\prime}(t)=[2t(t+1)-(t^2-3)]/(t+1)^2=(t^2+2t+3)/(t+1)^2$.",
         "solutionTex": "R'(t)=\\frac{2t(t+1)-(t^2-3)}{(t+1)^2}=\\frac{t^2+2t+3}{(t+1)^2},\\quad t\\ne-1",
         "rubric": [
-          "Keep the numerator order $f\\prime g-fg\\prime$.",
+          "Keep the numerator order $f^{\\prime} g-fg^{\\prime}$.",
           "Square the denominator.",
           "Exclude $t=-1$ from the original function\\'s domain."
         ]
@@ -4553,7 +4553,7 @@
         "kind": "computational",
         "prompt": "For $y=(x^2+2x+4)/(x^3-8)$, compare the quotient-rule derivative with simplifying first. State the domain.",
         "hint": "Factor $x^3-8=(x-2)(x^2+2x+4)$.",
-        "solution": "The original domain is $x\\ne2$. Factoring gives $y=1/(x-2)$, so $y\\prime=-1/(x-2)^2$. The quotient-rule numerator is $-(x^2+2x+4)^2$, yielding the same derivative after cancellation.",
+        "solution": "The original domain is $x\\ne2$. Factoring gives $y=1/(x-2)$, so $y^{\\prime}=-1/(x-2)^2$. The quotient-rule numerator is $-(x^2+2x+4)^2$, yielding the same derivative after cancellation.",
         "solutionTex": "x^3-8=(x-2)(x^2+2x+4),\\quad y=\\frac{1}{x-2},\\quad y'=-\\frac{1}{(x-2)^2},\\quad x\\ne2",
         "rubric": [
           "Factor the difference of cubes correctly.",
@@ -4594,8 +4594,8 @@
         "outcome": "Use a derivative to find tangent and normal lines at a point.",
         "kind": "computational",
         "prompt": "Find tangent and normal lines to $y=x^2/(x+1)$ at $x=1$.",
-        "hint": "Find $y(1)$ and $y\\prime(1)$; the normal slope is the negative reciprocal of the nonzero tangent slope.",
-        "solution": "At $x=1$, $y=1/2$ and $y\\prime=[2x(x+1)-x^2]/(x+1)^2=3/4$. Thus the tangent is $y-1/2=(3/4)(x-1)$, and the normal is $y-1/2=-(4/3)(x-1)$.",
+        "hint": "Find $y(1)$ and $y^{\\prime}(1)$; the normal slope is the negative reciprocal of the nonzero tangent slope.",
+        "solution": "At $x=1$, $y=1/2$ and $y^{\\prime}=[2x(x+1)-x^2]/(x+1)^2=3/4$. Thus the tangent is $y-1/2=(3/4)(x-1)$, and the normal is $y-1/2=-(4/3)(x-1)$.",
         "solutionTex": "y-\\frac{1}{2}=\\frac{3}{4}(x-1),\\quad y-\\frac{1}{2}=-\\frac{4}{3}(x-1)",
         "rubric": [
           "Evaluate the function and derivative at $x=1$.",
@@ -4607,13 +4607,13 @@
         "id": "product-quotient-misrule-transfer",
         "outcome": "Reject common product- and quotient-rule shortcuts by checking values.",
         "kind": "conceptual",
-        "prompt": "At $x=0$ compare $r(x)=(x+2)(x+4)$ with the shortcut $r_1\\prime(0)r_2\\prime(0)$. At $x=1$ compare $q(x)=(x^2+2)/(x+3)$ with $f\\prime(1)/g\\prime(1)$ and the reversed quotient numerator. Identify the invalid shortcuts.",
+        "prompt": "At $x=0$ compare $r(x)=(x+2)(x+4)$ with the shortcut $r_1^{\\prime}(0)r_2^{\\prime}(0)$. At $x=1$ compare $q(x)=(x^2+2)/(x+3)$ with $f^{\\prime}(1)/g^{\\prime}(1)$ and the reversed quotient numerator. Identify the invalid shortcuts.",
         "hint": "For $r$, let $r_1=x+2$ and $r_2=x+4$. For $q$, use $f=x^2+2$ and $g=x+3$.",
-        "solution": "For $r$, $r\\prime(0)=1\\cdot4+2\\cdot1=6$, while $r_1\\prime(0)r_2\\prime(0)=1$. For $q$ at $x=1$, $f=3$, $g=4$, $f\\prime=2$ and $g\\prime=1$, so $q\\prime(1)=(2\\cdot4-3\\cdot1)/16=5/16$. Reversing the numerator gives $-5/16$, and $f\\prime(1)/g\\prime(1)=2$. The shortcuts are invalid.",
+        "solution": "For $r$, $r^{\\prime}(0)=1\\cdot4+2\\cdot1=6$, while $r_1^{\\prime}(0)r_2^{\\prime}(0)=1$. For $q$ at $x=1$, $f=3$, $g=4$, $f^{\\prime}=2$ and $g^{\\prime}=1$, so $q^{\\prime}(1)=(2\\cdot4-3\\cdot1)/16=5/16$. Reversing the numerator gives $-5/16$, and $f^{\\prime}(1)/g^{\\prime}(1)=2$. The shortcuts are invalid.",
         "solutionTex": "r'(0)=6\\ne r_1'(0)r_2'(0)=1,\\quad q'(1)=\\frac{5}{16}\\ne-\\frac{5}{16}\\ne2",
         "rubric": [
           "Compute the product derivative with both changing contributions.",
-          "Use $f\\prime g-fg\\prime$ for the quotient.",
+          "Use $f^{\\prime} g-fg^{\\prime}$ for the quotient.",
           "Show the wrong formulas give different values."
         ]
       },
@@ -4621,7 +4621,7 @@
         "id": "degree-input-scale-transfer",
         "outcome": "Account for the radian conversion when an input is measured in degrees.",
         "kind": "proof",
-        "prompt": "Let $S(d)=\\sin(\\pi d/180)$, where $d$ is measured in degrees. Use the definition and the radian sine limit to find $S\\prime(30)$.",
+        "prompt": "Let $S(d)=\\sin(\\pi d/180)$, where $d$ is measured in degrees. Use the definition and the radian sine limit to find $S^{\\prime}(30)$.",
         "hint": "Write $\\alpha=\\pi h/180$ in the difference quotient and expand $\\sin(\\pi/6+\\alpha)-\\sin(\\pi/6)$.",
         "solution": "With $\\alpha=\\pi h/180$, the difference quotient is $[\\sin(\\pi/6)(\\cos\\alpha-1)+\\cos(\\pi/6)\\sin\\alpha]/h$. The first term tends to zero; the second tends to $(\\pi/180)\\cos(\\pi/6)=\\pi\\sqrt3/360$.",
         "solutionTex": "S'(30)=\\frac{\\pi}{180}\\cos\\frac\\pi6=\\frac{\\pi\\sqrt3}{360}",
@@ -4663,9 +4663,9 @@
         "id": "sine-cosine-linear-combination-transfer",
         "outcome": "Apply both sine and cosine derivative rules.",
         "kind": "computational",
-        "prompt": "Differentiate $H(x)=2\\cos x+\\sin x$ and evaluate $H\\prime(\\pi/6)$.",
-        "hint": "Use $(\\cos x)\\prime=-\\sin x$ and $(\\sin x)\\prime=\\cos x$.",
-        "solution": "$H\\prime(x)=-2\\sin x+\\cos x$, so $H\\prime(\\pi/6)=-1+\\sqrt3/2$.",
+        "prompt": "Differentiate $H(x)=2\\cos x+\\sin x$ and evaluate $H^{\\prime}(\\pi/6)$.",
+        "hint": "Use $(\\cos x)^{\\prime}=-\\sin x$ and $(\\sin x)^{\\prime}=\\cos x$.",
+        "solution": "$H^{\\prime}(x)=-2\\sin x+\\cos x$, so $H^{\\prime}(\\pi/6)=-1+\\sqrt3/2$.",
         "solutionTex": "H'(x)=-2\\sin x+\\cos x,\\quad H'(\\frac{\\pi}{6})=-1+\\frac{\\sqrt{3}}{2}",
         "rubric": [
           "Apply the cosine derivative with the negative sign.",
@@ -4677,9 +4677,9 @@
         "id": "tangent-derivative-transfer",
         "outcome": "Apply the tangent derivative where cosine is nonzero.",
         "kind": "proof",
-        "prompt": "Differentiate $p(x)=2\\tan x$ and state the full domain of $p$ and $p\\prime$.",
-        "hint": "Use $(\\tan x)\\prime=\\sec^2x$ and exclude zeros of $\\cos x$.",
-        "solution": "$p\\prime(x)=2\\sec^2x$ on $x\\ne\\pi/2+k\\pi$ for $k\\in\\mathbb Z$, the domain of $\\tan x$.",
+        "prompt": "Differentiate $p(x)=2\\tan x$ and state the full domain of $p$ and $p^{\\prime}$.",
+        "hint": "Use $(\\tan x)^{\\prime}=\\sec^2x$ and exclude zeros of $\\cos x$.",
+        "solution": "$p^{\\prime}(x)=2\\sec^2x$ on $x\\ne\\pi/2+k\\pi$ for $k\\in\\mathbb Z$, the domain of $\\tan x$.",
         "solutionTex": "p'(x)=2\\sec^2x,\\quad x\\ne\\frac\\pi2+k\\pi,\\ k\\in\\mathbb Z",
         "rubric": [
           "Keep the constant factor $2$.",
@@ -4693,7 +4693,7 @@
         "kind": "computational",
         "prompt": "Differentiate $J(x)=2\\sec x-3\\csc x+\\cot x$ and state where the original function is defined.",
         "hint": "Use the three quotient-derived formulas; all three terms must be defined.",
-        "solution": "$J\\prime(x)=2\\sec x\\tan x+3\\csc x\\cot x-\\csc^2x$. The domain excludes $\\sin x=0$ and $\\cos x=0$, so $x\\ne k\\pi/2$ for $k\\in\\mathbb Z$.",
+        "solution": "$J^{\\prime}(x)=2\\sec x\\tan x+3\\csc x\\cot x-\\csc^2x$. The domain excludes $\\sin x=0$ and $\\cos x=0$, so $x\\ne k\\pi/2$ for $k\\in\\mathbb Z$.",
         "solutionTex": "J'(x)=2\\sec x\\tan x+3\\csc x\\cot x-\\csc^2x,\\quad x\\ne k\\frac{\\pi}{2},\\ k\\in\\mathbb{Z}",
         "rubric": [
           "Differentiate secant, cosecant, and cotangent with the correct signs.",
@@ -4778,8 +4778,8 @@
         "kind": "proof",
         "prompt": "Find the derivative of $q(x)=\\cos((x^2+1)/(x^2+2))$ and state its real domain.",
         "hint": "Differentiate the quotient before multiplying by the derivative of cosine.",
-        "solution": "The inner quotient has derivative $2x/(x^2+2)^2$. Hence $q\\prime(x)=-[2x/(x^2+2)^2]\\sin((x^2+1)/(x^2+2))$. Since $x^2+2>0$, both $q$ and $q\\prime$ are defined on all real inputs.",
-        "solutionTex": "q\\prime(x)=-\\frac{2x}{(x^2+2)^2}\\sin\\!\\left(\\frac{x^2+1}{x^2+2}\\right)",
+        "solution": "The inner quotient has derivative $2x/(x^2+2)^2$. Hence $q^{\\prime}(x)=-[2x/(x^2+2)^2]\\sin((x^2+1)/(x^2+2))$. Since $x^2+2>0$, both $q$ and $q^{\\prime}$ are defined on all real inputs.",
+        "solutionTex": "q^{\\prime}(x)=-\\frac{2x}{(x^2+2)^2}\\sin\\!\\left(\\frac{x^2+1}{x^2+2}\\right)",
         "rubric": [
           "Identify both layers.",
           "Compute the inner quotient derivative correctly.",
@@ -4792,8 +4792,8 @@
         "kind": "proof",
         "prompt": "Differentiate both $a(x)=\\cos(x^2)$ and $b(x)=\\cos^2x$. Explain which operation is outside in each case.",
         "hint": "Rewrite $b(x)$ as $(\\cos x)^2$.",
-        "solution": "For $a$, cosine is outside, so $a\\prime(x)=-2x\\sin(x^2)$. For $b$, the square is outside, so $b\\prime(x)=-2\\sin x\\cos x$. They are different compositions.",
-        "solutionTex": "a\\prime(x)=-2x\\sin(x^2),\\qquad b\\prime(x)=-2\\sin x\\cos x",
+        "solution": "For $a$, cosine is outside, so $a^{\\prime}(x)=-2x\\sin(x^2)$. For $b$, the square is outside, so $b^{\\prime}(x)=-2\\sin x\\cos x$. They are different compositions.",
+        "solutionTex": "a^{\\prime}(x)=-2x\\sin(x^2),\\qquad b^{\\prime}(x)=-2\\sin x\\cos x",
         "rubric": [
           "Identify both outer functions.",
           "Include each inner derivative.",
@@ -4806,8 +4806,8 @@
         "kind": "proof",
         "prompt": "Find the real domain and derivative of $p(x)=(2x^2+1)^{-1/2}$.",
         "hint": "The inner expression is positive; multiply the outer power derivative by $4x$.",
-        "solution": "Since $2x^2+1>0$ for all real $x$, the domain is $\\mathbb R$. The derivative is $p\\prime(x)=(-1/2)(2x^2+1)^{-3/2}(4x)=-2x(2x^2+1)^{-3/2}$.",
-        "solutionTex": "p\\prime(x)=-\\frac{2x}{(2x^2+1)^{3/2}}",
+        "solution": "Since $2x^2+1>0$ for all real $x$, the domain is $\\mathbb R$. The derivative is $p^{\\prime}(x)=(-1/2)(2x^2+1)^{-3/2}(4x)=-2x(2x^2+1)^{-3/2}$.",
+        "solutionTex": "p^{\\prime}(x)=-\\frac{2x}{(2x^2+1)^{3/2}}",
         "rubric": [
           "Check the real domain.",
           "Differentiate outer and inner factors.",
@@ -4818,10 +4818,10 @@
         "id": "lecture08-nested-chain-transfer",
         "outcome": "Differentiate three nested layers and show every factor.",
         "kind": "proof",
-        "prompt": "For $r(x)=e^{\\sin(x^2)}$, find $r\\prime(x)$ and identify the outer, middle, and inner functions.",
+        "prompt": "For $r(x)=e^{\\sin(x^2)}$, find $r^{\\prime}(x)$ and identify the outer, middle, and inner functions.",
         "hint": "Use exponential, sine, then square in that order.",
-        "solution": "The layers are exponential, sine, and square. Their factors are $e^{\\sin(x^2)}$, $\\cos(x^2)$, and $2x$, so $r\\prime(x)=2x\\cos(x^2)e^{\\sin(x^2)}$ for all real $x$.",
-        "solutionTex": "r\\prime(x)=e^{\\sin(x^2)}\\cos(x^2)(2x)",
+        "solution": "The layers are exponential, sine, and square. Their factors are $e^{\\sin(x^2)}$, $\\cos(x^2)$, and $2x$, so $r^{\\prime}(x)=2x\\cos(x^2)e^{\\sin(x^2)}$ for all real $x$.",
+        "solutionTex": "r^{\\prime}(x)=e^{\\sin(x^2)}\\cos(x^2)(2x)",
         "rubric": [
           "Name all three layers.",
           "Retain every chain factor.",
@@ -4832,10 +4832,10 @@
         "id": "lecture08-nested-domain-transfer",
         "outcome": "Check a nested root domain before differentiating.",
         "kind": "proof",
-        "prompt": "For $q(x)=\\sqrt{\\sec(x^2)}$, state its real differentiability domain and find $q\\prime(x)$ there.",
+        "prompt": "For $q(x)=\\sqrt{\\sec(x^2)}$, state its real differentiability domain and find $q^{\\prime}(x)$ there.",
         "hint": "Require the secant radicand to be positive, then multiply root, secant, and square derivatives.",
-        "solution": "The real differentiability domain is $\\{x\\in\\mathbb R:\\cos(x^2)>0\\}$. On that domain, $q\\prime(x)=[1/(2\\sqrt{\\sec(x^2)})]\\,[\\sec(x^2)\\tan(x^2)]\\,(2x)=x\\sec(x^2)\\tan(x^2)/\\sqrt{\\sec(x^2)}$.",
-        "solutionTex": "q\\prime(x)=\\frac{x\\sec(x^2)\\tan(x^2)}{\\sqrt{\\sec(x^2)}},\\qquad x\\in\\{t\\in\\mathbb R:\\cos(t^2)>0\\}",
+        "solution": "The real differentiability domain is $\\{x\\in\\mathbb R:\\cos(x^2)>0\\}$. On that domain, $q^{\\prime}(x)=[1/(2\\sqrt{\\sec(x^2)})]\\,[\\sec(x^2)\\tan(x^2)]\\,(2x)=x\\sec(x^2)\\tan(x^2)/\\sqrt{\\sec(x^2)}$.",
+        "solutionTex": "q^{\\prime}(x)=\\frac{x\\sec(x^2)\\tan(x^2)}{\\sqrt{\\sec(x^2)}},\\qquad x\\in\\{t\\in\\mathbb R:\\cos(t^2)>0\\}",
         "rubric": [
           "State the positive-radicand domain.",
           "Include all three derivative factors.",
@@ -4882,7 +4882,7 @@
         "kind": "theorem",
         "id": "lecture08-chain-composition",
         "title": "Differentiate the outer function at the inner value",
-        "statement": "If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then $(f\\circ g)\\prime(x)=f\\prime(g(x))g\\prime(x)$. The derivative of the outer function is evaluated at the full inner value.",
+        "statement": "If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then $(f\\circ g)^{\\prime}(x)=f^{\\prime}(g(x))g^{\\prime}(x)$. The derivative of the outer function is evaluated at the full inner value.",
         "hypotheses": [
           "The inner function is defined and differentiable at the chosen input.",
           "The outer function is differentiable at the inner output."
@@ -4899,14 +4899,14 @@
         "steps": [
           {
             "label": "Inner quotient",
-            "text": "With $u=(x^2-1)/(x^2+1)$, $u\\prime=[2x(x^2+1)-2x(x^2-1)]/(x^2+1)^2=4x/(x^2+1)^2$."
+            "text": "With $u=(x^2-1)/(x^2+1)$, $u^{\\prime}=[2x(x^2+1)-2x(x^2-1)]/(x^2+1)^2=4x/(x^2+1)^2$."
           },
           {
             "label": "Outer sine",
-            "text": "$h\\prime(x)=\\cos(u)u\\prime=\\cos((x^2-1)/(x^2+1))\\,4x/(x^2+1)^2$."
+            "text": "$h^{\\prime}(x)=\\cos(u)u^{\\prime}=\\cos((x^2-1)/(x^2+1))\\,4x/(x^2+1)^2$."
           }
         ],
-        "result": "$h\\prime(x)=\\dfrac{4x}{(x^2+1)^2}\\cos\\!\\left(\\dfrac{x^2-1}{x^2+1}\\right)$ for every real $x$.",
+        "result": "$h^{\\prime}(x)=\\dfrac{4x}{(x^2+1)^2}\\cos\\!\\left(\\dfrac{x^2-1}{x^2+1}\\right)$ for every real $x$.",
         "verification": "The denominator $x^2+1$ never vanishes; omitting the inner quotient derivative loses the factor $4x/(x^2+1)^2$."
       },
       {
@@ -4944,7 +4944,7 @@
         "kind": "theorem",
         "id": "lecture08-general-power",
         "title": "Combine power and chain rules with domain checks",
-        "statement": "For real $n$ and differentiable $u=g(x)$ at a point where $u^n$ is real and differentiable, $\\frac{d}{dx}(u^n)=nu^{n-1}u\\prime$. Fractional or negative powers also require the relevant root and denominator conditions.",
+        "statement": "For real $n$ and differentiable $u=g(x)$ at a point where $u^n$ is real and differentiable, $\\frac{d}{dx}(u^n)=nu^{n-1}u^{\\prime}$. Fractional or negative powers also require the relevant root and denominator conditions.",
         "hypotheses": [
           "The inner function is differentiable.",
           "The real power and its outer derivative are defined at the chosen inner value."
@@ -4965,17 +4965,17 @@
           },
           {
             "label": "Power chain",
-            "text": "$f\\prime(x)=-(1/3)(x^2+x+1)^{-4/3}(2x+1)$."
+            "text": "$f^{\\prime}(x)=-(1/3)(x^2+x+1)^{-4/3}(2x+1)$."
           }
         ],
-        "result": "$f\\prime(x)=-\\dfrac{2x+1}{3(x^2+x+1)^{4/3}}$ on $\\mathbb R$.",
+        "result": "$f^{\\prime}(x)=-\\dfrac{2x+1}{3(x^2+x+1)^{4/3}}$ on $\\mathbb R$.",
         "verification": "Page 9 also has the integer-power example $(x^3-1)^{100}$; its exponent uses the same chain factor."
       },
       {
         "kind": "theorem",
         "id": "lecture08-nested-chain",
         "title": "Apply one chain factor per nested layer",
-        "statement": "For $y=f(g(h(x)))$, the derivative is $f\\prime(g(h(x)))g\\prime(h(x))h\\prime(x)$ wherever each layer is defined and differentiable. More than one inner layer means more than one chain factor.",
+        "statement": "For $y=f(g(h(x)))$, the derivative is $f^{\\prime}(g(h(x)))g^{\\prime}(h(x))h^{\\prime}(x)$ wherever each layer is defined and differentiable. More than one inner layer means more than one chain factor.",
         "hypotheses": [
           "Each composition is real and defined at the chosen input.",
           "All three component derivatives exist at their respective inputs."
@@ -4999,7 +4999,7 @@
             "text": "$\\frac{d}{dx}(1+\\cos^2x)=2\\cos x(-\\sin x)$, so multiply all three nonconstant factors."
           }
         ],
-        "result": "$y\\prime=-\\cos(\\sqrt{1+\\cos^2x})\\,\\sin x\\cos x/\\sqrt{1+\\cos^2x}$.",
+        "result": "$y^{\\prime}=-\\cos(\\sqrt{1+\\cos^2x})\\,\\sin x\\cos x/\\sqrt{1+\\cos^2x}$.",
         "verification": "$1+\\cos^2x\\ge1$, so the square-root denominator is positive for every real input. Page 10 says “with respect to t” while writing $\\frac{dy}{dx}$; $x$ is the differentiated variable."
       },
       {
@@ -5027,17 +5027,17 @@
           },
           {
             "label": "Three factors",
-            "text": "$y\\prime=[1/(2\\sqrt{\\sec(x^3)})]\\,[\\sec(x^3)\\tan(x^3)]\\,(3x^2)$."
+            "text": "$y^{\\prime}=[1/(2\\sqrt{\\sec(x^3)})]\\,[\\sec(x^3)\\tan(x^3)]\\,(3x^2)$."
           }
         ],
-        "result": "$y\\prime=3x^2\\sec(x^3)\\tan(x^3)/(2\\sqrt{\\sec(x^3)})$ wherever $\\cos(x^3)>0$.",
+        "result": "$y^{\\prime}=3x^2\\sec(x^3)\\tan(x^3)/(2\\sqrt{\\sec(x^3)})$ wherever $\\cos(x^3)>0$.",
         "verification": "The source computes the three factors; the real-domain qualification makes explicit where that derivative represents the stated real function."
       },
       {
         "kind": "theorem",
         "id": "lecture08-increment-proof",
         "title": "Use differentiability remainders to prove the chain rule",
-        "statement": "Pages 13–15 write $\\Delta u=[g\\prime(a)+\\varepsilon_1]\\Delta x$ and $\\Delta y=[f\\prime(g(a))+\\varepsilon_2]\\Delta u$, with both error coefficients tending to zero. Substitution gives the chain-rule product even when $\\Delta u=0$.",
+        "statement": "Pages 13–15 write $\\Delta u=[g^{\\prime}(a)+\\varepsilon_1]\\Delta x$ and $\\Delta y=[f^{\\prime}(g(a))+\\varepsilon_2]\\Delta u$, with both error coefficients tending to zero. Substitution gives the chain-rule product even when $\\Delta u=0$.",
         "hypotheses": [
           "The inner function is differentiable at $a$.",
           "The outer function is differentiable at $g(a)$.",
@@ -5108,7 +5108,7 @@
         "kind": "theorem",
         "id": "lecture08-implicit-chain",
         "title": "Differentiate both sides along a local branch",
-        "statement": "Along a differentiable branch of $x^2+y^2=25$, differentiating in $x$ gives $2x+2y\\,y\\prime=0$. Where $y\\ne0$, $y\\prime=-x/y$. The factor $y\\prime$ comes from the chain rule.",
+        "statement": "Along a differentiable branch of $x^2+y^2=25$, differentiating in $x$ gives $2x+2y\\,y^{\\prime}=0$. Where $y\\ne0$, $y^{\\prime}=-x/y$. The factor $y^{\\prime}$ comes from the chain rule.",
         "hypotheses": [
           "The relation holds on a differentiable local branch.",
           "Divide by $y$ only where $y\\ne0$."
@@ -5125,11 +5125,11 @@
         "steps": [
           {
             "label": "Differentiate",
-            "text": "$\\frac{d}{dx}(y^2)=2y\\,y\\prime$, so $2x+2y\\,y\\prime=0$."
+            "text": "$\\frac{d}{dx}(y^2)=2y\\,y^{\\prime}$, so $2x+2y\\,y^{\\prime}=0$."
           },
           {
             "label": "Evaluate tangent",
-            "text": "$y\\prime=-x/y=-3/4$ at $(3,4)$, giving $y-4=-(3/4)(x-3)$ or $3x+4y=25$."
+            "text": "$y^{\\prime}=-x/y=-3/4$ at $(3,4)$, giving $y-4=-(3/4)(x-3)$ or $3x+4y=25$."
           }
         ],
         "result": "The finite tangent slope is $-3/4$ at the point on the upper branch.",
@@ -5139,10 +5139,10 @@
         "kind": "theorem",
         "id": "lecture08-implicit-product",
         "title": "Combine product and chain rules before isolating y prime",
-        "statement": "When an implicit relation contains $xy(x)$, its derivative is $y+xy\\prime$. Differentiate every occurrence of $y$ through the chain rule, then collect the $y\\prime$ terms before dividing.",
+        "statement": "When an implicit relation contains $xy(x)$, its derivative is $y+xy^{\\prime}$. Differentiate every occurrence of $y$ through the chain rule, then collect the $y^{\\prime}$ terms before dividing.",
         "hypotheses": [
           "The relation holds on a differentiable branch.",
-          "Any coefficient divided out when solving for $y\\prime$ must be nonzero."
+          "Any coefficient divided out when solving for $y^{\\prime}$ must be nonzero."
         ],
         "prerequisites": ["derivative rules and real domains"],
         "status": "Theorem used without proof"
@@ -5156,11 +5156,11 @@
         "steps": [
           {
             "label": "Differentiate",
-            "text": "$3x^2+3y^2y\\prime=6y+6xy\\prime$; the right side uses the product rule."
+            "text": "$3x^2+3y^2y^{\\prime}=6y+6xy^{\\prime}$; the right side uses the product rule."
           },
           {
             "label": "Collect and evaluate",
-            "text": "$(y^2-2x)y\\prime=2y-x^2$, so $y\\prime=(2y-x^2)/(y^2-2x)=-1$ at $(3,3)$."
+            "text": "$(y^2-2x)y^{\\prime}=2y-x^2$, so $y^{\\prime}=(2y-x^2)/(y^2-2x)=-1$ at $(3,3)$."
           }
         ],
         "result": "The tangent at $(3,3)$ is $y-3=-(x-3)$, equivalently $x+y=6$.",
@@ -5170,10 +5170,10 @@
         "kind": "theorem",
         "id": "lecture08-implicit-trig",
         "title": "Differentiate a trigonometric composite on both sides",
-        "statement": "For $\\sin(x+y)=y^2\\cos x$, treat $y$ as $y(x)$: the left derivative is $\\cos(x+y)(1+y\\prime)$; the right derivative is $2yy\\prime\\cos x-y^2\\sin x$. Collecting $y\\prime$ gives a quotient only when its denominator is nonzero.",
+        "statement": "For $\\sin(x+y)=y^2\\cos x$, treat $y$ as $y(x)$: the left derivative is $\\cos(x+y)(1+y^{\\prime})$; the right derivative is $2yy^{\\prime}\\cos x-y^2\\sin x$. Collecting $y^{\\prime}$ gives a quotient only when its denominator is nonzero.",
         "hypotheses": [
           "The identity holds on a differentiable local branch.",
-          "The coefficient of $y\\prime$ is nonzero before dividing."
+          "The coefficient of $y^{\\prime}$ is nonzero before dividing."
         ],
         "prerequisites": ["derivative rules and real domains"],
         "status": "Theorem used without proof"
@@ -5183,19 +5183,19 @@
         "id": "lecture08-source-trig-implicit",
         "title": "Recover the source trigonometric quotient",
         "strategy": "Name the dependent layers and differentiate each one on its valid domain.",
-        "setup": "Physical page 24 asks for $y\\prime$ if $\\sin(x+y)=y^2\\cos x$.",
+        "setup": "Physical page 24 asks for $y^{\\prime}$ if $\\sin(x+y)=y^2\\cos x$.",
         "steps": [
           {
             "label": "Differentiate",
-            "text": "$\\cos(x+y)(1+y\\prime)=2yy\\prime\\cos x-y^2\\sin x$."
+            "text": "$\\cos(x+y)(1+y^{\\prime})=2yy^{\\prime}\\cos x-y^2\\sin x$."
           },
           {
             "label": "Collect",
-            "text": "$\\cos(x+y)+y^2\\sin x=[2y\\cos x-\\cos(x+y)]y\\prime$."
+            "text": "$\\cos(x+y)+y^2\\sin x=[2y\\cos x-\\cos(x+y)]y^{\\prime}$."
           }
         ],
-        "result": "$y\\prime=[\\cos(x+y)+y^2\\sin x]/[2y\\cos x-\\cos(x+y)]$ where the denominator is nonzero.",
-        "verification": "The factors $1+y\\prime$ and $2yy\\prime$ arise from separate applications of the chain rule."
+        "result": "$y^{\\prime}=[\\cos(x+y)+y^2\\sin x]/[2y\\cos x-\\cos(x+y)]$ where the denominator is nonzero.",
+        "verification": "The factors $1+y^{\\prime}$ and $2yy^{\\prime}$ arise from separate applications of the chain rule."
       },
       {
         "kind": "theorem",
@@ -5218,7 +5218,7 @@
         "steps": [
           {
             "label": "Ordinary point",
-            "text": "$2x/a^2+2yy\\prime/b^2=0$. If $y_0\\ne0$, then $y\\prime=-b^2x_0/(a^2y_0)$. Substitution into point-slope form yields $x_0x/a^2+y_0y/b^2=1$."
+            "text": "$2x/a^2+2yy^{\\prime}/b^2=0$. If $y_0\\ne0$, then $y^{\\prime}=-b^2x_0/(a^2y_0)$. Substitution into point-slope form yields $x_0x/a^2+y_0y/b^2=1$."
           },
           {
             "label": "Vertical endpoint",
@@ -5232,7 +5232,7 @@
         "kind": "theorem",
         "id": "lecture08-motion-direction",
         "title": "Read signed velocity",
-        "statement": "For position $s(t)$, velocity is $v(t)=s\\prime(t)$; rest means $v=0$, while $v>0$ and $v<0$ indicate opposite directions. Speed is $|v|$, not signed velocity.",
+        "statement": "For position $s(t)$, velocity is $v(t)=s^{\\prime}(t)$; rest means $v=0$, while $v>0$ and $v<0$ indicate opposite directions. Speed is $|v|$, not signed velocity.",
         "hypotheses": [
           "The position $s$ is differentiable on the time intervals being classified; use $t\\ge0$ for the source motion."
         ],
@@ -5292,7 +5292,7 @@
         "kind": "theorem",
         "id": "lecture08-speeding-signs",
         "title": "Acceleration and changing speed",
-        "statement": "$a(t)=v\\prime(t)=s\\prime\\prime(t)$. Away from rest, speed increases when $v$ and $a$ have the same sign and decreases when they have opposite signs.",
+        "statement": "$a(t)=v^{\\prime}(t)=s^{\\prime\\prime}(t)$. Away from rest, speed increases when $v$ and $a$ have the same sign and decreases when they have opposite signs.",
         "hypotheses": [
           "Position is twice differentiable away from rest; classify open intervals where velocity has a fixed nonzero sign."
         ],
@@ -5438,8 +5438,8 @@
         "kind": "proof",
         "prompt": "For $x^2+4y^2=20$, find $\\frac{dy}{dx}$ on a differentiable branch and the tangent at $(2,2)$.",
         "hint": "Apply the chain rule to $4y^2$, then use the given point.",
-        "solution": "$2x+8y\\,y\\prime=0$, so $y\\prime=-x/(4y)$ when $y\\ne0$. At $(2,2)$ the slope is $-1/4$ and the tangent is $y-2=-(1/4)(x-2)$.",
-        "solutionTex": "y\\prime=-\\frac{x}{4y},\\qquad y-2=-\\frac14(x-2)",
+        "solution": "$2x+8y\\,y^{\\prime}=0$, so $y^{\\prime}=-x/(4y)$ when $y\\ne0$. At $(2,2)$ the slope is $-1/4$ and the tangent is $y-2=-(1/4)(x-2)$.",
+        "solutionTex": "y^{\\prime}=-\\frac{x}{4y},\\qquad y-2=-\\frac14(x-2)",
         "rubric": [
           "Include the chain factor on $y^2$.",
           "State the nonzero denominator condition.",
@@ -5450,10 +5450,10 @@
         "id": "lecture08-implicit-product-transfer",
         "outcome": "Combine product and chain factors in a new relation.",
         "kind": "proof",
-        "prompt": "For $x^2y+y^2=5$, find $y\\prime$ on a differentiable branch and the tangent at $(2,1)$.",
+        "prompt": "For $x^2y+y^2=5$, find $y^{\\prime}$ on a differentiable branch and the tangent at $(2,1)$.",
         "hint": "Differentiate $x^2y$ using the product rule.",
-        "solution": "$2xy+x^2y\\prime+2yy\\prime=0$, so $y\\prime=-2xy/(x^2+2y)$ where the denominator is nonzero. At $(2,1)$ this is $-4/6=-2/3$, giving $y-1=-(2/3)(x-2)$.",
-        "solutionTex": "y\\prime=-\\frac{2xy}{x^2+2y},\\qquad y-1=-\\frac23(x-2)",
+        "solution": "$2xy+x^2y^{\\prime}+2yy^{\\prime}=0$, so $y^{\\prime}=-2xy/(x^2+2y)$ where the denominator is nonzero. At $(2,1)$ this is $-4/6=-2/3$, giving $y-1=-(2/3)(x-2)$.",
+        "solutionTex": "y^{\\prime}=-\\frac{2xy}{x^2+2y},\\qquad y-1=-\\frac23(x-2)",
         "rubric": [
           "Use product and chain rules.",
           "Collect all derivative terms.",
@@ -5464,9 +5464,9 @@
         "id": "lecture08-implicit-trig-transfer",
         "outcome": "Differentiate a new trigonometric implicit identity.",
         "kind": "proof",
-        "prompt": "On a differentiable branch of $\\sin(x+y)=xy$ through $(0,0)$, find $y\\prime(0)$ and the tangent line.",
-        "hint": "Differentiate both sides, collect $y\\prime$, and evaluate at the point.",
-        "solution": "$\\cos(x+y)(1+y\\prime)=y+xy\\prime$. At $(0,0)$ this becomes $1+y\\prime=0$, so $y\\prime(0)=-1$ and the tangent is $y=-x$.",
+        "prompt": "On a differentiable branch of $\\sin(x+y)=xy$ through $(0,0)$, find $y^{\\prime}(0)$ and the tangent line.",
+        "hint": "Differentiate both sides, collect $y^{\\prime}$, and evaluate at the point.",
+        "solution": "$\\cos(x+y)(1+y^{\\prime})=y+xy^{\\prime}$. At $(0,0)$ this becomes $1+y^{\\prime}=0$, so $y^{\\prime}(0)=-1$ and the tangent is $y=-x$.",
         "solutionTex": "\\left.\\frac{dy}{dx}\\right|_{(0,0)}=-1,\\qquad y=-x",
         "rubric": [
           "Use the chain rule on $x+y$.",
@@ -5493,7 +5493,7 @@
         "outcome": "Determine rest and direction from signed velocity.",
         "kind": "proof",
         "prompt": "For $s(t)=t^3-3t^2$ on $t\\ge0$, find rest times and direction intervals.",
-        "hint": "Factor $s\\prime(t)$, then make a sign chart.",
+        "hint": "Factor $s^{\\prime}(t)$, then make a sign chart.",
         "solution": "$v=3t(t-2)$: rest at $0,2$ s; backward for $0<t<2$ and forward for $t>2$.",
         "solutionTex": "v=3t(t-2),\\quad v<0\\ (0<t<2),\\quad v>0\\ (t>2)",
         "rubric": [
@@ -5507,7 +5507,7 @@
         "outcome": "Sum absolute displacements between turning times to obtain total distance.",
         "kind": "proof",
         "prompt": "If $s(t)=t^2-4t$ metres on $[0,5]$, find distance and displacement.",
-        "hint": "The turning time is where $s\\prime(t)=0$.",
+        "hint": "The turning time is where $s^{\\prime}(t)=0$.",
         "solution": "$s(0)=0$, $s(2)=-4$, $s(5)=5$; distance $|{-4}|+|5-(-4)|=13$ m and displacement $5$ m.",
         "solutionTex": "D=|s(2)-s(0)|+|s(5)-s(2)|=13\\,\\mathrm m",
         "rubric": [
@@ -5633,7 +5633,7 @@
         "outcome": "Use the tangent line at a base point to approximate a nearby function value.",
         "kind": "proof",
         "prompt": "Use the tangent at $x=9$ to estimate $\\sqrt{9.2}$.",
-        "hint": "For $f(x)=\\sqrt x$, find $f(9)$ and $f\\prime(9)$.",
+        "hint": "For $f(x)=\\sqrt x$, find $f(9)$ and $f^{\\prime}(9)$.",
         "solution": "$L(x)=3+(x-9)/6$, hence $\\sqrt{9.2}\\approx3+0.2/6=3.033\\overline3$.",
         "solutionTex": "\\sqrt{9.2}\\approx3+\\frac{0.2}{6}=3.033\\overline3",
         "rubric": [
@@ -5648,7 +5648,7 @@
         "kind": "proof",
         "prompt": "Estimate $\\sqrt{15.9}$ at anchor $16$ and state whether the tangent estimate is above or below the true value.",
         "hint": "Square root is concave down on positive inputs.",
-        "solution": "$L(15.9)=4-0.1/8=3.9875$, an overestimate because $f\\prime\\prime<0$.",
+        "solution": "$L(15.9)=4-0.1/8=3.9875$, an overestimate because $f^{\\prime\\prime}<0$.",
         "solutionTex": "\\sqrt{15.9}\\approx4-\\frac{0.1}{8}=3.9875",
         "rubric": [
           "Choose an anchor with known value and slope.",
@@ -5661,7 +5661,7 @@
         "outcome": "Distinguish tangent differential from the actual change and compare their errors.",
         "kind": "proof",
         "prompt": "For $f(x)=x^2$ at $x=3$ with $dx=0.02$, compute $dy$, $\\Delta y$, and their difference.",
-        "hint": "Expand $(3+0.02)^2-9$ after finding $f\\prime(3)$.",
+        "hint": "Expand $(3+0.02)^2-9$ after finding $f^{\\prime}(3)$.",
         "solution": "$dy=6(0.02)=0.12$, $\\Delta y=0.1204$, and $\\Delta y-dy=0.0004$.",
         "solutionTex": "dy=0.12,\\quad\\Delta y=0.1204,\\quad\\Delta y-dy=0.0004",
         "rubric": [
@@ -5711,7 +5711,7 @@
         "kind": "theorem",
         "id": "lecture08-source-skill-1",
         "title": "Build the tangent approximation",
-        "statement": "For differentiable $f$ at $a$, $L(x)=f(a)+f\\prime(a)(x-a)$ approximates $f(x)$ near $a$. The value $L(x)$ is an estimate, not an equality claim.",
+        "statement": "For differentiable $f$ at $a$, $L(x)=f(a)+f^{\\prime}(a)(x-a)$ approximates $f(x)$ near $a$. The value $L(x)$ is an estimate, not an equality claim.",
         "hypotheses": [
           "The function is differentiable at the chosen anchor $a$ and the target input is near $a$."
         ],
@@ -5727,7 +5727,7 @@
         "steps": [
           {
             "label": "Step 1",
-            "text": "$f(1)=2$, $f\\prime(1)=1/4$, so $L(x)=2+(x-1)/4$."
+            "text": "$f(1)=2$, $f^{\\prime}(1)=1/4$, so $L(x)=2+(x-1)/4$."
           },
           {
             "label": "Step 2",
@@ -5741,9 +5741,9 @@
         "kind": "theorem",
         "id": "lecture08-anchor-and-bias",
         "title": "Choose anchor and read curvature",
-        "statement": "Choose $a$ where $f(a)$ and $f\\prime(a)$ are easy, and measure the input change in the same units as differentiation. For a concave-down function the tangent lies above the curve locally; for concave-up it lies below.",
+        "statement": "Choose $a$ where $f(a)$ and $f^{\\prime}(a)$ are easy, and measure the input change in the same units as differentiation. For a concave-down function the tangent lies above the curve locally; for concave-up it lies below.",
         "hypotheses": [
-          "Use radians for the trigonometric derivative; a known sign of $f\\prime\\prime$ on the intervening interval determines tangent bias."
+          "Use radians for the trigonometric derivative; a known sign of $f^{\\prime\\prime}$ on the intervening interval determines tangent bias."
         ],
         "prerequisites": ["differentiation and the chain rule"],
         "status": "Theorem used without proof"
@@ -5757,7 +5757,7 @@
         "steps": [
           {
             "label": "Step 1",
-            "text": "$f(x)=\\sqrt{x+3}$ has $f\\prime\\prime(x)<0$; its estimates on page 47 are overestimates."
+            "text": "$f(x)=\\sqrt{x+3}$ has $f^{\\prime\\prime}(x)<0$; its estimates on page 47 are overestimates."
           },
           {
             "label": "Step 2",
@@ -5771,7 +5771,7 @@
         "kind": "theorem",
         "id": "lecture08-differential-change",
         "title": "Separate $dy$ from $\\Delta y$",
-        "statement": "For $dx=\\Delta x$, the differential is $dy=f\\prime(x)dx$, the tangent change. The actual curve change is $\\Delta y=f(x+\\Delta x)-f(x)$. They approach each other to first order as $dx\\to0$.",
+        "statement": "For $dx=\\Delta x$, the differential is $dy=f^{\\prime}(x)dx$, the tangent change. The actual curve change is $\\Delta y=f(x+\\Delta x)-f(x)$. They approach each other to first order as $dx\\to0$.",
         "hypotheses": [
           "The function is differentiable at the base input and $dx=\\Delta x$ for this comparison."
         ],
@@ -5787,7 +5787,7 @@
         "steps": [
           {
             "label": "Step 1",
-            "text": "$f\\prime(2)=14$. For $dx=0.05$, $dy=0.7$ and $\\Delta y=0.717625$."
+            "text": "$f^{\\prime}(2)=14$. For $dx=0.05$, $dy=0.7$ and $\\Delta y=0.717625$."
           },
           {
             "label": "Step 2",
@@ -6390,7 +6390,7 @@
     "supplementalBlocks": [
       {
         "kind": "theorem",
-        "id": "rolle-theorem",
+        "id": "rolle-source-hypotheses",
         "title": "Rolle's theorem",
         "statement": "If $f(a)=f(b)$, there is $c\\in(a,b)$ such that $f'(c)=0$.",
         "hypotheses": [
@@ -7829,7 +7829,7 @@
           {
             "label": "Critical candidate",
             "text": "Set the derivative to zero.",
-            "equation": "A\\prime(x)=2400-4x=0\\quad\\Longrightarrow\\quad x=600"
+            "equation": "A^{\\prime}(x)=2400-4x=0\\quad\\Longrightarrow\\quad x=600"
           },
           {
             "label": "Endpoint and interior values",
@@ -7849,7 +7849,7 @@
         "kind": "strategy",
         "id": "lecture11-first-derivative-absolute-test-statement",
         "title": "Use a global derivative sign change on an interval to certify an absolute maximum or minimum.",
-        "text": "The source's First Derivative Test assumes $f$ is continuous on an interval and $c$ is a critical number. If $f\\prime$ is positive throughout the interval left of $c$ and negative throughout the interval right of $c$, then $f(c)$ is an absolute maximum; reversing the signs gives an absolute minimum."
+        "text": "The source's First Derivative Test assumes $f$ is continuous on an interval and $c$ is a critical number. If $f^{\\prime}$ is positive throughout the interval left of $c$ and negative throughout the interval right of $c$, then $f(c)$ is an absolute maximum; reversing the signs gives an absolute minimum."
       },
       {
         "kind": "worked-example",
@@ -7866,12 +7866,12 @@
           {
             "label": "Critical number",
             "text": "Differentiate and solve.",
-            "equation": "D\\prime(y)=y^3-8=0\\quad\\Longrightarrow\\quad y=2"
+            "equation": "D^{\\prime}(y)=y^3-8=0\\quad\\Longrightarrow\\quad y=2"
           },
           {
             "label": "Global sign",
             "text": "The derivative is negative before 2 and positive after 2, so the function decreases then increases on $\\mathbb{R}$.",
-            "equation": "y<2\\Rightarrow D\\prime(y)<0,\\qquad y>2\\Rightarrow D\\prime(y)>0"
+            "equation": "y<2\\Rightarrow D^{\\prime}(y)<0,\\qquad y>2\\Rightarrow D^{\\prime}(y)>0"
           },
           {
             "label": "Recover the point",
@@ -7903,12 +7903,12 @@
           {
             "label": "Differentiate",
             "text": "The cross terms cancel after expansion.",
-            "equation": "D\\prime(y)=y^3-8"
+            "equation": "D^{\\prime}(y)=y^3-8"
           },
           {
             "label": "Classify on all of $\\mathbb{R}$",
             "text": "The sign is negative for $y<2$ and positive for $y>2$.",
-            "equation": "D\\prime(y)<0 (y<2),\\qquad D\\prime(y)>0 (y>2)"
+            "equation": "D^{\\prime}(y)<0 (y<2),\\qquad D^{\\prime}(y)>0 (y>2)"
           },
           {
             "label": "Check the value",
@@ -7940,7 +7940,7 @@
           {
             "label": "Find the critical candidate",
             "text": "Set the derivative to zero and use $x\\geq0$.",
-            "equation": "T\\prime(x)=\\frac{x}{6\\sqrt{x^2+9}}-\\frac18=0\\Rightarrow x=\\frac9{\\sqrt{7}}"
+            "equation": "T^{\\prime}(x)=\\frac{x}{6\\sqrt{x^2+9}}-\\frac18=0\\Rightarrow x=\\frac9{\\sqrt{7}}"
           },
           {
             "label": "Compare routes",
@@ -7972,7 +7972,7 @@
           {
             "label": "Critical point",
             "text": "Differentiation gives a single interior candidate.",
-            "equation": "A\\prime(x)=\\frac{2(r^2-2x^2)}{\\sqrt{r^2-x^2}}=0\\Rightarrow x=\\frac r{\\sqrt2}"
+            "equation": "A^{\\prime}(x)=\\frac{2(r^2-2x^2)}{\\sqrt{r^2-x^2}}=0\\Rightarrow x=\\frac r{\\sqrt2}"
           },
           {
             "label": "Compare boundary",
@@ -8005,8 +8005,8 @@
         "kind": "computational",
         "prompt": "Find the absolute maximum of $R(x)=-x^2+6x+7$ on $[0,8]$.",
         "hint": "Check the critical number and both endpoints.",
-        "solution": "$R\\prime(x)=-2x+6$ vanishes at $x=3$. The values are $R(0)=7$, $R(3)=16$, and $R(8)=-9$, so the absolute maximum is $16$ at $x=3$.",
-        "solutionTex": "R\\prime(x)=-2x+6=0\\Rightarrow x=3;\\quad R(0)=7,\\ R(3)=16,\\ R(8)=-9",
+        "solution": "$R^{\\prime}(x)=-2x+6$ vanishes at $x=3$. The values are $R(0)=7$, $R(3)=16$, and $R(8)=-9$, so the absolute maximum is $16$ at $x=3$.",
+        "solutionTex": "R^{\\prime}(x)=-2x+6=0\\Rightarrow x=3;\\quad R(0)=7,\\ R(3)=16,\\ R(8)=-9",
         "rubric": [
           "Find all interior critical numbers.",
           "Evaluate both endpoints.",
@@ -8019,8 +8019,8 @@
         "kind": "proof",
         "prompt": "For $q(x)=(x-3)^2+1$ on $[0,5]$, use derivative signs to certify its absolute minimum.",
         "hint": "Locate the critical number and check the derivative sign on each side within the interval.",
-        "solution": "$q\\prime(x)=2(x-3)$ is negative for $0\\leq x<3$ and positive for $3<x\\leq5$. Thus $q$ decreases and then increases throughout the interval, so its absolute minimum is $q(3)=1$.",
-        "solutionTex": "q\\prime(x)=2(x-3),\\quad q(3)=1",
+        "solution": "$q^{\\prime}(x)=2(x-3)$ is negative for $0\\leq x<3$ and positive for $3<x\\leq5$. Thus $q$ decreases and then increases throughout the interval, so its absolute minimum is $q(3)=1$.",
+        "solutionTex": "q^{\\prime}(x)=2(x-3),\\quad q(3)=1",
         "rubric": [
           "State the interval and critical number.",
           "Verify the sign on both sides.",
@@ -8033,8 +8033,8 @@
         "kind": "computational",
         "prompt": "Find the points on $y=x^2$ closest to $(0,3)$, and decide whether a farthest point exists.",
         "hint": "Minimize $D(x)=x^2+(x^2-3)^2$ over all real $x$.",
-        "solution": "$D\\prime(x)=2x(2x^2-5)$, so the candidates are $0$ and $\\pm\\sqrt{5/2}$. Their squared distances are $9$ and $11/4$. Since $D(x)\\to\\infty$ as $|x|\\to\\infty$, the closest points are $(\\pm\\sqrt{5/2},5/2)$ at distance $\\sqrt{11}/2$, and no farthest point exists.",
-        "solutionTex": "D(x)=x^2+(x^2-3)^2,\\quad D\\prime(x)=2x(2x^2-5)",
+        "solution": "$D^{\\prime}(x)=2x(2x^2-5)$, so the candidates are $0$ and $\\pm\\sqrt{5/2}$. Their squared distances are $9$ and $11/4$. Since $D(x)\\to\\infty$ as $|x|\\to\\infty$, the closest points are $(\\pm\\sqrt{5/2},5/2)$ at distance $\\sqrt{11}/2$, and no farthest point exists.",
+        "solutionTex": "D(x)=x^2+(x^2-3)^2,\\quad D^{\\prime}(x)=2x(2x^2-5)",
         "rubric": [
           "Use squared distance on the full real domain.",
           "Compare critical values and check the behavior as $|x|\\to\\infty$.",
@@ -8061,8 +8061,8 @@
         "kind": "computational",
         "prompt": "A rectangle is symmetric about the $y$-axis with upper corners on $y=9-x^2$ and lower side on the $x$-axis. Find its maximum area.",
         "hint": "For a right upper corner $(x,9-x^2)$, use width $2x$ and $0\\leq x\\leq3$.",
-        "solution": "$A(x)=2x(9-x^2)$ on $[0,3]$. Since $A\\prime(x)=18-6x^2$, the interior critical value is $x=\\sqrt3$. Both endpoints have area 0, and $A(\\sqrt3)=12\\sqrt3$, so this is the absolute maximum.",
-        "solutionTex": "A(x)=2x(9-x^2),\\quad A\\prime(x)=18-6x^2,\\quad A(\\sqrt3)=12\\sqrt3",
+        "solution": "$A(x)=2x(9-x^2)$ on $[0,3]$. Since $A^{\\prime}(x)=18-6x^2$, the interior critical value is $x=\\sqrt3$. Both endpoints have area 0, and $A(\\sqrt3)=12\\sqrt3$, so this is the absolute maximum.",
+        "solutionTex": "A(x)=2x(9-x^2),\\quad A^{\\prime}(x)=18-6x^2,\\quad A(\\sqrt3)=12\\sqrt3",
         "rubric": [
           "Use the curve to express height and state the domain.",
           "Find the critical value.",
@@ -8132,29 +8132,29 @@
         "kind": "strategy",
         "id": "lecture11-tangent-intercept-update-statement",
         "title": "Derive the Newton update from a tangent-line intercept and require a nonzero derivative.",
-        "text": "At $x_n$, the tangent line has equation $y=f(x_n)+f\\prime(x_n)(x-x_n)$. Setting $y=0$ and solving gives $x_{n+1}=x_n-f(x_n)/f\\prime(x_n)$, only when $f\\prime(x_n)\\ne0$. This is the tangent intercept, not an exact root."
+        "text": "At $x_n$, the tangent line has equation $y=f(x_n)+f^{\\prime}(x_n)(x-x_n)$. Setting $y=0$ and solving gives $x_{n+1}=x_n-f(x_n)/f^{\\prime}(x_n)$, only when $f^{\\prime}(x_n)\\ne0$. This is the tangent intercept, not an exact root."
       },
       {
         "kind": "worked-example",
         "id": "lecture11-tangent-derivation",
         "title": "Derive one Newton step",
         "strategy": "Set the tangent-line height to zero and solve for its horizontal intercept.",
-        "setup": "At $(x_n,f(x_n))$, the tangent has slope $f\\prime(x_n)$.",
+        "setup": "At $(x_n,f(x_n))$, the tangent has slope $f^{\\prime}(x_n)$.",
         "steps": [
           {
             "label": "Write the tangent",
             "text": "Use point-slope form.",
-            "equation": "y=f(x_n)+f\\prime(x_n)(x-x_n)"
+            "equation": "y=f(x_n)+f^{\\prime}(x_n)(x-x_n)"
           },
           {
             "label": "Set the intercept height to zero",
             "text": "The next estimate is the tangent’s $x$-intercept.",
-            "equation": "0=f(x_n)+f\\prime(x_n)(x_{n+1}-x_n)"
+            "equation": "0=f(x_n)+f^{\\prime}(x_n)(x_{n+1}-x_n)"
           },
           {
             "label": "Solve",
             "text": "Division is valid only if the tangent is not horizontal.",
-            "equation": "x_{n+1}=x_n-\\frac{f(x_n)}{f\\prime(x_n)},\\qquad f\\prime(x_n)\\ne0"
+            "equation": "x_{n+1}=x_n-\\frac{f(x_n)}{f^{\\prime}(x_n)},\\qquad f^{\\prime}(x_n)\\ne0"
           }
         ],
         "result": "Newton’s update converts the current tangent intercept into the next estimate.",
@@ -8164,7 +8164,7 @@
         "kind": "strategy",
         "id": "lecture11-bad-starting-value-statement",
         "title": "Recognize that a poor initial estimate can prevent Newton iteration from converging.",
-        "text": "The source warns that Newton’s method may fail from an improper initial approximation. Each step also requires $f\\prime(x_n)\\ne0$. A zero derivative stops the iteration, while a poor start can create a cycle or move away from the desired root."
+        "text": "The source warns that Newton’s method may fail from an improper initial approximation. Each step also requires $f^{\\prime}(x_n)\\ne0$. A zero derivative stops the iteration, while a poor start can create a cycle or move away from the desired root."
       },
       {
         "kind": "worked-example",
@@ -8176,12 +8176,12 @@
           {
             "label": "First step",
             "text": "At zero the derivative is nonzero.",
-            "equation": "f(0)=2,\\quad f\\prime(0)=-2,\\quad x_1=0-\\frac2{-2}=1"
+            "equation": "f(0)=2,\\quad f^{\\prime}(0)=-2,\\quad x_1=0-\\frac2{-2}=1"
           },
           {
             "label": "Second step",
             "text": "At 1, the function and derivative are both 1.",
-            "equation": "f(1)=1,\\quad f\\prime(1)=1,\\quad x_2=1-1=0"
+            "equation": "f(1)=1,\\quad f^{\\prime}(1)=1,\\quad x_2=1-1=0"
           },
           {
             "label": "Conclude",
@@ -8196,7 +8196,7 @@
         "kind": "strategy",
         "id": "lecture11-polynomial-iteration-statement",
         "title": "Compute successive Newton iterates for a polynomial root.",
-        "text": "For a polynomial, substitute the current iterate into both $f$ and $f\\prime$ and repeat the quotient update. Keep enough digits during the calculation before rounding the requested approximation."
+        "text": "For a polynomial, substitute the current iterate into both $f$ and $f^{\\prime}$ and repeat the quotient update. Keep enough digits during the calculation before rounding the requested approximation."
       },
       {
         "kind": "worked-example",
@@ -8208,17 +8208,17 @@
           {
             "label": "Set the function and derivative",
             "text": "Differentiate the polynomial.",
-            "equation": "f(x)=x^3-2x-5,\\qquad f\\prime(x)=3x^2-2"
+            "equation": "f(x)=x^3-2x-5,\\qquad f^{\\prime}(x)=3x^2-2"
           },
           {
             "label": "First update",
             "text": "Use the supplied initial estimate.",
-            "equation": "x_2=2-\\frac{f(2)}{f\\prime(2)}=2.1"
+            "equation": "x_2=2-\\frac{f(2)}{f^{\\prime}(2)}=2.1"
           },
           {
             "label": "Second update",
             "text": "Use the unrounded previous value.",
-            "equation": "x_3=2.1-\\frac{f(2.1)}{f\\prime(2.1)}\\approx2.0946"
+            "equation": "x_3=2.1-\\frac{f(2.1)}{f^{\\prime}(2.1)}\\approx2.0946"
           }
         ],
         "result": "The source reports $x_3\\approx2.0946$, accurate to four decimal places.",
@@ -8309,9 +8309,9 @@
         "outcome": "Apply a tangent intercept to compute a Newton estimate.",
         "kind": "computational",
         "prompt": "For $f(x)=x^2-5$ and current estimate $x_0=2$, derive the tangent intercept formula and compute $x_1$.",
-        "hint": "Evaluate both $f(2)$ and $f\\prime(2)$ before dividing.",
-        "solution": "The tangent equation is $y=f(2)+f\\prime(2)(x-2)=-1+4(x-2)$. Setting $y=0$ gives $x_1=2-(-1)/4=9/4$.",
-        "solutionTex": "x_1=2-\\frac{f(2)}{f\\prime(2)}=2-\\frac{-1}{4}=\\frac94",
+        "hint": "Evaluate both $f(2)$ and $f^{\\prime}(2)$ before dividing.",
+        "solution": "The tangent equation is $y=f(2)+f^{\\prime}(2)(x-2)=-1+4(x-2)$. Setting $y=0$ gives $x_1=2-(-1)/4=9/4$.",
+        "solutionTex": "x_1=2-\\frac{f(2)}{f^{\\prime}(2)}=2-\\frac{-1}{4}=\\frac94",
         "rubric": [
           "Use the tangent at the current estimate.",
           "Check the derivative is nonzero.",
@@ -8323,9 +8323,9 @@
         "outcome": "Detect a zero-derivative failure and restart from a valid estimate.",
         "kind": "counterexample",
         "prompt": "For $g(x)=x^2-9$, explain why Newton’s method cannot start at $x_0=0$. Then take one step from $x_0=2$.",
-        "hint": "Check $g\\prime(0)$, then use $g\\prime(2)$.",
-        "solution": "$g\\prime(x)=2x$, so the update is undefined at $x_0=0$. From $x_0=2$, $x_1=2-(-5)/4=13/4=3.25$. This valid step does not by itself prove later convergence.",
-        "solutionTex": "g\\prime(0)=0;\\qquad x_1=2-\\frac{g(2)}{g\\prime(2)}=\\frac{13}{4}",
+        "hint": "Check $g^{\\prime}(0)$, then use $g^{\\prime}(2)$.",
+        "solution": "$g^{\\prime}(x)=2x$, so the update is undefined at $x_0=0$. From $x_0=2$, $x_1=2-(-5)/4=13/4=3.25$. This valid step does not by itself prove later convergence.",
+        "solutionTex": "g^{\\prime}(0)=0;\\qquad x_1=2-\\frac{g(2)}{g^{\\prime}(2)}=\\frac{13}{4}",
         "rubric": [
           "Identify the zero denominator at the first start.",
           "Compute the restarted step correctly.",
@@ -8365,7 +8365,7 @@
         "outcome": "Apply a graph-informed Newton method to a different trigonometric root in radians.",
         "kind": "method-choice",
         "prompt": "Solve $\\cos x=2x$ approximately with Newton’s method from $x_0=0.5$. Use radian mode and stop when successive values agree to five decimal places.",
-        "hint": "Use $f(x)=\\cos x-2x$ and $f\\prime(x)=-\\sin x-2$.",
+        "hint": "Use $f(x)=\\cos x-2x$ and $f^{\\prime}(x)=-\\sin x-2$.",
         "solution": "The update is $x_{n+1}=x_n+(\\cos x_n-2x_n)/(\\sin x_n+2)$. It gives $x_1\\approx0.45062669$, $x_2\\approx0.45018365$, and $x_3\\approx0.45018361$; the last two agree to five decimal places, giving about $0.45018$.",
         "solutionTex": "x_{n+1}=x_n+\\frac{\\cos x_n-2x_n}{\\sin x_n+2},\\quad x_2\\approx0.45018365,\\quad x_3\\approx0.45018361",
         "rubric": [
@@ -8404,7 +8404,7 @@
         "kind": "strategy",
         "id": "lecture11-constant-on-interval-statement",
         "title": "Describe all antiderivatives on each connected interval and allow independent constants on disconnected domains.",
-        "text": "If $F\\prime=f$ on an interval, every other antiderivative differs from $F$ by a constant on that interval. The connectedness condition matters: if the domain has separate components, each component can have its own constant. Changing that constant vertically translates the graph without changing its derivative."
+        "text": "If $F^{\\prime}=f$ on an interval, every other antiderivative differs from $F$ by a constant on that interval. The connectedness condition matters: if the domain has separate components, each component can have its own constant. Changing that constant vertically translates the graph without changing its derivative."
       },
       {
         "kind": "worked-example",
@@ -8490,7 +8490,7 @@
           {
             "label": "Differentiate",
             "text": "Check all three terms.",
-            "equation": "F\\prime(x)=3\\sin x+2\\cos x-4\\sec^2 x"
+            "equation": "F^{\\prime}(x)=3\\sin x+2\\cos x-4\\sec^2 x"
           }
         ],
         "result": "A general antiderivative is $-3\\cos x+2\\sin x-4\\tan x+C$.",
@@ -8507,12 +8507,12 @@
         "id": "lecture11-rewrite-integrand-work",
         "title": "Rewrite and integrate the source expression",
         "strategy": "Divide through by $x$ and convert the square-root quotient to a power.",
-        "setup": "The source asks for all $g$ with $g\\prime(x)=4\\sin x+(2x^5-\\sqrt{x})/x$, where $x>0$.",
+        "setup": "The source asks for all $g$ with $g^{\\prime}(x)=4\\sin x+(2x^5-\\sqrt{x})/x$, where $x>0$.",
         "steps": [
           {
             "label": "Rewrite",
             "text": "Separate the quotient and write the radical as $x^{1/2}$.",
-            "equation": "g\\prime(x)=4\\sin x+2x^4-x^{-1/2}"
+            "equation": "g^{\\prime}(x)=4\\sin x+2x^4-x^{-1/2}"
           },
           {
             "label": "Integrate term by term",
@@ -8522,7 +8522,7 @@
           {
             "label": "Check",
             "text": "Differentiate and retain the positive-domain condition.",
-            "equation": "g\\prime(x)=4\\sin x+2x^4-x^{-1/2},\\qquad x>0"
+            "equation": "g^{\\prime}(x)=4\\sin x+2x^4-x^{-1/2},\\qquad x>0"
           }
         ],
         "result": "The family is $g(x)=-4\\cos x+(2/5)x^5-2\\sqrt{x}+C$ on $x>0$.",
@@ -8539,12 +8539,12 @@
         "id": "lecture11-second-derivative-work",
         "title": "Reconstruct the source function",
         "strategy": "Integrate twice, then solve for the constants with the two given values.",
-        "setup": "The source gives $f\\prime\\prime(x)=12x^2+6x-4$, $f(0)=4$, and $f(1)=1$.",
+        "setup": "The source gives $f^{\\prime\\prime}(x)=12x^2+6x-4$, $f(0)=4$, and $f(1)=1$.",
         "steps": [
           {
             "label": "Integrate once",
             "text": "Introduce the first constant.",
-            "equation": "f\\prime(x)=4x^3+3x^2-4x+C"
+            "equation": "f^{\\prime}(x)=4x^3+3x^2-4x+C"
           },
           {
             "label": "Integrate again",
@@ -8564,7 +8564,7 @@
         "kind": "strategy",
         "id": "lecture11-motion-from-acceleration-statement",
         "title": "Recover velocity and position by integrating acceleration twice with initial data.",
-        "text": "For straight-line motion, $v=s\\prime$ and $a=v\\prime$. Thus known acceleration determines velocity up to one constant, and velocity determines position up to another; initial velocity and position determine those constants."
+        "text": "For straight-line motion, $v=s^{\\prime}$ and $a=v^{\\prime}$. Thus known acceleration determines velocity up to one constant, and velocity determines position up to another; initial velocity and position determine those constants."
       },
       {
         "kind": "worked-example",
@@ -8586,7 +8586,7 @@
           {
             "label": "Check derivatives",
             "text": "Differentiate twice.",
-            "equation": "s\\prime(t)=3t^2+4t-6,\\qquad s\\prime\\prime(t)=6t+4"
+            "equation": "s^{\\prime}(t)=3t^2+4t-6,\\qquad s^{\\prime\\prime}(t)=6t+4"
           }
         ],
         "result": "The position function is $s(t)=t^3+2t^2-6t+9$.",
@@ -8709,7 +8709,7 @@
         "id": "lecture11-rewrite-transfer",
         "outcome": "Rewrite and integrate a mixed trigonometric and radical expression.",
         "kind": "computational",
-        "prompt": "Find all $h$ such that $h\\prime(x)=6\\cos x+3x^4-\\frac2{\\sqrt{x}}$ for $x>0$.",
+        "prompt": "Find all $h$ such that $h^{\\prime}(x)=6\\cos x+3x^4-\\frac2{\\sqrt{x}}$ for $x>0$.",
         "hint": "Rewrite the last term as $-2x^{-1/2}$.",
         "solution": "Integrating term by term gives $h(x)=6\\sin x+\\frac35x^5-4\\sqrt{x}+C$. Its derivative is $6\\cos x+3x^4-2x^{-1/2}$ on $x>0$.",
         "solutionTex": "h(x)=6\\sin x+\\frac35x^5-4\\sqrt{x}+C",
@@ -8723,7 +8723,7 @@
         "id": "lecture11-two-values-transfer",
         "outcome": "Recover a function from its second derivative and two independent values.",
         "kind": "computational",
-        "prompt": "Find $f$ if $f\\prime\\prime(x)=6x+4$, $f(0)=1$, and $f(2)=15$.",
+        "prompt": "Find $f$ if $f^{\\prime\\prime}(x)=6x+4$, $f(0)=1$, and $f(2)=15$.",
         "hint": "Write $f(x)=x^3+2x^2+Cx+D$ after integrating twice.",
         "solution": "Integrating gives $f(x)=x^3+2x^2+Cx+D$. From $f(0)=1$, $D=1$. From $f(2)=15$, $8+8+2C+1=15$, so $C=-1$. Thus $f(x)=x^3+2x^2-x+1$.",
         "solutionTex": "f(x)=x^3+2x^2+Cx+D,\\quad D=1,\\quad C=-1",
@@ -10133,11 +10133,11 @@
         "kind": "theorem",
         "id": "lecture13-lhopital-rule-statement",
         "title": "L’Hôpital’s Rule: forms and hypotheses",
-        "statement": "If $f,g$ are differentiable on a punctured interval around $a$, $g\\prime(x)\\ne0$ there, and either both functions tend to $0$ or each tends to $+\\infty$ or $-\\infty$, then $\\lim_{x\\to a}f(x)/g(x)=\\lim_{x\\to a}f\\prime(x)/g\\prime(x)$ when the latter limit exists as a finite value or as $+\\infty$ or $-\\infty$.",
+        "statement": "If $f,g$ are differentiable on a punctured interval around $a$, $g^{\\prime}(x)\\ne0$ there, and either both functions tend to $0$ or each tends to $+\\infty$ or $-\\infty$, then $\\lim_{x\\to a}f(x)/g(x)=\\lim_{x\\to a}f^{\\prime}(x)/g^{\\prime}(x)$ when the latter limit exists as a finite value or as $+\\infty$ or $-\\infty$.",
         "hypotheses": [
           "The original quotient must be defined on the punctured domain.",
           "Check the $0/0$ or $\\infty/\\infty$ form before differentiating.",
-          "Check differentiability and $g\\prime(x)\\ne0$ near the endpoint.",
+          "Check differentiability and $g^{\\prime}(x)\\ne0$ near the endpoint.",
           "The derivative-ratio limit must exist, possibly with a signed infinite value."
         ],
         "prerequisites": [],
@@ -10153,11 +10153,11 @@
         "kind": "theorem",
         "id": "lecture13-special-case-proof-statement",
         "title": "A local derivative argument for the 0/0 case",
-        "statement": "If $f(a)=g(a)=0$, $f\\prime$ and $g\\prime$ are continuous near $a$, and $g\\prime(a)\\ne0$, then both quotient limits equal $f\\prime(a)/g\\prime(a)$. This proves a stronger-hypothesis special case, not the full L’Hôpital theorem.",
+        "statement": "If $f(a)=g(a)=0$, $f^{\\prime}$ and $g^{\\prime}$ are continuous near $a$, and $g^{\\prime}(a)\\ne0$, then both quotient limits equal $f^{\\prime}(a)/g^{\\prime}(a)$. This proves a stronger-hypothesis special case, not the full L’Hôpital theorem.",
         "hypotheses": [
           "$f$ and $g$ are differentiable at $a$ and vanish there.",
-          "$f\\prime,g\\prime$ are continuous near $a$.",
-          "$g\\prime(a)\\ne0$."
+          "$f^{\\prime},g^{\\prime}$ are continuous near $a$.",
+          "$g^{\\prime}(a)\\ne0$."
         ],
         "prerequisites": ["Definition of derivative"],
         "status": "Complete proof"
@@ -10282,7 +10282,7 @@
           {
             "label": "Differentiate",
             "text": "The denominator derivative is $1$, so it is nonzero near $1$.",
-            "equation": "\\lim_{x\\to1}\\frac{(\\ln x)\\prime}{(x-1)\\prime}=\\lim_{x\\to1}\\frac{1/x}{1}=1"
+            "equation": "\\lim_{x\\to1}\\frac{(\\ln x)^{\\prime}}{(x-1)^{\\prime}}=\\lim_{x\\to1}\\frac{1/x}{1}=1"
           }
         ],
         "result": "The quotient limit is $1$.",
@@ -10318,18 +10318,18 @@
         "steps": [
           {
             "label": "Check endpoint values",
-            "text": "$f(1)=g(1)=0$, and $f\\prime,g\\prime$ are continuous near $1$ with $g\\prime(1)=1$.",
-            "equation": "\\frac{f\\prime(1)}{g\\prime(1)}=1"
+            "text": "$f(1)=g(1)=0$, and $f^{\\prime},g^{\\prime}$ are continuous near $1$ with $g^{\\prime}(1)=1$.",
+            "equation": "\\frac{f^{\\prime}(1)}{g^{\\prime}(1)}=1"
           },
           {
             "label": "Use derivative definitions",
             "text": "Each quotient by $x-1$ tends to its derivative at $1$; the denominator limit is nonzero.",
-            "equation": "\\lim_{x\\to1}\\frac{f(x)}{g(x)}=\\frac{\\lim_{x\\to1}\\frac{f(x)-f(1)}{x-1}}{\\lim_{x\\to1}\\frac{g(x)-g(1)}{x-1}}=\\frac{f\\prime(1)}{g\\prime(1)}"
+            "equation": "\\lim_{x\\to1}\\frac{f(x)}{g(x)}=\\frac{\\lim_{x\\to1}\\frac{f(x)-f(1)}{x-1}}{\\lim_{x\\to1}\\frac{g(x)-g(1)}{x-1}}=\\frac{f^{\\prime}(1)}{g^{\\prime}(1)}"
           },
           {
             "label": "Compare derivative limits",
-            "text": "Continuity of $f\\prime,g\\prime$ gives the same value for the derivative quotient.",
-            "equation": "\\lim_{x\\to1}\\frac{f\\prime(x)}{g\\prime(x)}=\\frac{f\\prime(1)}{g\\prime(1)}=1"
+            "text": "Continuity of $f^{\\prime},g^{\\prime}$ gives the same value for the derivative quotient.",
+            "equation": "\\lim_{x\\to1}\\frac{f^{\\prime}(x)}{g^{\\prime}(x)}=\\frac{f^{\\prime}(1)}{g^{\\prime}(1)}=1"
           }
         ],
         "result": "Under these stronger local hypotheses, both limits equal $1$.",
@@ -10401,13 +10401,13 @@
         "steps": [
           {
             "label": "Check the hypotheses",
-            "text": "Both functions are continuous on $[1,3]$, differentiable on $(1,3)$, and $g\\prime(x)=1\\ne0$.",
+            "text": "Both functions are continuous on $[1,3]$, differentiable on $(1,3)$, and $g^{\\prime}(x)=1\\ne0$.",
             "equation": "\\frac{f(3)-f(1)}{g(3)-g(1)}=\\frac{9-1}{3-1}=4"
           },
           {
             "label": "Solve the derivative equation",
             "text": "Cauchy’s theorem gives a point $c\\in(1,3)$ with derivative ratio $4$.",
-            "equation": "\\frac{f\\prime(c)}{g\\prime(c)}=\\frac{2c}{1}=4\\quad\\Longrightarrow\\quad c=2"
+            "equation": "\\frac{f^{\\prime}(c)}{g^{\\prime}(c)}=\\frac{2c}{1}=4\\quad\\Longrightarrow\\quad c=2"
           }
         ],
         "result": "The theorem’s interior point is $c=2$.",
@@ -10438,8 +10438,8 @@
           },
           {
             "label": "Apply Rolle and rearrange",
-            "text": "For some $c\\in(a,b)$, $h\\prime(c)=0$; because $g\\prime(c)\\ne0$, divide to obtain Cauchy’s conclusion.",
-            "equation": "h\\prime(c)=f\\prime(c)-\\frac{\\Delta f}{\\Delta g}g\\prime(c)=0\\quad\\Longrightarrow\\quad\\frac{f\\prime(c)}{g\\prime(c)}=\\frac{\\Delta f}{\\Delta g}"
+            "text": "For some $c\\in(a,b)$, $h^{\\prime}(c)=0$; because $g^{\\prime}(c)\\ne0$, divide to obtain Cauchy’s conclusion.",
+            "equation": "h^{\\prime}(c)=f^{\\prime}(c)-\\frac{\\Delta f}{\\Delta g}g^{\\prime}(c)=0\\quad\\Longrightarrow\\quad\\frac{f^{\\prime}(c)}{g^{\\prime}(c)}=\\frac{\\Delta f}{\\Delta g}"
           }
         ],
         "result": "This proves the stated Cauchy mean value theorem.",
@@ -10449,10 +10449,10 @@
         "kind": "theorem",
         "id": "cauchy-mean-value-theorem",
         "title": "Cauchy’s mean value theorem",
-        "statement": "If $f,g$ are continuous on $[a,b]$, differentiable on $(a,b)$, and $g\\prime(x)\\ne0$ throughout $(a,b)$, then some $c\\in(a,b)$ satisfies $\\frac{f\\prime(c)}{g\\prime(c)}=\\frac{f(b)-f(a)}{g(b)-g(a)}$.",
+        "statement": "If $f,g$ are continuous on $[a,b]$, differentiable on $(a,b)$, and $g^{\\prime}(x)\\ne0$ throughout $(a,b)$, then some $c\\in(a,b)$ satisfies $\\frac{f^{\\prime}(c)}{g^{\\prime}(c)}=\\frac{f(b)-f(a)}{g(b)-g(a)}$.",
         "hypotheses": [
           "$a<b$; $f$ and $g$ are continuous on $[a,b]$ and differentiable on $(a,b)$.",
-          "$g\\prime(x)\\ne0$ for every $x\\in(a,b)$; this makes $g(b)-g(a)\\ne0$."
+          "$g^{\\prime}(x)\\ne0$ for every $x\\in(a,b)$; this makes $g(b)-g(a)\\ne0$."
         ],
         "prerequisites": ["Rolle’s theorem"],
         "status": "Complete proof"
@@ -10535,7 +10535,7 @@
           {
             "label": "Compare the other conversion",
             "text": "The alternative $x/(1/\\ln x)$ is also $0/0$, but its derivative ratio $-x(\\ln x)^2$ is less simple.",
-            "equation": "\\frac{1}{(1/\\ln x)\\prime}=-x(\\ln x)^2\\longrightarrow0"
+            "equation": "\\frac{1}{(1/\\ln x)^{\\prime}}=-x(\\ln x)^2\\longrightarrow0"
           }
         ],
         "result": "$x\\ln x\\to0$ as $x\\to0^+$.",
@@ -10633,9 +10633,9 @@
         "outcome": "Use the derivative-definition argument under its stronger local assumptions.",
         "kind": "proof",
         "prompt": "For $f(x)=e^{2x}-1$, $g(x)=3x$, and $a=0$, verify the p7 special-case hypotheses and derive $\\lim_{x\\to0}f(x)/g(x)$.",
-        "hint": "Check $f(0)=g(0)=0$, continuity of both derivatives, and $g\\prime(0)\\ne0$.",
-        "solution": "The hypotheses hold and $f\\prime(0)/g\\prime(0)=2/3$. The two difference quotients in the derivative definitions therefore give the same limit $2/3$.",
-        "solutionTex": "\\lim_{x\\to0}\\frac{e^{2x}-1}{3x}=\\frac{f\\prime(0)}{g\\prime(0)}=\\frac23",
+        "hint": "Check $f(0)=g(0)=0$, continuity of both derivatives, and $g^{\\prime}(0)\\ne0$.",
+        "solution": "The hypotheses hold and $f^{\\prime}(0)/g^{\\prime}(0)=2/3$. The two difference quotients in the derivative definitions therefore give the same limit $2/3$.",
+        "solutionTex": "\\lim_{x\\to0}\\frac{e^{2x}-1}{3x}=\\frac{f^{\\prime}(0)}{g^{\\prime}(0)}=\\frac23",
         "rubric": [
           "Verify every stronger hypothesis.",
           "Use the alternative derivative definition for numerator and denominator.",
@@ -10689,12 +10689,12 @@
         "outcome": "Apply Cauchy’s theorem with all endpoint hypotheses checked.",
         "kind": "computational",
         "prompt": "For $f(x)=x^2$ and $g(x)=2x+1$ on $[0,1]$, find the interior point supplied by Cauchy’s mean value theorem.",
-        "hint": "Compute the endpoint difference quotient, then solve $f\\prime(c)/g\\prime(c)$ equal to it.",
-        "solution": "Both functions are continuous on $[0,1]$ and differentiable inside; $g\\prime=2\\ne0$. The endpoint quotient is $1/2$, while the derivative ratio is $c$, so $c=1/2$.",
-        "solutionTex": "\\frac{f(1)-f(0)}{g(1)-g(0)}=\\frac12=\\frac{f\\prime(c)}{g\\prime(c)}=c\\quad\\Longrightarrow\\quad c=\\frac12",
+        "hint": "Compute the endpoint difference quotient, then solve $f^{\\prime}(c)/g^{\\prime}(c)$ equal to it.",
+        "solution": "Both functions are continuous on $[0,1]$ and differentiable inside; $g^{\\prime}=2\\ne0$. The endpoint quotient is $1/2$, while the derivative ratio is $c$, so $c=1/2$.",
+        "solutionTex": "\\frac{f(1)-f(0)}{g(1)-g(0)}=\\frac12=\\frac{f^{\\prime}(c)}{g^{\\prime}(c)}=c\\quad\\Longrightarrow\\quad c=\\frac12",
         "rubric": [
           "Verify continuity and differentiability on the required sets.",
-          "Check $g\\prime$ never vanishes.",
+          "Check $g^{\\prime}$ never vanishes.",
           "Solve for a point strictly inside the interval."
         ]
       },
@@ -11152,7 +11152,7 @@
             "text": "Continuity and $c_h\\to x$ imply $f(c_h)\\to f(x)$."
           }
         ],
-        "result": "$A\\prime(x)=f(x)$.",
+        "result": "$A^{\\prime}(x)=f(x)$.",
         "verification": "This uses continuity near $x$; the dummy variable $t$ does not change the endpoint derivative."
       },
       {
@@ -11187,10 +11187,10 @@
           },
           {
             "label": "2",
-            "text": "FTC Part 1 and the chain rule give $A\\prime(x^2)2x-A\\prime(x)=2x\\sin(x^2)-\\sin x$."
+            "text": "FTC Part 1 and the chain rule give $A^{\\prime}(x^2)2x-A^{\\prime}(x)=2x\\sin(x^2)-\\sin x$."
           }
         ],
-        "result": "$H\\prime(x)=2x\\sin(x^2)-\\sin x$.",
+        "result": "$H^{\\prime}(x)=2x\\sin(x^2)-\\sin x$.",
         "verification": "At $x=1$ both endpoints meet, but the derivative formula still follows from the endpoint rates."
       }
     ],
@@ -11201,8 +11201,8 @@
         "kind": "computational",
         "prompt": "Differentiate $H(x)=\\int_{x^2}^{2x}\\cos(t^2)\\,dt$.",
         "hint": "Upper endpoint contribution minus lower endpoint contribution.",
-        "solution": "$H\\prime(x)=2\\cos(4x^2)-2x\\cos(x^4)$.",
-        "solutionTex": "H\\prime(x)=2\\cos(4x^2)-2x\\cos(x^4)",
+        "solution": "$H^{\\prime}(x)=2\\cos(4x^2)-2x\\cos(x^4)$.",
+        "solutionTex": "H^{\\prime}(x)=2\\cos(4x^2)-2x\\cos(x^4)",
         "rubric": [
           "Apply the chain rule at both bounds.",
           "Subtract the lower-bound contribution."
@@ -11277,7 +11277,7 @@
         "kind": "strategy",
         "id": "lecture08-definite-substitution-theorem-statement",
         "title": "Keep the derivative and transformed endpoints together",
-        "text": "For $a<b$, differentiable $g:[a,b]\\to\\mathbb R$, and $f$ defined on $g([a,b])$, physical page 17 states that existence of $\\int_a^b g\\prime(x)\\,dx$ and $\\int_{g(a)}^{g(b)}f(u)\\,du$ implies existence of and equality $\\int_a^b f(g(x))g\\prime(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$. The signed factor and transformed endpoints preserve orientation."
+        "text": "For $a<b$, differentiable $g:[a,b]\\to\\mathbb R$, and $f$ defined on $g([a,b])$, physical page 17 states that existence of $\\int_a^b g^{\\prime}(x)\\,dx$ and $\\int_{g(a)}^{g(b)}f(u)\\,du$ implies existence of and equality $\\int_a^b f(g(x))g^{\\prime}(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$. The signed factor and transformed endpoints preserve orientation."
       },
       {
         "kind": "worked-example",
@@ -11289,12 +11289,12 @@
           {
             "label": "Differentiate the map",
             "text": "The substitution reverses direction, so its derivative is negative.",
-            "equation": "g\\prime(x)=-1,\\qquad g(0)=1,\\quad g(1)=0"
+            "equation": "g^{\\prime}(x)=-1,\\qquad g(0)=1,\\quad g(1)=0"
           },
           {
             "label": "Evaluate in the original variable",
             "text": "The derivative sign is part of the integrand.",
-            "equation": "\\int_0^1 f(g(x))g\\prime(x)\\,dx=-\\int_0^1(1-x)\\,dx=-\\frac12"
+            "equation": "\\int_0^1 f(g(x))g^{\\prime}(x)\\,dx=-\\int_0^1(1-x)\\,dx=-\\frac12"
           },
           {
             "label": "Use transformed endpoints",
@@ -11302,7 +11302,7 @@
             "equation": "\\int_{g(0)}^{g(1)}f(u)\\,du=\\int_1^0u\\,du=-\\frac12"
           }
         ],
-        "result": "Both sides equal $-1/2$; replacing $g\\prime$ by $|g\\prime|$ would lose the sign.",
+        "result": "Both sides equal $-1/2$; replacing $g^{\\prime}$ by $|g^{\\prime}|$ would lose the sign.",
         "verification": "An antiderivative of $u$ is $u^2/2$, so its oriented change from $1$ to $0$ is $-1/2$; the original integrand has the same value."
       }
     ],
@@ -11918,7 +11918,7 @@
         "kind": "theorem",
         "id": "ch03-parts-rule",
         "title": "Choose factors so integration by parts simplifies the remainder",
-        "statement": "For differentiable $u$ and an antiderivative $v$ of $dv$, $\\int u\\,dv=uv-\\int v\\,du$. On $[a,b]$, $\\int_a^b u v\\prime\\,dx=[uv]_a^b-\\int_a^b u\\prime v\\,dx$.",
+        "statement": "For differentiable $u$ and an antiderivative $v$ of $dv$, $\\int u\\,dv=uv-\\int v\\,du$. On $[a,b]$, $\\int_a^b u v^{\\prime}\\,dx=[uv]_a^b-\\int_a^b u^{\\prime} v\\,dx$.",
         "hypotheses": [
           "The product rule applies on the interval; indefinite antiderivatives carry an arbitrary constant."
         ],
@@ -12728,7 +12728,7 @@
     "sections": [
       {
         "title": "Separate empirical error from a guarantee",
-        "text": "The source table compares estimates with $\\ln 2$ for $1/x$ on $[1,2]$; those observed errors are examples, not a general convergence proof. A certified bound requires a valid maximum $K$ for $|f\\prime\\prime|$ on the whole interval."
+        "text": "The source table compares estimates with $\\ln 2$ for $1/x$ on $[1,2]$; those observed errors are examples, not a general convergence proof. A certified bound requires a valid maximum $K$ for $|f^{\\prime\\prime}|$ on the whole interval."
       },
       {
         "title": "Choose subdivisions from the theorem",
@@ -12806,7 +12806,7 @@
         "kind": "theorem",
         "id": "ch03-quadrature-error-bound",
         "title": "Use the stated second-derivative error bounds",
-        "statement": "If $|f\\prime\\prime(x)|\\le K$ on $[a,b]$ and the rules use $n$ equal panels, $|E_M|\\le K(b-a)^3/(24n^2)$ and $|E_T|\\le K(b-a)^3/(12n^2)$.",
+        "statement": "If $|f^{\\prime\\prime}(x)|\\le K$ on $[a,b]$ and the rules use $n$ equal panels, $|E_M|\\le K(b-a)^3/(24n^2)$ and $|E_T|\\le K(b-a)^3/(12n^2)$.",
         "hypotheses": [
           "The bound $K$ must hold throughout the interval; the source states sufficient differentiability.",
           "The source says the proof is beyond the syllabus."
@@ -12823,7 +12823,7 @@
         "steps": [
           {
             "label": "Check curvature",
-            "text": "Here $f\\prime\\prime(x)=-1/(4x^{3/2})$, so $|f\\prime\\prime(x)|\\le1/4$ on $[1,4]$."
+            "text": "Here $f^{\\prime\\prime}(x)=-1/(4x^{3/2})$, so $|f^{\\prime\\prime}(x)|\\le1/4$ on $[1,4]$."
           },
           {
             "label": "Apply the bound",
@@ -12874,7 +12874,7 @@
         "outcome": "Choose a certified trapezoid panel count",
         "kind": "method-choice",
         "prompt": "How many trapezoids guarantee error at most $0.01$ for $\\int_0^\\pi\\cos x\\,dx$?",
-        "hint": "Here $|f\\prime\\prime(x)|=|\\cos x|\\le1$ on the whole interval.",
+        "hint": "Here $|f^{\\prime\\prime}(x)|=|\\cos x|\\le1$ on the whole interval.",
         "solution": "The trapezoid bound is $\\pi^3/(12n^2)$. Requiring it to be at most $0.01$ gives $n\\ge\\sqrt{\\pi^3/0.12}\\approx16.09$, so $n=17$ suffices.",
         "solutionTex": "n\\ge\\sqrt{\\frac{\\pi^3}{0.12}}\\approx16.09,\\quad n=17",
         "rubric": [
@@ -14332,7 +14332,7 @@
           {
             "label": "Check the hypotheses",
             "text": "The function is positive, continuous, and decreasing on the tail.",
-            "equation": "f(x)=\\frac1{1+x^2}>0,\\qquad f\\prime(x)=-\\frac{2x}{(1+x^2)^2}<0\\quad(x\\ge1)"
+            "equation": "f(x)=\\frac1{1+x^2}>0,\\qquad f^{\\prime}(x)=-\\frac{2x}{(1+x^2)^2}<0\\quad(x\\ge1)"
           },
           {
             "label": "Evaluate the integral",
@@ -14353,7 +14353,7 @@
           {
             "label": "Check eventual decrease",
             "text": "The derivative is negative when $\\ln x>1$, which holds on $x\\ge3$.",
-            "equation": "f\\prime(x)=\\frac{1-\\ln x}{x^2}<0\\quad(x\\ge3)"
+            "equation": "f^{\\prime}(x)=\\frac{1-\\ln x}{x^2}<0\\quad(x\\ge3)"
           },
           {
             "label": "Integrate by parts",
@@ -16698,7 +16698,7 @@
       },
       {
         "title": "Length and reparametrization",
-        "text": "For a piecewise continuously differentiable curve, length is $\\int |r'(t)|dt$ over its pieces. A regular change of parameter preserves length after the speed factor and bounds are transformed. Unit tangent $r\\prime/|r\\prime|$ is defined only where speed is nonzero."
+        "text": "For a piecewise continuously differentiable curve, length is $\\int |r'(t)|dt$ over its pieces. A regular change of parameter preserves length after the speed factor and bounds are transformed. Unit tangent $r^{\\prime}/|r^{\\prime}|$ is defined only where speed is nonzero."
       }
     ],
     "exercise": {
@@ -16813,7 +16813,7 @@
           },
           {
             "label": "Force the y derivative to vanish",
-            "text": "Since $y(s)\\ge0$ and $y(t_0)=0$, differentiability gives a local minimum, hence $y\\prime(t_0)=0$."
+            "text": "Since $y(s)\\ge0$ and $y(t_0)=0$, differentiability gives a local minimum, hence $y^{\\prime}(t_0)=0$."
           },
           {
             "label": "Identify the geometric tangent",
@@ -24385,7 +24385,7 @@
         "kind": "strategy",
         "id": "lecture09-piecewise-arclength-example-statement",
         "title": "Scalar arclength integrals add over pieces",
-        "text": "For scalar integrals $ds=\\|\\mathbf r\\prime(t)\\|dt$ is unsigned. Integrate each piece and add; the guide supplies the omitted calculation."
+        "text": "For scalar integrals $ds=\\|\\mathbf r^{\\prime}(t)\\|dt$ is unsigned. Integrate each piece and add; the guide supplies the omitted calculation."
       },
       {
         "kind": "worked-example",
@@ -24735,7 +24735,7 @@
         "kind": "strategy",
         "id": "lecture09-vector-is-sum-of-coordinate-integrals-statement",
         "title": "Vector integration sums coordinate contributions",
-        "text": "Compose each field component with the curve and pair it with the matching velocity component; their sum is $\\mathbf F\\cdot\\mathbf r\\prime$."
+        "text": "Compose each field component with the curve and pair it with the matching velocity component; their sum is $\\mathbf F\\cdot\\mathbf r^{\\prime}$."
       },
       {
         "kind": "worked-example",
@@ -24882,7 +24882,7 @@
         "kind": "strategy",
         "id": "lecture09-plane-smooth-formulas-statement",
         "title": "Plane coordinate differentials follow matching derivatives",
-        "text": "On $\\mathbf r(t)=(X(t),Y(t))$, use $dx=X\\prime(t)dt$ and $dy=Y\\prime(t)dt$ separately; the derivative sign records direction."
+        "text": "On $\\mathbf r(t)=(X(t),Y(t))$, use $dx=X^{\\prime}(t)dt$ and $dy=Y^{\\prime}(t)dt$ separately; the derivative sign records direction."
       },
       {
         "kind": "worked-example",
@@ -24925,12 +24925,12 @@
           },
           {
             "label": "Evaluate and check",
-            "text": "The $dz$ factor uses $z\\prime$; speed would instead define an arclength integral.",
+            "text": "The $dz$ factor uses $z^{\\prime}$; speed would instead define an arclength integral.",
             "equation": "\\int_C z\\,dz=\\int_0^1 3t^5\\,dt=\\frac12"
           }
         ],
         "result": "The third-kind integral is $\\frac12$.",
-        "verification": "The $dz$ factor uses $z\\prime$; speed would instead define an arclength integral."
+        "verification": "The $dz$ factor uses $z^{\\prime}$; speed would instead define an arclength integral."
       },
       {
         "kind": "strategy",
@@ -25175,7 +25175,7 @@
         "kind": "strategy",
         "id": "lecture09-work-line-integral-definition-statement",
         "title": "Work accumulates the tangential force",
-        "text": "For a changing field or curved path, accumulate the local tangential force $\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)$."
+        "text": "For a changing field or curved path, accumulate the local tangential force $\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r^{\\prime}(t)$."
       },
       {
         "kind": "worked-example",
@@ -25187,7 +25187,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path, field, or domain data before evaluating.",
-            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=3t"
+            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r^{\\prime}(t)=3t"
           },
           {
             "label": "Evaluate and check",
@@ -25241,7 +25241,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path, field, or domain data before evaluating.",
-            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=3t^2+3t^5"
+            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r^{\\prime}(t)=3t^2+3t^5"
           },
           {
             "label": "Evaluate and check",
@@ -25268,7 +25268,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path, field, or domain data before evaluating.",
-            "equation": "\\mathbf r(t)=(\\cos t,\\sin t),\\quad\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=1"
+            "equation": "\\mathbf r(t)=(\\cos t,\\sin t),\\quad\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r^{\\prime}(t)=1"
           },
           {
             "label": "Evaluate and check",
@@ -25376,7 +25376,7 @@
         "kind": "strategy",
         "id": "lecture09-endpoint-theorem-statement",
         "title": "A global potential reduces work to endpoints",
-        "text": "The chain rule gives $\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=\\frac{d}{dt}\\phi(\\mathbf r(t))$."
+        "text": "The chain rule gives $\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r^{\\prime}(t)=\\frac{d}{dt}\\phi(\\mathbf r(t))$."
       },
       {
         "kind": "worked-example",
@@ -25388,7 +25388,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path, field, or domain data before evaluating.",
-            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r\\prime(t)=\\frac{d}{dt}\\phi(\\mathbf r(t))"
+            "equation": "\\mathbf F(\\mathbf r(t))\\cdot\\mathbf r^{\\prime}(t)=\\frac{d}{dt}\\phi(\\mathbf r(t))"
           },
           {
             "label": "Evaluate and check",
@@ -25591,7 +25591,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path and field before evaluating.",
-            "equation": "\\mathbf r(t)=(\\cos t,\\sin t),\\quad\\mathbf F(\\mathbf r(t))=\\mathbf r\\prime(t)"
+            "equation": "\\mathbf r(t)=(\\cos t,\\sin t),\\quad\\mathbf F(\\mathbf r(t))=\\mathbf r^{\\prime}(t)"
           },
           {
             "label": "Evaluate and interpret",
@@ -25722,7 +25722,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path, field, or domain data before evaluating.",
-            "equation": "\\mathbf r(0)=(1,0),\\quad\\mathbf r\\prime(0)=(0,1)"
+            "equation": "\\mathbf r(0)=(1,0),\\quad\\mathbf r^{\\prime}(0)=(0,1)"
           },
           {
             "label": "Evaluate and check",
@@ -25850,7 +25850,7 @@
         "prompt": "Is $\\mathbf r(t)=(\\cos t,-\\sin t)$ positive or negative around the unit disk?",
         "hint": "Check the tangent at $(1,0)$ and which side contains the disk.",
         "solution": "The tangent points down and the disk is on the right; the traversal is clockwise and negative.",
-        "solutionTex": "\\mathbf r\\prime(0)=(0,-1),\\quad\\text{negative orientation}",
+        "solutionTex": "\\mathbf r^{\\prime}(0)=(0,-1),\\quad\\text{negative orientation}",
         "rubric": [
           "Check direction at a known boundary point.",
           "Separate orientation from unsigned area."
@@ -25989,7 +25989,7 @@
         "kind": "strategy",
         "id": "lecture09-ellipse-area-source-statement",
         "title": "Derive ellipse area from its boundary",
-        "text": "For $a,b>0$, use $x=a\\cos t$, $y=b\\sin t$; then $x y\\prime-y x\\prime=ab$."
+        "text": "For $a,b>0$, use $x=a\\cos t$, $y=b\\sin t$; then $x y^{\\prime}-y x^{\\prime}=ab$."
       },
       {
         "kind": "worked-example",
@@ -26001,7 +26001,7 @@
           {
             "label": "Apply the source rule",
             "text": "Substitute the path, field, or domain data before evaluating.",
-            "equation": "xy\\prime-yx\\prime=ab(\\cos^2t+\\sin^2t)=ab"
+            "equation": "xy^{\\prime}-yx^{\\prime}=ab(\\cos^2t+\\sin^2t)=ab"
           },
           {
             "label": "Evaluate and check",

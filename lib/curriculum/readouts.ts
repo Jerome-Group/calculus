@@ -33,7 +33,7 @@ export function readoutTex(id: string, p: number): string {
       return tex`\mathbf F\cdot\mathbf n=${f(Math.cos(p))},\quad\iint_S\mathbf F\cdot\mathbf n\,dS=0`;
 
     case "curves":
-      return tex`\mathbf r(t)\approx(${f(Math.cos(p))},${f(Math.sin(p))},${f(p)}),\quad\|\mathbf r\prime(t)\|=\sqrt2`;
+      return tex`\mathbf r(t)\approx(${f(Math.cos(p))},${f(Math.sin(p))},${f(p)}),\quad\|\mathbf r^{\prime}(t)\|=\sqrt2`;
     case "arc":
       return tex`L(t)=\sqrt2\,t\approx${f(Math.SQRT2 * p)}`;
     case "surface":
@@ -56,7 +56,7 @@ export function readoutTex(id: string, p: number): string {
     case "directional":
       return tex`D_uf(1,1)=2\cos\theta+2\sin\theta\approx${f(2 * Math.cos(p) + 2 * Math.sin(p))}`;
     case "chain":
-      return tex`f(\mathbf r(t))=1,\quad\nabla f(\mathbf r(t))\cdot\mathbf r\prime(t)=0`;
+      return tex`f(\mathbf r(t))=1,\quad\nabla f(\mathbf r(t))\cdot\mathbf r^{\prime}(t)=0`;
     case "lagrange":
       return tex`f=\cos\theta+\sin\theta\approx${f(Math.cos(p) + Math.sin(p))}\in[-\sqrt2,\sqrt2]`;
     case "constraintSphere":
@@ -80,7 +80,7 @@ export function readoutTex(id: string, p: number): string {
     case "lineScalar":
       return tex`\int_0^t(2+\cos s)\,ds=2t+\sin t\approx${f(2 * p + Math.sin(p))}`;
     case "lineintegral":
-      return tex`\mathbf F(\mathbf r(t))\cdot\mathbf r\prime(t)=1,\quad W(0,t)=t\approx${f(p)}`;
+      return tex`\mathbf F(\mathbf r(t))\cdot\mathbf r^{\prime}(t)=1,\quad W(0,t)=t\approx${f(p)}`;
     case "field":
       return tex`\nabla\cdot\mathbf F=3a=${f(3 * p)},\quad\nabla\times\mathbf F=(0,0,${f(2 * (1 - p))})`;
     case "conservative":
@@ -99,15 +99,15 @@ export function readoutTex(id: string, p: number): string {
       return tex`\mathbf u\cdot\mathbf v=\cos\theta\approx${f(Math.cos(p))},\quad\|\mathbf u+\mathbf v\|\approx${f(Math.sqrt(2 + 2 * Math.cos(p)))}`;
     case "elementarycurves":
     case "curveCycloid":
-      return tex`\mathbf r(t)\approx(${f(p - Math.sin(p))},${f(1 - Math.cos(p))},0),\quad\|\mathbf r\prime(t)\|\approx${f(2 * Math.abs(Math.sin(p / 2)))}`;
+      return tex`\mathbf r(t)\approx(${f(p - Math.sin(p))},${f(1 - Math.cos(p))},0),\quad\|\mathbf r^{\prime}(t)\|\approx${f(2 * Math.abs(Math.sin(p / 2)))}`;
     case "curveCircle":
-      return tex`\mathbf r(t)\approx(${f(Math.cos(p))},${f(Math.sin(p))},0),\quad\|\mathbf r\prime(t)\|=1`;
+      return tex`\mathbf r(t)\approx(${f(Math.cos(p))},${f(Math.sin(p))},0),\quad\|\mathbf r^{\prime}(t)\|=1`;
     case "curveEllipse":
-      return tex`\mathbf r(t)\approx(${f(2 * Math.cos(p))},${f(Math.sin(p))},0),\quad\|\mathbf r\prime(t)\|\approx${f(Math.sqrt(4 * Math.sin(p) ** 2 + Math.cos(p) ** 2))}`;
+      return tex`\mathbf r(t)\approx(${f(2 * Math.cos(p))},${f(Math.sin(p))},0),\quad\|\mathbf r^{\prime}(t)\|\approx${f(Math.sqrt(4 * Math.sin(p) ** 2 + Math.cos(p) ** 2))}`;
     case "curveCusp":
-      return tex`\mathbf r\prime(t)=(3t^2,2t,0)=(${f(3 * p * p)},${f(2 * p)},0)`;
+      return tex`\mathbf r^{\prime}(t)=(3t^2,2t,0)=(${f(3 * p * p)},${f(2 * p)},0)`;
     case "curveLine":
-      return tex`\mathbf r(t)=(${f(p)},0,0),\quad\mathbf r\prime(t)=(1,0,0)`;
+      return tex`\mathbf r(t)=(${f(p)},0,0),\quad\mathbf r^{\prime}(t)=(1,0,0)`;
     case "topology":
       return Math.abs(p) < 1
         ? tex`|s|=${f(Math.abs(p))}<1,\quad d(p,\partial D)=${f(1 - Math.abs(p))}`

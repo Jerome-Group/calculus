@@ -13,8 +13,8 @@ export async function featureEvidence(browser, instance, output, id) {
     requestFailures = [],
     artifacts = [],
     injections = [];
-  const contexts = [];
-  const pages = [];
+  const owners = [];
+  const traces = [];
   let captureCount = 0;
   const record = async (kind, value) => {
     await appendFile(
@@ -22,6 +22,40 @@ export async function featureEvidence(browser, instance, output, id) {
       `${JSON.stringify({ at: new Date().toISOString(), kind, ...value })}\n`,
     );
   };
+  const ownerFor = (page) => {
+    const owner = owners.find((item) => item.page === page);
+    if (!owner) throw new Error("An owned page is required.");
+    return owner;
+  };
+  const closeOwner = (owner) =>
+    (owner.closing ??= (async () => {
+      const trace = `trace-${owner.id}.zip`;
+      try {
+        await owner.context.tracing.stop({ path: path.join(directory, trace) });
+        traces.push(trace);
+      } catch (failure) {
+        assertions.push({
+          description: "Retain the context trace",
+          status: "failed",
+          error: failure.message,
+        });
+      } finally {
+        try {
+          await owner.context.close();
+          owner.released = true;
+          await record("context-released", {
+            context: owner.id,
+            trace: traces.includes(trace) ? trace : null,
+          });
+        } catch (failure) {
+          assertions.push({
+            description: "Close the owned context",
+            status: "failed",
+            error: failure.message,
+          });
+        }
+      }
+    })());
   const e = {
     url: instance.url,
     viewportChunk: instance.viewportChunk,
@@ -44,11 +78,13 @@ export async function featureEvidence(browser, instance, output, id) {
           ...options.extraHTTPHeaders,
         },
       });
-      const contextId = contexts.length + 1;
+      const owner = { id: owners.length + 1, context, released: false };
+      owners.push(owner);
+      const contextId = owner.id;
       if (instance.storage)
         injections.push({
           kind: "local-gateway-identity",
-          context: contexts.length + 1,
+          context: contextId,
           account,
           hostedSignIn: false,
         });
@@ -59,7 +95,6 @@ export async function featureEvidence(browser, instance, output, id) {
             origin.localStorage.map(({ name }) => name),
           ),
         });
-      contexts.push(context);
       await context.tracing.start({
         screenshots: true,
         snapshots: true,
@@ -69,7 +104,7 @@ export async function featureEvidence(browser, instance, output, id) {
       if (storageUnavailable) {
         injections.push({
           kind: "storage-unavailable",
-          context: contexts.length,
+          context: contextId,
         });
         await context.addInitScript(() => {
           for (const method of ["getItem", "setItem", "removeItem"])
@@ -82,26 +117,27 @@ export async function featureEvidence(browser, instance, output, id) {
         });
       }
       const page = await context.newPage();
+      owner.page = page;
       if (instance.signal?.aborted) {
         await page.close();
         instance.signal.throwIfAborted();
       }
       page.setDefaultTimeout(8000);
       page.setDefaultNavigationTimeout(15000);
-      pages.push(page);
-      const expected = (text, status) =>
+      const expected = (text, status, kind = "request") =>
         (account === null &&
           text.includes(`${instance.url}/api/study?scope=identity`) &&
           (!status || status === 401)) ||
         injections.some(
           (injection) =>
             injection.active &&
-            (!injection.context || injection.context === contextId) &&
+            injection.context === contextId &&
             ((injection.kind === "drawing-chunk-failure" &&
-              (text.includes(instance.viewportChunk) ||
-                text.includes(
-                  "Failed to fetch dynamically imported module",
-                ))) ||
+              text.split(/[\s"'<>()[\]]+/).includes(injection.url) &&
+              (kind === "request" ||
+                /Failed to fetch dynamically imported module/.test(text) ||
+                (kind === "console" &&
+                  /Failed to load resource/.test(text)))) ||
               (injection.kind.startsWith("account-") &&
                 text.includes(`${instance.url}/api/study`) &&
                 (!status || status === injection.status))),
@@ -111,7 +147,11 @@ export async function featureEvidence(browser, instance, output, id) {
           type: message.type(),
           text: message.text(),
           location: message.location(),
-          expected: expected(`${message.text()} ${message.location().url}`),
+          expected: expected(
+            `${message.text()} ${message.location().url}`,
+            undefined,
+            "console",
+          ),
           url: page.url(),
         }),
       );
@@ -119,7 +159,11 @@ export async function featureEvidence(browser, instance, output, id) {
         runtimeErrors.push({
           message: error.message,
           stack: error.stack,
-          expected: expected(error.message),
+          expected: expected(
+            `${error.message} ${error.stack ?? ""}`,
+            undefined,
+            "runtime",
+          ),
           url: page.url(),
         }),
       );
@@ -172,11 +216,20 @@ export async function featureEvidence(browser, instance, output, id) {
         throw error;
       }
     },
-    async capture(label, { timeoutMs = 5000, lastOnly = false } = {}) {
-      const selected = [...pages.entries()];
-      for (const [index, page] of lastOnly ? selected.slice(-1) : selected) {
+    async capture(
+      label,
+      { timeoutMs = 5000, lastOnly = false, page: onlyPage } = {},
+    ) {
+      const selected = owners.filter(
+        (owner) =>
+          !owner.released &&
+          owner.page &&
+          (!onlyPage || owner.page === onlyPage),
+      );
+      for (const owner of lastOnly ? selected.slice(-1) : selected) {
+        const { page } = owner;
         if (page.isClosed()) continue;
-        const stem = `${String(++captureCount).padStart(3, "0")}-page-${index + 1}`;
+        const stem = `${String(++captureCount).padStart(3, "0")}-page-${owner.id}`;
         const artifact = {
           label,
           url: page.url(),
@@ -201,6 +254,15 @@ export async function featureEvidence(browser, instance, output, id) {
         }
       }
     },
+    async releasePage(page, label = "Completed auxiliary scenario") {
+      const owner = ownerFor(page);
+      if (owner.released) return;
+      try {
+        await e.capture(label, { page });
+      } finally {
+        await closeOwner(owner);
+      }
+    },
     async interrupt() {
       const captured = e.capture("Interrupted state", {
         timeoutMs: 1000,
@@ -216,13 +278,19 @@ export async function featureEvidence(browser, instance, output, id) {
         ]);
       } finally {
         clearTimeout(timer);
-        await Promise.allSettled(pages.map((page) => page.close()));
+        await Promise.allSettled(
+          owners
+            .filter((owner) => !owner.released && owner.page)
+            .map(({ page }) => page.close()),
+        );
         await captured;
       }
     },
-    injectDrawingFailure() {
+    injectDrawingFailure(page) {
+      const owner = ownerFor(page);
       const injection = {
         kind: "drawing-chunk-failure",
+        context: owner.id,
         url: `${instance.url}/assets/${instance.viewportChunk}`,
         active: true,
       };
@@ -232,8 +300,7 @@ export async function featureEvidence(browser, instance, output, id) {
     expectStudyFailure(kind, status, page) {
       if (!["offline", "conflict", "service"].includes(kind))
         throw new Error("Unknown study failure fixture.");
-      const context = pages.indexOf(page) + 1;
-      if (!context) throw new Error("Study failure needs an owned page.");
+      const context = ownerFor(page).id;
       const injection = {
         kind: `account-${kind}`,
         context,
@@ -254,22 +321,7 @@ export async function featureEvidence(browser, instance, output, id) {
           error: error.message,
         });
       await e.capture("Final state, including failure");
-      const traces = [];
-      for (const [index, context] of contexts.entries()) {
-        const trace = `trace-${index + 1}.zip`;
-        try {
-          await context.tracing.stop({ path: path.join(directory, trace) });
-          traces.push(trace);
-        } catch (failure) {
-          assertions.push({
-            description: "Retain the context trace",
-            status: "failed",
-            error: failure.message,
-          });
-        } finally {
-          await context.close();
-        }
-      }
+      for (const owner of owners) await closeOwner(owner);
       const unexpected = [
         ...runtimeErrors.filter((item) => !item.expected),
         ...consoleMessages.filter(
