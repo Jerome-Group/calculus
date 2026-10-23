@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import {
   inspectNotation,
   inspectTexSemantics,
@@ -445,14 +445,16 @@ const conceptIds = [...new Set(outcomeSpecs.map(([id]) => id.split(":")[0]))];
 const sourceBySection = new Map(
   sectionSpecs.map((section) => [section.id, section.sourceId]),
 );
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("canonical PDFs, page maps, exclusions, and stable source sections are verified", () => {
   assert.equal(

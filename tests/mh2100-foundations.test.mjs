@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const read = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
@@ -64,14 +64,16 @@ test("domain, contour, and boundary transfer calculations have distinct witnesse
 });
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("WebMCP read_concept exposes each new worked block and transfer task", async () => {
   const { studyTools } = await vite.ssrLoadModule(

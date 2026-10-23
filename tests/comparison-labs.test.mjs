@@ -2,26 +2,20 @@ import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import { fileURLToPath } from "node:url";
-import { mkdtemp, rm } from "node:fs/promises";
-import path from "node:path";
-import os from "node:os";
 const root = fileURLToPath(new URL("..", import.meta.url));
-const cacheDir = await mkdtemp(path.join(os.tmpdir(), "calculus-lab-vite-"));
-const vite = await createServer({
-  cacheDir,
-  optimizeDeps: { noDiscovery: true, include: [] },
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-});
-after(async () => {
-  await vite.close();
-  await rm(cacheDir, { recursive: true, force: true });
-});
+const vite = await createSsrServer(
+  {
+    optimizeDeps: { noDiscovery: true, include: [] },
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const models = await vite.ssrLoadModule("/lib/curriculum/comparison-labs.ts");
 const close = (a, b) =>
   assert.ok(Math.abs(a - b) < 1e-10, `${a} differs from ${b}`);

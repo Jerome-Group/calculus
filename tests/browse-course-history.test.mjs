@@ -1,27 +1,23 @@
 import test, { after } from "node:test";
 import assert from "node:assert/strict";
-import { readFile, mkdtemp, rm } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import os from "node:os";
 import path from "node:path";
 import vm from "node:vm";
 import ts from "typescript";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const temp = await mkdtemp(path.join(os.tmpdir(), "calculus-browse-course-"));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  cacheDir: path.join(temp, "vite-cache"),
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-});
-after(async () => {
-  await vite.close();
-  await rm(temp, { recursive: true, force: true });
-});
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const { studyTools } = await vite.ssrLoadModule(
   "/components/atlas/study-tools.ts",
 );

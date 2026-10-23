@@ -2,16 +2,19 @@ import test, { after, beforeEach } from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 import { createStudyWorker } from "./helpers/study-worker.mjs";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const worker = await createStudyWorker();
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-});
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const { createStudySession } = await vite.ssrLoadModule(
   "/lib/study/session.ts",
 );
@@ -19,7 +22,7 @@ const { previewLegacy } = await vite.ssrLoadModule("/lib/study/legacy.ts");
 const originalFetch = globalThis.fetch;
 after(async () => {
   globalThis.fetch = originalFetch;
-  await Promise.all([worker.dispose(), vite.close()]);
+  await worker.dispose();
 });
 let owner = "session-a";
 let intercept;
