@@ -76,6 +76,14 @@ function SidebarProvider({
   const setOpen = React.useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
       const openState = typeof value === "function" ? value(open) : value
+      if (
+        !openState &&
+        document.activeElement?.closest('[data-slot="sidebar-container"]')
+      ) {
+        document
+          .querySelector<HTMLButtonElement>('[data-sidebar="trigger"]')
+          ?.focus()
+      }
       if (setOpenProp) {
         setOpenProp(openState)
       } else {
@@ -228,6 +236,10 @@ function Sidebar({
       />
       <div
         data-slot="sidebar-container"
+        inert={state === "collapsed" && collapsible === "offcanvas"}
+        aria-hidden={
+          state === "collapsed" && collapsible === "offcanvas" ? true : undefined
+        }
         className={cn(
           "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex",
           side === "left"

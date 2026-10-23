@@ -139,6 +139,8 @@ export function validateGraph(g: GraphSpec) {
   const needed = g.mode === "parametric" || g.mode === "curve" ? 3 : 1;
   if (![g.min, g.max, g.vmin, g.vmax, g.clip, g.a].every(Number.isFinite))
     throw new Error("All bounds and parameters must be finite numbers.");
+  if (Math.abs(g.a) > 5)
+    throw new Error("Use an expression parameter from −5 to 5.");
   if (g.min >= g.max || g.vmin >= g.vmax)
     throw new Error("Each lower bound must be smaller than its upper bound.");
   if (

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useState } from "react";
 import { Minus, Maximize2, Pause, Play, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { Viewport } from "./deferred-viewport";
@@ -32,7 +32,12 @@ export function LessonExperiment({ study }: { study: StudyController }) {
     readingMode,
     activeScene,
     info,
+    registerAnimationTarget,
   } = study;
+  useLayoutEffect(
+    () => registerAnimationTarget({ lessonId: concept.id, scene: activeScene }),
+    [registerAnimationTarget, concept.id, activeScene],
+  );
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => {

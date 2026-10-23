@@ -152,3 +152,21 @@ test("opening a lesson from a shared graph drops stale graph state", () => {
     value: state,
   });
 });
+
+test("shared graph parameters obey the expression slider's complete range", () => {
+  for (const a of [-6, -5.01, 5.01, 6]) {
+    const url = new URL(
+      graphUrl(new URL("https://example.test/"), { ...initialGraph, a }),
+      "https://example.test",
+    );
+    assert.equal(readGraphHistory(url).kind, "invalid", `parameter ${a}`);
+  }
+  for (const a of [-5, 0, 5]) {
+    const graph = { ...initialGraph, a };
+    const url = new URL(
+      graphUrl(new URL("https://example.test/"), graph),
+      "https://example.test",
+    );
+    assert.deepEqual(readGraphHistory(url), { kind: "valid", graph });
+  }
+});
