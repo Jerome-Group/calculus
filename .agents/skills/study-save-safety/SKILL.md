@@ -15,7 +15,7 @@ The command installs the pinned portable JRE and TLC into ignored `outputs/forma
 
 Read `outputs/formal-save-safety/latest-run.txt` for the unique run directory. Keep its `summary.json`, TLC logs and JSON traces, real-code receipts, and mutant source files together. Exit codes are `0` for all properties passing, `1` for a reproduced product bug, and `2` for drift, a modeling error, a surviving mutation, or a tool failure. Expected mutant failures print `KILLED`.
 
-Last reviewed source commit: `d395c70fb9a7c67c1938ad66a3af1b405230adbc`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
+Last reviewed source commit: `524226e7a88b32d2a85f77cdd72db632651e58b8`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
 
 ## Read the result
 
@@ -50,7 +50,7 @@ Run the complete command to repeat all mutation controls. It copies the current 
 
 ## Keep the model current
 
-Before changing covered code, read [the correspondence and bounds](references/correspondence.md). After unrelated merges, use the installed [maintain-formal-verification-skill](/Users/jeromequeck/.codex/plugins/cache/pstack-claude/pstack/0.9.101/skills/maintain-formal-verification-skill/SKILL.md) workflow, or follow these local steps if that plugin path is unavailable:
+Before changing covered code, read [the correspondence and bounds](references/correspondence.md). After unrelated merges, use the installed [maintain-formal-verification-skill](/Users/jeromequeck/.codex/plugins/cache/pstack-claude/pstack/0.9.102/skills/maintain-formal-verification-skill/SKILL.md) workflow, or follow these local steps if that plugin path is unavailable:
 
 1. Run the command as it stands. Retain drift and failure receipts.
 2. Diff every covered file from the sync commit. Check moved code and every new writer of the same queue, epoch, or persistence fields.

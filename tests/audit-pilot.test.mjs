@@ -178,36 +178,38 @@ test("all 125 lessons retain a mode path, and pilot math parses strictly", async
 });
 
 test("delayed independent choice evidence never upgrades hinted or immediate choices", async () => {
-  const { hasDelayedIndependentChoiceEvidence } = await vite.ssrLoadModule(
+  const { pilotReview, checkedAttempt } = await vite.ssrLoadModule(
     "/lib/study/model.ts",
   );
-  assert.equal(hasDelayedIndependentChoiceEvidence({ attempts: [] }), false);
-  const first = {
-    taskId: "reverse",
-    kind: "transfer",
-    correct: true,
+  assert.deepEqual(pilotReview([]), {
+    nextReview: null,
+    reviewSource: null,
+    repeatedCorrectTransfer: false,
+  });
+  const first = checkedAttempt({
+    id: crypto.randomUUID(),
+    lessonId: "epsilon-delta-one-variable",
+    taskId: "quadratic",
+    choice: "correct",
     support: "none",
-    at: "2026-09-22T00:00:00Z",
+    at: "2026-09-22T00:00:00.000Z",
+  });
+  const later = {
+    ...first,
+    id: crypto.randomUUID(),
+    at: "2026-09-23T00:00:00.000Z",
   };
-  assert.equal(
-    hasDelayedIndependentChoiceEvidence({ attempts: [first] }),
-    false,
-  );
-  assert.equal(
-    hasDelayedIndependentChoiceEvidence({
-      attempts: [first, { ...first, at: "2026-09-23T00:00:00Z" }],
-    }),
-    true,
-  );
-  assert.equal(
-    hasDelayedIndependentChoiceEvidence({
-      attempts: [
-        first,
-        { ...first, support: "hint", at: "2026-09-23T00:00:00Z" },
-      ],
-    }),
-    false,
-  );
+  assert.equal(pilotReview([first]).repeatedCorrectTransfer, false);
+  assert.equal(pilotReview([first, later]).repeatedCorrectTransfer, true);
+  for (const other of [
+    { ...later, at: "2026-09-22T23:59:59.999Z" },
+    { ...later, support: "hint" },
+    { ...later, source: "legacy" },
+    { ...later, id: first.id },
+    { ...later, correct: false },
+    { ...later, kind: "setup" },
+  ])
+    assert.equal(pilotReview([first, other]).repeatedCorrectTransfer, false);
 });
 
 test("linear delta certification rejects even a slightly oversized proposal", async () => {
