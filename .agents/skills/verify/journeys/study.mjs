@@ -148,7 +148,7 @@ export async function study(page, e) {
       await visible(
         page
           .locator("#pilot-errors")
-          .locator("+ ul")
+          .locator("+ p + ul")
           .filter({ hasText: "QUANTIFIER_REVERSED" }),
       );
       await page
@@ -754,7 +754,7 @@ export async function study(page, e) {
       await mode(page, "Revise");
       const route = page.url();
       await page
-        .getByText("Review your recorded errors", { exact: true })
+        .getByText("Review your recorded choices", { exact: true })
         .click();
       await e.check(
         "The error-history control preserves the exact revision route and workspace",
@@ -787,7 +787,7 @@ export async function study(page, e) {
           visible(
             page
               .locator("#pilot-errors")
-              .locator("+ ul")
+              .locator("+ p + ul")
               .filter({ hasText: "QUANTIFIER_REVERSED" }),
           ),
       );
@@ -880,7 +880,11 @@ export async function study(page, e) {
       await e.check(
         "Both retried choices appear once in account history",
         async () =>
-          visible(recovery.getByText(/2 loaded of 2 saved choice records/)),
+          visible(
+            recovery.getByText("2 saved account records loaded.", {
+              exact: true,
+            }),
+          ),
       );
       await recovery.reload();
       await mode(recovery, "Revise");
@@ -888,7 +892,9 @@ export async function study(page, e) {
         "Reload retains both acknowledged choices once",
         async () => {
           await visible(
-            recovery.getByText(/2 loaded of 2 saved choice records/),
+            recovery.getByText("2 saved account records loaded.", {
+              exact: true,
+            }),
           );
         },
       );

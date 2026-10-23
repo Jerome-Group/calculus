@@ -15,7 +15,7 @@ function Task({ lessonId, task }: { lessonId: string; task: PilotTask }) {
     taskId: task.id,
   });
   const attempts = useStudyAttempts(lessonId);
-  const taskAttempts = attempts.pending.filter(
+  const taskAttempts = attempts.tab.filter(
     ({ input }) => input.taskId === task.id,
   );
   const latestAttempt = taskAttempts.at(-1)?.input.id;
