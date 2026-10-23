@@ -18,9 +18,12 @@ export function normalizePrimes(tex) {
   const normalized = tex.replace(
     /\\prime\b(?:\s*\\prime\b)*/g,
     (run, offset) => {
-      if (/\^\s*(?:\{\s*)?$/.test(tex.slice(0, offset))) return run;
+      const before = tex.slice(0, offset);
+      if (/\^\s*\{\s*$/.test(before)) return run;
+      const caret = /\^\s*$/.test(before);
+      if (caret && run === "\\prime") return run;
       runs++;
-      return `^{${run}}`;
+      return `${caret ? "" : "^"}{${run}}`;
     },
   );
   return { tex: normalized, runs };
@@ -40,24 +43,78 @@ export function normalizePrimeSource(source, file = "content.json") {
     throw new Error(
       `${file}: ${ts.flattenDiagnosticMessageText(parsed.parseDiagnostics[0].messageText, "\n")}`,
     );
+  const options = { allowJs: true, noLib: true, noResolve: true };
+  const checker = ts
+    .createProgram([file], options, {
+      ...ts.createCompilerHost(options),
+      getSourceFile: (name) => (name === file ? parsed : undefined),
+    })
+    .getTypeChecker();
+  function isRawTag(tag) {
+    if (ts.isIdentifier(tag)) {
+      const declaration = checker.getSymbolAtLocation(tag)?.valueDeclaration;
+      if (
+        !declaration ||
+        !ts.isVariableDeclaration(declaration) ||
+        !(declaration.parent.flags & ts.NodeFlags.Const) ||
+        !declaration.initializer
+      )
+        return false;
+      tag = declaration.initializer;
+    }
+    return (
+      ts.isPropertyAccessExpression(tag) &&
+      ts.isIdentifier(tag.expression) &&
+      tag.expression.text === "String" &&
+      tag.name.text === "raw" &&
+      !checker.getSymbolAtLocation(tag.expression)
+    );
+  }
   function visit(node) {
-    const string = ts.isStringLiteral(node);
-    const template =
-      ts.isNoSubstitutionTemplateLiteral(node) ||
-      ts.isTemplateHead(node) ||
-      ts.isTemplateMiddle(node) ||
-      ts.isTemplateTail(node);
-    if (string || template) {
-      const replacement = normalizePrimes(
-        string ? node.text : node.getText(parsed),
-      );
+    if (ts.isStringLiteral(node)) {
+      const replacement = normalizePrimes(node.text);
       if (replacement.runs) {
         runs += replacement.runs;
         edits.push({
           start: node.getStart(parsed),
           end: node.end,
-          text: string ? JSON.stringify(replacement.tex) : replacement.tex,
+          text: JSON.stringify(replacement.tex),
         });
+      }
+    } else if (ts.isTemplateLiteralToken(node)) {
+      const template = ts.isTemplateHead(node)
+        ? node.parent
+        : ts.isTemplateMiddle(node) || ts.isTemplateTail(node)
+          ? node.parent.parent
+          : node;
+      const tag = ts.isTaggedTemplateExpression(template.parent)
+        ? template.parent.tag
+        : undefined;
+      const start = node.getStart(parsed) + 1;
+      const end =
+        node.end -
+        (ts.isTemplateHead(node) || ts.isTemplateMiddle(node) ? 2 : 1);
+      const rawText = source.slice(start, end);
+      const raw = tag && isRawTag(tag);
+      if (tag && !raw) {
+        if (normalizePrimes(rawText).runs || normalizePrimes(node.text).runs)
+          throw new Error(
+            `${file}: unknown template tag ${tag.getText(parsed)}`,
+          );
+      } else {
+        const replacement = normalizePrimes(raw ? rawText : node.text);
+        if (replacement.runs) {
+          runs += replacement.runs;
+          edits.push({
+            start,
+            end,
+            text: raw
+              ? replacement.tex
+              : JSON.stringify(replacement.tex)
+                  .slice(1, -1)
+                  .replace(/`|\$\{/g, "\\$&"),
+          });
+        }
       }
     }
     ts.forEachChild(node, visit);

@@ -131,9 +131,30 @@ test("prime codemod re-encodes cooked template delimiters and escapes", () => {
   );
 });
 
+test("prime codemod preserves decoded string literal values", () => {
+  const input = 'return "f\\\\prime(x) + \\u03b1";';
+  const result = normalizePrimeSource(input, "formula.ts");
+  assert.equal(new Function(result.source)(), "f^{\\prime}(x) + α");
+  assertRaisedPrimes(new Function(result.source)());
+});
+
+test("prime codemod resolves raw aliases in JavaScript source", () => {
+  for (const file of ["formula.js", "formula.mjs"])
+    assert.equal(
+      new Function(
+        normalizePrimeSource(
+          "const tex = String.raw; return tex`f\\prime(x)`;",
+          file,
+        ).source,
+      )(),
+      String.raw`f^{\prime}(x)`,
+    );
+});
+
 test("prime codemod recognizes direct String.raw and its immutable local aliases", () => {
   for (const input of [
     "return String.raw`f\\prime(x)`;",
+    "return String.raw`${'f'}\\prime(x)`;",
     "const tex = String.raw; return tex`f\\prime(x)`;",
     "const tex = String.raw; function formula() { return tex`f\\prime(x)`; } return formula();",
   ]) {
