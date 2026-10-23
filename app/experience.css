@@ -827,7 +827,7 @@ summary:focus-visible {
   border-color: #c3d4c9;
 }
 @container (min-width: 950px) {
-  .study-grid:not(.pilot-mode) .experience-content {
+  .study-grid.layout-split:not(.pilot-mode) .experience-content {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr);
   }

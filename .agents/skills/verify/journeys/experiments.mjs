@@ -211,6 +211,8 @@ export async function experiments(page, e) {
   await e.step(
     "Use experiment bounds, reset, animation, and layout controls",
     async () => {
+      const viewport = page.viewportSize();
+      await page.setViewportSize({ width: 1800, height: 1100 });
       await lesson(page, e, "multivariable-chain-rule");
       await mode(page, "Explore");
       const experiment = page.getByRole("region", {
@@ -263,12 +265,33 @@ export async function experiments(page, e) {
         await page.waitForTimeout(300);
         assert.equal(await slider.getAttribute("aria-valuenow"), paused);
       });
+      const canvas = experiment.locator(".canvas-host").first();
+      await visible(canvas);
+      const split = await canvas.boundingBox();
+      assert.ok(split);
       await experiment
         .getByRole("button", { name: "Use wide graph view", exact: true })
         .click();
+      await e.check(
+        "Wide view expands the graph across available desktop width",
+        async () => {
+          const wide = await canvas.boundingBox();
+          assert.ok(
+            wide && wide.width > split.width * 1.3,
+            `split=${split.width}, wide=${wide?.width}`,
+          );
+        },
+      );
       await experiment
         .getByRole("button", { name: "Use split view", exact: true })
         .click();
+      await e.check(
+        "Split view restores its original graph width",
+        async () => {
+          const restored = await canvas.boundingBox();
+          assert.ok(restored && Math.abs(restored.width - split.width) < 1);
+        },
+      );
       await experiment
         .getByRole("button", { name: "Minimise", exact: true })
         .click();
@@ -276,6 +299,7 @@ export async function experiments(page, e) {
         .getByRole("button", { name: "Expand", exact: true })
         .click();
       await experiment.getByText("What to notice", { exact: true }).click();
+      await page.setViewportSize(viewport);
     },
   );
   await comparisonsJourney(page, e);

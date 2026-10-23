@@ -276,7 +276,11 @@ export function createStudySession() {
       } else if ((record?.revision ?? 0) !== previousRevision) {
         value.persistence = conflict;
         pending.resolve({ kind: "conflict" });
-      } else value.persistence = saving;
+      } else if (
+        value.persistence.kind !== "unsaved" &&
+        value.persistence.kind !== "conflict"
+      )
+        value.persistence = saving;
     } else {
       value.value =
         (record?.value as MutableValue | null) ?? emptyStudyValue(value.key);
