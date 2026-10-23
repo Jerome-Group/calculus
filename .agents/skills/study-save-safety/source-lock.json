@@ -1,0 +1,10 @@
+{
+  "syncCommit": "6efcf0afafebfae78fabb0a93aa08aeb52367d87",
+  "preserveRecovery": true,
+  "files": {
+    "lib/study/session.ts": "8cdf563b50f06fd0e1b56c8a7c60430e7ce40f1dc51ea9cf59af03e6c43c7e9a",
+    "lib/study/model.ts": "7ee6be3e7e3a7b7f2d2ccd3a7d0bf56690dcdb4211a41623ef94facc8339c705",
+    "lib/study/server.ts": "3f115b1ac54d6af7c8082a78b241f9499ec356923e7ec882f015ce4ed7fdb8fe",
+    "components/atlas/study-records.tsx": "e5e716d02c73fcb2bcdb9244d3f52e0dff427b58a131474e492b674560021eb5"
+  }
+}
