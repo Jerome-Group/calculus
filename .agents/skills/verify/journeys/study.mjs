@@ -218,6 +218,10 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(replica, "Completed study scenario: replica, other");
+
+      await e.releasePage(other, "Completed study scenario: replica, other");
     },
   );
   await e.step(
@@ -309,6 +313,10 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(first, "Completed study scenario: first, second");
+
+      await e.releasePage(second, "Completed study scenario: first, second");
     },
   );
   await e.step(
@@ -417,6 +425,8 @@ export async function study(page, e) {
         expected.active = false;
         await recovery.unroute(`${e.url}/api/study`);
       }
+
+      await e.releasePage(recovery, "Completed study scenario: recovery");
     },
   );
   await e.step(
@@ -504,6 +514,8 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(outage, "Completed study scenario: outage");
     },
   );
   await e.step(
@@ -583,6 +595,8 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(guest, "Completed study scenario: guest");
     },
   );
   await e.step(
@@ -745,6 +759,13 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(
+        importer,
+        "Completed study scenario: importer, later",
+      );
+
+      await e.releasePage(later, "Completed study scenario: importer, later");
     },
   );
   await e.step(
@@ -898,6 +919,8 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(recovery, "Completed study scenario: recovery");
     },
   );
   await e.step(
@@ -943,6 +966,8 @@ export async function study(page, e) {
           );
         },
       );
+
+      await e.releasePage(denied, "Completed study scenario: denied");
     },
   );
 }

@@ -129,7 +129,7 @@ export function functionsModel(id: string, value?: number) {
       line(fn, -2.5, 2.5, "Function");
       line((x) => fn(p) + df(p) * (x - p), p - 0.9, p + 0.9, "Tangent", orange);
       point(p, fn(p));
-      m.readout = tex`a=${decimal(p)},\quad f(a)\approx${decimal(fn(p))},\quad f\prime(a)\approx${decimal(df(p))}`;
+      m.readout = tex`a=${decimal(p)},\quad f(a)\approx${decimal(fn(p))},\quad f^{\prime}(a)\approx${decimal(df(p))}`;
       break;
     }
     case "plane-circle":
@@ -183,7 +183,7 @@ export function functionsModel(id: string, value?: number) {
         orange,
       );
       point(p / 2, (p * p) / 4, "MVT point");
-      m.readout = tex`c=b/2=${decimal(p / 2)},\quad f\prime(c)=b=${decimal(p)}`;
+      m.readout = tex`c=b/2=${decimal(p / 2)},\quad f^{\prime}(c)=b=${decimal(p)}`;
       break;
     case "plane-asymptote":
       p = config("Input distance", "x", 0.3, 8, 2);
@@ -226,7 +226,7 @@ export function functionsModel(id: string, value?: number) {
       break;
     case "plane-antiderivative":
       p = config("Integration constant", "C", -2, 2, 0);
-      m.formula = tex`F(x)=x^2+C,\quad F\prime(x)=2x`;
+      m.formula = tex`F(x)=x^2+C,\quad F^{\prime}(x)=2x`;
       line((x) => x * x, -2.5, 2.5, "Reference primitive", blue, true);
       line((x) => x * x + p, -2.5, 2.5, "Selected primitive");
       m.readout = tex`F(0)=C=${decimal(p)}`;
@@ -240,7 +240,7 @@ export function functionsModel(id: string, value?: number) {
       line((x) => x, 0, 4.5, "Reflection axis", orange, true);
       point(p, p * p, "Original point");
       point(p * p, p, "Inverse point", blue);
-      m.readout = tex`f\prime(x)=${decimal(2 * p)},\quad(f^{-1})\prime(x^2)\approx${decimal(1 / (2 * p))}`;
+      m.readout = tex`f^{\prime}(x)=${decimal(2 * p)},\quad(f^{-1})^{\prime}(x^2)\approx${decimal(1 / (2 * p))}`;
       break;
     case "plane-lhopital":
     case "plane-series-limit":

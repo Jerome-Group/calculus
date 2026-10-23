@@ -75,7 +75,7 @@ function rawSceneInfo(id: string): SceneInfo {
       formula: "r(t)=(cos t, sin t, t)",
       readout: (p) =>
         `r(t) = (${f(Math.cos(p))}, ${f(Math.sin(p))}, ${f(p)}) · speed = √2`,
-      legend: ["Curve $r(t)$", "Tangent $r\\prime(t)$", "Current point"],
+      legend: ["Curve $r(t)$", "Tangent $r^{\\prime}(t)$", "Current point"],
     },
     arc: {
       label: "Upper limit t",

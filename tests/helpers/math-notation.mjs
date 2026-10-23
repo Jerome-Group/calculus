@@ -11,12 +11,14 @@ export function inspectTexSemantics(tex, locator, failures) {
   if (typeof tex !== "string") return;
   if (/\p{Cc}/u.test(tex))
     failures.push(`${locator}: control character in TeX`);
-  katex.renderToString(tex, {
+  const math = katex.renderToString(tex, {
     throwOnError: true,
     strict: "error",
     trust: false,
     output: "htmlAndMathml",
   });
+  if (hasBaselinePrime(math))
+    failures.push(`${locator}: baseline prime in ${tex}`);
   const mathOnly = tex.replace(
     /\\(?:text|mathrm|operatorname|mathsf|mathbf|mathit)\s*\{[^{}]*\}/g,
     "",
@@ -32,4 +34,26 @@ export function inspectNotation(value, locator, failures) {
   const plain = value.replace(mathSpan, "");
   if (unmarkedNotation.test(plain))
     failures.push(`${locator}: ${plain.slice(0, 160)}`);
+}
+
+export function hasBaselinePrime(mathml) {
+  const stack = [];
+  for (const token of mathml.matchAll(/<\/?[\w:-]+\b[^>]*>|[^<]+/g)) {
+    const text = token[0];
+    if (text.startsWith("</")) stack.pop();
+    else if (text.startsWith("<")) {
+      const parent = stack.at(-1);
+      const child = parent ? parent.children++ : 0;
+      if (!text.endsWith("/>"))
+        stack.push({ tag: text.match(/^<([\w:-]+)/)[1], child, children: 0 });
+    } else if (/[′″‴⁗]/u.test(text) && stack.at(-1)?.tag === "mo") {
+      const raised = stack.some(
+        (frame, index) =>
+          (frame.tag === "msup" && stack[index + 1]?.child === 1) ||
+          (frame.tag === "msubsup" && stack[index + 1]?.child === 2),
+      );
+      if (!raised) return true;
+    }
+  }
+  return false;
 }

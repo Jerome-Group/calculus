@@ -535,7 +535,7 @@ test("Lecture 09 JSON strings preserve TeX commands without decoded controls", (
     ],
     [
       "lecture09-positive-orientation-transfer",
-      String.raw`\mathbf r\prime(0)=(0,-1),\quad\text{negative orientation}`,
+      String.raw`\mathbf r^{\prime}(0)=(0,-1),\quad\text{negative orientation}`,
     ],
     [
       "lecture09-jordan-simple-boundary-transfer",

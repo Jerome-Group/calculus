@@ -600,7 +600,7 @@ export async function experiments(page, e) {
     "Contain a failed deferred drawing chunk and recover through the visible retry control",
     async () => {
       const failurePage = await e.newPage();
-      const injection = e.injectDrawingFailure();
+      const injection = e.injectDrawingFailure(failurePage);
       await failurePage.route(injection.url, (route) => route.abort("failed"));
       await lesson(failurePage, e, "multivariable-chain-rule");
       await visible(
@@ -639,6 +639,11 @@ export async function experiments(page, e) {
           new URL(failurePage.url()).hash,
           "#multivariable-chain-rule",
         ),
+      );
+
+      await e.releasePage(
+        failurePage,
+        "Completed experiments scenario: failurePage",
       );
     },
   );

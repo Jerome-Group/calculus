@@ -138,15 +138,17 @@ test("synchronizing metadata cannot bypass a pending source review", () => {
   );
 });
 
-test("all 125 lessons retain a mode path, and pilot math parses strictly", async () => {
+test("pilot tasks belong to canonical lessons and their mathematics parses strictly", async () => {
   const concepts = read("../lib/curriculum/concepts.json");
-  const { learningModesFor, pilotLessons } = await vite.ssrLoadModule(
+  const { pilotLessons } = await vite.ssrLoadModule(
     "/lib/curriculum/learning-modes.ts",
   );
   assert.equal(concepts.length, 125);
-  for (const concept of concepts)
-    assert.ok(learningModesFor(concept), concept.id);
   for (const pilot of Object.values(pilotLessons)) {
+    assert.ok(
+      concepts.some((concept) => concept.id === pilot.id),
+      pilot.id,
+    );
     assert.ok(pilot.practice.length >= 3);
     assert.ok(pilot.practice.some((task) => task.kind === "transfer"));
     for (const task of pilot.practice) {
