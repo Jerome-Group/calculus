@@ -2,10 +2,6 @@
 # day let merge itself: ADR-0010 (in the management hub) argues all three, org-wide. How a bump
 # is landed once it is open is `docs/agents/dependencies.md`.
 #
-# Only `github-actions` is here because it is the only ecosystem a newly generated repository
-# certainly has — the workflows in `.github/workflows/`. Add an ecosystem when this repository
-# gains one, and mind two things about the entry you write.
-#
 # **`labels: []` is not optional.** Dependabot applies `dependencies` and a per-ecosystem label
 # unless told not to, and the Organisation's label set is closed (ADR-0028) — the next apply
 # deletes both, stripping them off the pull requests carrying them, and the next bump puts them
@@ -50,3 +46,9 @@ updates:
     # update is never held back by it.
     cooldown:
       default-days: 7
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    labels: []
