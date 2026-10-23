@@ -86,6 +86,8 @@ for (const initialRoute of ["lesson", "course"]) {
         graph: {},
         libraryUrl,
         readLibraryHistory,
+        readLessonInterruption: () => null,
+        experimentInfo: () => ({ min: 0, max: 1 }),
         concepts,
         graphUrl: () => {
           throw new Error("Unexpected graph navigation");

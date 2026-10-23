@@ -34,6 +34,10 @@ import {
   type LessonHistory,
 } from "./study-history";
 import { libraryUrl, readLibraryHistory } from "./library-history";
+import {
+  readLessonInterruption,
+  type LessonInterruption,
+} from "./lesson-interruption";
 import { clinicCase, type ClinicCaseId } from "@/lib/clinic/cases";
 import {
   clinicUrl,
@@ -99,13 +103,7 @@ export function useStudyController() {
     id: string;
     scrollY: number;
   } | null>(null);
-  const [returnTo, setReturnTo] = useState<{
-    id: string;
-    url: string;
-    scrollY: number;
-    clinicReturn: ClinicReturn | null;
-    workshopReturn: WorkshopReturn | null;
-  } | null>(null);
+  const [returnTo, setReturnTo] = useState<LessonInterruption | null>(null);
   const pendingNotes = useRef(false);
   const [visualLayout, setVisualLayout] = useState<
     "split" | "wide" | "minimised"
@@ -224,6 +222,7 @@ export function useStudyController() {
   function openPrerequisite(id: string) {
     if (!concepts.some((item) => item.id === id)) return;
     const interrupted = returnTo ?? {
+      version: 1 as const,
       id: concept.id,
       url: lessonUrl(
         new URL(window.location.href),
@@ -240,6 +239,10 @@ export function useStudyController() {
       workshopReturn,
     };
     open(id);
+    history.replaceState(
+      { ...history.state, prerequisiteReturn: interrupted },
+      "",
+    );
     setReturnTo(interrupted);
   }
   function resumeLesson() {
@@ -408,7 +411,13 @@ export function useStudyController() {
   }
   function restoreLocation(focusFallback = true) {
     const hash = window.location.hash.slice(1);
-    setReturnTo(null);
+    setReturnTo(
+      readLessonInterruption(
+        history.state,
+        new URL(window.location.href),
+        experimentInfo,
+      ),
+    );
     setClinicReturn(null);
     setWorkshopReturn(null);
     setHistoryNotice("");
