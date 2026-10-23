@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import katex from "katex";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const read = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
@@ -536,14 +536,16 @@ test("Lecture 05 guide TeX compiles with strict MathML output", () => {
   }
 });
 
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("WebMCP read_concept exposes all Lecture 05 blocks, exercises, and rendered MathML", async () => {
   const { Formula, MathText } = await vite.ssrLoadModule(

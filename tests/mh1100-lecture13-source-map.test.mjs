@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import {
   inspectNotation,
   inspectTexSemantics,
@@ -53,14 +53,16 @@ const outcomes = ledger.atomic_outcomes.filter(
 );
 const guide = guides[conceptId];
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 function resolveLocator(locator) {
   const match = locator.match(
@@ -231,7 +233,7 @@ test("Lecture 13 source reasoning preserves the worked methods and hypotheses", 
   assert.ok(cancellation.equation.includes("\\frac12"));
 
   const rule = block("lecture13-lhopital-rule-statement");
-  assert.ok(rule.statement.includes("g\\prime(x)\\ne0"));
+  assert.ok(rule.statement.includes("g^{\\prime}(x)\\ne0"));
   assert.ok(rule.statement.includes("finite value"));
   assert.ok(rule.statement.includes("\\infty"));
   assert.equal(rule.status, "Theorem used without proof");
@@ -245,7 +247,7 @@ test("Lecture 13 source reasoning preserves the worked methods and hypotheses", 
   const cauchy = block("cauchy-mean-value-theorem");
   assert.equal(cauchy.status, "Complete proof");
   assert.ok(cauchy.statement.includes("continuous on $[a,b]$"));
-  assert.ok(cauchy.statement.includes("g\\prime(x)\\ne0"));
+  assert.ok(cauchy.statement.includes("g^{\\prime}(x)\\ne0"));
   const proof = block("lecture13-cauchy-mean-value-proof-worked");
   assert.ok(JSON.stringify(proof).includes("Rolle"));
   assert.ok(JSON.stringify(proof).includes("h(x)=f(x)-f(a)"));

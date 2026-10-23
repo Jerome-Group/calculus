@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import katex from "katex";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const read = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
@@ -495,14 +495,16 @@ test("Lecture 10 guide math compiles to strict MathML", () => {
       assert.doesNotMatch(value, /[\u0000-\u001f\u007f]/u, path);
 });
 
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("WebMCP read_concept exposes every Lecture 10 block and rendered MathML", async () => {
   const { Formula, MathText } = await vite.ssrLoadModule(

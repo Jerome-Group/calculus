@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import katex from "katex";
 
 const read = (name) =>
@@ -12,14 +12,16 @@ const read = (name) =>
 const ledger = read("../lib/curriculum/outcome-ledger.json");
 const guides = read("../lib/curriculum/learning-guides.json");
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 const cases = [
   [
@@ -183,7 +185,7 @@ test("new transfer tasks respect limiting slopes and rate units", () => {
   );
   assert.match(sourceGraph.setup, /m\\approx3\/2/);
   assert.match(sourceGraph.steps[1].text, /near \$\(5,1\.5\)\$/);
-  assert.doesNotMatch(sourceGraph.steps[1].text, /P\\prime\(5,1\.5\)/);
+  assert.doesNotMatch(sourceGraph.steps[1].text, /P\^\{\\prime\}\(5,1\.5\)/);
   assert.match(
     derivative.exercises.find((item) => item.id === "derivative-graph-transfer")
       .solution,

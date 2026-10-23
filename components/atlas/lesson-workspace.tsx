@@ -7,14 +7,13 @@ import { forwardBridges } from "@/lib/curriculum/prerequisite-routes";
 import { Formula, MathText } from "./math-text";
 import { LessonContent } from "./lesson-content";
 import { LessonExperiment } from "./lesson-experiment";
-import { PilotLessonView } from "./pilot-lesson";
-import { LessonPractice } from "./lesson-practice";
+import { PilotPreparation, PilotRevision } from "./pilot-lesson";
+import { PilotExplore } from "./pilot-explore";
+import { PilotPractice } from "./pilot-practice";
+import { LessonExercises } from "./lesson-practice";
 import { RevisionView } from "./revision-view";
 import { ComparisonLab } from "./comparison-labs";
-import {
-  learningModesFor,
-  type LessonMode,
-} from "@/lib/curriculum/learning-modes";
+import { pilotLessons, type LessonMode } from "@/lib/curriculum/learning-modes";
 import type { StudyController } from "./use-study-controller";
 import { investigation } from "@/lib/workshop";
 import { WorkshopLessonEntry } from "./workshop-lesson-entry";
@@ -38,7 +37,7 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
     index,
     open,
   } = study;
-  const lesson = learningModesFor(concept);
+  const pilot = pilotLessons[concept.id];
   const prerequisites = learningGuide(concept).prerequisites;
   const bridge = forwardBridges[concept.id];
   const returnConcept = concepts.find((item) => item.id === returnTo?.id);
@@ -63,7 +62,7 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
           visualLayout +
           " reading-" +
           readingMode +
-          (lesson.version === "pilot-v2" ? " pilot-mode" : "")
+          (pilot ? " pilot-mode" : "")
         }
       >
         <div className="lesson-heading">
@@ -124,7 +123,7 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
             )}
           </div>
           <p className="mode-description">{modeDescriptions[readingMode]}</p>
-          {readingMode === "learn" && lesson.version !== "pilot-v2" && (
+          {readingMode === "learn" && (
             <nav className="lesson-outline" aria-label="Follow the argument">
               <button onClick={() => focusSection("lesson-definition")}>
                 Definition & assumptions
@@ -207,43 +206,32 @@ export function LessonWorkspace({ study }: { study: StudyController }) {
             </details>
           )}
         </div>
-        {lesson.version === "pilot-v2" ? (
-          <>
-            {(readingMode === "learn" || readingMode === "explore") && (
-              <ComparisonLab key={concept.id} conceptId={concept.id} />
-            )}
-            <PilotLessonView
-              lesson={lesson.lesson}
-              mode={readingMode}
-              study={study}
+        {readingMode === "revise" ? (
+          pilot ? (
+            <PilotRevision lesson={pilot} study={study} />
+          ) : (
+            <RevisionView
+              concept={concept}
+              showReasoning={() => setReadingMode("learn")}
             />
-          </>
-        ) : readingMode === "revise" ? (
-          <RevisionView
-            concept={concept}
-            showReasoning={() => setReadingMode("learn")}
-          />
+          )
         ) : readingMode === "explore" ? (
           <>
             <ComparisonLab key={concept.id} conceptId={concept.id} />
-            <LessonExperiment study={study} />
+            {pilot ? (
+              <PilotExplore lesson={pilot} study={study} />
+            ) : (
+              <LessonExperiment study={study} />
+            )}
           </>
         ) : readingMode === "practice" ? (
-          <div>
-            {[
-              { id: "core", ...lesson.guide.exercise },
-              ...(lesson.guide.exercises ?? []),
-            ].map((exercise) => (
-              <LessonPractice
-                key={`${concept.id}:${exercise.id}`}
-                id={concept.id}
-                exerciseId={exercise.id}
-                exercise={exercise}
-              />
-            ))}
+          <div className={pilot ? "pilot-practice" : undefined}>
+            {pilot && <PilotPractice lesson={pilot} />}
+            <LessonExercises concept={concept} />
           </div>
         ) : (
           <>
+            {pilot && <PilotPreparation lesson={pilot} />}
             <LessonExperiment study={study} />
             <LessonContent study={study} />
           </>

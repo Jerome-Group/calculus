@@ -2,7 +2,7 @@
 import { concepts } from "@/lib/curriculum";
 import { learningGuide } from "@/lib/curriculum/learning";
 import { experimentPresets } from "@/lib/curriculum/experiment-presets";
-import { LessonPractice } from "./lesson-practice";
+import { LessonExercises } from "./lesson-practice";
 import { SourceReferences } from "./source-references";
 import { MathText } from "./math-text";
 import { IntegrationFramework } from "./integration-framework";
@@ -105,17 +105,7 @@ export function LessonContent({
         "type-one-two-regions",
         "linearity-additivity",
       ].includes(concept.id) && <IntegrationFramework open={open} />}
-      {guide &&
-        [{ id: "core", ...guide.exercise }, ...(guide.exercises ?? [])].map(
-          (exercise) => (
-            <LessonPractice
-              key={`${concept.id}:${exercise.id}`}
-              id={concept.id}
-              exerciseId={exercise.id}
-              exercise={exercise}
-            />
-          ),
-        )}
+      <LessonExercises concept={concept} />
       {(guide?.nextStep || guide?.relatedStep) && (
         <nav className="prerequisites" aria-label="Continue this proof path">
           {guide.nextStep && (

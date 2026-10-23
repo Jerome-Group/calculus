@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import katex from "katex";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const read = (path) =>
   JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
@@ -15,14 +15,16 @@ const sources = read("../lib/curriculum/sources.json");
 const sourceManifest = read("../lib/curriculum/source-manifest.json");
 const guides = read("../lib/curriculum/learning-guides.json");
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const sourceId = "MH1101_Chapter_05_Notes";
 const sourceSha =
   "bbc200fe851ebf5e77c1225b13d617fb4cdb8364c13645e5ced59be730130385";

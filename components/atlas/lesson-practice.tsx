@@ -4,7 +4,29 @@ import { Button } from "@/components/ui/button";
 import { Formula, MathText } from "./math-text";
 import { useStudyRecord, StudySaveStatus } from "./study-records";
 import type { StudyValues } from "@/lib/study/model";
-import type { PracticeExercise } from "@/lib/curriculum/learning";
+import {
+  learningGuide,
+  type PracticeExercise,
+} from "@/lib/curriculum/learning";
+import type { Concept } from "@/lib/curriculum";
+
+export function LessonExercises({ concept }: { concept: Concept }) {
+  const guide = learningGuide(concept);
+  return (
+    <>
+      {[{ id: "core", ...guide.exercise }, ...(guide.exercises ?? [])].map(
+        (exercise) => (
+          <LessonPractice
+            key={`${concept.id}:${exercise.id}`}
+            id={concept.id}
+            exerciseId={exercise.id}
+            exercise={exercise}
+          />
+        ),
+      )}
+    </>
+  );
+}
 
 export function LessonPractice({
   id,

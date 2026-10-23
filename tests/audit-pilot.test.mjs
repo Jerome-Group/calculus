@@ -2,7 +2,7 @@ import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import katex from "katex";
 import { validateSourceManifest } from "../scripts/check-source-manifest.mjs";
 
@@ -12,14 +12,16 @@ const manifest = read("../lib/curriculum/source-manifest.json");
 const sources = read("../lib/curriculum/sources.json");
 const observed = read("../lib/curriculum/source-observation.json");
 const baseline = read("../lib/curriculum/source-baseline.json");
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("classified sources match the canonical ledger and observed Drive files", () => {
   assert.equal(manifest.length, 100);
@@ -136,15 +138,17 @@ test("synchronizing metadata cannot bypass a pending source review", () => {
   );
 });
 
-test("all 125 lessons retain a mode path, and pilot math parses strictly", async () => {
+test("pilot tasks belong to canonical lessons and their mathematics parses strictly", async () => {
   const concepts = read("../lib/curriculum/concepts.json");
-  const { learningModesFor, pilotLessons } = await vite.ssrLoadModule(
+  const { pilotLessons } = await vite.ssrLoadModule(
     "/lib/curriculum/learning-modes.ts",
   );
   assert.equal(concepts.length, 125);
-  for (const concept of concepts)
-    assert.ok(learningModesFor(concept), concept.id);
   for (const pilot of Object.values(pilotLessons)) {
+    assert.ok(
+      concepts.some((concept) => concept.id === pilot.id),
+      pilot.id,
+    );
     assert.ok(pilot.practice.length >= 3);
     assert.ok(pilot.practice.some((task) => task.kind === "transfer"));
     for (const task of pilot.practice) {

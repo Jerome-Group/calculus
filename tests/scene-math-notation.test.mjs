@@ -1,19 +1,21 @@
 import test, { after } from "node:test";
 import assert from "node:assert/strict";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
 import { inspectNotation as inspect } from "./helpers/math-notation.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const { pilotLessons } = await vite.ssrLoadModule(
   "/lib/curriculum/learning-modes.ts",
 );

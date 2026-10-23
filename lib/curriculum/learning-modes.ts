@@ -1,6 +1,3 @@
-import type { Concept } from "./index";
-import { learningGuide, type LearningGuide } from "./learning";
-
 export type LessonMode = "learn" | "explore" | "practice" | "revise";
 export type SupportLevel = "none" | "hint";
 export type PilotTask = {
@@ -19,9 +16,6 @@ export type PilotLesson = {
     outcome: string;
     why: string;
     recall: string;
-    theorem: string;
-    reasoning: string;
-    misconception: string;
     quickCheck: string;
   };
   explore: {
@@ -50,12 +44,6 @@ export const pilotLessons: Record<string, PilotLesson> = {
       why: "A limit claim needs one input neighbourhood that controls all sufficiently nearby outputs.",
       recall:
         "Recall the implication: if an input lies in a deleted interval around $a$, its output should lie in the target band around $L$.",
-      theorem:
-        "For every $\\varepsilon>0$ there exists $\\delta>0$ such that every domain point with $0<|x-a|<\\delta$ satisfies $|f(x)-L|<\\varepsilon$. $\\delta$ may depend on $\\varepsilon$ and $a$, never on the later input $x$.",
-      reasoning:
-        "For $f(x)=2x$ at $a=1$, $|f(x)-2|=2|x-1|$, so $\\delta=\\varepsilon/2$ works. For $f(x)=x^2$ at $a=1$, first require $|x-1|<1$. Then $|x+1|<3$, so $|x^2-1|<3|x-1|$. Choose $\\delta=\\min(1,\\varepsilon/3)$.",
-      misconception:
-        "Choosing $\\delta=\\varepsilon/|x+1|$ after seeing $x$ reverses the quantifiers. One fixed $\\delta$ must work for every admissible $x$.",
       quickCheck:
         "If $\\varepsilon=0.4$ for $f(x)=2x$ at $a=1$, what $\\delta$ works? Check it in Explore, then prove the implication for every input.",
     },
@@ -209,12 +197,6 @@ export const pilotLessons: Record<string, PilotLesson> = {
       why: "The inner integral describes one slice; a wrong slice gives a different region even if the notation looks plausible.",
       recall:
         "A Type I section is one vertical interval; a Type II section is one horizontal interval.",
-      theorem:
-        "With continuous ordered boundary functions and a continuous integrand on the compact region, the Type I or Type II slicing formula applies. A continuous-rectangle Fubini statement alone does not cover the discontinuous zero extension.",
-      reasoning:
-        "For $D=\\{0\\le x\\le2,0\\le y\\le2-x\\}$, vertical bounds are $0\\le y\\le2-x$. Horizontal bounds are $0\\le x\\le2-y$ for $0\\le y\\le2$. Both describe the same triangle. For $0\\le x\\le1$ and $x^2\\le y\\le x$, reversal gives $0\\le y\\le1$ and $y\\le x\\le\\sqrt y$.",
-      misconception:
-        "The square frame $[0,2]^2\\setminus(1/2,3/2)^2$ has two intervals in a middle vertical and horizontal section. It is neither type as one piece; split it into rectangles.",
       quickCheck:
         "At $x=0.5$ in the triangle, where does the vertical section start and end? Check it in Explore.",
     },
@@ -425,14 +407,3 @@ export const pilotLessons: Record<string, PilotLesson> = {
     },
   },
 };
-
-export function learningModesFor(
-  concept: Concept,
-):
-  | { version: "pilot-v2"; lesson: PilotLesson }
-  | { version: "legacy-v1"; guide: LearningGuide } {
-  const pilot = pilotLessons[concept.id];
-  return pilot
-    ? { version: "pilot-v2", lesson: pilot }
-    : { version: "legacy-v1", guide: learningGuide(concept) };
-}
