@@ -64,7 +64,6 @@ jobs:
       # what CI must prove, how the checks grow, and why none of them gets a path filter — is
       # `CODING_STANDARDS.md` §5, which is the text rather than a summary of it.
       #
-      # The required checks job depends on this job and the bounded study-safety job.
       #
       # Auto-merge is the opposite claim — "green ⇒ merge" — and stays off until the checks here
       # would fail for the kind of change being merged, which is the whole basis of ADR-0010's
