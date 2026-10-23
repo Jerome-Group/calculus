@@ -1,5 +1,4 @@
 import { spawn } from "node:child_process";
-import { once } from "node:events";
 import {
   access,
   mkdtemp,
@@ -114,10 +113,18 @@ export async function startWorker(root, output, signal) {
             if (error.code !== "ESRCH") recordError(kind, error);
           }
         };
+        let onClose;
         const closed =
-          child.stdout.closed && child.stderr.closed
+          (child.exitCode !== null || child.signalCode !== null) &&
+          child.stdout.closed &&
+          child.stderr.closed
             ? Promise.resolve()
-            : once(child, "close");
+            : new Promise((resolve) => {
+                onClose = resolve;
+                child.once("close", onClose);
+              });
+        const onError = (error) => recordError("process-close", error);
+        child.on("error", onError);
         kill("SIGTERM");
         const timer = setTimeout(() => kill("SIGKILL"), 1500);
         let deadline;
@@ -125,15 +132,22 @@ export async function startWorker(root, output, signal) {
           await Promise.race([
             closed,
             new Promise((resolve) => {
-              deadline = setTimeout(resolve, 2500);
+              deadline = setTimeout(resolve, 2000);
             }),
           ]);
-        } catch (error) {
-          recordError("process-close", error);
+          clearTimeout(deadline);
+          kill("SIGKILL");
+          await Promise.race([
+            closed,
+            new Promise((resolve) => {
+              deadline = setTimeout(resolve, 500);
+            }),
+          ]);
         } finally {
           clearTimeout(timer);
           clearTimeout(deadline);
-          kill("SIGKILL");
+          if (onClose) child.off("close", onClose);
+          child.off("error", onError);
         }
       }
       let scratchRemoved = false;

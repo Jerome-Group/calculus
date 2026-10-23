@@ -166,6 +166,13 @@ test(
     const kill = process.kill.bind(process);
     const failedKills = new Set();
     let group;
+    let stopping;
+    let delayKill = true;
+    let deliverKill;
+    let acceptedKill;
+    const killAccepted = new Promise((resolve) => {
+      acceptedKill = resolve;
+    });
     try {
       for (const directory of [
         "dist/server",
@@ -184,8 +191,12 @@ test(
         path.join(fixture, "node_modules/wrangler/bin/wrangler.js"),
         `
       const port = Number(process.argv[process.argv.indexOf('--port') + 1]);
-      require('node:http').createServer((q, r) => r.end('Calculus Graph studio'))
-        .listen(port, '127.0.0.1', () => console.log('Ready on http://127.0.0.1:' + port));
+      const server = require('node:http').createServer((q, r) => {
+        r.end('Calculus Graph studio');
+        r.on('finish', () => server.close());
+      });
+      server.listen(port, '127.0.0.1', () => console.log('Ready on http://127.0.0.1:' + port));
+      setInterval(() => {}, 1000);
     `,
       );
       t.mock.method(process, "kill", (pid, signal) => {
@@ -200,6 +211,11 @@ test(
             code: "EPERM",
           });
         }
+        if (pid < 0 && signal === "SIGKILL" && delayKill) {
+          deliverKill = () => kill(pid, signal);
+          acceptedKill();
+          return true;
+        }
         return kill(pid, signal);
       });
       const instance = await startWorker(
@@ -207,7 +223,31 @@ test(
         path.join(fixture, "evidence"),
         new AbortController().signal,
       );
-      const cleanup = await instance.stop();
+      const realSetTimeout = setTimeout;
+      const exited = new Promise((resolve) =>
+        instance.child.once("exit", resolve),
+      );
+      t.mock.timers.enable({ apis: ["setTimeout"] });
+      stopping = instance.stop();
+      t.mock.timers.tick(2500);
+      await killAccepted;
+      instance.child.emit(
+        "error",
+        Object.assign(new Error("Controlled close error"), { code: "EIO" }),
+      );
+      assert.equal(
+        await Promise.race([
+          stopping.then(() => "stopped"),
+          new Promise((resolve) => realSetTimeout(resolve, 1000, "waiting")),
+        ]),
+        "waiting",
+        "cleanup observes the final signal before returning its receipt",
+      );
+      delayKill = false;
+      deliverKill();
+      await exited;
+      t.mock.timers.reset();
+      const cleanup = await stopping;
       assert.equal(cleanup.processExited, true);
       assert.equal(cleanup.portClosed, true);
       assert.equal(cleanup.scratchRemoved, true);
@@ -221,6 +261,11 @@ test(
           operation: "SIGKILL",
           message: "Controlled kill EPERM",
           code: "EPERM",
+        },
+        {
+          operation: "process-close",
+          message: "Controlled close error",
+          code: "EIO",
         },
       ]);
       assert.match(
@@ -254,6 +299,7 @@ test(
         },
       );
     } finally {
+      t.mock.timers.reset();
       t.mock.restoreAll();
       if (group) {
         try {
@@ -262,6 +308,94 @@ test(
           if (error.code !== "ESRCH") throw error;
         }
       }
+      await stopping;
+      await rm(fixture, { recursive: true, force: true });
+    }
+  },
+);
+
+test(
+  "persistent signal errors return a bounded, truthful cleanup failure",
+  { timeout: 5000, skip: process.platform === "win32" },
+  async (t) => {
+    const fixture = await mkdtemp(
+      path.join(os.tmpdir(), "calculus-denied-signal-proof-"),
+    );
+    const kill = process.kill.bind(process);
+    let instance;
+    let stopping;
+    try {
+      for (const directory of [
+        "dist/server",
+        "dist/client/assets",
+        "node_modules/wrangler/bin",
+        "evidence",
+      ])
+        await mkdir(path.join(fixture, directory), { recursive: true });
+      await writeFile(path.join(fixture, "dist/server/wrangler.json"), "{}");
+      await writeFile(
+        path.join(fixture, "dist/client/assets/viewport-fixture.js"),
+        "",
+      );
+      await writeFile(
+        path.join(fixture, "node_modules/wrangler/bin/wrangler.js"),
+        `
+      const port = Number(process.argv[process.argv.indexOf('--port') + 1]);
+      const server = require('node:http').createServer((q, r) => {
+        r.end('Calculus Graph studio');
+        r.on('finish', () => server.close());
+      });
+      server.listen(port, '127.0.0.1', () => console.log('Ready on http://127.0.0.1:' + port));
+      setInterval(() => {}, 1000);
+    `,
+      );
+      instance = await startWorker(
+        fixture,
+        path.join(fixture, "evidence"),
+        new AbortController().signal,
+      );
+      const closeListeners = instance.child.listenerCount("close");
+      const errorListeners = instance.child.listenerCount("error");
+      t.mock.method(process, "kill", (pid, signal) => {
+        assert.equal(pid, -instance.child.pid);
+        assert.ok(signal === "SIGTERM" || signal === "SIGKILL");
+        throw Object.assign(new Error("Controlled permanent EPERM"), {
+          code: "EPERM",
+        });
+      });
+      t.mock.timers.enable({ apis: ["setTimeout"] });
+      stopping = instance.stop();
+      t.mock.timers.tick(2000);
+      await new Promise(setImmediate);
+      t.mock.timers.tick(500);
+      const cleanup = await stopping;
+      t.mock.timers.tick(10000);
+      assert.deepEqual(cleanup, {
+        processExited: false,
+        scratchRemoved: true,
+        portClosed: true,
+        errors: ["SIGTERM", "SIGKILL", "SIGKILL"].map((operation) => ({
+          operation,
+          message: "Controlled permanent EPERM",
+          code: "EPERM",
+        })),
+      });
+      assert.equal(kill(instance.child.pid, 0), true);
+      assert.equal(instance.child.listenerCount("close"), closeListeners);
+      assert.equal(instance.child.listenerCount("error"), errorListeners);
+    } finally {
+      t.mock.timers.reset();
+      t.mock.restoreAll();
+      if (instance) {
+        const closed = once(instance.child, "close");
+        try {
+          kill(-instance.child.pid, "SIGKILL");
+        } catch (error) {
+          if (error.code !== "ESRCH") throw error;
+        }
+        await closed;
+      }
+      await stopping;
       await rm(fixture, { recursive: true, force: true });
     }
   },
