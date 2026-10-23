@@ -15,7 +15,7 @@ The command installs the pinned portable JRE and TLC into ignored `outputs/forma
 
 Read `outputs/formal-save-safety/latest-run.txt` for the unique run directory. Keep its `summary.json`, TLC logs and JSON traces, real-code receipts, and mutant source files together. Exit codes are `0` for all properties passing, `1` for a reproduced product bug, and `2` for drift, a modeling error, a surviving mutation, or a tool failure. Expected mutant failures print `KILLED`.
 
-Last reviewed source commit: `524226e7a88b32d2a85f77cdd72db632651e58b8`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
+Last reviewed source commit: `965f7f4501f7bd338cc50d9652cf9c8a3001a338`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
 
 ## Read the result
 
@@ -47,6 +47,14 @@ node .agents/skills/study-save-safety/scripts/bridge.mjs --case ConflictActionab
 Both commands pass on the maintained source. They load the current TypeScript implementation through Vite, with schema-valid controlled HTTP replies. They do not test a translated copy of `session.ts`. When a normal model check fails, `run.mjs` also consumes the actual TLC JSON counterexamples and compares each supported state against the real implementation's visible values, persistence states, and mock server records. It blocks on an unsupported transition or disagreement. No normal counterexample is emitted by a passing model. The historical baseline retains its exact failing traces and successful real-code replay evidence.
 
 Run the complete command to repeat all mutation controls. It copies the current `session.ts` into each run's ignored `mutants/` directory, changes one behavior, and imports that copy through Vite. The original source never changes. Each of the seven properties must detect its model control and source mutation. The recovery controls restore the exact old same-revision assignment. The command then reruns the untouched source and checks that the current outcomes return. Mutation anchors must match once. An anchor failure requires a source review, not a regex that silently skips the mutation.
+
+Run the focused bridge WebSocket regression separately:
+
+```sh
+node .agents/skills/study-save-safety/scripts/check-websocket-isolation.mjs
+```
+
+The probe owns port 24678 on all interfaces while the real bridge checks `RecoveryActionable`. It requires that property's PASS receipt and rejects Vite collision diagnostics even if the bridge exits zero. It retains stdout, stderr, and the actual-code receipt under its printed output path. It closes only its owned listener. If the port is already occupied, it reports BLOCKED without touching the foreign listener. The bridge disables its unused WebSocket server with `ws: false`.
 
 ## Keep the model current
 
