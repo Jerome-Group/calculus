@@ -20,11 +20,12 @@ The driver uses topbar, sidebar, and lesson exact-example entry points and the q
 It renders `sin(x)*cos(y)`, `[cos(u),sin(u),v]`, `[cos(t),sin(t),t/3]`, and `x^2+y^2+z^2-1` through the editor, reloading each encoded state.
 It rejects an incomplete expression and inverted bounds, then restores rendering through Saddle and Helix presets.
 After invalidating surface-only bounds, it switches to a space curve and requires the valid curve to render and survive reload.
-Each changed plot in this journey must change the actual compatibility SVG drawing, including same-representation expression changes.
+Each changed plot must change finite plotted compatibility SVG geometry, including same-representation expression changes. Positive status counts must match the current representation. Mesh fills and the surface-colored curve count; axes and arrows do not.
 It replots the same saddle with custom bounds, lowers its height clip, checks excluded samples, and restores the expression and full configuration after reload.
 It independently checks keyboard orbit and zoom against drawn geometry, then requires Reset camera to restore its reference framing. SVG coordinates round to six decimal places for the reset comparison. It also drives fullscreen entry and exit.
 Parameter proof opens Wave amplitude, checks its expression and complete bounds, changes real SVG geometry, and restores the encoded parameter after reload.
 It checks the malformed graph explanation and renders at 390px with reduced motion.
+Shared parameter 6 must recover to the default 1 with an explanation; shared endpoints -5 and 5 must remain within the slider's accessible range.
 The focusable parameter slider must expose its visible expression-parameter name.
 
 ## Gotchas

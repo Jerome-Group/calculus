@@ -152,6 +152,120 @@ export async function library(page, e) {
     },
   );
   await e.step(
+    "Restore bare-root defaults, contain route warnings, and exclude the collapsed sidebar from focus",
+    async () => {
+      await page.goto(e.url);
+      await ready(page);
+      await page
+        .locator(".course-paths")
+        .getByRole("button", { name: /MH2100/ })
+        .click();
+      await visible(
+        page
+          .locator(".unit-library")
+          .getByRole("heading", { name: "Calculus III", exact: true }),
+      );
+      await page.goBack();
+      await visible(page.locator("#library-title"));
+      await e.check(
+        "Back to the bare root restores Calculus I and an empty query",
+        async () => {
+          assert.match(
+            await page.locator(".unit-library > header").innerText(),
+            /MH1100/,
+          );
+          assert.equal(
+            await page
+              .getByRole("textbox", {
+                name: "Search the entire library",
+                exact: true,
+              })
+              .inputValue(),
+            "",
+          );
+          assert.equal(new URL(page.url()).hash, "");
+        },
+      );
+      await page.goto(`${e.url}/?study=invalid#derivative-definition`);
+      await ready(page);
+      await visible(
+        page
+          .getByRole("status")
+          .filter({ hasText: /shared lesson state could not be restored/ }),
+      );
+      await page.getByRole("button", { name: "Library", exact: true }).click();
+      await visible(page.locator("#library-title"));
+      await e.check(
+        "A lesson arrival warning does not follow into Library",
+        async () =>
+          assert.doesNotMatch(
+            await page.locator("main").innerText(),
+            /shared lesson state could not be restored/,
+          ),
+      );
+      await page
+        .getByRole("button", { name: "Minimise sidebar", exact: true })
+        .click();
+      await page.waitForFunction(
+        () =>
+          document
+            .querySelector('[data-slot="sidebar-container"]')
+            .getBoundingClientRect().right <= 1,
+      );
+      await e.check(
+        "The collapsed sidebar excludes hidden keyboard targets",
+        async () => {
+          const sidebar = page.locator('[data-slot="sidebar-container"]');
+          assert.equal(await sidebar.getAttribute("aria-hidden"), "true");
+          assert.equal(
+            await sidebar.evaluate((element) => element.inert),
+            true,
+          );
+          for (let index = 0; index < 6; index++) {
+            await page.keyboard.press("Tab");
+            assert.equal(
+              await page.evaluate(
+                () => !!document.activeElement?.closest(".atlas-sidebar"),
+              ),
+              false,
+            );
+          }
+        },
+      );
+      await page
+        .getByRole("button", { name: "Toggle lecture navigation", exact: true })
+        .click();
+      const overview = page.getByRole("button", {
+        name: "Course overview",
+        exact: true,
+      });
+      await visible(overview);
+      await overview.focus();
+      await page.keyboard.press(
+        process.platform === "darwin" ? "Meta+b" : "Control+b",
+      );
+      await e.check(
+        "Closing the sidebar from inside returns focus to its visible trigger",
+        async () => {
+          await page.waitForFunction(
+            () =>
+              document.activeElement?.getAttribute("data-sidebar") ===
+              "trigger",
+          );
+          assert.ok(
+            await page.evaluate(
+              () => document.activeElement.getBoundingClientRect().right > 0,
+            ),
+          );
+        },
+      );
+      await page
+        .getByRole("button", { name: "Toggle lecture navigation", exact: true })
+        .click();
+      await visible(overview);
+    },
+  );
+  await e.step(
     "Clear an obsolete fallback explanation through search",
     async () => {
       await page.goto(`${e.url}/?library=invalid#course`);

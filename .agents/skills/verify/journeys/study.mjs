@@ -67,13 +67,37 @@ export async function study(page, e) {
       await page.getByRole("button", { name: "Library", exact: true }).click();
       await progress.getByRole("button", { name: /^Resume:/ }).click();
       await mode(page, "Practice");
+      const deletion = page.waitForResponse((response) => {
+        if (
+          !response.url().endsWith("/api/study") ||
+          response.request().method() !== "POST"
+        )
+          return false;
+        const command = response.request().postDataJSON();
+        return (
+          command?.operation === "write" &&
+          command.key?.kind === "practice-draft" &&
+          command.value === null
+        );
+      });
       await page
         .locator(".lesson-practice")
         .first()
         .getByRole("button", { name: "Delete this draft", exact: true })
         .click();
+      assert.equal((await deletion).status(), 200);
+      await page.reload();
+      const deleted = page.locator(".lesson-practice").first();
+      await visible(
+        deleted
+          .getByRole("status")
+          .filter({
+            hasText: /Saved to your account\.|No saved account record yet\./,
+          })
+          .first(),
+      );
       await e.check(
-        "Deleting a draft preserves the recorded self-assessment",
+        "Acknowledged draft deletion survives reload and preserves self-assessment",
         async () => {
           assert.equal(
             await page
@@ -192,6 +216,7 @@ export async function study(page, e) {
           assert.equal(await replica.evaluate(() => localStorage.length), 0);
         },
       );
+      await e.releasePage(replica, "Restored account replica");
       const other = await e.newPage({ account: "verification-b" });
       const otherExercise = await practice(other, e);
       await visible(
@@ -218,10 +243,7 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(replica, "Completed study scenario: replica, other");
-
-      await e.releasePage(other, "Completed study scenario: replica, other");
+      await e.releasePage(other, "Isolated second account");
     },
   );
   await e.step(
@@ -313,10 +335,36 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(first, "Completed study scenario: first, second");
-
-      await e.releasePage(second, "Completed study scenario: first, second");
+      const keepMine = e.expectStudyFailure("conflict", 409, second);
+      try {
+        await secondExercise
+          .getByRole("textbox")
+          .fill("Keep this tab's chosen version.");
+        await visible(
+          secondExercise.getByRole("button", {
+            name: "Keep my version",
+            exact: true,
+          }),
+        );
+        await secondExercise
+          .getByRole("button", { name: "Keep my version", exact: true })
+          .click();
+        await saved(secondExercise);
+        await second.reload();
+        await saved(secondExercise);
+        await e.check(
+          "Keeping the local conflict version acknowledges it and survives reload",
+          async () =>
+            assert.equal(
+              await secondExercise.getByRole("textbox").inputValue(),
+              "Keep this tab's chosen version.",
+            ),
+        );
+      } finally {
+        keepMine.active = false;
+      }
+      await e.releasePage(first, "Concurrent account and offline recovery");
+      await e.releasePage(second, "Explicit account conflict resolution");
     },
   );
   await e.step(
@@ -425,8 +473,7 @@ export async function study(page, e) {
         expected.active = false;
         await recovery.unroute(`${e.url}/api/study`);
       }
-
-      await e.releasePage(recovery, "Completed study scenario: recovery");
+      await e.releasePage(recovery, "Assessment save recovery");
     },
   );
   await e.step(
@@ -514,8 +561,7 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(outage, "Completed study scenario: outage");
+      await e.releasePage(outage, "Study service recovery");
     },
   );
   await e.step(
@@ -566,6 +612,56 @@ export async function study(page, e) {
           assert.equal(await exercise.getByRole("textbox").inputValue(), "");
         },
       );
+      await lesson(guest, e, "epsilon-delta-one-variable");
+      await mode(guest, "Practice");
+      const guestTask = guest.locator(".pilot-task").first();
+      await guestTask.getByRole("radio").first().check();
+      await guestTask
+        .getByRole("button", { name: "Check answer", exact: true })
+        .click();
+      await mode(guest, "Revise");
+      await e.check(
+        "A guest choice stays in the tab and establishes no saved history",
+        async () => {
+          await visible(
+            guest.getByText("0 saved account records loaded.", { exact: true }),
+          );
+          await visible(
+            guest.getByRole("heading", {
+              name: "Choices in this tab",
+              exact: true,
+            }),
+          );
+          assert.match(
+            await guest.locator("main").innerText(),
+            /Tab choices do not set an account review date/,
+          );
+          assert.doesNotMatch(
+            await guest.locator("main").innerText(),
+            /Correct checked transfer choices saved without hints at least a day apart in the loaded account history/,
+          );
+        },
+      );
+      await guest.reload();
+      await ready(guest);
+      await e.check(
+        "Reload clears the guest choice without creating a saved record",
+        async () => {
+          await visible(
+            guest.getByText("0 saved account records loaded.", { exact: true }),
+          );
+          assert.equal(
+            await guest
+              .getByRole("heading", {
+                name: "Choices in this tab",
+                exact: true,
+              })
+              .count(),
+            0,
+          );
+        },
+      );
+      await e.releasePage(guest, "Guest reload boundary");
       const account = page.getByRole("region", {
         name: "Your account",
         exact: true,
@@ -595,16 +691,14 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(guest, "Completed study scenario: guest");
     },
   );
   await e.step(
     "Import explicit legacy-device input without replacing account records",
     async () => {
       const attempt = {
-        taskId: "quantifiers",
-        kind: "recognition",
+        taskId: "quadratic",
+        kind: "transfer",
         correct: true,
         support: "none",
         at: "2026-01-01T00:00:00Z",
@@ -707,6 +801,7 @@ export async function study(page, e) {
           );
         },
       );
+      await e.releasePage(importer, "Idempotent legacy import");
       const later = await e.newPage({
         account: "verification-import",
         storageState: {
@@ -759,13 +854,35 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(
-        importer,
-        "Completed study scenario: importer, later",
+      await lesson(later, e, "epsilon-delta-one-variable");
+      await mode(later, "Revise");
+      await e.check(
+        "Historical correct transfers remain labeled and do not claim checked transfer evidence",
+        async () => {
+          await visible(
+            later.getByText("3 saved account records loaded.", { exact: true }),
+          );
+          const revision = await later
+            .getByRole("region", {
+              name: "Revision and retrieval",
+              exact: true,
+            })
+            .innerText();
+          assert.match(
+            revision,
+            /historical device correctness, not rechecked/,
+          );
+          assert.match(
+            revision,
+            /Historical suggestion from loaded device evidence/,
+          );
+          assert.doesNotMatch(
+            revision,
+            /Correct checked transfer choices saved without hints at least a day apart in the loaded account history/,
+          );
+        },
       );
-
-      await e.releasePage(later, "Completed study scenario: importer, later");
+      await e.releasePage(later, "Incremental legacy import");
     },
   );
   await e.step(
@@ -858,6 +975,31 @@ export async function study(page, e) {
         "Both failed choice saves expose independent retry controls",
         async () => assert.equal(await retry.count(), 2),
       );
+      await mode(recovery, "Revise");
+      await e.check(
+        "Two unsaved choices remain separate from saved account history",
+        async () => {
+          await visible(
+            recovery.getByText("0 saved account records loaded.", {
+              exact: true,
+            }),
+          );
+          await visible(
+            recovery.getByRole("heading", {
+              name: "Choices in this tab",
+              exact: true,
+            }),
+          );
+          assert.equal(
+            await recovery
+              .getByRole("button", { name: "Retry choice save", exact: true })
+              .count(),
+            2,
+          );
+        },
+      );
+      await mode(recovery, "Practice");
+      assert.equal(await retry.count(), 2);
       await recovery.unroute("**/api/study");
       failure.active = false;
       const retried = [];
@@ -919,8 +1061,7 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(recovery, "Completed study scenario: recovery");
+      await e.releasePage(recovery, "Independent choice save recovery");
     },
   );
   await e.step(
@@ -966,8 +1107,7 @@ export async function study(page, e) {
           );
         },
       );
-
-      await e.releasePage(denied, "Completed study scenario: denied");
+      await e.releasePage(denied, "Denied legacy storage preview");
     },
   );
 }

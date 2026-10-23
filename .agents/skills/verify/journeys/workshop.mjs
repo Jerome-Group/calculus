@@ -1,5 +1,15 @@
 import assert from "node:assert/strict";
-import { ready, visible, noOverflow, mathematics } from "./controls.mjs";
+import {
+  assertResumeMutations,
+  mutationReceipts,
+} from "./resume-mutations.mjs";
+import {
+  ready,
+  visible,
+  noOverflow,
+  mathematics,
+  nestedPrerequisiteReturn,
+} from "./controls.mjs";
 
 const submit = (page) =>
   page.getByRole("button", { name: "Check construction", exact: true }).click();
@@ -38,9 +48,10 @@ const firstExplanation =
 
 export async function workshop(page, e) {
   const writes = [];
+  let prerequisiteWrites;
   page.on("request", (request) => {
-    if (request.url().includes("/api/study") && request.method() !== "GET")
-      writes.push({ method: request.method(), url: request.url() });
+    if (!["GET", "HEAD", "OPTIONS"].includes(request.method()))
+      writes.push(request);
   });
   await e.step(
     "Enter the workshop and recover invalid rational input through the keyboard",
@@ -198,6 +209,42 @@ export async function workshop(page, e) {
           assert.match(
             await page.locator(".workshop-history > summary").innerText(),
             /\(2\)/,
+          );
+        },
+      );
+      const report = await result(page).innerText();
+      await page
+        .locator(".workshop-continuation")
+        .getByRole("button")
+        .first()
+        .click();
+      await visible(page.locator("#lesson-title"));
+      await e.check(
+        "Workshop constructions and recovery produce no mutations before prerequisite navigation",
+        async () => assert.equal(writes.length, 0),
+      );
+      await nestedPrerequisiteReturn(page, e, "Return to Proof workshop");
+      prerequisiteWrites = [...writes];
+      await e.check(
+        "Only the two workshop prerequisites update and acknowledge their resume pointers",
+        async () =>
+          assertResumeMutations(
+            await mutationReceipts(prerequisiteWrites),
+            e.url,
+            ["partial-derivatives-as-slices", "derivative-definition"],
+          ),
+      );
+      await page
+        .getByRole("button", { name: "Return to Proof workshop", exact: true })
+        .click();
+      await focused(page, "workshop-result");
+      await e.check(
+        "Nested prerequisites preserve the exact workshop report and explanation",
+        async () => {
+          assert.equal(await result(page).innerText(), report);
+          assert.equal(
+            await page.locator(".workshop-original").innerText(),
+            "My second construction uses 3x²+y² ≤ 3r².",
           );
         },
       );
@@ -463,8 +510,15 @@ export async function workshop(page, e) {
         );
       }
       await e.check(
-        "All workshop-only actions and continuation navigation produced no account writes",
-        async () => assert.deepEqual(writes, []),
+        "Workshop constructions, explanations and continuation add no mutations outside the prerequisite phase",
+        async () => {
+          assert.equal(writes.length, prerequisiteWrites.length);
+          assert.ok(
+            writes.every(
+              (request, index) => request === prerequisiteWrites[index],
+            ),
+          );
+        },
       );
     },
   );

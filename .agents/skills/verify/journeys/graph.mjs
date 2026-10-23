@@ -357,6 +357,55 @@ export async function graph(page, e) {
     },
   );
   await e.step(
+    "Reject out-of-range shared graph parameters and retain both valid endpoints",
+    async () => {
+      for (const parameter of [6, -5, 5]) {
+        const shared = new URL(e.url);
+        shared.hash = "graph";
+        shared.searchParams.set(
+          "graph",
+          JSON.stringify({
+            version: 1,
+            graph: {
+              mode: "surface",
+              expressions: ["a*sin(x)*cos(y)"],
+              min: -3,
+              max: 3,
+              vmin: -3,
+              vmax: 3,
+              clip: 6,
+              a: parameter,
+            },
+          }),
+        );
+        await page.goto(shared.href);
+        await ready(page);
+        await graphReady(page);
+        const slider = page.getByRole("slider", {
+          name: /Expression parameter/,
+        });
+        await e.check(
+          `Shared parameter ${parameter} respects the slider range and recovery`,
+          async () => {
+            assert.equal(
+              Number(await slider.getAttribute("aria-valuenow")),
+              parameter === 6 ? 1 : parameter,
+            );
+            assert.equal(await slider.getAttribute("aria-valuemin"), "-5");
+            assert.equal(await slider.getAttribute("aria-valuemax"), "5");
+            if (parameter === 6)
+              await visible(
+                page
+                  .locator(".graph-editor")
+                  .getByRole("alert")
+                  .filter({ hasText: /shared graph could not be restored/ }),
+              );
+          },
+        );
+      }
+    },
+  );
+  await e.step(
     "Use the sidebar graph entry and recover malformed graph history on a phone",
     async () => {
       await page.getByRole("button", { name: "Library", exact: true }).click();

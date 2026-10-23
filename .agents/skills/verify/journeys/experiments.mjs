@@ -1,5 +1,26 @@
 import assert from "node:assert/strict";
-import { lesson, mode, noOverflow, select, visible } from "./controls.mjs";
+import {
+  lesson,
+  mode,
+  noOverflow,
+  ready,
+  select,
+  visible,
+} from "./controls.mjs";
+
+async function stableSharedParameter(page) {
+  const parameter = JSON.parse(
+    new URL(page.url()).searchParams.get("study"),
+  ).parameter;
+  await page.evaluate(async () => {
+    for (let frame = 0; frame < 14; frame++)
+      await new Promise(requestAnimationFrame);
+  });
+  assert.equal(
+    JSON.parse(new URL(page.url()).searchParams.get("study")).parameter,
+    parameter,
+  );
+}
 
 const comparisons = [
   [
@@ -293,8 +314,29 @@ export async function experiments(page, e) {
         },
       );
       await experiment
+        .getByRole("button", { name: "Animate parameter", exact: true })
+        .click();
+      await visible(
+        experiment.getByRole("button", {
+          name: "Pause animation",
+          exact: true,
+        }),
+      );
+      await experiment
         .getByRole("button", { name: "Minimise", exact: true })
         .click();
+      await e.check(
+        "Minimising removes active playback and holds the shared parameter",
+        async () => {
+          assert.equal(
+            await page
+              .getByRole("button", { name: "Pause animation", exact: true })
+              .count(),
+            0,
+          );
+          await stableSharedParameter(page);
+        },
+      );
       await experiment
         .getByRole("button", { name: "Expand", exact: true })
         .click();
@@ -418,9 +460,27 @@ export async function experiments(page, e) {
       await lesson(page, e, "epsilon-delta-one-variable");
       await mode(page, "Explore");
       await page
+        .getByRole("button", { name: "Animate parameter", exact: true })
+        .click();
+      await visible(
+        page.getByRole("button", { name: "Pause animation", exact: true }),
+      );
+      await page
         .getByRole("group", { name: "Representation", exact: true })
         .getByRole("button", { name: "Values only", exact: true })
         .click();
+      await e.check(
+        "Values only removes active playback and holds the shared parameter",
+        async () => {
+          assert.equal(
+            await page
+              .getByRole("button", { name: "Pause animation", exact: true })
+              .count(),
+            0,
+          );
+          await stableSharedParameter(page);
+        },
+      );
       const tolerance = page.getByRole("slider", { name: /Output tolerance/ });
       await tolerance.press("End");
       const epsilon = Number(await tolerance.inputValue());
@@ -578,17 +638,77 @@ export async function experiments(page, e) {
     },
   );
   await e.step(
-    "Honor reduced motion and keep the experiment usable on a phone",
+    "Switch reading modes during playback and restore the selected mode after reload",
     async () => {
-      await page.emulateMedia({ reducedMotion: "reduce" });
       await lesson(page, e, "multivariable-chain-rule");
       await mode(page, "Explore");
+      await page
+        .getByRole("button", { name: "Animate parameter", exact: true })
+        .click();
+      await visible(
+        page.getByRole("button", { name: "Pause animation", exact: true }),
+      );
+      await mode(page, "Practice");
+      await e.check(
+        "Practice pauses playback and commits its current mode",
+        async () => {
+          assert.equal(
+            JSON.parse(new URL(page.url()).searchParams.get("study")).mode,
+            "practice",
+          );
+          assert.equal(
+            await page
+              .getByRole("button", { name: "Pause animation", exact: true })
+              .count(),
+            0,
+          );
+          await stableSharedParameter(page);
+        },
+      );
+      await page.reload();
+      await ready(page);
+      await e.check(
+        "Reload restores Practice after an animated Explore session",
+        async () => {
+          assert.equal(
+            await page
+              .getByRole("group", { name: "Lesson mode", exact: true })
+              .getByRole("button", { name: "Practice", exact: true })
+              .getAttribute("aria-pressed"),
+            "true",
+          );
+        },
+      );
+    },
+  );
+  await e.step(
+    "Honor reduced motion and keep the experiment usable on a phone",
+    async () => {
+      await lesson(page, e, "multivariable-chain-rule");
+      await mode(page, "Explore");
+      await page
+        .getByRole("button", { name: "Animate parameter", exact: true })
+        .click();
+      await visible(
+        page.getByRole("button", { name: "Pause animation", exact: true }),
+      );
+      await page.emulateMedia({ reducedMotion: "reduce" });
       const disabled = page.getByRole("button", {
         name: "Animation disabled by reduced motion preference",
         exact: true,
       });
-      await e.check("Reduced motion disables animation", async () =>
-        assert.equal(await disabled.isDisabled(), true),
+      await e.check(
+        "Reduced motion stops active playback and disables animation",
+        async () => {
+          await page.waitForFunction(
+            () =>
+              document.querySelector(
+                'button[title="Animation disabled by reduced motion preference"]',
+              )?.disabled,
+          );
+          assert.equal(await disabled.isDisabled(), true);
+          await stableSharedParameter(page);
+        },
       );
       await page.setViewportSize({ width: 390, height: 844 });
       await e.check("Phone experiment has no page overflow", async () =>
@@ -640,11 +760,7 @@ export async function experiments(page, e) {
           "#multivariable-chain-rule",
         ),
       );
-
-      await e.releasePage(
-        failurePage,
-        "Completed experiments scenario: failurePage",
-      );
+      await e.releasePage(failurePage, "Recovered deferred drawing");
     },
   );
   await e.step(
