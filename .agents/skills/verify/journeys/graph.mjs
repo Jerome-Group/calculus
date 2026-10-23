@@ -196,6 +196,41 @@ export async function graph(page, e) {
     },
   );
   await e.step(
+    "Render a space curve after leaving invalid unused surface bounds",
+    async () => {
+      await page.getByRole("button", { name: "Saddle", exact: true }).click();
+      await graphReady(page);
+      await page.locator(".bounds-grid input").nth(2).fill("4");
+      await page.locator(".bounds-grid input").nth(3).fill("-4");
+      await select(page, "Graph representation", /^Space curve/);
+      for (const [index, expression] of ["cos(t)", "sin(t)", "t/3"].entries())
+        await page.locator(`#expression-${index}`).fill(expression);
+      const before = await graphDrawing(page);
+      await page
+        .getByRole("button", { name: "Render graph", exact: true })
+        .click();
+      await graphReady(page, before);
+      const url = page.url();
+      await page.reload();
+      await graphReady(page);
+      await e.check(
+        "Unused surface bounds cannot block a valid curve or its reload",
+        async () => {
+          assert.equal(page.url(), url);
+          assert.equal(
+            await page.locator(".graph-editor").getByRole("alert").count(),
+            0,
+          );
+          assert.equal(await page.locator("#expression-2").inputValue(), "t/3");
+          assert.match(
+            await page.locator(".graph-status").innerText(),
+            /sampled curve segments/,
+          );
+        },
+      );
+    },
+  );
+  await e.step(
     "Change a parameter used by the plotted expression and restore its URL",
     async () => {
       const previous = await graphDrawing(page);

@@ -19,6 +19,7 @@ Run `npm run agent -- browser run --features graph --output outputs/browser/grap
 The driver uses topbar, sidebar, and lesson exact-example entry points and the quick expression form.
 It renders `sin(x)*cos(y)`, `[cos(u),sin(u),v]`, `[cos(t),sin(t),t/3]`, and `x^2+y^2+z^2-1` through the editor, reloading each encoded state.
 It rejects an incomplete expression and inverted bounds, then restores rendering through Saddle and Helix presets.
+After invalidating surface-only bounds, it switches to a space curve and requires the valid curve to render and survive reload.
 Each changed plot in this journey must change the actual compatibility SVG drawing, including same-representation expression changes.
 It replots the same saddle with custom bounds, lowers its height clip, checks excluded samples, and restores the expression and full configuration after reload.
 It independently checks keyboard orbit and zoom against drawn geometry, then requires Reset camera to restore its reference framing. SVG coordinates round to six decimal places for the reset comparison. It also drives fullscreen entry and exit.

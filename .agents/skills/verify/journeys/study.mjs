@@ -312,6 +312,114 @@ export async function study(page, e) {
     },
   );
   await e.step(
+    "Keep a failed assessment actionable after another record refreshes the summary",
+    async () => {
+      const recovery = await e.newPage({
+        account: "verification-assessment-recovery",
+      });
+      const exercise = await practice(recovery, e);
+      await exercise
+        .getByText("Compare with a solution", { exact: true })
+        .click();
+      await exercise
+        .getByRole("button", { name: "Needs practice", exact: true })
+        .click();
+      await saved(exercise, 1);
+      const assessment = exercise.locator(".study-save-status").nth(1);
+      const expected = e.expectStudyFailure("service", 503, recovery);
+      let unavailable = true;
+      let failedWrites = 0;
+      await recovery.route(`${e.url}/api/study`, async (route) => {
+        const request = route.request();
+        const body =
+          request.method() === "POST" ? request.postDataJSON() : null;
+        if (
+          unavailable &&
+          body?.operation === "write" &&
+          body.key.kind === "assessment"
+        ) {
+          failedWrites++;
+          await route.fulfill({
+            status: 503,
+            contentType: "application/json",
+            body: JSON.stringify({
+              error: "service",
+              user: {
+                id: "verification-assessment-recovery",
+                email: "verification-assessment-recovery@example.invalid",
+                displayName: "verification-assessment-recovery@example.invalid",
+                fullName: null,
+              },
+            }),
+          });
+        } else await route.continue();
+      });
+      try {
+        await exercise
+          .getByRole("button", {
+            name: "I can explain it independently",
+            exact: true,
+          })
+          .click();
+        await visible(
+          assessment.getByRole("button", { name: "Retry save", exact: true }),
+        );
+        const overview = recovery.waitForResponse(
+          (response) =>
+            new URL(response.url()).searchParams.get("scope") === "overview",
+        );
+        await exercise
+          .getByRole("textbox")
+          .fill("Keep the failed assessment retryable.");
+        assert.equal((await overview).status(), 200);
+        await saved(exercise);
+        await e.check(
+          "An unrelated acknowledgement preserves the failed assessment and its retry",
+          async () => {
+            assert.equal(failedWrites, 1);
+            await visible(
+              assessment.getByRole("button", {
+                name: "Retry save",
+                exact: true,
+              }),
+            );
+            await visible(
+              exercise.getByText(
+                "Can explain independently. This is your self-assessment, not an automatic grade.",
+                { exact: true },
+              ),
+            );
+          },
+        );
+        unavailable = false;
+        await assessment
+          .getByRole("button", { name: "Retry save", exact: true })
+          .click();
+        await saved(exercise, 1);
+        await recovery.reload();
+        await saved(exercise, 1);
+        await e.check(
+          "Explicit retry acknowledges the intended assessment and survives reload",
+          async () => {
+            await visible(
+              exercise.getByText(
+                "Can explain independently. This is your self-assessment, not an automatic grade.",
+                { exact: true },
+              ),
+            );
+            assert.equal(
+              await exercise.getByRole("textbox").inputValue(),
+              "Keep the failed assessment retryable.",
+            );
+          },
+        );
+      } finally {
+        expected.active = false;
+        await recovery.unroute(`${e.url}/api/study`);
+      }
+    },
+  );
+  await e.step(
     "Bound failed account reads and recover only after an explicit retry",
     async () => {
       const outage = await e.newPage({ account: "verification-outage" });

@@ -18,7 +18,7 @@ Drawing controls offer compatibility view, orbit, zoom, camera reset, and fullsc
 ## Driving it with Playwright
 
 Run `npm run agent -- browser run --features experiments --output outputs/browser/experiments`.
-The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, observes movement during animation and a stable parameter after pausing, and uses each layout control.
+The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, observes movement during animation and a stable parameter after pausing, and uses each layout control. At 1800px it measures the actual graph width before Wide, requires expansion, and checks that Split restores the original width.
 It opens all seven comparison families, checks representative exact values and submits wrong and correct predictions. Every range endpoint must match its mathematical readout and change actual SVG geometry. Reset must restore the readout and clear predictions.
 It checks ray witnesses, the inconclusive Hessian case, singular clock speed, and integration-order invariance.
 It checks open and closed boundaries, reversed normals, and singular fields in both cap-decision entry points.
