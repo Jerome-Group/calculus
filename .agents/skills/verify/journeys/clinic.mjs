@@ -1,5 +1,15 @@
 import assert from "node:assert/strict";
-import { visible, noOverflow, ready, mathematics } from "./controls.mjs";
+import {
+  assertResumeMutations,
+  mutationReceipts,
+} from "./resume-mutations.mjs";
+import {
+  visible,
+  noOverflow,
+  ready,
+  mathematics,
+  nestedPrerequisiteReturn,
+} from "./controls.mjs";
 
 const cases = [
   ["rolle-corner", "corner-breaks-hypothesis", "smooth-rolle"],
@@ -31,9 +41,10 @@ const selectedCase = (page) =>
 
 export async function clinic(page, e) {
   const writes = [];
+  let prerequisiteWrites;
   page.on("request", (request) => {
-    if (request.url().includes("/api/study") && request.method() !== "GET")
-      writes.push({ method: request.method(), url: request.url() });
+    if (!["GET", "HEAD", "OPTIONS"].includes(request.method()))
+      writes.push(request);
   });
   await e.step(
     "Enter Clinic from the library and inspect the nine-case picker",
@@ -96,6 +107,21 @@ export async function clinic(page, e) {
             }),
           );
         },
+      );
+      await e.check(
+        "Clinic work and recovery produce no mutations before prerequisite navigation",
+        async () => assert.equal(writes.length, 0),
+      );
+      await nestedPrerequisiteReturn(page, e, "Return to Clinic case");
+      prerequisiteWrites = [...writes];
+      await e.check(
+        "Only the two Clinic prerequisites update and acknowledge their resume pointers",
+        async () =>
+          assertResumeMutations(
+            await mutationReceipts(prerequisiteWrites),
+            e.url,
+            ["extrema-fermat", "differentiability-corners"],
+          ),
       );
       await page
         .getByRole("button", { name: "Return to Clinic case", exact: true })
@@ -459,8 +485,15 @@ export async function clinic(page, e) {
         },
       );
       await e.check(
-        "Clinic-only decisions, notes, recovery and transfer produced no account writes",
-        async () => assert.deepEqual(writes, []),
+        "Clinic decisions, notes, recovery and transfer add no mutations outside the prerequisite phase",
+        async () => {
+          assert.equal(writes.length, prerequisiteWrites.length);
+          assert.ok(
+            writes.every(
+              (request, index) => request === prerequisiteWrites[index],
+            ),
+          );
+        },
       );
     },
   );

@@ -16,14 +16,16 @@ Signed-in accounts can open Import old study from this device, preview validated
 Run `npm run agent -- browser run --features study --output outputs/browser/study`.
 The owned Worker starts with a migrated temporary D1 database. Explicit local gateway-header fixtures supply distinct stable account IDs. They do not exercise hosted sign-in.
 The driver saves reasoning and support state, waits for acknowledgement and reloads. Each wrong or correct pilot choice must receive its own successful POST response with a matching immutable attempt receipt before the next choice or reload. Mutable draft status alone cannot prove a choice was saved.
-It records self-assessment and confidence separately, and drives resume, revisit, draft deletion and focused error-history navigation.
+It records self-assessment and confidence separately, and drives resume, revisit, acknowledged draft deletion with reload, and focused error-history navigation.
 A new browser context restores the same account without localStorage. Another account starts empty. Concurrent edits produce a real409; the UI preserves local reasoning and explicitly restores the chosen account version.
+Both Use account version and Keep my version are exercised; the kept local version must survive reload.
 Offline save failure must retain input and report unsaved; Retry save must acknowledge before reload. A scoped service503 fixture must stop retrying automatically, preserve reasoning and recover through the visible Retry summary control. Guest reasoning remains usable with storage denied and disappears after reload.
 A separate scoped503 fails an assessment save while allowing a draft acknowledgement to refresh the account summary. The intended assessment and Retry save must remain actionable; explicit retry must acknowledge and restore that assessment after reload.
 Native auth paths and top-level targets are inspected. Actual provider navigation needs hosted verification.
 An explicit legacy-device context input supplies historical records. Preview must not write. Confirmation preserves source bytes and identical-event multiplicity. Repeating retains existing records; an appended event adds only that event.
 Two failed choice saves expose separate retry controls. Each retry must acknowledge a distinct attempt ID; both events survive reload exactly once, with no unsaved warning.
 A denied localStorage getter must explain the failed device preview, preserve source data and disable import confirmation.
+Guest and failed choices remain under Choices in this tab while the saved account count stays zero. Reload clears guest choices. Imported correct transfers remain labeled as historical device evidence and cannot establish checked transfer evidence.
 
 ## Gotchas
 

@@ -9,7 +9,7 @@ Learn, Explore, Practice, Revise, definition and assumptions, reasoning, worked 
 Choose a lesson from the library, sidebar lecture list, or search results. Direct `/#<lesson-id>` links open it too.
 Use Previous concept and Next concept at the footer. At a course boundary the forward button says Next course. Use Lesson prerequisites, Need a prerequisite refresher, and Return to interrupted step for supporting lessons.
 Choose a reading mode. Standard Learn's Follow the argument buttons move to the definition, experiment, reasoning, worked application, distinction, or practice.
-Standard Learn includes Concepts in this exploration, source page links, optional reading, and continuation links where supplied. Pilot Learn has its own guided sequence.
+Learn includes canonical notes, exercises, Concepts in this exploration, source page links, optional reading, and continuation links where supplied. Pilot lessons add Lesson preparation to canonical Learn.
 Pilot Revise offers independent tasks and error history. Standard Revise offers Open the full reasoning and supporting practice.
 Drafts, hints, solutions, self-assessment, and confidence are in [study](study.md); graphs and interactive examples are in [experiments](experiments.md) and [graph](graph.md).
 
@@ -29,6 +29,6 @@ The driver also reads source errata with and without supplied provenance; it che
 ## Gotchas
 
 Course PDFs remain external and access controlled. Anchor inspection does not establish permission or source freshness.
-Browser proof covers the listed representative lessons. The complete inventory and mathematical checks retain all 125 lessons.
+The default browser gate covers the listed representative lessons. The optional `node .agents/skills/verify/canonical-routes.mjs --output outputs/browser/canonical-routes` checks canonical notes, all core and named exercise fields, MathML, and unique DOM IDs on all 125 Learn routes. It also checks both pilots' canonical Practice and dedicated Explore and Revise activities.
 Written reasoning is not automatically graded. Agent checks establish neither learner understanding nor mastery.
 Prerequisite entry buttons appear in Learn. This route cannot establish return from another interrupted reading mode.

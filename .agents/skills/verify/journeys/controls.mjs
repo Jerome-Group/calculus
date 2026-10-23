@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { graphObservation } from "./graph-observation.mjs";
 
 export async function visible(locator) {
   await locator.waitFor({ state: "visible" });
@@ -52,6 +53,58 @@ export async function noOverflow(page) {
   );
 }
 
+export async function nestedPrerequisiteReturn(page, e, continuation) {
+  await mode(page, "Learn");
+  const interrupted = page.url();
+  for (let depth = 0; depth < 2; depth++) {
+    const readiness = page.locator(".lesson-readiness");
+    if ((await readiness.getAttribute("open")) === null)
+      await readiness.locator("summary").click();
+    const previous = page.url();
+    await readiness.getByRole("button").first().click();
+    await page.waitForURL((url) => url.href !== previous);
+    await visible(page.locator("#lesson-title"));
+    assert.notEqual(page.url(), interrupted);
+  }
+  await page.goBack();
+  await visible(page.locator("#lesson-title"));
+  await e.check(
+    `${continuation}: Back preserves the nested prerequisite return`,
+    async () =>
+      visible(
+        page.getByRole("button", {
+          name: "Return to interrupted step",
+          exact: true,
+        }),
+      ),
+  );
+  await page.goForward();
+  await page
+    .getByRole("button", { name: "Return to interrupted step", exact: true })
+    .click();
+  await e.check(
+    `${continuation}: nested return restores the original URL and workspace action`,
+    async () => {
+      assert.equal(page.url(), interrupted);
+      await visible(
+        page.getByRole("button", { name: continuation, exact: true }),
+      );
+    },
+  );
+  await page.goBack();
+  await visible(page.locator("#lesson-title"));
+  await page.goForward();
+  await e.check(
+    `${continuation}: Forward retains the workspace action`,
+    async () => {
+      assert.equal(page.url(), interrupted);
+      await visible(
+        page.getByRole("button", { name: continuation, exact: true }),
+      );
+    },
+  );
+}
+
 export async function graphReady(page, previousDrawing) {
   await visible(
     page.getByRole("img", {
@@ -60,18 +113,11 @@ export async function graphReady(page, previousDrawing) {
   );
   await page
     .locator(".graph-status")
-    .filter({ hasText: /sampled|segments|triangles|surface|points/i })
+    .filter({
+      hasText:
+        /sampled points displayed|parameter samples displayed|sampled curve segments|approximate zero-set triangles/,
+    })
     .waitFor();
-  if (previousDrawing !== undefined)
-    await page.waitForFunction((previous) => {
-      const svg = document.querySelector(".canvas-host svg");
-      return svg?.querySelector("path") && svg.innerHTML !== previous;
-    }, previousDrawing);
-  assert.equal(await page.locator(".scene-error").count(), 0);
-}
-
-export async function graphDrawing(page) {
-  await graphReady(page);
   const compatibility = page.getByRole("button", {
     name: "Use compatibility view",
     exact: true,
@@ -79,8 +125,13 @@ export async function graphDrawing(page) {
   if (await compatibility.isVisible()) await compatibility.click();
   const svg = page.locator(".canvas-host svg");
   await visible(svg);
-  await svg.locator("path").first().waitFor({ state: "attached" });
-  const geometry = await svg.evaluate(async (element) => {
+  await page.waitForFunction(graphObservation, { previousDrawing });
+  assert.equal(await page.locator(".scene-error").count(), 0);
+}
+
+export async function graphDrawing(page) {
+  await graphReady(page);
+  await page.locator(".canvas-host svg").evaluate(async (element) => {
     let previous = element.innerHTML;
     for (let stable = 0; stable < 2;) {
       await new Promise(requestAnimationFrame);
@@ -88,8 +139,8 @@ export async function graphDrawing(page) {
       stable = current === previous ? stable + 1 : 0;
       previous = current;
     }
-    return previous;
   });
-  assert.doesNotMatch(geometry, /NaN|Infinity/);
+  const geometry = await page.evaluate(graphObservation);
+  assert.ok(geometry, "The current graph has finite plotted surface geometry");
   return geometry;
 }

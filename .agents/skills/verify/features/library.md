@@ -20,6 +20,7 @@ It searches `integral`, checks result labels from MH1101 and MH2100, reloads, op
 It uses brand, overview, Library, and Resume lesson entry points, requiring Resume to restore the selected lesson ID.
 It opens malformed library state, clears its explanation through search and through course selection, and selects a course from the 390px phone drawer.
 It opens Browser tools without relying on WebMCP.
+Back to bare root must restore Calculus I and an empty query. A malformed lesson's warning must disappear on Library arrival. Collapsed desktop navigation must be inert and hidden from accessibility, exclude successive Tab targets, and return focus to the visible trigger when closed from inside.
 
 ## Gotchas
 
