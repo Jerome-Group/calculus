@@ -15,7 +15,7 @@ The command installs the pinned portable JRE and TLC into ignored `outputs/forma
 
 Read `outputs/formal-save-safety/latest-run.txt` for the unique run directory. Keep its `summary.json`, TLC logs and JSON traces, real-code receipts, and mutant source files together. Exit codes are `0` for all properties passing, `1` for a reproduced product bug, and `2` for drift, a modeling error, a surviving mutation, or a tool failure. Expected mutant failures print `KILLED`.
 
-Last reviewed source commit: `d919c61ad79b1971b812ea77cb5f64df945d76f2`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
+Last reviewed source commit: `965f7f4501f7bd338cc50d9652cf9c8a3001a338`. [source-lock.json](source-lock.json) records exact covered-file hashes and reviewed model behavior. A hash mismatch stops the run before it can report a stale model pass.
 
 ## Read the result
 
