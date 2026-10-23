@@ -23,6 +23,7 @@ After invalidating surface-only bounds, it switches to a space curve and require
 Each changed plot must change finite plotted compatibility SVG geometry, including same-representation expression changes. Positive status counts must match the current representation. Mesh fills and the surface-colored curve count; axes and arrows do not.
 It replots the same saddle with custom bounds, lowers its height clip, checks excluded samples, and restores the expression and full configuration after reload.
 It independently checks keyboard orbit and zoom against drawn geometry, then requires Reset camera to restore its reference framing. SVG coordinates round to six decimal places for the reset comparison. It also drives fullscreen entry and exit.
+Real pointer rotation and right-button pan must change plotted geometry before release. The next action immediately clicks Reset camera or selects Helix from Saddle. Both must match their no-input reference drawing and stay unchanged across twelve further render frames, with finite plotted geometry afterward.
 Parameter proof opens Wave amplitude, checks its expression and complete bounds, changes real SVG geometry, and restores the encoded parameter after reload.
 It checks the malformed graph explanation and renders at 390px with reduced motion.
 Shared parameter 6 must recover to the default 1 with an explanation; shared endpoints -5 and 5 must remain within the slider's accessible range.
