@@ -19,11 +19,11 @@ Drawing controls offer compatibility view, orbit, zoom, camera reset, and fullsc
 
 Run `npm run agent -- browser run --features experiments --output outputs/browser/experiments`.
 The driver changes the chain-rule parameter through keyboard bounds, checks its readout, resets, observes movement during animation and a stable parameter after pausing, and uses each layout control.
-It opens all seven comparison families, checks representative exact values, submits wrong and correct predictions, changes every range through keyboard bounds, and verifies reset clears predictions.
+It opens all seven comparison families, checks representative exact values and submits wrong and correct predictions. Every range endpoint must match its mathematical readout and change actual SVG geometry. Reset must restore the readout and clear predictions.
 It checks ray witnesses, the inconclusive Hessian case, singular clock speed, and integration-order invariance.
 It checks open and closed boundaries, reversed normals, and singular fields in both cap-decision entry points.
 It waits for account hydration, proves an exact review control changed independently, waits for its visible save acknowledgement, reloads and waits for hydration before comparing the saved value. It also drives a polar-region control.
-It switches pilot Diagram and Values only views, checks valid and invalid algebraic tolerance choices, and compares horizontal slice bounds.
+It switches pilot Diagram and Values only views and checks valid and invalid algebraic tolerance choices. Horizontal slices at y=0 and y=2 must agree between diagram geometry and the exact values table, with x bounds 0 to 2 and 0 to 0 respectively.
 It checks disabled animation under reduced motion and page width at 390px.
 A new context blocks the actual deferred viewport chunk. Definition and reasoning must remain readable, and Reload to retry drawing must restore the scene.
 Finally it selects Constant-height circle, reloads, and requires the same model.
