@@ -24,7 +24,7 @@ command -v sha256sum || {
   exit 69
 }
 
-runtime_root="${SITES_PROJECT_ROOT}/.sites-runtime"
+runtime_root="${SITES_RUNTIME_ROOT}"
 expected_home="${runtime_root}/home"
 expected_cache="${runtime_root}/npm-cache"
 
