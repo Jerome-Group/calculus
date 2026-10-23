@@ -43,16 +43,26 @@ export function normalizePrimeSource(source, file = "content.json") {
     throw new Error(
       `${file}: ${ts.flattenDiagnosticMessageText(parsed.parseDiagnostics[0].messageText, "\n")}`,
     );
-  const options = { allowJs: true, noLib: true, noResolve: true };
+  const options = {
+    allowJs: true,
+    noLib: true,
+    module: ts.ModuleKind.ESNext,
+    moduleResolution: ts.ModuleResolutionKind.Bundler,
+  };
+  const host = ts.createCompilerHost(options);
   const checker = ts
     .createProgram([file], options, {
-      ...ts.createCompilerHost(options),
-      getSourceFile: (name) => (name === file ? parsed : undefined),
+      ...host,
+      getSourceFile: (name, ...args) =>
+        name === file ? parsed : host.getSourceFile(name, ...args),
     })
     .getTypeChecker();
   function isRawTag(tag) {
     if (ts.isIdentifier(tag)) {
-      const declaration = checker.getSymbolAtLocation(tag)?.valueDeclaration;
+      let symbol = checker.getSymbolAtLocation(tag);
+      if (symbol?.flags & ts.SymbolFlags.Alias)
+        symbol = checker.getAliasedSymbol(symbol);
+      const declaration = symbol?.valueDeclaration;
       if (
         !declaration ||
         !ts.isVariableDeclaration(declaration) ||

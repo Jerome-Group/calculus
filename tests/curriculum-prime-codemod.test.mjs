@@ -165,6 +165,30 @@ test("prime codemod recognizes direct String.raw and its immutable local aliases
   }
 });
 
+test("prime codemod resolves the declared planar source's imported raw tag", () => {
+  const file = "lib/curriculum/planar/functions.ts";
+  const declaration = 'import { tex as rawTex } from "./drawing";';
+  const result = normalizePrimeSource(
+    `${declaration} return rawTex\`f\\prime(x)\`;`,
+    file,
+  );
+  assert.equal(result.runs, 1);
+  assert.equal(normalizePrimeSource(result.source, file).runs, 0);
+  const tex = new Function("rawTex", result.source.slice(declaration.length))(
+    String.raw,
+  );
+  assert.equal(tex, String.raw`f^{\prime}(x)`);
+  assertRaisedPrimes(tex);
+  assert.throws(
+    () =>
+      normalizePrimeSource(
+        'import { createDrawing as rawTex } from "./drawing"; return rawTex`f\\prime(x)`;',
+        file,
+      ),
+    /unknown template tag rawTex/,
+  );
+});
+
 test("prime codemod rejects unknown, mutable and shadowed template tags", () => {
   for (const input of [
     "return custom`f\\prime(x)`;",
