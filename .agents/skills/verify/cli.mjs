@@ -180,8 +180,18 @@ async function runBrowser(options) {
     process.removeListener("SIGTERM", onTerm);
     await abortCleanup;
     if (instance) report.liveDoctor = await inspectWorker(instance);
-    await browser?.close();
-    if (instance) report.cleanup = await instance.stop();
+    try {
+      await browser?.close();
+    } catch (error) {
+      report.browserCleanupError = error.message;
+    }
+    if (instance) {
+      try {
+        report.cleanup = await instance.stop();
+      } catch (error) {
+        report.workerCleanupError = error.message;
+      }
+    }
     report.completedSource = await sourceSnapshot(root);
     report.sourceChanged =
       source.fingerprint !== report.completedSource.fingerprint ||
@@ -189,6 +199,10 @@ async function runBrowser(options) {
     report.completedAt = new Date().toISOString();
     report.status =
       !report.error &&
+      !report.abortCleanupError &&
+      !report.browserCleanupError &&
+      !report.workerCleanupError &&
+      !report.cleanup?.errors?.length &&
       !report.sourceChanged &&
       report.features.length === selectFeatures(options.features).length &&
       report.features.every((feature) => feature.status === "passed") &&
