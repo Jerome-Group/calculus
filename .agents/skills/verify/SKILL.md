@@ -45,6 +45,7 @@ Read DOM state only to observe results. Reproduce a bug through the same user pa
 
 Each output directory retains `report.json`, build and Worker logs, and one directory per attempted feature.
 Each feature retains `events.jsonl`, `result.json`, screenshots, complete DOM snapshots, and Playwright traces.
+Completed auxiliary scenarios retain a final checkpoint and trace, then close their owned contexts through `releasePage`; later steps capture only active pages.
 Actions precede their results in the event log. Assertions record observed outcomes and failures.
 Reports include URL, viewport, browser version, console messages, runtime errors, request failures, HTTP errors, Git revision, source fingerprint, and dirty state.
 
