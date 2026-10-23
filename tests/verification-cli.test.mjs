@@ -360,7 +360,20 @@ test("inventory JSON includes every current lesson route, gaps, tools, and hones
     result.lessons.map((lesson) => lesson.id),
     concepts.map((concept) => concept.id),
   );
-  assert.equal(result.routes.length, concepts.length + 3);
+  const lessonRoutes = result.routes.filter((route) => route.type === "lesson");
+  assert.equal(lessonRoutes.length, 125);
+  assert.deepEqual(
+    lessonRoutes.map((route) => route.id),
+    concepts.map((concept) => concept.id),
+  );
+  assert.deepEqual(
+    result.routes
+      .filter((route) => route.type !== "lesson")
+      .map((route) => route.id)
+      .sort(),
+    ["clinic", "course", "graph", "workshop"],
+  );
+  assert.equal(result.routes.length, 129);
   const library = result.routes.find((route) => route.id === "course");
   assert.equal(library.query, "library");
   const original = new URL("https://calculus.jeromegroup.org/");

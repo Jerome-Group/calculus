@@ -56,10 +56,26 @@ const executable = ts.transpileModule(
 
 for (const initialRoute of ["lesson", "course"]) {
   test(`browse_course preserves another course's query and reload URL from ${initialRoute}`, async () => {
+    const workshopReturn = {
+      version: 1,
+      id: "linear-bound",
+      focus: "result",
+      scrollY: 420,
+    };
     let url = new URL(
       "https://calculus.jeromegroup.org/?study=old#derivative-definition",
     );
-    let values = { route: initialRoute, course: "MH1100", search: "old query" };
+    url.searchParams.set(
+      "workshop",
+      JSON.stringify({ version: 1, id: "linear-bound" }),
+    );
+    let historyState = { studyScrollY: 420, workshopReturn };
+    let values = {
+      route: initialRoute,
+      course: "MH1100",
+      search: "old query",
+      workshopReturn,
+    };
     let pending = {};
     let current;
     const render = () => {
@@ -88,6 +104,9 @@ for (const initialRoute of ["lesson", "course"]) {
         },
         setHistoryNotice() {},
         setClinicReturn() {},
+        setWorkshopReturn: (value) => {
+          pending.workshopReturn = value;
+        },
         setNavigationFocus() {},
         setExpanded() {},
         setPlaying() {},
@@ -96,11 +115,13 @@ for (const initialRoute of ["lesson", "course"]) {
         document: { getElementById: () => null },
         requestAnimationFrame: globalThis.requestAnimationFrame,
         history: {
-          state: {},
-          pushState: (_state, _title, target) => {
+          state: historyState,
+          pushState: (state, _title, target) => {
+            historyState = state;
             url = new URL(target, url);
           },
-          replaceState: (_state, _title, target) => {
+          replaceState: (state, _title, target) => {
+            historyState = state;
             url = new URL(target, url);
           },
         },
@@ -122,6 +143,7 @@ for (const initialRoute of ["lesson", "course"]) {
       }, 0);
     try {
       render();
+      assert.equal(current.workshopReturn, workshopReturn);
       const browse = studyTools(concepts, () => current).find(
         (t) => t.name === "browse_course",
       );
@@ -130,12 +152,16 @@ for (const initialRoute of ["lesson", "course"]) {
         assert.equal(result.route, "course");
         assert.equal(result.course, "MH2100");
         assert.equal(result.query, query);
+        assert.equal(current.workshopReturn, null);
+        assert.deepEqual(Object.keys(historyState), ["studyScrollY"]);
+        assert.equal(historyState.studyScrollY, 0);
         assert.deepEqual(readLibraryHistory(new URL(url.href)), {
           kind: "valid",
           value: { version: 1, course: "MH2100", query },
         });
         assert.equal(url.hash, "#course");
         assert.equal(url.searchParams.has("study"), false);
+        assert.equal(url.searchParams.has("workshop"), false);
       }
     } finally {
       globalThis.requestAnimationFrame = savedFrame;
