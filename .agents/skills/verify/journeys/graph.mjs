@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {
+  graphDrawing,
   graphReady,
   lesson,
   noOverflow,
@@ -19,17 +20,18 @@ export async function graph(page, e) {
         .getByRole("button", { name: "Graph studio", exact: true })
         .click();
       await graphReady(page);
+      const before = await graphDrawing(page);
       await page
         .getByRole("textbox", { name: "Quick graph expression", exact: true })
-        .fill("sin(x)*cos(y)");
+        .fill("sin(x)+cos(y)");
       await page
         .locator(".quick-graph")
         .getByRole("button", { name: "Graph", exact: true })
         .click();
       await e.check(
-        "Quick graph updates the rendered mathematical description",
+        "Quick graph draws the new expression and updates its description",
         async () => {
-          await graphReady(page);
+          await graphReady(page, before);
           assert.match(
             await page
               .locator(".sr-only")
@@ -66,13 +68,14 @@ export async function graph(page, e) {
     await e.step(
       `Render ${name} through the representation editor and restore it after reload`,
       async () => {
+        const before = await graphDrawing(page);
         await select(page, "Graph representation", new RegExp(`^${name}`));
         for (const [index, expression] of expressions.entries())
           await page.locator(`#expression-${index}`).fill(expression);
         await page
           .getByRole("button", { name: "Render graph", exact: true })
           .click();
-        await graphReady(page);
+        await graphReady(page, before);
         await page
           .locator(".graph-status")
           .filter({ hasText: status })
@@ -85,7 +88,7 @@ export async function graph(page, e) {
         const renderedFormula = await rendered.textContent();
         const url = page.url();
         await page.reload();
-        await graphReady(page);
+        await graphDrawing(page);
         await e.check(
           `${name} restores the plotted expressions and encoded URL`,
           async () => {
@@ -102,6 +105,57 @@ export async function graph(page, e) {
     );
   }
   await e.step(
+    "Replot the same expression with custom bounds and clipping, then restore it",
+    async () => {
+      const before = await graphDrawing(page);
+      await page.getByRole("button", { name: "Saddle", exact: true }).click();
+      await graphReady(page, before);
+      const bounds = page.locator(".bounds-grid input");
+      const custom = [-1, 2, -2, 1, 5];
+      for (const [index, value] of custom.entries())
+        await bounds.nth(index).fill(String(value));
+      const initial = await graphDrawing(page);
+      await page
+        .getByRole("button", { name: "Render graph", exact: true })
+        .click();
+      await graphReady(page, initial);
+      const bounded = await graphDrawing(page);
+      await bounds.nth(4).fill("0.5");
+      await page
+        .getByRole("button", { name: "Render graph", exact: true })
+        .click();
+      await e.check(
+        "Clipping the same bounded plot redraws and excludes out-of-range samples",
+        async () => {
+          await graphReady(page, bounded);
+          assert.match(
+            await page.locator(".graph-status").innerText(),
+            /[1-9]\d* samples outside the height clip excluded/,
+          );
+        },
+      );
+      const url = page.url();
+      await page.reload();
+      await graphDrawing(page);
+      await e.check(
+        "Reload restores the same plotted expression, custom bounds and height clip",
+        async () => {
+          assert.equal(page.url(), url);
+          assert.equal(
+            await page.locator("#expression-0").inputValue(),
+            "x^2-y^2",
+          );
+          for (const [index, value] of [-1, 2, -2, 1, 0.5].entries())
+            assert.equal(Number(await bounds.nth(index).inputValue()), value);
+          assert.match(
+            await page.locator(".graph-status").innerText(),
+            /[1-9]\d* samples outside the height clip excluded/,
+          );
+        },
+      );
+    },
+  );
+  await e.step(
     "Reject invalid input and inverted bounds, then recover through a graph preset",
     async () => {
       await page.locator("#expression-0").fill("sin(");
@@ -109,8 +163,9 @@ export async function graph(page, e) {
         .getByRole("button", { name: "Render graph", exact: true })
         .click();
       await visible(page.locator(".graph-editor").getByRole("alert"));
+      const before = await graphDrawing(page);
       await page.getByRole("button", { name: "Saddle", exact: true }).click();
-      await graphReady(page);
+      await graphReady(page, before);
       const bounds = page.locator(".bounds-grid input");
       await bounds.nth(0).fill("4");
       await bounds.nth(1).fill("-4");
@@ -118,11 +173,12 @@ export async function graph(page, e) {
         .getByRole("button", { name: "Render graph", exact: true })
         .click();
       await visible(page.locator(".graph-editor").getByRole("alert"));
+      const saddle = await graphDrawing(page);
       await page.getByRole("button", { name: "Helix", exact: true }).click();
       await e.check(
         "A valid preset clears errors and renders after invalid input",
         async () => {
-          await graphReady(page);
+          await graphReady(page, saddle);
           assert.equal(
             await page.locator(".graph-editor").getByRole("alert").count(),
             0,
@@ -142,10 +198,11 @@ export async function graph(page, e) {
   await e.step(
     "Change a parameter used by the plotted expression and restore its URL",
     async () => {
+      const previous = await graphDrawing(page);
       await page
         .getByRole("button", { name: "Wave amplitude", exact: true })
         .click();
-      await graphReady(page);
+      await graphReady(page, previous);
       await e.check(
         "The wave preset supplies its complete configuration",
         async () => {
@@ -164,33 +221,24 @@ export async function graph(page, e) {
             assert.equal(Number(await bounds.nth(index).inputValue()), value);
         },
       );
-      await page
-        .getByRole("button", { name: "Use compatibility view", exact: true })
-        .click();
-      const svg = page.locator(".canvas-host svg");
-      await visible(svg);
-      await svg.locator("path").first().waitFor({ state: "attached" });
       const slider = page.getByRole("slider", { name: /Expression parameter/ });
+      const initial = await graphDrawing(page);
       await slider.press("Home");
-      const before = await svg.innerHTML();
+      await graphReady(page, initial);
+      const before = await graphDrawing(page);
       await e.capture("Parameter a at its lower bound");
       await slider.press("End");
       await e.check(
         "The expression parameter changes finite sampled drawing geometry",
         async () => {
-          await page.waitForFunction(
-            (previous) =>
-              document.querySelector(".canvas-host svg")?.innerHTML !==
-              previous,
-            before,
-          );
-          assert.doesNotMatch(await svg.innerHTML(), /NaN|Infinity/);
+          await graphReady(page, before);
+          await graphDrawing(page);
           assert.equal(await slider.getAttribute("aria-valuenow"), "5");
         },
       );
       const url = page.url();
       await page.reload();
-      await graphReady(page);
+      await graphDrawing(page);
       await e.check(
         "Reload restores the expression and its changed parameter",
         async () => {
@@ -232,26 +280,31 @@ export async function graph(page, e) {
           );
         },
       );
-      const before = await drawing.screenshot();
+      await page
+        .getByRole("button", { name: "Reset camera", exact: true })
+        .click();
+      const before = await graphDrawing(page);
       await drawing.press("ArrowRight");
+      await e.check(
+        "Keyboard orbit independently changes the drawn geometry",
+        async () => graphReady(page, before),
+      );
+      const orbited = await graphDrawing(page);
       await drawing.press("+");
-      await e.check("Keyboard orbit and zoom change the drawing", async () =>
-        assert.equal(before.equals(await drawing.screenshot()), false),
+      await e.check(
+        "Keyboard zoom independently changes the drawn geometry",
+        async () => graphReady(page, orbited),
       );
       await page
         .getByRole("button", { name: "Reset camera", exact: true })
         .click();
-      await page
-        .getByRole("button", { name: "Use compatibility view", exact: true })
-        .click();
       await e.check(
-        "Compatibility mode draws finite SVG geometry",
+        "Camera reset restores the original finite compatibility drawing",
         async () => {
-          const svg = page.locator(".canvas-host svg");
-          await visible(svg);
-          await svg.locator("path").first().waitFor({ state: "attached" });
-          assert.ok(await svg.locator("path").count());
-          assert.doesNotMatch(await svg.innerHTML(), /NaN|Infinity/);
+          assert.equal(
+            roundedDrawing(await graphDrawing(page)),
+            roundedDrawing(before),
+          );
         },
       );
       await page
@@ -296,5 +349,11 @@ export async function graph(page, e) {
     "The focusable parameter slider has its visible expression-parameter name",
     async () =>
       visible(page.getByRole("slider", { name: /Expression parameter/ })),
+  );
+}
+
+function roundedDrawing(svg) {
+  return svg.replace(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi, (value) =>
+    String(Number(Number(value).toFixed(6))),
   );
 }
