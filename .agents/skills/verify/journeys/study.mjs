@@ -101,16 +101,38 @@ export async function study(page, e) {
       await task
         .getByRole("button", { name: "Show hint", exact: true })
         .click();
-      await task
-        .getByRole("button", { name: "Check answer", exact: true })
-        .click();
+      await e.check(
+        "The wrong pilot choice receives its own immutable acknowledgement",
+        async () => {
+          const attempt = await acknowledgeChoice(page, task, () =>
+            task
+              .getByRole("button", { name: "Check answer", exact: true })
+              .click(),
+          );
+          assert.equal(attempt.correct, false);
+        },
+      );
       await visible(task.getByRole("status").filter({ hasText: /Try again/ }));
+      await saved(task);
       await task.getByRole("radio").first().check();
-      await task
-        .getByRole("button", { name: "Check answer", exact: true })
-        .click();
+      await e.check(
+        "The correct pilot choice receives its separate immutable acknowledgement",
+        async () => {
+          const attempt = await acknowledgeChoice(page, task, () =>
+            task
+              .getByRole("button", { name: "Check answer", exact: true })
+              .click(),
+          );
+          assert.equal(attempt.correct, true);
+        },
+      );
       await visible(
         task.getByRole("status").filter({ hasText: /Choice correct/ }),
+      );
+      await visible(
+        task
+          .getByRole("status")
+          .filter({ hasText: "Choice record: Saved to your account." }),
       );
       await saved(task);
       await page.reload();
@@ -287,6 +309,114 @@ export async function study(page, e) {
           );
         },
       );
+    },
+  );
+  await e.step(
+    "Keep a failed assessment actionable after another record refreshes the summary",
+    async () => {
+      const recovery = await e.newPage({
+        account: "verification-assessment-recovery",
+      });
+      const exercise = await practice(recovery, e);
+      await exercise
+        .getByText("Compare with a solution", { exact: true })
+        .click();
+      await exercise
+        .getByRole("button", { name: "Needs practice", exact: true })
+        .click();
+      await saved(exercise, 1);
+      const assessment = exercise.locator(".study-save-status").nth(1);
+      const expected = e.expectStudyFailure("service", 503, recovery);
+      let unavailable = true;
+      let failedWrites = 0;
+      await recovery.route(`${e.url}/api/study`, async (route) => {
+        const request = route.request();
+        const body =
+          request.method() === "POST" ? request.postDataJSON() : null;
+        if (
+          unavailable &&
+          body?.operation === "write" &&
+          body.key.kind === "assessment"
+        ) {
+          failedWrites++;
+          await route.fulfill({
+            status: 503,
+            contentType: "application/json",
+            body: JSON.stringify({
+              error: "service",
+              user: {
+                id: "verification-assessment-recovery",
+                email: "verification-assessment-recovery@example.invalid",
+                displayName: "verification-assessment-recovery@example.invalid",
+                fullName: null,
+              },
+            }),
+          });
+        } else await route.continue();
+      });
+      try {
+        await exercise
+          .getByRole("button", {
+            name: "I can explain it independently",
+            exact: true,
+          })
+          .click();
+        await visible(
+          assessment.getByRole("button", { name: "Retry save", exact: true }),
+        );
+        const overview = recovery.waitForResponse(
+          (response) =>
+            new URL(response.url()).searchParams.get("scope") === "overview",
+        );
+        await exercise
+          .getByRole("textbox")
+          .fill("Keep the failed assessment retryable.");
+        assert.equal((await overview).status(), 200);
+        await saved(exercise);
+        await e.check(
+          "An unrelated acknowledgement preserves the failed assessment and its retry",
+          async () => {
+            assert.equal(failedWrites, 1);
+            await visible(
+              assessment.getByRole("button", {
+                name: "Retry save",
+                exact: true,
+              }),
+            );
+            await visible(
+              exercise.getByText(
+                "Can explain independently. This is your self-assessment, not an automatic grade.",
+                { exact: true },
+              ),
+            );
+          },
+        );
+        unavailable = false;
+        await assessment
+          .getByRole("button", { name: "Retry save", exact: true })
+          .click();
+        await saved(exercise, 1);
+        await recovery.reload();
+        await saved(exercise, 1);
+        await e.check(
+          "Explicit retry acknowledges the intended assessment and survives reload",
+          async () => {
+            await visible(
+              exercise.getByText(
+                "Can explain independently. This is your self-assessment, not an automatic grade.",
+                { exact: true },
+              ),
+            );
+            assert.equal(
+              await exercise.getByRole("textbox").inputValue(),
+              "Keep the failed assessment retryable.",
+            );
+          },
+        );
+      } finally {
+        expected.active = false;
+        await recovery.unroute(`${e.url}/api/study`);
+      }
     },
   );
   await e.step(
@@ -700,7 +830,7 @@ export async function study(page, e) {
         await task
           .getByRole("button", { name: "Check answer", exact: true })
           .click();
-        await response;
+        assert.equal((await response).status(), 503);
         await visible(retry.nth(index));
       }
       await e.check(
@@ -709,8 +839,12 @@ export async function study(page, e) {
       );
       await recovery.unroute("**/api/study");
       failure.active = false;
+      const retried = [];
       for (let remaining = 2; remaining > 0; remaining--) {
-        await retry.first().click();
+        const attempt = await acknowledgeChoice(recovery, task, () =>
+          retry.first().click(),
+        );
+        retried.push(attempt.id);
         await recovery.waitForFunction(
           (expected) =>
             Array.from(document.querySelectorAll(".pilot-task button")).filter(
@@ -728,6 +862,7 @@ export async function study(page, e) {
       await e.check(
         "Acknowledged choices leave one receipt and no unsaved work",
         async () => {
+          assert.equal(new Set(retried).size, 2);
           assert.equal(
             await task
               .getByRole("status")
@@ -804,6 +939,35 @@ export async function study(page, e) {
       );
     },
   );
+}
+
+async function acknowledgeChoice(page, task, action) {
+  await visible(task);
+  const submitted = page.waitForRequest((request) => {
+    if (
+      new URL(request.url()).pathname !== "/api/study" ||
+      request.method() !== "POST"
+    )
+      return false;
+    const command = request.postDataJSON();
+    return (
+      command?.operation === "attempt" &&
+      command.attempt?.lessonId === "epsilon-delta-one-variable" &&
+      command.attempt?.taskId === "quantifiers"
+    );
+  });
+  await action();
+  const request = await submitted;
+  const acknowledgement = await request.response();
+  assert.ok(acknowledgement, "The submitted choice receives a response");
+  assert.equal(acknowledgement.status(), 200);
+  const input = request.postDataJSON().attempt;
+  const { record } = await acknowledgement.json();
+  assert.equal(record.key, `attempt:${input.id}`);
+  assert.equal(record.mutationId, input.id);
+  for (const [key, value] of Object.entries(input))
+    assert.equal(record.value[key], value);
+  return record.value;
 }
 
 async function saved(region, index = 0) {

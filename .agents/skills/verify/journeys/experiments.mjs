@@ -2,17 +2,59 @@ import assert from "node:assert/strict";
 import { lesson, mode, noOverflow, select, visible } from "./controls.mjs";
 
 const comparisons = [
-  ["different-paths-different-limits", /Ray height = 0\.5000/],
-  ["curved-paths-hide-obstructions", /Parabola height = 0\.5000/],
-  ["total-differentiability", /gap\/r 0\.3536/],
-  ["hessian-classification", /saddle/i],
-  ["tangents-velocity-and-singularities", /speed 1\.4142/],
-  ["type-one-two-regions", /Total integral: 14\/3 in both orders/],
-  ["polar-rectangles", /physical area/],
+  [
+    "different-paths-different-limits",
+    /Ray height = 0\.5000/,
+    ([theta]) => [Math.cos(theta) * Math.sin(theta), 0],
+    [Math.PI / 4, 0.6],
+  ],
+  [
+    "curved-paths-hide-obstructions",
+    /Parabola height = 0\.5000/,
+    ([k, x]) => [k / (1 + k * k), (k * x) / (x * x + k * k)],
+    [1, 0.6],
+  ],
+  [
+    "total-differentiability",
+    /gap\/r 0\.3536/,
+    ([r, theta]) => {
+      const relative = Math.abs(Math.cos(theta) * Math.sin(theta) ** 2);
+      return [r * r, r, r * relative, relative];
+    },
+    [0.6, Math.PI / 4],
+  ],
+  [
+    "hessian-classification",
+    /saddle/i,
+    ([a, theta]) => [Math.cos(theta) ** 2 + a * Math.sin(theta) ** 2, 4 * a],
+    [-1, Math.PI / 2],
+  ],
+  [
+    "tangents-velocity-and-singularities",
+    /speed 1\.4142/,
+    ([u]) => [u, Math.SQRT2, u ** 3, 3 * u * u * Math.SQRT2],
+    [0.5],
+  ],
+  [
+    "type-one-two-regions",
+    /Total integral: 14\/3 in both orders/,
+    ([q]) => [0, 2 - q, 4 - q - (q * q) / 2, 14, 3, 2],
+    [0.8],
+  ],
+  [
+    "polar-rectangles",
+    /physical area/,
+    ([r, width]) => [
+      (width * Math.PI) / 6,
+      (((r + width) ** 2 - r * r) * Math.PI) / 12,
+      (r * width * Math.PI) / 6,
+    ],
+    [1, 0.3],
+  ],
 ];
 
 async function comparisonsJourney(page, e) {
-  for (const [id, expected] of comparisons) {
+  for (const [id, expected, values, initialParameters] of comparisons) {
     await e.step(
       `Predict, change keyboard controls, and reset the comparison in ${id}`,
       async () => {
@@ -32,21 +74,48 @@ async function comparisonsJourney(page, e) {
           await lab.locator(".compare-feedback").innerText(),
           /^Correct\./,
         );
-        for (const slider of await lab.getByRole("slider").all()) {
-          await slider.press("Home");
-          assert.ok(
-            Math.abs(
-              Number(await slider.inputValue()) -
-                Number(await slider.getAttribute("min")),
-            ) < 0.011,
-          );
-          await slider.press("End");
-          assert.ok(
-            Math.abs(
-              Number(await slider.inputValue()) -
-                Number(await slider.getAttribute("max")),
-            ) < 0.011,
-          );
+        const sliders = await lab.getByRole("slider").all();
+        const parameters = [...initialParameters];
+        for (const [index, slider] of sliders.entries()) {
+          for (const [key, bound] of [
+            ["Home", "min"],
+            ["End", "max"],
+          ]) {
+            const before = await page.evaluate(comparisonGeometry);
+            await slider.press(key);
+            await e.check(
+              `${id} control ${index + 1} at ${bound} updates its mathematics and geometry`,
+              async () => {
+                assert.ok(
+                  Math.abs(
+                    Number(await slider.inputValue()) -
+                      Number(await slider.getAttribute(bound)),
+                  ) < 0.011,
+                );
+                await page.waitForFunction(comparisonGeometry, before);
+                parameters[index] = Number(await slider.inputValue());
+                const observed = (
+                  await lab.locator(".compare-readout").innerText()
+                )
+                  .match(/[-+]?\d+(?:\.\d+)?/g)
+                  ?.map(Number);
+                const expectedValues = values(parameters);
+                assert.equal(observed?.length, expectedValues.length);
+                for (const [valueIndex, value] of expectedValues.entries())
+                  assert.ok(
+                    Math.abs(observed[valueIndex] - value) <= 0.000051,
+                    `Readout ${valueIndex + 1} is ${value}, observed ${observed[valueIndex]}`,
+                  );
+                if (id === "hessian-classification")
+                  assert.match(
+                    await lab.locator(".compare-readout").innerText(),
+                    parameters[0] < 0
+                      ? /Full surface: saddle/
+                      : /Full surface: strict minimum/,
+                  );
+              },
+            );
+          }
         }
         assert.doesNotMatch(await lab.innerHTML(), /NaN|Infinity/);
         await lab
@@ -123,10 +192,27 @@ async function comparisonsJourney(page, e) {
   );
 }
 
+function comparisonGeometry(previous) {
+  const geometry = JSON.stringify(
+    Array.from(
+      document.querySelectorAll(
+        ".comparison-lab .compare-chart path, .comparison-lab .compare-chart polyline, .comparison-lab .compare-chart circle, .comparison-lab .compare-chart rect",
+      ),
+      (element) =>
+        ["d", "points", "cx", "cy", "x", "y", "width", "height"].map((name) =>
+          element.getAttribute(name),
+        ),
+    ),
+  );
+  return previous === undefined ? geometry : geometry !== previous;
+}
+
 export async function experiments(page, e) {
   await e.step(
     "Use experiment bounds, reset, animation, and layout controls",
     async () => {
+      const viewport = page.viewportSize();
+      await page.setViewportSize({ width: 1800, height: 1100 });
       await lesson(page, e, "multivariable-chain-rule");
       await mode(page, "Explore");
       const experiment = page.getByRole("region", {
@@ -179,12 +265,33 @@ export async function experiments(page, e) {
         await page.waitForTimeout(300);
         assert.equal(await slider.getAttribute("aria-valuenow"), paused);
       });
+      const canvas = experiment.locator(".canvas-host").first();
+      await visible(canvas);
+      const split = await canvas.boundingBox();
+      assert.ok(split);
       await experiment
         .getByRole("button", { name: "Use wide graph view", exact: true })
         .click();
+      await e.check(
+        "Wide view expands the graph across available desktop width",
+        async () => {
+          const wide = await canvas.boundingBox();
+          assert.ok(
+            wide && wide.width > split.width * 1.3,
+            `split=${split.width}, wide=${wide?.width}`,
+          );
+        },
+      );
       await experiment
         .getByRole("button", { name: "Use split view", exact: true })
         .click();
+      await e.check(
+        "Split view restores its original graph width",
+        async () => {
+          const restored = await canvas.boundingBox();
+          assert.ok(restored && Math.abs(restored.width - split.width) < 1);
+        },
+      );
       await experiment
         .getByRole("button", { name: "Minimise", exact: true })
         .click();
@@ -192,6 +299,7 @@ export async function experiments(page, e) {
         .getByRole("button", { name: "Expand", exact: true })
         .click();
       await experiment.getByText("What to notice", { exact: true }).click();
+      await page.setViewportSize(viewport);
     },
   );
   await comparisonsJourney(page, e);
@@ -416,25 +524,57 @@ export async function experiments(page, e) {
       await page
         .getByRole("button", { name: "Horizontal slice", exact: true })
         .click();
-      await page.locator("#slice-coordinate").press("Home");
-      await visible(page.getByRole("img", { name: /^horizontal section/ }));
-      await page
-        .getByRole("group", { name: "Representation", exact: true })
-        .getByRole("button", { name: "Values only", exact: true })
-        .click();
-      await e.check(
-        "Slice values expose the same orientation and bounds",
-        async () =>
-          assert.match(
-            await page
-              .getByRole("table", {
-                name: "Exact bounds at the current slice",
-                exact: true,
-              })
-              .innerText(),
-            /horizontal/,
-          ),
-      );
+      const representation = page.getByRole("group", {
+        name: "Representation",
+        exact: true,
+      });
+      for (const [key, coordinate, upper] of [
+        ["Home", "0.00", "2.00"],
+        ["End", "2.00", "0.00"],
+      ]) {
+        await representation
+          .getByRole("button", { name: "Diagram", exact: true })
+          .click();
+        await page.locator("#slice-coordinate").press(key);
+        const diagram = page.getByRole("img", {
+          name: `horizontal section at ${coordinate} of triangle x plus y at most 2, from 0 to ${upper}`,
+          exact: true,
+        });
+        await visible(diagram);
+        const section = diagram.locator('line[stroke-width="5"]');
+        const endpoint = String(230 - Number(coordinate) * 100);
+        await e.check(
+          `Horizontal section at y=${coordinate} draws x from 0 to ${upper}`,
+          async () => {
+            assert.deepEqual(
+              await section.evaluate((line) =>
+                ["x1", "y1", "x2", "y2"].map((name) => line.getAttribute(name)),
+              ),
+              ["30", endpoint, endpoint, endpoint],
+            );
+          },
+        );
+        await representation
+          .getByRole("button", { name: "Values only", exact: true })
+          .click();
+        await e.check(
+          `Horizontal values at y=${coordinate} retain x from 0 to ${upper}`,
+          async () => {
+            const table = page.getByRole("table", {
+              name: "Exact bounds at the current slice",
+              exact: true,
+            });
+            assert.equal(
+              await table.locator("tbody th").innerText(),
+              "horizontal",
+            );
+            assert.deepEqual(
+              await table.locator("tbody td annotation").allTextContents(),
+              [coordinate, `0\\le x\\le${upper}`],
+            );
+          },
+        );
+      }
     },
   );
   await e.step(

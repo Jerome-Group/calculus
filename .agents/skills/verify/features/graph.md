@@ -19,7 +19,10 @@ Run `npm run agent -- browser run --features graph --output outputs/browser/grap
 The driver uses topbar, sidebar, and lesson exact-example entry points and the quick expression form.
 It renders `sin(x)*cos(y)`, `[cos(u),sin(u),v]`, `[cos(t),sin(t),t/3]`, and `x^2+y^2+z^2-1` through the editor, reloading each encoded state.
 It rejects an incomplete expression and inverted bounds, then restores rendering through Saddle and Helix presets.
-It exercises the parameter, keyboard camera controls, reset, SVG compatibility, and fullscreen entry and exit.
+After invalidating surface-only bounds, it switches to a space curve and requires the valid curve to render and survive reload.
+Each changed plot in this journey must change the actual compatibility SVG drawing, including same-representation expression changes.
+It replots the same saddle with custom bounds, lowers its height clip, checks excluded samples, and restores the expression and full configuration after reload.
+It independently checks keyboard orbit and zoom against drawn geometry, then requires Reset camera to restore its reference framing. SVG coordinates round to six decimal places for the reset comparison. It also drives fullscreen entry and exit.
 Parameter proof opens Wave amplitude, checks its expression and complete bounds, changes real SVG geometry, and restores the encoded parameter after reload.
 It checks the malformed graph explanation and renders at 390px with reduced motion.
 The focusable parameter slider must expose its visible expression-parameter name.
@@ -28,5 +31,6 @@ The focusable parameter slider must expose its visible expression-parameter name
 
 Chromium needs its installed browser and system libraries. Failure to start is a prerequisite failure, never a skipped graph proof.
 SVG and WebGL prove local sampled drawing only. Other GPU hardware remains unverified.
+The driver selects compatibility rendering through the visible toolbar for deterministic geometry comparisons. A prior status message cannot acknowledge a new drawing.
 The named-slider assertion checks the keyboard-focusable thumb, not its wrapper.
 The finite mesh can miss features or exclude clipped samples. A blank graph is not proof of an empty mathematical set.
