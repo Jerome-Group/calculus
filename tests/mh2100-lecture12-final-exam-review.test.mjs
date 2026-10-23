@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import { derivative, evaluate } from "mathjs";
 import {
   inspectNotation,
@@ -167,14 +167,16 @@ const expected = new Map([
     },
   ],
 ]);
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const midpointIntegral = (fn, a, b, n = 20000) => {
   const width = (b - a) / n;
   return Array.from({ length: n }, (_, i) => fn(a + (i + 0.5) * width)).reduce(

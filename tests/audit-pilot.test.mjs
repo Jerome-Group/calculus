@@ -2,7 +2,7 @@ import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import katex from "katex";
 import { validateSourceManifest } from "../scripts/check-source-manifest.mjs";
 
@@ -12,14 +12,16 @@ const manifest = read("../lib/curriculum/source-manifest.json");
 const sources = read("../lib/curriculum/sources.json");
 const observed = read("../lib/curriculum/source-observation.json");
 const baseline = read("../lib/curriculum/source-baseline.json");
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("classified sources match the canonical ledger and observed Drive files", () => {
   assert.equal(manifest.length, 100);

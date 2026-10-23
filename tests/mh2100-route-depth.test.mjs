@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import React from "react";
 import { createStudyRenderer } from "./helpers/study-render.mjs";
 
@@ -115,14 +115,16 @@ test("all 71 MH2100 routes have source-backed instruction and independent practi
 });
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 const renderToStaticMarkup = await createStudyRenderer(vite);
 
 test("WebMCP reads all stable MH2100 routes with the visible guide and source", async () => {

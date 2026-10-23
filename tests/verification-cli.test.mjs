@@ -13,7 +13,7 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import React from "react";
 import { createStudyRenderer } from "./helpers/study-render.mjs";
 import katex from "katex";
@@ -38,17 +38,18 @@ const cli = (...args) =>
     encoding: "utf8",
   });
 
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  cacheDir: path.join(temp, "vite-cache"),
-  logLevel: "silent",
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false, ws: false },
-  optimizeDeps: { noDiscovery: true, include: [] },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    logLevel: "silent",
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+    optimizeDeps: { noDiscovery: true, include: [] },
+  },
+  after,
+);
 const renderToStaticMarkup = await createStudyRenderer(vite);
 const { concepts } = await vite.ssrLoadModule("/lib/curriculum/index.ts");
 const { learningGuides } = await vite.ssrLoadModule(

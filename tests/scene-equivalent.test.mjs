@@ -2,18 +2,20 @@ import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("scene state has stable rendered targets for the viewport description", async () => {
   const { LessonExperiment } = await vite.ssrLoadModule(

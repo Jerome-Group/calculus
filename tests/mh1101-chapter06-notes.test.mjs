@@ -4,7 +4,7 @@ import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 import katex from "katex";
 import {
   inspectNotation,
@@ -192,14 +192,16 @@ const mapped = [
     "ch06-limit-transfer",
   ],
 ];
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(() => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 const close = (actual, expected, tolerance = 1e-11) =>
   assert.ok(

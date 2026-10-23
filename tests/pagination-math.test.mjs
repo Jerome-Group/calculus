@@ -4,20 +4,22 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createServer } from "vite";
+import { createSsrServer } from "./helpers/ssr-server.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const concepts = JSON.parse(
   readFileSync(new URL("../lib/curriculum/concepts.json", import.meta.url)),
 );
-const vite = await createServer({
-  appType: "custom",
-  configFile: false,
-  root,
-  resolve: { alias: { "@": root } },
-  server: { middlewareMode: true, hmr: false },
-});
-after(async () => vite.close());
+const vite = await createSsrServer(
+  {
+    appType: "custom",
+    configFile: false,
+    root,
+    resolve: { alias: { "@": root } },
+    server: { middlewareMode: true, hmr: false, ws: false },
+  },
+  after,
+);
 
 test("previous and next concept titles render embedded math", async () => {
   const { LessonPagination } = await vite.ssrLoadModule(
