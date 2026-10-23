@@ -10,9 +10,11 @@ mkdir -p \
   "${runtime_root}/xdg-config" \
   "${runtime_root}/tmp" \
   "${runtime_root}/wrangler/logs"
+runtime_root="$(cd "${runtime_root}" && pwd)"
 
 export SITES_ENV_READY=1
 export SITES_PROJECT_ROOT="${project_root}"
+export SITES_RUNTIME_ROOT="${runtime_root}"
 export HOME="${runtime_root}/home"
 export XDG_CONFIG_HOME="${runtime_root}/xdg-config"
 export TMPDIR="${runtime_root}/tmp"
