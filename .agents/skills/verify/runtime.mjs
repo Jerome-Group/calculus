@@ -102,13 +102,16 @@ export async function startWorker(root, output, signal) {
   let storage;
   const stop = () =>
     (cleanup ??= (async () => {
+      const errors = [];
+      const recordError = (operation, error) =>
+        errors.push({ operation, message: error.message, code: error.code });
       if (child?.pid) {
         const kill = (kind) => {
           try {
             if (process.platform === "win32") child.kill(kind);
             else process.kill(-child.pid, kind);
           } catch (error) {
-            if (error.code !== "ESRCH") throw error;
+            if (error.code !== "ESRCH") recordError(kind, error);
           }
         };
         const closed =
@@ -125,22 +128,29 @@ export async function startWorker(root, output, signal) {
               deadline = setTimeout(resolve, 2500);
             }),
           ]);
+        } catch (error) {
+          recordError("process-close", error);
         } finally {
           clearTimeout(timer);
           clearTimeout(deadline);
           kill("SIGKILL");
         }
       }
+      let scratchRemoved = false;
       await Promise.all([
         writeFile(
           path.join(output, "worker.stdout.log"),
           Buffer.concat(stdout),
-        ),
+        ).catch((error) => recordError("worker.stdout.log", error)),
         writeFile(
           path.join(output, "worker.stderr.log"),
           Buffer.concat(stderr),
-        ),
-        rm(scratch, { recursive: true, force: true }),
+        ).catch((error) => recordError("worker.stderr.log", error)),
+        rm(scratch, { recursive: true, force: true })
+          .then(() => {
+            scratchRemoved = true;
+          })
+          .catch((error) => recordError("scratch", error)),
       ]);
       let portClosed = true;
       if (port) {
@@ -150,7 +160,11 @@ export async function startWorker(root, output, signal) {
             await availablePort(port);
             break;
           } catch (error) {
-            if (error.code !== "EADDRINUSE") throw error;
+            if (error.code !== "EADDRINUSE") {
+              recordError("port", error);
+              portClosed = false;
+              break;
+            }
             if (Date.now() >= deadline) {
               portClosed = false;
               break;
@@ -162,8 +176,9 @@ export async function startWorker(root, output, signal) {
       return {
         processExited:
           !child || child.exitCode !== null || child.signalCode !== null,
-        scratchRemoved: true,
+        scratchRemoved,
         portClosed,
+        ...(errors.length ? { errors } : {}),
       };
     })());
   try {
