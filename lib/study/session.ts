@@ -62,7 +62,15 @@ type AttemptEntry = {
 };
 type History = {
   records: StudyAttempt[];
-  total: number;
+  cursor: string | null;
+  loading: boolean;
+  refreshQueued: boolean;
+  error: string;
+};
+type TabAttempt = Pick<AttemptEntry, "input" | "value" | "persistence">;
+type AttemptHistory = {
+  saved: StudyAttempt[];
+  tab: TabAttempt[];
   cursor: string | null;
   loading: boolean;
   error: string;
@@ -102,9 +110,9 @@ const failed = (
 });
 const emptyHistory = (): History => ({
   records: [],
-  total: 0,
   cursor: null,
   loading: false,
+  refreshQueued: false,
   error: "",
 });
 const same = (a: unknown, b: unknown) =>
@@ -193,7 +201,10 @@ export function createStudySession() {
       value.sending = false;
       if (clear) value.resolve({ kind: "account-changed" });
     }
-    for (const history of histories.values()) history.loading = false;
+    for (const history of histories.values()) {
+      history.loading = false;
+      history.refreshQueued = false;
+    }
     importing = false;
     visible = false;
     if (clear) {
@@ -396,10 +407,14 @@ export function createStudySession() {
   async function loadHistory(lessonId: string, more = false) {
     const history = histories.get(lessonId) ?? emptyHistory();
     histories.set(lessonId, history);
-    if (!user || !visible || history.loading || (more && !history.cursor))
+    if (!user || !visible || (more && !history.cursor)) return;
+    if (history.loading) {
+      if (!more) history.refreshQueued = true;
       return;
+    }
     const generation = epoch;
     history.loading = true;
+    history.refreshQueued = false;
     history.error = "";
     notify();
     try {
@@ -412,6 +427,17 @@ export function createStudySession() {
       const records = data.records.map(({ value }) =>
         attemptSchema.parse(value),
       );
+      if (records.some((record) => record.lessonId !== lessonId))
+        throw new Error("Mismatched attempt history");
+      let acknowledged = false;
+      for (const record of records) {
+        const local = attempts.get(record.id);
+        if (!local) continue;
+        const matches = same(attemptSchema.parse(local.value), record);
+        if (matches && local.persistence.kind !== "saved") acknowledged = true;
+        local.persistence = matches ? saved : conflict;
+        local.resolve({ kind: matches ? "saved" : "conflict" });
+      }
       history.records = [
         ...new Map(
           [...(more ? history.records : []), ...records].map((attempt) => [
@@ -420,8 +446,8 @@ export function createStudySession() {
           ]),
         ).values(),
       ];
-      history.total = data.total ?? records.length;
       history.cursor = data.cursor ?? null;
+      if (acknowledged) void loadOverview();
     } catch {
       if (generation === epoch)
         history.error = "Attempt history unavailable. Retry when connected.";
@@ -429,6 +455,7 @@ export function createStudySession() {
     if (generation === epoch) {
       history.loading = false;
       notify();
+      if (history.refreshQueued) await loadHistory(lessonId);
     }
   }
   async function validate() {
@@ -693,12 +720,20 @@ export function createStudySession() {
         value.resolve({ kind: "account-changed" });
         return;
       }
-      if (result.response.ok) {
+      if (
+        value.persistence.kind === "saved" ||
+        value.persistence.kind === "conflict"
+      ) {
+        value.resolve({ kind: value.persistence.kind });
+      } else if (result.response.ok) {
         const data = writeResponseSchema.parse(result.data);
         if (
           data.record.key !== `attempt:${value.input.id}` ||
           data.record.mutationId !== value.input.id ||
-          !same(data.record.value, value.value)
+          !same(
+            attemptSchema.parse(data.record.value),
+            attemptSchema.parse(value.value),
+          )
         )
           throw new Error("Mismatched attempt acknowledgement");
         value.persistence = saved;
@@ -719,7 +754,11 @@ export function createStudySession() {
         });
       }
     } catch {
-      if (generation === epoch) {
+      if (
+        generation === epoch &&
+        value.persistence.kind !== "saved" &&
+        value.persistence.kind !== "conflict"
+      ) {
         value.persistence = failed();
         value.resolve({ kind: "unsaved" });
       }
@@ -920,26 +959,34 @@ export function createStudySession() {
     importLegacy,
     validate,
     ensure: (key: MutableStudyKey) => loadEntry(entry(key)),
-    history: (lessonId: string) => {
+    history: (lessonId: string): AttemptHistory => {
       const history = histories.get(lessonId) ?? emptyHistory();
-      return visible
-        ? {
-            ...history,
-            pending: [...attempts.values()]
-              .filter(({ input }) => input.lessonId === lessonId)
-              .map(({ input, persistence }) => ({ input, persistence })),
-            records: [
-              ...new Map(
-                [
-                  ...history.records,
-                  ...[...attempts.values()]
-                    .filter(({ input }) => input.lessonId === lessonId)
-                    .map(({ value }) => value),
-                ].map((value) => [value.id, value]),
-              ).values(),
-            ].sort((a, b) => b.at.localeCompare(a.at)),
-          }
-        : { ...emptyHistory(), pending: [] };
+      if (!visible)
+        return { saved: [], tab: [], cursor: null, loading: false, error: "" };
+      const tab = [...attempts.values()]
+        .filter(({ input }) => input.lessonId === lessonId)
+        .map(({ input, value, persistence }) => ({
+          input,
+          value,
+          persistence,
+        }));
+      const acknowledged = tab
+        .filter(({ persistence }) => persistence.kind === "saved")
+        .map(({ value }) => value);
+      return {
+        saved: [
+          ...new Map(
+            [...acknowledged, ...history.records].map((value) => [
+              value.id,
+              value,
+            ]),
+          ).values(),
+        ].sort((a, b) => b.at.localeCompare(a.at) || a.id.localeCompare(b.id)),
+        tab,
+        cursor: history.cursor,
+        loading: history.loading,
+        error: history.error,
+      };
     },
     inlineSnapshot: (lessonId: string) =>
       inlineExperimentSnapshot(lessonId, (id, parameter) => {

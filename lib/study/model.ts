@@ -233,22 +233,22 @@ export const attemptSchema = z
     }
   });
 export type StudyAttempt = z.infer<typeof attemptSchema>;
-export type PilotRecord = {
-  attempts: Pick<
-    StudyAttempt,
-    "taskId" | "kind" | "correct" | "support" | "errorCode" | "at"
-  >[];
-  nextReview?: string;
-};
-export function hasDelayedIndependentChoiceEvidence(record?: PilotRecord) {
-  const attempts =
-    record?.attempts.filter(
-      (attempt) =>
-        attempt.kind === "transfer" &&
-        attempt.correct &&
-        attempt.support === "none",
-    ) ?? [];
-  return attempts.some((first, index) =>
+export function pilotReview(saved: readonly StudyAttempt[]) {
+  const unique = [
+    ...new Map(saved.map((attempt) => [attempt.id, attempt])).values(),
+  ];
+  const latest = unique.reduce<StudyAttempt | null>(
+    (newest, attempt) => (!newest || attempt.at > newest.at ? attempt : newest),
+    null,
+  );
+  const attempts = unique.filter(
+    (attempt) =>
+      attempt.source === "choice" &&
+      attempt.kind === "transfer" &&
+      attempt.correct &&
+      attempt.support === "none",
+  );
+  const repeatedCorrectTransfer = attempts.some((first, index) =>
     attempts
       .slice(index + 1)
       .some(
@@ -256,6 +256,11 @@ export function hasDelayedIndependentChoiceEvidence(record?: PilotRecord) {
           Math.abs(Date.parse(later.at) - Date.parse(first.at)) >= 86400000,
       ),
   );
+  return {
+    nextReview: latest ? nextReview(latest) : null,
+    reviewSource: latest?.source ?? null,
+    repeatedCorrectTransfer,
+  };
 }
 export function checkedAttempt(input: AttemptInput): StudyAttempt {
   const task = pilotTask(input.lessonId, input.taskId)!;
